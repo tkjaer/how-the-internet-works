@@ -1,0 +1,339 @@
+{
+  "generated": "2026-09-27T22:11:39.768Z",
+  "gpu": true,
+  "viewport": "perf: 390×844 @2x (portrait phone)",
+  "metrics": {
+    "storybook": {
+      "kB": {
+        "js": 60.9,
+        "css": 4.4,
+        "font": 109.4
+      },
+      "perf": {
+        "1x": {
+          "idle": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 1.48
+          },
+          "flyToFibre": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 2.5
+          },
+          "fibreIdle": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 1.68
+          },
+          "flyOut": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 1.85
+          },
+          "follow": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 1.53
+          }
+        },
+        "6x": {
+          "idle": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.8,
+            "worst": 16.8,
+            "cpuMsPerFrame": 2.6
+          },
+          "flyToFibre": {
+            "fps": 58,
+            "p50": 16.7,
+            "p95": 16.8,
+            "worst": 66.6,
+            "cpuMsPerFrame": 8.6
+          },
+          "fibreIdle": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.8,
+            "worst": 16.8,
+            "cpuMsPerFrame": 4.4
+          },
+          "flyOut": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 5.43
+          },
+          "follow": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.8,
+            "worst": 16.8,
+            "cpuMsPerFrame": 5.23
+          }
+        }
+      }
+    },
+    "neon": {
+      "kB": {
+        "js": 60.3,
+        "css": 4.7,
+        "font": 223.3
+      },
+      "perf": {
+        "1x": {
+          "idle": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.8,
+            "worst": 16.8,
+            "cpuMsPerFrame": 2.2
+          },
+          "flyToFibre": {
+            "fps": 51,
+            "p50": 16.7,
+            "p95": 16.8,
+            "worst": 116.7,
+            "cpuMsPerFrame": 3
+          },
+          "fibreIdle": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.8,
+            "worst": 16.8,
+            "cpuMsPerFrame": 3.33
+          },
+          "flyOut": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 3.08
+          },
+          "follow": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 3.14
+          }
+        },
+        "6x": {
+          "idle": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 8.69
+          },
+          "flyToFibre": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 11.6
+          },
+          "fibreIdle": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 8.26
+          },
+          "flyOut": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 10.69
+          },
+          "follow": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 9.36
+          }
+        }
+      }
+    },
+    "sketchbook": {
+      "kB": {
+        "js": 68.8,
+        "css": 4.5,
+        "font": 95
+      },
+      "perf": {
+        "1x": {
+          "idle": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.8,
+            "worst": 16.8,
+            "cpuMsPerFrame": 1.64
+          },
+          "flyToFibre": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 2.05
+          },
+          "fibreIdle": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 2.03
+          },
+          "flyOut": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 1.8
+          },
+          "follow": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 1.37
+          }
+        },
+        "6x": {
+          "idle": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.8,
+            "worst": 16.8,
+            "cpuMsPerFrame": 1.89
+          },
+          "flyToFibre": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 3.1
+          },
+          "fibreIdle": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 1.97
+          },
+          "flyOut": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.8,
+            "worst": 16.8,
+            "cpuMsPerFrame": 2.62
+          },
+          "follow": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 3.78
+          }
+        }
+      }
+    },
+    "papercut": {
+      "kB": {
+        "js": 60.3,
+        "css": 5.4,
+        "font": 66.6
+      },
+      "perf": {
+        "1x": {
+          "idle": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.8,
+            "worst": 16.8,
+            "cpuMsPerFrame": 2.34
+          },
+          "flyToFibre": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.8,
+            "worst": 16.8,
+            "cpuMsPerFrame": 3.3
+          },
+          "fibreIdle": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.8,
+            "worst": 16.8,
+            "cpuMsPerFrame": 3.27
+          },
+          "flyOut": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 3.91
+          },
+          "follow": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.8,
+            "worst": 16.8,
+            "cpuMsPerFrame": 2.68
+          }
+        },
+        "6x": {
+          "idle": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 2.23
+          },
+          "flyToFibre": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 10.35
+          },
+          "fibreIdle": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.8,
+            "worst": 16.8,
+            "cpuMsPerFrame": 3.37
+          },
+          "flyOut": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.7,
+            "worst": 16.8,
+            "cpuMsPerFrame": 8.54
+          },
+          "follow": {
+            "fps": 60,
+            "p50": 16.7,
+            "p95": 16.8,
+            "worst": 16.8,
+            "cpuMsPerFrame": 3.16
+          }
+        }
+      }
+    }
+  }
+}

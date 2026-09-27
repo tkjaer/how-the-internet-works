@@ -3,52 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#070a24" />
-    <title>How the internet works – visualisation spike</title>
+    <meta name="theme-color" content="#1c1a2e" />
+    <title>How the internet works – look &amp; feel</title>
     <style>
-      :root { color-scheme: dark; --ink: #eef1ff; --muted: #a9b8ff; --accent: #3ef0ff; }
+      :root { color-scheme: dark; --ink: #f3f0ff; --muted: #b9b3d9; --accent: #ffd166; }
       * { box-sizing: border-box; }
       body {
-        margin: 0; min-height: 100vh; color: var(--ink); background: radial-gradient(ellipse at 50% 0%, #1b2366, #070a24 70%);
-        font-family: 'Nunito Variable', system-ui, sans-serif; padding: 40px 20px 60px;
+        margin: 0; min-height: 100vh; color: var(--ink); background: radial-gradient(ellipse at 50% 0%, #34305a, #1c1a2e 70%);
+        font-family: system-ui, sans-serif; padding: 40px 20px 60px;
       }
-      main { max-width: 1040px; margin: 0 auto; }
-      h1 { font-size: clamp(28px, 5vw, 46px); margin: 0 0 8px; font-weight: 900; }
+      main { max-width: 1080px; margin: 0 auto; }
+      h1 { font-size: clamp(28px, 5vw, 44px); margin: 0 0 8px; font-weight: 900; }
       h1 span { color: var(--accent); }
-      p.lead { color: var(--muted); font-size: 17px; max-width: 70ch; line-height: 1.5; }
-      .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; margin-top: 28px; }
+      p.lead { color: var(--muted); font-size: 17px; max-width: 72ch; line-height: 1.5; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; margin-top: 28px; }
       a.card {
-        display: flex; flex-direction: column; gap: 8px; padding: 20px; border-radius: 22px; text-decoration: none; color: inherit;
-        background: rgba(18, 24, 72, .72); border: 1px solid rgba(169, 184, 255, .22); transition: transform .2s, border-color .2s;
+        display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 20px; text-decoration: none; color: inherit;
+        background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .14); transition: transform .2s, border-color .2s;
       }
       a.card:hover { transform: translateY(-4px); border-color: var(--accent); }
-      .card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 12px; background: #0b1140; }
+      .card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 12px; background: #2a2745; }
       .card h2 { margin: 4px 0 0; font-size: 20px; }
       .card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.45; }
-      .card .tag { font-size: 12px; font-weight: 800; color: var(--accent); letter-spacing: .06em; text-transform: uppercase; }
-      .scenes { margin-top: 26px; color: var(--muted); font-size: 14px; line-height: 1.6; }
-      .scenes code { color: var(--ink); }
+      .notes { margin-top: 28px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+      .notes code { color: var(--ink); }
       a { color: var(--accent); }
     </style>
   </head>
   <body>
     <main>
-      <h1>How the internet works – <span>visualisation spike</span></h1>
+      <h1>How the internet works – <span>look &amp; feel</span></h1>
       <p class="lead">
-        The chosen stack (Svelte 5 + SVG) running the mini-scene: phone → Wi-Fi access point → home router → internet, with
-        animated packets. Tap (or pinch/scroll into) the Wi-Fi link to dive into radio waves, or the fibre link to see light
-        pulses and DWDM colours. Switch language (EN / DA / AR) and kid/nerd mode in the top bar.
+        The same little journey (phone → Wi-Fi → home router → fibre → the internet, and the video coming back) in four
+        art styles. Tap a magnifier to look inside the Wi-Fi or the fibre, tap the cloud to unfold the internet, tap a parcel
+        to follow it and peek at its envelopes, and flick or use ◀ ▶ to walk along the path. The flask button opens the
+        lab with the interaction experiments (zoom transition, motion feel, lively packets, layout).
       </p>
       <div class="grid">
-        <a class="card" href="prototype/">
-          <span class="tag">Spike</span><h2>Svelte 5 + SVG</h2>
-          <p>Scenes as Svelte components rendering SVG from data; reactive i18n; Svelte transitions.</p>
+        <a class="card" href="prototype/?style=storybook">
+          <img src="thumbs/storybook.jpg" alt="" loading="lazy" /><h2>Storybook</h2>
+          <p>A warm, flat picture book. Devices with faces, a little courier running with your parcel.</p>
+        </a>
+        <a class="card" href="prototype/?style=neon">
+          <img src="thumbs/neon.jpg" alt="" loading="lazy" /><h2>Neon blueprint</h2>
+          <p>A dark sci-fi HUD: glowing wireframes, grid, scanlines and a targeting reticle.</p>
+        </a>
+        <a class="card" href="prototype/?style=sketchbook">
+          <img src="thumbs/sketchbook.jpg" alt="" loading="lazy" /><h2>Sketchbook</h2>
+          <p>Dad's paper diagrams brought to life: wobbly pencil lines that boil, margin notes and hatching.</p>
+        </a>
+        <a class="card" href="prototype/?style=papercut">
+          <img src="thumbs/papercut.jpg" alt="" loading="lazy" /><h2>Paper cut-out</h2>
+          <p>A layered craft-paper diorama with deep parallax between the layers.</p>
         </a>
       </div>
-      <p class="scenes">
-        Deep links: <code>#/&lt;lang&gt;/&lt;scene&gt;</code>, e.g. <code>#/da/wifi</code> or <code>#/ar/fibre</code>.
-        Why this stack was chosen over SVG + GSAP, PixiJS and Three.js: <code>docs/visualisation-spikes.md</code>
-        (the discarded spikes live at git tag <code>spikes/visualisation-v1</code>).
+      <p class="notes">
+        URLs: <code>?style=&lt;id&gt;</code> plus the lab settings (<code>&amp;zoom=portal&amp;feel=spring</code> …) and
+        <code>#/&lt;lang&gt;/&lt;scene&gt;</code>, e.g. <code>prototype/?style=sketchbook#/da/wifi</code>.
+        Write-up and screenshots: <code>docs/look-and-feel.md</code>. The earlier tech comparison:
+        <code>docs/visualisation-spikes.md</code>.
       </p>
     </main>
   </body>

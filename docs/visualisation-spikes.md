@@ -5,6 +5,10 @@
 > SVG + GSAP, PixiJS and Three.js ones and the `scripts/evaluate.mjs` that produced the screenshots and measurements
 > below, is preserved at git tag [`spikes/visualisation-v1`](https://github.com/tkjaer/how-the-internet-works/tree/spikes/visualisation-v1).
 > Links to the discarded spikes point at that tag.
+>
+> **Update (look-and-feel round):** the kept spike has since moved to `prototype/` (with `spikes/shared` folded into
+> `prototype/core/`) and grew swappable visual themes. See [look-and-feel.md](look-and-feel.md). The `spikes/…` paths
+> below now link to the tag.
 
 Four disposable spikes that all implement **the same mini-scene**, so the rendering stack for the real app can be
 picked on evidence rather than taste:
@@ -26,7 +30,7 @@ level at runtime.
 | Spike | Stack | Folder |
 |---|---|---|
 | 1 | Vanilla TS + **SVG + GSAP** (MotionPath) + d3-zoom | [`spikes/svg-gsap`](https://github.com/tkjaer/how-the-internet-works/tree/spikes/visualisation-v1/spikes/svg-gsap) (tag only) |
-| 2 | **Svelte 5 + SVG** (runes, `Tween`, transitions, CSS keyframes) | [`spikes/svelte-svg`](../spikes/svelte-svg) ✅ kept |
+| 2 | **Svelte 5 + SVG** (runes, `Tween`, transitions, CSS keyframes) | [`spikes/svelte-svg`](https://github.com/tkjaer/how-the-internet-works/tree/spikes/visualisation-v1/spikes/svelte-svg) ✅ kept (now `prototype/`) |
 | 3 | **PixiJS v8** (WebGL 2D) + pixi-filters bloom | [`spikes/pixi`](https://github.com/tkjaer/how-the-internet-works/tree/spikes/visualisation-v1/spikes/pixi) (tag only) |
 | 4 | **Three.js** "2.5D": tilted map, extruded SVG tokens, panels that fold up, bloom | [`spikes/three-25d`](https://github.com/tkjaer/how-the-internet-works/tree/spikes/visualisation-v1/spikes/three-25d) (tag only) |
 
@@ -174,7 +178,7 @@ Why:
 
 Carry forward from the spikes:
 
-- `spikes/shared/camera.ts`: the semantic-zoom maths (fit, clamp, `mixes`, `decide`, fly interpolator)
+- `spikes/shared/camera.ts` (now `prototype/core/camera.ts`): the semantic-zoom maths (fit, clamp, `mixes`, `decide`, fly interpolator)
 - `gestures.ts`
 - the `#/<lang>/<scene>` router
 - the locale-pack loader with English fallback and `_meta.dir`

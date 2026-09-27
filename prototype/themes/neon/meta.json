@@ -1,1 +1,1 @@
-{ "order": 2, "swatch": "linear-gradient(135deg, #070a24 30%, #3ef0ff 30% 45%, #ff4fd8 45% 60%, #070a24 60%)" }
+{ "order": 2, "swatch": "radial-gradient(circle at 22% 18%, #3ef0ff 0 10%, transparent 11%), linear-gradient(135deg, #020613 0 34%, #15345c 34% 36%, #ff4fe9 36% 49%, #ffbd4a 49% 57%, #caff5a 57% 64%, #020613 64%)" }

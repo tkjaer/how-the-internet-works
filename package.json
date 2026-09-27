@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "evaluate": "node scripts/evaluate.mjs"
   },
   "license": "MIT",
   "type": "module",
@@ -15,9 +16,7 @@
     "@fontsource-variable/fredoka": "^5.3.0",
     "@fontsource-variable/jetbrains-mono": "^5.3.0",
     "@fontsource-variable/noto-sans-arabic": "^5.3.0",
-    "@fontsource-variable/reem-kufi": "^5.3.0",
     "@fontsource-variable/space-grotesk": "^5.3.0",
-    "@fontsource/aref-ruqaa-ink": "^5.3.0",
     "@fontsource/patrick-hand": "^5.3.0",
     "d3-interpolate": "^3.0.1",
     "roughjs": "^4.6.6"

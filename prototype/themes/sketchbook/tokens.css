@@ -1,16 +1,130 @@
-@import '@fontsource-variable/space-grotesk';
-@import '@fontsource-variable/jetbrains-mono';
-@import '@fontsource-variable/noto-sans-arabic';
+@import '@fontsource/patrick-hand/latin.css';
+@import '@fontsource-variable/baloo-bhaijaan-2/wght.css';
 
 :root[data-style='sketchbook'] {
-  --bg: #070a24; --ink: #eef1ff; --muted: #a9b8ff; --accent: #3ef0ff; --accent-ink: #041026;
-  --ui-font: 'Space Grotesk Variable', 'Noto Sans Arabic Variable', system-ui, sans-serif;
-  --heading-font: var(--ui-font); --label-font: var(--ui-font);
-  --tag-font: 'JetBrains Mono Variable', 'Noto Sans Arabic Variable', monospace; --mono-font: var(--tag-font);
-  --scene-bg: #0a0f33; --panel-bg: #070b2a; --panel-edge: #3ef0ff;
-  --dev-body: #141b52; --dev-screen: #0a0f33; --dev-edge: #3ef0ff; --dev-accent: #ffe066;
-  --box: #141b52; --box-edge: #a9b8ff; --hint: #3ef0ff; --hint-bg: rgba(7, 10, 36, 0.8);
-  --tag-bg: rgba(7, 10, 36, 0.85); --tag-edge: #3ef0ff; --tag-ink: #3ef0ff;
-  --wave: #3ef0ff; --core: rgba(62, 240, 255, 0.12); --core-edge: #3ef0ff; --cladding: rgba(169, 184, 255, 0.06); --cladding-edge: #a9b8ff;
-  --prism: rgba(255, 255, 255, 0.08); --prism-edge: #eef1ff;
+  color-scheme: light;
+  --paper: #f7f0dd;
+  --paper-panel: #fbf5e7;
+  --ink: #35312d;
+  --pencil: #4d4a46;
+  --muted: #70685d;
+  --accent: #2f6fa6;
+  --accent-ink: #fbf5e7;
+  --ink-blue: #2f6fa6;
+  --marker: #4a5362;
+  --shadow: #8f8778;
+  --grid: #89a9c8;
+  --rule: #9cb4cf;
+  --margin-line: #d77480;
+  --highlighter-yellow: #ffe56e;
+  --highlighter-pink: #ffb3cf;
+  --highlighter-blue: #a8d8ff;
+  --crayon-pink: #d9558c;
+  --crayon-green: #58a66c;
+  --device-paper: #f4ead2;
+  --screen-paper: #dfeefd;
+  --cloud-paper: #fff9ec;
+  --fibre-core: rgba(168, 216, 255, .48);
+  --fibre-clad: rgba(255, 179, 207, .20);
+  --prism-paper: rgba(168, 216, 255, .35);
+  --tape: rgba(238, 214, 151, .78);
+  --tape-edge: rgba(112, 96, 60, .55);
+  --tag-paper: rgba(255, 247, 207, .92);
+  --tag-ink: #3f3a34;
+  --ui-font: 'Patrick Hand', 'Baloo Bhaijaan 2 Variable', system-ui, sans-serif;
+  --heading-font: 'Patrick Hand', 'Baloo Bhaijaan 2 Variable', system-ui, sans-serif;
+  --label-font: 'Patrick Hand', 'Baloo Bhaijaan 2 Variable', system-ui, sans-serif;
+  --tag-font: 'Patrick Hand', 'Baloo Bhaijaan 2 Variable', system-ui, sans-serif;
+  --mono-font: 'Baloo Bhaijaan 2 Variable', ui-monospace, monospace;
+  --heading-weight: 400;
+  --heading-transform: none;
+  --heading-spacing: .01em;
+  --bg: var(--paper);
+  --card: rgba(255, 249, 236, .94);
+  --card-edge: rgba(75, 70, 64, .78);
+  --card-edge-w: 2px;
+  --card-radius: 255px 18px 230px 20px / 20px 225px 18px 240px;
+  --card-shadow: 5px 7px 0 rgba(87, 77, 60, .13), 12px 15px 0 rgba(255, 229, 110, .18);
+  --card-blur: none;
+  --btn: rgba(255, 229, 110, .25);
+  --btn-on: #ffe56e;
+  --btn-on-ink: #35312d;
+  --btn-radius: 255px 18px 225px 20px / 18px 225px 18px 240px;
+  --env-bg: rgba(255, 249, 236, .92);
+  --env-edge: rgba(75, 70, 64, .72);
+  --env-radius: 12px 18px 10px 16px;
+  --env-sealed: rgba(168, 216, 255, .24);
+  --env-name: #2f6fa6;
+  --link: #2f6fa6;
+  --portal-ring: #ff9ec4;
+  --portal-ring-w: 5px;
+  --lbl-weight: 400;
+  --lbl-halo: rgba(247, 240, 221, .92);
+  --lbl-halo-w: .28em;
+  --scene-bg: var(--paper);
+  --panel-bg: var(--paper-panel);
+  --panel-edge: var(--pencil);
+  --dev-body: var(--device-paper);
+  --dev-screen: var(--screen-paper);
+  --dev-edge: var(--pencil);
+  --dev-accent: var(--ink-blue);
+  --box: var(--device-paper);
+  --box-edge: var(--pencil);
+  --hint: var(--ink-blue);
+  --hint-bg: rgba(255, 249, 236, .88);
+  --wave: var(--ink-blue);
+  --core: var(--fibre-core);
+  --core-edge: var(--ink-blue);
+  --cladding: var(--fibre-clad);
+  --cladding-edge: var(--pencil);
+  --prism: var(--prism-paper);
+  --prism-edge: var(--pencil);
+}
+
+:root[data-style='sketchbook'] body {
+  background:
+    linear-gradient(rgba(137, 169, 200, .16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(137, 169, 200, .13) 1px, transparent 1px),
+    var(--paper);
+  background-size: 32px 32px;
+}
+
+:root[data-style='sketchbook'] .card,
+:root[data-style='sketchbook'] .btn,
+:root[data-style='sketchbook'] .env,
+:root[data-style='sketchbook'] .styles .btn {
+  border-style: solid;
+}
+
+:root[data-style='sketchbook'] .card {
+  outline: 1px solid rgba(255, 255, 255, .38);
+}
+
+:root[data-style='sketchbook'] .btn {
+  border: 2px solid rgba(75, 70, 64, .62);
+  box-shadow: 2px 3px 0 rgba(87, 77, 60, .12);
+}
+
+:root[data-style='sketchbook'] .seg .btn.on,
+:root[data-style='sketchbook'] .controls .seg .btn.on,
+:root[data-style='sketchbook'] .icon-btn[aria-pressed='true'],
+:root[data-style='sketchbook'] .styles .btn.on {
+  background-image: linear-gradient(100deg, rgba(255, 229, 110, .94), rgba(255, 179, 207, .62));
+  box-shadow: 2px 3px 0 rgba(87, 77, 60, .12);
+}
+
+:root[data-style='sketchbook'] .caption h2,
+:root[data-style='sketchbook'] .peek h2 {
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 229, 110, .9);
+  text-decoration-thickness: .35em;
+  text-underline-offset: -.18em;
+  text-decoration-skip-ink: none;
+}
+
+:root[data-style='sketchbook'] .lbl,
+:root[data-style='sketchbook'] .tag-text,
+:root[data-style='sketchbook'] .bit-digit {
+  font-family: var(--label-font);
+  letter-spacing: .01em;
 }
