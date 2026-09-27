@@ -1,0 +1,166 @@
+{
+  "generated": "2026-09-27T20:20:23.954Z",
+  "gpu": true,
+  "metrics": {
+    "svg-gsap": {
+      "kB": {
+        "js": 61.7,
+        "css": 3.4,
+        "font": 74.6,
+        "other": 0.4
+      },
+      "fps": {
+        "overview": {
+          "fps": 60,
+          "worstMs": 17,
+          "frames": 121,
+          "cpuMsPerFrame": 0.58
+        },
+        "flight": {
+          "fps": 61,
+          "worstMs": 17,
+          "frames": 91,
+          "cpuMsPerFrame": 2.29
+        },
+        "fibre": {
+          "fps": 60,
+          "worstMs": 17,
+          "frames": 91,
+          "cpuMsPerFrame": 0.82
+        },
+        "flightThrottled6x": {
+          "fps": 60,
+          "worstMs": 33,
+          "frames": 90,
+          "cpuMsPerFrame": 10.1
+        },
+        "overviewThrottled6x": {
+          "fps": 60,
+          "worstMs": 17,
+          "frames": 121,
+          "cpuMsPerFrame": 1.1
+        }
+      }
+    },
+    "svelte-svg": {
+      "kB": {
+        "js": 29.6,
+        "css": 3.7,
+        "font": 74.6,
+        "other": 0.4
+      },
+      "fps": {
+        "overview": {
+          "fps": 60,
+          "worstMs": 17,
+          "frames": 121,
+          "cpuMsPerFrame": 0.88
+        },
+        "flight": {
+          "fps": 51,
+          "worstMs": 133,
+          "frames": 77,
+          "cpuMsPerFrame": 1.91
+        },
+        "fibre": {
+          "fps": 60,
+          "worstMs": 17,
+          "frames": 91,
+          "cpuMsPerFrame": 1.61
+        },
+        "flightThrottled6x": {
+          "fps": 61,
+          "worstMs": 17,
+          "frames": 92,
+          "cpuMsPerFrame": 8.02
+        },
+        "overviewThrottled6x": {
+          "fps": 60,
+          "worstMs": 17,
+          "frames": 121,
+          "cpuMsPerFrame": 1.69
+        }
+      }
+    },
+    "pixi": {
+      "kB": {
+        "js": 162.7,
+        "css": 2.8,
+        "font": 236.7,
+        "other": 0.5
+      },
+      "fps": {
+        "overview": {
+          "fps": 60,
+          "worstMs": 17,
+          "frames": 121,
+          "cpuMsPerFrame": 0.64
+        },
+        "flight": {
+          "fps": 60,
+          "worstMs": 17,
+          "frames": 91,
+          "cpuMsPerFrame": 1.09
+        },
+        "fibre": {
+          "fps": 60,
+          "worstMs": 17,
+          "frames": 91,
+          "cpuMsPerFrame": 0.76
+        },
+        "flightThrottled6x": {
+          "fps": 59,
+          "worstMs": 50,
+          "frames": 89,
+          "cpuMsPerFrame": 2.82
+        },
+        "overviewThrottled6x": {
+          "fps": 60,
+          "worstMs": 17,
+          "frames": 121,
+          "cpuMsPerFrame": 1.33
+        }
+      }
+    },
+    "three-25d": {
+      "kB": {
+        "js": 177.1,
+        "css": 2.8,
+        "font": 74.6,
+        "other": 0.4
+      },
+      "fps": {
+        "overview": {
+          "fps": 60,
+          "worstMs": 17,
+          "frames": 121,
+          "cpuMsPerFrame": 2.49
+        },
+        "flight": {
+          "fps": 58,
+          "worstMs": 67,
+          "frames": 88,
+          "cpuMsPerFrame": 2.65
+        },
+        "fibre": {
+          "fps": 60,
+          "worstMs": 17,
+          "frames": 91,
+          "cpuMsPerFrame": 0.95
+        },
+        "flightThrottled6x": {
+          "fps": 61,
+          "worstMs": 17,
+          "frames": 91,
+          "cpuMsPerFrame": 6.41
+        },
+        "overviewThrottled6x": {
+          "fps": 60,
+          "worstMs": 17,
+          "frames": 121,
+          "cpuMsPerFrame": 6.03
+        }
+      }
+    }
+  }
+}
