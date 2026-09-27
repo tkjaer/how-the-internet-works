@@ -10,13 +10,22 @@
   "license": "MIT",
   "type": "module",
   "dependencies": {
+    "@fontsource-variable/baloo-2": "^5.3.0",
+    "@fontsource-variable/baloo-bhaijaan-2": "^5.3.0",
+    "@fontsource-variable/fredoka": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
     "@fontsource-variable/noto-sans-arabic": "^5.3.0",
-    "@fontsource-variable/nunito": "^5.3.0",
-    "d3-interpolate": "^3.0.1"
+    "@fontsource-variable/reem-kufi": "^5.3.0",
+    "@fontsource-variable/space-grotesk": "^5.3.0",
+    "@fontsource/aref-ruqaa-ink": "^5.3.0",
+    "@fontsource/patrick-hand": "^5.3.0",
+    "d3-interpolate": "^3.0.1",
+    "roughjs": "^4.6.6"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
     "@types/d3-interpolate": "^3.0.4",
+    "playwright": "^1.63.0",
     "svelte": "^5.57.1",
     "typescript": "^7.0.2",
     "vite": "^8.3.1"

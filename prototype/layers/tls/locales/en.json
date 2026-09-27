@@ -1,0 +1,8 @@
+{
+  "layer.tls.name.kid": "Locked box",
+  "layer.tls.name.nerd": "TLS record",
+  "layer.tls.note.kid": "Only your phone and the server have the key.",
+  "layer.tls.note.nerd": "Encrypted and authenticated end to end.",
+  "layer.tls.sealed.kid": "Locked. Nobody on the way can read what’s inside.",
+  "layer.tls.sealed.nerd": "Ciphertext: intermediate hops can’t read or change it."
+}

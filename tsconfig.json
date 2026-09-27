@@ -12,6 +12,6 @@
     "isolatedModules": true,
     "verbatimModuleSyntax": true
   },
-  "include": ["spikes/**/*.ts", "vite.config.ts", "svelte.config.js"],
-  "exclude": ["spikes/**/*.svelte.ts"]
+  "include": ["prototype/**/*.ts", "vite.config.ts", "svelte.config.js", "scripts/**/*.mjs"],
+  "exclude": ["prototype/**/*.svelte.ts"]
 }

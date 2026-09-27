@@ -1,0 +1,8 @@
+{
+  "layer.wifi.name.kid": "Radio envelope",
+  "layer.wifi.name.nerd": "Wi-Fi frame (802.11)",
+  "layer.wifi.to": "For",
+  "layer.wifi.band": "Band",
+  "layer.wifi.note.kid": "Sent through the air. Only the access point and your phone listen for it.",
+  "layer.wifi.note.nerd": "The AP acknowledges every frame and resends lost ones. The payload is encrypted (WPA3)."
+}

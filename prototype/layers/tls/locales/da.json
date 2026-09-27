@@ -1,0 +1,8 @@
+{
+  "layer.tls.name.kid": "Låst kasse",
+  "layer.tls.name.nerd": "TLS-record",
+  "layer.tls.note.kid": "Kun din telefon og serveren har nøglen.",
+  "layer.tls.note.nerd": "Krypteret og autentificeret fra ende til ende.",
+  "layer.tls.sealed.kid": "Låst. Ingen på vejen kan læse, hvad der er inden i.",
+  "layer.tls.sealed.nerd": "Krypteret: mellemliggende hop kan hverken læse eller ændre den."
+}

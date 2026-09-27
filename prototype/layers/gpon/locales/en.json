@@ -1,0 +1,9 @@
+{
+  "layer.gpon.name.kid": "Light envelope",
+  "layer.gpon.name.nerd": "GPON frame (GEM)",
+  "layer.gpon.colour": "Colour of light",
+  "layer.gpon.up": "going up the street",
+  "layer.gpon.down": "coming home",
+  "layer.gpon.note.kid": "Everyone on your street shares the same fibre, so each house only opens envelopes with its own number.",
+  "layer.gpon.note.nerd": "Downstream is broadcast to every ONT on the splitter and AES-encrypted per GEM port; upstream uses time slots."
+}

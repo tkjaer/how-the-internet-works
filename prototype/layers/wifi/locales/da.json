@@ -1,0 +1,8 @@
+{
+  "layer.wifi.name.kid": "Radio-kuvert",
+  "layer.wifi.name.nerd": "Wi-Fi-ramme (802.11)",
+  "layer.wifi.to": "Til",
+  "layer.wifi.band": "Bånd",
+  "layer.wifi.note.kid": "Sendes gennem luften. Kun adgangspunktet og din telefon lytter efter den.",
+  "layer.wifi.note.nerd": "Adgangspunktet kvitterer for hver ramme og sender tabte rammer igen. Indholdet er krypteret (WPA3)."
+}

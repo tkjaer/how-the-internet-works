@@ -1,0 +1,18 @@
+{
+  "layer.ip.name.kid": "Address label",
+  "layer.ip.name.nerd": "IP packet (IPv4)",
+  "layer.ip.from": "From",
+  "layer.ip.to": "To",
+  "layer.ip.you": "your phone",
+  "layer.ip.server": "the video server",
+  "layer.ip.nat.kid": "Your router swaps the sender address for your home’s address, and remembers who asked.",
+  "layer.ip.nat.nerd": "NAT: source 192.168.1.23:51034 is rewritten to 203.0.113.7:51034 and stored in the connection table.",
+  "layer.ip.unnat.kid": "Your router looks up who asked for this and changes the address back to your phone.",
+  "layer.ip.unnat.nerd": "NAT reverse: destination 203.0.113.7 is rewritten back to 192.168.1.23 from the connection table.",
+  "layer.ip.bridge.kid": "The access point doesn’t read the address. It just passes the parcel on to the router.",
+  "layer.ip.bridge.nerd": "The AP is a layer-2 bridge: it swaps the Wi-Fi frame for an Ethernet frame and leaves IP untouched.",
+  "layer.ip.read.kid": "This box reads the address and picks the best way onwards.",
+  "layer.ip.read.nerd": "Routed: longest-prefix match in the FIB, TTL − 1, a new link frame for the next hop.",
+  "layer.ip.arrived.kid": "Arrived! This is the right address.",
+  "layer.ip.arrived.nerd": "Destination reached: hand the payload up to TCP."
+}

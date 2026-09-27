@@ -1,0 +1,10 @@
+{
+  "layer.tcp.name.kid": "Nummereret stykke",
+  "layer.tcp.name.nerd": "TCP-segment",
+  "layer.tcp.ports": "Porte",
+  "layer.tcp.seq": "Seq",
+  "layer.tcp.piece": "Stykke nr.",
+  "layer.tcp.sealed.kid": "Forseglet. Kun din telefon og serveren åbner den: de tjekker, at ingen stykker mangler.",
+  "layer.tcp.sealed.nerd": "Undersøges ikke undervejs: ende-til-ende mellem telefon og server (rækkefølge, gensending, trængselsstyring).",
+  "layer.tcp.peek.nerd": "NAT’en kigger på portnumrene (og kan omskrive afsenderporten), men resten forbliver forseglet."
+}

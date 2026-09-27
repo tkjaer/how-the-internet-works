@@ -1,0 +1,8 @@
+{
+  "layer.http.name.kid": "The letter",
+  "layer.http.name.nerd": "HTTP message",
+  "layer.http.request.kid": "“Please send me the next bit of the cat video!”",
+  "layer.http.request.nerd": "A request for the next video segment.",
+  "layer.http.video.kid": "“Here’s the next bit of the cat video!”",
+  "layer.http.video.nerd": "A response with about 1 MB of video."
+}

@@ -1,0 +1,9 @@
+{
+  "layer.ethernet.name.kid": "Cable envelope",
+  "layer.ethernet.name.nerd": "Ethernet frame",
+  "layer.ethernet.to": "For",
+  "layer.ethernet.note.kid": "Each box on the way takes off this envelope and puts on a new one for the next cable.",
+  "layer.ethernet.note.nerd": "Link-local only: a new frame with new MAC addresses is written for every hop.",
+  "layer.ethernet.vlan.kid": "It gets a coloured tag so the operator knows which street and which house it came from.",
+  "layer.ethernet.vlan.nerd": "Double-tagged (Q-in-Q): an S-VLAN per cabinet, a C-VLAN per customer, towards the BNG."
+}

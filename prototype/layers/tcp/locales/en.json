@@ -1,0 +1,10 @@
+{
+  "layer.tcp.name.kid": "Numbered piece",
+  "layer.tcp.name.nerd": "TCP segment",
+  "layer.tcp.ports": "Ports",
+  "layer.tcp.seq": "Seq",
+  "layer.tcp.piece": "Piece no.",
+  "layer.tcp.sealed.kid": "Sealed. Only your phone and the server open this: they check that no pieces are missing.",
+  "layer.tcp.sealed.nerd": "Not inspected on the way: end-to-end between phone and server (ordering, retransmits, congestion control).",
+  "layer.tcp.peek.nerd": "The NAT peeks at the port numbers (and may rewrite the source port) but leaves the rest sealed."
+}

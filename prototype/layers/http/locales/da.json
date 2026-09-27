@@ -1,0 +1,8 @@
+{
+  "layer.http.name.kid": "Brevet",
+  "layer.http.name.nerd": "HTTP-besked",
+  "layer.http.request.kid": "“Send mig lige det næste stykke af kattevideoen!”",
+  "layer.http.request.nerd": "En forespørgsel på det næste videosegment.",
+  "layer.http.video.kid": "“Her er det næste stykke af kattevideoen!”",
+  "layer.http.video.nerd": "Et svar med cirka 1 MB video."
+}

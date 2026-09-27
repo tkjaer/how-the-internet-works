@@ -1,0 +1,7 @@
+{
+  "layer.mpls.name.kid": "Express sticker",
+  "layer.mpls.name.nerd": "MPLS label",
+  "layer.mpls.label": "Label",
+  "layer.mpls.note.kid": "Inside the big network a quick sticker says which motorway to take, so nobody has to read the address.",
+  "layer.mpls.note.nerd": "Label-switched through the core; the label is swapped at every LSR and popped before the edge."
+}

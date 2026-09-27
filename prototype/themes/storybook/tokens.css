@@ -1,0 +1,16 @@
+@import '@fontsource-variable/space-grotesk';
+@import '@fontsource-variable/jetbrains-mono';
+@import '@fontsource-variable/noto-sans-arabic';
+
+:root[data-style='storybook'] {
+  --bg: #070a24; --ink: #eef1ff; --muted: #a9b8ff; --accent: #3ef0ff; --accent-ink: #041026;
+  --ui-font: 'Space Grotesk Variable', 'Noto Sans Arabic Variable', system-ui, sans-serif;
+  --heading-font: var(--ui-font); --label-font: var(--ui-font);
+  --tag-font: 'JetBrains Mono Variable', 'Noto Sans Arabic Variable', monospace; --mono-font: var(--tag-font);
+  --scene-bg: #0a0f33; --panel-bg: #070b2a; --panel-edge: #3ef0ff;
+  --dev-body: #141b52; --dev-screen: #0a0f33; --dev-edge: #3ef0ff; --dev-accent: #ffe066;
+  --box: #141b52; --box-edge: #a9b8ff; --hint: #3ef0ff; --hint-bg: rgba(7, 10, 36, 0.8);
+  --tag-bg: rgba(7, 10, 36, 0.85); --tag-edge: #3ef0ff; --tag-ink: #3ef0ff;
+  --wave: #3ef0ff; --core: rgba(62, 240, 255, 0.12); --core-edge: #3ef0ff; --cladding: rgba(169, 184, 255, 0.06); --cladding-edge: #a9b8ff;
+  --prism: rgba(255, 255, 255, 0.08); --prism-edge: #eef1ff;
+}

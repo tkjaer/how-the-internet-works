@@ -1,0 +1,9 @@
+{
+  "layer.gpon.name.kid": "Lys-kuvert",
+  "layer.gpon.name.nerd": "GPON-ramme (GEM)",
+  "layer.gpon.colour": "Lysets farve",
+  "layer.gpon.up": "op ad gaden",
+  "layer.gpon.down": "på vej hjem",
+  "layer.gpon.note.kid": "Alle på din vej deler den samme fiber, så hvert hus åbner kun kuverter med sit eget nummer.",
+  "layer.gpon.note.nerd": "Nedstrøms sendes til alle ONT’er på splitteren, AES-krypteret pr. GEM-port; opstrøms bruger tidsluker."
+}

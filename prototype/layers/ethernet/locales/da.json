@@ -1,0 +1,9 @@
+{
+  "layer.ethernet.name.kid": "Kabel-kuvert",
+  "layer.ethernet.name.nerd": "Ethernet-ramme",
+  "layer.ethernet.to": "Til",
+  "layer.ethernet.note.kid": "Hver boks på vejen tager kuverten af og sætter en ny på til det næste kabel.",
+  "layer.ethernet.note.nerd": "Kun lokalt: der skrives en ny ramme med nye MAC-adresser for hvert hop.",
+  "layer.ethernet.vlan.kid": "Den får et farvet mærke, så udbyderen ved, hvilken gade og hvilket hus den kom fra.",
+  "layer.ethernet.vlan.nerd": "Dobbelt-tagget (Q-in-Q): en S-VLAN pr. skab og en C-VLAN pr. kunde, mod BNG’en."
+}

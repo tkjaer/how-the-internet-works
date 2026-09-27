@@ -1,0 +1,18 @@
+{
+  "layer.ip.name.kid": "Adresselabel",
+  "layer.ip.name.nerd": "IP-pakke (IPv4)",
+  "layer.ip.from": "Fra",
+  "layer.ip.to": "Til",
+  "layer.ip.you": "din telefon",
+  "layer.ip.server": "video-serveren",
+  "layer.ip.nat.kid": "Din router bytter afsenderadressen ud med dit hjems adresse og husker, hvem der spurgte.",
+  "layer.ip.nat.nerd": "NAT: afsender 192.168.1.23:51034 omskrives til 203.0.113.7:51034 og gemmes i forbindelsestabellen.",
+  "layer.ip.unnat.kid": "Din router slår op, hvem der bad om den, og skifter adressen tilbage til din telefon.",
+  "layer.ip.unnat.nerd": "NAT retur: modtager 203.0.113.7 omskrives tilbage til 192.168.1.23 via forbindelsestabellen.",
+  "layer.ip.bridge.kid": "Adgangspunktet læser ikke adressen. Det giver bare pakken videre til routeren.",
+  "layer.ip.bridge.nerd": "Adgangspunktet er en lag 2-bro: det bytter Wi-Fi-rammen ud med en Ethernet-ramme og rører ikke IP.",
+  "layer.ip.read.kid": "Denne boks læser adressen og vælger den bedste vej videre.",
+  "layer.ip.read.nerd": "Routet: longest-prefix match i FIB’en, TTL − 1 og en ny ramme til næste hop.",
+  "layer.ip.arrived.kid": "Fremme! Det er den rigtige adresse.",
+  "layer.ip.arrived.nerd": "Modtager nået: indholdet gives videre op til TCP."
+}
