@@ -1,4 +1,4 @@
-/* Styles shared by the two SVG spikes (svg-gsap, svelte-svg). */
+/* SVG scene styles for the Svelte + SVG spike. */
 #svg { display: block; cursor: grab; touch-action: none; }
 #svg:active { cursor: grabbing; }
 .label { fill: #eef1ff; font-weight: 800; text-anchor: middle; paint-order: stroke; stroke: #070a24; stroke-width: 7px; stroke-linejoin: round; font-family: var(--font); }

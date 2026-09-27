@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#070a24" />
-    <title>How the internet works – visualisation spikes</title>
+    <title>How the internet works – visualisation spike</title>
     <style>
       :root { color-scheme: dark; --ink: #eef1ff; --muted: #a9b8ff; --accent: #3ef0ff; }
       * { box-sizing: border-box; }
@@ -33,38 +33,22 @@
   </head>
   <body>
     <main>
-      <h1>How the internet works – <span>visualisation spikes</span></h1>
+      <h1>How the internet works – <span>visualisation spike</span></h1>
       <p class="lead">
-        Four throwaway prototypes of the <em>same</em> mini-scene: phone → Wi-Fi access point → home router → internet, with
+        The chosen stack (Svelte 5 + SVG) running the mini-scene: phone → Wi-Fi access point → home router → internet, with
         animated packets. Tap (or pinch/scroll into) the Wi-Fi link to dive into radio waves, or the fibre link to see light
         pulses and DWDM colours. Switch language (EN / DA / AR) and kid/nerd mode in the top bar.
       </p>
       <div class="grid">
-        <a class="card" href="spikes/svg-gsap/">
-          <img src="%BASE_URL%thumbs/svg-gsap.jpg" alt="" onerror="this.remove()" />
-          <span class="tag">Spike 1</span><h2>SVG + GSAP</h2>
-          <p>Vanilla TypeScript, inline SVG, GSAP MotionPath for packets, d3-zoom for pan/pinch/smooth-zoom.</p>
-        </a>
         <a class="card" href="spikes/svelte-svg/">
-          <img src="%BASE_URL%thumbs/svelte-svg.jpg" alt="" onerror="this.remove()" />
-          <span class="tag">Spike 2</span><h2>Svelte 5 + SVG</h2>
+          <span class="tag">Spike</span><h2>Svelte 5 + SVG</h2>
           <p>Scenes as Svelte components rendering SVG from data; reactive i18n; Svelte transitions.</p>
-        </a>
-        <a class="card" href="spikes/pixi/">
-          <img src="%BASE_URL%thumbs/pixi.jpg" alt="" onerror="this.remove()" />
-          <span class="tag">Spike 3</span><h2>PixiJS (WebGL 2D)</h2>
-          <p>GPU canvas with bloom/glow filters, additive light and particles. Same SVG icons parsed into Pixi graphics.</p>
-        </a>
-        <a class="card" href="spikes/three-25d/">
-          <img src="%BASE_URL%thumbs/three-25d.jpg" alt="" onerror="this.remove()" />
-          <span class="tag">Spike 4</span><h2>Three.js 2.5D</h2>
-          <p>Tilted 3D map with bloom and camera dives; labels as DOM (CSS2DRenderer).</p>
         </a>
       </div>
       <p class="scenes">
-        Deep links: every spike understands <code>#/&lt;lang&gt;/&lt;scene&gt;</code>, e.g. <code>#/da/wifi</code> or
-        <code>#/ar/fibre</code>. Write-up and recommendation:
-        <a href="https://github.com/tkjaer/how-the-internet-works/blob/main/docs/visualisation-spikes.md">docs/visualisation-spikes.md</a>.
+        Deep links: <code>#/&lt;lang&gt;/&lt;scene&gt;</code>, e.g. <code>#/da/wifi</code> or <code>#/ar/fibre</code>.
+        Why this stack was chosen over SVG + GSAP, PixiJS and Three.js: <code>docs/visualisation-spikes.md</code>
+        (the discarded spikes live at git tag <code>spikes/visualisation-v1</code>).
       </p>
     </main>
   </body>

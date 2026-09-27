@@ -1,5 +1,11 @@
 # Visualisation tech spikes
 
+> **Decision: Svelte 5 + SVG** (see [Recommendation](#recommendation)). Only that spike is kept in the repo
+> (`spikes/svelte-svg`, with `spikes/shared` and `locales/`). The code of all four spikes, including the discarded
+> SVG + GSAP, PixiJS and Three.js ones and the `scripts/evaluate.mjs` that produced the screenshots and measurements
+> below, is preserved at git tag [`spikes/visualisation-v1`](https://github.com/tkjaer/how-the-internet-works/tree/spikes/visualisation-v1).
+> Links to the discarded spikes point at that tag.
+
 Four disposable spikes that all implement **the same mini-scene**, so the rendering stack for the real app can be
 picked on evidence rather than taste:
 
@@ -14,14 +20,15 @@ All text comes from language packs (`locales/en`, `locales/da`, plus an Arabic `
 that deliberately omits the "for nerds" strings to exercise fallback). You can switch language and the kids/nerds
 level at runtime.
 
-**Try them:** [gallery](https://tkjaer.github.io/how-the-internet-works/) · locally `npm install && npm run dev`.
+**Try the kept spike:** `npm install && npm run dev`, then open http://localhost:5173/. For all four, check out the tag
+(`git checkout spikes/visualisation-v1 && npm install && npm run dev`).
 
 | Spike | Stack | Folder |
 |---|---|---|
-| 1 | Vanilla TS + **SVG + GSAP** (MotionPath) + d3-zoom | [`spikes/svg-gsap`](../spikes/svg-gsap) |
-| 2 | **Svelte 5 + SVG** (runes, `Tween`, transitions, CSS keyframes) | [`spikes/svelte-svg`](../spikes/svelte-svg) |
-| 3 | **PixiJS v8** (WebGL 2D) + pixi-filters bloom | [`spikes/pixi`](../spikes/pixi) |
-| 4 | **Three.js** "2.5D": tilted map, extruded SVG tokens, panels that fold up, bloom | [`spikes/three-25d`](../spikes/three-25d) |
+| 1 | Vanilla TS + **SVG + GSAP** (MotionPath) + d3-zoom | [`spikes/svg-gsap`](https://github.com/tkjaer/how-the-internet-works/tree/spikes/visualisation-v1/spikes/svg-gsap) (tag only) |
+| 2 | **Svelte 5 + SVG** (runes, `Tween`, transitions, CSS keyframes) | [`spikes/svelte-svg`](../spikes/svelte-svg) ✅ kept |
+| 3 | **PixiJS v8** (WebGL 2D) + pixi-filters bloom | [`spikes/pixi`](https://github.com/tkjaer/how-the-internet-works/tree/spikes/visualisation-v1/spikes/pixi) (tag only) |
+| 4 | **Three.js** "2.5D": tilted map, extruded SVG tokens, panels that fold up, bloom | [`spikes/three-25d`](https://github.com/tkjaer/how-the-internet-works/tree/spikes/visualisation-v1/spikes/three-25d) (tag only) |
 
 To keep the comparison fair, the spikes share everything except rendering (`spikes/shared/`):
 
@@ -31,7 +38,8 @@ To keep the comparison fair, the spikes share everything except rendering (`spik
 - gestures (Pointer Events: wheel, drag, pinch, tap)
 - the hash router
 - the i18n lookup
-- the DOM chrome (breadcrumb, language and level switches, caption card)
+- the DOM chrome (breadcrumb, language and level switches, caption card). The Svelte spike has its own `Chrome.svelte`;
+  the vanilla `chrome.ts` and the `nav.ts` glue used by the other spikes are only at the tag.
 
 ## Screenshots
 
@@ -42,8 +50,9 @@ To keep the comparison fair, the spikes share everything except rendering (`spik
 | PixiJS | ![](img/pixi-overview-en.jpg) | ![](img/pixi-wifi-en.jpg) | ![](img/pixi-fibre-da.jpg) | ![](img/pixi-overview-ar.jpg) | ![](img/pixi-wifi-da-mobile.jpg) |
 | Three.js 2.5D | ![](img/three-25d-overview-en.jpg) | ![](img/three-25d-wifi-en.jpg) | ![](img/three-25d-fibre-da.jpg) | ![](img/three-25d-overview-ar.jpg) | ![](img/three-25d-wifi-da-mobile.jpg) |
 
-Regenerate the screenshots with `npm run build`, then `npx vite preview --port 5318` and `npm run evaluate`.
-This also writes [`spike-metrics.json`](spike-metrics.json).
+The screenshots and [`spike-metrics.json`](spike-metrics.json) were produced by
+[`scripts/evaluate.mjs`](https://github.com/tkjaer/how-the-internet-works/tree/spikes/visualisation-v1/scripts/evaluate.mjs) at the tag (Playwright; run `npm run build`,
+`npx vite preview --port 5318`, then `npm run evaluate`).
 
 ## Measurements
 
@@ -85,7 +94,7 @@ the page is shown in English. DOM/SVG text lets the browser fetch a face only wh
 | **Authoring (Figma/Inkscape)** | ★★★★★ Drop in an SVG, keep ids/classes, animate them | ★★★★★ Same, and scenes become components | ★★ `Graphics.svg()` imports shapes but flattens them (no per-element animation, no text) | ★★ SVGLoader extrudes paths; no gradients, filters or text; art needs "3D-friendly" simplification |
 | **Content-as-data / plugins** | ★★★ Imperative builders per scene | ★★★★★ A technology or layer is a folder with `scene.svelte` + data + locales; auto-registered via `import.meta.glob` | ★★★ Imperative scene builders | ★★ Every new scene needs 3D thinking (materials, depth, lighting) |
 | **Bundle** | 62 kB | **30 kB** | 163 kB + all fonts | 177 kB |
-| **GitHub Pages** | ✅ Static | ✅ Static | ✅ Static | ✅ Static |
+| **Static hosting** (e.g. GitHub Pages) | ✅ Static | ✅ Static | ✅ Static | ✅ Static |
 | **Accessibility** | ✅ Real DOM/SVG: `<title>`, focusable links, screen readers | ✅ Same | ❌ Canvas: needs a parallel DOM for a11y | ❌ Canvas (CSS2D labels help) |
 | **Code size of spike** | ~250 lines | ~320 lines over 7 files | ~340 lines | ~440 lines |
 

@@ -2,7 +2,7 @@
   "_meta": { "name": "العربية", "dir": "rtl", "note": "RTL test pack – machine-assisted, not reviewed by a native speaker. Missing keys fall back to English." },
   "app.title": "كيف يعمل الإنترنت",
   "nav.home": "الرئيسية",
-  "nav.gallery": "كل التجارب",
+  "nav.gallery": "صفحة البداية",
   "nav.back": "رجوع",
   "mode.kid": "للأطفال",
   "mode.nerd": "للخبراء",

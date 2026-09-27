@@ -1,4 +1,4 @@
-// Shared camera maths + semantic-zoom rules so every spike behaves identically.
+// Camera maths + semantic-zoom rules (renderer-independent).
 import { interpolateZoom } from 'd3-interpolate';
 import { DETAIL_SCALE, OVERVIEW_RECT, SCENES, detailRect, sceneRect, type DetailId, type Rect, type SceneId } from './scene';
 
@@ -95,7 +95,7 @@ export function flyInterpolator(a: Cam, b: Cam, vp: Viewport) {
 
 const easeInOutCubic = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2);
 
-/** A minimal camera with animated fly-to. Used by the Svelte, Pixi and Three spikes. */
+/** A minimal camera with animated fly-to (its Zoomable subset is what gestures.ts drives). */
 export class CameraController {
   cam: Cam = { x: 0, y: 0, k: 1 };
   private raf = 0;

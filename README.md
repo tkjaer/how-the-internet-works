@@ -1,18 +1,18 @@
 # how-the-internet-works
 An explorable, zoomable explanation of how the internet works — from radio waves to peering.
 
-## Visualisation spikes
+## Visualisation spike
 
-Before building the real app we compared four rendering stacks on the same mini-scene
-(phone → Wi‑Fi → router → fibre → internet, with semantic zoom into the Wi‑Fi and fibre links).
+We compared four rendering stacks on the same mini-scene (phone → Wi‑Fi → router → fibre → internet, with
+semantic zoom into the Wi‑Fi and fibre links) and chose **Svelte 5 + SVG**. The write-up with screenshots,
+measurements and the reasoning is in [docs/visualisation-spikes.md](docs/visualisation-spikes.md). The discarded
+spikes' code is at git tag `spikes/visualisation-v1`.
 
-- **Gallery:** https://tkjaer.github.io/how-the-internet-works/
-- **Write-up and recommendation:** [docs/visualisation-spikes.md](docs/visualisation-spikes.md)
+Run it locally:
 
 ```sh
-npm install
-npm run dev        # gallery at http://localhost:5173/
-npm run build      # static site in dist/ (base /how-the-internet-works/)
+npm install && npm run dev   # then open http://localhost:5173/
+npm run build                # type-check + static build into dist/
 ```
 
 Text lives in language packs under `locales/<lang>/strings.json`; add a folder to add a language.

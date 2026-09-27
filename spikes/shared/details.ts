@@ -1,5 +1,5 @@
 // Shared maths for the two detail scenes (tech-agnostic). Coordinates are in the detail's own
-// 1600×900 space; renderers turn these numbers into SVG paths, Pixi graphics or Three meshes.
+// 1600×900 space; renderers turn these numbers into SVG paths (or canvas/WebGL drawing).
 import { DWDM, type Pt } from './scene';
 
 // ---------- Wi-Fi: bits riding a radio wave (amplitude-shift keying, simplified) ----------

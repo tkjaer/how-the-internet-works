@@ -1,4 +1,4 @@
-// The mini-scene as plain data. Every spike renders this same data with its own tech.
+// The mini-scene as plain data, independent of the renderer.
 // In the real app this would come from content folders (nodes/links/technologies).
 import phoneSvg from './art/phone.svg?raw';
 import apSvg from './art/ap.svg?raw';
@@ -92,7 +92,7 @@ export function hitDetail(p: Pt, radius = 90): DetailId | undefined {
   return best;
 }
 
-/** Packet schedule shared by all spikes so they animate the same thing. */
+/** Packet schedule as data, so any renderer animates the same thing. */
 export interface PacketSpec { kind: 'request' | 'video'; route: string[]; duration: number; every: number; offset: number }
 export const packets: PacketSpec[] = [
   { kind: 'request', route: ['phone-ap', 'ap-router', 'router-internet'], duration: 3.2, every: 3.2, offset: 0 },
