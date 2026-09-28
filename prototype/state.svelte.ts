@@ -47,7 +47,7 @@ export const settings = $state<Settings>({
   style: pick(q.get('style'), THEME_IDS, pick(storedStyle, THEME_IDS, THEME_IDS[0])),
   zoom: pick(q.get('zoom'), ['auto', 'fly', 'portal', 'parallax'] as const, reduced ? 'parallax' : 'auto'),
   feel: pick(q.get('feel'), ['auto', 'ease', 'spring', 'twos'] as const, reduced ? 'ease' : 'auto'),
-  alive: q.has('alive') ? q.get('alive') !== '0' : !reduced,
+  alive: q.get('alive') === '1', // decided: plain packets by default (docs/look-and-feel.md)
   sound: false, // always muted on load
   orient: pick(q.get('orient'), ['auto', 'landscape', 'portrait'] as const, 'auto'),
   lab: q.get('lab') === '1',
@@ -60,7 +60,7 @@ export function syncUrl() {
   p.set('style', settings.style);
   if (settings.zoom !== 'auto') p.set('zoom', settings.zoom);
   if (settings.feel !== 'auto') p.set('feel', settings.feel);
-  if (!settings.alive) p.set('alive', '0');
+  if (settings.alive) p.set('alive', '1');
   if (settings.orient !== 'auto') p.set('orient', settings.orient);
   if (settings.lab) p.set('lab', '1');
   const url = `${location.pathname}?${p.toString()}${location.hash}`;

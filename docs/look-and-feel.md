@@ -10,6 +10,25 @@ The same mini-world is built in four swappable styles:
 - a new internet sub-path ("tap the cloud and it unfolds": street cabinet → backhaul → ISP gateway → ISP core →
   internet exchange / transit → video server)
 
+## Decision (after trying it)
+
+| | Picked | Instead of |
+|---|---|---|
+| **Style** | **Storybook** | neon, sketchbook, paper cut-out |
+| **Zoom transition** | **Fly** (camera flight), for dives too | portal, parallax fade |
+| **Motion feel** | **Ease** | spring, stop-motion |
+| **Layout** | **Auto** (vertical path on portrait screens) | forced landscape / portrait |
+| **Lively packets** | **Off** (plain gliding couriers) | squash & stretch, anticipation, trails |
+
+These are now the defaults:
+- Storybook is the first style.
+- Storybook's motion preset is `fly` + `ease`.
+- Lively packets are off unless `?alive=1` is set.
+
+The other three styles and all the lab options stay available for comparison until the next round. The
+recommendation and notes below are the pre-decision write-up, kept as the record of the exploration. The
+screenshots show each style's original defaults (storybook with spring and lively packets).
+
 Everything is in `prototype/`. Try it with:
 
 ```sh
@@ -342,6 +361,9 @@ The full numbers (p50/p95/worst/cpu for both throttles) are in
   annoying after a minute.
 
 ## Open questions (to decide after trying it with the kids)
+
+Questions 1–3 are settled by the [decision](#decision-after-trying-it): storybook, fly and ease. Question 4
+(stop-motion) is moot now that sketchbook isn't the pick. The rest are still open.
 
 1. **Which style?** Did the kids gravitate to one? Did they want to follow the couriers (storybook) or the paper
    planes (papercut)? Is "dad's drawings" (sketchbook) a feature for them?
