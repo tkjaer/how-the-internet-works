@@ -3,7 +3,7 @@
   // A "path scene": nodes + links + packets. Used for the overview and for the expanded internet.
   import type { LivePacket } from '../core/packets';
   import { bezier, labelY, linkPath, pathScene, type PathSceneId } from '../core/scene';
-  import { settings, themeState, view } from '../state.svelte';
+  import { themeState, view } from '../state.svelte';
   import TagAt from './TagAt.svelte';
   import Text from './Text.svelte';
 
@@ -54,6 +54,6 @@
     {/each}
   {/if}
   {#each packets as p (p.id)}
-    <A.Packet kind={p.kind} pose={p.pose} colour={C.packet[p.kind]} time={view.time} followed={view.followId === p.id} alive={settings.alive} />
+    <A.Packet kind={p.kind} pose={p.pose} colour={C.packet[p.kind]} time={view.time} followed={view.followId === p.id} />
   {/each}
 </g>

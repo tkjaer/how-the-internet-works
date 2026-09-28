@@ -1,8 +1,7 @@
-// Reactive app state: language/level, style + lab settings (synced to the URL query), the active theme,
+// Reactive app state: language/level, style + sound settings (the style is synced to the URL query), the active theme,
 // and the view (camera, viewport, orientation) shared with scene components.
 import { getLang, getLevel, onLangChange, onLevelChange, setLevel, t, type Level } from './core/i18n';
 import type { Cam, Viewport } from './core/camera';
-import type { FeelKind, ZoomKind } from './core/motion';
 import type { Orient } from './core/scene';
 import { sfx } from './core/sound';
 import type { Theme } from './core/theme-types';
@@ -28,42 +27,26 @@ export const THEME_IDS = Object.keys(themeModules).map(idOf).sort((a, b) => meta
 export const themeSwatches: Record<string, string> = Object.fromEntries(THEME_IDS.map((id) => [id, metaOf(id).swatch]));
 
 // ------------------------------------------------------------------ settings (URL query)
-export type OrientSetting = 'auto' | Orient;
 export interface Settings {
   style: string;
-  zoom: 'auto' | ZoomKind;
-  feel: 'auto' | FeelKind;
-  alive: boolean;
   sound: boolean;
-  orient: OrientSetting;
-  lab: boolean;
 }
 const q = new URLSearchParams(location.search);
-const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const pick = <T extends string>(v: string | null, ok: readonly T[], d: T): T => (v && (ok as readonly string[]).includes(v) ? (v as T) : d);
 const storedStyle = localStorage.getItem('style');
 
 export const settings = $state<Settings>({
   style: pick(q.get('style'), THEME_IDS, pick(storedStyle, THEME_IDS, THEME_IDS[0])),
-  zoom: pick(q.get('zoom'), ['auto', 'fly', 'portal', 'parallax'] as const, reduced ? 'parallax' : 'auto'),
-  feel: pick(q.get('feel'), ['auto', 'ease', 'spring', 'twos'] as const, reduced ? 'ease' : 'auto'),
-  alive: q.get('alive') === '1', // decided: plain packets by default (docs/look-and-feel.md)
   sound: false, // always muted on load
-  orient: pick(q.get('orient'), ['auto', 'landscape', 'portrait'] as const, 'auto'),
-  lab: q.get('lab') === '1',
 });
 if (q.get('level') === 'nerd' || q.get('level') === 'kid') setLevel(q.get('level') as Level);
 
-/** Write non-default settings back into the query string (hash is left alone). */
+/** Write the style back into the query string (hash is left alone); only needed once there is a choice. */
 export function syncUrl() {
   const p = new URLSearchParams();
-  p.set('style', settings.style);
-  if (settings.zoom !== 'auto') p.set('zoom', settings.zoom);
-  if (settings.feel !== 'auto') p.set('feel', settings.feel);
-  if (settings.alive) p.set('alive', '1');
-  if (settings.orient !== 'auto') p.set('orient', settings.orient);
-  if (settings.lab) p.set('lab', '1');
-  const url = `${location.pathname}?${p.toString()}${location.hash}`;
+  if (THEME_IDS.length > 1) p.set('style', settings.style);
+  const qs = p.toString();
+  const url = `${location.pathname}${qs ? `?${qs}` : ''}${location.hash}`;
   if (url !== location.pathname + location.search + location.hash) history.replaceState(history.state, '', url);
   localStorage.setItem('style', settings.style);
 }
@@ -76,7 +59,7 @@ export function setSound(on: boolean) {
 // ------------------------------------------------------------------ active theme
 const placeholder = defineTheme({
   id: 'loading', themeColor: '#101010', scheme: 'dark', labelMinPx: 12,
-  motion: { zoom: 'fly', feel: 'ease', speed: 1, spring: { damping: 0.6, frequency: 1.6 }, twosFps: 12 },
+  motion: { speed: 1 },
   timbre: { wave: 'sine', blip: 880, noise: { freq: 900, q: 0.8 }, gain: 0.5, detune: 0, decay: 0.18 },
   colours: { tech: { wifi: '#3ef0ff', ethernet: '#ffb547', fibre: '#ff4fd8', backbone: '#a9b8ff' }, packet: { request: '#ffe066', video: '#ff6b8b' }, dwdm: ['#ff4d6d', '#ffd23f', '#3ef0a0', '#4dabff'], bit: ['#8190ff', '#ffe066'] },
 });

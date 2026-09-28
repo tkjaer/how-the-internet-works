@@ -1,7 +1,7 @@
 // Look-and-feel evaluation: screenshots of every style × scene (desktop + portrait phone), bytes loaded per style
 // and frame timings (idle, zoom flights, follow mode) at 1× and 6× CPU throttle.
 // Usage: npm run build && npx vite preview --port 5318 &  npm run evaluate [-- baseUrl] [--only=shots|perf] [--style=id]
-// Writes docs/img/lf-*.jpg, public/thumbs/<style>.jpg and docs/look-and-feel-metrics.json.
+// Writes docs/img/lf-<style>-*.jpg and merges into docs/look-and-feel-metrics.json (other styles' entries are kept).
 import { chromium } from 'playwright';
 import { gzipSync } from 'node:zlib';
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
@@ -20,7 +20,6 @@ const VIEWS = { desktop: { w: 1440, h: 900, dpr: 1 }, phone: { w: 390, h: 844, d
 const ARGS = process.env.SWIFTSHADER ? ['--use-angle=swiftshader', '--enable-unsafe-swiftshader'] : ['--use-angle=metal', '--enable-gpu', '--ignore-gpu-blocklist'];
 
 mkdirSync('docs/img', { recursive: true });
-mkdirSync('public/thumbs', { recursive: true });
 const browser = await chromium.launch({ args: ARGS });
 const metricsPath = 'docs/look-and-feel-metrics.json';
 const old = existsSync(metricsPath) ? JSON.parse(readFileSync(metricsPath, 'utf8')).metrics : {};
@@ -125,9 +124,6 @@ for (const style of STYLES) {
         await p.waitForTimeout(2600);
       } else await p.waitForTimeout(700);
       await p.screenshot({ path: `docs/img/lf-${style}-${s.name}.jpg`, type: 'jpeg', quality: s.view === 'phone' ? 68 : 74 });
-      if (s.name === 'overview-desktop') {
-        await p.screenshot({ path: `public/thumbs/${style}.jpg`, type: 'jpeg', quality: 78, clip: { x: 200, y: 150, width: 1040, height: 650 } });
-      }
       await ctx.close();
     }
     console.log(`  ${shots.length} screenshots`);

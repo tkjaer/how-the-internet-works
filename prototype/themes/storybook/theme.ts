@@ -23,7 +23,7 @@ export default defineTheme({
   themeColor: '#ffeccf',
   scheme: 'light',
   labelMinPx: 14,
-  motion: { zoom: 'fly', feel: 'ease', speed: 1, spring: { damping: 0.55, frequency: 1.2 }, twosFps: 12 },
+  motion: { speed: 1 },
   timbre: { wave: 'triangle', blip: 660, noise: { freq: 820, q: 0.75 }, gain: 0.28, detune: 4, decay: 0.22 },
   colours: {
     tech: { wifi: '#72b8a5', ethernet: '#e78d44', fibre: '#3aaea1', backbone: '#9a6b45' },

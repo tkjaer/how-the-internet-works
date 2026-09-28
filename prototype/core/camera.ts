@@ -66,8 +66,6 @@ export function mixes(cam: Cam, vp: Viewport): Record<SceneId, number> {
   out.overview = 1 - hide;
   return out;
 }
-export const soloMix = (s: SceneId): Record<SceneId, number> =>
-  ({ overview: s === 'overview' ? 1 : 0, wifi: s === 'wifi' ? 1 : 0, fibre: s === 'fibre' ? 1 : 0, internet: s === 'internet' ? 1 : 0 });
 
 /** After a gesture ends: should we semantically enter/leave a scene? */
 export function decide(cam: Cam, vp: Viewport, scene: SceneId): SceneId | null {
@@ -102,10 +100,5 @@ export function zoomAbout(cam: Cam, f: number, sx: number, sy: number): Cam {
   const wx = (sx - cam.x) / cam.k, wy = (sy - cam.y) / cam.k;
   return { k, x: sx - wx * k, y: sy - wy * k };
 }
-export const lerpCam = (a: Cam, b: Cam, t: number): Cam => {
-  const k = a.k * Math.pow(b.k / a.k, t);
-  // interpolate the world point under the viewport centre so the pan feels linear at any zoom
-  return { k, x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t };
-};
 export const toScreen = (cam: Cam, p: { x: number; y: number }) => ({ x: p.x * cam.k + cam.x, y: p.y * cam.k + cam.y });
 export const toWorldPt = (cam: Cam, sx: number, sy: number) => ({ x: (sx - cam.x) / cam.k, y: (sy - cam.y) / cam.k });

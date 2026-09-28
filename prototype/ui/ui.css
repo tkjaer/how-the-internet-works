@@ -10,7 +10,6 @@
   --btn: rgba(255, 255, 255, 0.06); --btn-on: var(--accent); --btn-on-ink: var(--accent-ink); --btn-radius: 999px;
   --env-bg: rgba(255, 255, 255, 0.05); --env-edge: var(--card-edge); --env-radius: 14px; --env-sealed: rgba(255, 255, 255, 0.1);
   --env-name: var(--accent); --link: var(--accent);
-  --portal-ring: var(--accent); --portal-ring-w: 4px;
   --lbl-weight: 700; --lbl-halo: rgba(0, 0, 0, 0.55); --lbl-halo-w: 0.18em;
   color-scheme: dark;
 }
@@ -27,7 +26,6 @@ button { cursor: pointer; }
 .lbl { font-family: var(--label-font); font-weight: var(--lbl-weight); fill: var(--ink); paint-order: stroke; stroke: var(--lbl-halo); stroke-width: var(--lbl-halo-w); stroke-linejoin: round; }
 .lbl-big { font-family: var(--heading-font); }
 .tag-text { font-family: var(--tag-font); }
-.portal-ring { fill: none; stroke: var(--portal-ring); stroke-width: var(--portal-ring-w); }
 
 /* ---------------- panels + buttons */
 .card { background: var(--card); border: var(--card-edge-w) solid var(--card-edge); border-radius: var(--card-radius);
@@ -59,11 +57,6 @@ button { cursor: pointer; }
 .styles .btn { justify-content: flex-start; border-radius: 12px; padding: 8px 10px; background: none; font-size: 15px; }
 .styles .btn.on { background: var(--btn-on); color: var(--btn-on-ink); }
 .swatch { width: 26px; height: 26px; border-radius: 8px; flex: none; border: 2px solid rgba(128, 128, 128, 0.35); }
-.lab { display: grid; gap: 10px; min-width: 280px; }
-.lab .row { display: grid; gap: 4px; }
-.lab .row > span { font-size: 12px; font-weight: 800; color: var(--muted); padding-inline: 4px; }
-.lab .seg { flex-wrap: wrap; background: var(--btn); border-radius: 18px; }
-.lab .meter { font-family: var(--mono-font); font-size: 12px; color: var(--muted); padding-inline: 4px; }
 
 /* ---------------- caption */
 .caption { position: fixed; z-index: 10; inset: auto 0 0 0; margin: 0 auto max(10px, env(safe-area-inset-bottom)); max-width: 760px;

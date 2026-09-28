@@ -2,7 +2,7 @@
 <script lang="ts">
   // Depth parallax for backdrop layers. Wrap a layer in <Depth d={0.4}>: d < 1 is further away (it moves and
   // zooms less than the camera), d = 1 is the scene plane, d > 1 is foreground. Themes use this in their Backdrop
-  // and Panel art; it works for pinch/scroll zoom, pans and every transition (each World has its own camera).
+  // and Panel art; it works for pinch/scroll zoom, pans and camera flights.
   import type { Snippet } from 'svelte';
   import { areaCentre, fitScene } from '../core/camera';
   import { toLocal, world as worldSize } from '../core/scene';

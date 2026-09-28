@@ -1,7 +1,6 @@
 <svelte:options namespace="svg" />
 <script lang="ts">
-  // One rendering of the whole nested world through one camera. During portal / parallax transitions the app
-  // renders two Worlds (source + target) with different cameras and scene mixes.
+  // One rendering of the whole nested world through the camera.
   import type { Cam } from '../core/camera';
   import type { LivePacket } from '../core/packets';
   import { CHILDREN, type SceneId } from '../core/scene';
@@ -11,15 +10,15 @@
   import PathScene from './PathScene.svelte';
   import WifiDive from './WifiDive.svelte';
 
-  let { cam, mix, uid, packets, focus, premount = null, opacity = 1, clip = null }: {
-    cam: Cam; mix: Record<SceneId, number>; uid: string; packets: Record<'overview' | 'internet', LivePacket[]>;
-    focus: { scene: SceneId; stop: string | null }; premount?: SceneId | null; opacity?: number; clip?: string | null;
+  let { cam, mix, packets, focus, premount = null }: {
+    cam: Cam; mix: Record<SceneId, number>; packets: Record<'overview' | 'internet', LivePacket[]>;
+    focus: { scene: SceneId; stop: string | null }; premount?: SceneId | null;
   } = $props();
-  setWorld({ get cam() { return cam; }, get uid() { return uid; } });
+  setWorld({ get cam() { return cam; } });
   const show = (s: SceneId) => mix[s] > 0.002 || premount === s;
 </script>
 
-<g class="world" {opacity} clip-path={clip ? `url(#${clip})` : undefined}>
+<g class="world">
   <g transform="translate({cam.x} {cam.y}) scale({cam.k})">
     <g opacity={mix.overview} display={mix.overview > 0.002 ? 'inline' : 'none'}>
       <PathScene id="overview" packets={packets.overview} focus={focus.scene === 'overview' ? focus.stop : null} />

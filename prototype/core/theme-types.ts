@@ -22,8 +22,6 @@ export interface PacketProps {
   kind: PacketKind; pose: Pose; colour: string; time: number;
   /** The user is following this packet (draw a reticle / highlight). */
   followed: boolean;
-  /** "Alive" toggle: when false, draw a calm packet (pose.sx/sy are 1 anyway). */
-  alive: boolean;
 }
 /** Tap affordance: 'dive' = look inside (layers / physical), 'expand' = more hops. */
 export interface HintProps { kind: 'dive' | 'expand'; x: number; y: number; time: number }

@@ -1,15 +1,15 @@
 <script lang="ts">
-  // Orchestration: one rAF loop drives the scene clock, packets, the camera and zoom transitions
-  // (fly / portal / parallax × ease / spring / twos). Scenes and art only render what this computes.
+  // Orchestration: one rAF loop drives the scene clock, packets, the camera and its eased zoom flights.
+  // Scenes and art only render what this computes.
   import { onMount, untrack } from 'svelte';
-  import { areaCentre, clampCam, decide, fit, fitScene, flyInterpolator, mixes, soloMix, toScreen, toWorldPt, viewportFor, zoomAbout, type Cam } from './core/camera';
+  import { areaCentre, clampCam, decide, fit, fitScene, flyInterpolator, mixes, toScreen, toWorldPt, viewportFor, zoomAbout, type Cam } from './core/camera';
   import { attachGestures } from './core/gestures';
-  import { feelCurve, stepClock, type FeelKind, type ZoomKind } from './core/motion';
+  import { easeInOutCubic } from './core/motion';
   import { livePackets, type LivePacket } from './core/packets';
   import { go, onRoute, startRouter, type Route } from './core/router';
   import {
-    bezier, childRect, isPathScene, pathScene, sceneRect, setOrient, stopRectWorld, stopsFor, toLocal, toWorld,
-    type ChildId, type Orient, type PathSceneId, type SceneId,
+    bezier, isPathScene, pathScene, sceneRect, setOrient, stopRectWorld, stopsFor, toLocal, toWorld,
+    type Orient, type PathSceneId, type SceneId,
   } from './core/scene';
   import { sfx } from './core/sound';
   import World from './scenes/World.svelte';
@@ -22,23 +22,12 @@
   let route = $state<Route>(startRouter());
   let stage: HTMLDivElement;
   const A = $derived(themeState.current.art);
-  const zoomKind = $derived<ZoomKind>(settings.zoom === 'auto' ? themeState.current.motion.zoom : settings.zoom);
-  const feelKind = $derived<FeelKind>(settings.feel === 'auto' ? themeState.current.motion.feel : settings.feel);
 
-  // ------------------------------------------------------------------ camera + transitions
-  interface WorldSpec { uid: 'a' | 'b'; cam: Cam; mix: Record<SceneId, number>; opacity: number; clip: string | null; premount: SceneId | null }
-  interface Trans {
-    kind: ZoomKind; from: SceneId; to: SceneId; a: Cam; b: Cam; t0: number; dur: number; curve: (t: number) => number;
-    fly: ((t: number) => Cam) | null;
-    /** For portal/parallax: which child scene is entered/left, and in which direction. */
-    child: ChildId | null; enter: boolean;
-  }
-  let cam: Cam = { x: 0, y: 0, k: 1 };
+  // ------------------------------------------------------------------ camera + flights
+  interface Trans { a: Cam; b: Cam; t0: number; dur: number; fly: (t: number) => Cam; premount: SceneId }
+  let cam = $state.raw<Cam>({ x: 0, y: 0, k: 1 });
   let trans: Trans | null = null;
-  let mainUid: 'a' | 'b' = 'a';
-  const other = () => (mainUid === 'a' ? 'b' : 'a');
-  let worlds = $state<WorldSpec[]>([]);
-  let ring = $state<{ cx: number; cy: number; r: number; alpha: number } | null>(null);
+  let premount = $state<SceneId | null>(null);
   let gestureNav = false;
 
   const targetCam = (r: Route): Cam => {
@@ -46,78 +35,24 @@
     return st ? fit(stopRectWorld(st), view.vp, 0.9) : fitScene(r.scene, view.vp);
   };
 
-  function startTrans(kind: ZoomKind, from: SceneId, to: SceneId, b: Cam, durMs?: number) {
-    const a = cam, T = themeState.current.motion;
-    const child = (from === 'overview' && to !== 'overview' ? to : to === 'overview' && from !== 'overview' ? from : null) as ChildId | null;
-    if (!child && kind !== 'fly') kind = 'fly';
-    const fly = kind === 'fly' ? flyInterpolator(a, b, view.vp) : null;
-    let dur = durMs ?? (fly ? fly.duration : 1000) * T.speed;
-    if (feelKind === 'spring' && !durMs) dur *= 1.35;
-    trans = { kind, from, to, a, b, t0: performance.now(), dur, curve: feelCurve(durMs ? 'ease' : feelKind, T, dur), fly, child, enter: child === to };
+  /** Fly the camera to `b` (van Wijk zoom-pan, eased). `to` is mounted from the start so it's ready on arrival. */
+  function startTrans(to: SceneId, b: Cam, durMs?: number) {
+    const fly = flyInterpolator(cam, b, view.vp);
+    const dur = durMs ?? fly.duration * themeState.current.motion.speed;
+    trans = { a: cam, b, t0: performance.now(), dur, fly, premount: to };
     return dur;
   }
-
-  /** Spring overshoot past the target (t > 1), extrapolated in log-zoom / view-centre space and kept small. */
-  function overshoot(a: Cam, b: Cam, over: number): Cam {
-    const o = Math.min(0.15, over), c = areaCentre(view.vp);
-    const k = b.k * Math.pow(b.k / a.k, o);
-    const wa = toWorldPt(a, c.x, c.y), wb = toWorldPt(b, c.x, c.y);
-    const wc = { x: wb.x + (wb.x - wa.x) * o * Math.min(1, a.k / b.k), y: wb.y + (wb.y - wa.y) * o * Math.min(1, a.k / b.k) };
-    return { k, x: c.x - wc.x * k, y: c.y - wc.y * k };
-  }
-
-  /** The child scene's camera while it grows out of (or shrinks back into) its spot in the overview. */
-  function growCam(small: Cam, big: Cam, child: ChildId, e: number): Cam {
-    const r = childRect(child), cw = { x: r.x + r.w / 2, y: r.y + r.h / 2 };
-    const s0 = toScreen(small, cw), s1 = toScreen(big, cw);
-    const k = small.k * Math.pow(big.k / small.k, e);
-    const sx = s0.x + (s1.x - s0.x) * e, sy = s0.y + (s1.y - s0.y) * e;
-    return { k, x: sx - cw.x * k, y: sy - cw.y * k };
-  }
-  const cover = (x: number, y: number) => Math.max(...[[0, 0], [view.vp.w, 0], [0, view.vp.h], [view.vp.w, view.vp.h]].map(([px, py]) => Math.hypot(px - x, py - y)));
-  const sm = (a: number, b: number, x: number) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
-
   function frameTrans(now: number) {
     const T = trans!;
-    const t = Math.min(1, (now - T.t0) / T.dur), e = T.curve(t);
-    ring = null;
-    if (T.kind === 'fly' || !T.child) {
-      cam = e <= 1 ? T.fly!(Math.max(0, e)) : overshoot(T.a, T.b, e - 1);
-      worlds = [{ uid: mainUid, cam, mix: mixes(cam, view.vp), opacity: 1, clip: null, premount: T.to }];
-    } else {
-      const parent = T.enter ? T.from : T.to;
-      // u: 0 = parent view, 1 = child view
-      const u = T.enter ? e : 1 - e;
-      const P = T.enter ? T.a : T.b, C = T.enter ? T.b : T.a;
-      const r = childRect(T.child), cw = { x: r.x + r.w / 2, y: r.y + r.h / 2 };
-      const anchor = toScreen(P, cw), centre = areaCentre(view.vp);
-      const srcUid = mainUid, dstUid = other();
-      const childUid = T.enter ? dstUid : srcUid, parentUid = T.enter ? srcUid : dstUid;
-      let pw: WorldSpec, cwld: WorldSpec;
-      if (T.kind === 'portal') {
-        const ccam = growCam(P, C, T.child, u);
-        const s = toScreen(ccam, cw);
-        const r0 = Math.min(r.w, r.h) * 0.5 * P.k;
-        const rad = Math.max(1, r0 + (cover(s.x, s.y) - r0) * Math.max(0, u));
-        ring = { cx: s.x, cy: s.y, r: rad, alpha: (1 - sm(0.7, 1, u)) * sm(0, 0.08, u) };
-        pw = { uid: parentUid, cam: zoomAbout(P, Math.pow(C.k / P.k, 0.16 * Math.max(0, u)), anchor.x, anchor.y), mix: soloMix(parent), opacity: 1, clip: null, premount: null };
-        cwld = { uid: childUid, cam: ccam, mix: soloMix(T.child), opacity: sm(0, 0.08, u), clip: 'portal-clip', premount: null };
-      } else {
-        const F = Math.pow(C.k / P.k, 0.45);
-        pw = { uid: parentUid, cam: zoomAbout(P, Math.pow(F, u), anchor.x, anchor.y), mix: soloMix(parent), opacity: 1 - sm(0.3, 0.75, u), clip: null, premount: null };
-        cwld = { uid: childUid, cam: zoomAbout(C, Math.pow(F, u - 1), centre.x, centre.y), mix: soloMix(T.child), opacity: sm(0.25, 0.7, u), clip: null, premount: null };
-      }
-      worlds = [pw, cwld];
-      cam = T.b;
-    }
+    const t = Math.min(1, (now - T.t0) / T.dur);
+    cam = T.fly(easeInOutCubic(t));
+    premount = T.premount;
     if (t >= 1) finishTrans();
   }
   function finishTrans() {
-    const T = trans!;
+    cam = trans!.b;
     trans = null;
-    ring = null;
-    cam = T.b;
-    if (T.kind !== 'fly' && T.child) mainUid = other();
+    premount = null;
     showCaption = true;
   }
 
@@ -130,7 +65,7 @@
     const b = targetCam(r);
     const quick = gestureNav;
     gestureNav = false;
-    const dur = startTrans(quick ? 'fly' : zoomKind, prev.scene, r.scene, b, quick ? 480 : undefined);
+    const dur = startTrans(r.scene, b, quick ? 480 : undefined);
     showCaption = false;
     if (r.scene !== prev.scene) sfx.whoosh(r.scene !== 'overview' && prev.scene === 'overview', dur);
     else sfx.swish();
@@ -142,7 +77,7 @@
     const x0 = Math.max(0, r.x * cam.k + cam.x), x1 = Math.min(vp.w, (r.x + r.w) * cam.k + cam.x);
     const y0 = Math.max(0, r.y * cam.k + cam.y), y1 = Math.min(vp.h, (r.y + r.h) * cam.k + cam.y);
     const visible = (Math.max(0, x1 - x0) * Math.max(0, y1 - y0)) / Math.min(vp.w * vp.h, r.w * r.h * cam.k * cam.k);
-    if (cam.k < b.k * 0.97 || visible < 0.45) startTrans('fly', route.scene, route.scene, b, 450);
+    if (cam.k < b.k * 0.97 || visible < 0.45) startTrans(route.scene, b, 450);
   }
 
   // Sideways stepping: stops at the current level (path scenes: nodes + links; dive level: the dives themselves).
@@ -182,17 +117,14 @@
     view.followId = p.id;
     followed = p;
     trans = null;
-    ensureSingle();
+    premount = null;
     sfx.pop();
   }
   function endFollow(arrived: boolean, silent = false) {
     if (!follow) return;
     if (arrived && followed) sfx.blip(true, followed.kind);
     follow = null; followed = null; view.followId = null;
-    if (!silent) startTrans('fly', route.scene, route.scene, targetCam(route), 800);
-  }
-  function ensureSingle() {
-    worlds = [{ uid: mainUid, cam, mix: mixes(cam, view.vp), opacity: 1, clip: null, premount: null }];
+    if (!silent) startTrans(route.scene, targetCam(route), 800);
   }
 
   // ------------------------------------------------------------------ tap hit-testing
@@ -202,7 +134,6 @@
     return best;
   }
   function onTap(sx: number, sy: number) {
-    if (trans && trans.kind !== 'fly') return;
     // 1. packets (a generous ≥ 30 px screen radius, for small fingers)
     let hit: { p: LivePacket; s: PathSceneId; d: number } | null = null;
     for (const s of ['overview', 'internet'] as const) {
@@ -234,7 +165,6 @@
   }
 
   function onFlick(dx: number, dy: number) {
-    if (trans && trans.kind !== 'fly') return false;
     const portrait = view.orient === 'portrait';
     if (Math.abs(dx) > Math.abs(dy) * 1.2) { step(dx < 0 ? 1 : -1); return true; }
     if (portrait && Math.abs(dy) > Math.abs(dx) * 1.2) { step(dy > 0 ? 1 : -1); return true; }
@@ -262,10 +192,7 @@
   });
 
   // ------------------------------------------------------------------ frame loop, gestures, resize
-  let fps = $state(60);
-  function orientFor(w: number, h: number): Orient {
-    return settings.orient !== 'auto' ? settings.orient : h > w * 1.1 ? 'portrait' : 'landscape';
-  }
+  const orientFor = (w: number, h: number): Orient => (h > w * 1.1 ? 'portrait' : 'landscape');
   /** Keep the followed packet in the part of the screen the peek panel doesn't cover. */
   function followCentre() {
     const c = areaCentre(view.vp), r = document.querySelector('.peek')?.getBoundingClientRect();
@@ -281,10 +208,9 @@
     if (o !== view.orient) { setOrient(o); view.orient = o; prevIds = { overview: new Map(), internet: new Map() }; }
     if (follow) endFollow(false, true);
     trans = null;
+    premount = null;
     cam = targetCam(route);
-    ensureSingle();
   }
-  $effect(() => { void settings.orient; if (stage) untrack(resize); });
   $effect(() => { const id = settings.style; untrack(() => { if (id !== themeState.current.id) void loadTheme(id).then(resize); }); });
 
   onMount(() => {
@@ -293,17 +219,16 @@
     const loop = (now: number) => {
       const dt = Math.min(0.05, (now - last) / 1000);
       last = now;
-      if (dt > 0) fps += (1 / dt - fps) * 0.05;
       timeScale += ((follow ? FOLLOW_SCALE : 1) - timeScale) * Math.min(1, dt * 5);
       clock += dt * timeScale;
       view.real = now / 1000;
-      view.time = feelKind === 'twos' ? stepClock(clock, themeState.current.motion.twosFps) : clock;
+      view.time = clock;
 
       // packets, arrivals, follow
       const next = {} as Record<PathSceneId, LivePacket[]>;
       for (const s of ['overview', 'internet'] as const) {
         const d = pathScene(s);
-        const list = livePackets(d.packets, d.links, view.time, s, settings.alive);
+        const list = livePackets(d.packets, d.links, view.time, s);
         const ids = new Map(list.map((p) => [p.id, p]));
         for (const [id, p] of prevIds[s]) {
           if (ids.has(id)) continue;
@@ -327,16 +252,14 @@
         }
       }
       if (trans) frameTrans(now);
-      else ensureSingle();
       raf = requestAnimationFrame(loop);
     };
     raf = requestAnimationFrame(loop);
 
     const ctl = {
       stop() {
-        if (!trans) return;
-        if (trans.kind !== 'fly' && trans.child) { frameTrans(trans.t0 + trans.dur); return; }
         trans = null;
+        premount = null;
       },
       zoomAt(f: number, sx: number, sy: number) {
         if (follow) endFollow(false, true);
@@ -371,7 +294,7 @@
     Object.assign(window, {
       __proto: {
         go, route: () => route, busy: () => !!trans,
-        follow(kind = 'video') { const s = isPathScene(route.scene) ? route.scene : 'overview'; const p = packets[s].find((k) => k.kind === kind && k.pose.phase === 'go') ?? packets[s][0]; if (p) startFollow(p, s); return !!p; },
+        follow(kind = 'video') { const s = isPathScene(route.scene) ? route.scene : 'overview'; const p = packets[s].filter((k) => k.kind === kind).sort((x, y) => x.age / x.spec.duration - y.age / y.spec.duration)[0] ?? packets[s][0]; if (p) startFollow(p, s); return !!p; },
         setClock(t: number) { clock = t; },
       },
     });
@@ -398,20 +321,12 @@
 <div id="stage" bind:this={stage} class={portrait ? 'port' : 'land'}>
   <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <A.Defs />
-    <defs>
-      <clipPath id="portal-clip" clipPathUnits="userSpaceOnUse">
-        {#if ring}<circle cx={ring.cx} cy={ring.cy} r={ring.r} />{/if}
-      </clipPath>
-    </defs>
-    {#each worlds as w (w.uid)}
-      <World cam={w.cam} mix={w.mix} uid={w.uid} {packets} focus={{ scene: route.scene, stop: route.stop }} premount={w.premount} opacity={w.opacity} clip={w.clip} />
-    {/each}
-    {#if ring && ring.alpha > 0.01}<circle class="portal-ring" cx={ring.cx} cy={ring.cy} r={ring.r} opacity={ring.alpha} />{/if}
+    <World {cam} mix={mixes(cam, view.vp)} {packets} focus={{ scene: route.scene, stop: route.stop }} {premount} />
     <A.Overlay w={view.vp.w} h={view.vp.h} scene={route.scene} time={view.time} />
   </svg>
 </div>
 <div class={portrait ? 'port' : 'land'}>
-  <Chrome {route} {small} {fps} />
+  <Chrome {route} {small} />
   {#if followed}
     <PeekPanel packet={followed} onclose={() => endFollow(false)} />
   {/if}
