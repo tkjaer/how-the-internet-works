@@ -1,7 +1,7 @@
 # Notice
 
 **How the Internet Works**
-Copyright © 2026 Thomas Kjær
+Copyright © 2026 Thomas Kjær Aabo
 <https://github.com/tkjaer/how-the-internet-works>
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General
@@ -17,15 +17,15 @@ The terms below are made under section 7 of the AGPL and apply together with it.
 If you convey or host a copy or a modified version of this program, you must keep a visible author credit in its
 user interface, among its Appropriate Legal Notices (like the original's About entry), for example:
 
-> Based on How the Internet Works by Thomas Kjær – https://github.com/tkjaer/how-the-internet-works
+> Based on How the Internet Works by Thomas Kjær Aabo – https://github.com/tkjaer/how-the-internet-works
 
-An unmodified copy may keep the original wording ("How the Internet Works by Thomas Kjær").
+An unmodified copy may keep the original wording ("How the Internet Works by Thomas Kjær Aabo").
 
 ## Additional permission: screenshots (section 7)
 
 Screenshots, screen recordings and printouts of the running app may be used under
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): use them freely, for anything, with credit to
-"How the Internet Works by Thomas Kjær". Using them this way carries no AGPL obligations. You may remove this
+"How the Internet Works by Thomas Kjær Aabo". Using them this way carries no AGPL obligations. You may remove this
 permission from your own modified versions.
 
 ## Name and logo

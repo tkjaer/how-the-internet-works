@@ -48,17 +48,17 @@ We compared four rendering stacks and chose **Svelte 5 + SVG**:
 
 ## License
 
-How the Internet Works is © 2026 Thomas Kjær and free software under the
+How the Internet Works is © 2026 Thomas Kjær Aabo and free software under the
 [GNU Affero General Public License, version 3 or later](LICENSE) (AGPL-3.0-or-later), with a few additional terms in
 [NOTICE.md](NOTICE.md).
 
 - **You may** use it, study it, share it, change it and host it, also commercially.
 - **You must** share the source, under the same license, with everyone you give a copy to. If you change it, that
   includes your changes, and when people use your version over a network (a website counts), you must offer them its
-  source too. And keep the author credit in its user interface, e.g. "Based on How the Internet Works by Thomas Kjær",
+  source too. And keep the author credit in its user interface, e.g. "Based on How the Internet Works by Thomas Kjær Aabo",
   like the app's own About entry (⋯ › About).
 - **Screenshots**, screen recordings and printouts of the running app are yours to use under
-  [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), with credit to "How the Internet Works by Thomas Kjær",
+  [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), with credit to "How the Internet Works by Thomas Kjær Aabo",
   without any AGPL obligations.
 
 The name and logo are not licensed for other uses, and dependencies keep their own licenses. Contributions are

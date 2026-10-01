@@ -11,7 +11,7 @@
     "evaluate": "node scripts/evaluate.mjs"
   },
   "license": "AGPL-3.0-or-later",
-  "author": "Thomas Kjær",
+  "author": "Thomas Kjær Aabo",
   "homepage": "https://github.com/tkjaer/how-the-internet-works",
   "repository": {
     "type": "git",
