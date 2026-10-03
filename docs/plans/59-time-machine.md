@@ -129,11 +129,10 @@ era, catches anachronisms cheaply (Wi‑Fi in 1995, TLS on a 1985 BBS).
      `era.1995.away.street`, nerd only, en + da), shown when it exists; no place id in `src/`.
    - **Street → 2010: a phone on 3G** (#113, step 4): the street's own 2010 member, `street-2010`, so nothing to
      explain. (Until step 4 the era said so with its own line, `era.2010.instead.street`, now gone.)
-   - **Desk → 1995: the PC at home, which sits at a desk.** "In 1995 you'd have done this at home" reads wrong from
-     a desk to a PC at a desk. An era may give its own line for where you are, `era.<era>.instead.<place>` (kid and
-     nerd, en + da), which takes the place of the generic line and says where you'll go itself:
-     `era.1995.instead.desk`, "In 1995 the computer on the desk was a big beige PC, and it went online through the
-     phone line at home. You'll travel there."
+   - **Desk → 1995: the PC at home, which sits at a desk.** Since #151 the desk is a way online from home
+     (`variantOf: 'home'`), so its 1995 stop is home's own member, `home-dialup`, and no line is needed: the stop is
+     not `instead`. (Until #151 an era gave its own line for this, `era.1995.instead.desk`; that mechanism, and
+     `era.<era>.instead.<place>` with it, is gone from `ui/time.ts`.)
    - **The era's words, where its stop is.** The panel's text and picture description for an era are its own
      (`era.2010`: the DSL at home), unless it has words for the stop's place, `era.<era>.at.<base place>`
      (`era.2010.at.street`: phones on 3G; `era.2010.at.desk`: a cable to the modem; `era.today.at.street`: 5G).
@@ -156,8 +155,8 @@ era, catches anachronisms cheaply (Wi‑Fi in 1995, TLS on a 1985 BBS).
 **Place switching and eras** (revised by the user, 3 Oct). Once an era is picked you stay in it: only the time
 machine changes the era. The picker offers each place as its member of the current era, by the time machine's own
 rule (`eraStops`): in 2010 the desk is `desk-2010`, the street `street-2010`, home `home-dsl`. A place with no member
-in the era keeps its option, with the time machine's line under it ("In 1995 you'd have done this at home", or the
-era's own `era.<era>.instead.<place>`, as for the desk in 1995), and picking it goes to the era's trip (the time
+in the era keeps its option, with the time machine's line under it ("In 1995 you'd have done this at home", on the
+go in 1995), and picking it goes to the era's trip (the time
 machine's `instead` stop), still in the era; the arrival says why, as the time machine's does. The access chips ("How
 do you get online?") list only the era's ways online (today fibre and fibre to the building; 2010 DSL; 1995
 dial-up), so the section is gone when only one is left; other years are the time machine's, and the picker's
@@ -495,7 +494,8 @@ Each is small, leaves main working and says "Part of #59".
 4. **The street and the desk in 2010** (#113, built). 2010 members of both families: on the street, the phone on 3G
    (HSPA) to a NodeB, the RNC and the GGSN (the SGSN aside); at the desk, a laptop on a cable to the DSL router;
    era-true words (en + da, kid + nerd). The time machine then goes there in 2010, and `era.2010.instead.street`
-   (added in PR 2) goes. The 1995 desk wording is fixed in the same step. The eras should show what was really
+   (added in PR 2) goes. The 1995 desk wording is fixed in the same step (and since #151 needs no line: the desk is
+   a home member). The eras should show what was really
    available at the time (the user's principle): where people really did this in an era, that era gets a trip there.
 5. **How long it takes.** `rate` (with the 28.8k override), `size` on each era's packet kinds, the caption line (kid
    and nerd), like with like.
@@ -631,7 +631,8 @@ Made while building PR 2 (era flavour):
 - **Street → 2010 says what was really there** (asked during review; the user's principle: the eras should show
   what was really available at the time). `era.<era>.instead.<place>` (generic, in `ui/time.ts`, loaded with the
   panel's strings) replaces "In 2010 you'd have done this at home. You'll travel there." for the street in 2010, kid
-  and nerd, en + da, so the two lines can't contradict each other; `away` stays the extra note (1995's GSM). The trip
+  and nerd, en + da, so the two lines can't contradict each other (gone since #151: no era line replaces the generic
+  one any more); `away` stays the extra note (1995's GSM). The trip
   itself is a new step 4 (#113, now the street and the desk in 2010); later steps moved up by one.
 - **The dial-up handshake isn't played when switching to 1995** (it would get old switching back and forth); it
   stays in the modem-call dive. Tapping the modem to play it was skipped: it would make a decoration a real button
@@ -711,8 +712,9 @@ Made while building PR 4 (the street and the desk in 2010):
   "Cellular network" for kids.
 - **The era's words are per place**: `era.<era>.at.<base place>` (kid, nerd, describe) over `era.<era>.*` in the
   panel and the arrival (`eraText` in `ui/time.ts`), so 2010 says "3G" at the street and "a cable" at the desk, and
-  today says 5G at the street. The desk in 1995 lands at home, whose PC sits at a desk: `era.1995.instead.desk` says
-  so ("…the computer on the desk was a big beige PC, and it went online through the phone line at home"), no trip.
+  today says 5G at the street. The desk in 1995 lands at home, whose PC sits at a desk, no trip. (Built here as an
+  era line, `era.1995.instead.desk`; since #151 the desk is a home member, its 1995 stop is `home-dialup` like home's,
+  and the `era.<era>.instead.<place>` mechanism is gone.)
 - **Past-only items speak in their era block**: `street-2010`, `desk-2010`, `phone-3g`, `nodeb`, `rnc`, `sgsn` and
   `hspa` keep only their name (and `access`, `yours`) eager; their other words are their `"2010"` block, so they load
   with `virtual:past-strings` (`withEra` finds them on a 2010 route). That took the eager growth from +2.4 kB to
@@ -853,8 +855,8 @@ Made while building PR 9 (the picker stays in the era, #146):
 - **The line under such a place** is the time machine's `elsewhere`, short: why, and "You'll travel there." only
   where it does go somewhere (in 1995 every place is the one home trip, so there it doesn't); the nerds' note (GSM on
   the street) is left for the arrival, which says it as the time machine's does, so the cards stay short in short
-  landscape. An era's own `instead.<place>` line no longer ends in "You'll travel there.": `elsewhere` adds it, so the
-  two can't disagree.
+  landscape. (An era's own `instead.<place>` line, which this step stopped ending in "You'll travel there.", went
+  with #151.)
 - **Arrival**: going there lands like a trip in time (focus on the caption's heading, the line said first); picking
   it where you are already says the line and gives focus back to the picker's opener.
 - **"Other years ⏲"** (decided: yes): a small button under the places (and the access chips) that opens the time
