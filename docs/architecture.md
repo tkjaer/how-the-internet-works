@@ -636,8 +636,9 @@ engine:
   3. the item itself (`node.router`)
 - **English fallback.** Any missing string falls back to English. `npm run check:content` prints translation coverage.
 - **Nothing left in English by mistake.** `src/translations.test.ts` fails on a translated string that is still the
-  English text (two or more lower-case words, so codes and acronyms pass), unless it is in `KEEP_ENGLISH`: the few
-  terms every language keeps English on purpose. An entry no language keeps any more fails too.
+  English text (two or more lower-case words, so codes and acronyms pass), unless it is in `KEEP_ENGLISH`: per language and
+  key, the few strings that language keeps English on purpose (one language's choice doesn't excuse another's missed
+  line). An entry that is no longer English fails too.
 - **Bundling.** English ships in the main bundle, except the dive strings (the layers': header field names and meanings; the dive scenes': their captions and labels; the eras' texts, #59): they load as one chunk (`virtual:dive-strings`) on the first catch, on entering any dive, on opening the time machine, or at start for a link below the overview (`loadDiveStrings`; text asked for them earlier updates when they arrive). The words for the eras of the past (every node's, place's, activity's… `"1995": { … }` blocks, which the `eraBlocks` plugin keeps out of the eager English) are a small chunk of their own, about 8 kB gz with 1995's internet (`virtual:past-strings`, `loadPastStrings`): loaded with the time machine, when a route of the past is shown, and awaited at start for a link into the past. Other languages load on first use, one chunk each (about 6 kB gz for da), via the `virtual:string-packs` plugin in `vite.config.ts`. Adding a language therefore costs nothing for readers who don't pick it.
 - **Languages.** English, Danish and German, the languages we can review ourselves (issue #11).
 - **RTL.** A language's `meta.json` sets `dir`, which `setLang` puts on `<html>`: the chrome mirrors (logical CSS properties), the diagrams don't. No shipped language is right-to-left, so `src/rtl.test.ts` keeps the support working with a made-up test-only language. A reviewed RTL language comes back as content only: its locale folder, plus faces for its script in the theme's `tokens.css`.
@@ -715,7 +716,7 @@ Vitest (`npm test`) covers:
   scene draws
 - the URL round trip
 - string fallback and lazy language packs
-- no translated string left as the English text, except the listed `KEEP_ENGLISH` terms (`translations.test.ts`)
+- no translated string left as the English text, except each language's listed `KEEP_ENGLISH` strings (`translations.test.ts`)
 - the import rules
 - colours in art (`model/art-colours.test.ts`):
   - no colour literals in `content/**` art unless marked `fixed-colour:`
