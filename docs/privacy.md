@@ -23,11 +23,11 @@ To know whether anyone uses the app, in which language and from roughly where, i
 small server (`stats.irq.dk`), not with an analytics company.
 
 **What your browser sends.** Once each time the app is loaded (opening it, reloading, a new tab), after the page has
-settled, one request: `https://stats.irq.dk/hiw/count?lang=da`. The only data in it is the language the app opened in
-(`en` or `da`). Moving around in the app sends nothing more. The request carries no cookie, no identifier, no
-referrer (not even which page you were on), nothing from `localStorage` and nothing about your device beyond what every
-request has: your IP address and the browser's standard headers. The answer is ignored, and if the server is down,
-slow or blocked, nothing changes for you.
+settled, one request: `https://stats.irq.dk/how-the-internet-works/count?lang=da`. The only data in it is the
+language the app opened in (`en` or `da`). Moving around in the app sends nothing more. The request carries no cookie,
+no identifier, no referrer (not even which page you were on), nothing from `localStorage` and nothing about your device
+beyond what every request has: your IP address and the browser's standard headers. The answer is ignored, and if the
+server is down, slow or blocked, nothing changes for you.
 
 **What the server keeps.** The server ([GoatCounter](https://www.goatcounter.com), self-hosted, behind nginx) does not
 log the requests it counts. It uses your IP address only in memory to look up the country, with a database on the

@@ -3,7 +3,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { stubBrowser } from './test/stub-browser';
 
-const SITE = 'https://tkjaer.github.io/how-the-internet-works/', STATS = 'https://stats.irq.dk/hiw/count';
+const SITE = 'https://tkjaer.github.io/how-the-internet-works/', STATS = 'https://stats.irq.dk/how-the-internet-works/count';
 
 /** Load the module afresh with this page address, stored choice, browser signals and build settings. */
 async function load(o: { href?: string; stored?: Record<string, string>; nav?: object; win?: object; env?: Record<string, string> } = {}) {
