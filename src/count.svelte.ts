@@ -16,10 +16,20 @@ export function doNotTrack(nav: Nav | undefined = globalThis.navigator, win: Win
   return [nav?.doNotTrack, nav?.msDoNotTrack, win?.doNotTrack].some((v) => v === '1' || v === 'yes');
 }
 
+/** The page is the published site itself: the same origin and the site's own path (or its index.html), whatever the
+ *  query and hash. Not a copy in a folder below it, nor a path that merely starts the same. */
+export function onSite(href: string, site: string): boolean {
+  try {
+    const page = new URL(href), home = new URL(site);
+    const dir = home.pathname.endsWith('/') ? home.pathname : `${home.pathname}/`;
+    return page.origin === home.origin && (page.pathname === dir || page.pathname === `${dir}index.html`);
+  } catch { return false; }
+}
+
 /** Where to send this load's count, or null when it isn't counted. `endpoint` and `site` come from the build (.env):
- *  empty in either means no counting; `href` must be on the published site. */
+ *  empty in either means no counting; `href` must be the published site. */
 export function countUrl(o: { endpoint: string; site: string; href: string; lang: string; off: boolean; dnt: boolean }): string | null {
-  if (!o.endpoint || !o.site || o.off || o.dnt || !o.href.startsWith(o.site)) return null;
+  if (!o.endpoint || !o.site || o.off || o.dnt || !onSite(o.href, o.site)) return null;
   return `${o.endpoint}?lang=${encodeURIComponent(o.lang)}`;
 }
 
@@ -32,7 +42,7 @@ export function setCounting(on: boolean) {
   else localStorage.setItem(COUNT_KEY, 'off');
 }
 
-/** Send the count for this load in `lang`, once the page is idle. Fire and forget: nothing waits on it, and nothing
+/** Send the count for this load in `lang`, once the page is idle, unless counting was turned off by then. Fire and forget: nothing waits on it, and nothing
  *  it does can throw into the app. */
 export function countVisit(lang: string) {
   try {
@@ -43,6 +53,8 @@ export function countVisit(lang: string) {
     if (!url) return;
     const send = () => {
       try {
+        // The reader may have turned it off (or the browser's signal changed) while this waited.
+        if (!counting.on || doNotTrack()) return;
         fetch(url, { mode: 'no-cors', credentials: 'omit', referrerPolicy: 'no-referrer', cache: 'no-store', keepalive: true })
           .catch(() => {});
       } catch { /* never let counting break the app */ }

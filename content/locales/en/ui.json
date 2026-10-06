@@ -155,7 +155,7 @@
   "about.license": "License",
   "about.terms": "Terms and credit",
   "about.contributors": "Contributors",
-  "about.countWhat": "Each time the app opens, it sends one anonymous count with its language to the author's own stats server: no cookies, nothing about you. Only totals are kept, and they're published.",
+  "about.countWhat": "Each time the app opens, it sends one count with its language to the author's own stats server: no cookie, no ID. The server sees your IP address like any site, uses it only for your country, and keeps only totals, which are published.",
   "about.count": "Count my visit",
   "about.countDnt": "Your browser asks sites not to track you, so your visits aren't counted.",
   "about.privacy": "Privacy",

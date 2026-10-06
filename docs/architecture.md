@@ -749,10 +749,11 @@ tag (`og:url`, `og:image`) that isn't an absolute URL to a file in the build. Th
 `VITE_SITE_URL` (`.env`; set it in the environment to build for another address).
 
 **Counting visits** (`count.svelte.ts`, [privacy.md](privacy.md#counting-visits)). After the first render `main.ts`
-calls `countVisit(lang)`: once the page is idle it sends one `no-cors` request with no credentials and no referrer to
-`VITE_STATS_URL` with the language, and ignores the answer and any error. It sends nothing under Global Privacy
-Control or Do Not Track, when the reader turned it off in About (`localStorage` `count=off`), or when the page isn't
-under `VITE_SITE_URL`, so dev, `--only=subpath` and forks never count. The server and the published totals are in
+calls `countVisit(lang)`: once the page is idle it sends one `no-cors` request with no credentials and no referrer
+to `VITE_STATS_URL` with the language, and ignores the answer and any error. It sends nothing under Global Privacy
+Control or Do Not Track, when the reader turned it off in About (`localStorage` `count=off`, checked again just
+before sending), or when the page isn't `VITE_SITE_URL` itself (same origin and path, `onSite`), so dev,
+`--only=subpath` and forks never count. The server and the published totals are in
 [tkjaer/open-stats](https://github.com/tkjaer/open-stats).
 
 ## Performance

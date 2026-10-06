@@ -33,7 +33,8 @@ describe('countUrl', () => {
   });
   it('counts nothing off the published site, without an endpoint, opted out or under DNT/GPC', async () => {
     const { count } = await load();
-    for (const href of ['http://localhost:5173/#/da', 'http://localhost/how-the-internet-works/', 'https://someone.github.io/how-the-internet-works/'])
+    for (const href of ['http://localhost:5173/#/da', 'http://localhost/how-the-internet-works/', 'https://someone.github.io/how-the-internet-works/',
+      `${SITE}copy/#/da`, 'https://tkjaer.github.io/how-the-internet-works-copy/', 'http://tkjaer.github.io/how-the-internet-works/', 'not a url'])
       expect(count.countUrl({ ...base, href })).toBeNull();
     expect(count.countUrl({ ...base, endpoint: '' })).toBeNull();
     expect(count.countUrl({ ...base, site: '' })).toBeNull();
@@ -43,6 +44,13 @@ describe('countUrl', () => {
   it('escapes the language', async () => {
     const { count } = await load();
     expect(count.countUrl({ ...base, lang: 'x&y=1' })).toBe(`${STATS}?lang=x%26y%3D1`);
+  });
+  it('counts the site itself, with any query or hash, its index.html, and a site address without the last slash', async () => {
+    const { count } = await load();
+    for (const href of [SITE, `${SITE}#/en`, `${SITE}?level=technical#/da/home`, `${SITE}index.html#/da`])
+      expect(count.countUrl({ ...base, href })).toBe(`${STATS}?lang=da`);
+    expect(count.countUrl({ ...base, site: SITE.slice(0, -1) })).toBe(`${STATS}?lang=da`);
+    expect(count.countUrl({ ...base, site: SITE.slice(0, -1), href: 'https://tkjaer.github.io/how-the-internet-works-copy/' })).toBeNull();
   });
 });
 
@@ -118,6 +126,15 @@ describe('the switch in About', () => {
     const { count, fetch } = await load({ stored: { count: 'off' } });
     expect(count.counting.on).toBe(false);
     count.countVisit('da');
+    expect(fetch).not.toHaveBeenCalled();
+  });
+  it('turning it off while the count waits for the page to be idle stops this load\'s count too', async () => {
+    const { count, fetch } = await load();
+    let idle = () => {};
+    vi.stubGlobal('requestIdleCallback', (f: () => void) => { idle = f; });
+    count.countVisit('da');
+    count.setCounting(false);
+    idle();
     expect(fetch).not.toHaveBeenCalled();
   });
 });
