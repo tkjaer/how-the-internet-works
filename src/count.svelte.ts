@@ -4,6 +4,10 @@
 // it off in About, or when the page isn't the published site (dev, previews, forks, copies). The answer is never read
 // and any failure (the server down, a broken certificate, a blocker) is silent.
 
+/** The one address whose visits are counted. Fixed here rather than taken from `VITE_SITE_URL`, so a fork or copy
+ *  that builds for its own address (as .env invites) still never counts into the author's totals. */
+export const COUNTED_SITE = 'https://tkjaer.github.io/how-the-internet-works/';
+
 /** The `localStorage` key that remembers the reader turned counting off (`off`); removed when they turn it back on. */
 export const COUNT_KEY = 'count';
 
@@ -26,8 +30,8 @@ export function onSite(href: string, site: string): boolean {
   } catch { return false; }
 }
 
-/** Where to send this load's count, or null when it isn't counted. `endpoint` and `site` come from the build (.env):
- *  empty in either means no counting; `href` must be the published site. */
+/** Where to send this load's count, or null when it isn't counted. `endpoint` comes from the build (.env) and `site` is
+ *  `COUNTED_SITE`: empty in either means no counting; `href` must be that site. */
 export function countUrl(o: { endpoint: string; site: string; href: string; lang: string; off: boolean; dnt: boolean }): string | null {
   if (!o.endpoint || !o.site || o.off || o.dnt || !onSite(o.href, o.site)) return null;
   return `${o.endpoint}?lang=${encodeURIComponent(o.lang)}`;
@@ -47,7 +51,7 @@ export function setCounting(on: boolean) {
 export function countVisit(lang: string) {
   try {
     const url = countUrl({
-      endpoint: import.meta.env.VITE_STATS_URL ?? '', site: import.meta.env.VITE_SITE_URL ?? '', href: location.href, lang,
+      endpoint: import.meta.env.VITE_STATS_URL ?? '', site: COUNTED_SITE, href: location.href, lang,
       off: !counting.on, dnt: doNotTrack(),
     });
     if (!url) return;

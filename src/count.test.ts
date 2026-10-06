@@ -1,5 +1,6 @@
 // Counting visits (docs/privacy.md): only on the published site, never when the browser asks not to be tracked or the
 // reader turned it off, with nothing but the language, and never able to break the app.
+import { readFileSync } from 'node:fs';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { stubBrowser } from './test/stub-browser';
 
@@ -24,6 +25,14 @@ async function load(o: { href?: string; stored?: Record<string, string>; nav?: o
 }
 
 afterEach(() => { vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
+
+describe('the counted site', () => {
+  it("is the published address, the same as .env's VITE_SITE_URL", async () => {
+    const { count } = await load();
+    expect(count.COUNTED_SITE).toBe(SITE);
+    expect(readFileSync('.env', 'utf8')).toContain(`\nVITE_SITE_URL=${SITE}\n`);
+  });
+});
 
 describe('countUrl', () => {
   const base = { endpoint: STATS, site: SITE, href: `${SITE}?style=storybook#/da/home`, lang: 'da', off: false, dnt: false };
@@ -95,7 +104,10 @@ describe('countVisit', () => {
     }
   });
   it('sends nothing in dev or on another address, or when the build has no endpoint', async () => {
-    for (const o of [{ href: 'http://localhost:5173/#/da' }, { href: 'https://fork.example/how-the-internet-works/' }, { env: { VITE_STATS_URL: '' } }]) {
+    const fork = 'https://fork.example/how-the-internet-works/';
+    const cases: { href?: string; env?: Record<string, string> }[] =
+      [{ href: 'http://localhost:5173/#/da' }, { href: fork }, { href: fork, env: { VITE_SITE_URL: fork } }, { env: { VITE_STATS_URL: '' } }];
+    for (const o of cases) {
       const { count, fetch } = await load(o);
       count.countVisit('da');
       expect(fetch).not.toHaveBeenCalled();

@@ -752,8 +752,9 @@ tag (`og:url`, `og:image`) that isn't an absolute URL to a file in the build. Th
 calls `countVisit(lang)`: once the page is idle it sends one `no-cors` request with no credentials and no referrer
 to `VITE_STATS_URL` with the language, and ignores the answer and any error. It sends nothing under Global Privacy
 Control or Do Not Track, when the reader turned it off in About (`localStorage` `count=off`, checked again just
-before sending), or when the page isn't `VITE_SITE_URL` itself (same origin and path, `onSite`), so dev,
-`--only=subpath` and forks never count. The server and the published totals are in
+before sending), or when the page isn't the published address itself (`COUNTED_SITE`, same origin and path, `onSite`), so
+dev, `--only=subpath` and forks never count. That address is fixed in the code rather than taken from `VITE_SITE_URL`,
+so a copy built for its own address doesn't count either. The server and the published totals are in
 [tkjaer/open-stats](https://github.com/tkjaer/open-stats) and
 [tkjaer/open-stats-data](https://github.com/tkjaer/open-stats-data).
 
