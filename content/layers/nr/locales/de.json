@@ -1,0 +1,36 @@
+{
+  "name": {
+    "kid": "5G-Funkumschlag",
+    "nerd": "5G-NR-Frame (SDAP · PDCP · RLC · MAC)"
+  },
+  "note": {
+    "kid": "Durch die Luft auf den eigenen Plätzen deines Handys. Der Mast prüft, ob jedes Stück ankam, und fragt nochmal, wenn eines verloren ging.",
+    "nerd": "Gesendet auf den Resource Blocks, die die gNB diesem Handy zugeteilt hat; HARQ sendet verlorene Blöcke nach, PDCP verschlüsselt die Payload."
+  },
+  "line": "5G NR User Plane, C-RNTI {rnti}, QFI {qfi}",
+  "field": {
+    "rnti": {
+      "name": {
+        "kid": "Handynr.",
+        "nerd": "C-RNTI"
+      },
+      "about": "Der Kurzname des Masts für dieses Handy in dieser Zelle (er scrambled die Zuteilung, kein Header-Byte)."
+    },
+    "lcid": {
+      "name": "Logischer Kanal",
+      "about": "MAC-Subheader: welcher Kanal (hier ein Data Bearer)."
+    },
+    "rlcsn": {
+      "name": "RLC Sequence Number",
+      "about": "Bringt Segmente in Reihenfolge und fragt verlorene nochmal an (ARQ)."
+    },
+    "pdcpsn": {
+      "name": "PDCP Sequence Number",
+      "about": "Nummeriert Pakete für die Funkverschlüsselung und für Handover."
+    },
+    "qfi": {
+      "name": "QoS Flow (SDAP)",
+      "about": "Zu welchem QoS Flow das Paket gehört; dieselbe Nummer fährt im GTP-Tunnel mit."
+    }
+  }
+}

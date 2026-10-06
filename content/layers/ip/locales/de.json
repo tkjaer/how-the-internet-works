@@ -1,0 +1,96 @@
+{
+  "from": "Von",
+  "to": "An",
+  "server": "der Videoserver",
+  "name": {
+    "kid": "Adresszettel",
+    "nerd": "IP-Paket (IPv4)"
+  },
+  "note": {
+    "kid": "Der Adresszettel: von wem es kommt und für wen es ist. Jede Box auf dem Weg liest ihn.",
+    "nerd": "Best-effort-Zustellung zwischen zwei beliebigen Adressen im Internet: Router leiten anhand der Destination Address weiter, Hop für Hop."
+  },
+  "line": "Internet Protocol Version 4, Abs.: {src}, Empf.: {dst}",
+  "field": {
+    "version": {
+      "name": "Version",
+      "about": "Welches IP das ist: 4 (IPv6-Pakete sagen 6)."
+    },
+    "ihl": {
+      "name": "Header-Länge",
+      "about": "In 32-Bit-Wörtern; 5 heißt keine Options."
+    },
+    "dscp": {
+      "name": "DSCP",
+      "about": "Traffic Class, für Netze, die manchem Verkehr Vorrang geben."
+    },
+    "ecn": {
+      "name": "ECN",
+      "about": "Lässt einen vollen Router das Paket markieren statt es zu verwerfen."
+    },
+    "length": {
+      "name": "Gesamtlänge",
+      "about": "Bytes in diesem Paket, Header und alles."
+    },
+    "id": {
+      "name": "Identification",
+      "about": "Hält Fragmente zusammen, falls das Paket je geteilt wird."
+    },
+    "flags": {
+      "name": "Flags",
+      "about": "DF: don’t fragment. Zu groß für einen Link? Verwerfen und Bescheid sagen (Path MTU Discovery)."
+    },
+    "frag": {
+      "name": "Fragment-Offset",
+      "about": "Wohin dieses Fragment gehört; 0, wenn nicht geteilt."
+    },
+    "ttl": {
+      "name": {
+        "kid": "Schritte übrig",
+        "nerd": "Time to Live (TTL)"
+      },
+      "about": "Jeder Router zieht eins ab und verwirft das Paket bei 0, damit eine Routing-Schleife es nicht ewig behalten kann. Im MPLS-Kern wird stattdessen das TTL des Labels gezählt und am Rand hierher zurückkopiert."
+    },
+    "proto": {
+      "name": "Protocol",
+      "about": "Was drin ist: 6 = TCP. Router hashen es mit den Adressen und Ports (dem 5-Tupel), um einen von mehreren gleich guten Wegen zu wählen (ECMP)."
+    },
+    "checksum": {
+      "name": "Header-Prüfsumme",
+      "about": "Von jedem Router geprüft, der den Header liest, und neu geschrieben, weil sich das TTL geändert hat."
+    },
+    "src": {
+      "name": {
+        "kid": "Von",
+        "nerd": "Source Address"
+      },
+      "about": "Wer es geschickt hat, von hier aus gesehen: ein NAT schreibt sie auf die eigene Außenadresse um."
+    },
+    "dst": {
+      "name": {
+        "kid": "An",
+        "nerd": "Destination Address"
+      },
+      "about": "Wohin es soll: Router schlagen sie in ihrer Forwarding Table nach (Longest Prefix Match)."
+    }
+  },
+  "1995": {
+    "server": "der Webserver",
+    "field": {
+      "dscp": {
+        "name": "Type of service",
+        "about": "Precedence (3 Bits) und ein Wunsch nach geringer Verzögerung, hohem Durchsatz oder hoher Zuverlässigkeit (RFC 791). 0 ist Routine, und die meisten Router ignorieren es."
+      },
+      "ecn": {
+        "name": "Reserved",
+        "about": "Zwei Bits für später, auf 0 gelassen (RFC 1349 gibt eines davon an „low cost“)."
+      },
+      "ttl": {
+        "about": "Jeder Router zieht eins ab und verwirft das Paket bei 0, damit eine Routing-Schleife es nicht ewig behalten kann."
+      },
+      "proto": {
+        "about": "Was drin ist: 6 = TCP (17 ist UDP, 1 ist ICMP)."
+      }
+    }
+  }
+}

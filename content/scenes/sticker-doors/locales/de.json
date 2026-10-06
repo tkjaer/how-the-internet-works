@@ -1,0 +1,161 @@
+{
+  "title": "Für welche Tür ist dieser Aufkleber?",
+  "kid": "Eine Box liest den kleinen Aufkleber außen und prüft ihr Nachschlagebuch. Dieselbe Box kann MAC-Türen lernen, bunte Straßenstreifen auseinanderhalten oder einer Autobahnnummer folgen. Darunter reist es als Signal im Kabel oder Glasfaden.",
+  "nerd": "Eine vereinigte Layer-2/Label-Switching-Ansicht: Ethernet lernt Source MACs und floodet Unknown Unicasts, VLAN Tags begrenzen Forwarding Domains, und MPLS Labels steuern LFIB Push/Swap/Pop.",
+  "ethernet": {
+    "title": "Welche Kabeltür?",
+    "kid": "Der Kabelumschlag sagt, für welche Tür er ist. Ein Switch lernt vom Von-Aufkleber; ein Router oder Computer zieht den Umschlag ab, wenn der Für-Aufkleber sein eigener Name ist. Darunter reist er als Stromstöße oder Lichtblitze.",
+    "nerd": "Ethernet Forwarding nutzt Destination MAC Lookup, Source MAC Learning, Unknown-Unicast Flooding und einen FCS/CRC-32 Check vor der Decapsulation.",
+    "role": {
+      "bridge": {
+        "title": "Die Türen lernen",
+        "kid": "Der Umschlag kommt durch Tür 1 von {sender}. Die Box schreibt „{sender} → Tür 1“. Den Für-Aufkleber kennt sie noch nicht, also kopiert sie den Umschlag aus den anderen Türen. Die Antwort lehrt Tür 2. Darunter reist er als Signal im Kabel oder Glasfaden.",
+        "nerd": "Eine Bridge lernt Source MACs in eine MAC Table, lässt Einträge nach etwa 300 s altern, floodet Unknown Unicast Frames außer dem Ingress Port und forwardet bekannte Destinations an einen Port. Sie schreibt den Frame nie um: Source und Destination MAC bleiben die der Geräte an beiden Enden der Layer-2 Stretch (hier {sender} und {next}). Store-and-Forward Switches prüfen zuerst FCS/CRC-32.",
+        "describe": {
+          "kid": "Eine Straße verbindet zwei freundliche Geräte und eine Box mit vier nummerierten Türen. Ein wandernder Umschlag kommt an Tür 1. Zwei Karten zeigen winzige Kopien und ein Türbuch. Gepunktete Wege leuchten zu den anderen Türen. Später geht der Umschlag geradewegs zu Tür 2.",
+          "nerd": "Die Ethernet-Frame-Figur trägt einen Aufkleber neben einer Four-Port Bridge und einem MAC Lookup Book. Die Source-Zeile füllt sich mit der MAC des sendenden Routers auf Port 1, die Destination-Zeile zeigt ein Fragezeichen. Flood-Pfade animieren zu den anderen Ports. Bei der Reply lernt die Tabelle Port 2, und der Frame geht direkt weiter mit unveränderten MACs."
+        }
+      },
+      "nat": {
+        "title": "Dieser Aufkleber ist für mich",
+        "kid": "Der Für-Aufkleber ist der eigene Name des Routers, also prüft er den Umschlag, zieht den Kabelumschlag ab und fragt alle auf dem Weg raus: „Wer hat die Adresse von {next}?“ Eine Box antwortet „Ich!“, und ein frischer Aufkleber kommt drauf. Darunter reist er als Stromstöße oder Lichtblitze.",
+        "nerd": "Die Destination MAC passt zum Router Interface. Nach FCS/CRC-32 Validation wird der Ethernet Header abgezogen; ARP löst den Next Hop auf dem Outgoing Link ({next}) zu einer MAC Address (IPv6 nutzt NDP), dann geht ein neuer Ethernet Frame raus.",
+        "describe": {
+          "kid": "Die Straße geht an einer Vier-Tür-Box vorbei, und der Router, bei dem du bist, ist eingekreist. Ein wandernder Umschlag mit ICH bleibt daneben stehen. Das Für-Schild löst sich, während „Wer hat?“ erscheint. Wellenfragen erreichen die Türen, eine Antwort bekommt ein Häkchen, und der Umschlag geht weiter.",
+          "nerd": "Der Ethernet Frame sitzt neben der Port-Box des Routers mit Für- und FCS-Häkchen, einem ARP Prompt und einem ARP Book. Beim Lookup pausiert der Frame. Beim Fanout wird das ICH-Label verwischt, ARP-Wellen gehen über die Ports. Eine gelernte MAC ersetzt Broadcast, bevor ein neuer Frame geht."
+        }
+      },
+      "router": {
+        "title": "Dieser Aufkleber gilt dem Router",
+        "kid": "Der Für-Aufkleber ist der eigene Name dieses Routers. Er prüft den Umschlag, zieht den Kabelumschlag ab, fragt ARP nach der MAC der nächsten Box und klebt einen neuen Kabel-Aufkleber. Darunter reist er als Stromstöße oder Lichtblitze.",
+        "nerd": "Der Router verbraucht den Frame, der an seine lokale MAC adressiert ist, prüft FCS/CRC-32, decapsuliert die Payload, löst den Next Hop per ARP und schreibt ein neues Source/Destination MAC Pair für den Outgoing Link.",
+        "describe": {
+          "kid": "Der mittlere Router ist als Vier-Tür-Box auf der Straße gezeichnet, daneben ein wandernder Umschlag mit ICH. Die Aufkleber-Karte zeigt Für und FCS mit Häkchen, dann „Wer hat?“. Wellenlinien gehen zu den Türen, eine Antwort bekommt ein Häkchen, und der Umschlag geht wieder.",
+          "nerd": "Ein Frame an diesen Router steht neben der Four-Port Box. Die Action-Karte prüft Für-Label und FCS. Dann hebt das ARP Book eine Next-Hop-Zeile hervor. ARP-Wellen gehen von der Eingangstür. Nach einer Reply ändert sich die Destination MAC, und der Frame geht weiter."
+        }
+      },
+      "endpoint": {
+        "title": "Dieser Aufkleber gilt dem Computer",
+        "kid": "Der Für-Aufkleber passt zu diesem Computer. Er prüft, dass der Umschlag nicht verschmiert ist, zieht den Kabelumschlag ab und reicht das Päckchen innen nach oben. Wenn er zurückschickt, nutzt er ARP und schreibt einen neuen Aufkleber. Darunter reist er als Stromstöße oder Lichtblitze.",
+        "nerd": "Ein Endgerät nimmt Frames an, deren Destination seine NIC MAC ist (oder Broadcast/Multicast), prüft FCS/CRC-32 und reicht die EtherType Payload nach oben. Ausgehende Frames nutzen den ARP Cache für die Peer MAC.",
+        "describe": {
+          "kid": "Ein Endgerät ist eingekreist, während eine Vier-Tür-Box und eine Straße zum anderen Ende führen. Ein wandernder Umschlag mit ICH bleibt stehen. Das kleine Für-Schild löst sich, die Prüfkarte sagt OK. „Wer hat?“ und Wellenlinien erscheinen, bevor der Umschlag wieder rausgeht.",
+          "nerd": "Das Endgerät, bei dem du bist, steht auf dem Ethernet Hop mit einem ICH-Frame. Die Action-Karte zeigt Destination Match und FCS Check. Die ARP-Book-Zeile wartet auf eine Peer MAC. Der Frame pausiert zum Lookup, ARP-Wellen gehen auf dem Link, ein frischer Ethernet-Aufkleber trägt die Payload weiter."
+        }
+      }
+    }
+  },
+  "vlan": {
+    "title": "Bunte Straßentüren",
+    "kid": "Der Straßen-Aufkleber malt den Umschlag für Straße 101. Er geht nur durch Türen mit dieser Farbe. Am BNG sagt Haus 2042, welches Abo das ist, und die Aufkleber kommen ab. Darunter reist er als Lichtblitze im Glasfaden.",
+    "nerd": "802.1Q trägt eine 12-bit VID (1–4094 nutzbar). In 802.1ad Q-in-Q kennzeichnet S-VLAN 101 die Cabinet Domain und C-VLAN 2042 die Subscriber Line am BNG.",
+    "describe": {
+      "kid": "Eine Straße läuft durch eine Vier-Tür-Box, deren passende Spuren 1 und 3 markiert sind. Der wandernde Umschlag trägt einen 101-Aufkleber. Die Aktionskarte biegt seinen Weg nur durch Türen derselben Spur. Das Spurbuch listet Straße 101, Haus 2042 und eine getrennte Straße.",
+      "nerd": "Der Frame trägt VLAN 101 neben einem Switch mit vier nummerierten Ports. In der Action-Karte folgt tagged Traffic nur aktiven Member Ports, eine gestrichelte getrennte Spur bleibt dunkel. Das Spurbuch zeigt Straße 101, Haus 2042 und eine andere VID. Die 802.1Q Fields-Zeile steht darunter."
+    },
+    "at": {
+      "bng": {
+        "title": "Die Abo-Tür",
+        "kid": "Am BNG haben Straßen-Tag und Haus-Tag ihre Arbeit getan. Haus 2042 bedeutet deine Leitung, also nimmt der BNG die Aufkleber ab und schickt das Päckchen weiter. Darunter reist es als Lichtblitze im Glasfaden.",
+        "nerd": "Der BNG terminiert die Access VLANs: S-VID 101 scoped die Aggregation-Seite, C-VID 2042 wählt die Subscriber Session, dann wird die Ethernet Payload geroutet oder Label-switched weiter.",
+        "describe": {
+          "kid": "Die Straße erreicht eine Vier-Tür-Box, und dieser BNG ist eingekreist. Der Umschlag trägt noch seinen 101-Aufkleber. Die Aktionskarte zeigt die passende Spur, und ein kleiner TAGS-Zettel fliegt weg. Das Spurbuch zeigt von Straßen- und Hausnummern auf einen Besitzer, während die Tags abkommen.",
+          "nerd": "Am BNG zeigt die Action-Karte noch VLAN Member Ports, aber ein TAGS-Label löst sich auf einem Bogen. Das Spurbuch wechselt zu S-VID 101 und C-VID 2042 mit der Subscriber-Zeile. Der Frame pausiert an der Port-Box, während die Tags abgenommen werden."
+        }
+      }
+    }
+  },
+  "mpls": {
+    "title": "Autobahn-Nummern",
+    "kid": "Im Netz des Anbieters ist der Aufkleber eine Autobahnnummer. Eine Kreuzung tauscht sie gegen die Nummer, die die nächste Kreuzung verlangt, und schickt das Päckchen aus Tür 3, ohne die lange Adresse zu lesen. Darunter reist es als Lichtblitze im Glasfaden.",
+    "nerd": "MPLS Router nutzen eine LFIB: ein Incoming Label mappt auf ein Outgoing Interface und das Label, das der nächste Router advertised hat. Die Ingress Edge pusht ein Label, LSRs in der Mitte swappen es, die Egress Edge poppt es (oder, default, der Hop davor: Penultimate-Hop Popping).",
+    "describe": {
+      "kid": "Eine breite Straße läuft durch eine Vier-Tür-Kreuzung, und das wandernde Päckchen trägt eine große Autobahnnummer. Die Label-Karte zeigt, wie IP eine neue Nummer bekommt oder eine Nummer zu einer anderen wird. Das Labelbuch sagt, welche Tür, Tür 3 leuchtet, und das Päckchen geht weiter.",
+      "nerd": "Das MPLS-Paket sitzt neben einem Four-Port LSR, Tür 3 hervorgehoben. Die Action-Karte zeigt IP mit Outgoing Label oder ein Incoming Label, das gegen das nächste getauscht wird. Die LFIB-Karte spiegelt das Mapping. Das gelabelte Päckchen geht die Straße zwischen den Nodes entlang."
+    },
+    "at": {
+      "border": {
+        "title": "Die Autobahn verlassen",
+        "kid": "Der Grenzrouter ist die letzte Kreuzung im Netz deiner Internetfirma. Er nimmt den Autobahn-Aufkleber ab, damit die Börse und das nächste Netz die normale Adresse wieder lesen können. Darunter reist es als Lichtblitze im Glasfaden.",
+        "nerd": "Die Egress PE poppt das Label vor dem Ethernet-only Peering LAN am IXP und forwardet auf dem IP Header zum eBGP Next Hop. Meist hat der Core Router davor schon gepoppt (Penultimate-Hop Popping, der Default); hier poppt die Border selbst. TC Bits tragen Class; beim Pop wird die heruntergezählte MPLS TTL zurück in den IP Header kopiert (Uniform Model; das Pipe Model lässt die IP TTL).",
+        "describe": {
+          "kid": "An der letzten Vier-Tür-Kreuzung kommt das Päckchen mit Autobahnnummer-Aufkleber an. Die Label-Karte zeigt, wie die Nummer wieder zu IP wird, mit einem kleinen Pop-Schild dazwischen. Das Labelbuch sagt, den Aufkleber abzunehmen, Tür 3 leuchtet, und das Päckchen geht als normales Adress-Päckchen weiter.",
+          "nerd": "Der Egress Router ist auf der Straße markiert, das MPLS-gelabelte Paket an seinen Türen. Die Action-Karte zeigt das Incoming Label zurück zu IP und mit Pop markiert. Die LFIB-Karte listet dieses Label mit Pop und sagt, als Nächstes IP zu lesen. Die aktive Egress-Tür leuchtet, das Päckchen geht ohne MPLS Label weiter."
+        }
+      }
+    }
+  },
+  "card": {
+    "action": "Aufkleber-Aktion",
+    "label": "Label-Aktion",
+    "macBook": "MAC-Nachschlagebuch",
+    "arpBook": "ARP-Buch",
+    "lanes": "Spurbuch",
+    "lfib": "Labelbuch"
+  },
+  "mini": {
+    "ethernet": {
+      "bridge": {
+        "a": "Tür 1 lernen.",
+        "b": "Unbekannt? fluten."
+      },
+      "me": {
+        "a": "Für mich: abziehen.",
+        "b": "ARP nach der nächsten MAC."
+      }
+    },
+    "vlan": {
+      "pass": {
+        "a": "Nur Straße 101.",
+        "b": "Straße 102 ist getrennt."
+      },
+      "bng": {
+        "a": "Haus 2042 = du.",
+        "b": "BNG nimmt die Tags ab."
+      }
+    },
+    "mpls": {
+      "push": {
+        "a": "Push {out}.",
+        "b": "Auf die Autobahn."
+      },
+      "swap": {
+        "a": "{in} → {out}.",
+        "b": "Kein IP Lookup hier."
+      },
+      "pop": {
+        "a": "Pop das Label.",
+        "b": "Danach schlichtes Ethernet."
+      }
+    }
+  },
+  "label": {
+    "reply": "Antwort-Box",
+    "unknown": "unbekannt",
+    "whoHas": "Wer hat {ip}?",
+    "whoHasShort": "Wer hat?"
+  },
+  "book": {
+    "age": "Alterung",
+    "fcs": "FCS/CRC-32",
+    "check": "prüfen",
+    "drop": "Schmieren droppen",
+    "owner": "Besitzer",
+    "subscriber": "Subscriber Session",
+    "you": "dein Abo",
+    "street": "Straße",
+    "house": "Haus",
+    "otherStreet": "Andere Straße",
+    "push": "push",
+    "pop": "pop",
+    "readNext": "als Nächstes lesen",
+    "door": "Tür",
+    "in": "rein",
+    "out": "raus",
+    "nextHop": "nächster Hop",
+    "gateway": "gateway"
+  },
+  "sticker": {
+    "meShort": "ICH"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "title": "XGS-PON: geteilte Faser-Umschläge",
+  "kid": "Ein Glasfaden kann von vielen Wohnungen geteilt werden. Nach Hause hört jedes Haus die Umschläge, aber dein Router behält nur den mit deiner Hausnummer. Nach draußen sind die Wohnungen abwechselnd an der Reihe.",
+  "nerd": "Das ist ein XGS-PON-XGEM-Frame auf einem PON: etwa 10 Gbit/s je Richtung (9,953), geteilt von den Wohnungen am Splitter. Downstream ist Broadcast mit AES pro XGEM-Port; upstream sendet jede ONT einen kurzen Burst in ihrem eigenen Slot in jedem 125-µs-Frame, wie die BWmap des OLT nach Ranging vergibt.",
+  "extra": "Das ältere GPON kann diese Faser und den Splitter teilen: es nutzt andere Farben (1490 nm down, 1310 nm up, neben XGS-PONs 1577 und 1270 nm), sodass jede ONT das Licht herausfiltert, das sie nicht spricht. Es läuft 2,5 Gbit/s down und 1,25 up mit derselben Idee, aber der GEM-Header ist 5 Bytes mit 12-Bit-Port-ID, wo XGEM 8 Bytes mit 16 hat.",
+  "role": {
+    "nat": {
+      "title": "Dein Router behält seine Hausnummer",
+      "kid": "Dein Router hört den geteilten Glasfaden, aber er behält nur den Licht-Umschlag mit Hausnr. 1127. Die anderen bleiben verschlossen. Darunter reist der Umschlag als Lichtblitze in einem Glasfaden.",
+      "nerd": "An der ONT/am Router kommen Downstream-XGEM-Frames für alle ONTs vom Splitter. Diese ONT akzeptiert XGEM Port-ID 1127, verwirft andere Port-IDs und verlässt sich auf AES pro Port für Privacy.",
+      "describe": {
+        "kid": "Die Straße zeigt auf deinen Router. Eine Karte zeigt das Faser-Terminal, einen Splitter und vier Häuser. Licht-Umschläge gehen zu jedem Haus, aber nur der mit 1127 öffnet sich an deinem Router. Die Nachbarn bleiben verschlossen. Eine andere Karte zeigt den Reihen-Streifen mit Slot 3 an.",
+        "nerd": "Die ONT- und Router-Ansicht hebt Downstream-XGEM Port-ID 1127 im Header hervor. Broadcast-Umschläge fächern durch den Splitter. Andere XGEM-Frames bleiben verschlossen, und der akzeptierte bekommt einen Haken. Die Upstream-Karte zeigt die Slots eines 125-Mikrosekunden-Frames mit Turn 0x467 markiert."
+      }
+    },
+    "bridge": {
+      "title": "Das Faser-Terminal verteilt die Reihen",
+      "kid": "Das Faser-Terminal ist der Chef des geteilten Glasfadens. Es schickt einen kleinen Fahrplan, damit jedes Haus weiß, wann es reden darf, und niemand durcheinanderredet.",
+      "nerd": "Am OLT trägt der Downstream-Frame eine BWmap. Upstream-Bursts nutzen Alloc-IDs/T-CONTs, DBA-Grants und Ranging-Equalisation-Delays, sodass nahe und ferne ONTs in ihren Slots jedes 125-µs-Frames landen.",
+      "describe": {
+        "kid": "Diese Szene ist am Faser-Terminal, mit Karten für den geteilten Glasfaden. Eine Karte schickt Umschläge durch den Splitter in der Straße zu vier Häusern. Die Reihen-Karte ist aktiv. Ihr Fahrplan ist in vier Slots geteilt, Slot 3 leuchtet, und kleine Bursts fallen nacheinander in ihre Reihen.",
+        "nerd": "Die OLT-Ansicht macht die Upstream-Scheduler-Karte aktiv. Vier Slots teilen sich einen 125-Mikrosekunden-Frame, Alloc-ID 0x467 ist markiert. Punkte und Bursts gehen durch die Grants. Die Downstream-Karte zeigt weiter Splitter-Broadcast und XGEM Port-ID 1127."
+      }
+    }
+  },
+  "label": {
+    "everyone": "Nach Hause: alle hören mit",
+    "everyoneCompact": "Alle hören mit",
+    "turns": "Hoch: abwechselnd",
+    "turnsCompact": "Abwechselnd",
+    "splitter": "passiver Splitter",
+    "splitterShort": "Splitter",
+    "yourHouse": "dein Haus",
+    "otherHouse": "Nachbar",
+    "keeps": "behält 1127",
+    "ignores": "ignoriert",
+    "timetable": "Fahrplan",
+    "yourTurn": "deine Reihe!",
+    "yourTurnShort": "Deine Reihe!",
+    "yourTurnSlot": "deine Reihe: Slot 3",
+    "slot": "Slot",
+    "burst": "dein Burst",
+    "header": "XGEM-Header",
+    "payload": "Video-Bytes",
+    "equalDelay": "equalisation delay",
+    "nerdGrant": "BWmap · 0x467 · ranging"
+  },
+  "field": {
+    "pli": "PLI {value}",
+    "keyidx": "Key-Index 01",
+    "portKid": "Hausnr. 1127",
+    "portNerd": "Port-ID 1127",
+    "optlf": "Options 0 · LF 1",
+    "hec": "HEC {value}"
+  },
+  "tag": {
+    "down": "Broadcast · AES per XGEM port",
+    "up": "BWmap · Alloc-ID/T-CONT · DBA",
+    "ranging": "Ranging fügt Ausgleichsverzögerung hinzu"
+  }
+}

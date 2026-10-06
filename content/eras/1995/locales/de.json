@@ -1,0 +1,26 @@
+{
+  "name": "1995",
+  "kid": "Internet zu Hause war ein Telefonanruf. Das Modem des Computers rief die Internetfirma an, mit Piepen und Kreischen, und solange du online warst, konnte niemand telefonieren.",
+  "nerd": "Einwahl: ein Modem mit 28,8 kbit/s (56k kam 1997; V.90 1998) ruft die Modem-Bank des ISP, und PPP gibt dem PC eine eigene öffentliche Adresse. Kein Wi‑Fi, kein Router, kein NAT.",
+  "describe": {
+    "kid": "Ein großer beiger Computer mit tiefem Bildschirm und einer Tastatur am Kabel. Sein Modem sitzt blinkend im Regal und ruft die Internetfirma an.",
+    "nerd": "Ein Desktop-PC: sein externes Modem wählt den ISP auf der Telefonleitung, ohne Router dazwischen."
+  },
+  "at": {
+    "on-the-go": {
+      "kid": "Unterwegs war kaum jemand online, aber du konntest: ein Laptop mit Kabel zu einem Mobiltelefon rief die Internetfirma an. Dreimal langsamer als zu Hause, und jede Minute kostete Geld.",
+      "nerd": "GSM leitungsvermittelte Daten: 9,6 kbit/s in einem Funk-Timeslot, abgerechnet pro Minute wie ein Gespräch. Die Modems des Mobilfunkschalters (die IWF) rufen den ISP wie ein Modem zu Hause; die immer-an-Pakete von GPRS kamen 2000.",
+      "describe": {
+        "kid": "Ein dicker Laptop mit Krauselkabel zu einem Mobiltelefon so groß wie ein Ziegel, draußen auf der Straße.",
+        "nerd": "Ein Laptop von 1995 mit GSM-Datenkarte am Kabel zu einem GSM-Telefon, das den ISP mit 9,6 kbit/s anwählt."
+      }
+    }
+  },
+  "peek": {
+    "role": {
+      "router": {
+        "nerd": "Geroutet: Longest-Prefix-Match zum Ziel, TTL − 1 und ein neuer Link-Frame."
+      }
+    }
+  }
+}

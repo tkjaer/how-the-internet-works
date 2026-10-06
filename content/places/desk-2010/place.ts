@@ -28,5 +28,6 @@ export default definePlace({
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Digital_subscriber_line', title: 'DSL', level: 'both', lang: 'en' },
     { url: 'https://da.wikipedia.org/wiki/DSL', title: 'DSL', level: 'both', lang: 'da' },
+    { url: 'https://de.wikipedia.org/wiki/Digital_Subscriber_Line', title: 'Digital Subscriber Line', level: 'both', lang: 'de' },
   ],
 });

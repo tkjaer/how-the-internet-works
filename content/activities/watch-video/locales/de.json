@@ -1,0 +1,52 @@
+{
+  "title": "Ein Video anschauen",
+  "kid": "Du fragst nach einem Video.",
+  "nerd": "Die App holt das Video in kleinen Segmenten über HTTPS (HTTP in TLS in TCP), und der Server streamt sie zurück.",
+  "takes": {
+    "kid": "Das ganze Video ist in etwa {time} da: {faster}-mal schneller, als du es anschauen kannst.",
+    "nerd": "{size} HD-Video bei {rate}, Tempo der langsamsten Verbindung ({link}): alle {plays} in etwa {time}, {faster}× schneller, als es läuft. Der Player holt nur etwas voraus, die Leitung ruht meist."
+  },
+  "packet": {
+    "request": "Anfrage",
+    "video": "Video"
+  },
+  "peek": {
+    "request": "Gefangen: eine Anfrage",
+    "video": "Gefangen: ein Stück Video"
+  },
+  "stop": {
+    "phone": {
+      "kid": "Dein Handy will ein Katzenvideo, also schreibt es eine kleine Anfrage und schickt sie los.",
+      "nerd": "Die App öffnet eine TLS-Verbindung und sendet ein HTTP GET für das nächste Videosegment. Das OS teilt die Daten in TCP-Segmente in IP-Paketen."
+    }
+  },
+  "1995": {
+    "title": "Eine Webseite mit Bild öffnen",
+    "kid": "Du öffnest eine Webseite mit einem Bild darauf.",
+    "nerd": "Der Browser holt die Seite, dann ihr Bild, jeweils mit einem HTTP/1.0 GET auf einer eigenen TCP-Verbindung: schlichtes HTTP, kein TLS. SSL war gerade in Netscape da, für Shops. Videos waren briefmarkengroße Clips (160 × 120, ein paar Bilder pro Sekunde), die du vor dem Schauen herunterludest.",
+    "packet": {
+      "page": "Seite"
+    },
+    "peek": {
+      "page": "Gefangen: ein Stück der Seite"
+    },
+    "takes": {
+      "kid": "Seite und Bild brauchen etwa {time}, bis sie da sind. Heutiges Video würde {now} brauchen!",
+      "nerd": "{size} bei {rate}, Höchsttempo des Modems: etwa {time} für die Bits allein, mehr mit Handshakes, Headern und Neuübertragungen. Heutige {nowSize} HD-Video würden {now} brauchen."
+    }
+  },
+  "2010": {
+    "title": "Ein kleines Video anschauen",
+    "kid": "Du fragst nach einem kleinen Video.",
+    "nerd": "Der Player holt das Video als eine Datei über schlichtes HTTP (kein TLS): eine kleine 360p-MP4, die schon spielt, während der Rest noch unterwegs ist (progressive download). Videosites gingen ein paar Jahre später zu HTTPS. Der Cache, aus dem es kam, lag meist in einer größeren Stadt weiter weg als heute.",
+    "takes": {
+      "kid": "Das ganze kleine Video ist in etwa {time} da: {faster}-mal schneller, als du es anschauen kannst. Heutiges schärferes Video würde {now} brauchen.",
+      "nerd": "{size} 360p-Video bei {rate}, Tempo der langsamsten Verbindung ({link}): alle {plays} in etwa {time}, {faster}× schneller, als es läuft. Heutige {nowSize} HD-Video würden {now} brauchen."
+    },
+    "stop": {
+      "phone": {
+        "nerd": "Die App sendet ein HTTP GET für die ganze Videodatei, in schlichtem HTTP (kein TLS). Das OS legt die Anfrage in ein TCP-Segment in einem IP-Paket."
+      }
+    }
+  }
+}

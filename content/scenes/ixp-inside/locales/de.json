@@ -1,0 +1,45 @@
+{
+  "mode": {
+    "kid": "kid",
+    "nerd": "nerd"
+  },
+  "title": "Im Internetknoten",
+  "heading": {
+    "kid": "Im Internetknoten",
+    "nerd": "IXP Peering-LAN"
+  },
+  "kid": "Ein Internetknoten ist ein Tisch, an dem Netze sich treffen. Der Helfer teilt Zettel, wer was erreichen kann. Dann tauscht dein Päckchen direkt über den gemeinsamen Switch, ohne pro Päckchen zu zahlen und ohne den Helfer zu besuchen.",
+  "nerd": "Der IXP ist ein gemeinsames Ethernet-Fabric. Mitglieder peeren mit BGP, oft über einen Route Server, der Routen verteilt, aber keinen Traffic weiterleitet. Dein Paket nimmt einen Data-Plane-Hop über das Peering-LAN vom ISP-Port zum CDN-Port.",
+  "describe": {
+    "kid": "Ein langer gemeinsamer Switch sitzt in der Mitte. Der Router deiner Internetfirma steckt an einem Ende, der der Videofirma am anderen. Vier weitere Netze stecken auch. Eine Helfer-Box hat ihr eigenes Kabel. Kleine Zettel fahren über den Switch zum Helfer und zurück. Dann kreuzt dein Päckchen den Switch gerade zur Videofirma.",
+    "nerd": "Ein Peering-LAN-Switch mit sechs Member-Ports. Der Route Server hat einen eigenen Port. BGP-UPDATE-Zettel kreuzen das Fabric zum Route Server und zurück zu jedem Mitglied. Dann kreuzt das Paket das Fabric in einem Hop, vom Border-Port des ISP zum Port des CDN. Es besucht den Route Server nie."
+  },
+  "fabric": {
+    "kid": "Gemeinsamer Switch",
+    "nerd": "Peering-LAN"
+  },
+  "routeServer": {
+    "kid": "Routenhelfer",
+    "nerd": "Route server"
+  },
+  "routeServerLine": {
+    "kid": "gibt Zettel weiter",
+    "nerd": "BGP · no traffic"
+  },
+  "member": {
+    "other": "Andere Netze",
+    "as": "AS{n}"
+  },
+  "straight": {
+    "kid": "Päckchen gehen gerade rüber",
+    "nerd": "Daten: ein Hop, Port zu Port"
+  },
+  "1995": {
+    "kid": "Gezeichnet wie der Knoten von heute. DIX war ein Raum an einer Uni bei Kopenhagen, wo dänische Netze in ein gemeinsames Kabel steckten und dänische Päckchen kostenlos tauschten. Eine Seite aus Amerika kommt nie diesen Weg.",
+    "nerd": "Gezeichnet wie heute. DIX (1994, betrieben von UNI•C an der DTU in Lyngby) war ein gemeinsames Ethernet, auf dem dänische ISPs mit BGP-4 peerten, sodass dänischer Traffic in Dänemark blieb. Nur dänische Routen werden hier gelernt: eine Seite aus Amerika kommt stattdessen über den Upstream.",
+    "describe": {
+      "kid": "Ein langer gemeinsamer Switch sitzt in der Mitte. Der Router deiner Internetfirma steckt an einem Ende, das Netz eines dänischen Webservers am anderen. Vier weitere Netze stecken auch. Eine Helfer-Box hat ihr eigenes Kabel. Kleine Zettel fahren über den Switch zum Helfer und zurück. Dann kreuzt ein Päckchen den Switch gerade zum dänischen Netz.",
+      "nerd": "Gezeichnet wie heute: ein Peering-LAN-Switch mit sechs Member-Ports und einem Route Server mit eigenem Port. BGP-UPDATE-Zettel kreuzen das Fabric zum Route Server und zurück zu jedem Mitglied. Dann kreuzt ein Paket das Fabric in einem Hop, vom ISP-Port zum Port eines dänischen Netzes. Es besucht den Route Server nie."
+    }
+  }
+}

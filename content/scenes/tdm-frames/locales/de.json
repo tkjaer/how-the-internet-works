@@ -1,0 +1,152 @@
+{
+  "title": "Eine Leitung in Fächer geschnitten",
+  "kid": "Diese Leitung trägt nicht einen Anruf: sie trägt viele, die sich abwechseln. Jeden winzigen Moment schickt sie eine Reihe Boxen, eine Box für jedes Gespräch, achttausend Reihen in der Sekunde. Jedes Gespräch bekommt immer dieselbe Box.",
+  "nerd": "Time-Division Multiplexing: ein Frame aus 8-bit Timeslots, 8,000 Frames pro Sekunde (einer alle 125 µs), also ist jeder Slot ein fester 64 kbit/s Channel. Beide Enden zählen Slots vom Frame Alignment Pattern.",
+  "describe": {
+    "kid": "Zwei Maschinen an den Enden einer Leitung schicken einander Reihen kleiner bunter Boxen. Eine Karte zeigt eine Reihe Box für Box; die andere die Höhen und Tiefen der Leitung.",
+    "nerd": "Zwei Enden einer TDM Line tauschen Züge von Frames. Eine Karte zeigt die Timeslots eines Frames; die andere den Line Code auf dem Kupfer."
+  },
+  "pri": {
+    "title": "Dreißig Anrufe auf einer Leitung",
+    "kid": "Dein Telefonanruf hat die Telefonvermittlung in einer Box auf einer großen Leitung zusammen mit 29 anderen Anrufen verlassen: jeder Anruf behält in jeder Reihe seine eigene Box. Eine Box hält die Reihen im Takt, und eine trägt die Nachrichten der Vermittlung: ein neuer Anruf, ein Auflegen. Das Modem-Regal der Internetfirma bekommt alle dreißig Anrufe auf einmal.",
+    "nerd": "Ein ISDN Primary Rate Interface (ITU-T I.431) auf einem E1: 32 Timeslots × 64 kbit/s = 2.048 Mbit/s. Slot 0 trägt Frame Alignment, Slot 16 den D Channel (Q.931 Call Set-up und Clear-down), und Slots 1–15 und 17–31 sind 30 B Channels, jeder ein digitalisierter Modem Call. Die Digital Modems des Access Servers nehmen die Anrufe direkt von den Slots.",
+    "describe": {
+      "kid": "Die Telefonvermittlung und das Modem-Regal der Internetfirma, verbunden durch eine Leitung voller Reihen von Boxen. Eine Karte zeigt eine Reihe: eine gelbe Box für den Takt, eine türkise für Nachrichten, die Box deines Anrufs und die der anderen. Die andere Karte zeigt die Leitung auf und ab.",
+      "nerd": "Vermittlung und Access Server tauschen E1 Frames auf einem ISDN PRI. Eine Karte zeigt die 32 Timeslots: 0 für Alignment, 16 für den D Channel, Slot 7 dein Call und der Rest andere B Channels, manche idle. Die andere zeigt HDB3 auf dem Kupfer."
+    }
+  },
+  "e1": {
+    "title": "Eine Mietleitung zum nächsten Netz",
+    "kid": "Die Internetfirma mietet eine Leitung von der Telefongesellschaft: 31 Boxen in jeder Reihe, alle ihre, zu einem Rohr für Päckchen zusammengeklebt. Sie ist immer an, Tag und Nacht, und kostet dasselbe, ob sie voll ist oder nicht.",
+    "nerd": "Ein Leased E1 (G.703/G.704): 32 Timeslots bei 8,000 Frames pro Sekunde. Slot 0 ist Frame Alignment; Slots 1–31 sind zu einem 1.984 Mbit/s Channel gebündelt, der Cisco HDLC Frames mit den IP-Paketen trägt. Eine CSU/DSU an jedem Ende trifft den Circuit des Telco.",
+    "describe": {
+      "kid": "Zwei Router an den Enden einer Mietleitung schicken einander Reihen von Boxen. Eine Karte zeigt eine Reihe: eine gelbe Box für den Takt, dann 31 Boxen zu einem Rohr geklebt. Die andere zeigt die Leitung auf und ab.",
+      "nerd": "Zwei Router auf einem Leased E1. Eine Karte zeigt den Frame: Slot 0 für Alignment und Slots 1–31 gebündelt bei 1.984 Mbit/s. Die andere zeigt HDB3 auf dem Kupfer."
+    }
+  },
+  "t1": {
+    "title": "Eine amerikanische Mietleitung",
+    "kid": "In Amerika haben die Mietleitungen 24 Boxen in jeder Reihe, nicht 32, und einen Extra-Blip für den Takt. Alle 24 sind zu einem Rohr für Päckchen geklebt, zum Gebäude, in dem die Website wohnt.",
+    "nerd": "Ein T1 (DS1): 24 Timeslots plus ein Framing Bit, (24 × 8 + 1) × 8,000 = 1.544 Mbit/s; 1.536 Mbit/s für Daten. ESF Framing, B8ZS Line Code. Gemietet zum Hosting Site, mit Cisco HDLC oben drauf.",
+    "describe": {
+      "kid": "Zwei Router an den Enden einer amerikanischen Mietleitung schicken einander Reihen von Boxen. Eine Karte zeigt eine Reihe: einen kleinen Blip für den Takt und 24 Boxen zu einem Rohr geklebt. Die andere zeigt die Leitung auf und ab.",
+      "nerd": "Zwei Router auf einem Leased T1. Eine Karte zeigt den Frame: das Framing Bit und 24 Timeslots gebündelt bei 1.536 Mbit/s. Die andere zeigt AMI Pulses auf dem Kupfer."
+    }
+  },
+  "abis": {
+    "title": "Vier Anrufe in jeder Box",
+    "kid": "Vom Mast zum Switch der Mobilfunkfirma ist ein GSM-Anruf so klein, dass sich vier eine Box in jeder Reihe teilen: jeder Anruf behält sein Viertel, Reihe für Reihe, solange er dauert. Eine andere Box trägt die Nachrichten des Masts.",
+    "nerd": "Abis und Ater auf einem E1: 32 Timeslots × 64 kbit/s. Slot 0 ist Frame Alignment, Slot 1 das Signalling der BTS (LAPD); jeder Traffic Slot trägt vier 16 kbit/s Sub-Slots, je ein GSM Channel. Dein Data Call ist ein Viertel von Slot 7: 12 kbit/s RLP Frames plus Framing, am TRAU rate-adapted in einen ganzen 64 kbit/s Slot für die MSC.",
+    "describe": {
+      "kid": "Der Mast und die Controller-Box (oder der Controller und der Mobilfunk-Switch), verbunden durch eine Leitung voller Reihen von Boxen. Eine Karte zeigt eine Reihe: eine gelbe Box für den Takt, eine türkise für Nachrichten, und Boxen in Viertel, ein Viertel einer Box ist deins. Die andere Karte zeigt die Leitung auf und ab.",
+      "nerd": "Zwei Enden eines Abis- oder Ater-E1. Eine Karte zeigt die 32 Timeslots: 0 für Alignment, 1 für LAPD, Traffic Slots in vier 16 kbit/s Sub-Slots, dein Call in einem Viertel von Slot 7, manche frei. Die andere zeigt HDB3 auf dem Kupfer."
+    }
+  },
+  "trunk": {
+    "title": "Dreißig Anrufe zwischen zwei Switches",
+    "kid": "Der Switch der Mobilfunkfirma und die Vermittlung der Telefongesellschaft teilen eine große Leitung mit 30 Anrufen: jeder Anruf behält in jeder Reihe seine eigene Box. Der Anruf deines Laptops ist einer davon und piept wie ein Modem. Eine Box trägt die Nachrichten der Switches: ein neuer Anruf, ein Auflegen.",
+    "nerd": "Ein E1 Trunk zwischen MSC und PSTN: 32 Timeslots × 64 kbit/s. Slot 0 ist Frame Alignment, Slot 16 trägt SS7 (ISUP setzt jeden Circuit auf und räumt ihn), und die anderen 30 sind Anrufe in A-law PCM. Dein Circuit trägt die V.32 Modem Tones des IWF, 9.6 kbit/s in einem 64 kbit/s Slot.",
+    "describe": {
+      "kid": "Der Mobilfunk-Switch und die Telefonvermittlung, verbunden durch eine Leitung voller Reihen von Boxen. Eine Karte zeigt eine Reihe: eine gelbe Box für den Takt, eine türkise für Nachrichten, die Box deines Anrufs und die der anderen. Die andere Karte zeigt die Leitung auf und ab.",
+      "nerd": "MSC und Vermittlung tauschen E1 Frames auf einem Trunk. Eine Karte zeigt die 32 Timeslots: 0 für Alignment, 16 für SS7, Slot 7 dein Circuit und der Rest andere Circuits, manche idle. Die andere zeigt HDB3 auf dem Kupfer."
+    }
+  },
+  "wire": {
+    "kid": "Eine Reihe Boxen, 8.000 Mal in der Sekunde",
+    "nerd": "Ein Rahmen alle 125 µs, je Richtung"
+  },
+  "frameTitle": {
+    "kid": "Eine Reihe Boxen",
+    "nerd": "Ein Rahmen, Slot für Slot"
+  },
+  "legend": {
+    "sync": {
+      "kid": "Hält den Takt",
+      "nerd": "0: alignment"
+    },
+    "fbit": {
+      "kid": "Hält den Takt",
+      "nerd": "F: Rahmenbit"
+    },
+    "signal": {
+      "kid": "Nachrichten",
+      "nerd": "16: D channel"
+    },
+    "yours": {
+      "kid": "Dein Anruf",
+      "nerd": "Your B channel"
+    },
+    "other": {
+      "kid": "Andere Anrufer",
+      "nerd": "Other B channels"
+    },
+    "idle": {
+      "kid": "Frei",
+      "nerd": "Idle"
+    },
+    "pipe": {
+      "kid": "Ein Rohr",
+      "nerd": "1–31: ein Kanal"
+    },
+    "pipeT1": {
+      "kid": "Ein Rohr",
+      "nerd": "1–24: ein Kanal"
+    },
+    "ss7": {
+      "kid": "Nachrichten",
+      "nerd": "16: SS7"
+    },
+    "circuit": {
+      "kid": "Dein Anruf",
+      "nerd": "Deine Verbindung"
+    },
+    "circuits": {
+      "kid": "Andere Anrufer",
+      "nerd": "Andere Verbindungen"
+    },
+    "lapd": {
+      "kid": "Mast-Nachrichten",
+      "nerd": "1: LAPD"
+    },
+    "quarter": {
+      "kid": "Dein Anruf: ein Viertel",
+      "nerd": "Your 16k sub-slot"
+    },
+    "quarters": {
+      "kid": "Anrufe, vier in einer Box",
+      "nerd": "16k sub-slots"
+    }
+  },
+  "sum": {
+    "e1": {
+      "kid": "32 Boxen × 8.000 Reihen in der Sekunde",
+      "nerd": "32 × 8 bit × 8,000/s = 2.048 Mbit/s"
+    },
+    "t1": {
+      "kid": "24 Boxen × 8.000 Reihen in der Sekunde",
+      "nerd": "(24 × 8 + 1) × 8,000/s = 1.544 Mbit/s"
+    }
+  },
+  "code": {
+    "e1": {
+      "title": {
+        "kid": "Auf und ab auf dem Kupfer",
+        "nerd": "HDB3-Leitungscode"
+      },
+      "line": {
+        "kid": "Jede 1 kippt hoch oder runter; lange stille Strecken bekommen einen Fake-Blip",
+        "nerd": "AMI, aber 0000 geht als 000V oder B00V"
+      }
+    },
+    "t1": {
+      "title": {
+        "kid": "Auf und ab auf dem Kupfer",
+        "nerd": "AMI-Leitungscode"
+      },
+      "line": {
+        "kid": "Jede 1 kippt hoch oder runter, damit die Leitung im Gleichgewicht bleibt",
+        "nerd": "AMI; B8ZS ersetzt 8 Nullen durch Verletzungen"
+      }
+    }
+  }
+}

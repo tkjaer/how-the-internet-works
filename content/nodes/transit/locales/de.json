@@ -1,0 +1,11 @@
+{
+  "name": "Transit-Anbieter",
+  "kid": "Wenn es keine Abkürzung gibt, bezahlt deine Internetfirma ein größeres Netz dafür, das Päckchen zu tragen.",
+  "nerd": "Bezahltes IP-Transit von einem Tier-1- oder Tier-2-Anbieter: eine volle Routing-Tabelle und Erreichbarkeit zu allem.",
+  "tag": "Tier-1 · paid transit",
+  "1995": {
+    "kid": "Deine Internetfirma ist klein, darum mietet sie eine Leitung zu einem größeren Netz in Kopenhagen, das ihre Päckchen in den Rest der Welt trägt.",
+    "nerd": "Der Upstream: ein größeres dänisches Netz, das IP-Transit über eine gemietete E1 (2 Mbit/s) verkauft, mit eigenen Leitungen über den Atlantik. Wie die meisten kleinen ISPs zeigt unserer nur eine Default-Route darauf.",
+    "tag": "Upstream · E1"
+  }
+}

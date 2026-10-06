@@ -14,6 +14,7 @@ export default defineTechnology({
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Submarine_communications_cable', title: 'Submarine communications cable', level: 'both', lang: 'en' },
     { url: 'https://da.wikipedia.org/wiki/S%C3%B8kabel', title: 'Søkabel', level: 'both', lang: 'da' },
+    { url: 'https://de.wikipedia.org/wiki/Seekabel', title: 'Seekabel', level: 'both', lang: 'de' },
     { url: 'https://en.wikipedia.org/wiki/Cable_landing_point', title: 'Cable landing point', level: 'nerd', lang: 'en' },
   ],
 });

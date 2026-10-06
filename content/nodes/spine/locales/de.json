@@ -1,0 +1,6 @@
+{
+  "name": "Spine-Switch",
+  "kid": "Eine der großen Kreuzungen in der Mitte der Halle. Jeder Schrank hat eine Straße zu jeder Kreuzung, darum gibt es viele gleich gute Wege und keiner staut sich.",
+  "nerd": "Ein Spine einer Leaf–Spine-Fabric (Clos): jedes Leaf ist mit jedem Spine verbunden, sodass zwei Racks zwei Hops voneinander entfernt sind, über viele gleich teure Wege. ECMP hasht jeden Flow auf einen davon.",
+  "tag": "Clos · ECMP · 400G"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Mobilkern",
+  "kid": "Der Kontrollraum der Mobilfunkfirma. Er prüft deine SIM-Karte, packt deine Päckchen aus dem Tunnel des Masts aus und gibt ihnen eine Internetadresse.",
+  "nerd": "Der 5G-Kern (5GC): AMF/SMF übernehmen Anmeldung und Sessions; der UPF beendet den GTP-U-Tunnel, wendet Policy an und macht Carrier-Grade-NAT Richtung Internet.",
+  "tag": "5GC · UPF · CGNAT",
+  "peek": {
+    "up": {
+      "kid": "Der Mobilkern öffnet den Tunnel-Umschlag und tauscht dann Adresse und Türnummer deines Telefons gegen die eigenen, die sich viele Telefone teilen.",
+      "nerd": "Der UPF beendet den GTP-U-Tunnel (über TEID), dann schreibt Carrier-Grade-NAT Absenderadresse und Port um, korrigiert die Prüfsummen und routet weiter (TTL − 1)."
+    },
+    "down": {
+      "kid": "Der Mobilkern schaut nach, welches Telefon gefragt hat, ändert die Adresse zurück und legt das Päckchen in den Tunnel zum richtigen Mast.",
+      "nerd": "CGNAT zurück (Adresse und Port aus der Mapping-Tabelle), dann tunnelt der UPF es in GTP-U zur gNB des Telefons (TEID)."
+    }
+  },
+  "2010": {
+    "name": "Mobil-Tor",
+    "kid": "Das Internet-Tor der Mobilfunkfirma. Es packt deine Päckchen aus dem Tunnel der Funksteuerung aus und gibt ihnen eine Internetadresse, die sich viele Telefone teilen.",
+    "nerd": "Der GGSN des 3G-Paketkerns: er beendet den GTP-U-Tunnel (ein PDP-Context pro Telefon), gibt dem Telefon seine Adresse, wendet Policy an und macht NAT Richtung Internet (Gi).",
+    "tag": "GGSN · Gi · NAT",
+    "peek": {
+      "up": {
+        "kid": "Das Tor öffnet den Tunnel-Umschlag und tauscht dann Adresse und Türnummer deines Telefons gegen die eigenen, die sich viele Telefone teilen.",
+        "nerd": "Der GGSN beendet den GTP-U-Tunnel (über TEID), dann schreibt NAT Absenderadresse und Port um, korrigiert die Prüfsummen und routet weiter (TTL − 1)."
+      },
+      "down": {
+        "kid": "Das Tor schaut nach, welches Telefon gefragt hat, ändert die Adresse zurück und legt das Päckchen in den Tunnel zur richtigen Funksteuerung.",
+        "nerd": "NAT zurück (Adresse und Port aus der Mapping-Tabelle), dann tunnelt der GGSN es in GTP-U zum RNC des Telefons (TEID)."
+      }
+    }
+  }
+}

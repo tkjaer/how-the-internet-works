@@ -1,0 +1,8 @@
+{
+  "name": "Modembank",
+  "1995": {
+    "kid": "Die Modem-Bank der Internetfirma: ein Gestell mit einem kleinen Modem für jeden, der gerade online ist. Sie nimmt deinen Anruf entgegen, prüft dein Passwort, gibt deinem Computer eine Adresse und schickt deine Päckchen weiter.",
+    "nerd": "Ein Remote-Access-Server: Dutzende digitale Modems auf ISDN-PRI-Leitungen von der Vermittlung (V.34, 28,8 kbit/s). Er beendet die PPP-Session, authentifiziert dich gegen RADIUS, vergibt eine Adresse aus seinem Pool und routet deine Pakete auf das LAN des ISP.",
+    "tag": "PRI · 30 Modems"
+  }
+}

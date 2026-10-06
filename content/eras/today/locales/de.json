@@ -1,0 +1,25 @@
+{
+  "name": "Heute",
+  "kid": "Ein dünner Glasfaden bringt das Internet als Lichtblitze ins Haus, schnell genug, dass alle zu Hause gleichzeitig Videos schauen können.",
+  "nerd": "Glasfaser bis ins Haus oder bis zum Gebäude: GPON oder XGS-PON (Gigabit, geteilt von einer Nachbarschaft) oder Ethernet aus dem Keller. Wi‑Fi 6 und NAT zu Hause.",
+  "describe": {
+    "kid": "Ein Handy in deiner Hand. Es ist per Wi‑Fi am Router, und der Router hat einen Glasfaden ins Internet.",
+    "nerd": "Ein Smartphone per Wi‑Fi 6 hinter einem Heimrouter, mit Glasfaser oder einem Kabel aus dem Keller als Uplink."
+  },
+  "at": {
+    "on-the-go": {
+      "kid": "Draußen auf der Straße sind Handys auf 5G: Funk zu einem Mobilfunkmast in der Nähe, dann ein Glasfaden ins Internet. Schnell genug für große Videos.",
+      "nerd": "5G NR: breite Träger und viele Antennen geben einem Handy Dutzende bis Hunderte Mbit/s. Der gNB tunnelt die Pakete (GTP-U) über Glasfaser zur UPF des Kerns.",
+      "describe": {
+        "kid": "Ein Handy in deiner Hand, draußen auf der Straße, per 5G zu einem Mobilfunkmast.",
+        "nerd": "Ein Smartphone per 5G NR zu einem gNB, mit Glasfaser-Backhaul zum Mobilfunkkern."
+      }
+    },
+    "desk": {
+      "describe": {
+        "kid": "Ein Laptop auf dem Schreibtisch, mit Kabel zum Router, und der Router hat einen Glasfaden ins Internet.",
+        "nerd": "Ein Laptop per Ethernet zum Heimrouter, mit Glasfaser (XGS-PON) als Uplink."
+      }
+    }
+  }
+}

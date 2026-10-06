@@ -1,0 +1,145 @@
+{
+  "title": "Welche Straße als Nächstes?",
+  "kid": "Ein Router liest das Adressetikett auf jedem Päckchen und prüft seine Wegweiser: welche Straße bringt es näher an diese Adresse? Dann geht das Päckchen diese Straße hinunter.",
+  "nerd": "Ein Router schlägt das Ziel in seiner Forwarding-Tabelle nach. Der längste passende Prefix gewinnt (ein /24 schlägt die Default Route 0.0.0.0/0), die TTL geht um eins runter, und das Paket geht auf dem Interface dieser Route raus.",
+  "describe": {
+    "kid": "Eine Papierstraße verbindet dein Gerät, diesen Router und den Videoserver. Eine Karte zeigt das Adressetikett des Päckchens. Eine andere Karte ist ein Pfosten mit Straßenschildern. Ein laufendes Päckchen hält hier, eine Lupe liest das Etikett, ein Schild leuchtet, und das Päckchen läuft weiter.",
+    "nerd": "Die Nahaufnahme zeigt den IP-Header mit From, To und TTL. Die Schilder des Routers zeigen ein Client-Prefix und eine Default- oder Server-Route. Wenn das Paket pausiert, leuchtet die Zielzeile. Longest-Prefix-Match wählt ein Schild, TTL zählt runter, und das Paket geht weiter."
+  },
+  "role": {
+    "nat": {
+      "title": "Das Tausch-Notizbuch",
+      "kid": "Alles zu Hause teilt eine Adresse nach draußen. Der Heim-Router tauscht den Absender-Aufkleber gegen seine eigene Adresse und schreibt es in sein Notizbuch, sodass er beim Antwort weiß, wer gefragt hat.",
+      "nerd": "NAPT: die private Quelladresse und der Port werden auf die öffentliche Adresse umgeschrieben. Das Mapping (innen Adresse:Port ↔ außen Port) bleibt in der Connection Table, und Antworten werden daran gematcht und zurückgeschrieben.",
+      "describe": {
+        "kid": "Eine Straße verbindet deine Geräte, den Heim-Router und den Videoserver. Die Adresskarte ändert den From-Aufkleber zum Router. Das Tausch-Notizbuch listet dich und ein anderes Gerät mit Ticketnummern. Das Päckchen pausiert am Router, das Etikett ändert sich, und Antworten kommen durch das Notizbuch zurück.",
+        "nerd": "Die Nahaufnahme zeigt die IP-Quelle, die neben der NAT-Tabelle umgeschrieben wird. Zeilen mappen den inneren Rechner und Port auf einen Port außen. Die aktive Zeile erscheint und leuchtet auf dem Rückweg. Das Paket läuft weiter, TTL wie an jedem gerouteten Hop heruntergezählt."
+      }
+    },
+    "bridge": {
+      "title": "Nur auf der Durchreise",
+      "kid": "Diese Box liest das Adressetikett nicht einmal! Sie nimmt den Umschlag ab, in dem das Päckchen kam, und setzt einen neuen für die nächste Strecke auf.",
+      "nerd": "Ein Layer-2-Gerät: es leitet den Frame anhand der Destination-MAC weiter (oder, zwischen verschiedenen Medien, packt ihn in den Frame des nächsten Links) und liest den IP-Header nie. Die MAC-Adressen bleiben die der Geräte an beiden Enden dieser Layer-2-Strecke, meist zwei Router; der IP-Header, TTL inklusive, wird nie angefasst. (Ein Tunnel-Ende, etwa ein Funkmast, ist anders: der Frame endet dort, und das Paket geht in einem neuen äußeren Header mit den eigenen Adressen und MAC des Tunnel-Endes.)",
+      "describe": {
+        "kid": "Eine Straße verbindet dein Gerät, diese Durchreise-Box und den Videoserver. Die Adresskarte hat schläfrige Augen, die andere Karte zeigt den alten und den neuen Umschlag. Das Päckchen behält sein Adressetikett geschlossen, während ein Umschlag abhebt und ein frischer für die nächste Strecke draufkommt.",
+        "nerd": "Die IP-Header-Karte wird gezeigt, aber nicht gelesen. Die Link-Karte zeigt ankommende und gehende Umschläge. Technische Labels sagen, die MAC-Adressen werden unverändert weitergegeben (ein Tunnel-Ende setzt eigene auf), und der IP-Header bleibt unberührt. In der Pause hebt der alte Umschlag ab, der nächste landet, und das Paket läuft mit demselben IP-Etikett und TTL weiter."
+      }
+    },
+    "switched": {
+      "title": "Nur der Aufkleber wird gelesen",
+      "kid": "In der schnellen Mitte des Internets liest dieser Router das Adressetikett nicht einmal. Er liest nur den Autobahnaufkleber außen, tauscht ihn gegen den nächsten und schickt das Päckchen in einem neuen Umschlag weiter.",
+      "nerd": "Ein Label-Switching-Router (ein MPLS-P-Router): er schlägt nur das Top-Label nach, tauscht es, zählt die TTL des Labels runter und steckt das Paket in einen neuen Ethernet-Frame. Der IP-Header innen wird nie gelesen, also bleiben TTL und Checksum wie sie sind; die TTL holt auf, wenn das Label am Rand abgeht (RFC 3443, uniform model).",
+      "describe": {
+        "kid": "Eine Straße verbindet dein Gerät, diesen Router und den Videoserver. Die Adresskarte hat schläfrige Augen, die andere Karte zeigt den alten und den neuen Umschlag mit Autobahnaufkleber. Das Päckchen behält sein Adressetikett geschlossen, während ein Umschlag abhebt und ein frischer für die nächste Strecke draufkommt.",
+        "nerd": "Die IP-Header-Karte wird gezeigt, aber nicht gelesen, und ihre TTL ändert sich nicht. Die Link-Karte zeigt ankommende und gehende Ethernet- und MPLS-Umschläge. Technische Labels zeigen die eigene MAC des Routers und sagen, der IP-Header bleibt unberührt. In der Pause hebt der alte Umschlag ab, der nächste landet, und das Paket läuft mit demselben IP-Etikett und TTL weiter."
+      }
+    },
+    "endpoint": {
+      "title": "Ist es für mich?",
+      "kid": "Am Ende der Straße prüft der Computer das Adressetikett gegen seine eigene Adresse. Es passt! Er öffnet das Päckchen und reicht das nummerierte Stück darin nach oben. Auf alles, was er sendet, schreibt er das Etikett selbst.",
+      "nerd": "Das Ziel passt zu einer lokalen Adresse, also wird der IP-Header abgenommen und die Payload geht hoch zu TCP (Protokoll 6). Für ausgehende Pakete schreibt das Endgerät Quelle, Ziel und eine frische TTL (64 hier, wie auf Linux, Android, iOS und macOS; Windows nutzt 128, und Windows 95 nutzte 32).",
+      "describe": {
+        "kid": "Die Straße endet am geprüften Gerät. Eine Karte zeigt das Adressetikett, eine andere die eigene Adresse des Geräts wie ein Türschild. Ein Päckchen kommt an, das Etikett passt, und ein kleines nummeriertes Stück steigt zur nächsten Schicht. Nach draußen wird das Etikett geschrieben, bevor das Päckchen geht.",
+        "nerd": "An einem Endpoint wird der IP-Header mit der lokalen Adresse auf dem Schild verglichen. Die ankommende Payload steigt zur nächsten Schicht. Auf dem Weg raus schreibt das Endgerät eine frische Quelle, Ziel und TTL 64. Labels zeigen Protokoll 6 zu TCP und neue Pakete mit TTL 64."
+      }
+    }
+  },
+  "at": {
+    "mobile-core": {
+      "title": "Eine ganze Straße teilt eine Adresse",
+      "kid": "Handys im Mobilnetz bekommen keine eigene Internetadresse. Der Mobilkern tauscht den Absender-Aufkleber vieler Handys gegen dieselbe eine Adresse und gibt jedem eine eigene Ticketnummer in seinem Notizbuch.",
+      "nerd": "Carrier-grade NAT: Teilnehmer bekommen Adressen aus dem Shared Space 100.64.0.0/10 (RFC 6598), und Dutzende bis Hunderte teilen eine öffentliche IPv4-Adresse, jedes mit eigenem Portblock. Das ist ein großer Grund für IPv6.",
+      "describe": {
+        "kid": "Die Straße zeigt mehrere Handys, die sich einen Mobilkern auf dem Weg zum Videoserver teilen. Die Adresskarte ändert From zu Mobilkern. Das Tausch-Notizbuch ist voller Nachbarn mit Ticketnummern. Ein Päckchen hält am Kern, bekommt den Aufkleber getauscht, dann läuft es weiter. Antworten nutzen das Notizbuch, um das richtige Handy zu finden.",
+        "nerd": "Das ist die NAT-Variante für Carrier-grade NAT. Die Karte schreibt eine Quelle von 100.64.0.0/10 auf die öffentliche Adresse des Carriers um. Die Tabelle mappt mehrere innere Adress- und Portpaare auf äußere Ports. Das Paket pausiert für den Rewrite, TTL fällt, und das Forwarding geht weiter."
+      }
+    },
+    "exchange": {
+      "nerd": "Die Telefonvermittlung schaltet den Modem-Call durch zum Modem-Pool der Internetfirma. PPP-Frames fahren im Call als Ton; hier liest niemand den IP-Header, und auf einer Telefonleitung gibt es keine MAC-Adressen. Der IP-Header, TTL inklusive, wird nie angefasst.",
+      "describe": {
+        "kid": "Eine Straße verbindet dein Gerät, diese Durchreise-Box und den Server. Die Adresskarte hat schläfrige Augen, die andere Karte zeigt den alten und den neuen Umschlag. Das Päckchen behält sein Adressetikett geschlossen, während ein Umschlag abhebt und ein frischer für die nächste Strecke draufkommt.",
+        "nerd": "Die IP-Header-Karte wird gezeigt, aber nicht gelesen. Die Link-Karte zeigt ankommende und gehende Umschläge. Technische Labels sagen, hier gibt es keine MAC-Adressen und der IP-Header bleibt unberührt. In der Pause hebt ein Umschlag ab, der nächste landet, und das Paket läuft mit demselben IP-Etikett und TTL weiter."
+      }
+    },
+    "cell-tower": {
+      "nerd": "Ein Tunnel-Ende, keine schlichte Bridge: die Basisstation (gNB) bewegt das Paket zwischen dem 5G-Radio-Link und einem GTP-U-Tunnel (in UDP/IP) zum Mobilkern, ohne seinen IP-Header zu lesen. Zum Kern reist das Tunnel-Paket in einem Ethernet-Frame, der hier startet oder endet, mit der eigenen MAC der gNB. Der innere IP-Header, TTL inklusive, wird nie angefasst.",
+      "describe": {
+        "kid": "Eine Straße verbindet dein Gerät, diese Durchreise-Box und den Videoserver. Die Adresskarte hat schläfrige Augen, die andere Karte zeigt den alten und den neuen Umschlag. Das Päckchen behält sein Adressetikett geschlossen, während ein Umschlag abhebt und ein frischer für die nächste Strecke draufkommt.",
+        "nerd": "Die IP-Header-Karte wird gezeigt, aber nicht gelesen. Die Link-Karte zeigt einen Umschlag, der abhebt, und einen Tunnel-Umschlag, der seinen Platz einnimmt. Technische Labels zeigen die eigene MAC des Tunnel-Endes und sagen, der IP-Header bleibt unberührt. Das Paket läuft im Tunnel mit demselben IP-Etikett und TTL weiter."
+      }
+    },
+    "rnc": {
+      "nerd": "Ein Tunnel-Ende, keine schlichte Bridge: der RNC beendet den 3G-Radio-Link und bewegt das Paket in einen GTP-U-Tunnel (in UDP/IP) zum Packet Core, ohne seinen IP-Header zu lesen. Zum Kern reist das Tunnel-Paket in einem Ethernet-Frame, der hier startet oder endet, mit der eigenen MAC des RNC. Der innere IP-Header, TTL inklusive, wird nie angefasst.",
+      "describe": {
+        "kid": "Eine Straße verbindet dein Gerät, diese Durchreise-Box und den Videoserver. Die Adresskarte hat schläfrige Augen, die andere Karte zeigt den alten und den neuen Umschlag. Das Päckchen behält sein Adressetikett geschlossen, während ein Umschlag abhebt und ein frischer für die nächste Strecke draufkommt.",
+        "nerd": "Die IP-Header-Karte wird gezeigt, aber nicht gelesen. Die Link-Karte zeigt einen Umschlag, der abhebt, und einen Tunnel-Umschlag, der seinen Platz einnimmt. Technische Labels zeigen die eigene MAC des Tunnel-Endes und sagen, der IP-Header bleibt unberührt. Das Paket läuft im Tunnel mit demselben IP-Etikett und TTL weiter."
+      }
+    },
+    "nodeb": {
+      "nerd": "Der NodeB relaised das Paket zwischen dem 3G-Radio und seiner Leitung zum RNC, der den Radio-Link und den Tunnel beendet. Kein Ethernet-Frame und keine MAC-Adressen auf dieser Strecke; der IP-Header, TTL inklusive, wird nie gelesen oder angefasst.",
+      "describe": {
+        "kid": "Eine Straße verbindet dein Gerät, diese Durchreise-Box und den Videoserver. Die Adresskarte hat schläfrige Augen, die andere Karte zeigt den alten und den neuen Umschlag. Das Päckchen behält sein Adressetikett geschlossen, während ein Umschlag abhebt und ein frischer für die nächste Strecke draufkommt.",
+        "nerd": "Die IP-Header-Karte wird gezeigt, aber nicht gelesen. Die Link-Karte zeigt ankommende und gehende Umschläge. Technische Labels sagen, hier gibt es keine MAC-Adressen und der IP-Header bleibt unberührt. In der Pause hebt ein Umschlag ab, der nächste landet, und das Paket läuft mit demselben IP-Etikett und TTL weiter."
+      }
+    }
+  },
+  "signs": "Wegweiser",
+  "elsewhere": "Überall sonst",
+  "notebook": "Tausch-Notizbuch",
+  "table": "NAT-Tabelle · {addr}",
+  "you": "{name} (du)",
+  "neighbour": "Nachbar",
+  "ticket": "Nr. {n}",
+  "swap": "Neuer Umschlag",
+  "door": "Meine Adresse",
+  "match": "Es ist für mich!",
+  "up": "Hoch zu: {layer}",
+  "write": "Das Etikett schreiben",
+  "tag": {
+    "lpm": "längster Treffer gewinnt",
+    "default": "Standardroute 0/0",
+    "ttl": "TTL {a} → {b}",
+    "ttlLabel": "TTL {a} → {b}, aus dem Label",
+    "nat": "192.168.x.x → public",
+    "cgnat": "100.64.0.0/10 → public",
+    "ports": "belegt? neuer Port",
+    "mac": "own MAC {mac}",
+    "macPassed": "MACs weitergereicht",
+    "noMac": "hier keine MAC-Adressen",
+    "untouched": "IP-Header unberührt",
+    "proto": "protocol 6 → TCP",
+    "ttl64": "neue Pakete: TTL 64"
+  },
+  "1995": {
+    "describe": {
+      "kid": "Eine Papierstraße verbindet dein Gerät, diesen Router und den Server. Eine Karte zeigt das Adressetikett des Päckchens. Eine andere Karte ist ein Pfosten mit Straßenschildern. Ein laufendes Päckchen hält hier, eine Lupe liest das Etikett, ein Schild leuchtet, und das Päckchen läuft weiter.",
+      "nerd": "Die Nahaufnahme zeigt den IP-Header mit From, To und TTL. Die Schilder des Routers zeigen ein Client-Prefix und eine Default- oder Server-Route. Wenn das Paket pausiert, leuchtet die Zielzeile. Longest-Prefix-Match wählt ein Schild, TTL zählt runter, und das Paket geht weiter."
+    },
+    "role": {
+      "bridge": {
+        "describe": {
+          "kid": "Eine Straße verbindet dein Gerät, diese Durchreise-Box und den Server. Die Adresskarte hat schläfrige Augen, die andere Karte zeigt den alten und den neuen Umschlag. Das Päckchen behält sein Adressetikett geschlossen, während ein Umschlag abhebt und ein frischer für die nächste Strecke draufkommt.",
+          "nerd": "Die IP-Header-Karte wird gezeigt, aber nicht gelesen. Die Link-Karte zeigt ankommende und gehende Umschläge. Technische Labels sagen, die MAC-Adressen werden unverändert weitergegeben (ein Tunnel-Ende setzt eigene auf), und der IP-Header bleibt unberührt. In der Pause hebt der alte Umschlag ab, der nächste landet, und das Paket läuft mit demselben IP-Etikett und TTL weiter."
+        }
+      },
+      "endpoint": {
+        "nerd": "Das Ziel passt zu einer lokalen Adresse, also wird der IP-Header abgenommen und die Payload geht hoch zu TCP (Protokoll 6). Für ausgehende Pakete schreibt das Endgerät Quelle, Ziel und eine frische TTL (64 hier, der Default, den RFC 1700 empfiehlt; manche Systeme nutzten 32 oder 255)."
+      }
+    }
+  },
+  "2010": {
+    "tag": {
+      "cgnat": "10.0.0.0/8 → public"
+    },
+    "at": {
+      "mobile-core": {
+        "kid": "Handys im Mobilnetz bekommen keine eigene Internetadresse. Das Mobil-Tor tauscht den Absender-Aufkleber vieler Handys gegen dieselbe eine Adresse und gibt jedem eine eigene Ticketnummer in seinem Notizbuch.",
+        "nerd": "Carrier-grade NAT am GGSN: Handys bekommen private Adressen, hier aus 10.0.0.0/8, und Dutzende bis Hunderte teilen eine öffentliche IPv4-Adresse, jedes mit eigenem Portblock. Ein Shared Space nur dafür, 100.64.0.0/10, kam später (RFC 6598, 2012). Das ist ein großer Grund für IPv6.",
+        "describe": {
+          "kid": "Die Straße zeigt mehrere Handys, die sich ein Mobil-Tor auf dem Weg zum Videoserver teilen. Die Adresskarte ändert From zu Mobil-Tor. Das Tausch-Notizbuch ist voller Nachbarn mit Ticketnummern. Ein Päckchen hält am Tor, bekommt den Aufkleber getauscht, dann läuft es weiter. Antworten nutzen das Notizbuch, um das richtige Handy zu finden.",
+          "nerd": "Das ist die NAT-Variante für Carrier-grade NAT. Die Karte schreibt eine private Quelle von 10.0.0.0/8 auf die öffentliche Adresse des Carriers um. Die Tabelle mappt mehrere innere Adress- und Portpaare auf äußere Ports. Das Paket pausiert für den Rewrite, TTL fällt, und das Forwarding geht weiter."
+        }
+      }
+    }
+  }
+}

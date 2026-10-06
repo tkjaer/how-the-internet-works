@@ -14,10 +14,11 @@ function* strings(o: unknown, at: string): Generator<[string, string]> {
 }
 
 describe('the levels, as readers see them (#141)', () => {
-  it('are called Simple and Technical, Enkel and Teknisk', () => {
+  it('are called Simple and Technical, Enkel and Teknisk, Einfach and Technisch', () => {
     const ui = (lang: string) => locales[`/content/locales/${lang}/ui.json`] as Record<string, string>;
     expect([ui('en')['mode.kid'], ui('en')['mode.nerd']]).toEqual(['Simple', 'Technical']);
     expect([ui('da')['mode.kid'], ui('da')['mode.nerd']]).toEqual(['Enkel', 'Teknisk']);
+    expect([ui('de')['mode.kid'], ui('de')['mode.nerd']]).toEqual(['Einfach', 'Technisch']);
   });
 
   it('are never "for kids" or "for nerds" in any string, in any language', () => {

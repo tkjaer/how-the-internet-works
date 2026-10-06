@@ -5,5 +5,6 @@ import { defineOwner } from '$core/define';
 export default defineOwner({
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Internet_backbone', title: 'Internet backbone', level: 'both', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Internet-Backbone', title: 'Internet-Backbone', level: 'both', lang: 'de' },
   ],
 });

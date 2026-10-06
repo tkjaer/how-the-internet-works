@@ -1,0 +1,5 @@
+{
+  "name": "Heimrouter",
+  "kid": "Die Haustür deines Heimnetzes.",
+  "nerd": "Routet zwischen dem Heim-LAN und dem ISP und macht NAT, damit das ganze Zuhause eine öffentliche Adresse teilt."
+}

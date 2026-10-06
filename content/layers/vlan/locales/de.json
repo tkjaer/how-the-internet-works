@@ -1,0 +1,51 @@
+{
+  "name": {
+    "kid": "Straßenzettel",
+    "nerd": "VLAN-Tags (802.1ad Q-in-Q)"
+  },
+  "note": {
+    "kid": "Es bekommt einen farbigen Zettel, damit der Betreiber weiß, von welcher Straße und welchem Haus es kam.",
+    "nerd": "Doppelt getaggt (Q-in-Q): ein S-VLAN pro Schrank, ein C-VLAN pro Kunde, Richtung BNG."
+  },
+  "line": "802.1ad Q-in-Q, S-VLAN {svid}, C-VLAN {cvid}",
+  "field": {
+    "spcp": {
+      "name": "S-PCP",
+      "about": "Priorität des äußeren Tags."
+    },
+    "sdei": {
+      "name": "S-DEI",
+      "about": "Darf bei Überlast zuerst verworfen werden."
+    },
+    "svid": {
+      "name": {
+        "kid": "Straßennr.",
+        "nerd": "S-VLAN ID"
+      },
+      "about": "Der äußere Tag: durch welchen Straßenschrank es kam."
+    },
+    "ctpid": {
+      "name": "C-TPID",
+      "about": "Sagt, dass ein innerer (Kunden-)Tag folgt."
+    },
+    "cpcp": {
+      "name": "C-PCP",
+      "about": "Priorität des inneren Tags."
+    },
+    "cdei": {
+      "name": "C-DEI",
+      "about": "Darf bei Überlast zuerst verworfen werden."
+    },
+    "cvid": {
+      "name": {
+        "kid": "Hausnr.",
+        "nerd": "C-VLAN ID"
+      },
+      "about": "Der innere Tag: welche Kundenleitung. Der BNG kennt dein Abo daran."
+    },
+    "type": {
+      "name": "EtherType",
+      "about": "Was innerhalb der Tags ist."
+    }
+  }
+}

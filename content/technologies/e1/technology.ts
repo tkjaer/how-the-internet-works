@@ -12,5 +12,6 @@ export default defineTechnology({
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/E-carrier', title: 'E-carrier', level: 'nerd', lang: 'en' },
     { url: 'https://en.wikipedia.org/wiki/Leased_line', title: 'Leased line', level: 'both', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Standleitung', title: 'Standleitung', level: 'both', lang: 'de' },
   ],
 });

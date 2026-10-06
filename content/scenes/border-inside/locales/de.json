@@ -1,0 +1,63 @@
+{
+  "mode": {
+    "kid": "kid",
+    "nerd": "nerd"
+  },
+  "title": "Im Grenzrouter",
+  "heading": {
+    "kid": "Im Grenzrouter",
+    "nerd": "Border-Router-RIB"
+  },
+  "kid": "Das ist die Tür aus deiner Internetfirma. Der Grenzrouter nimmt den Autobahnaufkleber ab, liest Zettel von den Nachbarn und wählt die Abkürzung durch den Knoten, wo niemand pro Päckchen zahlt. Die bezahlte Transit-Straße ist bereit, aber dein Päckchen braucht sie nicht.",
+  "nerd": "Am PE/ASBR muss das letzte MPLS-Label weg sein, bevor das Ethernet-only Peering-LAN kommt; standardmäßig (penultimate-hop popping) entfernt der Core-Router davor es, und hier poppt der Border es selbst. eBGP-Updates vom IXP-Peer und vom Transit-Provider füllen die RIB, und local preference wählt Peering vor bezahltem Transit für 198.51.100.0/24.",
+  "describe": {
+    "kid": "Der Kern deiner Internetfirma ist links. Rechts zwei Ausgänge: der Knoten und ein gedimmter Carrier, den man bezahlt. Ein Päckchen kommt mit Autobahnaufkleber. Der Aufkleber geht ab. Zettel von beiden Nachbarn fliegen ins Routenbuch. Die Zeile vom Knoten leuchtet, und das Päckchen fährt zum Knoten.",
+    "nerd": "Im Grenzrouter poppt die Linecard zur Core-Seite das MPLS-Label. Eine BGP-Routing-Tabelle listet das Video-Prefix mit IXP-Peer- und Transit-Pfaden. UPDATE-Zettel kommen von beiden Nachbarn. Die Zeile mit local-pref 200 leuchtet, und das Paket geht zum IXP."
+  },
+  "rib": {
+    "title": {
+      "kid": "Routenbuch",
+      "nerd": "BGP RIB"
+    },
+    "dest": {
+      "kid": "Geht zu",
+      "nerd": "Prefix"
+    },
+    "target": {
+      "kid": "die Videofirma",
+      "nerd": "198.51.100.0/24"
+    },
+    "exchange": {
+      "kid": "über den Knoten",
+      "nerd": "via IXP peer",
+      "detail": {
+        "kid": "kurze Straße · keine Gebühr pro Päckchen",
+        "nerd": "AS path: 1 AS · local-pref 200"
+      }
+    },
+    "transit": {
+      "kid": "über Transit",
+      "nerd": "via transit",
+      "detail": {
+        "kid": "lange Straße · bezahlt",
+        "nerd": "AS path: 3 ASes · local-pref 100"
+      }
+    }
+  },
+  "pop": {
+    "tag": {
+      "kid": "Autobahnaufkleber ab",
+      "nerd": "pop label"
+    },
+    "short": {
+      "kid": "ab",
+      "nerd": "pop"
+    }
+  },
+  "note": {
+    "short": {
+      "kid": "Zettel",
+      "nerd": "UPDATE"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Funkmast",
+  "2010": {
+    "kid": "Ein Mast mit drei flachen Antennen, die je ein Stück der Umgebung abdecken. Er spricht per Funk mit allen Telefonen in der Nähe und schickt ihre Päckchen weiter an seine Steuerung.",
+    "nerd": "Eine 3G-Basisstation (NodeB): drei Sektorantennen, der HSDPA-Scheduler und HARQ (MAC-hs), und eine Iub-Leitung zurück zu ihrem RNC, 2010 oft E1-Leitungen mit ATM oder ein Mikrowellen-Link.",
+    "tag": "NodeB · 2,1 GHz · Iub",
+    "peek": {
+      "up": {
+        "kid": "Der Mast nimmt dein Päckchen vom Funk und schickt es die Leitung zur Steuerung hinunter, noch im Funk-Umschlag.",
+        "nerd": "Die NodeB beendet die Luftschnittstelle (WCDMA, HARQ) und leitet die RLC-Stücke über Iub zum RNC weiter; sie öffnet sie nicht."
+      },
+      "down": {
+        "kid": "Der Mast stellt dein Päckchen in die Warteschlange und schickt es per Funk an dein Telefon, wenn dein Telefon dran ist.",
+        "nerd": "MAC-hs reiht die Stücke des RNC pro Telefon ein, und der Scheduler sendet sie in den 2-ms-Slots und Codes, die er wählt."
+      }
+    }
+  }
+}

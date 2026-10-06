@@ -1,0 +1,12 @@
+{
+  "name": {
+    "kid": "Ein großer Carrier",
+    "nerd": "Transit · AS64502"
+  },
+  "1995": {
+    "name": {
+      "kid": "Ein größeres Netz",
+      "nerd": "Upstream · AS64502"
+    }
+  }
+}

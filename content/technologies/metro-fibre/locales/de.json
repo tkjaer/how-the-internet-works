@@ -1,0 +1,10 @@
+{
+  "name": "Glasfaden",
+  "kid": "Ein Glasfaden trägt die Päckchen als Lichtblitze.",
+  "nerd": "Punkt-zu-Punkt-Faser mit Ethernet (10–100 Gbit/s).",
+  "tag": "DWDM · C-Band · 10–100G",
+  "2010": {
+    "nerd": "Punkt-zu-Punkt-Faser mit Ethernet (1–10 Gbit/s).",
+    "tag": "DWDM · C-Band · 1–10G"
+  }
+}

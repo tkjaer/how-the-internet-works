@@ -1,0 +1,6 @@
+{
+  "name": "5G",
+  "kid": "Dein Handy spricht per Funk mit dem Mast. Der Mast zielt einen Strahl genau auf dein Handy, damit viele Handys gleichzeitig sprechen können.",
+  "nerd": "5G NR im 3,5-GHz-Band: OFDMA mit 30-kHz-Subträgern, beamformed von einem Massive-MIMO-Panel, geplant in jedem 0,5-ms-Slot.",
+  "tag": "NR · 100 MHz · 256-QAM"
+}

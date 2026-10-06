@@ -1,0 +1,18 @@
+{
+  "name": "Funksteuerung",
+  "2010": {
+    "kid": "Der Chef von Dutzenden Masten. Er prüft, dass jedes Stück durch die Luft kam, schließt sie ab, damit niemand mithören kann, und schickt die Päckchen in einem Tunnel weiter zum Tor der Mobilfunkfirma.",
+    "nerd": "Der RNC: er beendet RLC (ARQ, Ciphering) und die Funksteuerung (RRC), steuert Handover zwischen seinen NodeBs und sendet mit Direct Tunnel Nutzerpakete in GTP-U direkt zum GGSN.",
+    "tag": "RNC · Iub · Iu-PS",
+    "peek": {
+      "up": {
+        "kid": "Die Steuerung packt den Funk-Umschlag aus, schließt die Stücke auf und steckt dein Päckchen in einen Tunnel-Umschlag an das Tor der Mobilfunkfirma.",
+        "nerd": "Der RNC setzt die RLC-Stücke zusammen und entschlüsselt sie, dann tunnelt er das IP-Paket in GTP-U zum GGSN; die TEID benennt den PDP-Context dieses Telefons."
+      },
+      "down": {
+        "kid": "Die Steuerung öffnet den Tunnel-Umschlag, schließt dein Päckchen ab, schneidet es in Funkstücke und schickt sie zum Mast, in dessen Nähe dein Telefon ist.",
+        "nerd": "Der RNC beendet den GTP-U-Tunnel (über TEID), chiffriert und segmentiert das Paket in RLC und sendet es über Iub zur NodeB des Telefons."
+      }
+    }
+  }
+}

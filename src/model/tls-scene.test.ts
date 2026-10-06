@@ -1,9 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import { layoutFor, paintRows, tlsMoment } from '../../content/scenes/tls-lock/tls';
-import en from '../../content/scenes/tls-lock/locales/en.json';
-import da from '../../content/scenes/tls-lock/locales/da.json';
+
+// every language pack the scene ships, so a new one is laid out too
+const scene = import.meta.glob<{ label: { server: string } }>('../../content/scenes/tls-lock/locales/*.json', { eager: true, import: 'default' });
+const langs = Object.keys(scene).map((p) => p.slice(p.lastIndexOf('/') + 1, -'.json'.length));
 
 // the client, named on the paint row (#132): any device that starts a trip
+const clients = ['phone', 'phone-3g', 'laptop', 'pc'];
 const nodes = import.meta.glob<{ name: string }>('../../content/nodes/{phone,phone-3g,laptop,pc}/locales/*.json', { eager: true, import: 'default' });
 const longest = (server: string) => Math.max(server.length, ...Object.values(nodes).map((n) => n.name.length));
 
@@ -16,7 +19,7 @@ const views = [
 describe('the TLS dive (tls-lock)', () => {
   it('lays the paint rows with three pots of one size, signs in clear gaps, inside either card (#90, #132)', () => {
     for (const [o, vp] of views)
-      for (const { label } of [en, da])
+      for (const { label } of Object.values(scene))
         for (const card of layoutFor(o, vp).cards) {
           const L = layoutFor(o, vp), chars = longest(label.server), P = paintRows(L, card, o, chars);
           const sign = 0.3 * L.size.big;
@@ -28,7 +31,8 @@ describe('the TLS dive (tls-lock)', () => {
           expect(P.pots[2] + P.half).toBeLessThanOrEqual(card.x + card.w - 24);
           for (const y of P.rows) expect(y > card.y && y + 48 * P.scale < card.y + card.h).toBe(true);
         }
-    expect(Object.keys(nodes)).toHaveLength(8);
+    expect(langs).toEqual(expect.arrayContaining(['en', 'da', 'de']));
+    expect(Object.keys(nodes)).toEqual(expect.arrayContaining(clients.flatMap((c) => langs.map((l) => `../../content/nodes/${c}/locales/${l}.json`))));
   });
 
   it('plays the ID first for kids, and the TLS 1.3 order for nerds: keys, then the encrypted certificate (#132)', () => {

@@ -1,0 +1,6 @@
+{
+  "name": "Origin",
+  "kid": "Die Hauptkopie jedes Videos, in einer Wolke weit weg. Ein Videoserver, der ein Video noch nicht hat, holt es von hier.",
+  "nerd": "Der Origin: die Master-Kopie im Object Storage einer Cloud-Region, dreifach gespeichert (oft in verschiedenen Gebäuden), sodass beim Verlust einer Disk oder eines Gebäudes keine Daten verloren gehen. Cache-Misses werden von hier gefüllt, manchmal über einen Ozean.",
+  "tag": "Object storage · 3 Kopien"
+}

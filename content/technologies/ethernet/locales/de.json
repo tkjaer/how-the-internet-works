@@ -1,0 +1,10 @@
+{
+  "name": "Kabel",
+  "kid": "Ein Kupferkabel trägt das Päckchen als winzige elektrische Signale.",
+  "nerd": "Gigabit Ethernet über vier Twisted Pairs (1000BASE-T, PAM-5).",
+  "tag": "1000BASE-T · Cat 5e/6",
+  "1995": {
+    "nerd": "10 Mbit/s Ethernet über zwei Twisted Pairs (10BASE-T, Manchester-Code).",
+    "tag": "10BASE-T · Cat 3"
+  }
+}

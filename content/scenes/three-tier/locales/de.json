@@ -1,0 +1,36 @@
+{
+  "mode": {
+    "kid": "kid",
+    "nerd": "nerd"
+  },
+  "title": "Der Baum des Rechenzentrums",
+  "heading": {
+    "kid": "Switches auf drei Etagen",
+    "nerd": "Three-tier: core, aggregation, access"
+  },
+  "kid": "2010 standen die Switches wie ein Baum: große Hauptstraßen oben, ein großer Switch in der Mitte und ein Switch in jedem Schrank mit Computern. Jeder Schrank hat zwei Straßen hoch zur Mitte, aber eine bleibt zu, damit Päckchen nicht im Kreis fahren. Alle Päckchen quetschen sich durch die offenen Straßen.",
+  "nerd": "Three-tier, das übliche Design der 2000er: Access Switches in den Racks (48 × 1G down, 2 × 10G up), ein Aggregation-Paar, wo Layer 2 endet und HSRP den Servern ein Gateway gibt, und ein Core-Paar darüber. Spanning Tree blockiert jeden Rack-Uplink zum Standby Switch, damit die Schleife bricht: die Hälfte der Uplinks sitzt idle, und 48 Server teilen sich einen 10G Uplink (4.8 : 1 oversubscribed).",
+  "extra": "Leaf–spine Fabrics (Clos, mit ECMP über jeden Uplink und ohne Spanning Tree) verbreiteten sich mit den großen Cloud-Firmen Anfang der 2010er und waren Mitte der 2010er das übliche Design.",
+  "describe": {
+    "kid": "Drei Reihen Switches. Oben zwei Hauptstraßen; in der Mitte der helle, benannte Aggregation-Switch und ein blasser Ersatz. Unten drei Schrank-Switches; der letzte ist deiner. Jeder Schrank hat eine Straße zu beiden in der Mitte, aber die zum Ersatz sind gestrichelt und mit einem roten Schild zu. Dein Päckchen kommt vom Load Balancer durch den hellen Switch runter in deinen Schrank.",
+    "nerd": "Core-Paar oben, das Aggregation-Paar in der Mitte (dieser aktiv, der Zwilling Standby), drei Access Switches unten. Jeder Access Switch hat Uplinks zu beiden, aber Spanning Tree blockiert die zum Standby, mit Einfahrt-verboten-Schildern. Dein Flow: Load Balancer → aktiver Switch → Rack; andere Racks gehen hoch zum Core oder quer, alle über den aktiven Switch."
+  },
+  "core": {
+    "label": {
+      "kid": "Hauptstraße",
+      "nerd": "Core {n}"
+    }
+  },
+  "standby": {
+    "kid": "Ersatz",
+    "nerd": "Standby (HSRP)"
+  },
+  "rack": {
+    "other": "Andere Racks"
+  },
+  "sticker": {
+    "kid": "Eine Straße offen, eine zu",
+    "nerd": "Uplink 2: blocked",
+    "rate": "48×1G ↓ 10G ↑"
+  }
+}

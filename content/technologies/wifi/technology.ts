@@ -10,6 +10,8 @@ export default defineTechnology({
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Wi-Fi', title: 'Wi-Fi', level: 'both', lang: 'en' },
     { url: 'https://da.wikipedia.org/wiki/Wi-Fi', title: 'Wi-Fi', level: 'both', lang: 'da' },
+    { url: 'https://de.wikipedia.org/wiki/Wi-Fi', title: 'Wi-Fi', level: 'both', lang: 'de' },
     { url: 'https://en.wikipedia.org/wiki/Orthogonal_frequency-division_multiplexing', title: 'OFDM', level: 'nerd', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Orthogonales_Frequenzmultiplexverfahren', title: 'Orthogonales Frequenzmultiplexverfahren', level: 'nerd', lang: 'de' },
   ],
 });

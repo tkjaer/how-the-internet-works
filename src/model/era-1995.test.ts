@@ -290,13 +290,13 @@ describe('the 1995 trip', () => {
 
   it('reaches the exchange from the mobile network on the go, not on a copper loop (#180)', () => {
     const words = (place: string) => [...routeWords(resolveRoute({ activity: 'watch-video', places: [place] }))].filter(([k]) => / node\.exchange$|\.stop\.exchange$/.test(k));
-    expect(words('home-dialup').some(([, s]) => /copper loop|kobberlinje/.test(s))).toBe(true);
-    expect(words('on-the-go-1995').filter(([, s]) => /copper|kobber/.test(s))).toEqual([]);
+    expect(words('home-dialup').some(([, s]) => /copper loop|kobberlinje|Kupferleitung/.test(s))).toBe(true);
+    expect(words('on-the-go-1995').filter(([, s]) => /copper|kobber|Kupfer/.test(s))).toEqual([]);
     expect(words('on-the-go-1995').length).toBeGreaterThan(0);
   });
 
   it('speaks HTTP/1.0 in the clear: it names TLS and Host only to say there were none (#180)', () => {
-    const NAMES = /\bTLS\b|\bHost\b/, NONE = /\b(?:no|without|ingen|uden|ikke)\b/i;
+    const NAMES = /\bTLS\b|\bHost\b/, NONE = /\b(?:no|without|ingen|uden|ikke|kein|keine|keinen|ohne|nicht)\b/i;
     const bad = new Map<string, string>();
     for (const r of trips()) for (const [key, s] of routeWords(r)) if (NAMES.test(s) && !NONE.test(s)) bad.set(key, s);
     expect([...bad].map(([k, s]) => `${k}: ${s}`)).toEqual([]);
@@ -355,7 +355,7 @@ describe('the 1995 trip', () => {
     const laterRfc = (s: string) => [...s.matchAll(/\bRFC ?(\d+)/g)].some(([, n]) => Number(n) > 1883);
     // and on the go (#147): GSM's circuit-switched data only, no packet radio
     const MOBILE = /\b(GPRS|EDGE|HSCSD|HSPA|SGSN|GGSN|GTP|UMTS|[345]G|LTE|NR)\b/;
-    const SAYS_WHEN = /today|i dag|nutid|\b(199[6-9]|20\d\d)\b/i;
+    const SAYS_WHEN = /today|i dag|nutid|heute|Gegenwart|\b(199[6-9]|20\d\d)\b/i;
     // walked, but never shown in 1995: the cache's rooms (1995's server is drawn as a tower: a card, the computer and
     // a disk) and gigabit's PAM-5 card (1995's copper is 10BASE-T's Manchester)
     const UNSHOWN = ['scene.server-inside.ssd.title', 'scene.copper-pulses.tag.speedShort'];
@@ -375,7 +375,7 @@ describe('the 1995 trip', () => {
   });
 
   it('draws the server room as it was: nothing on the way says it is drawn as today (step 7)', () => {
-    const TODAY = /drawn as today|tegnet som i dag/i;
+    const TODAY = /drawn as today|tegnet som i dag|gezeichnet wie heute/i;
     const bad = new Set<string>();
     for (const r of trips()) {
       const room = scenes(r).filter((s) => s.path[1] === 'datacentre');

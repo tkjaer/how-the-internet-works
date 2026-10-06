@@ -1,0 +1,28 @@
+{
+  "1995": {
+    "stop": {
+      "backbone": {
+        "kid": "Hier trifft die Leitung von jenseits des Meeres ein großes amerikanisches Netz, in New York. Seine Router geben dein Päckchen quer durchs Land weiter.",
+        "nerd": "Der Router des US-Backbones an seinem New-York-PoP: der transatlantische Circuit landet auf einer Serial-Karte, und das Paket geht als Zellen auf einer ATM-OC-3-Karte weiter. BGP hat ihm gesagt, dass das Netz des Servers quer durchs Land liegt."
+      },
+      "pop": {
+        "kid": "Der Router des großen Netzes nahe der Website. Von hier läuft eine gemietete Leitung in das Gebäude, in dem die Seite wohnt.",
+        "nerd": "Der PoP des Backbones nahe dem Server: der ATM-Circuit endet hier, die Zellen werden wieder ein Paket, und es geht auf dem T1 des Hosting-Standorts weiter (Cisco HDLC)."
+      }
+    },
+    "tag": {
+      "backbone": "ATM OC-3 · BGP",
+      "pop": "ATM → T1"
+    },
+    "inside": {
+      "internet": {
+        "kid": "1995 ist das Internet viel kleiner: weniger als zweitausend Netze. Dein Anruf geht durch die Telefonvermittlung zu den Modems deiner Internetfirma. Von dort läuft eine Mietleitung zu einem größeren Netz in Kopenhagen, unter dem Atlantik in einem Glaskabel, quer durch Amerika und in den Raum, in dem die Website wohnt.",
+        "nerd": "Das Telefonnetz (ein Circuit durch die Vermittlung, dann ein PRI) zur Modem-Bank des ISP und ihrem einen Router. Eine gemietete E1 zum Upstream in Kopenhagen, CANTAT-3 nach Nordamerika, ein ATM-Backbone quer durch die USA und ein T1 in den Hosting-Standort. Jede Fläche ist ein Betreibernetz; dänischer Verkehr geht stattdessen zum DIX.",
+        "describe": {
+          "kid": "In der Wolke startet der Weg bei dir zu Hause. Er läuft durch die Telefonvermittlung und die Modem-Bank zum Router der Internetfirma, mit gestricheltem Abzweig zum dänischen Knoten. Dann zu einem größeren Netz, unter dem Meer zu zwei US-Routern und in den Serverraum, eine Box zum Öffnen.",
+          "nerd": "Die aufgeklappte Route 1995: Zuhause, Telefonvermittlung, Modem-Bank und ISP-Router, DIX als gestrichelter Abzweig. Dann Upstream auf E1, CANTAT-3 zum New-York-Router des US-Backbones, ATM quer durchs Land zu dessen PoP, T1 in den Serverraum, der sich öffnet. Anfragen und Seitenpakete laufen entgegengesetzt."
+        }
+      }
+    }
+  }
+}

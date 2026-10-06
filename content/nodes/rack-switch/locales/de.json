@@ -1,0 +1,11 @@
+{
+  "name": "Rack-Switch",
+  "kid": "Der Switch oben auf einem hohen Schrank voller Computer (einem Rack). Er reicht Päckchen an die Computer in seinem eigenen Schrank weiter.",
+  "nerd": "Der Top-of-Rack-Switch (ToR) ist ein Leaf: ein Uplink zu jedem Spine und 25–100G hinunter zu den wenigen Dutzend Servern in seinem Rack.",
+  "tag": "ToR leaf · 25G zu Servern",
+  "2010": {
+    "kid": "Der Switch in einem hohen Schrank voller Computer (einem Rack). Er reicht Päckchen an die Computer in seinem eigenen Schrank weiter. Er hat zwei Wege nach oben: einen offenen und einen, der als Reserve geschlossen bleibt.",
+    "nerd": "Der Access-Switch: 48 Ports mit 1G-Kupfer hinunter zu den Servern des Racks und zwei 10G-Uplinks, einer zu jedem Aggregation-Switch. Er bridged nur (Layer 2); Spanning Tree blockiert den Uplink zum Standby-Switch.",
+    "tag": "Access · 48 × 1G · 2 × 10G up"
+  }
+}

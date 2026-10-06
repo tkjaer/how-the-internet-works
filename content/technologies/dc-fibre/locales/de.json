@@ -1,0 +1,10 @@
+{
+  "name": "RZ-Glasfaser",
+  "kid": "Kurze Glasfäden zwischen den Boxen in einem Gebäude, alle von derselben Firma.",
+  "nerd": "Im Fabric: 100–400G Ethernet über kurze Single-Mode-Faser (oder Kupfer die letzten Meter zum Server).",
+  "tag": "400GBASE-FR4 · SMF",
+  "2010": {
+    "nerd": "Im Rechenzentrum 2010: 10 Gigabit Ethernet über kurze Multimode-Faser (10GBASE-SR, 850 nm) zwischen den Switches; die Server hängen daran mit Kupfer.",
+    "tag": "10GBASE-SR · OM3"
+  }
+}

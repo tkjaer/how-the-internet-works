@@ -1,0 +1,16 @@
+{
+  "name": "Lichtkasten",
+  "kid": "In einem Gebäude deiner Internetfirma hört eine große Box dem Licht vieler Straßen zu und sagt jedem Haus, wann es senden darf.",
+  "nerd": "Das OLT (optical line terminal) in der Vermittlung: es betreibt das PON (vergibt jedem Haus seine Upstream-Slots, verschlüsselt, was runtergeht) und bridged dann die Ethernet-Frames jedes Hauses mit Q-in-Q-Tags weiter Richtung BNG.",
+  "tag": "OLT · Q-in-Q VLANs",
+  "peek": {
+    "up": {
+      "kid": "Das Faser-Terminal holt dein Päckchen aus seinem Licht-Umschlag und klebt zwei Zettel drauf: einen für deine Straße, einen für dein Zuhause.",
+      "nerd": "Das OLT beendet XGS-PON (der XGEM-Header kommt runter), bridged den Ethernet-Frame weiter und schiebt zwei 802.1ad-Tags drauf: S-VLAN 101 für das PON, C-VLAN 2042 für dieses Zuhause."
+    },
+    "down": {
+      "kid": "Das Faser-Terminal zieht die zwei Zettel ab, steckt dein Päckchen in einen Licht-Umschlag mit deiner Hausnummer und schickt ihn den Glasfaden hinunter zu jedem Haus in deiner Straße.",
+      "nerd": "Das OLT nimmt die Q-in-Q-Tags ab, mappt den Frame auf XGEM Port-ID 1127, verschlüsselt ihn mit dem AES-Schlüssel dieses Ports und sendet ihn das PON hinunter."
+    }
+  }
+}

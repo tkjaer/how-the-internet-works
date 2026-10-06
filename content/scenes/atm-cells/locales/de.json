@@ -1,0 +1,55 @@
+{
+  "title": "Kleine Zellen mit Etiketten",
+  "kid": "Auf dieser großen amerikanischen Autobahn wird dein Päckchen in winzige Stücke gehackt, alle gleich groß, jedes mit einem kleinen Etikett vorn. Maschinen in der Mitte lesen nur das Etikett, tauschen es gegen ein neues und schicken das Stück weiter. Am anderen Ende werden die Stücke wieder zu deinem Päckchen zusammengeklebt.",
+  "nerd": "ATM: feste 53-Byte-Zellen, 5 Byte Header und 48 Byte Nutzlast. Der Router zerlegt jedes IP-Paket mit AAL5 (RFC 1483 LLC/SNAP, dann ein 8-Byte-Trailer mit Länge und CRC-32, auf 48 aufgefüllt). Switches leiten anhand von VPI/VCI eines permanenten virtuellen Kreises weiter und schreiben ihn hop für hop um, ähnlich wie MPLS ab 2001 Labels tauschen würde. Der Router am anderen Ende setzt das Paket an der als letzte markierten Zelle (PTI) wieder zusammen.",
+  "describe": {
+    "kid": "Zwei Autobahn-Router mit einer Linie dazwischen und einem Switch in der Mitte. Kleine quadratische Stücke strömen entlang der Linie, jedes mit einem orangen Etikett, das türkis wird, wenn der Switch es tauscht. Eine Karte zeigt dein Päckchen in 32 Stücke; die andere ein Stück: kleines Etikett und ein großer Teil deines Päckchens.",
+    "nerd": "Zwei Router, verbunden durch einen ATM-Kreis über einen Switch, der VPI/VCI 1/112 zu 1/87 umschreibt. Eine Karte zeigt ein 1500-Byte-Paket, von AAL5 in 32 Zellen geschnitten, 1696 Byte auf der Leitung; die andere eine 53-Byte-Zelle: VPI/VCI, PTI und CLP, HEC und 48 Byte Nutzlast."
+  },
+  "switch": {
+    "kid": "Etikett-Tauscher",
+    "nerd": "ATM-Switch"
+  },
+  "cutTitle": {
+    "kid": "Dein Päckchen, klein gehackt",
+    "nerd": "AAL5: Paket in Zellen"
+  },
+  "packet": {
+    "kid": "Dein Päckchen",
+    "nerd": "IP-Paket, {bytes} Bytes"
+  },
+  "cutLine": {
+    "kid": "{n} Stücke, jedes mit eigenem Etikett",
+    "nerd": "{n} Zellen = {bytes} Bytes auf der Leitung ({pct} % Overhead)"
+  },
+  "cellTitle": {
+    "kid": "Ein Stück",
+    "nerd": "Eine Zelle, 53 Bytes"
+  },
+  "cellBytes": {
+    "kid": "Kleines Etikett, großes Stück",
+    "nerd": "{head} B Header + {body} B Nutzlast"
+  },
+  "field": {
+    "label": {
+      "kid": "Welche Straße",
+      "nerd": "VPI/VCI: der Kreis"
+    },
+    "type": {
+      "kid": "Ist das das letzte Stück?",
+      "nerd": "PTI (letzte Zelle), CLP"
+    },
+    "check": {
+      "kid": "Ein Check des Etiketts",
+      "nerd": "HEC: Header-Check"
+    },
+    "payload": {
+      "kid": "Ein Stück deines Päckchens",
+      "nerd": "48 B des AAL5-Frames"
+    }
+  },
+  "cellLine": {
+    "kid": "Etwa ein Zehntel jedes Stücks ist Etikett",
+    "nerd": "5 von 53 Bytes ≈ 9,4 % Header, jede Zelle"
+  }
+}

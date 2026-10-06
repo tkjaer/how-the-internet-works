@@ -1,0 +1,34 @@
+{
+  "name": "Unterwegs, 3G",
+  "access": "3G",
+  "2010": {
+    "kid": "Draußen auf der Straße gibt es kein Wi-Fi, also fliegen die Päckchen per Funk zu einem Mast. Von dort zur Steuerbox und weiter zum Tor der Mobilfunkfirma ins Internet.",
+    "nerd": "Um 2010: das Handy spricht HSPA (3G) mit einem NodeB, der die Funkstücke über Iub an die RNC gibt. Die RNC tunnelt die Pakete (GTP-U) zur GGSN, die NAT Richtung Internet macht.",
+    "describe": {
+      "kid": "Eine Straße mit Läden, Laterne, Fahrbahn und Auto liegt vor grünen Hügeln. Ein Handy mit kleinem Bildschirm und rundem Knopf schickt Päckchen per 3G-Funk zu einem Mast mit drei flachen Antennen. Eine Leitung trägt sie weiter zur Internetwolke. Anfragen und Video laufen in beide Richtungen.",
+      "nerd": "Die Straßenansicht zeigt ein Smartphone von 2010, einen HSPA-Funklink zu einem NodeB mit drei Sektorantennen, die Iub-Leitung zur RNC und die Internetwolke. Anfrage-Pakete gehen hoch durch NodeB und RNC. Video-Pakete kommen denselben Weg zurück."
+    },
+    "tag": {
+      "phone": "3G · 10.152.33.7",
+      "mobile-core": "GGSN · NAT"
+    },
+    "stop": {
+      "phone": {
+        "kid": "Dein Handy will ein Katzenvideo, auch hier draußen. Es schickt eine kleine Anfrage per Funk. Auf 3G passt nur ein kleines Video."
+      },
+      "cell-tower-internet": {
+        "kid": "Vom Mast reisen deine Päckchen eine Leitung zur Steuerbox, noch in ihren Funk-Umschlägen.",
+        "nerd": "Iub: der NodeB gibt die RLC-Stücke ungeöffnet an die RNC. 2010 waren das oft ein paar E1-Leitungen mit ATM (je 2 Mbit/s) oder ein Mikrowellen-Hop; neuere Standorte hatten IP über Glasfaser."
+      }
+    },
+    "inside": {
+      "internet": {
+        "nerd": "Die RNC beendet die Funkschichten und tunnelt mit Direct Tunnel die Pakete direkt zur GGSN, die NAT macht; die SGSN (gestrichelt) meldet das Handy nur an und setzt den Tunnel auf. Ab da dasselbe Internet: ISP-Kern, Peering am IXP (oder bezahltes Transit) und ein CDN-Cache. Jede Fläche ist ein Betreibernetz.",
+        "describe": {
+          "kid": "In der Wolke startet die Route am Mast, zur Funksteuerung und zum Tor der Mobilfunkfirma. Ein gestrichelter Abzweig führt zum Anmeldeschalter. Vom Tor durch ISP-Kern, Border-Router und Internetknoten zum Rechenzentrum der Videofirma. Päckchen laufen in beide Richtungen.",
+          "nerd": "Dieser Internetblick startet mit NodeB, RNC und GGSN, SGSN gestrichelt neben der RNC, dann ISP-Kern, Border-Router, IXP und CDN-Rechenzentrum. Die Flächen sind Mobil- oder ISP-Netz, Austausch und Videofirma. Pakete laufen über Iub, GTP, Backbone-Glasfaser und Cross-Connects."
+        }
+      }
+    }
+  }
+}

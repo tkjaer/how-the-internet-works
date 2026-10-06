@@ -12,5 +12,6 @@ export default defineLayer({
   dive: 'http-chunk',
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/HTTP', title: 'HTTP', level: 'both', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol', title: 'Hypertext Transfer Protocol', level: 'both', lang: 'de' },
   ],
 });

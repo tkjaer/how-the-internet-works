@@ -7,5 +7,6 @@ export default defineNode({
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Edge_device', title: 'Edge device', level: 'nerd', lang: 'en' },
     { url: 'https://en.wikipedia.org/wiki/Router_(computing)', title: 'Router', level: 'both', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Router', title: 'Router', level: 'both', lang: 'de' },
   ],
 });

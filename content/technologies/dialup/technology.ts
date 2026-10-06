@@ -12,5 +12,6 @@ export default defineTechnology({
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Dial-up_Internet_access', title: 'Dial-up internet access', level: 'both', lang: 'en' },
     { url: 'https://da.wikipedia.org/wiki/Modem', title: 'Modem', level: 'both', lang: 'da' },
+    { url: 'https://de.wikipedia.org/wiki/W%C3%A4hlleitung', title: 'Wählleitung', level: 'both', lang: 'de' },
   ],
 });

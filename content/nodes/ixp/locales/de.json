@@ -1,0 +1,11 @@
+{
+  "name": "Internetknoten",
+  "kid": "Ein Treffpunkt, an dem ganz viele Netze Päckchen kostenlos tauschen.",
+  "nerd": "Ein Internet Exchange ist eine große gemeinsame Ethernet-Fabric; Netze peeren über BGP, oft über Route Server.",
+  "tag": "Peering LAN · BGP",
+  "1995": {
+    "kid": "DIX, wo die dänischen Netze sich treffen und Päckchen kostenlos tauschen, damit eine dänische Seite nie übers Meer muss. Eine Seite aus Amerika kommt nicht diesen Weg.",
+    "nerd": "DIX, die Danish Internet Exchange, 1994 von UNI•C an der DTU in Lyngby gestartet: ein gemeinsames Ethernet, an dem dänische ISPs peeren, hier über eine eigene E1 erreicht. Dort werden nur dänische Routen gelernt.",
+    "tag": "DIX · 1994"
+  }
+}

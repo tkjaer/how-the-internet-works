@@ -1,0 +1,8 @@
+{
+  "name": "ATM-Backbone",
+  "1995": {
+    "kid": "Ein großes amerikanisches Netz trägt dein Päckchen durchs Land. Unterwegs wird es in viele winzige Stücke mit je einem Zettel geschnitten und am anderen Ende wieder zusammengesetzt.",
+    "nerd": "IP over ATM auf SONET: Router an den Rändern, ATM-Switches dazwischen, OC-3c mit 155 Mbit/s (DS3 mit 45 Mbit/s auf kleineren Strecken). Das Paket wird in 53-Byte-Cells geschnitten (AAL5). Packet over SONET übernahm ab etwa 1997, MPLS kam um 2001.",
+    "tag": "ATM · OC-3c · 155 Mbit/s"
+  }
+}

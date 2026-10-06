@@ -1,0 +1,30 @@
+{
+  "name": "Zu Hause, per Telefon",
+  "access": "Laptop per Wi‑Fi",
+  "kid": "Päckchen rasen durch die Luft, ein Kabel zum Router runter, dann die alte Kupfer-Telefonleitung als winzige Töne zu einem Kasten in deiner Straße – und das Video kommt denselben Weg zurück!",
+  "nerd": "Dasselbe Heimnetz, aber der Uplink des Routers ist VDSL2: DMT-Töne auf dem Kupferpaar der Telefonleitung zur DSLAM im Straßenkasten ein paar hundert Meter weiter, dann Glasfaser zum ISP.",
+  "describe": {
+    "kid": "Ein aufgeschnittenes Haus auf grünen Hügeln, mit einem alten Telefon auf einem Tischchen und einem Schiebehandy auf dem Sofa. Dein Laptop mit Sternaufkleber schickt Päckchen per Wi‑Fi zur WLAN-Box, per Kabel zum Router, dann die Telefonleitung zur Internetwolke. Anfragen raus, Video zurück.",
+    "nerd": "Die Hausansicht zeigt den LAN-Weg vom Laptop zum Access Point und Router, dessen Uplink die Kupfer-Telefonleitung ist (VDSL2). Das Festnetztelefon teilt dasselbe Paar. Ein 2010-Detail: Schiebehandy auf dem Sofa, zweite Antenne am Router. Pakete rauf über Wi‑Fi, Ethernet und VDSL; Video denselben Weg zurück."
+  },
+  "tag": {
+    "laptop": "Wi-Fi 4 · 192.168.1.23",
+    "ap": "802.11n · L2 bridge",
+    "router": "VDSL2-Modem · NAT → 203.0.113.7"
+  },
+  "stop": {
+    "laptop": {
+      "kid": "Um 2010 ging man ohne Kabel mit dem Laptop online: sein Wi‑Fi schickt deine Päckchen durch die Luft zur Box an der Wand.",
+      "nerd": "Ein Laptop mit 802.11n-Karte (Wi‑Fi 4), ein paar Dutzend Mbit/s in der Luft: mehr, als die DSL-Leitung dahinter tragen konnte. Er bekam 192.168.1.23 vom Router per DHCP."
+    },
+    "router": {
+      "kid": "Der Router ist die Haustür. Er schreibt die Adresse deines Zuhauses aufs Päckchen, und sein Modem singt es die Telefonleitung runter.",
+      "nerd": "NAT schreibt 192.168.1.23 auf die öffentliche 203.0.113.7 um; das eingebaute VDSL2-Modem sendet die Frames dann als DMT-Töne auf dem Telefonpaar."
+    }
+  },
+  "inside": {
+    "internet": {
+      "nerd": "Zugangsnetz (VDSL2 von einer DSLAM im Straßenkasten), eine Aggregationsschicht (L2-Backhaul zur BNG), der MPLS-Kern des ISP, dann settlement-free Peering am IXP oder bezahltes Transit, und am Ende ein CDN-Cache in deiner Nähe. Jede Fläche ist ein Betreibernetz."
+    }
+  }
+}

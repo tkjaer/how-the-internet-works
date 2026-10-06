@@ -1,0 +1,24 @@
+{
+  "name": "Zu Hause, früher",
+  "access": "Einwahl (früher)",
+  "kid": "Früher hat der Computer das Internet angerufen! Sein Modem piepte, pfiff und kreischte die Telefonleitung runter, und solange du online warst, konnte niemand telefonieren. Die Seite und ihr Bild tropften ganz, ganz langsam zurück.",
+  "nerd": "Einwahl in den 1990ern: das V.34-Modem des PCs ruft den ISP. Die Vermittlung schaltet den Ruf durchs Telefonnetz und übergibt ihn als einen Timeslot eines ISDN PRI an die Modem-Bank des ISP; PPP gibt dem PC eine eigene öffentliche Adresse. Kein Wi‑Fi, kein Router, kein NAT, und 28,8 kbit/s auf einer guten Leitung.",
+  "describe": {
+    "kid": "Das aufgeschnittene Haus hat einen Schreibtisch mit Computer und Maus auf der Matte, und ein altes Telefon auf einem Tischchen. Der Kalender an der Wand sagt 1995. Das Modem im Regal blinkt, während es die Internetfirma die Telefonleitung runter zur Internetwolke anruft. Anfragen gehen raus, die Seite kriecht sehr langsam zurück.",
+    "nerd": "Die Übersicht eines Heims 1995 (so steht es am Kalender): ein Computer, dessen externes Modem im Regal den ISP über die Telefonleitung wählt, die das Telefon teilt; Sende- und Empfangs-LEDs blinken mit den Daten. Kein LAN, kein NAT: PPP läuft vom Computer zum Gateway des ISP. Anfragen gehen rauf, die Seite kommt mit Modemtempo zurück."
+  },
+  "tag": {
+    "pc": "28,8k-Modem · 203.0.113.7",
+    "bng": "Modem-Bank · PPP"
+  },
+  "stop": {
+    "pc": {
+      "kid": "Das Modem des Computers steht im Regal am Schreibtisch. Es wählt die Nummer der Internetfirma und singt dein Päckchen dann als Pfiffe und Rauschen die Telefonleitung runter.",
+      "nerd": "Kein Router: der PPP-Link des Modems macht den Computer selbst zum Rechner im Internet, mit der öffentlichen Adresse 203.0.113.7, die er per IPCP für diesen Ruf bekommen hat."
+    },
+    "bng": {
+      "kid": "Hier nehmen die Modems deiner Internetfirma den Anruf an. Sie prüfen dein Passwort, geben dem Computer eine Adresse und schicken die Päckchen ins Internet weiter.",
+      "nerd": "Der Access-Server des ISP: eine Bank digitaler Modems auf ISDN-PRI-Leitungen von der Vermittlung, 30 Rufe pro Leitung. Er nimmt ab, prüft den Login (PAP oder CHAP), vergibt eine Adresse (IPCP) und routet die Pakete der PPP-Session auf das 10-Mbit/s-Ethernet des ISP."
+    }
+  }
+}

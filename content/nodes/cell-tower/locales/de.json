@@ -1,0 +1,16 @@
+{
+  "name": "Funkmast",
+  "kid": "Ein Mast mit klugen Antennen. Er spricht per Funk mit allen Telefonen in der Nähe und schickt ihre Päckchen durch einen Glasfaden weiter.",
+  "nerd": "Eine 5G-Basisstation (gNB): Massive-MIMO-Antennenpaneele, der Radio-Scheduler und ein Glasfaser-Backhaul, der Nutzerverkehr (GTP-U) zum Mobile Core tunnelt.",
+  "tag": "gNB · n78 · 3,5 GHz",
+  "peek": {
+    "up": {
+      "kid": "Der Mast nimmt dein Päckchen vom Funk und steckt es in einen Tunnel-Umschlag an den Mobilfunkkern.",
+      "nerd": "Die gNB beendet die Funkstrecke (NR) und tunnelt das Paket in GTP-U zur UPF; die TEID nennt die Session dieses Telefons."
+    },
+    "down": {
+      "kid": "Der Mast packt den Tunnel-Umschlag aus und schickt dein Päckchen per Funk an dein Telefon.",
+      "nerd": "Die gNB beendet den GTP-U-Tunnel (die TEID sagt welches Telefon) und plant das Paket auf dem Funk (NR)."
+    }
+  }
+}

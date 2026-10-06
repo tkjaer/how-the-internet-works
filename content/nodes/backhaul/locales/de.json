@@ -1,0 +1,6 @@
+{
+  "name": "Backhaul-Switch",
+  "kid": "Große Switches tragen die Päckchen von vielen Straßen zu deiner Internetfirma.",
+  "nerd": "L2-Aggregation mit Q-in-Q: ein S-VLAN pro Schrank und ein C-VLAN pro Anschluss, Richtung BNG.",
+  "tag": "L2 · Q-in-Q VLANs"
+}

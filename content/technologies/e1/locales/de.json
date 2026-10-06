@@ -1,0 +1,8 @@
+{
+  "name": "Mietleitung",
+  "1995": {
+    "kid": "Deine Internetfirma mietet von der Telefongesellschaft eine Leitung, die immer an ist, den ganzen Weg zu einem größeren Netz. Sie trägt die Päckchen aller Kunden: 2 Millionen Bits in der Sekunde.",
+    "nerd": "Eine gemietete E1 (G.703/G.704): 2,048 Mbit/s in 32 Timeslots à 64 kbit/s. Slot 0 hält die Frames im Takt, die anderen 31 sind ein Rohr für Cisco HDLC. Ein kleiner ISP kaufte oft weniger, 64 oder 128 kbit/s (ein oder zwei Slots), oder eine Frame-Relay-Leitung.",
+    "tag": "E1 · 2 Mbit/s · HDLC"
+  }
+}

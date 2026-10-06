@@ -117,7 +117,7 @@ The work comes in four slices:
     (`arrival` in `ui/announce.svelte.ts`); when focus moved to the caption's heading, which says the title, just the
     rest. At a stop along the way it says the stop's name and the first sentence of its caption. In the peek it says
     the hop ("Home router, 3 of 9. It swaps the address…"). Nothing else is `aria-live`.
-- **Spoken descriptions.** Every scene has one (`describe`, kid and nerd, English and Danish): what the picture shows
+- **Spoken descriptions.** Every scene has one (`describe`, kid and nerd, English, Danish and German): what the picture shows
   and what moves, in short sentences in the order you'd see things. A test fails if a scene a reader can reach has
   none in some language, at either level (no English fallback). How to write them: [authoring](authoring.md).
 - **Read aloud.** "Read aloud" in ⋯ (after Sound, on a phone) has the browser's own voice read each scene as you arrive: its

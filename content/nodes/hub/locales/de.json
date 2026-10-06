@@ -1,0 +1,8 @@
+{
+  "name": "Hub",
+  "1995": {
+    "kid": "Eine Box, die die Kabel des Zimmers verbindet. Was auf einem Kabel ankommt, ruft sie auf allen anderen auf einmal hinaus, und nur der Computer, für den es ist, behält es.",
+    "nerd": "Ein 10BASE-T-Repeater-Hub: er wiederholt jedes Bit aus jedem anderen Port, sobald es ankommt, und liest nichts, deshalb ist das ganze Zimmer eine gemeinsame Half-Duplex-Kollisionsdomäne. Switches, die den Port jeder MAC-Adresse lernen, übernahmen Ende der 1990er.",
+    "tag": "10BASE-T · 8 Ports"
+  }
+}

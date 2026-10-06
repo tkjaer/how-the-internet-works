@@ -40,5 +40,6 @@ export default definePlace({
   },
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Modem', title: 'Modem', level: 'both', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Modem', title: 'Modem', level: 'both', lang: 'de' },
   ],
 });

@@ -7,6 +7,8 @@ export default defineNode({
   role: 'bridge',
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Radio_Network_Controller', title: 'Radio Network Controller', level: 'nerd', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Radio_Network_Controller', title: 'Radio Network Controller', level: 'nerd', lang: 'de' },
     { url: 'https://en.wikipedia.org/wiki/UMTS', title: 'UMTS', level: 'both', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Universal_Mobile_Telecommunications_System', title: 'Universal Mobile Telecommunications System', level: 'both', lang: 'de' },
   ],
 });

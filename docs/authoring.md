@@ -420,8 +420,8 @@ call), so this is for a family added later.
   whose `year` is the current one). The panel lists eras by `year`.
 - Strings in `locales/<lang>.json`: `name` (the year, or "Today"), `kid`/`nerd` (what home internet was like then, as
   the panel shows it) and `describe.kid`/`describe.nerd`: what the panel's picture of that era shows, which is the
-  start device of that era's trip (its first hop: the PC, the laptop, the phone). Write `describe` in English and
-  Danish. The place picker shows the time machine's line ("In 1995 you'd have done this at home.") under a place
+  start device of that era's trip (its first hop: the PC, the laptop, the phone). Write `describe` in English, Danish
+  and German. The place picker shows the time machine's line ("In 1995 you'd have done this at home.") under a place
   with no way online in the era you are in.
   Where an era has a member of the place's family, `at.<place>`, else `at.<base place>` (`kid`, `nerd`,
   `describe.kid`/`.nerd`), takes the place of the era's own words in the panel and the arrival (2010's `at.on-the-go`:
@@ -458,7 +458,7 @@ call), so this is for a family added later.
   today's still wins over a general one of the era (`sealed` over the era's `kid`), so put the era's words at the
   same depth (`"1995": { "sealed": … }`). A `describe` in a block needs both `kid` and `nerd`. Blocks load lazily
   (dives' with the dive strings, the rest as the small chunk of the words of the past), so they cost the first load
-  nothing; write them in English and Danish.
+  nothing; write them in English, Danish and German.
 - **An item that only exists in the past** (a place of 2010, a 3G mast, the RNC) keeps only its required, eager
   keys at the top (`name`, a place's `access`, a device's `yours`) and puts everything else in its era's block
   (`"2010": { "kid": …, "nerd": …, "stop": { … } }`): it is only ever shown on that era's routes, so its words load
@@ -569,7 +569,7 @@ extra effort:
 3. Add `locales/<lang>.json` to any content folder you translate. Anything missing falls back to English.
 4. A new script (Arabic, Greek…) needs its font faces in the theme's `tokens.css`.
 
-We ship only languages someone has reviewed (English and Danish for now, issue #11).
+We ship only languages someone has reviewed (English, Danish and German for now, issue #11).
 
 The language appears in the switcher at once and loads as its own small chunk. `npm run check:content` shows the coverage.
 
@@ -592,8 +592,8 @@ RFC 793 (#180). Without `eras` it shows in every era; the era tests read every l
 ## Checklist
 
 - [ ] The folder name is the id; every hop, link and layer name exists (the dev overlay says what doesn't).
-- [ ] `locales/en.json` has the required strings; `da.json` if you can. A new scene (or a new variant of one), and a
-  new era, has a `describe` in English and Danish.
+- [ ] `locales/en.json` has the required strings; `da.json` and `de.json` if you can. A new scene (or a new variant of one), and a
+  new era, has a `describe` in English, Danish and German.
 - [ ] Layout for both `landscape` and `portrait` on every path scene the item appears in (and in dive scenes), with
   nothing overlapping at the size things grow to on a small phone, in any language (`model/overlap.test.ts` and
   `model/doors.test.ts` check).

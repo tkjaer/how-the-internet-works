@@ -13,5 +13,6 @@ export default defineTechnology({
     { url: 'https://en.wikipedia.org/wiki/3G', title: '3G', level: 'both', lang: 'en' },
     { url: 'https://da.wikipedia.org/wiki/3G', title: '3G', level: 'both', lang: 'da' },
     { url: 'https://en.wikipedia.org/wiki/High_Speed_Packet_Access', title: 'High Speed Packet Access', level: 'nerd', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/High_Speed_Packet_Access', title: 'High Speed Packet Access', level: 'nerd', lang: 'de' },
   ],
 });

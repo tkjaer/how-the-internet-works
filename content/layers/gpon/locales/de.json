@@ -1,0 +1,40 @@
+{
+  "name": {
+    "kid": "Lichtumschlag",
+    "nerd": "XGS-PON-Frame (XGEM)"
+  },
+  "note": {
+    "kid": "Alle in deiner Straße teilen sich denselben Glasfaden, darum öffnet jedes Haus nur Umschläge mit seiner eigenen Nummer.",
+    "nerd": "Downstream wird an jedes ONT am Splitter gesendet und per XGEM-Port mit AES verschlüsselt; Upstream nutzt Zeitslots."
+  },
+  "line": "XGEM (XG-PON Encapsulation Method), Port-ID {port}, Länge {pli}",
+  "field": {
+    "pli": {
+      "name": "Nutzlastlänge",
+      "about": "Bytes Payload in diesem XGEM-Frame: der ganze Ethernet-Frame innen."
+    },
+    "keyidx": {
+      "name": "Key index",
+      "about": "Welcher der AES-Schlüssel des ONT die Payload verschlüsselt hat."
+    },
+    "port": {
+      "name": {
+        "kid": "Hausnr.",
+        "nerd": "XGEM Port-ID"
+      },
+      "about": "Alle am Splitter hören jeden Frame auf dem Weg nach unten; jedes ONT behält nur die eigenen Port-IDs."
+    },
+    "options": {
+      "name": "Options",
+      "about": "Reservebits, heute ungenutzt."
+    },
+    "lf": {
+      "name": "Letztes Fragment",
+      "about": "1, wenn dies das letzte (hier: das einzige) Stück des Ethernet-Frames ist."
+    },
+    "hec": {
+      "name": "Header error control",
+      "about": "Schützt den XGEM-Header selbst."
+    }
+  }
+}

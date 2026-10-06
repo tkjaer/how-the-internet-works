@@ -1,0 +1,138 @@
+{
+  "name": {
+    "kid": "Tunnelumschlag",
+    "nerd": "GTP-U-Tunnel (äußeres IP/UDP)"
+  },
+  "note": {
+    "kid": "Der Mast steckt dein Päckchen in ein größeres, das an den Mobilfunkkern adressiert ist, damit das Netz dein Handy findet, wohin du auch gehst.",
+    "nerd": "Die gNB packt das eigene IP-Paket des Handys in IP/UDP/GTP-U (Port 2152) zur UPF; die TEID kennzeichnet die Session dieses Handys."
+  },
+  "line": "GTP-U, {osrc} → {odst}, TEID {teid}",
+  "value": {
+    "flags": "0x34 (v1, GTP, E)",
+    "seqext": "0 · 0 · nächste 0x85",
+    "pdu": {
+      "up": "UL, QFI 9",
+      "down": "DL, QFI 9"
+    }
+  },
+  "field": {
+    "ovhl": {
+      "name": "Äußere Version, IHL",
+      "about": "Der äußere IPv4-Header beginnt: Version 4, 20 Bytes."
+    },
+    "otos": {
+      "name": "Äußeres DSCP/ECN",
+      "about": "Traffic Class des Tunnelpakets."
+    },
+    "olen": {
+      "name": "Äußere Gesamtlänge",
+      "about": "Das Tunnelpaket, mit deinem ganzen Paket darin."
+    },
+    "oid": {
+      "name": "Äußere Identification",
+      "about": "Für Fragmente; hier ungenutzt."
+    },
+    "ofrag": {
+      "name": "Äußere Flags, Offset",
+      "about": "Don’t fragment."
+    },
+    "ottl": {
+      "name": "Äußeres TTL",
+      "about": "Zählt Router im Netz des Betreibers; das eigene TTL deines Pakets bleibt unberührt."
+    },
+    "oproto": {
+      "name": "Äußeres Protocol",
+      "about": "17 = UDP."
+    },
+    "osum": {
+      "name": "Äußere Checksum",
+      "about": "Über den äußeren Header."
+    },
+    "osrc": {
+      "name": {
+        "kid": "Von",
+        "nerd": "Äußere Source"
+      },
+      "about": "Ein Ende des Tunnels."
+    },
+    "odst": {
+      "name": {
+        "kid": "An",
+        "nerd": "Äußere Destination"
+      },
+      "about": "Das andere Ende: der Mast auf dem Weg nach unten, der Kern (UPF) auf dem Weg nach oben."
+    },
+    "usport": {
+      "name": "UDP Source Port",
+      "about": "2152, der GTP-U-Port."
+    },
+    "udport": {
+      "name": "UDP Destination Port",
+      "about": "2152 sagt, dass ein GTP-U-Header folgt."
+    },
+    "ulen": {
+      "name": "UDP Length",
+      "about": "UDP-Header und alles darin."
+    },
+    "usum": {
+      "name": "UDP Checksum",
+      "about": "0: ungenutzt (das innere Paket hat seine eigene)."
+    },
+    "flags": {
+      "name": "GTP Flags",
+      "about": "Version 1, GTP (nicht GTP′), ein Extension Header folgt."
+    },
+    "type": {
+      "name": "Nachrichtentyp",
+      "about": "255 = G-PDU: ein Benutzerpaket innen."
+    },
+    "length": {
+      "name": "GTP Length",
+      "about": "Bytes nach den ersten 8 des GTP-Headers."
+    },
+    "teid": {
+      "name": {
+        "kid": "Ticketnr.",
+        "nerd": "TEID"
+      },
+      "about": "Tunnel Endpoint ID: welche Session welches Handys das ist. Jedes Ende wählt die TEID, die es empfangen will."
+    },
+    "seqext": {
+      "name": "Sequence, N-PDU, nächste Ext.",
+      "about": "Optionale Felder; 0x85 = ein PDU Session Container folgt."
+    },
+    "pdu": {
+      "name": "PDU Session Container",
+      "about": "Richtung und QoS-Flow (QFI) des Pakets, passend zur Funkseite."
+    }
+  },
+  "2010": {
+    "note": {
+      "kid": "Die Funksteuerung steckt dein Päckchen in ein größeres, das an das Tor der Mobilfunkfirma adressiert ist, damit das Netz dein Handy findet, wohin du auch gehst.",
+      "nerd": "Mit Direct Tunnel packt das RNC das eigene IP-Paket des Handys in IP/UDP/GTP-U (Port 2152) zum GGSN; die TEID benennt den PDP Context dieses Handys."
+    },
+    "value": {
+      "flags": "0x30 (v1, GTP)",
+      "seqext": "keine (kein S, PN, E)",
+      "pdu": {
+        "up": "keine in 3G",
+        "down": "keine in 3G"
+      }
+    },
+    "field": {
+      "odst": {
+        "about": "Das andere Ende: das RNC auf dem Weg nach unten, der GGSN auf dem Weg nach oben."
+      },
+      "teid": {
+        "about": "Tunnel Endpoint ID: welcher PDP Context welches Handys das ist. Jedes Ende wählt die TEID, die es empfangen will."
+      },
+      "seqext": {
+        "about": "Optionale Felder; ein 3G-Benutzerpaket hat meist keine, der Header ist also nur 8 Bytes (hier in heutiger Größe gezeichnet)."
+      },
+      "pdu": {
+        "about": "Das QoS-Flow-Label von 5G (5G kam 2019); 3G hatte keines: der PDP Context selbst trug die QoS."
+      }
+    }
+  }
+}

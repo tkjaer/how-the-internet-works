@@ -1,0 +1,100 @@
+{
+  "title": "TCP hält die Stücke in der Reihe",
+  "kid": "Der Videoserver und {yours} nummerieren jedes kleine Stück. Fällt eines in ein Loch, zeigt {yours} weiter auf die Lücke, bis der Server dieses Stück nochmal schickt.",
+  "nerd": "TCP ist end-to-end (RFC 9293): ein 3-way Handshake (SYN, SYN-ACK, ACK) einigt sich auf die Start-Sequence Numbers in beide Richtungen. Der Sender hält ein Window von vier Segmenten (vereinfacht: echte Windows sind in Bytes und starten bei etwa 10 Segmenten). ACK=5 nennt das nächste erwartete Byte und schiebt das Window auf 5–8; 6, 7 und 8 ziehen je ein Duplicate ACK=5, und das dritte löst Fast Retransmit aus; die App bekommt Bytes erst in Reihenfolge.",
+  "describe": {
+    "kid": "Eine Straße verbindet {yours} und den Videoserver, mit Karten für Server und Regal. Nummerierte Boxen 1 bis 8 stehen in einer Reihe. Vier dürfen gleichzeitig reisen. Sprechzettel sagen Hallo, „habe 4“ und „habe 8“. Box 5 fällt ins Schlagloch, das Regal lässt eine Lücke und sagt weiter „warte auf 5“, dann geht 5 nochmal und die Reihe füllt sich.",
+    "nerd": "Die Karten zeigen das TCP Send Window und den In-Order Buffer des Empfängers. SYN-, SYN-ACK- und ACK-Zettel starten die Schleife. Data Segments kreuzen die Straße, ACK-Zettel kommen zurück, Duplicate ACK 5 hält die Lücke. Segment 5 wird per Fast Retransmit erneut gesendet, das Window gleitet, Delivery wartet auf geordnete Bytes."
+  },
+  "at": {
+    "cdn": {
+      "title": "Der Server sendet nummerierte TCP-Stücke",
+      "kid": "Der Videoserver stellt Stücke auf und lässt vier gleichzeitig reisen. Wenn {yours} sagt, Stück 5 fehlt, schickt der Server 5 nochmal, bevor die App die Reihe bekommt.",
+      "nerd": "Vom Server-Endpoint sendet TCP Segmente mit Sequence Numbers, beobachtet Cumulative ACKs, schiebt das Send Window und Fast-Retransmit von Segment 5 nach drei Duplicate ACKs, ohne auf das RTO zu warten.",
+      "describe": {
+        "kid": "Der Videoserver ist das fleißige Ende der Straße. Seine Server-Karte stellt nummerierte Boxen auf, und der Rahmen um vier Boxen zeigt, wie viele gleichzeitig reisen dürfen. Boxen gehen zum Regal. Wenn der Zettel von {yours} sagt, 5 fehlt, leuchtet Box 5 und geht nochmal, bevor das Regal voll ist.",
+        "nerd": "Vom Server-Endpoint liegt der Blick auf Send Queue und Sliding Window. Segmente gehen mit Sequence Numbers raus. Cumulative ACK-Zettel kommen zurück, wiederholtes ACK 5 hält das Empfangsregal mit Lücke. Das markierte Segment 5 wird per Fast Retransmit erneut gesendet, dann kann der Empfänger einen In-Order Byte Stream liefern."
+      }
+    }
+  },
+  "sealed": {
+    "title": "TCP fährt versiegelt vorbei",
+    "kid": "Dieser Halt trägt die nummerierten Boxen, öffnet sie aber nicht. Er kann das versiegelte Stück 5 einmal vorbeifahren, nach dem Halt fallen und wieder vorbeifahren sehen, wenn der Server es nochmal schickt.",
+    "nerd": "An diesem Non-Endpoint Hop bleibt TCP undurchsichtig: Router und Bridges forwarden das IP-Paket und schauen Sequence- oder ACK-State nicht an. Das erneut gesendete Segment 5 ist nur wieder eine versiegelte Payload, die durchgeht.",
+    "describe": {
+      "kid": "Ein mittlerer Halt sitzt auf der Straße zwischen {yours} und dem Videoserver. Die Karten Server und Regal zeigen weiter Boxen in der Reihe, aber die Boxen auf der Straße sind versiegelt. Dieser Halt trägt sie nur vorbei. Er kann Box 5 danach fallen und nochmal vorbeikommen sehen, wenn sie zum zweiten Mal gesendet wird.",
+      "nerd": "An einem Non-Endpoint Hop zeigen die oberen Karten den TCP-State an den Endpunkten. Die Straße zeigt nur versiegelte Payloads. Der Hop forwardet IP-Pakete, ohne Sequence Numbers oder ACKs zu lesen. Verlust und Fast Retransmit von Segment 5 erscheinen als weiteres versiegeltes Segment auf der Straße."
+    }
+  },
+  "role": {
+    "nat": {
+      "title": "Ein NAT schaut nur auf den Port-Aufkleber",
+      "kid": "Diese Box bleibt hier versiegelt. Das NAT liest nur den winzigen Port-Aufkleber, damit Antworten das richtige Gerät finden, und lässt die nummerierten Stücke in Ruhe.",
+      "nerd": "NAT ist die Ausnahme von reiner Opacity: es liest und schreibt das TCP/UDP Port Tuple um (zum Beispiel 51034 ↔ das Outside Mapping), während Sequence Numbers und Data Semantics end-to-end bleiben.",
+      "describe": {
+        "kid": "Die nummerierte Box bleibt versiegelt, während sie am NAT auf der Straße vorbeigeht. Dieselben Karten Server und Regal zeigen die Reihenfolge, aber das NAT nimmt die Lupe nur auf den winzigen Port-Aufkleber. Der Port-Aufkleber erscheint am Halt, während Box 5 fallen, zurückkommen und nochmal vorbeigehen kann.",
+        "nerd": "Diese Middle-Hop-Ansicht hält TCP undurchsichtig, außer dem NAT Tuple. Versiegelte Segmente passieren das NAT, bei dem du bist. Ein Port-Label, etwa innen nach außen, erscheint am Hop, die Lupe markiert den Rewrite. Sequence Numbers, ACK-State und Retransmission bleiben end-to-end."
+      }
+    }
+  },
+  "handshake": {
+    "hi": "Hallo, sollen wir sprechen?",
+    "yes": "Ja, los!",
+    "great": "Super!"
+  },
+  "card": {
+    "server": "Server",
+    "phone": "Regal"
+  },
+  "ack": {
+    "got4": "habe 4!",
+    "wait5": "warte auf 5!",
+    "got8": "habe 8!"
+  },
+  "label": {
+    "window": "4 auf einmal",
+    "gap": "Lücke bei 5",
+    "handshake": "3 Hallo-Zettel",
+    "hello": "Hallo",
+    "lost": "5 fehlt",
+    "resend": "5 nochmal senden",
+    "done": "alles in der Reihe",
+    "ready": "alles in Ordnung — bereit für die App!",
+    "port": "nur Port"
+  },
+  "tag": {
+    "syn": "SYN seq=1000",
+    "window": "win=4",
+    "dupAck": "dup ACK=5 ×{n}",
+    "fast": "3 dup ACKs → #5",
+    "order": "Bytes in Reihenfolge",
+    "seal": "TCP sealed",
+    "nat": "ports: {nat}"
+  },
+  "1995": {
+    "kid": "Der Server und {yours} nummerieren jedes kleine Stück der Seite. Fällt eines in ein Loch, zeigt {yours} weiter auf die Lücke, bis der Server dieses Stück nochmal schickt.",
+    "describe": {
+      "kid": "Eine Straße verbindet {yours} und den Server, mit Karten für Server und Regal. Nummerierte Boxen 1 bis 8 stehen in einer Reihe. Vier dürfen gleichzeitig reisen. Sprechzettel sagen Hallo, „habe 4“ und „habe 8“. Box 5 fällt ins Schlagloch, das Regal lässt eine Lücke und sagt weiter „warte auf 5“, dann geht 5 nochmal und die Reihe füllt sich.",
+      "nerd": "Die Karten zeigen das TCP Send Window und den In-Order Buffer des Empfängers. SYN-, SYN-ACK- und ACK-Zettel starten die Schleife. Data Segments kreuzen die Straße, ACK-Zettel kommen zurück, Duplicate ACK 5 hält die Lücke. Segment 5 wird per Fast Retransmit erneut gesendet, das Window gleitet, Delivery wartet auf geordnete Bytes."
+    },
+    "at": {
+      "web-server": {
+        "kid": "Der Server stellt Stücke auf und lässt vier gleichzeitig reisen. Wenn {yours} sagt, Stück 5 fehlt, schickt der Server 5 nochmal, bevor der Browser die Reihe bekommt.",
+        "describe": {
+          "kid": "Der Server ist das fleißige Ende der Straße. Seine Server-Karte stellt nummerierte Boxen auf, und der Rahmen um vier Boxen zeigt, wie viele gleichzeitig reisen dürfen. Boxen gehen zum Regal. Wenn der Zettel von {yours} sagt, 5 fehlt, leuchtet Box 5 und geht nochmal, bevor das Regal voll ist.",
+          "nerd": "Vom Server-Endpoint liegt der Blick auf Send Queue und Sliding Window. Segmente gehen mit Sequence Numbers raus. Cumulative ACK-Zettel kommen zurück, wiederholtes ACK 5 hält das Empfangsregal mit Lücke. Das markierte Segment 5 wird per Fast Retransmit erneut gesendet, dann kann der Empfänger einen In-Order Byte Stream liefern."
+        }
+      }
+    },
+    "sealed": {
+      "describe": {
+        "kid": "Ein mittlerer Halt sitzt auf der Straße zwischen {yours} und dem Server. Die Karten Server und Regal zeigen weiter Boxen in der Reihe, aber die Boxen auf der Straße sind versiegelt. Dieser Halt trägt sie nur vorbei. Er kann Box 5 danach fallen und nochmal vorbeikommen sehen, wenn sie zum zweiten Mal gesendet wird.",
+        "nerd": "An einem Non-Endpoint Hop zeigen die oberen Karten den TCP-State an den Endpunkten. Die Straße zeigt nur versiegelte Payloads. Der Hop forwardet IP-Pakete, ohne Sequence Numbers oder ACKs zu lesen. Verlust und Fast Retransmit von Segment 5 erscheinen als weiteres versiegeltes Segment auf der Straße."
+      }
+    },
+    "nerd": "TCP ist end-to-end (RFC 793, 1981): ein 3-way Handshake (SYN, SYN-ACK, ACK) einigt sich auf die Start-Sequence Numbers in beide Richtungen. Der Sender hält ein Window von vier Segmenten (vereinfacht: echte Windows sind in Bytes, und Slow Start (Jacobson, 1988) beginnt bei etwa 1 Segment und verdoppelt es jede Round Trip). ACK=5 nennt das nächste erwartete Byte und schiebt das Window auf 5–8; 6, 7 und 8 ziehen je ein Duplicate ACK=5, und das dritte löst Fast Retransmit aus (BSD, 1990); die App bekommt Bytes erst in Reihenfolge."
+  },
+  "2010": {
+    "nerd": "TCP ist end-to-end (RFC 793): ein 3-way Handshake (SYN, SYN-ACK, ACK) einigt sich auf die Start-Sequence Numbers in beide Richtungen. Der Sender hält ein Window von vier Segmenten (vereinfacht: echte Windows sind in Bytes, und Slow Start beginnt bei 2 bis 4 Segmenten, RFC 3390). ACK=5 nennt das nächste erwartete Byte und schiebt das Window auf 5–8; 6, 7 und 8 ziehen je ein Duplicate ACK=5, und das dritte löst Fast Retransmit aus; die App bekommt Bytes erst in Reihenfolge."
+  }
+}

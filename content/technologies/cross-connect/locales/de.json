@@ -1,0 +1,10 @@
+{
+  "name": "Querverbindung",
+  "kid": "Ein kurzes Glasfaden-Kabel in einem Gebäude, das die Boxen zweier Firmen verbindet.",
+  "nerd": "Ein Cross-Connect: ein Single-Mode-Faserpaar, durch den Meet-Me Room des Rechenzentrums zwischen den Ports zweier Mieter gepatcht, meist 10–100G Ethernet.",
+  "tag": "100GBASE-LR4 · SMF",
+  "2010": {
+    "nerd": "Ein Cross-Connect: ein Single-Mode-Faserpaar, durch den Meet-Me Room des Rechenzentrums zwischen den Ports zweier Mieter gepatcht, meist 1–10G Ethernet; die ersten 100G-Ports kamen 2010.",
+    "tag": "10GBASE-LR · SMF"
+  }
+}

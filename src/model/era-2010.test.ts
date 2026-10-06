@@ -33,11 +33,11 @@ const LATER = new RegExp([
   /\bIW10\b|\b10 segment|÷/,
 ].map((r) => r.source).join('|'));
 /** New in 2010 (100G Ethernet and its 25G lanes, coherent optics): fine if it says it was new then. */
-const NEW = /\b100\s?G|100GBASE|\b25G\b|[Cc]oherent|[Kk]ohærent/;
-const SAYS_LATER = /today|i dag|nutid|later|senere|\b(?:201[1-9]|20[2-9]\d)\b|2010s|2010’erne/i;
+const NEW = /\b100\s?G|100GBASE|\b25G\b|[Cc]oherent|[Kk]ohærent|[Kk]ohärent/;
+const SAYS_LATER = /today|i dag|nutid|heute|Gegenwart|later|senere|später|\b(?:201[1-9]|20[2-9]\d)\b|2010s|2010’erne|2010er/i;
 /** An RFC from after 2010 (RFC 6087 came out that December; #180: RFC 9293's TCP, RFC 9110's HTTP). */
 const laterRfc = (s: string) => [...s.matchAll(/\bRFC ?(\d+)/g)].some(([, n]) => Number(n) > 6087);
-const SAYS_NEW = /today|i dag|nutid|later|senere|\b20[1-9]\d\b/i;
+const SAYS_NEW = /today|i dag|nutid|heute|Gegenwart|later|senere|später|\b20[1-9]\d\b/i;
 
 /** Walked, but never shown on a 2010 trip: the router's light box (ONT) only shows on fibre, and 2010's router
  *  goes out on the phone line (its modem room). */
@@ -190,7 +190,7 @@ describe('the 2010 data centre', () => {
     // the exchange's cross-connect into the hall is the internet's: its drawing's 100GBASE-LR4 was new in 2010, which
     // the trips' test below allows when the words say so
     const EXCHANGE = /^scene\.fibre-light\.cross-connect/;
-    const SAYS_WHEN = /today|i dag|nutid|\b20(1[1-9]|2\d)\b|2010s|2010’erne/i;
+    const SAYS_WHEN = /today|i dag|nutid|heute|Gegenwart|\b20(1[1-9]|2\d)\b|2010s|2010’erne|2010er/i;
     const bad = new Set<string>();
     for (const r of trips()) {
       const src = stringSources(r);
@@ -251,7 +251,7 @@ describe('the 2010 trips', () => {
   });
 
   it('fetch the video in plain HTTP: they name TLS only to say there was none (#180)', () => {
-    const NONE = /\b(?:no|without|ingen|uden|ikke)\b/i, bad = new Map<string, string>();
+    const NONE = /\b(?:no|without|ingen|uden|ikke|kein|keine|keinen|ohne|nicht)\b/i, bad = new Map<string, string>();
     for (const r of trips()) for (const [key, s] of routeWords(r)) if (/\bTLS\b/.test(s) && !NONE.test(s)) bad.set(key, s);
     expect([...bad].map(([k, s]) => `${k}: ${s}`)).toEqual([]);
   });

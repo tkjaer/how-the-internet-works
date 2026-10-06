@@ -1,0 +1,8 @@
+{
+  "name": "Mastleitung",
+  "1995": {
+    "kid": "Vom Mast läuft eine Leitung zur Steuerbox und weiter zur großen Vermittlungsstelle der Mobilfunkfirma. Ein GSM-Anruf ist so klein, dass sich vier davon einen kleinen Platz auf der Leitung teilen.",
+    "nerd": "Abis (Mast → BSC) und Ater (BSC → Transcoder): E1-Leitungen, 32 Timeslots à 64 kbit/s. Ein Anruf nimmt ein Viertel eines Slots, 16 kbit/s; Slot 1 trägt die Signalisierung des Masts (LAPD). Viele Netze (Nokia, Siemens) stellten den Transcoder (TRAU) an die MSC, sodass die Viertel den ganzen Weg dorthin liefen; im TRAU wird die Datenrate in einen ganzen 64-kbit/s-Slot angepasst, wie V.110 es tut.",
+    "tag": "E1 · 16 kbit/s Sub-Slot"
+  }
+}

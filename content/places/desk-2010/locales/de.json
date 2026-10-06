@@ -1,0 +1,31 @@
+{
+  "name": "Zu Hause, Schreibtisch",
+  "access": "Laptop am Kabel",
+  "2010": {
+    "kid": "Der Laptop schickt seine Päckchen ein Kabel zum Router. Das Modem des Routers singt sie die alte Kupfer-Telefonleitung als winzige Töne zu einem Kasten in deiner Straße.",
+    "nerd": "Kabelgebunden um 2010: Ethernet vom Laptop zu einem DSL-Modem-Router, der NAT macht und die Pakete als VDSL2-Töne auf dem Kupferpaar der Telefonleitung zur DSLAM im Straßenkasten schickt, dann Glasfaser zum ISP.",
+    "describe": {
+      "kid": "Ein aufgeschnittenes Haus zeigt einen Schreibtisch mit Laptop, ein altes Telefon auf einem Tischchen und den Router. Ein Kabel läuft vom Laptop zum Router, die Telefonleitung nimmt die Päckchen mit zur Internetwolke. Anfragen raus, Video zurück.",
+      "nerd": "Die Übersicht folgt einem kabelgebundenen Heim 2010: der Laptop mit Sternaufkleber per Ethernet zu einem DSL-Router mit zwei Antennen, dessen Uplink die Kupfer-Telefonleitung (VDSL2) ist, die er mit dem Telefon teilt. Anfragen aufwärts; Video-Pakete zurück."
+    },
+    "tag": {
+      "laptop": "Ethernet · 192.168.1.40",
+      "router": "VDSL2-Modem · NAT → 203.0.113.7"
+    },
+    "stop": {
+      "laptop": {
+        "kid": "2010 ging der Laptop am Schreibtisch auch per Kabel online. Seine Anfrage läuft das Kabel zum Router runter.",
+        "nerd": "Ein Laptop von 2010 mit Gigabit-Ethernet-Port, gesteckt in einen der 100-Mbit/s-LAN-Ports des Modem-Routers, also läuft das Kabel mit 100: immer noch viel schneller als die DSL-Leitung dahinter, oft 8–20 Mbit/s down."
+      },
+      "router": {
+        "kid": "Der Router ist die Haustür. Er schreibt die Adresse deines Zuhauses aufs Päckchen, und sein Modem singt es die Telefonleitung runter.",
+        "nerd": "NAT schreibt 192.168.1.40 auf die öffentliche 203.0.113.7 um; das eingebaute VDSL2-Modem sendet die Frames dann als DMT-Töne auf dem Telefonpaar."
+      }
+    },
+    "inside": {
+      "internet": {
+        "nerd": "Zugangsnetz (VDSL2 von einer DSLAM im Straßenkasten; die meisten dänischen Haushalte hatten 2010 noch ADSL2+ von der Vermittlung), eine Aggregationsschicht (L2-Backhaul zur BNG), der MPLS-Kern des ISP, dann Peering am IXP oder bezahltes Transit, und am Ende ein CDN-Cache. Jede Fläche ist ein Betreibernetz."
+      }
+    }
+  }
+}

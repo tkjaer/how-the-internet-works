@@ -1,0 +1,8 @@
+{
+  "name": "ISDN-Leitung",
+  "1995": {
+    "kid": "Die Telefongesellschaft bündelt 30 Anrufe auf eine Leitung zu deiner Internetfirma. Dein Anruf bekommt seinen eigenen kleinen Platz darin und behält ihn, solange du online bist.",
+    "nerd": "Eine ISDN-Primary-Rate-Leitung: eine E1 mit 30 B-Kanälen à 64 kbit/s und einem D-Kanal (Slot 16) für den Verbindungsaufbau (Q.931). Dein Anruf ist Slot 7. Das digitale Modem-Rack des ISP (etwa ein Ascend MAX) dekodiert die Töne direkt aus dem Slot.",
+    "tag": "E1 PRI · 30B+D"
+  }
+}

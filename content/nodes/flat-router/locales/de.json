@@ -1,0 +1,5 @@
+{
+  "name": "Heimrouter",
+  "kid": "Die Haustür des Netzes deiner Wohnung. Ein Kabel läuft von ihm die Treppe hinunter in den Keller.",
+  "nerd": "Wi-Fi und NAT für die Wohnung; der Uplink ist schlichtes Ethernet zum Switch des Gebäudes im Keller."
+}
