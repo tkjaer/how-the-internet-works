@@ -46,12 +46,14 @@ counts' other limits, and the setup guide
 
 **What is published.** Once a week, totals for the week are published in
 [tkjaer/open-stats-data](https://github.com/tkjaer/open-stats-data) (CC0), as three separate tables: page loads per
-day, language per day, and countries per day. Days are in UTC. On a quiet day, with fewer than 20 page loads, only that
-day's total is published, without its languages or countries, because on such a day the tables could be combined to
-describe single visits. On other days, a country with fewer than 5 page loads that day is counted under "other", so a
-single visit from a small country can't be picked out, and no weekly country numbers are published that the hidden
-days could be worked out from. That makes combining the tables to single out a visit hard, not impossible. Published
-totals are kept for good, in the repo and its history. The server's setup and the export program are in
+day, language per day, and countries per day. Days are in UTC. The languages
+[listed in the project's settings](https://github.com/tkjaer/open-stats/blob/main/projects/how-the-internet-works.yml)
+each get their own column, and any other code is counted under "other". On a quiet day, with fewer than 20 page
+loads, only that day's total is published, without its languages or countries, because on such a day the tables could
+be combined to describe single visits. On other days, a country with fewer than 5 page loads that day is counted under
+"other", so a single visit from a small country can't be picked out, and no weekly country numbers are published that
+the hidden days could be worked out from. That makes combining the tables to single out a visit hard, not impossible.
+Published totals are kept for good, in the repo and its history. The server's setup and the export program are in
 [tkjaer/open-stats](https://github.com/tkjaer/open-stats).
 
 **Turning it off.** Any of these stops it:
