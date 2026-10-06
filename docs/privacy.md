@@ -30,17 +30,19 @@ request, it does reach the server with your IP address and your browser's standa
 if the server is down, slow or blocked, nothing changes for you.
 
 **What the server does with it.** The server ([GoatCounter](https://www.goatcounter.com), self-hosted, behind nginx)
-does not log the requests it counts. nginx uses your IP address, in memory only, to limit how many counts one address
-can send, and looks at the browser's User-Agent and prefetch headers to turn away obvious bots and preloads; it passes
-none of those headers on. GoatCounter uses the IP address, again in memory only (for the few seconds until the count
-is added), to look up the country with a database on the server itself, and then adds one to two counters: page
-loads per language per hour, and per country and language per day. Your IP address and your browser's details are
-not stored, and there is no row per visit; but at low traffic a counter can hold a 1, which then describes a single
-visit (its language, its hour, and its country that day). These counters are deleted after 31 days. The server also
-hosts other sites, and a connection that fails before it says it is for `stats.irq.dk` may end up in their logs
-instead; the app's own requests never do. The
+does not log the requests it counts. nginx looks at the browser's User-Agent and prefetch headers to turn away obvious
+bots and preloads, and passes none of those headers on. There is no limit per IP address, only one cap on all counts
+together. GoatCounter uses your IP address to look up the country with a database on the server itself, and then adds
+one to two counters: page loads per language per hour, and per country and language per day. GoatCounter also keeps
+the IP address in memory (never on disk or in a log) as a key in its rate limiter, for at most one hour: it restarts
+every hour, which clears the rate limiter. The key isn't linked to the page or language. Your IP address and your
+browser's details are not stored on disk, and there is no row per visit; but at low traffic a counter can hold a 1,
+which then describes a single visit (its language, its hour, and its country that day). These counters are deleted
+after 31 days. The server also hosts other sites, and a connection that fails before it says it is for
+`stats.irq.dk` may end up in their logs instead; the app's own requests never do. The
 [open-stats README](https://github.com/tkjaer/open-stats#limits-what-this-can-and-cant-promise) lists this and the
-counts' other limits.
+counts' other limits, and the setup guide
+[explains the rate limiter, with links to its source](https://github.com/tkjaer/open-stats/blob/main/collector/README.md#goatcounters-rate-limiter).
 
 **What is published.** Once a week, totals for the week are published in
 [tkjaer/open-stats-data](https://github.com/tkjaer/open-stats-data) (CC0), as three separate tables: page loads per
