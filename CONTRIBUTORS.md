@@ -9,4 +9,4 @@ Everyone with commits is also listed on
 
 ### German (Deutsch)
 
-- Matthias Kesler ([@krombel](https://github.com/krombel)), 2026, #195
+- Matthias Kesler ([@krombel](https://github.com/krombel)), 2026, [#195](https://github.com/tkjaer/how-the-internet-works/pull/195)

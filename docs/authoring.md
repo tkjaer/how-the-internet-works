@@ -566,7 +566,9 @@ extra effort:
 1. `content/locales/<lang>/meta.json`: `{ "name": "Dansk", "dir": "ltr" }` (`rtl` for Arabic, Hebrew…). `name` is
    written in the language itself; it also tells the theme which script's fonts to load.
 2. `content/locales/<lang>/ui.json`: the chrome strings (copy `en/ui.json`).
-3. Add `locales/<lang>.json` to any content folder you translate. Anything missing falls back to English.
+3. Add `locales/<lang>.json` to any content folder you translate. Anything missing falls back to English. A string
+   copied over still in English fails `src/translations.test.ts`: translate it, or, for a term your language keeps
+   English on purpose (a header field name, router output), add it under your language in `KEEP_ENGLISH` there.
 4. A new script (Arabic, Greek…) needs its font faces in the theme's `tokens.css`.
 
 We ship only languages someone has reviewed (English, Danish and German for now, issue #11).
