@@ -1,7 +1,9 @@
 # Security
 
-How the Internet Works is a static site: no accounts, no server code and no data collection. Security issues are
-still possible, for example in the build tooling, the dependencies or the CI workflows.
+How the Internet Works is a static site: no accounts and no server code of its own. Its one data collection, a visit
+count, runs on a separate server set up in [tkjaer/open-stats](https://github.com/tkjaer/open-stats) (see
+[privacy](docs/privacy.md#counting-visits)). Security issues are still possible, for example in the build tooling,
+the dependencies or the CI workflows. Issues in the stats server belong in open-stats.
 
 ## Reporting a problem
 

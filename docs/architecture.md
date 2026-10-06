@@ -563,7 +563,9 @@ below 400 px day/night too), the style (only with more than one theme) and About
   and gives focus back to ⋯, Tab closes it and moves on, and a click outside closes it. Choices and toggles leave it
   open so you see the new value.
 - **About** (`ui/About.svelte`) is a small `role="dialog"` panel: the credit, © and AGPL-3.0-or-later, no warranty,
-  the screenshot permission, and links to the source, `LICENSE` and `NOTICE.md`. It takes the focus when it opens,
+  the screenshot permission, the "Count my visit" switch (or, when the browser sends Global Privacy Control or Do Not
+  Track, a line saying visits aren't counted), and links to the source, `LICENSE`, `NOTICE.md` and the privacy page.
+  It takes the focus when it opens,
   and Esc gives it back to ⋯. It is the AGPL's Appropriate Legal Notices and its offer of the source to network users,
   so a modified version must keep it ([NOTICE.md](../NOTICE.md)). Who and where come from `package.json` (`author`,
   `homepage`, `license`) through `__ABOUT__` in `vite.config.ts`, so the engine names no project.
@@ -745,6 +747,16 @@ root, under a sub-path like Pages' or on a preview server. `--only=subpath` chec
 fails on any request outside the sub-path, any failed request or page error, a missing font or icon, or a link-preview
 tag (`og:url`, `og:image`) that isn't an absolute URL to a file in the build. Those tags take the site's address from
 `VITE_SITE_URL` (`.env`; set it in the environment to build for another address).
+
+**Counting visits** (`count.svelte.ts`, [privacy.md](privacy.md#counting-visits)). After the first render `main.ts`
+calls `countVisit(lang)`: once the page is idle it sends one `no-cors` request with no credentials and no referrer
+to `VITE_STATS_URL` with the language, and ignores the answer and any error. It sends nothing under Global Privacy
+Control or Do Not Track, when the reader turned it off in About (`localStorage` `count=off`, checked again just
+before sending), or when the page isn't the published address itself (`COUNTED_SITE`, same origin and path, `onSite`), so
+dev, `--only=subpath` and forks never count. That address is fixed in the code rather than taken from `VITE_SITE_URL`,
+so a copy built for its own address doesn't count either. The server and the published totals are in
+[tkjaer/open-stats](https://github.com/tkjaer/open-stats) and
+[tkjaer/open-stats-data](https://github.com/tkjaer/open-stats-data).
 
 ## Performance
 
