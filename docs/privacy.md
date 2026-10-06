@@ -36,9 +36,11 @@ details and the time of your visit are not stored, and no record of the single v
 deleted after 31 days.
 
 **What is published.** Once a week, totals for the week are published in
-[tkjaer/open-stats](https://github.com/tkjaer/open-stats) (CC0): page loads per day, language per day, and countries
-for the whole week. A country with fewer than 5 page loads that week is counted under "other", so a single visit from a
-small country can't be picked out. The server's setup and the export script are in the same repo.
+[tkjaer/open-stats](https://github.com/tkjaer/open-stats) (CC0), as three separate tables: page loads per day,
+language per day, and countries per day. A country with fewer than 5 page loads on a day is counted under "other" for
+that day, so a single visit from a small country can't be picked out, and no weekly country numbers are published that
+the hidden days could be worked out from. Days are in UTC. The server's setup and the export script are in the same
+repo.
 
 **Turning it off.** Any of these stops it:
 
