@@ -27,6 +27,8 @@ export default defineActivity({
   },
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Streaming_media', title: 'Streaming media', level: 'both', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Streaming_Media', title: 'Streaming Media', level: 'both', lang: 'de' },
     { url: 'https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP', title: 'MPEG-DASH', level: 'nerd', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP', title: 'Dynamic Adaptive Streaming over HTTP', level: 'nerd', lang: 'de' },
   ],
 });

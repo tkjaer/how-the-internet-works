@@ -1,0 +1,32 @@
+{
+  "name": {
+    "kid": "3G-Funkumschlag",
+    "nerd": "3G-HSPA-Frame (RLC · MAC-hs)"
+  },
+  "note": {
+    "kid": "Durch die Luft in den Plätzen, die der Mast deinem Handy gibt. Die Steuerung hinter dem Mast prüft, ob jedes Stück ankam, und fragt nochmal, wenn eines verloren ging.",
+    "nerd": "MAC-hs in der NodeB sendet es in den 2-ms-TTIs, die ihr Scheduler vergibt, und sendet mit HARQ nach; RLC im RNC verschlüsselt es und sendet nach, was HARQ verpasst hat."
+  },
+  "line": "3G HSPA User Plane, H-RNTI {hrnti}, RLC SN {rlcsn}",
+  "field": {
+    "hrnti": {
+      "name": {
+        "kid": "Handynr.",
+        "nerd": "H-RNTI"
+      },
+      "about": "Der Kurzname der NodeB für dieses Handy auf dem gemeinsamen HSDPA-Kanal (er markiert die Plätze des Handys auf dem Control Channel)."
+    },
+    "queue": {
+      "name": "Prioritätswarteschlange",
+      "about": "MAC-hs-Header: aus welcher Queue des Handys in der NodeB das kam."
+    },
+    "tsn": {
+      "name": "Sendefolgenummer",
+      "about": "MAC-hs-Header: bringt die 2-ms-Blöcke nach HARQ-Nachsendungen wieder in Reihenfolge."
+    },
+    "rlcsn": {
+      "name": "RLC Sequence Number",
+      "about": "Bringt Segmente zwischen Handy und RNC in Reihenfolge und fragt verlorene nochmal an (ARQ)."
+    }
+  }
+}

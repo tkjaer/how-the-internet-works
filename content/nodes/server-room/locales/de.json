@@ -1,0 +1,19 @@
+{
+  "name": "Serverraum",
+  "inside": {
+    "title": "Im Serverraum"
+  },
+  "1995": {
+    "kid": "Ein kleines Zimmer an einer Uni oder in einer Firma weit weg in Amerika. Die Website wohnt hier, auf einem Computer im Regal. Tippe, um hineinzuschauen!",
+    "nerd": "Der Serverraum des Hosting-Standorts: der T1 vom Backbone endet auf seinem Router, und ein 10-Mbit/s-Hub verbindet den Router mit dem Webserver. Tippe, um ihn aufzuklappen.",
+    "tag": "T1 · 10BASE-T hub",
+    "inside": {
+      "kid": "Dein Päckchen kommt über die gemietete Leitung zum Router des Zimmers. Ein Hub kopiert es in jedes Kabel im Raum, und der Webserver sieht, dass es für ihn ist. Der Server findet die Seite auf seiner eigenen Disk und schickt sie denselben Weg zurück. Es gibt nirgendwo Kopien: dieser eine Computer ist die Website.",
+      "nerd": "Ein Hosting-Standort 1995: der T1 endet auf dem Router des Standorts (Cisco HDLC an einem seriellen Port), der auf ein 10BASE-T-Segment routet. Der Hub wiederholt jeden Frame aus jedem Port, und die NIC des Webservers behält die, die an ihre MAC adressiert sind. Kein Load-Balancer, kein Cache, kein Origin: die Disk des Servers hält die einzige Kopie.",
+      "describe": {
+        "kid": "Ein kleines Zimmer mit drei Regalen beiger Computer an der Wand. Der Weg kommt vom Router des großen Netzes über eine gemietete Leitung zum Router des Zimmers, dann über dünne Kabel durch eine flache Box mit kleinen Lämpchen zu einem hohen Computer. Päckchen gehen rein, die Seite kommt wieder raus.",
+        "nerd": "Der Serverraum beginnt am PoP des Backbones und läuft über den T1 zum Router des Standorts, dann über 10BASE-T durch einen Repeater-Hub zum Webserver, einem beigen Tower. Regale mit Tower-Computern stehen an der Rückwand. Anfrage- und Seitenpakete laufen in entgegengesetzte Richtungen."
+      }
+    }
+  }
+}

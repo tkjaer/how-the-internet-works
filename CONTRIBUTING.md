@@ -63,4 +63,7 @@ Forgot it? `git commit --amend -s` fixes the last commit, and `git rebase --sign
 - `npm test` and `npm run build` pass.
 - New content is added as folders under `content/` ([docs/authoring.md](docs/authoring.md)); the engine in `src/`
   names no content ids ([docs/architecture.md](docs/architecture.md)).
-- Text is in English and Danish, at both levels (Simple and Technical: the `kid` and `nerd` keys) where it differs.
+- Text is in English, Danish and German, at both levels (Simple and Technical: the `kid` and `nerd` keys) where it differs.
+
+You're welcome to add yourself to [CONTRIBUTORS.md](CONTRIBUTORS.md) in your pull request (a translation goes under
+its language). It's entirely optional.

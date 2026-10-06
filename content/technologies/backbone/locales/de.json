@@ -1,0 +1,8 @@
+{
+  "name": "Backbone",
+  "kid": "Super-schnelle Verbindungen zwischen großen Netz-Boxen.",
+  "nerd": "100–400G-Links zwischen Routern, oft mit MPLS.",
+  "2010": {
+    "nerd": "10–40G-Links zwischen Routern, oft mit MPLS; die ersten 100G-Links kamen 2010."
+  }
+}

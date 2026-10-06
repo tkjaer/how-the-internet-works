@@ -13,6 +13,8 @@ export default defineTechnology({
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Circuit_Switched_Data', title: 'Circuit Switched Data', level: 'both', lang: 'en' },
     { url: 'https://da.wikipedia.org/wiki/GSM', title: 'GSM', level: 'both', lang: 'da' },
+    { url: 'https://de.wikipedia.org/wiki/Circuit_Switched_Data', title: 'Circuit Switched Data', level: 'both', lang: 'de' },
     { url: 'https://en.wikipedia.org/wiki/GSM', title: 'GSM', level: 'nerd', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Global_System_for_Mobile_Communications', title: 'Global System for Mobile Communications', level: 'nerd', lang: 'de' },
   ],
 });

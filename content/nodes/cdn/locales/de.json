@@ -1,0 +1,9 @@
+{
+  "name": "Video-Server",
+  "kid": "Das Video wohnt hier, auf einem Computer in einem der Schränke. Die Videofirma legt Kopien beliebter Videos an vielen Orten ab, damit keiner zu weit weg ist.",
+  "nerd": "Ein CDN-Cache-Server: die Video-App läuft in einem Container und liefert das Segment aus Speicher oder SSD; nur Cache-Misses gehen weiter, zurück zum Origin.",
+  "2010": {
+    "kid": "Das Video wohnt hier, auf einem Computer in einem der Schränke. Die Videofirma legt Kopien beliebter Videos in ein paar großen Städten ab, deshalb ist die nächste weiter weg als heute.",
+    "nerd": "Ein CDN-Cache-Server 2010: Linux und ein Cache-Programm direkt auf der Hardware, heißes Video im RAM und der Rest auf rotierenden Platten; nur Cache-Misses gehen weiter, zurück zum Origin."
+  }
+}

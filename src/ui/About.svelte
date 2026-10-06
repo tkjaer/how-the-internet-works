@@ -27,5 +27,6 @@
     <a href={source} target="_blank" rel="noopener">{tr('about.source')}</a>
     <a href="{source}/blob/main/LICENSE" target="_blank" rel="noopener">{tr('about.license')}</a>
     <a href="{source}/blob/main/NOTICE.md" target="_blank" rel="noopener">{tr('about.terms')}</a>
+    <a href="{source}/blob/main/CONTRIBUTORS.md" target="_blank" rel="noopener">{tr('about.contributors')}</a>
   </p>
 </div>

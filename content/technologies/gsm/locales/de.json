@@ -1,0 +1,8 @@
+{
+  "name": "GSM-Daten",
+  "1995": {
+    "kid": "Das Telefon des Laptops ruft die Internetfirma an, per Funk zum Mast. Der Anruf bekommt seinen eigenen Platz in den Funkwellen, einen winzigen Moment, der immer wieder kommt, und behält ihn, bis du auflegst. Es ist langsam, und jede Minute kostet Geld.",
+    "nerd": "GSM Circuit-Switched Data (CSD): ein Full-Rate Traffic Channel, TCH/F9.6, ein Timeslot von acht auf einem 200-kHz-Träger um 900 MHz, deiner für den ganzen Anruf. 12 kbit/s RLP-Frames (nachgesendet, wenn verstümmelt), auf der Luft auf 22,8 kbit/s kodiert; 9,6 kbit/s bleiben für PPP. Abrechnung pro Minute, wie ein Anruf.",
+    "tag": "CSD · 9,6 kbit/s · 1 Slot"
+  }
+}

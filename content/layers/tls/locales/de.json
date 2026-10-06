@@ -1,0 +1,29 @@
+{
+  "name": {
+    "kid": "Abgeschlossene Box",
+    "nerd": "TLS-Record"
+  },
+  "note": {
+    "kid": "Nur {yours} und der Server haben den Schlüssel.",
+    "nerd": "Ende-zu-Ende verschlüsselt und authentifiziert."
+  },
+  "sealed": {
+    "kid": "Abgeschlossen. Niemand auf dem Weg kann lesen, was drin ist.",
+    "nerd": "Ciphertext: Zwischen-Hops können es nicht lesen und nicht unbemerkt ändern."
+  },
+  "line": "Transport Layer Security: Application Data, Länge {length}",
+  "field": {
+    "type": {
+      "name": "Inhaltstyp",
+      "about": "23 = verschlüsselte Application Data (der Handshake ist vorbei)."
+    },
+    "version": {
+      "name": "Version",
+      "about": "Auf Application Data immer 0x0303, auch in TLS 1.3 (für alte Middleboxes behalten)."
+    },
+    "length": {
+      "name": "Length",
+      "about": "Bytes Ciphertext, die folgen: die Payload, ihr echter Content Type (1 Byte) und das 16-Byte Authentication Tag."
+    }
+  }
+}

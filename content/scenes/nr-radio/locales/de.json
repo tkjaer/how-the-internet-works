@@ -1,0 +1,50 @@
+{
+  "title": "Radiostrahlen",
+  "kid": "Der Turm hat viele winzige Antennen. Zusammen zielen sie einen Strahl direkt auf jedes Handy. Und jedes Handy bekommt eigene Sitze in der Zeit und in Radiofarben, wie Sitze in einem Bus, sodass sie nie durcheinanderreden.",
+  "nerd": "Ein Massive-MIMO-Panel beamformt einen eigenen Strahl pro Nutzer. In jedem 0,5-ms-Slot (30 kHz Sub-Carrier-Spacing) vergibt der Scheduler Resource Blocks: OFDMA teilt Zeit und Frequenz zwischen Nutzern, sodass Dutzende Handys dieselben 100 MHz gleichzeitig nutzen, und MU-MIMO lässt mehrere Strahlen dieselben Resource Blocks zur selben Zeit wiederverwenden.",
+  "describe": {
+    "kid": "Ein Funkmast richtet leuchtende Strahlen auf drei Handys, und dein Handy hat ein Etikett. Daneben gleitet ein Gitter winziger Sitze für Zeit und Radiofarben. Bunte Sitze leuchten für jedes Handy. Der passende Strahl leuchtet, wenn dieses Handy dran ist.",
+    "nerd": "Das gNB-Panel beamformt drei Nutzer, während ein Zeit-Frequenz-Gitter daneben scrollt. Bunte Resource Blocks markieren OFDMA-Zuteilungen. Der aktuelle Slot lässt den passenden Strahl aufleuchten. Labels nennen 64T64R Beamforming, 30 kHz Spacing und 0,5-ms-Slots."
+  },
+  "beams": "Ein Strahl für jedes Handy",
+  "grid": "Alle bekommen eigene Sitze",
+  "time": "Zeit →",
+  "frequency": "Frequenz →",
+  "you": "Du",
+  "tag": {
+    "beams": "64T64R · beamforming",
+    "grid": "OFDMA · 30 kHz · 0,5 ms slots"
+  },
+  "2010": {
+    "title": "Eine Welle, geteilte Codes",
+    "kid": "Der Turm sendet eine breite Welle über jedes Handy auf seiner Seite. Die Handys sind abwechselnd dran, 2 ms am Stück, und jede Reihe ist in Codes geteilt, wie Stimmen, die verschiedene Melodien gleichzeitig singen. Je mehr Handys schauen, desto kleiner wird der Anteil jedes Einzelnen.",
+    "nerd": "WCDMA auf einem 5-MHz-Carrier: eine Sektorantenne deckt etwa 120° ab, ohne Beamforming. HSDPA teilt bis zu 15 SF16-Codes; alle 2 ms TTI gibt der NodeB sie an eine oder wenige UEs, nach ihrem CQI. 7,2–14 Mbit/s Peak pro Zelle mit 16-QAM; ein Handy bekam 1–3 Mbit/s in der Praxis.",
+    "describe": {
+      "kid": "Ein Funkmast sendet eine breite Welle über drei Handys, und dein Handy hat ein Etikett. Daneben gleitet ein Gitter winziger Sitze: Reihen aus Codes, Spalten aus 2-ms-Reihen. Die Sitze jeder Reihe leuchten meist für ein Handy.",
+      "nerd": "Der Sektor des NodeB deckt drei UEs mit einer Welle. Ein Code-×-Zeit-Gitter scrollt daneben: die HS-PDSCH-Codes jedes 2-ms-TTI gehen an eine UE, manchmal geteilt mit einer zweiten. Labels geben den 5-MHz-Carrier, 15 Codes und das 2-ms-TTI."
+    },
+    "beams": "Eine Welle für jedes Handy",
+    "grid": "Handys sind abwechselnd dran",
+    "frequency": "Codes →",
+    "tag": {
+      "beams": "Sektor · 5 MHz · no beams",
+      "grid": "HSDPA · 15 codes · 2 ms TTI"
+    }
+  },
+  "1995": {
+    "title": "Dein eigener Sitz, jedes Mal",
+    "kid": "Der Mast sendet eine breite Welle über alle in der Nähe. Seine Zeit ist in acht Reihen geschnitten, immer wieder, und dein Anruf besitzt eine davon, immer dieselbe, bis du auflegst. Auch wenn der Laptop nichts zu senden hat, darf niemand sonst deinen Sitz nutzen.",
+    "nerd": "GSM TDMA: jeder 200-kHz-Carrier ist in Frames aus 8 Time Slots geschnitten (je 577 µs, 4,615 ms ein Frame). Ein Data-Call (TCH/F9.6) hält einen Slot jedes Frames für den ganzen Call, genutzt oder nicht: ein Kreis, wie die Telefonleitung zu Hause. Deshalb wurde pro Minute abgerechnet. GPRS (ab 2000) ließ Handys Slots paketweise teilen.",
+    "describe": {
+      "kid": "Ein hoher Metallmast sendet eine breite Welle über deinen Laptop und zwei andere Anrufer, und dein Laptop hat ein Etikett. Daneben gleitet ein Gitter winziger Sitze: Reihen aus Radio-Carriern, Spalten aus Reihen. Jede achte Reihe leuchtet derselbe Sitz für jeden Anruf.",
+      "nerd": "Die BTS deckt drei Calls mit einem Sektor. Ein Carrier-×-Time-Slot-Gitter scrollt daneben: jeder Call behält einen Slot jedes 8-Slot-TDMA-Frames, auf demselben Carrier, genutzt oder nicht. Labels geben GSM 900, 200-kHz-Carrier und den 4,615-ms-Frame."
+    },
+    "beams": "Eine Welle für jeden Anrufer",
+    "grid": "Jeder Anruf behält seinen Sitz",
+    "frequency": "Carrier →",
+    "tag": {
+      "beams": "GSM 900 · 200 kHz · no beams",
+      "grid": "TDMA · 8 slots · 4,615 ms"
+    }
+  }
+}

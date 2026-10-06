@@ -1,0 +1,29 @@
+{
+  "name": "Zu Hause, Wohnung",
+  "access": "In der Wohnung",
+  "kid": "Päckchen rasen durch die Luft zur WLAN-Box, ein Kabel zum Router, dann die Treppe runter in den Keller. Von dort nimmt ein Glasfaden sie mit ins Internet – und das Video kommt denselben Weg zurück!",
+  "nerd": "Ein Wohnblock mit Fibre to the Building: Wi‑Fi am Access Point auf Ethernet gebridged, NAT im Wohnungsrouter, Ethernet den Steigschacht runter zum Switch des ISP im Keller, dann eine Punkt-zu-Punkt-Glasfaser zur Aggregation des ISP.",
+  "describe": {
+    "kid": "Ein Wohnblock ist aufgeschnitten. In deiner Wohnung schickt das Handy Päckchen per Wi‑Fi zur WLAN-Box, dann per Kabel zum Router. Ein anderes Kabel verlässt die Wohnung zur Internetwolke: es läuft in den Keller, wo ein Glasfaden beginnt. Anfragen raus, Video zurück.",
+    "nerd": "Die Wohnungsansicht zeigt das Handy per Wi‑Fi zum Access Point, Ethernet zum Router und den Ethernet-Uplink des Routers ins Internet. Im Internet erreicht der Uplink den Kellerswitch, dann Glasfaser zum Gebäude. Video kommt denselben Weg zurück."
+  },
+  "tag": {
+    "phone": "Wi-Fi 6 · 192.168.1.23",
+    "router": "NAT → 203.0.113.7"
+  },
+  "stop": {
+    "router": {
+      "kid": "Der Router ist die Tür deiner Wohnung. Er schreibt die Adresse deines Zuhauses aufs Päckchen und schickt es die Treppe runter.",
+      "nerd": "NAT schreibt 192.168.1.23 auf die öffentliche 203.0.113.7 um; der WAN-Port ist schlichtes Ethernet zum Switch im Keller."
+    }
+  },
+  "inside": {
+    "internet": {
+      "nerd": "Zugangsnetz (Punkt-zu-Punkt-Glasfaser vom Kellerswitch deines Gebäudes), eine Aggregationsschicht (L2-Backhaul zur BNG), der MPLS-Kern des ISP, dann settlement-free Peering am IXP oder bezahltes Transit, und am Ende ein CDN-Cache in deiner Nähe. Jede Fläche ist ein Betreibernetz.",
+      "describe": {
+        "kid": "In der Wolke startet der Weg an deinem Haus. Ein Kabel geht zum Kellerswitch, ein Glasfaden weiter zum Backhaul-Switch, ISP-Tor und ISP-Kern. Dann Border-Router, Internetknoten und das Rechenzentrum der Videofirma, das sich öffnet. Der gestrichelte Abzweig zeigt Transit.",
+        "nerd": "Die aufgeklappte Route startet am Gebäude: Ethernet-Steigleitung zum Kellerswitch, Glasfaser zum Backhaul-Switch, dann BNG und ISP-Kern. Weiter zum Border-Router, IXP und CDN-Rechenzentrum, das sich öffnet. Anfragen und Video laufen entgegengesetzt."
+      }
+    }
+  }
+}

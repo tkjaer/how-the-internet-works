@@ -1,0 +1,75 @@
+{
+  "name": {
+    "kid": "Der Brief",
+    "nerd": "HTTP-Nachricht"
+  },
+  "note": {
+    "kid": "Die Nachricht selbst, in der abgeschlossenen Box.",
+    "nerd": "Die Application-Nachricht: eine Anfrage nach dem nächsten Videosegment oder ein Stück der Antwort. Gezeigt in der Textform von HTTP/1.1; die meisten Videodaten reisen heute als HTTP/2 oder HTTP/3 (über QUIC), die dieselben Felder in binären Frames tragen."
+  },
+  "line": "Hypertext Transfer Protocol: {start}",
+  "value": {
+    "ask": {
+      "kid": "„Schick mir bitte das nächste Stück vom Katzenvideo!“",
+      "nerd": "Eine Anfrage nach dem nächsten Videosegment."
+    },
+    "send": {
+      "kid": "„Hier ist das nächste Stück vom Katzenvideo!“",
+      "nerd": "Eine Antwort: das nächste Videosegment."
+    },
+    "get": "GET /video/720p/42.m4s HTTP/1.1",
+    "ok": "HTTP/1.1 200 OK",
+    "host": "Host: video.example",
+    "type": "Content-Type: video/mp4"
+  },
+  "field": {
+    "start": {
+      "name": {
+        "kid": "Der Brief sagt",
+        "nerd": "Startzeile"
+      },
+      "about": "Die Anfrage (Method und Path) oder der Status der Antwort."
+    },
+    "header": {
+      "name": "Header",
+      "about": "Eine von mehreren Header-Zeilen; der Rest der Header und der Body folgen."
+    }
+  },
+  "1995": {
+    "note": {
+      "kid": "Die Nachricht selbst, in Klarschrift: normale Seiten waren 1995 nicht abgeschlossen.",
+      "nerd": "Die Application-Nachricht in klarem HTTP/1.0: eine Anfrage nach der Seite oder ihrem Bild, oder ein Stück der Antwort."
+    },
+    "value": {
+      "get": "GET /index.html HTTP/1.0",
+      "ok": "HTTP/1.0 200 OK",
+      "host": "User-Agent: Mozilla/1.1N",
+      "type": "Content-Type: text/html",
+      "ask": {
+        "kid": "„Schick mir bitte die Seite mit dem Bild!“",
+        "nerd": "Eine Anfrage nach der Seite."
+      },
+      "send": {
+        "kid": "„Hier ist die Seite!“",
+        "nerd": "Eine Antwort: ein Stück der Seite."
+      }
+    }
+  },
+  "2010": {
+    "note": {
+      "kid": "Die Nachricht selbst, in Klarschrift: Video war 2010 nicht abgeschlossen.",
+      "nerd": "Die Application-Nachricht in klarem HTTP: eine Anfrage nach dem Video oder ein Stück der Antwort."
+    },
+    "value": {
+      "get": "GET /videos/42.mp4 HTTP/1.1",
+      "ask": {
+        "kid": "„Schick mir bitte das Katzenvideo!“",
+        "nerd": "Eine Anfrage nach der Videodatei."
+      },
+      "send": {
+        "kid": "„Hier ist das nächste Stück vom Katzenvideo!“",
+        "nerd": "Eine Antwort: das nächste Stück der Videodatei."
+      }
+    }
+  }
+}

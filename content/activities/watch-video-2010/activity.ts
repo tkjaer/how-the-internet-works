@@ -22,5 +22,6 @@ export default defineActivity({
   ],
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Progressive_download', title: 'Progressive download', level: 'both', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Progressive_Download', title: 'Progressive Download', level: 'both', lang: 'de' },
   ],
 });

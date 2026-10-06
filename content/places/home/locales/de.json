@@ -1,0 +1,30 @@
+{
+  "name": "Zu Hause",
+  "where": "zu Hause",
+  "access": "Wi‑Fi · Glasfaser",
+  "kid": "Kleine Daten-Päckchen rasen durch die Luft, ein Kabel runter und den Glasfaden entlang ins Internet – und das Video kommt denselben Weg zurück!",
+  "nerd": "Zu Hause verlassen Pakete das Handy per 802.11-Wi-Fi, werden am Access Point auf Ethernet gebridged, der Heimrouter macht NAT und schickt sie über den Glasfaser-Uplink zum ISP.",
+  "describe": {
+    "kid": "Ein aufgeschnittenes Haus steht auf grünen Hügeln, mit einem Smart-Lautsprecher im Regal. Der Weg startet bei deinem Handy, hüpft per Wi‑Fi zur WLAN-Box, per Kabel zum Router, dann den Glasfaden zur Internetwolke. Päckchen gehen als Anfragen raus und als Video zurück.",
+    "nerd": "Die Hausansicht zeigt den LAN-Weg vom Handy zum Access Point, Router und Glasfaser-Uplink, mit einem Smart-Lautsprecher im Wandregal. Pakete gehen aufwärts über Wi‑Fi, Ethernet und XGS-PON. Video-Pakete kommen denselben Weg zurück."
+  },
+  "tag": {
+    "phone": "Wi-Fi 6 · 192.168.1.23",
+    "router": "NAT → 203.0.113.7"
+  },
+  "stop": {
+    "router": {
+      "kid": "Der Router ist die Haustür. Er schreibt die Adresse deines Zuhauses aufs Päckchen und merkt sich, wer gefragt hat.",
+      "nerd": "NAT schreibt die private Absenderadresse 192.168.1.23 auf die öffentliche 203.0.113.7 um und merkt sich die Verbindung, damit Antworten den Weg zurück finden."
+    }
+  },
+  "inside": {
+    "internet": {
+      "nerd": "Zugangsnetz (XGS-PON: passiver Splitter an der Straße, OLT in der Vermittlung), Q-in-Q-VLANs weiter zur BNG, der MPLS-Kern des ISP, dann settlement-free Peering am IXP oder bezahltes Transit, und am Ende ein CDN-Cache in deiner Nähe. Jede Fläche ist ein Betreibernetz.",
+      "describe": {
+        "kid": "In der Wolke startet der Weg bei dir zu Hause. Er läuft durch den Straßenkasten, das Glasfaser-Ende, das ISP-Tor und den ISP-Kern. Dann Border-Router, Internetknoten und das Rechenzentrum der Videofirma, eine Box zum Öffnen. Der gestrichelte Abzweig zeigt Transit.",
+        "nerd": "Die aufgeklappte Internetroute startet am Heimzugang, dann Splitterkasten, OLT, BNG und ISP-Kern. Weiter zum Border-Router, IXP und CDN-Rechenzentrum, das sich öffnet. Anfragen und Video laufen entgegengesetzt über Glasfaser, Backbone und Cross-Connects."
+      }
+    }
+  }
+}

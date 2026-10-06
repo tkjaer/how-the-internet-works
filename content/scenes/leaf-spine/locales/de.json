@@ -1,0 +1,31 @@
+{
+  "mode": {
+    "kid": "kid",
+    "nerd": "nerd"
+  },
+  "title": "Die Kreuzungen im Rechenzentrum",
+  "heading": {
+    "kid": "Die Kreuzungen im Rechenzentrum",
+    "nerd": "Leaf–Spine-Fabric"
+  },
+  "kid": "Jeder Schrank hat eine Straße zu jeder Kreuzung. Päckchen verteilen sich über alle Kreuzungen, damit keine voll läuft. Dein Päckchen nimmt immer dieselbe Kreuzung, damit seine Stücke in der Reihenfolge bleiben.",
+  "nerd": "ECMP gibt jedem Leaf gleich teure Pfade über vier Spines. Der Leaf hasht das 5-Tupel des Flows — Quell- und Ziel-IP, Ports und Protokoll — dann wählt hash mod 4 Spine 2. Gleicher Flow, gleicher Spine, keine Umordnung; jeder Leaf erreicht jeden anderen in zwei Hops.",
+  "describe": {
+    "kid": "Oben sind vier Kreuzungen; die dritte leuchtet und hat einen Namen. Unten sind der Load Balancer, zwei andere Racks und der Rack-Switch. Dünne Straßen verbinden jede untere Box mit jeder Kreuzung. Kleine Päckchen nutzen alle Straßen. Dein größeres Päckchen bleibt auf der hellen.",
+    "nerd": "Vier Spines sitzen über vier Leaves: der Leaf der Load Balancer, ToRs zweier anderer Racks und der ToR-Switch dieses Racks. Jeder Leaf hat ein Link zu jedem Spine. Hintergrund-Flows kreuzen alle vier Spines. Der markierte Flow hasht auf Spine 2 und geht Load Balancer → Spine → Rack-Switch."
+  },
+  "spine": {
+    "label": {
+      "kid": "Kreuzung",
+      "nerd": "Spine {n}"
+    }
+  },
+  "leaf": {
+    "other": "Andere Racks"
+  },
+  "sticker": {
+    "kid": "Immer dieselbe Straße",
+    "nerd": "hash(5-tuple)",
+    "mod": "mod 4 = {n}"
+  }
+}

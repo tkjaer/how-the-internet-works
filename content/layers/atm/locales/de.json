@@ -1,0 +1,36 @@
+{
+  "name": {
+    "kid": "Kleine Zettelstücke",
+    "nerd": "ATM-Cell"
+  },
+  "note": {
+    "kid": "Hier wird das Päckchen in winzige Stücke gleicher Größe geschnitten, jedes mit einem kleinen Zettel. Die Weichen lesen nur den Zettel und tauschen ihn gegen einen neuen, wenn das Stück vorbeikommt.",
+    "nerd": "AAL5 schneidet das Paket in 48-Byte-Payloads, jeweils hinter einem 5-Byte-Header: Cells à 53 Byte. Switches leiten anhand von VPI/VCI weiter und schreiben sie an jedem Hop um; der Router am anderen Ende setzt das Paket wieder zusammen."
+  },
+  "line": "ATM, VPI/VCI: 1/{vci}",
+  "field": {
+    "vpi": {
+      "name": "VPI",
+      "about": "Virtual Path: ein Bündel von Leitungen zwischen zwei Switches."
+    },
+    "vci": {
+      "name": {
+        "kid": "Zettel",
+        "nerd": "VCI"
+      },
+      "about": "Virtual Channel: die Nummer dieser Leitung auf diesem Abschnitt. Jeder Switch tauscht sie gegen die nächste."
+    },
+    "pti": {
+      "name": "Nutzlasttyp",
+      "about": "Sagt, dass es Daten sind; die letzte Cell eines Pakets wird hier markiert, damit das andere Ende weiß, dass es vollständig ist."
+    },
+    "clp": {
+      "name": "Verlustpriorität",
+      "about": "1 = zuerst verwerfen, wenn ein Switch voll ist."
+    },
+    "hec": {
+      "name": "HEC",
+      "about": "Eine Prüfung nur über den 5-Byte-Header, damit ein Switch nie einen kaputten Zettel liest."
+    }
+  }
+}

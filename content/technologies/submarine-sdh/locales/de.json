@@ -1,0 +1,8 @@
+{
+  "name": "Seekabel",
+  "1995": {
+    "kid": "Ein Kabel auf dem Meeresboden verbindet Dänemark mit Kanada, über die Färöer und Island. Es trägt jeden Telefonanruf und jedes Päckchen dazwischen, und deins fährt in einer kleinen Ecke mit.",
+    "nerd": "CANTAT-3 (1994): etwa 7.100 km Kabel von Blåbjerg in Dänemark nach Nova Scotia, über die Färöer und Island; mit den Landstrecken von Kopenhagen und weiter nach New York läuft die Leitung etwa 8.400 km. Jedes Faserpaar trägt eine Farbe mit 2,5 Gbit/s SDH (STM-16), in Leitungen geschnitten; der Upstream mietet ein paar à 2 Mbit/s. Heutige Kabel tragen Hunderte Tbit/s.",
+    "tag": "CANTAT-3 · STM-16 · 2,5 Gbit/s"
+  }
+}

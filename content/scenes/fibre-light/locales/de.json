@@ -1,0 +1,179 @@
+{
+  "title": "Licht im Glasfaden",
+  "kid": "Faser ist ein Glasfaden, etwa so dünn wie ein Haar. Lichtblitze hüpfen darin entlang. Verschiedene Farben können denselben Faden teilen, ohne durcheinanderzukommen!",
+  "nerd": "Licht bleibt im Kern durch Totalreflexion an der Grenze Kern/Mantel. DWDM multiplexed Dutzende Wellenlängen um 1550 nm auf eine Faser, jede ein unabhängiger Kanal von 100–800 Gbit/s.",
+  "core": "Kern",
+  "cladding": "Mantel",
+  "mux": "Farben zusammenführen",
+  "demux": "Farben trennen",
+  "channels": "Jede Farbe ist ein eigener Kanal",
+  "tag": {
+    "dwdm": "C-band · 50 GHz grid",
+    "gpon": "1:32 · ↑1270 ↓1577 nm",
+    "backbone": "96 λ · EDFA / 80 km",
+    "lan-wdm": "4 λ · 1295–1310 nm",
+    "cwdm4": "4 λ · 1271–1331 nm",
+    "fttb": "BiDi · ↑1310 ↓1490 nm · ein Strang",
+    "submarine": "EDFA / {span} km · Gleichstrom vom Ufer",
+    "atm": "SONET OC-3 · 1 λ · regenerators",
+    "submarine-sdh": "STM-16 · 1 λ pro Paar · Regeneratoren"
+  },
+  "gpon": {
+    "title": "Licht, das deine Straße teilt",
+    "kid": "Diesen Glasfaden teilen alle Häuser auf deiner Straße. Am Splitter geht das Licht nach Hause zu jedem Haus, und jedes Haus behält nur seine eigenen Päckchen. Nach oben sind die Häuser abwechselnd dran, sodass ihre Blitze nie zusammenstoßen.",
+    "nerd": "Ein Passive Optical Network: ein Splitter ohne Strom teilt eine Faser unter 32–64 Wohnungen. Downstream bei 1577 nm ist Broadcast zu jedem Haus, und jede ONT behält nur ihre eigenen (verschlüsselten) Frames. Upstream bei 1270 nm ist zeitgeteilt: der OLT vergibt jedem Haus seine Slots (XGS-PON).",
+    "extra": "Zwei Generationen auf einem Faden: das ältere GPON (2,5 Gbit/s down, 1,25 up) nutzt 1490 nm down und 1310 nm up, sodass es diesen Splitter mit XGS-PONs 1577 und 1270 nm teilen kann. Ein Coexistence-Filter (WDM) an der Vermittlung führt beide zusammen, und die ONT jedes Hauses behält nur die Farben, die sie spricht, sodass eine Straße Haus für Haus auf 10G wechseln kann.",
+    "describe": {
+      "kid": "Eine Reihe Häuser teilt einen Glasfaden durch einen Splitter. Blaues Licht nach Hause läuft die geteilte Faser hinunter und zu jedem Haus. Rotes Licht nach oben verlässt ein Haus nach dem anderen. Funken hüpfen im Glaskern.",
+      "nerd": "Die Access-Ansicht zeigt einen PON-Baum. Drop-Fasern von Wohnungen treffen einen passiven Splitter, dann läuft eine geteilte Faser zum OLT. Downstream-Impulse (blau) gehen Broadcast zu jeder ONT. Upstream-Impulse (rot) nutzen Zeitslots, sodass nur ein Haus auf der geteilten Strecke sendet. Das Label zeigt 1:32 und 1270/1577 nm."
+    },
+    "down": "Nach Hause",
+    "everyone": "zu jedem Haus",
+    "up": "Nach oben",
+    "turns": "eins nach dem anderen",
+    "splitter": "Splitter",
+    "you": "Dein Zuhause"
+  },
+  "metro-fibre": {
+    "title": "Farben teilen sich einen Faden",
+    "kid": "Ein Glasfaden läuft unter der Straße von Box zu Box, bis zur Vermittlung. Das Licht hüpft in seinem Kern, und ein paar Farben teilen denselben Faden, ohne sich zu mischen: jede Farbe ist ein eigener Kanal.",
+    "nerd": "Metro-Faser: Single-Mode-Links zwischen Straßenschränken, Aggregation-Sites und der Vermittlung, typisch 10–100 Gbit/s Ethernet-Optik, mit CWDM oder DWDM, die eine Handvoll Wellenlängen auf ein Faserpaar legen.",
+    "describe": {
+      "kid": "Eine Glasfaser spannt von einem Lampenende zu einem Empfängerende. Vier nummerierte Lichter, 1 rot, 2 gelb, 3 grün und 4 blau, vereinen sich im Kern, hüpfen den Faden entlang und trennen sich wieder, jedes zum Empfänger mit seiner Nummer. Labels zeigen Kern, Mantel und die Farb-Boxen.",
+      "nerd": "Die Metro-Faser-Ansicht zeigt vier Wellenlängenkanäle, λ1 bis λ4 (rot, gelb, grün und blau gezeichnet und an beiden Enden nummeriert), die in einen Mux gehen und durch einen Single-Mode-Kern reisen. Sie verlassen ihn durch einen Demux am anderen Ende. Bewegte Impulse markieren jeden Kanal, Labels nennen Kern, Mantel und DWDM. Das Label zeigt das C-Band-50-GHz-Grid."
+    }
+  },
+  "backbone": {
+    "title": "Licht auf der Autobahn",
+    "kid": "Die Autobahnen des Internets sind Glasfäden unter den Straßen, von Stadt zu Stadt. Das Licht wird schwächer unterwegs, also macht auf einem langen Faden ein Verstärker etwa alle 80 km alle Farben wieder hell, auf einmal. Schau den Zähler: er zählt die Kilometer.",
+    "nerd": "Long-haul DWDM: 64–96 Wellenlängen im C-Band, je 100–800 Gbit/s mit kohärenter Optik. Erbium-dotierte Faserverstärker (EDFAs) etwa alle 80 km verstärken alle Farben auf einmal; eine kurze Strecke braucht keine.",
+    "describe": {
+      "kid": "Ein langer Glasfaden mit einer Bruchmarke steht für viele Kilometer. Acht Lichter, 1 bis 8, wie ein Regenbogen von rot bis pink, laufen zusammen durch den Kern und werden etwas schwächer. Eine rote Zahl unter dem ersten Licht zählt die Kilometer. Lange Fäden bekommen Verstärker, die das Licht wieder hell machen.",
+      "nerd": "Die Long-haul-Ansicht zeigt acht DWDM-Wellenlängen in einer Faser, λ1 bis λ8, nummeriert an Lasern und Empfängern. Bruchmarken stehen für die echte Länge, ein Zähler folgt λ1 in km. Die Faser ist in Spans bis 80 km geschnitten; Impulse verblassen über jeden Span, ein EDFA verstärkt alle Kanäle dazwischen. Das Label nennt 96 Wellenlängen und EDFA alle 80 km."
+    },
+    "booster": "Verstärker"
+  },
+  "cross-connect": {
+    "title": "Quer durch die Halle",
+    "kid": "Im Gebäude der Vermittlung hat jede Firma eigene Boxen, und ein kurzes Glaskabel verbindet sie. Deine Päckchen kreuzen es im Nu: ein paar Farben teilen den Faden, jede ein eigener Kanal.",
+    "nerd": "Ein Cross-Connect: ein Single-Mode-Patch durch den Meet-me-Raum, höchstens ein paar hundert Meter. Eine 100GBASE-LR4-Optik legt vier 25G-Lanes auf vier Wellenlängen nahe 1310 nm (LAN-WDM) und trennt sie am fernen Port wieder.",
+    "describe": {
+      "kid": "In der Vermittlung ist ein kurzer Glasfaden nah gezeigt. Vier nummerierte Lichter, 1 rot, 2 gelb, 3 grün und 4 blau, treten ein, hüpfen durch den Kern und trennen sich am anderen Ende. Die wandernden Blitze kreuzen die Halle sehr schnell, eine Farbe pro Kanal.",
+      "nerd": "Die Cross-Connect-Ansicht nutzt die Metro-Zeichnung für einen kurzen Meet-me-Room-Patch. Vier LAN-WDM-Lanes, λ1 bis λ4 (rot, gelb, grün, blau, an beiden Enden nummeriert), gehen in den Mux, durch den Single-Mode-Kern und raus durch den Demux. Das Label zeigt vier Wellenlängen von 1295 bis 1310 nm, mit Impulsen auf jeder Lane."
+    }
+  },
+  "dc-fibre": {
+    "title": "Licht zwischen den Racks",
+    "kid": "Im Rechenzentrum verbinden kurze Glaskabel die Boxen: die Haustür, die Kreuzungen und die Schränke voller Computer. Sie sind nur ein paar Meter lang, also kreuzt das Licht sie im Nu. Vier Farben teilen jeden Faden, sodass er viermal so viel trägt.",
+    "nerd": "Rechenzentrums-Optik: 400GBASE-FR4 legt vier 100G-Lanes auf vier CWDM-Wellenlängen (1271–1331 nm) über ein Single-Mode-Paar, bis 2 km; die letzten Meter zum Server sind oft Kupfer (DAC). Jeder Link ist ein Hop der Leaf–Spine-Fabric.",
+    "describe": {
+      "kid": "Ein kurzer Glasfaden zwischen zwei Boxen im Rechenzentrum ist nah gezeigt. Vier bunte Lichter vereinen sich an einem Ende, hüpfen den Kern entlang und trennen sich am anderen. Die Blitze kreuzen im Nu.",
+      "nerd": "Die Fabric-Link-Ansicht nutzt die Metro-Zeichnung für eine kurze Single-Mode-Strecke. Vier CWDM-Lanes gehen in den Mux, durch den Kern und raus durch den Demux. Das Label zeigt vier Wellenlängen von 1271 bis 1331 nm, mit Impulsen auf jeder Lane."
+    }
+  },
+  "fttb": {
+    "title": "Ein Glasfaden zu deinem Haus",
+    "kid": "Bei Fibre to the Building endet der Glasfaden im Keller deines Mehrfamilienhauses, und gewöhnliche Kabel laufen die Treppe hoch in jede Wohnung. Der Faden gehört dem Haus, und er trägt Licht beide Richtungen gleichzeitig: eine Farbe nach oben und eine andere nach unten, sodass sie nie zusammenstoßen.",
+    "nerd": "FTTB: eine Point-to-Point-Single-Mode-Faser vom Aggregation-Switch des ISP zu einem Switch im Keller, oft eine BiDi-Optik an jedem Ende (1 Gbit/s: 1310 nm up, 1490 nm down auf einem Strang; 10G BiDi nutzt 1270/1330 nm). Innen erreicht Cat 5e/6-Kupfer oder G.fast über die alte Telefonverkabelung jede Wohnung.",
+    "describe": {
+      "kid": "Ein Glasfaden läuft vom Keller eines Mehrfamilienhauses zur Internetfirma. Rote Blitze nach oben und blaue nach unten hüpfen entgegengesetzt durch den Kern, jeder von seiner Lampe zu seinem Fänger.",
+      "nerd": "Die Gebäude-Ansicht zeigt eine Single-Mode-Faser mit zwei Wellenlängen in entgegengesetzte Richtungen: upstream vom Keller-Switch bei 1310 nm und downstream vom Aggregation-Switch bei 1490 nm, jede durch einen WDM-Filter. Das Label nennt eine BiDi-Optik auf einem Strang."
+    },
+    "up": "Nach oben",
+    "upColour": "in einer Farbe",
+    "down": "Nach unten",
+    "downColour": "in einer anderen Farbe"
+  },
+  "submarine": {
+    "title": "Licht unter dem Meer",
+    "kid": "Hier kreuzt das Internet das Meer! Die Glasfäden liegen in einem Kabel dick wie ein Gartenschlauch, direkt auf dem Meeresboden. Strom läuft durch das Kabel vom Ufer, um die Verstärker zu speisen, die das Licht auf dem Weg wieder hell machen.",
+    "nerd": "Ein Seekabel: ein paar Faserpaare in einem Stahlrohr, umwickelt mit Kupfer und Polyethylen, armiert und nahe dem Ufer gegen Anker und Schleppnetze vergraben. Die Landestationen speisen mehrere kV DC durch das Kupfer, um die Repeater (EDFAs) zu speisen, etwa alle 50–80 km auf langen Kabeln; eine so kurze Kreuzung oft ohne welche.",
+    "describe": {
+      "kid": "Eine Seitenansicht des Meeres zwischen zwei Landestationen am Ufer. Ein Kabel läuft den Hang hinunter und über den Meeresboden, mit Verstärkern darauf. Bunte Lichtblitze und kleine gelbe Stromfunken reisen das Kabel entlang, eine rote Zahl zählt die Kilometer, und ein Hai schwimmt vorbei. Ein Kreis zeigt das Kabel aufgeschnitten.",
+      "nerd": "Seitenansicht eines Seekabels zwischen zwei Landestationen. Das Kabel ist nahe dem Ufer vergraben und liegt auf dem Meeresboden, mit einem Repeater alle Spans bis 60 km. Vier Wellenlängen kreuzen, verblassen über jeden Span; Funken zeigen DC vom Ufer. Ein Querschnitt zeigt Fasern im Rohr, Kupfer und Stahlpanzer. Ein Zähler folgt λ1 in km."
+    },
+    "landing": "Landestation",
+    "repeater": {
+      "kid": "Verstärker",
+      "nerd": "Repeater"
+    },
+    "inside": "Im Kabel",
+    "copper": {
+      "kid": "Strom",
+      "nerd": "Kupfer: Strom"
+    },
+    "glass": {
+      "kid": "Glasfäden",
+      "nerd": "Faserpaare"
+    }
+  },
+  "atm": {
+    "title": "Eine Farbe quer durch Amerika",
+    "kid": "Dieser Glasfaden kreuzt Amerika und trägt die kleinen Zellen des großen Netzes. 1995 trägt jeder Faden nur eine Lichtfarbe. Alle paar Dutzend Kilometer fängt eine Maschine das schwache Licht, liest es und schickt es hell und frisch weiter.",
+    "nerd": "1995 Long Haul: SONET auf Single-Mode-Faser, eine Wellenlänge pro Faser bei 1310 oder 1550 nm. Die ATM-Switches des Backbones treffen sie bei OC-3 (155 Mbit/s) oder OC-12 (622 Mbit/s). Elektronische Regeneratoren alle 40–80 km machen Licht zu Bits und zurück; die ersten EDFAs kamen gerade, und DWDM kam 1996.",
+    "describe": {
+      "kid": "Ein langer Glasfaden mit Bruchmarken steht für viele Kilometer. Ein rotes Licht läuft durch den Kern und wird etwas schwächer, und Maschinen entlang des Fadens machen es wieder hell. Eine rote Zahl unter dem Licht zählt die Kilometer.",
+      "nerd": "Die Long-haul-Ansicht mit einer Wellenlänge in einer Faser, also kein Mux und kein Demux. Bruchmarken stehen für die echte Länge, ein Zähler folgt dem Licht in km. Die Faser ist in Spans geschnitten; der Impuls verblasst über jeden, ein Regenerator stellt ihn dazwischen wieder her. Das Label nennt SONET OC-3 und Regeneratoren."
+    },
+    "booster": {
+      "kid": "Verstärker",
+      "nerd": "Regenerator"
+    }
+  },
+  "submarine-sdh": {
+    "title": "Ein Faden unter dem Atlantik",
+    "kid": "1995 kreuzen die Päckchen nach Amerika das Meer in CANTAT-3, einem Kabel von Dänemark über die Färöer und Island nach Kanada, fertig 1994. Jeder Glasfaden trägt eine Lichtfarbe. Maschinen auf dem Meeresboden fangen das schwache Licht und schicken es hell weiter, gespeist durch das Kabel vom Ufer.",
+    "nerd": "CANTAT-3 (1994): etwa 7.100 km Kabel von Blåbjerg über die Färöer und Island nach Nova Scotia (mit den Landstrecken von Kopenhagen nach New York etwa 8.400 km), 3 × 2,5 Gbit/s SDH (STM-16), eine Wellenlänge pro Faserpaar. Seine Repeater sind Regeneratoren (NL-16), die Licht zu Bits und zurück machen; optisch verstärkte Kabel erreichten den Atlantik 1996 (TAT-12/13). Der Upstream mietet 2-Mbit/s-Kreise darin.",
+    "describe": {
+      "kid": "Eine Seitenansicht des Meeres zwischen zwei Landestationen am Ufer. Ein Kabel läuft den Hang hinunter und über den Meeresboden, mit Maschinen darauf. Eine Lichtfarbe und kleine gelbe Stromfunken reisen das Kabel entlang, eine rote Zahl zählt die Kilometer, und ein Hai schwimmt vorbei. Ein Kreis zeigt das Kabel aufgeschnitten.",
+      "nerd": "Seitenansicht von CANTAT-3 zwischen zwei Landestationen. Das Kabel liegt auf dem Meeresboden mit Regeneratoren. Eine Wellenlänge kreuzt, verblasst über jeden Span; Funken zeigen DC vom Ufer. Ein Querschnitt zeigt Faser, Kupfer und Stahlpanzer. Ein Zähler folgt dem Licht in km."
+    },
+    "landing": "Landestation",
+    "repeater": {
+      "kid": "Verstärker",
+      "nerd": "Regenerator"
+    },
+    "inside": "Im Kabel",
+    "copper": {
+      "kid": "Strom",
+      "nerd": "Kupfer: Strom"
+    },
+    "glass": {
+      "kid": "Glasfäden",
+      "nerd": "Faserpaare"
+    }
+  },
+  "2010": {
+    "backbone": {
+      "nerd": "Long-haul DWDM in 2010: 40–80 Wellenlängen im C-Band, meist 10 oder 40 Gbit/s je; die ersten 100G kohärenten Kanäle kamen gerade. Erbium-dotierte Faserverstärker (EDFAs) etwa alle 80 km verstärken alle Farben auf einmal; eine kurze Strecke braucht keine.",
+      "describe": {
+        "kid": "Ein langer Glasfaden mit einer Bruchmarke steht für viele Kilometer. Acht Lichter, 1 bis 8, wie ein Regenbogen von rot bis pink, laufen zusammen durch den Kern und werden etwas schwächer. Eine rote Zahl unter dem ersten Licht zählt die Kilometer. Lange Fäden bekommen Verstärker, die das Licht wieder hell machen.",
+        "nerd": "Die Long-haul-Ansicht zeigt acht DWDM-Wellenlängen in einer Faser, λ1 bis λ8, nummeriert an Lasern und Empfängern. Bruchmarken stehen für die echte Länge, ein Zähler folgt λ1 in km. Die Faser ist in Spans bis 80 km geschnitten; Impulse verblassen über jeden Span, ein EDFA verstärkt alle Kanäle dazwischen. Das Label nennt 40–80 Wellenlängen und EDFA alle 80 km."
+      }
+    },
+    "tag": {
+      "backbone": "40–80 λ · EDFA / 80 km",
+      "dc-fibre": "10GBASE-SR · 850 nm · OM3",
+      "cross-connect": "10GBASE-LR · 1310 nm · SMF"
+    },
+    "dc-fibre": {
+      "nerd": "Rechenzentrums-Optik in 2010: 10GBASE-SR, ein 850-nm-Laser (ein VCSEL) je Richtung über ein Paar Multimode-Fasern (OM3), bis 300 m. Eine Farbe pro Faser, nichts zum Zusammenführen oder Trennen. Die Server hängen an den Access-Switches auf Kupfer (1000BASE-T). Jeder Link ist ein Hop des Three-Tier-Baums.",
+      "kid": "Im Rechenzentrum verbinden kurze Glaskabel die großen Switches. Sie sind nur ein paar Meter lang, also kreuzt das Licht sie im Nu. Jeder Faden trägt eine Farbe, knapp hinter Rot: ein zu tiefes Rot für unsere Augen.",
+      "describe": {
+        "kid": "Ein kurzer Glasfaden zwischen zwei Switches im Rechenzentrum ist nah gezeigt. Ein Licht an einem Ende hüpft den Kern entlang zum anderen Ende. Die Blitze kreuzen im Nu.",
+        "nerd": "Die Rechenzentrums-Link-Ansicht zeigt eine kurze Multimode-Strecke mit einer 850-nm-Lane: ein Laser an einem Ende, das Licht im Zickzack durch den Kern, ein Detektor am anderen. Das Label sagt 10GBASE-SR bei 850 nm über OM3."
+      }
+    },
+    "metro-fibre": {
+      "nerd": "Metro-Faser: Single-Mode-Links zwischen Straßenschränken, Aggregation-Sites und der Vermittlung. 2010 meist 1 oder 10 Gbit/s Ethernet-Optik, mit CWDM oder DWDM, die eine Handvoll Wellenlängen auf ein Faserpaar legen."
+    },
+    "cross-connect": {
+      "kid": "Im Gebäude der Vermittlung hat jede Firma eigene Boxen, und ein kurzes Glaskabel verbindet sie. Deine Päckchen kreuzen es im Nu, als Blitze einer Farbe knapp hinter Rot: ein zu tiefes Rot für unsere Augen.",
+      "nerd": "Ein Cross-Connect: ein Single-Mode-Patch durch den Meet-me-Raum, höchstens ein paar hundert Meter. 2010 meist 10GBASE-LR: ein 1310-nm-Laser je Richtung über ein Paar Single-Mode-Fasern, gut bis 10 km. Eine Farbe pro Faser, nichts zum Zusammenführen oder Trennen.",
+      "describe": {
+        "kid": "In der Vermittlung ist ein kurzer Glasfaden nah gezeigt. Ein Licht an einem Ende hüpft den Kern entlang zum anderen Ende. Die Blitze kreuzen die Halle im Nu.",
+        "nerd": "Die Cross-Connect-Ansicht zeigt einen kurzen Single-Mode-Patch mit einer 1310-nm-Lane: ein Laser an einem Ende, das Licht im Zickzack durch den Kern, ein Detektor am anderen. Das Label sagt 10GBASE-LR bei 1310 nm über Single-Mode-Faser."
+      }
+    }
+  }
+}

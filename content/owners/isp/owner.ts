@@ -4,5 +4,6 @@ import { defineOwner } from '$core/define';
 export default defineOwner({
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Autonomous_system_(Internet)', title: 'Autonomous system', level: 'nerd', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Autonomes_System', title: 'Autonomes System', level: 'nerd', lang: 'de' },
   ],
 });

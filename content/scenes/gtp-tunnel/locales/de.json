@@ -1,0 +1,69 @@
+{
+  "title": "Der Tunnel-Umschlag",
+  "kid": "Das Mobilnetz macht einen privaten Tunnel zwischen dem Turm und dem Mobilkern. Dein Päckchen behält dieselbe Handy-Adresse, während der große Tunnel-Umschlag sich darum herum ändert.",
+  "nerd": "GTP-U trägt das UE-IP-Paket durch das Betreibernetz. gNB und UPF/PGW nutzen äußeres IP plus UDP/2152 mit einer TEID, eine je Richtung, jede vom Ende gewählt, das darauf empfängt, und einen PDU Session Container Extension Header mit QFI 9 (3GPP TS 29.281, 38.415).",
+  "label": {
+    "sameAddress": "Dieselbe Adresse!",
+    "walk": "du kannst laufen",
+    "toCore": "Zum Mobilkern",
+    "fromCore": "Zurück zum Turm",
+    "envelope": "Tunnel Nr. 7",
+    "cardLabel": "Tunnel-Etikett",
+    "handover": "Handover"
+  },
+  "tag": {
+    "tunnel": "GTP-U TEID {teid}",
+    "anchor": "UE-IP an UPF/PGW verankert"
+  },
+  "at": {
+    "cell-tower": {
+      "title": "Der Turm öffnet den Tunnel",
+      "kid": "Am Turm kommt der große Tunnel-Umschlag ab. Dein Päckchen sagt immer noch 100.64.12.7, sodass der Turm es über Funk zu deinem Handy schicken kann.",
+      "nerd": "Auf dem Downlink beendet die gNB das GTP-U-Bein vom UPF: äußeres IP 10.20.0.1 → 10.20.0.5, UDP/2152, TEID 0x0000a17e (von der gNB gewählt). Sie decapsuliert das UE-Paket für 100.64.12.7 und plant es auf NR-Radio. Beim Handover sagt die SMF dem UPF die Adresse der neuen gNB und die Downlink-TEID; die Uplink-TEID kann bleiben, und die UE-IP bleibt verankert.",
+      "describe": {
+        "kid": "Auf der Straße sitzen Handy, zwei Türme und der Mobilkern neben einem dicken Tunnel. Die Tunnelöffnung am Turm ist hervorgehoben. Ein großer Tunnel-Umschlag bewegt sich zwischen Turm und Kern. Er öffnet sich am Turm und zeigt das kleine Päckchen und Adresse 100.64.12.7. Die Handover-Karte biegt den Tunnel zum nächsten Turm.",
+        "nerd": "Das gNB-Ende des GTP-U-Tunnels ist auf der Straße hervorgehoben, mit Downlink-TEID 0x0000a17e. Der Umschlag bewegt sich zwischen gNB und UPF. Er öffnet sich auf der Turmseite und zeigt das UE-Paket für 100.64.12.7. Die Handover-Karte verschiebt den Tunnel-Endpunkt, während die UE-IP verankert bleibt."
+      }
+    },
+    "mobile-core": {
+      "title": "Der Kern öffnet den Tunnel",
+      "kid": "Am Mobilkern öffnet sich der Tunnel-Umschlag, und dein Päckchen kann weiter ins Internet. Auch wenn du zum nächsten Turm läufst, behält dein Handy dieselbe Adresse.",
+      "nerd": "Auf dem Uplink empfängt UPF/PGW GTP-U von der gNB: äußeres IP 10.20.0.5 → 10.20.0.1, UDP/2152, TEID 0x1f3a92c4 (vom UPF gewählt). Er decapsuliert das UE-Paket (100.64.12.7), wendet Policy/NAT an und leitet weiter. Beim Handover aktualisiert der UPF den N3/S1-U-Tunnel-Endpunkt; die UE-IP bleibt verankert.",
+      "describe": {
+        "kid": "Auf der Straße sitzen Handy, Türme und Mobilkern neben einem dicken Tunnel. Die Tunnelöffnung am Kern ist hervorgehoben. Ein Tunnel-Umschlag geht zum Kern, öffnet sich und zeigt Adresse 100.64.12.7, dann reist er zurück. Die Handover-Karte behält die Adresse, während der Tunnel zum nächsten Turm biegt.",
+        "nerd": "Das UPF- und Mobilkern-Ende ist die hervorgehobene Tunnelöffnung, markiert mit Uplink-TEID 0x1f3a92c4 und dem UE-IP-Anker. Der GTP-U-Umschlag öffnet sich am Kern und zeigt Paket 100.64.12.7. Die Handover-Karte zeigt den N3- oder S1-U-Endpunkt, der sich bewegt, ohne die UE-Adresse zu ändern."
+      }
+    }
+  },
+  "2010": {
+    "kid": "Das Mobilnetz macht einen privaten Tunnel zwischen der Funksteuerung und dem Tor der Mobilfirma (dem GGSN). Dein Päckchen behält dieselbe Handy-Adresse, während der große Tunnel-Umschlag sich darum herum ändert.",
+    "nerd": "Mit Direct Tunnel (3GPP Rel-7) trägt GTP-U das IP-Paket des Handys vom RNC gerade zum GGSN: äußeres IP plus UDP/2152 mit einer TEID je Richtung, gewählt vom empfangenden Ende (3GPP TS 29.060). Without it saß der SGSN in der Mitte, und es gab zwei Tunnel.",
+    "label": {
+      "toCore": "Zum GGSN",
+      "fromCore": "Zurück zum RNC"
+    },
+    "tag": {
+      "anchor": "Handy-IP am GGSN verankert"
+    },
+    "at": {
+      "rnc": {
+        "title": "Die Funksteuerung öffnet den Tunnel",
+        "kid": "An der Funksteuerung kommt der große Tunnel-Umschlag ab. Dein Päckchen sagt immer noch 10.152.33.7, sodass die Steuerung es in Funkstücke schneiden und durch den Mast zu deinem Handy schicken kann.",
+        "nerd": "Auf dem Downlink beendet der RNC den GTP-U-Tunnel vom GGSN: äußeres IP 10.30.0.1 → 10.30.4.9, UDP/2152, TEID 0x0000a17e (vom RNC gewählt). Er chiffriert und segmentiert das Paket für 10.152.33.7 in RLC und schickt es über Iub zum NodeB. Zwischen Masten eines RNC wandert der Tunnel nicht; zu einem anderen RNC verschiebt eine SRNS Relocation sein Ende, während die Adresse des Handys bleibt.",
+        "describe": {
+          "kid": "Auf der Straße sitzen Handy, zwei Funksteuerungen und das Tor der Mobilfirma neben einem dicken Tunnel. Die Tunnelöffnung der Steuerung ist hervorgehoben. Ein großer Tunnel-Umschlag bewegt sich zwischen Steuerung und Tor. Er öffnet sich an der Steuerung und zeigt das kleine Päckchen und Adresse 10.152.33.7. Die Handover-Karte biegt den Tunnel zur nächsten Steuerung.",
+          "nerd": "Das RNC-Ende des GTP-U-Tunnels ist auf der Straße hervorgehoben, mit Downlink-TEID 0x0000a17e. Der Umschlag bewegt sich zwischen RNC und GGSN. Er öffnet sich auf der RNC-Seite und zeigt das Paket des Handys für 10.152.33.7. Die Handover-Karte zeigt eine SRNS Relocation, die den Tunnel-Endpunkt verschiebt, während die IP des Handys verankert bleibt."
+        }
+      },
+      "mobile-core": {
+        "title": "Das Tor öffnet den Tunnel",
+        "kid": "Am Tor der Mobilfirma öffnet sich der Tunnel-Umschlag, und dein Päckchen kann weiter ins Internet. Auch wenn du weit läufst, behält dein Handy dieselbe Adresse.",
+        "nerd": "Auf dem Uplink empfängt der GGSN GTP-U vom RNC: äußeres IP 10.30.4.9 → 10.30.0.1, UDP/2152, TEID 0x1f3a92c4 (vom GGSN gewählt). Er decapsuliert das Paket des Handys (10.152.33.7), wendet Policy und NAT an und leitet weiter. Die Adresse des Handys ist hier verankert, solange sein PDP-Kontext dauert.",
+        "describe": {
+          "kid": "Auf der Straße sitzen Handy, die Funksteuerungen und das Tor der Mobilfirma neben einem dicken Tunnel. Die Tunnelöffnung des Tors ist hervorgehoben. Ein Tunnel-Umschlag geht zum Tor, öffnet sich und zeigt Adresse 10.152.33.7, dann reist er zurück. Die Handover-Karte behält die Adresse, während der Tunnel zur nächsten Steuerung biegt.",
+          "nerd": "Das GGSN-Ende ist die hervorgehobene Tunnelöffnung, markiert mit Uplink-TEID 0x1f3a92c4 und dem IP-Anker des Handys. Der GTP-U-Umschlag öffnet sich am GGSN und zeigt Paket 10.152.33.7. Die Handover-Karte zeigt den Gn/Iu-PS-Endpunkt, der sich bewegt, ohne die Adresse des Handys zu ändern."
+        }
+      }
+    }
+  }
+}

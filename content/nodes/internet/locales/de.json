@@ -1,0 +1,23 @@
+{
+  "name": "Das Internet",
+  "kid": "Das Internet ist ganz viele Netze, die sich an der Hand halten. Tippe darauf, um zu sehen, was drin ist!",
+  "nerd": "~80 000 autonome Systeme, die Routen mit BGP tauschen. Tippe, um den Weg durch den ISP aufzuklappen.",
+  "tag": "AS64500 · BGP",
+  "inside": {
+    "coach": "Im Internet steckt eine ganze Welt — mach es auf!",
+    "title": "Im Internet",
+    "kid": "Das Internet ist keine große Wolke. Es sind ganz viele Netze, jedes von einer anderen Firma, die sich an der Hand halten. Die bunten Felder zeigen, wessen Boxen dein Päckchen passiert – und die blassen Kreise weit weg sind ein paar der vielen anderen Netze.",
+    "nerd": "Ein Netz aus Netzen: Zugangsnetz und MPLS-Kern deines ISP, dann Settlement-free Peering an einem Internet Exchange (oder bezahlter Transit), am Ende ein CDN-Cache nah bei dir. Jede schattierte Fläche ist ein Betreiber; draußen gibt es noch Zehntausende andere autonome Systeme.",
+    "describe": {
+      "kid": "In der Wolke startet der Weg bei deinem Zuhause. Er geht durch Straßenschrank, Backhaul-Switch, Anbieter-Gateway und Anbieter-Kern. Dann zum Grenzrouter, Internettauschplatz und Rechenzentrum der Videofirma – eine Box, die du öffnen kannst. Die gestrichelte Nebenstraße zeigt Transit.",
+      "nerd": "Die ausgeklappte Internetroute startet am Zugangsrand zu Hause, dann über Schrank, Backhaul-Switch, BNG und ISP-Kern. Weiter zum Grenzrouter, IXP und Datacenter des CDN, das sich öffnet. Request- und Videopakete laufen gegeneinander über Glasfaser, Backbone und Cross-Connects."
+    }
+  },
+  "2010": {
+    "nerd": "~35 000 autonome Systeme, die Routen mit BGP tauschen. Tippe, um den Weg durch den ISP aufzuklappen."
+  },
+  "1995": {
+    "kid": "Das Internet ist ganz viele Netze, die sich an der Hand halten, und 1995 sind es weniger als zweitausend. Tippe darauf, um zu sehen, was drin ist!",
+    "nerd": "Unter 1 700 autonome Systeme, die Routen mit BGP-4 tauschen (die erste Zählung, im Oktober 1996, fand 1 644). Tippe, um den Weg durch den ISP aufzuklappen."
+  }
+}

@@ -9,5 +9,6 @@ export default defineNode({
     { url: 'https://en.wikipedia.org/wiki/Server_room', title: 'Server room', level: 'both', lang: 'en' },
     { url: 'https://da.wikipedia.org/wiki/Server', title: 'Server', level: 'both', lang: 'da' },
     { url: 'https://en.wikipedia.org/wiki/Web_hosting_service', title: 'Web hosting service', level: 'nerd', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Webhosting', title: 'Webhosting', level: 'nerd', lang: 'de' },
   ],
 });

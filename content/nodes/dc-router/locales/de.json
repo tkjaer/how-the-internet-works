@@ -1,0 +1,16 @@
+{
+  "name": "Kantenrouter",
+  "kid": "Die Haustür des Rechenzentrums. Sie lässt Päckchen vom Tauschplatz herein und schickt das Video wieder hinaus.",
+  "nerd": "Der Edge-Router des PoP: er peert über BGP am Exchange, kündigt die Adressen der Videofirma an und routet in die Fabric, verteilt den Verkehr über die Load-Balancer.",
+  "tag": "eBGP · AS64501",
+  "1995": {
+    "name": "Router",
+    "kid": "Die Haustür des Serverraums. Die gemietete Leitung vom großen Netz endet hier, und die Seite geht denselben Weg wieder hinaus.",
+    "nerd": "Der Router des Hosting-Standorts: die T1 vom Backbone-PoP endet an einem seriellen Port (Cisco HDLC), mit einer statischen Default-Route zurück hinauf. Ein so kleiner Standort hat kein eigenes BGP.",
+    "tag": "T1 · statische Route"
+  },
+  "2010": {
+    "name": "Core-Router",
+    "nerd": "Der Core-Router im Käfig der Videofirma: er peert über BGP am Exchange, kündigt die Adressen der Firma an und routet über 10G hinunter zum Load-Balancer und den Aggregation-Switches."
+  }
+}

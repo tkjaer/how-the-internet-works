@@ -6,7 +6,7 @@ import type { Orient } from '../engine/geometry';
 import { pathScene } from './layout';
 import { activityIds, content } from './registry';
 import { resolveRoute, type Route } from './resolve';
-import { loadAllPacks, lookupLevel, withEra } from './strings';
+import { loadAllPacks, lookupLevel, packs, withEra } from './strings';
 import { childrenOf, sceneRef, walkStep, type WalkTo } from './tree';
 
 type At = { path: string[]; stop: string | null };
@@ -61,7 +61,7 @@ describe('walkStep (#169)', () => {
           else if (deeper) expect(to.cross, where).toEqual({ kind: 'in', node: expect.objectContaining({ id: to.path[at.path.length], kind: 'group' }) });
           else expect(to.cross, where).toEqual({ kind: 'out', node: expect.objectContaining({ kind: d < 0 ? 'entry' : 'exit' }) });
           // it says so in every language and level
-          if (to.cross) for (const lang of ['en', 'da']) for (const level of ['kid', 'nerd'] as const)
+          if (to.cross) for (const lang of Object.keys(packs)) for (const level of ['kid', 'nerd'] as const)
             expect(withEra([`node.${to.cross.node.node.id}.name`], r.era).map((k) => lookupLevel(lang, k, level)).find(Boolean), `${where} ${lang} ${level}`).toBeTruthy();
           at = to;
         }

@@ -1,0 +1,74 @@
+{
+  "mode": {
+    "kid": "kid",
+    "nerd": "nerd"
+  },
+  "title": "Strom im Kupfer",
+  "kid": "Ethernet schickt winzige Spannungsschübe durch verdrehte Kupferpaare. Die Windungen helfen, dass Rauschen sich aufhebt, und das Kabel kann beide Richtungen gleichzeitig sprechen. Nach etwa 100 m werden die Schübe zu schwach und verschmiert. So reist der Kabel-Umschlag.",
+  "nerd": "1000BASE-T nutzt differentielle Signalisierung auf allen vier Cat-5e-Paaren. Jedes Paar läuft 125 MBd mit PAM-5-Pegeln nahe ±1 V, Hybride und Echo Cancellation machen jedes Paar Full Duplex, und der Standard budgetiert etwa 100 m für Verlust und Crosstalk.",
+  "extra": "Power over Ethernet: so ein Kabel kann auch Strom führen, sodass ein Access Point oder eine Kamera an der Decke keine Steckdose braucht. Gleichstrom liegt auf den Paaren als Common-Mode-(Phantom-)Spannung, die die Daten, als Differenzen gesendet, nie merken: 15,4 W mit 802.3af, 30 W mit 802.3at, bis 90 W auf allen vier Paaren mit 802.3bt. Schnelleres Kupfer: 2.5G, 5G und 10GBASE-T nutzen 16 Pegel statt 5 (PAM-16, gepaart zu DSQ128-Symbolen mit LDPC-Fehlerkorrektur). 2.5G und 5G laufen auf gewöhnlichem Cat 5e/6; 10G läuft 800 MBd pro Paar und braucht Cat 6A für die vollen 100 m.",
+  "describe": {
+    "kid": "Zwei Netz-Boxen sitzen an den Enden eines dicken Kabels. Drinnen liegen vier verdrehte Paare. Leuchtende Stromimpulse laufen beide Richtungen durch die Paare. Die Karten zoomen in die Windungen, die Impulse und das Verblassen nach etwa 100 Metern.",
+    "nerd": "Der Kabelquerschnitt zeigt vier differentielle Paare mit Full-Duplex-Impulsen zwischen den Endpunkten. Karten zeigen gegensätzliche Spannungen auf einem verdrehten Paar, PAM-5-Pegel und ein Augendiagramm. Eine 100-Meter-Marke zeigt das Kanalbudget, während Impulse verblassen."
+  },
+  "pairs": "Vier verdrehte Paare in einem Kabel",
+  "pairsShort": "Vier verdrehte Paare",
+  "bothWays": "Leuchtende Schübe laufen beide Richtungen gleichzeitig",
+  "twistTitle": "Die Windung",
+  "pushTitle": "Spannungsschübe",
+  "pamTitle": "PAM-5-Symbole",
+  "eyeTitle": "Offenes Auge = lesbar",
+  "tag": {
+    "speedShort": "1000BASE-T · 1 Gbit/s",
+    "duplexShort": "Vollduplex",
+    "catShort": "100 m"
+  },
+  "twistLine": "Rauschen hebt sich auf.",
+  "twistLineNerd": "Differentielles Paar: +V und −V.",
+  "pamLine": "5 Pegel pro Symbol.",
+  "eyeLine": "Offenes Auge = sauber.",
+  "hundredShort": "Etwa 100 m, dann zu schwach",
+  "hundredA": "Etwa 100 m,",
+  "hundredB": "dann zu schwach",
+  "manchester": {
+    "title": "Manchester-Code",
+    "line": "Ein Flip in der Mitte jedes Bits.",
+    "speed": "10BASE-T · 10 Mbit/s",
+    "duplex": "ein Paar je Richtung",
+    "cat": "100 m",
+    "pairs": "Zwei der vier Paare tragen das Signal",
+    "pairsShort": "Zwei Paare in Nutzung",
+    "bothWays": "Ein Paar je Richtung, abwechselnd"
+  },
+  "mlt3": {
+    "title": "MLT-3-Code",
+    "line": "Eine 1 macht einen Schritt; eine 0 bleibt.",
+    "speed": "100BASE-TX · 100 Mbit/s",
+    "duplex": "Vollduplex",
+    "cat": "Cat 5 · 100 m",
+    "pairs": "Zwei der vier Paare tragen das Signal",
+    "pairsShort": "Zwei Paare in Nutzung",
+    "bothWays": "Ein Paar je Richtung, beide gleichzeitig"
+  },
+  "1995": {
+    "kid": "Ethernet schickt winzige Spannungsschübe durch verdrehte Kupferpaare. 1995 nutzt es nur zwei davon: ein Paar zum Senden, eins zum Zuhören, abwechselnd. Die Windungen helfen, dass Rauschen sich aufhebt, und nach etwa 100 m werden die Schübe zu schwach.",
+    "nerd": "10BASE-T (1990) nutzt zwei Paare eines Cat-3-Kabels: eins zum Senden, eins zum Empfangen, als differentielle Signale mit 10 Mbit/s in Manchester-Code, der die Leitung in der Mitte jedes Bits umklappt, sodass der Empfänger sein Clock in den Daten findet. An einem Hub spricht nur ein Ende gleichzeitig (Half Duplex); die anderen zwei Paare bleiben ungenutzt.",
+    "extra": "Vor 10BASE-T lief Ethernet auf Koaxialkabel, das alle Computer darauf teilten: dickes „gelbes Kabel“ (10BASE5, 1983) und dann dünnes Koax (10BASE2). Verdrehtes Paar und ein Hub im Schrank machten das Verkabeln billig und einfach. Fast Ethernet (100BASE-TX, 1995) kam gerade an; gigabit über Kupfer kam 1999.",
+    "describe": {
+      "kid": "Zwei Netz-Boxen sitzen an den Enden eines dicken Kabels. Drinnen liegen vier verdrehte Paare, aber nur zwei leuchten. Ein Impuls läuft ein Paar entlang, dann kommt einer zurück auf dem anderen: sie sind abwechselnd dran. Die Karten zoomen in die Windungen, die Impulse und das Verblassen nach etwa 100 Metern.",
+      "nerd": "Der Kabelquerschnitt zeigt vier Paare, zwei davon aktiv: eins trägt Impulse vorwärts, das andere zurück, abwechselnd. Karten zeigen gegensätzliche Spannungen auf einem verdrehten Paar, ein Manchester-codiertes Bitmuster mit einem Flip in jedem Bit und ein Zweipegel-Augendiagramm."
+    }
+  },
+  "2010": {
+    "fast-ethernet": {
+      "kid": "Ethernet schickt winzige Spannungsschübe durch verdrehte Kupferpaare. Das Kabel zu einem Heim-Router von 2010 nutzt zwei davon: ein Paar zum Senden und eins zum Zuhören, beide gleichzeitig. Die Windungen helfen, dass Rauschen sich aufhebt, und nach etwa 100 m werden die Schübe zu schwach.",
+      "nerd": "100BASE-TX (Fast Ethernet, 1995) nutzt zwei Paare eines Cat-5-Kabels, eins je Richtung, Full Duplex. 4B5B macht aus je 4 Bits 5, sodass 100 Mbit/s bei 125 MBd läuft, und MLT-3 schreitet die Leitung durch +1, 0 und −1, ein Schritt für jede 1, sodass die Frequenzen des Signals niedrig genug für das Kabel bleiben. Die anderen zwei Paare sind ungenutzt.",
+      "extra": "Power over Ethernet: so ein Kabel kann auch Strom führen, sodass ein Access Point oder eine Kamera an der Decke keine Steckdose braucht: 15,4 W mit 802.3af (2003), auf den freien Paaren oder den Datenpaaren, und 30 W mit 802.3at, neu 2009. Schnelleres Kupfer: gigabit (1000BASE-T, 1999) nutzt alle vier Paare mit fünf Pegeln (PAM-5). Die meisten Laptops von 2010 hatten es, aber die 100-Mbit/s-Ports des Heim-Routers gaben das Tempo vor.",
+      "describe": {
+        "kid": "Zwei Netz-Boxen sitzen an den Enden eines dicken Kabels. Drinnen liegen vier verdrehte Paare, aber nur zwei leuchten. Impulse laufen eine Richtung auf einem Paar und zurück auf dem anderen, beide gleichzeitig. Die Karten zoomen in die Windungen, die Impulse und das Verblassen nach etwa 100 Metern.",
+        "nerd": "Der Kabelquerschnitt zeigt vier Paare, zwei davon aktiv: eins trägt Impulse vorwärts, das andere zurück, gleichzeitig. Karten zeigen gegensätzliche Spannungen auf einem verdrehten Paar, ein MLT-3-Bitmuster, das zwischen drei Pegeln schreitet, und ein Drei-Pegel-Augendiagramm."
+      }
+    },
+    "extra": "Power over Ethernet: so ein Kabel kann auch Strom führen, sodass ein Access Point oder eine Kamera an der Decke keine Steckdose braucht. Gleichstrom liegt auf den Paaren als Common-Mode-(Phantom-)Spannung, die die Daten, als Differenzen gesendet, nie merken: 15,4 W mit 802.3af (2003) und 30 W mit 802.3at, neu 2009. Schnelleres Kupfer: 10GBASE-T (2006) nutzt 16 Pegel statt 5 (PAM-16, gepaart zu DSQ128-Symbolen mit LDPC-Fehlerkorrektur), läuft 800 MBd pro Paar und braucht Cat 6A für die vollen 100 m. 2010 war das noch meist für Server."
+  }
+}

@@ -7,6 +7,8 @@ export default defineNode({
   role: 'router',
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Network_access_server', title: 'Network access server', level: 'nerd', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Network_Access_Server', title: 'Network Access Server', level: 'nerd', lang: 'de' },
     { url: 'https://en.wikipedia.org/wiki/Modem', title: 'Modem', level: 'both', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Modem', title: 'Modem', level: 'both', lang: 'de' },
   ],
 });

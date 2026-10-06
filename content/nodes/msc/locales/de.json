@@ -1,0 +1,12 @@
+{
+  "name": "Mobilzentrale",
+  "1995": {
+    "kid": "Die Telefonvermittlung der Mobilfunkfirma. Für den Anruf eines Computers hat sie ein Gestell voller Modems: eines nimmt die Daten deines Laptops und piept sie ins normale Telefonnetz weiter, wie das Modem an einem Computer zu Hause.",
+    "nerd": "Das Mobile Switching Centre (MSC) mit seiner Interworking Function (IWF, GSM 09.07): die IWF beendet RLP und spielt die Bytes als V.32-Modem mit 9,6 kbit/s in einen 64-kbit/s-PCM-Slot Richtung PSTN (oder, zu einer ISDN-Nummer, sendet sie digital, ratenangepasst mit V.110). Immer noch kein IP: PPP fährt in den Modem-Tönen.",
+    "tag": "MSC · IWF · V.32",
+    "peek": {
+      "kid": "Die Vermittlung öffnet dein Päckchen nicht. Ihr Modem macht die Daten des Laptops zu Pieptönen und schickt sie die Telefonleitung hinunter.",
+      "nerd": "Die IWF streift RLP ab und moduliert den Bytestrom erneut als V.32; die PPP-Frames innen werden getragen, nicht gelesen."
+    }
+  }
+}

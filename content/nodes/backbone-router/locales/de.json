@@ -1,0 +1,8 @@
+{
+  "name": "Backbone-Router",
+  "1995": {
+    "kid": "Der Router eines großen Netzes: ein hoher Schrank voller Karten, jede an eine lange Leitung angeschlossen. Er liest die Adresse auf jedem Päckchen und wählt die Leitung, die es näher bringt.",
+    "nerd": "Ein Backbone-Router der 1990er: ein Chassis mit Line Cards (T1/E1, T3, ATM OC-3) und einem Route Processor mit BGP. Er schlägt das Ziel jedes Pakets in seiner Tabelle nach, noch ohne MPLS-Labels (die kamen um 2001).",
+    "tag": "BGP · ATM OC-3"
+  }
+}

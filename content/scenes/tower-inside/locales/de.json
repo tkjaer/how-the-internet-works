@@ -1,0 +1,55 @@
+{
+  "mode": {
+    "kid": "kid",
+    "nerd": "nerd"
+  },
+  "title": "Im Mobilfunkmast",
+  "kid": "Der Mast ist vier kleine Räume: zwei oben am Mast, zwei im Schrank an seinem Fuß. Antennen fangen deine Funkwelle, die Funkeinheit macht sie zu Bits, der Sortierer legt dein Päckchen in einen Tunnel-Umschlag, und der Glasfaden schickt es als Licht weiter.",
+  "nerd": "Ein 5G gNB ist zweigeteilt: eine Active Antenna Unit am Mast (die Massive-MIMO Antennen und die RU in einer Box, hier als zwei Räume gezeichnet), DU/CU Baseband im Schrank. Das Paket wird in GTP-U zum Mobile Core gewickelt und geht dann auf Metro Fibre raus.",
+  "describe": {
+    "kid": "Der Mobilfunkmast ist wie eine hohe Box geöffnet, mit Räumen am Mast und im Schrank. Eine wellige Funkwelle erreicht die Antennen und wird im Funkraum zu Bits. Der Sortierer legt einen Tunnel-Umschlag dazu. Dann geht das Päckchen durch den Glasfaden als wanderndes Licht raus.",
+    "nerd": "Der gNB-Cutaway zeigt Antenna Panels und RU am Mast, Baseband DU, CU und Fibre im Schrank. Das animierte Paket wechselt von einer NR Radio Wave zu Bits, bekommt ein GTP-U Tunnel Label im Baseband und geht als Metro-Fibre Licht raus."
+  },
+  "antenna": {
+    "title": {
+      "kid": "Antennen",
+      "nerd": "Massive MIMO"
+    },
+    "line": {
+      "kid": "Fängt Funkwellen",
+      "nerd": "Beamformed NR panel"
+    }
+  },
+  "radio": {
+    "title": {
+      "kid": "Funkeinheit",
+      "nerd": "Funkeinheit (RU)"
+    },
+    "line": {
+      "kid": "Funk ↔ Bits",
+      "nerd": "RF ↔ digital · eCPRI"
+    }
+  },
+  "baseband": {
+    "title": {
+      "kid": "Der Sortierer",
+      "nerd": "Baseband DU/CU"
+    }
+  },
+  "fibre": {
+    "title": {
+      "kid": "Glasfaden raus",
+      "nerd": "Metro-Glasfaser"
+    },
+    "line": {
+      "kid": "Bits → Licht",
+      "nerd": "GTP-U on light"
+    }
+  },
+  "tunnel": {
+    "title": "Tunnel-Umschlag",
+    "for": "Für: {who}",
+    "from": "GTP-U {addr}",
+    "to": "→ {addr}"
+  }
+}

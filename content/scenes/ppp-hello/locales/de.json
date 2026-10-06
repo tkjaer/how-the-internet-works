@@ -1,0 +1,150 @@
+{
+  "title": "Der Umschlag des Telefonanrufs",
+  "kid": "Beim Einwahl-Anruf reisen deine Päckchen in einem Telefonanruf-Umschlag. Nur dein Computer und das Modem der Internetfirma öffnen ihn; die Telefonvermittlung dazwischen gibt nur den Ton weiter. Bevor ein Päckchen geht, sagen die beiden Enden Hallo: sie einigen sich, wie sie sprechen, prüfen, wer du bist, und geben deinem Computer seine Adresse.",
+  "nerd": "PPP (RFC 1661) in HDLC-like Framing (RFC 1662): 0x7E Flags, Address 0xFF und Control 0x03 (oft von LCP wegkomprimiert), eine Protocol-Nummer (0x0021 für IPv4) und ein Frame Check. LCP öffnet den Link und einigt sich auf MRU und Options, CHAP authentifiziert mit Challenge und Hash (PAP, 1995 ebenfalls üblich, schickte einfach das Passwort), und IPCP vergibt die Address. Dann fahren IPv4-Pakete in den Frames, bis jemand auflegt.",
+  "describe": {
+    "kid": "Dein Computer und das Modem der Internetfirma sitzen an den Enden einer Telefonleitung, und ein Umschlag geht hin und her. Eine Karte nimmt den Umschlag auseinander: Start, Adresse, was drin ist, dein Päckchen, eine Prüfung und Ende. Die andere Karte zeigt das Hallo: wie man spricht, wer du bist, und welche Adresse du bekommst.",
+    "nerd": "Die zwei PPP-Endpunkte sitzen an den Enden des Anrufs, während ein Frame dazwischen pendelt. Eine Karte listet den Frame: Flag 7E, Address FF und Control 03, Protocol 0021, das IP-Paket, FCS und Flag. Die andere spielt LCP Configure, CHAP Challenge und Response und IPCP, das 203.0.113.7 vergibt."
+  },
+  "online": {
+    "kid": "Online!",
+    "nerd": "IPCP up: IP flows"
+  },
+  "frameTitle": {
+    "kid": "Im Umschlag",
+    "nerd": "PPP Frame (RFC 1662)"
+  },
+  "part": {
+    "flag": {
+      "kid": "Start oder Ende hier",
+      "nerd": "Flag"
+    },
+    "address": {
+      "kid": "Zum anderen Ende",
+      "nerd": "Address, Control"
+    },
+    "proto": {
+      "kid": "Sagt: ein IP-Päckchen",
+      "nerd": "Protocol: IPv4"
+    },
+    "packet": {
+      "kid": "Dein Päckchen",
+      "nerd": "The IP packet"
+    },
+    "fcs": {
+      "kid": "Eine Prüfung gegen Knistern",
+      "nerd": "Frame Check (CRC)"
+    }
+  },
+  "helloTitle": {
+    "kid": "Hallo sagen",
+    "nerd": "LCP, CHAP, IPCP"
+  },
+  "talk": {
+    "lcp": {
+      "ask": {
+        "kid": "Sollen wir so sprechen?",
+        "nerd": "LCP Configure-Request"
+      },
+      "answer": {
+        "kid": "Ja, los!",
+        "nerd": "Configure-Ack"
+      }
+    },
+    "chap": {
+      "ask": {
+        "kid": "Wer bist du? Beweise es!",
+        "nerd": "CHAP Challenge"
+      },
+      "answer": {
+        "kid": "Ich bin’s, hier ist meine geheime Summe",
+        "nerd": "Response: MD5 hash"
+      }
+    },
+    "ipcp": {
+      "ask": {
+        "kid": "Welche Adresse darf ich haben?",
+        "nerd": "IPCP Request: 0.0.0.0"
+      },
+      "answer": {
+        "kid": "Du bist 203.0.113.7",
+        "nerd": "Nak: use 203.0.113.7"
+      }
+    }
+  },
+  "hdlc": {
+    "title": "Der Umschlag der Mietleitung",
+    "kid": "Auf einer Mietleitung zwischen zwei Internetfirmen reist dein Päckchen in einem schlichten Umschlag: wo er beginnt, was drin ist, eine Prüfung, wo er endet. Es gibt kein Anmelden: die Leitung gehört ihnen immer. Alle zehn Sekunden ruft jeder Router „noch da?“, damit sie sofort merken, wenn die Leitung reißt.",
+    "nerd": "Cisco HDLC, Default auf Cisco Serial Ports: 0x7E Flags, Address 0x0F (unicast), Control 0x00, ein zwei-Byte EtherType (0x0800 für IPv4), das Paket und ein 16-bit FCS. Keine Authentication und keine Negotiation: SLARP Keepalives alle 10 s tragen Sequence Numbers in beide Richtungen, und drei verpasste nehmen das Line Protocol down.",
+    "describe": {
+      "kid": "Zwei Router sitzen an den Enden einer Mietleitung, und ein Umschlag geht hin und her. Eine Karte nimmt den Umschlag auseinander: Start, Adresse, was drin ist, dein Päckchen, eine Prüfung und Ende. Die andere Karte zeigt, wie die Router einander prüfen, und ein Päckchen, das rübergeht.",
+      "nerd": "Zwei Router an den Enden einer Leased Line tauschen Cisco HDLC Frames. Eine Karte listet den Frame: Flag 7E, Address 0F und Control 00, Type 0800, das IP-Paket, FCS und Flag. Die andere spielt SLARP Keepalives jede Richtung mit ihren Sequence Numbers, dann ein IP-Paket."
+    },
+    "online": {
+      "kid": "Leitung steht!",
+      "nerd": "Line protocol is up"
+    },
+    "frameTitle": {
+      "kid": "Im Umschlag",
+      "nerd": "Cisco HDLC Frame"
+    },
+    "part": {
+      "flag": {
+        "kid": "Start oder Ende hier",
+        "nerd": "Flag"
+      },
+      "address": {
+        "kid": "Zum anderen Ende",
+        "nerd": "Address, Control"
+      },
+      "proto": {
+        "kid": "Sagt: ein IP-Päckchen",
+        "nerd": "Type: IPv4"
+      },
+      "packet": {
+        "kid": "Dein Päckchen",
+        "nerd": "The IP packet"
+      },
+      "fcs": {
+        "kid": "Eine Prüfung gegen Knistern",
+        "nerd": "Frame Check (CRC-16)"
+      }
+    },
+    "helloTitle": {
+      "kid": "Noch da?",
+      "nerd": "Keepalives, dann Daten"
+    },
+    "talk": {
+      "keep": {
+        "ask": {
+          "kid": "Noch da?",
+          "nerd": "SLARP keepalive: mine 41, seen 17"
+        },
+        "answer": {
+          "kid": "Ja, immer noch hier!",
+          "nerd": "Keepalive: mine 18, seen 41"
+        }
+      },
+      "again": {
+        "ask": {
+          "kid": "Und du, noch da?",
+          "nerd": "Keepalive: mine 19, seen 41"
+        },
+        "answer": {
+          "kid": "Immer noch hier!",
+          "nerd": "Keepalive: mine 42, seen 19"
+        }
+      },
+      "data": {
+        "ask": {
+          "kid": "Hier ist ein Päckchen",
+          "nerd": "IP packet, type 0800"
+        },
+        "answer": {
+          "kid": "Habe es, hier kommt eins zurück",
+          "nerd": "IP-Paket zurück"
+        }
+      }
+    }
+  }
+}

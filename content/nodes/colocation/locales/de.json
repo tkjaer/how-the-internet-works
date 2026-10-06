@@ -1,0 +1,19 @@
+{
+  "name": "Rechenzentrum",
+  "inside": {
+    "title": "Im Rechenzentrum"
+  },
+  "2010": {
+    "kid": "Ein großes fensterloses Gebäude voller Computer in hohen Schränken, in einer größeren Stadt weiter weg als heute. Viele Firmen mieten Räume darin. Tippe darauf, um hineinzuschauen!",
+    "nerd": "Ein Colocation-Center in einer größeren Stadt: die Videofirma mietet eine Käfigreihe Racks in einer gemeinsamen Halle, und ein Cross-Connect verbindet sie mit dem Exchange. Drinnen: ein Core-Router, ein Load-Balancer und ein Three-Tier-Baum aus Switches. Tippe, um es aufzuklappen.",
+    "tag": "Colocation · drei Ebenen",
+    "inside": {
+      "kid": "Dein Päckchen kommt durch die Haustür des Gebäudes, den Core-Router. Ein Verkehrslotse wählt einen Computer, der nicht beschäftigt ist, ein großer Switch in der Mitte schickt das Päckchen zum richtigen Schrank, und der Switch des Schranks gibt es über Kupferkabel an den Video-Server. Wenn der Server das Video noch nicht hat, holt er es von der Hauptkopie weit weg.",
+      "nerd": "Ein gemieteter Käfig in einem Colocation-Center: der Core-Router nimmt den Cross-Connect vom Exchange, ein Hardware-Load-Balancer hält die Service-Adresse (VIP), und ein Three-Tier-Baum (Core, Aggregation, Access) erreicht die Racks, mit 10G-Glasfaser zwischen den Switches und 1G-Kupfer zu den Servern. Spanning Tree hält den zweiten Uplink jedes Racks gesperrt. Ein Cache-Miss geht zurück zum Origin.",
+      "describe": {
+        "kid": "In einer großen Halle mit Fliesenboden steht hinter einem Drahtzaun eine Reihe grauer Schränke, an jedem Ende eine Kühlmaschine. Der Weg kommt von der Zentrale zum Core-Router, Load-Balancer, Aggregation-Switch, Rack-Switch und Video-Server. Eine gestrichelte Straße führt weit zur Hauptkopie. Päckchen rein, Video wieder raus.",
+        "nerd": "Die Colocation-Ansicht startet am IXP und zickzackt über 10G-Multimode-Glasfaser durch Core-Router, Load-Balancer, Aggregation-Switch und Access-Switch, dann über 1000BASE-T-Kupfer zum Cache-Server. Hinten eine Käfigreihe Racks mit CRAC an jedem Ende. Ein gestrichelter Ast führt vom Cache zum Origin. Request- und Videopakete laufen gegeneinander."
+      }
+    }
+  }
+}

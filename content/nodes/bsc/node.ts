@@ -7,5 +7,6 @@ export default defineNode({
   role: 'bridge',
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Base_station_subsystem', title: 'Base station subsystem', level: 'both', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Base_Station_Subsystem', title: 'Base Station Subsystem', level: 'both', lang: 'de' },
   ],
 });

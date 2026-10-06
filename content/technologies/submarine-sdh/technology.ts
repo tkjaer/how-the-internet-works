@@ -11,7 +11,9 @@ export default defineTechnology({
   rate: { down: 3.968e6, up: 3.968e6 },
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/CANTAT-3', title: 'CANTAT-3', level: 'nerd', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/CANTAT', title: 'CANTAT', level: 'nerd', lang: 'de' },
     { url: 'https://en.wikipedia.org/wiki/Synchronous_optical_networking', title: 'SONET/SDH', level: 'nerd', lang: 'en' },
     { url: 'https://da.wikipedia.org/wiki/S%C3%B8kabel', title: 'Søkabel', level: 'both', lang: 'da' },
+    { url: 'https://de.wikipedia.org/wiki/Synchronous_Optical_Network', title: 'Synchronous Optical Network', level: 'nerd', lang: 'de' },
   ],
 });

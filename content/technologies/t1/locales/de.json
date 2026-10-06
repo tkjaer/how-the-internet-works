@@ -1,0 +1,8 @@
+{
+  "name": "Mietleitung",
+  "1995": {
+    "kid": "Das amerikanische Netz mietet eine Leitung, immer an, in das Gebäude, in dem der Webserver wohnt. Sie trägt anderthalb Millionen Bits in der Sekunde.",
+    "nerd": "Eine gemietete T1 (DS1): 24 Timeslots à 64 kbit/s und ein Framing-Bit, 193 Bits 8.000-mal in der Sekunde, 1,544 Mbit/s auf zwei Kupferpaaren (B8ZS), mit Cisco HDLC darüber. Eine typische Uni- oder Firmenleitung der 1990er; in Europa wäre es eine E1.",
+    "tag": "T1 · 1,5 Mbit/s · HDLC"
+  }
+}

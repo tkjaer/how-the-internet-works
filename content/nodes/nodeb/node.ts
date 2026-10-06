@@ -6,6 +6,8 @@ export default defineNode({
   role: 'bridge',
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Cell_site', title: 'Cell site', level: 'both', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Mobilfunk-Basisstation', title: 'Mobilfunk-Basisstation', level: 'both', lang: 'de' },
     { url: 'https://en.wikipedia.org/wiki/Node_B', title: 'Node B', level: 'nerd', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Node_B', title: 'Node B', level: 'nerd', lang: 'de' },
   ],
 });

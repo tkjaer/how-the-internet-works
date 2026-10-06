@@ -1,0 +1,66 @@
+{
+  "mode": {
+    "kid": "kid",
+    "nerd": "nerd"
+  },
+  "title": "Töne auf der Telefonleitung",
+  "kid": "DSL macht aus Bits viele winzige musikalische Töne und schickt sie die alte Kupfer-Telefonleitung hinunter. Beim Telefonieren nutzt man die tiefen Töne und das Internet die hohen, sodass beides auf einem Draht passt. Je näher du am Straßenschrank wohnst, desto mehr Töne kommen durch, und desto schneller geht es.",
+  "nerd": "VDSL2 nutzt DMT: bis zu 4096 Unterträger 4,3125 kHz auseinander, jeder trägt 0–15 Bits per QAM. Der 998-Bandplan teilt sie in Up- und Down-Bänder über dem Sprachband des Telefons. Die Rate fällt schnell mit der Schleifenlänge, und Crosstalk von den anderen Paaren im selben Kabel nimmt noch mehr (Vectoring, das ihn ausgleicht, kam ein paar Jahre später). PTM trägt die Ethernet-Frames, wo ADSL 53-Byte-ATM-Zellen nutzte.",
+  "describe": {
+    "kid": "Ein dünner verdrehter Telefondraht läuft vom Heim-Router zum Straßenschrank. Eine langsame, lange Welle ist ein Telefonat. Kurze Töne hüpfen hoch zum Schrank, schnellere Töne rasen runter nach Hause. Die Karten zeigen die tiefen, mittleren und hohen Spuren, und wie die Geschwindigkeit fällt, je weiter weg du wohnst.",
+    "nerd": "Ein verdrehtes Kupferpaar verbindet das DSL-Modem mit dem DSLAM im Straßenschrank. Das Sprachband fährt mit unter Datenbursts in beide Richtungen. Karten zeigen den 998-Bandplan mit Bits pro Ton, Download-Geschwindigkeit gegen Schleifenlänge mit dieser Leitung markiert, und Crosstalk, der von Nachbarpaaren einsickert."
+  },
+  "lineLabel": {
+    "kid": "Sprechen, hoch und runter teilen eine Telefonleitung",
+    "nerd": "VDSL2 17a · DMT: 4096 Töne, 4,3125 kHz auseinander"
+  },
+  "lineSub": {
+    "kid": "Tiefes Brummen = Sprechen · hohe Töne = Internet",
+    "nerd": "PTM trägt Ethernet-Frames (ADSL nutzte ATM-Zellen)"
+  },
+  "bandsTitle": {
+    "kid": "Spuren nach Tonhöhe",
+    "nerd": "998-Bandplan"
+  },
+  "band": {
+    "voice": "Sprechen",
+    "up": {
+      "kid": "Hoch",
+      "nerd": "↑"
+    },
+    "down": {
+      "kid": "Runter",
+      "nerd": "↓"
+    }
+  },
+  "lowNotes": "Tiefe Töne",
+  "highNotes": "Hohe Töne",
+  "tick": {
+    "low": "138 kHz",
+    "mid": "3,75 MHz",
+    "top": "17,7 MHz"
+  },
+  "bandsLine": {
+    "kid": "Tief zum Sprechen, hoch fürs Internet.",
+    "nerd": "Jeder Balken ist ein Ton mit 0–15 Bits."
+  },
+  "distTitle": {
+    "kid": "Näher ist schneller",
+    "nerd": "Tempo und Leitungslänge"
+  },
+  "fast": {
+    "kid": "Schnell",
+    "nerd": "Mbit/s"
+  },
+  "twoKm": "2 km",
+  "you": {
+    "kid": "Du",
+    "nerd": "≈ {n} Mbit/s"
+  },
+  "distLine": {
+    "kid": "Weit weg verblassen die hohen Töne.",
+    "nerd": "Diese Leitung: {m} m Kupfer"
+  },
+  "xtalkTitle": "Crosstalk",
+  "xtalkLine": "Nachbarpaare sickern herein"
+}

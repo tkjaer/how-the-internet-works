@@ -11,7 +11,7 @@ https://github.com/user-attachments/assets/8b760d17-ea45-498c-a1c6-6a8e7560795a
 - **Zoom in and look inside.** Unfold the internet hop by hop, and dive into a link or a box: Wi‑Fi waves, light in a glass thread, 5G beams, the router's insides.
 - **Catch a parcel** and step it along: its envelopes show what each box reads and changes on the way.
 - **Pick where you are and when.** At home on Wi‑Fi, a cable, the phone line or in a flat, or on the go on 5G; today, in 2010 or in 1995 with the time machine.
-- **Simple or Technical**, in English or Danish, by day or by night. Learn-more links point onwards.
+- **Simple or Technical**, in English, Danish or German, by day or by night. Learn-more links point onwards.
 
 ## More
 
@@ -20,7 +20,7 @@ https://github.com/user-attachments/assets/8b760d17-ea45-498c-a1c6-6a8e7560795a
 - [Accessibility](docs/accessibility.md) and [privacy](docs/privacy.md) (no tracking, no cookies, nothing loaded from other sites)
 - [How the look was chosen](docs/look-and-feel.md) and [the rendering stack](docs/visualisation-spikes.md)
 - What's next: [v1.1: more eras](https://github.com/tkjaer/how-the-internet-works/milestone/2) and [later: learning features](https://github.com/tkjaer/how-the-internet-works/milestone/3)
-- [Contributing](CONTRIBUTING.md): running it locally, tests and checks; [security](SECURITY.md)
+- [Contributing](CONTRIBUTING.md): running it locally, tests and checks; [contributors](CONTRIBUTORS.md); [security](SECURITY.md)
 
 ## License
 

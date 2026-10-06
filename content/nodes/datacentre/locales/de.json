@@ -1,0 +1,15 @@
+{
+  "name": "Rechenzentrum",
+  "kid": "Ein großes Gebäude voller Computer in hohen Schränken, direkt neben dem Tauschplatz. Tippe darauf, um hineinzuschauen!",
+  "nerd": "Der Point of Presence (PoP) der Videofirma: ein Edge-Router, Load-Balancer und eine Leaf–Spine-Fabric aus Server-Racks. Tippe, um es aufzuklappen.",
+  "tag": "CDN PoP · leaf–spine",
+  "inside": {
+    "title": "Im Rechenzentrum",
+    "kid": "Dein Päckchen kommt durch die Haustür des Gebäudes. Ein Verkehrslotse wählt einen Computer, der nicht beschäftigt ist, eine große Kreuzung schickt das Päckchen zum richtigen Schrank, und der Switch des Schranks gibt es an den Video-Server. Wenn der Server das Video noch nicht hat, holt er es von der Hauptkopie weit weg.",
+    "nerd": "Ein Edge-PoP: der Edge-Router nimmt den Cross-Connect vom Exchange, ein L4-Load-Balancer verteilt Verbindungen für die Service-Adresse (VIP) auf die Cache-Server, und eine Leaf–Spine-(Clos-)Fabric gibt jedem Rack viele gleich teure Wege. Ein Cache-Miss geht zurück zum Origin in einer Cloud-Region.",
+    "describe": {
+      "kid": "In einer großen Halle stehen Reihen hoher Schränke. Der Weg kommt vom Tauschplatz zum Kantenrouter, Load-Balancer, Spine-Switch, Rack-Switch und Video-Server. Eine gestrichelte Straße führt weit zur Hauptkopie. Päckchen rein, Video wieder raus.",
+      "nerd": "Die PoP-Ansicht startet am IXP und zickzackt über kurze Glasfaser durch Edge-Router, L4-Load-Balancer, Spine, Top-of-Rack-Leaf und Cache-Server. Ein gestrichelter Ast führt vom Cache zum Origin in einer Cloud-Region. Request- und Videopakete laufen gegeneinander."
+    }
+  }
+}

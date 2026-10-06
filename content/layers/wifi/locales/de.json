@@ -1,0 +1,69 @@
+{
+  "name": {
+    "kid": "Funkumschlag",
+    "nerd": "Wi-Fi-Frame (802.11)"
+  },
+  "note": {
+    "kid": "Durch die Luft geschickt. Nur die WLAN-Box und {yours} hören danach.",
+    "nerd": "Jeder Frame wird vom Empfänger bestätigt (oft in Blöcken), verlorene werden nachgesendet. Die Payload ist verschlüsselt (WPA3)."
+  },
+  "line": "IEEE 802.11 QoS Data, RA: {addr1}, TA: {addr2}",
+  "field": {
+    "fc": {
+      "name": "Frame control",
+      "about": "Typ (QoS Data), Richtung (zum oder vom kabelgebundenen Netz, DS) und ein Protected-Bit: die Payload ist verschlüsselt."
+    },
+    "duration": {
+      "name": "Duration",
+      "about": "Wie lange die Luft für diesen Frame und seine Bestätigung gebucht ist."
+    },
+    "addr1": {
+      "name": {
+        "kid": "Für",
+        "nerd": "Receiver (Addr 1)"
+      },
+      "about": "Wer in der Luft diesen Frame nehmen soll."
+    },
+    "addr2": {
+      "name": {
+        "kid": "Von",
+        "nerd": "Transmitter (Addr 2)"
+      },
+      "about": "Wer ihn durch die Luft geschickt hat."
+    },
+    "addr3": {
+      "name": "Addr 3",
+      "about": "Das ferne Ende auf der Kabelseite: der AP kopiert es in den Ethernet-Frame, den er bridged."
+    },
+    "seq": {
+      "name": "Sequenzkontrolle",
+      "about": "Findet Duplikate, wenn ein Frame nachgesendet wird."
+    },
+    "qos": {
+      "name": "QoS control",
+      "about": "Traffic Class (WMM): Video bekommt eine schnellere Queue."
+    },
+    "ccmp": {
+      "name": "CCMP Header",
+      "about": "Packet Number für die WPA3-Verschlüsselung von allem innen."
+    },
+    "snap": {
+      "name": "LLC/SNAP",
+      "about": "Sagt, was drin ist, wie ein EtherType."
+    },
+    "fcs": {
+      "name": "Frame check sequence",
+      "about": "Eine CRC über den Frame: ein beschädigter wird nachgesendet."
+    }
+  },
+  "2010": {
+    "note": {
+      "nerd": "Jeder Frame wird vom Empfänger bestätigt (oft in Blöcken), verlorene werden nachgesendet. Die Payload ist verschlüsselt (WPA2)."
+    },
+    "field": {
+      "ccmp": {
+        "about": "Packet Number für die WPA2-Verschlüsselung von allem innen."
+      }
+    }
+  }
+}

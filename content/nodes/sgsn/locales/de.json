@@ -1,0 +1,8 @@
+{
+  "name": "Anmeldung",
+  "2010": {
+    "kid": "Der Anmeldeschalter der Mobilfunkfirma. Er prüft deine SIM-Karte und richtet den Tunnel deines Telefons ein, dann lässt er die Päckchen an sich vorbeilaufen.",
+    "nerd": "Der SGSN: Attach und Authentifizierung (mit dem HLR), Mobility und der PDP-Context. Mit Direct Tunnel (3GPP Rel-7) richtet er den GTP-U-Tunnel zwischen RNC und GGSN ein und bleibt aus der User Plane raus.",
+    "tag": "SGSN · Gn"
+  }
+}

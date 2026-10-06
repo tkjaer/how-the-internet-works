@@ -1,0 +1,12 @@
+{
+  "name": "Mast-Steuerbox",
+  "1995": {
+    "kid": "Der Chef von Dutzenden Masten. Er gibt jedem Anruf seinen Platz in den Funkwellen, legt deinen Anruf auf einen anderen Mast, wenn du wegläufst, und schickt ihn zur großen Vermittlung der Mobilfunkfirma.",
+    "nerd": "Der Base Station Controller (BSC): er weist jedem Anruf Träger und Zeitschlitz zu, führt Handovers zwischen seinen BTSs und schaltet die 16 kbit/s-Sub-Slots der Anrufe weiter zum Transcoder und zum MSC. Er öffnet den Anruf nicht.",
+    "tag": "BSC · Abis · Ater",
+    "peek": {
+      "kid": "Die Steuerbox öffnet dein Päckchen auch nicht. Sie schaltet nur den kleinen Platz deines Anrufs zur großen Vermittlung weiter.",
+      "nerd": "Der BSC schaltet den Sub-Slot von der Abis-Leitung der BTS auf die Ater-Leitung zu TRAU und MSC; die RLP-Frames fahren ungelesen durch."
+    }
+  }
+}

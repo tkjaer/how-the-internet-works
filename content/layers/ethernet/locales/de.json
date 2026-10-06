@@ -1,0 +1,42 @@
+{
+  "name": {
+    "kid": "Kabelumschlag",
+    "nerd": "Ethernet-Frame"
+  },
+  "note": {
+    "kid": "Jede Box auf dem Weg nimmt diesen Umschlag ab und steckt einen neuen für das nächste Kabel drauf.",
+    "nerd": "Nur link-lokal: für jeden Hop wird ein neuer Frame mit neuen MAC-Adressen geschrieben."
+  },
+  "line": "Ethernet II, Abs.: {src}, Empf.: {dst}",
+  "field": {
+    "dst": {
+      "name": {
+        "kid": "Für",
+        "nerd": "Destination MAC"
+      },
+      "about": "Die nächste Box auf diesem Kabel. Jeder Router schreibt einen neuen Frame für den nächsten Link."
+    },
+    "src": {
+      "name": {
+        "kid": "Von",
+        "nerd": "Source MAC"
+      },
+      "about": "Die Box, die diesen Frame aufs Kabel gelegt hat. Switches und Access Points geben ihn unverändert weiter."
+    },
+    "type": {
+      "name": "EtherType",
+      "about": "Was drin ist: 0x0800 IPv4, 0x88A8 VLAN-Tags, 0x8847 MPLS."
+    },
+    "fcs": {
+      "name": "Frame check sequence",
+      "about": "Eine CRC über den ganzen Frame: ein beschädigter Frame wird verworfen."
+    }
+  },
+  "1995": {
+    "field": {
+      "type": {
+        "about": "Was drin ist: 0x0800 IPv4, 0x0806 ARP."
+      }
+    }
+  }
+}

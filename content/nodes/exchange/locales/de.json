@@ -1,0 +1,10 @@
+{
+  "name": "Telefonzentrale",
+  "kid": "Die Zentrale der Telefongesellschaft verbindet deinen Anruf mit der Internetfirma, wie ein riesiges Schaltbrett. Sie hält die Leitung offen, solange du online bleibst.",
+  "nerd": "Die Ortsvermittlung schaltet den Anruf: die Kupferleitung endet hier, und der Anruf geht als digitaler 64 kbit/s-Zeitschlitz durchs Telefonnetz zu den Modems des ISP.",
+  "tag": "Circuit · 64 kbit/s",
+  "peek": {
+    "kid": "Die Zentrale öffnet nichts: sie trägt nur deinen Anruf, Ton und alles, zur Internetfirma weiter.",
+    "nerd": "Circuit-switched: der Anruf geht als 64 kbit/s-Timeslot weiter. Hier liest nichts einen Frame; die PPP-Frames reisen im Ton der Modems."
+  }
+}

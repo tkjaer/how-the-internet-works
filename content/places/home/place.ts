@@ -56,5 +56,6 @@ export default definePlace({
   },
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Fiber_to_the_x', title: 'Fibre to the home', level: 'nerd', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/FTTx', title: 'FTTx', level: 'nerd', lang: 'de' },
   ],
 });

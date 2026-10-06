@@ -1,0 +1,42 @@
+{
+  "name": {
+    "kid": "Mietleitungs-Umschlag",
+    "nerd": "Cisco-HDLC-Frame"
+  },
+  "note": {
+    "kid": "Auf einer gemieteten Leitung zwischen zwei Boxen fährt das Päckchen in einem einfachen Umschlag. Jede Box öffnet ihn und steckt das Päckchen in einen frischen für die nächste Leitung.",
+    "nerd": "Cisco HDLC auf einer Mietleitung: ein Flag, Address 0x0F, Control 0x00, ein EtherType und eine 16-Bit-Prüfung. Jeder Router beendet den Frame; Keepalives alle 10 Sekunden sagen beiden Enden, dass die Leitung oben ist."
+  },
+  "line": "Cisco HDLC, Protocol {proto}",
+  "value": {
+    "ip": {
+      "kid": "Ein Internet-Päckchen",
+      "nerd": "IPv4 innen"
+    }
+  },
+  "field": {
+    "flag": {
+      "name": "Flag",
+      "about": "Markiert, wo ein Frame im Bitstrom beginnt und endet."
+    },
+    "address": {
+      "name": "Address",
+      "about": "0x0F für einen normalen Frame: eine Leitung hat nur zwei Enden."
+    },
+    "control": {
+      "name": "Control",
+      "about": "Immer 0x00."
+    },
+    "proto": {
+      "name": {
+        "kid": "Was drin ist",
+        "nerd": "Protocol"
+      },
+      "about": "Was der Frame trägt, mit den Nummern von Ethernet: 0x0800 ist ein IPv4-Paket."
+    },
+    "fcs": {
+      "name": "FCS",
+      "about": "Eine Prüfung über den Frame, damit ein Knistern auf der Leitung auffällt."
+    }
+  }
+}

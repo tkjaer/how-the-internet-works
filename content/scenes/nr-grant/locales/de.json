@@ -1,0 +1,119 @@
+{
+  "title": "5G-Sitzkarten",
+  "kid": "Dein Handy bekommt eine winzige Sitzkarte vom Turm, dann wird jedes Funkstück geprüft. Ist eins verschmiert, sagt der Turm oder das Handy „nochmal!“",
+  "nerd": "NR-Scheduling und HARQ um eine UE: SR auf PUCCH, Grant-DCI auf PDCCH mit CRC scrambled durch C-RNTI 0x4601, dann MAC/RLC/PDCP-Stücke auf 30 kHz SCS, 0,5-ms-Slots.",
+  "role": {
+    "bridge": {
+      "title": "Der Turm verteilt Funksitze",
+      "kid": "Der Turm ist der Klassenhelfer. Dein Handy hebt die Hand, der Turm gibt Handy-Nr. 4601 eine Reihe, und prüft dann jedes Stück. Darunter reist der Umschlag als Radiostrahl.",
+      "nerd": "An der gNB führt ein Uplink-SR auf PUCCH zu einem UL-Grant in DCI auf PDCCH, CRC-scrambled mit der C-RNTI 0x4601 der UE. Der Scheduler vergibt Slot 6, RB 20–31. Wenn der PUSCH seinen CRC verfehlt, sendet die gNB kein NACK: sie plant eine Retransmission mit einer neuen DCI für HARQ-Prozess 7 mit NDI not toggled (RV 2) und soft-combined die Kopien. RLC ARQ darüber fängt Restverlust, mit PDCP-Ciphering plus SN erhalten.",
+      "describe": {
+        "kid": "Die Straße zeigt Handy, Turm und Mobilkern, der Turm am größten. Auf der ersten Karte bittet das Handy um eine Reihe. Die Liste des Turms leuchtet bei Handy-Nummer 4601 in Slot 6. Auf der zweiten Karte bewegen sich Funkstücke, eins wird verschmiert, „Nochmals!“ erscheint, ein sauberes Stück bekommt einen Haken.",
+        "nerd": "Die gNB-Karte hebt den Request-to-Grant-Flow für C-RNTI 0x4601, Slot 6 und RB 20 bis 31 hervor. Die HARQ-Karte animiert einen schlechten Transport Block, einen neuen Grant mit NDI not toggled, Retransmission mit RV 2, Soft Combining und einen abgehakten Block. Labels nennen Logical Channel, RLC, PDCP und QoS Flow."
+      }
+    },
+    "endpoint": {
+      "title": "Das Handy sucht seine Nummer",
+      "kid": "Dein Handy liest die Liste des Turms und nimmt nur Stücke mit Handy-Nr. 4601. Ist eins verschmiert, sagt es „nochmal!“, behält die verschmierte Kopie und legt die zwei zu einem klaren Stück zusammen. Darunter reist der Umschlag als Radiostrahl.",
+      "nerd": "Die UE überwacht PDCCH-Kandidaten auf DCI, deren CRC mit C-RNTI 0x4601 unscramblet, dann empfängt sie ihre PDSCH-Zuteilung. Sie meldet HARQ ACK/NACK in etwa 1 ms; Incremental Redundancy und Soft Combining retten den Transport Block, bevor RLC/PDCP ihn sehen.",
+      "describe": {
+        "kid": "Das Handy ist der größte Halt auf der Straße und schaut auf die Liste des Turms. Ein Kreis scannt, bis Handy-Nummer 4601 leuchtet. Dann reist ein Umschlag mit 4601 über den Radiostrahl. Ein verschmiertes Stück bittet um „Nochmals!“, und zwei Kopien werden ein klares Stück.",
+        "nerd": "Die UE-Ansicht scannt PDCCH-Zeilen nach C-RNTI 0x4601 und zeigt dann ihren PDSCH-Grant für Slot 6 und RB 20 bis 31. Die HARQ-Karte zeigt die NACK-Blase, retransmittierte Redundanz, Soft Combining zu einem abgehakten Block und RLC- und PDCP-Sequenz-Labels."
+      }
+    }
+  },
+  "sealed": {
+    "title": "NR fährt vorbei",
+    "kid": "Dieser Halt trägt den 5G-Umschlag, trifft aber nicht die Funksitz-Entscheidungen.",
+    "nerd": "Der NR MAC/RLC/PDCP-Frame ist nur an den UE- und gNB-Enden des Radio-Links sinnvoll."
+  },
+  "card": {
+    "seat": "Um einen Sitz bitten",
+    "harq": "Ist es angekommen?"
+  },
+  "label": {
+    "ticketKid": "Handy-Nr. {n}",
+    "ticketPortrait": "Nr. {n} · Slot 6",
+    "ticketNerd": "C-RNTI {n}",
+    "grantKid": "Slot 6",
+    "grantNerd": "slot 6 · RB 20–31",
+    "ask": "✋ darf ich senden?",
+    "schedule": "Turm-Plan",
+    "phoneNo": "Handy-Nr. {n}",
+    "otherTurn": "warten",
+    "myTurn": "meine Reihe!",
+    "again": "Nochmals!",
+    "got": "Angekommen!",
+    "check": "jedes Stück prüfen",
+    "nack": "NACK: schnell fragen",
+    "regrant": "neuer Grant: nochmal senden",
+    "combine": "zwei Kopien kombinieren",
+    "ack": "ACK: klares Stück",
+    "dci": "DCI: C-RNTI · HARQ 7",
+    "harqNerd": "HARQ 7 · NDI 1 · RV 2",
+    "sn": "LCID 4 · RLC SN {rlcsn} · PDCP SN {pdcpsn} · QFI 9",
+    "snShort": "L4 · R{rlcsn} · P{pdcpsn} · Q9",
+    "snA": "LCID 4 · RLC SN {rlcsn}",
+    "snB": "PDCP SN {pdcpsn} · QFI 9",
+    "before": "0x31af",
+    "after": "0x77c2",
+    "beforeSeat": "slot 5 · RB 2–9",
+    "afterSeat": "slot 6 · RB 44–51"
+  },
+  "tag": {
+    "bridgeKid": "Turm-Scheduler",
+    "endpointKid": "nur meine Nummer",
+    "bridgeNerd": "SR → DCI grant",
+    "endpointNerd": "C-RNTI watch",
+    "harq": "16 HARQ · soft combining · ~1 ms"
+  },
+  "2010": {
+    "title": "3G-Reihenkarten",
+    "kid": "Dein Handy teilt die Radio-Welle des Turms mit jedem Handy in der Nähe. Der Turm gibt jedem Handy eine Nummer und eine Reihe, 2 ms am Stück, und prüft jedes Stück. Ist eins verschmiert, sagt er „nochmal!“",
+    "nerd": "HSDPA-Scheduling und HARQ um eine UE: MAC-hs des NodeB wählt, wer jedes 2-ms-TTI bekommt, kündigt es auf dem HS-SCCH an, maskiert mit der H-RNTI 0x2317 der UE, dann sendet auf bis zu 15 geteilten HS-PDSCH-Codes.",
+    "role": {
+      "bridge": {
+        "title": "Der Turm verteilt 2-ms-Reihen",
+        "kid": "Der Turm ist der Klassenhelfer. Handys heben die Hand, der Turm gibt Handy-Nr. 2317 eine Reihe von 2 ms und prüft dann jedes Stück. Darunter reist der Umschlag auf der Radio-Welle, die alle teilen.",
+        "nerd": "Am NodeB plant MAC-hs jedes 2-ms-TTI aus den CQI-Reports der UEs: ein HS-SCCH an H-RNTI 0x2317 gibt TTI 6, 5 Codes (SF16, 16-QAM). Die UE antwortet ACK/NACK auf dem HS-DPCCH etwa 5 ms später; bis zu 8 HARQ-Prozesse halten die Leitung voll.",
+        "describe": {
+          "kid": "Die Straße zeigt Handy, Turm und Funksteuerung, der Turm am größten. Auf der ersten Karte bittet das Handy um eine Reihe. Die Liste des Turms leuchtet bei Handy-Nummer 2317 in Reihe 6. Auf der zweiten Karte bewegen sich Funkstücke, eins wird verschmiert, „Nochmals!“ erscheint, ein sauberes Stück bekommt einen Haken.",
+          "nerd": "Die NodeB-Karte hebt den HS-SCCH für H-RNTI 0x2317, TTI 6 und 5 Codes hervor. Die HARQ-Karte animiert einen schlechten Transport Block, NACK, Retransmission mit einer neuen Redundancy Version, Soft Combining und ACK. Labels nennen Priority Queue, TSN und RLC Sequence Number."
+        }
+      },
+      "endpoint": {
+        "title": "Das Handy sucht seine Nummer",
+        "kid": "Dein Handy hört die Liste des Turms und nimmt nur Stücke mit Handy-Nr. 2317. Ist eins verschmiert, sagt es „nochmal!“, behält die verschmierte Kopie und legt die zwei zu einem klaren Stück zusammen.",
+        "nerd": "Die UE beobachtet bis zu vier HS-SCCHs nach ihrer H-RNTI 0x2317 und dekodiert dann ihre HS-PDSCH-Codes zwei Slots später. Sie sendet ACK/NACK und CQI auf dem HS-DPCCH; Soft Combining rettet den Block, bevor MAC-hs nach TSN sortiert und RLC ihn sieht.",
+        "describe": {
+          "kid": "Das Handy ist der größte Halt auf der Straße und schaut auf die Liste des Turms. Ein Kreis scannt, bis Handy-Nummer 2317 leuchtet. Dann reist ein Umschlag mit 2317 über die Radio-Welle. Ein verschmiertes Stück bittet um „Nochmals!“, und zwei Kopien werden ein klares Stück.",
+          "nerd": "Die UE-Ansicht scannt HS-SCCH-Zeilen nach H-RNTI 0x2317 und zeigt dann ihren Grant für TTI 6 und 5 Codes. Die HARQ-Karte zeigt die NACK-Blase, die resent Redundancy Version, Soft Combining zu einem abgehakten Block und Queue-, TSN- und RLC-Labels."
+        }
+      }
+    },
+    "at": {
+      "rnc": {
+        "title": "Die Steuerung prüft die Reihenfolge",
+        "kid": "Die Steuerung hinter dem Turm verteilt keine Reihen: das macht der Turm selbst, schnell. Die Steuerung nummeriert die Stücke, schließt sie ab, sodass niemand mithören kann, und fragt nochmal nach jedem Stück, das der Turm nicht retten konnte.",
+        "nerd": "RLC (acknowledged mode) endet hier, im RNC: er chiffriert (KASUMI), segmentiert und nummeriert die PDUs und sendet per ARQ nach, was HARQ verpasst hat, Dutzende ms später. Das 2-ms-Scheduling und HARQ, hier gezeichnet, laufen im NodeB.",
+        "describe": {
+          "kid": "Die Straße zeigt Handy, Turm und Funksteuerung. Die Karten zeigen, wie der Turm Reihen verteilt und Stücke prüft; diese Steuerung nummeriert sie und fragt nochmal nach verlorenen.",
+          "nerd": "Die Szene zeigt den HS-SCCH-Grant des NodeB für H-RNTI 0x2317 und seine HARQ-Schleife. Der RNC beendet RLC: die Labels zeigen die RLC Sequence Number, nach der er nachsendet."
+        }
+      }
+    },
+    "label": {
+      "ticketPortrait": "Nr. {n} · Reihe 6",
+      "ticketNerd": "H-RNTI {n}",
+      "grantKid": "Reihe 6",
+      "grantNerd": "TTI 6 · 5 codes",
+      "sn": "Queue 1 · TSN {tsn} · RLC SN {rlcsn}",
+      "snShort": "Q1 · T{tsn} · R{rlcsn}",
+      "before": "0x1c40",
+      "after": "0x6b02",
+      "beforeSeat": "TTI 5 · 10 codes",
+      "afterSeat": "TTI 7 · 15 codes",
+      "regrant": "NACK: schnell fragen"
+    }
+  }
+}

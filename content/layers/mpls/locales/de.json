@@ -1,0 +1,32 @@
+{
+  "name": {
+    "kid": "Expresszettel",
+    "nerd": "MPLS-Label"
+  },
+  "note": {
+    "kid": "Im großen Netz sagt ein schneller Zettel, welche Autobahn zu nehmen ist, damit niemand die Adresse lesen muss.",
+    "nerd": "Label-switched durch den Kern: das Label wird an jedem LSR getauscht und am Rand gepoppt (am Border-Router oder am Hop davor mit Penultimate Hop Popping)."
+  },
+  "line": "MultiProtocol Label Switching, Label: {label}, TTL: {ttl}",
+  "field": {
+    "label": {
+      "name": {
+        "kid": "Autobahn-Nr.",
+        "nerd": "Label"
+      },
+      "about": "Vom nächsten Router für diesen Pfad gewählt: er switched anhand des Labels, ohne die IP-Adresse zu lesen."
+    },
+    "tc": {
+      "name": "Verkehrsklasse",
+      "about": "Priorität im Kern."
+    },
+    "s": {
+      "name": "Stapelende",
+      "about": "1 = das letzte Label; ein IP-Paket folgt."
+    },
+    "ttl": {
+      "name": "TTL",
+      "about": "Vom IP-TTL kopiert, wenn das Label draufkommt, und von jedem Label-Switching Router heruntergezählt; wenn das Label runterkommt, wird es zurück in den IP-Header kopiert (das Uniform Model)."
+    }
+  }
+}

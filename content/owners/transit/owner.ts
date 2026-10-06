@@ -4,5 +4,6 @@ import { defineOwner } from '$core/define';
 export default defineOwner({
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Peering', title: 'Peering and transit', level: 'nerd', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Peering', title: 'Peering', level: 'nerd', lang: 'de' },
   ],
 });

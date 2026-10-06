@@ -47,5 +47,6 @@ export default definePlace({
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Circuit_Switched_Data', title: 'Circuit Switched Data', level: 'both', lang: 'en' },
     { url: 'https://da.wikipedia.org/wiki/GSM', title: 'GSM', level: 'both', lang: 'da' },
+    { url: 'https://de.wikipedia.org/wiki/Circuit_Switched_Data', title: 'Circuit Switched Data', level: 'both', lang: 'de' },
   ],
 });

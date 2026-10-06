@@ -1,0 +1,151 @@
+{
+  "mode": {
+    "kid": "kid",
+    "nerd": "nerd"
+  },
+  "title": "Im Videoserver",
+  "kid": "Der Videoserver ist ein Computer, der beliebte Videos nah bei dir hält. Licht vom Rechenzentrums-Link wird auf der Netzwerkkarte zu Bits. Die Video-App schaut auf die Regale; wenn das Stück da ist, schickt sie es sofort zurück. Wenn nicht, fragt sie die Hauptkopie weit weg, speichert eine Kopie und schickt dann deine.",
+  "nerd": "Ein CDN Cache Server terminiert die Fibre auf einem NIC, und die Cache-Software läuft meist auf Bare Metal (z. B. FreeBSD + NGINX) und streamt Hot Objects aus RAM und NVMe direkt zum NIC. Die App prüft den RAM Cache, dann die NVMe SSDs. Ein HIT wird lokal ausgeliefert; ein MISS holt von Origin, speichert eine Kopie nach Cache-Control und TTL, dann antwortet.",
+  "describe": {
+    "kid": "Ein offenes Servergehäuse zeigt eine Netzwerkkarte, den Computer, Speicher und Video-Regale. Eine Anfrage kommt als Licht, erreicht die Video-App, dann schickt das Regal ein Filmstück zurück oder fragt zuerst die Hauptkopie weit weg.",
+    "nerd": "Der Cutaway Cache Server zeigt NIC, CPU mit der Bare-Metal Cache App, RAM und NVMe SSD Cache. Die Request kommt auf Fibre und erreicht die markierte App. Hit-Zyklen geben ein Video-Segment aus dem Cache; Miss-Zyklen gehen zu Origin, speichern eine Kopie, dann zurück."
+  },
+  "app": "Video-App",
+  "hit": {
+    "kid": "Da ist es!",
+    "nerd": "HIT · aus dem Cache"
+  },
+  "miss": {
+    "kid": "Nicht hier: die Hauptkopie fragen",
+    "nerd": "MISS · vom Origin holen, Kopie speichern"
+  },
+  "origin": {
+    "kid": "Hauptkopie, weit weg",
+    "nerd": "Origin hält 3 Kopien"
+  },
+  "nic": {
+    "title": {
+      "kid": "Netzwerkkarte",
+      "nerd": "NIC 2×100G"
+    },
+    "line": {
+      "kid": "Licht → Bits",
+      "nerd": "Glasfaser-Frames → DMA"
+    }
+  },
+  "compute": {
+    "title": {
+      "kid": "Der Computer",
+      "nerd": "CPU"
+    },
+    "line": {
+      "kid": "Läuft die Video-App",
+      "nerd": "Cache-App auf Bare Metal"
+    }
+  },
+  "memory": {
+    "title": {
+      "kid": "Speicher",
+      "nerd": "RAM cache"
+    },
+    "line": {
+      "kid": "Schnelles Regal",
+      "nerd": "Heiße Objekte im RAM"
+    }
+  },
+  "ssd": {
+    "title": {
+      "kid": "SSD-Regale",
+      "nerd": "NVMe SSD cache"
+    },
+    "line": {
+      "kid": "Regale voller Videos",
+      "nerd": "Cache-Objekte auf Platte"
+    }
+  },
+  "1995": {
+    "title": "Im Webserver",
+    "kid": "Die Website ist dieser eine Computer, eine hohe beige Box im Regal. Deine Anfrage kommt vom Kabel des Hubs in die Netzwerkkarte, und das Webprogramm fragt die Festplatte nach der Seite. Die Platte dreht sich, der Arm liest die Seite, und sie geht denselben Weg zurück. Dann dasselbe nochmal für das Bild.",
+    "nerd": "Ein Webserver 1995: ein Tower-PC oder Workstation mit 10BASE-T NIC, einer CPU und einer Disk, mit einem Programm (NCSA HTTPd oder das neue Apache). HTTP/1.0 öffnet eine neue TCP Connection für jede Datei: GET /index.html, dann GET /picture.gif, jeweils von Disk gelesen und mit 200 OK gesendet. Kein Cache, kein CDN (Akamai begann 1998–99), keine Virtual Machines.",
+    "describe": {
+      "kid": "Ein beiger Computer mit offener Seite zeigt eine Netzwerkkarte, den Computer mit einem Programm und eine drehende Platte. Ein Päckchen kommt vom Hub, geht zum Programm und zur Platte, und eine Seite, dann ein Bild, gehen zurück zum Hub.",
+      "nerd": "Der Cutaway-Tower zeigt den 10BASE-T NIC, die CPU mit httpd und die Hard Disk. Die Request kommt vom Hub auf dem Ethernet Cable und erreicht httpd, das die Datei von Disk liest; die Reply, die Seite in einem Zyklus und das Bild im nächsten, geht mit 200 OK zurück."
+    },
+    "app": "Webprogramm",
+    "nic": {
+      "title": {
+        "nerd": "NIC 10BASE-T"
+      },
+      "line": {
+        "kid": "Impulse → Bits",
+        "nerd": "Manchester → frames"
+      }
+    },
+    "compute": {
+      "title": {
+        "nerd": "CPU · one OS"
+      },
+      "line": {
+        "kid": "Ein Programm",
+        "nerd": "One httpd, no VMs"
+      }
+    },
+    "disk": {
+      "title": {
+        "kid": "Platte",
+        "nerd": "Festplatte"
+      },
+      "line": {
+        "kid": "Seiten und Bilder",
+        "nerd": "Dateien auf der Platte"
+      }
+    },
+    "ok": {
+      "page": {
+        "kid": "Hier ist die Seite!",
+        "nerd": "GET /index.html → 200 OK"
+      },
+      "picture": {
+        "kid": "Und hier das Bild!",
+        "nerd": "GET /picture.gif → 200 OK"
+      }
+    }
+  },
+  "2010": {
+    "nerd": "Ein CDN Cache Server 2010: eine 1U- oder 2U-Box, deren 1G Copper NIC (1000BASE-T) zum Access Switch im Rack geht, mit Linux und einem Cache-Programm (Squid, Varnish oder dem eigenen des CDN) direkt auf der Hardware, keine VMs. Hot Objects sitzen in RAM, der Rest auf drehenden Disks; SSDs kamen gerade erst. Ein HIT wird lokal ausgeliefert; ein MISS holt von Origin, speichert eine Kopie nach Cache-Control und TTL, dann antwortet.",
+    "describe": {
+      "kid": "Ein offenes Servergehäuse zeigt eine Netzwerkkarte, den Computer mit Helfern, Speicher und Regale voller Platten. Eine Anfrage kommt auf einem Kupferkabel und erreicht das Videoprogramm, dann schickt das Regal ein Filmstück zurück oder fragt zuerst die Hauptkopie weit weg.",
+      "nerd": "Der Cutaway Cache Server zeigt den 1000BASE-T NIC, die CPU mit Cache-Prozessen auf Bare Linux, RAM und den Hard-Disk Cache. Die Request kommt über Copper vom Access Switch und erreicht den markierten Prozess. Hit-Zyklen geben ein Video-Segment aus dem Cache; Miss-Zyklen gehen zu Origin, speichern eine Kopie, dann zurück."
+    },
+    "nic": {
+      "title": {
+        "nerd": "NIC 2×1G"
+      },
+      "line": {
+        "kid": "Impulse → Bits",
+        "nerd": "1000BASE-T → frames"
+      }
+    },
+    "ssd": {
+      "title": {
+        "nerd": "Festplatten-Cache",
+        "kid": "Platten-Regale"
+      },
+      "line": {
+        "nerd": "Objekte auf Festplatten",
+        "kid": "Regale voller Videos"
+      }
+    },
+    "kid": "Der Videoserver ist ein Computer, der beliebte Videos in einem Rechenzentrum einer großen Stadt hält. Deine Anfrage kommt auf einem Kupferkabel vom Switch im Rack und wird auf der Netzwerkkarte zu Bits. Das Videoprogramm schaut in seinen Speicher und auf seine Platten; wenn das Stück da ist, schickt es es sofort zurück. Wenn nicht, fragt es die Hauptkopie weit weg, speichert eine Kopie und schickt dann deine.",
+    "app": "Videoprogramm",
+    "compute": {
+      "title": {
+        "nerd": "CPU · bare metal"
+      },
+      "line": {
+        "kid": "Helfer bei der Arbeit",
+        "nerd": "Linux · Cache-Prozesse"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Unterwegs, GSM",
+  "access": "GSM-Daten",
+  "1995": {
+    "kid": "Draußen auf der Straße 1995 war kaum jemand online, aber du konntest! Das Mobiltelefon eines Laptops rief die Internetfirma an, per Funk zu einem Mast und durch die Schalter der Mobilfunkfirma. Sehr langsam, und jede Minute kostete Geld.",
+    "nerd": "Um 1995: der Laptop wählt über ein GSM-Telefon, leitungsvermittelte Daten mit 9,6 kbit/s. Der Ruf geht per Funk zur BTS, als 16-kbit/s-Viertel-Slot durch die BSC zur MSC, deren Modems (die IWF) durchs Telefonnetz zur Modem-Bank des ISP weiterwählen. PPP fährt unberührt die ganze Strecke; kein IP vor der Modem-Bank.",
+    "describe": {
+      "kid": "Eine Straße mit Läden, Laterne, Fahrbahn und Auto liegt vor grünen Hügeln. Ein dicker Laptop mit Krauselkabel zu einem ziegelgroßen Mobiltelefon schickt Päckchen per Funk zu einem hohen Metallmast mit dünnen Antennen. Eine Leitung trägt sie weiter zur Internetwolke. Anfragen und die Seite laufen langsam in beide Richtungen.",
+      "nerd": "Die Straßenansicht zeigt einen Laptop von 1995 mit GSM-Telefon am Kabel, einen GSM-Funklink zu einer BTS auf einem Gittermast, die Abis-Leitung und die Internetwolke. Anfrage-Pakete gehen im Datenruf hoch; die Seite kommt denselben Weg mit 9,6 kbit/s zurück."
+    },
+    "tag": {
+      "phone": "GSM · 203.0.113.52",
+      "mobile-core": "MSC · IWF-Modems",
+      "bng": "Modem-Bank · PPP"
+    },
+    "stop": {
+      "phone": {
+        "kid": "Dein Laptop will eine Webseite, auch hier draußen. Sein Telefon wählt die Internetfirma, und der Laptop schickt eine kleine Anfrage den Ruf runter.",
+        "nerd": "Der Laptop ist der Endpunkt: PPP gab ihm die öffentliche Adresse 203.0.113.52 für diesen Ruf. Das Telefon trägt nur den Ruf; die Datenkarte spricht RLP mit den Modems des Netzes."
+      },
+      "cell-tower-internet": {
+        "kid": "Vom Mast reist dein Ruf eine Leitung zur Steuerbox und weiter zum Schalter der Mobilfunkfirma, in einem winzigen Slot, den er mit drei anderen Rufen teilt.",
+        "nerd": "Abis und Ater: E1-Leitungen, und dein Ruf ist ein 16-kbit/s-Viertel eines 64-kbit/s-Timeslots, weiter RLP-Frames, bis zum Transcoder an der MSC."
+      },
+      "exchange": {
+        "nerd": "Der Ruf kommt von der MSC auf einem E1-Trunk und wird als 64-kbit/s-Timeslot durchs Telefonnetz zu den Modems des ISP weitergeschaltet."
+      }
+    },
+    "inside": {
+      "internet": {
+        "nerd": "Zuerst die Telefonnetze: die BSC, die MSC, deren IWF-Modem weiterwählt, und die Vermittlung der Telefongesellschaft, die den Ruf auf einem PRI an die Modem-Bank des ISP übergibt. Keines liest IP; das Internet beginnt an der Modem-Bank. Ab da ist es das Internet von 1995: der Router des ISP, eine Mietleitung zum Upstream, das Seekabel und ein amerikanisches Backbone. Jede Fläche ist ein Netz.",
+        "describe": {
+          "kid": "In der Wolke startet die Route am Mast, geht zur Maststeuerung und zum Mobilfunkschalter, dann durch die Telefonvermittlung zu den Modems der Internetfirma. Von dort zum Router der Internetfirma, unter dem Meer und durch Amerika zum Webserver. Päckchen laufen in beide Richtungen.",
+          "nerd": "Dieser Internetblick startet mit BTS, BSC und MSC mit ihren Modems, dann der PSTN-Vermittlung und der Modem-Bank des ISP, und weiter durchs Internet von 1995 zum Serverraum. Die Flächen sind die Netze. Pakete laufen über Abis, einen E1-Trunk, ein PRI, Mietleitungen, CANTAT-3 und ATM."
+        }
+      }
+    }
+  }
+}

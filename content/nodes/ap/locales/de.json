@@ -1,0 +1,9 @@
+{
+  "name": "WLAN-Zugangspunkt",
+  "kid": "Der Zugangspunkt fängt die Funkwellen und schickt das Päckchen weiter durch ein Kabel.",
+  "nerd": "Eine Layer-2-Bridge: sie tauscht den 802.11-Frame gegen einen Ethernet-Frame und liest nie die IP-Adresse.",
+  "tag": "802.11ax · L2 bridge",
+  "2010": {
+    "tag": "802.11n · L2 bridge"
+  }
+}

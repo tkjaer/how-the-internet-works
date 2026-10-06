@@ -1,0 +1,42 @@
+{
+  "name": {
+    "kid": "Anrufumschlag",
+    "nerd": "PPP-Frame"
+  },
+  "note": {
+    "kid": "Der Rechner steckt das Päckchen in einen einfachen Umschlag für den Telefonanruf. Nur dein Rechner und die Internetfirma öffnen ihn.",
+    "nerd": "PPP in HDLC-ähnlichem Framing: keine Adressen, weil ein Anruf nur zwei Enden hat. LCP, ein Login (PAP oder CHAP) und IPCP setzen es auf, wenn der Anruf startet."
+  },
+  "line": "PPP, Protocol {proto}",
+  "value": {
+    "ip": {
+      "kid": "Ein Internet-Päckchen",
+      "nerd": "IPv4 innen"
+    }
+  },
+  "field": {
+    "flag": {
+      "name": "Flag",
+      "about": "Markiert, wo ein Frame im Bitstrom beginnt und endet."
+    },
+    "address": {
+      "name": "Address",
+      "about": "Immer 0xFF (alle): ein Telefonanruf hat nur zwei Enden."
+    },
+    "control": {
+      "name": "Control",
+      "about": "Immer 0x03: ein schlichter Frame, ohne Nummerierung."
+    },
+    "proto": {
+      "name": {
+        "kid": "Was drin ist",
+        "nerd": "Protocol"
+      },
+      "about": "Was der Frame trägt: 0x0021 ist ein IPv4-Paket; LCP, PAP, CHAP und IPCP haben eigene Nummern."
+    },
+    "fcs": {
+      "name": "FCS",
+      "about": "Eine 16-Bit-Prüfung über den Frame (PPP-Default), damit ein Knistern auf der Leitung auffällt."
+    }
+  }
+}

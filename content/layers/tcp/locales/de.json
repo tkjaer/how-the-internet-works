@@ -1,0 +1,86 @@
+{
+  "name": {
+    "kid": "Nummeriertes Stück",
+    "nerd": "TCP-Segment"
+  },
+  "note": {
+    "kid": "Das Video wird in nummerierte Stücke geschnitten, damit nichts verloren geht oder durcheinandergerät.",
+    "nerd": "Ein zuverlässiger, geordneter Bytestrom zwischen zwei Ports: Sequence Numbers, Acknowledgements, Retransmits, Flow- und Congestion Control."
+  },
+  "sealed": {
+    "kid": "Versiegelt. Nur {yours} und der Server öffnen das: sie prüfen, dass keine Stücke fehlen.",
+    "nerd": "Unterwegs nicht inspiziert: Ende-zu-Ende zwischen den beiden Enden (Ordnung, Retransmits, Congestion Control)."
+  },
+  "line": "Transmission Control Protocol, Abs.-Port: {sport}, Empf.-Port: {dport}, Seq: {seq}, Ack: {ack}",
+  "field": {
+    "sport": {
+      "name": "Source Port",
+      "about": "Welches Gespräch beim Absender. Ein NAT (dein Heimrouter oder das Carrier-Grade NAT des Betreibers) schreibt ihn um, damit mehrere Geräte eine Adresse teilen können."
+    },
+    "dport": {
+      "name": "Destination Port",
+      "about": "Welcher Dienst beim Empfänger: 443 = HTTPS."
+    },
+    "seq": {
+      "name": {
+        "kid": "Stücknr.",
+        "nerd": "Sequence Number"
+      },
+      "about": "Wo diese Daten im Bytestrom sitzen, damit der Empfänger die Stücke sortieren kann."
+    },
+    "ack": {
+      "name": "Acknowledgement",
+      "about": "Das nächste Byte, das der Absender von der anderen Seite erwartet: alles davor ist angekommen."
+    },
+    "offset": {
+      "name": "Daten-Offset",
+      "about": "Headerlänge in 32-Bit-Wörtern."
+    },
+    "reserved": {
+      "name": "Reserved",
+      "about": "Immer 0."
+    },
+    "flags": {
+      "name": "Flags",
+      "about": "SYN, ACK, PSH, FIN, RST…: was dieses Segment im Gespräch tut."
+    },
+    "window": {
+      "name": "Window",
+      "about": "Wie viel der Absender gerade noch aufnehmen kann (Flow Control)."
+    },
+    "checksum": {
+      "name": "Checksum",
+      "about": "Deckt auch Adressen und Ports ab, darum muss ein NAT sie korrigieren, wenn er sie umschreibt."
+    },
+    "urgent": {
+      "name": "Urgent Pointer",
+      "about": "Praktisch ungenutzt."
+    }
+  },
+  "1995": {
+    "field": {
+      "sport": {
+        "about": "Welches Gespräch beim Absender. 1995 gibt es kein NAT: es kommt an, wie es geschickt wurde."
+      },
+      "dport": {
+        "about": "Welcher Dienst beim Empfänger: 80 = HTTP, das Web."
+      },
+      "reserved": {
+        "about": "Sechs Bits für später, immer 0 (RFC 793). ECN nahm sich 2001 zwei davon für die Flags CWR und ECE."
+      },
+      "flags": {
+        "about": "URG, ACK, PSH, RST, SYN, FIN, die sechs aus RFC 793: was dieses Segment im Gespräch tut."
+      }
+    },
+    "note": {
+      "kid": "Die Seite wird in nummerierte Stücke geschnitten, damit nichts verloren geht oder durcheinandergerät."
+    }
+  },
+  "2010": {
+    "field": {
+      "dport": {
+        "about": "Welcher Dienst beim Empfänger: 80 = HTTP, das Web."
+      }
+    }
+  }
+}

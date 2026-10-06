@@ -1,0 +1,20 @@
+{
+  "title": "Funkwellen",
+  "kid": "Der Zugangspunkt macht aus jedem Päckchen Einsen und Nullen und schickt sie durch die Luft auf einer unsichtbaren Funkwelle. Große Wellen bedeuten 1, kleine Wellen bedeuten 0!",
+  "nerd": "Bits modulieren einen 2.4/5/6 GHz Carrier. Hier als einfaches Amplitude-Shift Keying gezeigt; Wi‑Fi 6 (802.11ax) dieser Verbindung nutzt OFDMA mit bis zu 1024-QAM: 10 Bits auf jedem von Hunderten bis Tausenden Sub-Carriers pro Symbol (Wi‑Fi 7 geht auf 4096-QAM, 12 Bits).",
+  "extra": "Wi-Fi 7 (802.11be): mit Multi-Link Operation (MLO) nutzen Telefon und Access Point 2.4, 5 und 6 GHz gleichzeitig, als ein Link. Kanäle im 6 GHz Band können 320 MHz breit sein, doppelt so breit wie das breiteste von Wi-Fi 6E, und mit 4096-QAM und acht Streams macht das etwa 23 Gbit/s auf einem Kanal, theoretisch.",
+  "describe": {
+    "kid": "Ein Telefon und ein Wi‑Fi-Zugangspunkt stehen einander gegenüber. Eine wellige Funkwelle läuft dazwischen. Bunte 1- und 0-Bits reiten darüber, und Linien zeigen jedes Bit auf eine große oder kleine Welle. Ringe gehen von der Wi‑Fi-Box aus, während das Signal durch die Luft geht.",
+    "nerd": "Die Szene zeigt Telefon und Access Point, verbunden durch eine animierte Carrier Wave. Bits scrollen entlang der Spur. Stiele verbinden jedes Bit mit der Amplitude der Welle, als vereinfachte ASK-Modulation. Sich ausbreitende Ringe am Access Point zeigen das Radio Signal."
+  },
+  "carrier": "Funkwelle",
+  "bits": "Bits",
+  "2010": {
+    "nerd": "Bits modulieren einen 2.4- oder 5-GHz-Carrier. Hier als einfaches Amplitude-Shift Keying gezeigt; Wi‑Fi 4 (802.11n) nutzt OFDM mit bis zu 64-QAM, 6 Bits auf jedem von 52 Data Sub-Carriers pro Symbol (108 auf einem 40 MHz Kanal).",
+    "extra": "Wi‑Fi 4 (802.11n, 2009): mit zwei bis vier Antennen je Seite reisen mehrere Streams nebeneinander (MIMO), und ein 40 MHz Kanal verdoppelt die Breite: bis zu 150 Mbit/s pro Stream, 600 Mbit/s theoretisch. Wi‑Fi im 6 GHz Band kam erst 2020.",
+    "describe": {
+      "kid": "Ein Laptop und ein Wi‑Fi-Zugangspunkt stehen einander gegenüber. Eine wellige Funkwelle läuft dazwischen. Bunte 1- und 0-Bits reiten darüber, und Linien zeigen jedes Bit auf eine große oder kleine Welle. Ringe gehen von der Wi‑Fi-Box aus, während das Signal durch die Luft geht.",
+      "nerd": "Die Szene zeigt Laptop und Access Point, verbunden durch eine animierte Carrier Wave. Bits scrollen entlang der Spur. Stiele verbinden jedes Bit mit der Amplitude der Welle, als vereinfachte ASK-Modulation. Sich ausbreitende Ringe am Access Point zeigen das Radio Signal."
+    }
+  }
+}

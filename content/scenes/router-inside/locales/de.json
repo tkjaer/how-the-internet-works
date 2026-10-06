@@ -1,0 +1,119 @@
+{
+  "mode": {
+    "kid": "kid",
+    "nerd": "nerd"
+  },
+  "title": "Im Heimrouter",
+  "kid": "Der Heimrouter ist vier kleine Räume in einer Box. Dein Päckchen kommt durch eine Buchse rein, und das Gehirn tauscht den Namen deines Geräts darauf gegen den deines Zuhauses, damit die Antwort den Weg zurück findet. Dann macht die Lichtbox die Bits zu Lichtblitzen für den Glasfaden die Straße hoch.",
+  "nerd": "Ein Home Gateway ist mehrere Boxen in einer: ein Ethernet Switch, ein Wi‑Fi Radio, ein Router mit NAT (er tauscht die private Source Address und Port gegen seine Public Address und einen eigenen Port und merkt sich das Paar, damit Replies wieder reinfinden) und eine ONT, die die Frames upstream als XGS-PON Light Bursts in ihren Time Slots sendet.",
+  "describe": {
+    "kid": "Eine geöffnete Router-Box ist in vier kleine Räume geteilt: Kabelbuchsen, Wi‑Fi-Radio, Gehirn und Lichtbox. Eine Kabelbuchse leuchtet, wo das Päckchen reinkommt. Das Päckchen geht durchs Gehirn, der Absender-Aufkleber wechselt, und es geht als blinkendes Licht raus.",
+    "nerd": "Das Cutaway-Gateway zeigt Switch, Wi‑Fi Radio, Router mit NAT und ONT-Räume. Nur die Räume dieser Reise leuchten. Das Paket kommt auf dem aktiven Copper Link rein, geht durch den NAT Rewrite als Bits und verlässt die ONT als XGS-PON Light Bursts."
+  },
+  "from": "Von: {who}",
+  "outside": "Zuhause",
+  "switch": {
+    "title": {
+      "kid": "Kabelbuchsen",
+      "nerd": "Switch"
+    },
+    "line": {
+      "kid": "Strom → Bits",
+      "nerd": "4 × 1 Gbit/s Ports"
+    },
+    "idle": {
+      "kid": "Ruht",
+      "nerd": "Hier unbenutzt"
+    }
+  },
+  "wifi": {
+    "title": {
+      "kid": "Wi‑Fi-Radio",
+      "nerd": "Wi‑Fi radio"
+    },
+    "line": {
+      "kid": "Funk ↔ Bits",
+      "nerd": "802.11ax radio"
+    },
+    "idle": {
+      "kid": "Ruht",
+      "nerd": "Hier unbenutzt"
+    }
+  },
+  "brain": {
+    "title": {
+      "kid": "Das Gehirn",
+      "nerd": "Router + NAT"
+    },
+    "line": {
+      "kid": "Tauscht den Absender",
+      "nerd": "Schreibt den Absender um"
+    }
+  },
+  "ont": {
+    "title": {
+      "kid": "Lichtbox",
+      "nerd": "ONT"
+    },
+    "line": {
+      "kid": "Bits → Licht",
+      "nerd": "XGS-PON · 1270/1577 nm"
+    },
+    "idle": {
+      "kid": "Ruht",
+      "nerd": "Hier unbenutzt"
+    }
+  },
+  "modem": {
+    "title": {
+      "kid": "Tonbox",
+      "nerd": "DSL modem"
+    },
+    "line": {
+      "kid": "Bits → Töne",
+      "nerd": "VDSL2 · DMT tones"
+    },
+    "idle": {
+      "kid": "Ruht",
+      "nerd": "Hier unbenutzt"
+    }
+  },
+  "dsl-router": {
+    "kid": "Dieser Heimrouter ist vier kleine Räume in einer Box. Dein Päckchen kommt durch eine Buchse rein, und das Gehirn tauscht den Namen deines Geräts darauf gegen den deines Zuhauses. Dann macht die Tonbox die Bits zu Tönen für die alte Telefonleitung.",
+    "nerd": "Ein DSL Gateway: ein Ethernet Switch, ein Wi‑Fi Radio, ein Router mit NAT und ein VDSL2 Modem, das die Frames als DMT Tones auf dem Phone Pair sendet, oberhalb des Low Band, das das Telefon nutzt.",
+    "describe": {
+      "kid": "Eine geöffnete Router-Box ist in vier kleine Räume geteilt: Kabelbuchsen, Wi‑Fi-Radio, Gehirn und Tonbox. Eine Kabelbuchse leuchtet, wo das Päckchen reinkommt. Das Päckchen geht durchs Gehirn, der Absender-Aufkleber wechselt, und es geht als wellige Töne auf die Telefonleitung.",
+      "nerd": "Das Cutaway-Gateway zeigt Switch, Wi‑Fi Radio, Router mit NAT und Modem-Räume. Nur die Räume dieser Reise leuchten. Das Paket kommt auf dem aktiven Copper Port rein, geht durch den NAT Rewrite als Bits und verlässt das Modem als VDSL2 Tones auf dem Phone Pair."
+    }
+  },
+  "flat-router": {
+    "kid": "Dieser Heimrouter ist vier kleine Räume in einer Box. Dein Päckchen kommt durch eine Buchse rein, und das Gehirn tauscht den Namen deines Geräts darauf gegen den deines Zuhauses. Dann geht es durch die eigene Ausgangsbuchse ein Kabel runter in den Keller.",
+    "nerd": "Bei Fibre to the Building ist der Uplink des Gateways ein schlichter Ethernet WAN Port: rein auf einem LAN Port, NAT im Router, raus auf dem WAN Port zum Switch des Gebäudes im Keller. Keine ONT und kein Modem: die Fibre endet unten.",
+    "describe": {
+      "kid": "Eine geöffnete Router-Box ist in vier kleine Räume geteilt: Kabelbuchsen, Wi‑Fi-Radio, Gehirn und Ausgangsbuchse. Eine Kabelbuchse leuchtet, wo das Päckchen reinkommt. Das Päckchen geht durchs Gehirn, der Absender-Aufkleber wechselt, und es geht durch die leuchtende Ausgangsbuchse raus.",
+      "nerd": "Das Cutaway-Gateway zeigt Switch, Wi‑Fi Radio, Router mit NAT und WAN-Port-Räume. Das Paket kommt auf einem LAN Port rein, geht durch den NAT Rewrite als Bits und verlässt den WAN Port als Ethernet zum Switch im Keller. Der Radio-Raum ist idle."
+    }
+  },
+  "wan": {
+    "title": {
+      "kid": "Ausgangsbuchse",
+      "nerd": "WAN port"
+    },
+    "line": {
+      "kid": "Kabel raus",
+      "nerd": "1000BASE-T · outside"
+    }
+  },
+  "2010": {
+    "switch": {
+      "line": {
+        "nerd": "4 × 100 Mbit/s Ports"
+      }
+    },
+    "wifi": {
+      "line": {
+        "nerd": "802.11n radio"
+      }
+    }
+  }
+}

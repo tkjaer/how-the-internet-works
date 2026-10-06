@@ -1,0 +1,6 @@
+{
+  "name": "Grenzrouter",
+  "kid": "Die Tür aus deiner Internetfirma. Er nimmt den Autobahnaufkleber ab und gibt dein Päckchen an das nächste Netz.",
+  "nerd": "Ein Provider-Edge-Router und ASBR: er poppt das letzte MPLS-Label (oder der Kern tut es, mit Penultimate-Hop Popping), spricht eBGP mit den Nachbarn und wählt den Ausgang: Settlement-free Peering am Exchange oder bezahlter Transit.",
+  "tag": "PE/ASBR · eBGP"
+}

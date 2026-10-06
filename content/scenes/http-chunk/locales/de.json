@@ -1,0 +1,268 @@
+{
+  "title": "Ein Stück Video bestellen",
+  "kid": "Ein Video kommt in kleinen Stücken, ein paar Sekunden jedes. Zuerst schreibt {yours} einen Zettel: Stück 42, mittel bitte. Der Videoserver findet es auf seinem Regal, stempelt 200 OK und schickt es zurück. Wird die Verbindung langsamer, bittet der nächste Zettel um niedrige Qualität, sodass der Film weiterläuft statt zu warten.",
+  "nerd": "HTTP fährt in TLS, sodass nur die zwei Enden es lesen. Gezeichnet in HTTP/1.1-Textform; die meisten Videos heute gehen als HTTP/2 über TLS und TCP oder HTTP/3 über QUIC (UDP), mit denselben Feldern in binären Frames. Der Player sendet GET /video/720p/42.m4s mit Host: video.example, und der CDN-Cache antwortet 200 OK (ein HIT; 404 hieße kein solches Stück, 304 antwortet auf eine Conditional Request: die Kopie, die du hast, ist noch gut, 206 Partial Content antwortet auf Range: bytes=…). Adaptive Bitrate (DASH): der Player misst Throughput und Buffer und wählt die Representation des nächsten Segments aus dem Manifest, hier 360p.",
+  "describe": {
+    "kid": "Eine Straße verbindet {yours} und den Videoserver. Auf der linken Karte bittet ein Zettel um Stück 42 in mittel und geht zum Server. Der Server findet 42 auf dem Regal, stempelt 200 OK und schickt eine große Film-Box zurück. Dann fallen die Signalbalken, der nächste Zettel bittet um 43 in niedrig, und eine kleinere Film-Box kommt zurück.",
+    "nerd": "Die linke Karte zeigt die Request: GET /video/720p/42.m4s und Host, neben Signalbalken. Die rechte Karte ist das Cache-Regal des CDN: 42 ist ein Hit, gestempelt 200 OK, und ein großes Segment geht zurück. Die Balken fallen, die nächste Request ist 360p, Segment 43 miss, wird von der Origin-Cloud geholt und gespeichert, und ein kleineres Segment kehrt zurück."
+  },
+  "at": {
+    "cdn": {
+      "title": "Der Videoserver antwortet",
+      "kid": "Der Videoserver liest jeden Zettel. Liegt das Stück auf dem Regal, schickt er es sofort; sonst holt er es von der Hauptkopie weit weg und behält eine Kopie für den nächsten Zuschauer. Jede Antwort beginnt mit einem Stempel: 200 OK heißt hier ist es.",
+      "nerd": "Am CDN-Edge ist HTTP offen: er liest Request-Line und Header, schlägt die URL im Cache nach und antwortet mit Status-Line, Headern (Content-Type: video/mp4, Content-Length, Cache-Control, Age) und Body. Ein Miss wird vom Origin geholt und für max-age gespeichert, sodass die nächste Request ein Hit ist.",
+      "describe": {
+        "kid": "Der Videoserver ist am Ende der Straße hervorgehoben. Zettel kommen von {yours}. Auf der Server-Karte liegt Stück 42 schon auf dem Regal, also kommt ein 200-OK-Stempel runter und eine große Film-Box geht zurück. Stück 43 in niedrig ist nicht da: eine Box kommt von der Hauptkopie in einer Wolke aufs Regal, dann geht eine kleinere Film-Box zurück.",
+        "nerd": "Der CDN-Cache-Server ist der fokussierte Endpunkt. Requests kommen an, und auf der Cache-Karte ist Segment 42 ein Hit: 200 OK, und eine große Response geht zurück. Nachdem die Balken des Clients fallen, bittet er um 360p-Segment 43, ein Miss: die Origin-Cloud schickt eine Kopie aufs Regal, sie wird gespeichert, und eine kleinere 200-OK-Response kehrt zurück."
+      }
+    }
+  },
+  "sealed": {
+    "title": "{hop} sieht nur die Außenseite",
+    "kid": "{hop} trägt die Zettel und die Film-Boxen, aber sie sind im Schloss der geheimen Handshake-Box. Es kann nicht lesen, welches Stück gefragt ist oder was die Antwort sagt. Es sieht nur, welche Richtung jede Box geht und wie groß sie ist.",
+    "nerd": "An {hop} ist HTTP in TLS versiegelt: Pfad, Host, Status und Body sind Ciphertext. Was leakt, ist der Servername (SNI im ClientHello, unless ECH), die Adressen, Richtung, Timing und wie viele Bytes vorbeigehen: eine ~400 B Request, eine ~750 kB Response (viele TLS-Records von höchstens 16 kB), dann eine ~200 kB, was andeutet, dass der Player auf eine niedrigere Bitrate gegangen ist.",
+    "describe": {
+      "kid": "{hop} steht in der Mitte der Straße. Verschlossene Boxen gehen vorbei: eine winzige zum Videoserver, eine große zurück, noch eine winzige, dann eine kleinere zurück. Die linke Karte sammelt sie nach Größe. Die rechte Karte zeigt den Brief innen, gekritzelt und mit Schloss.",
+      "nerd": "Ein mittlerer Hop sitzt auf der Straße, während verschlüsselte Records beide Richtungen passieren. Die linke Karte reiht auf, was er beobachten kann: eine kleine Request, eine große Response, eine kleine Request und eine kleinere Response, mit Größen. Die rechte Karte zeigt die HTTP-Nachricht als unlesbaren Ciphertext unter einem Schloss."
+    }
+  },
+  "card": {
+    "ask": {
+      "kid": "Der Bestellzettel",
+      "nerd": "Die Request"
+    },
+    "answer": {
+      "kid": "Beim Videoserver",
+      "nerd": "Cache und Status"
+    },
+    "seen": {
+      "kid": "Alles, was es sehen kann",
+      "nerd": "Nur die Außenseite"
+    },
+    "locked": {
+      "kid": "Der Brief innen",
+      "nerd": "HTTP inside TLS"
+    }
+  },
+  "slip": {
+    "chunk": "Videostück {n}",
+    "med": "Mittel, bitte!",
+    "low": "Niedrig, bitte!"
+  },
+  "meter": {
+    "fast": {
+      "kid": "Schnell",
+      "nerd": "3 Mbit/s"
+    },
+    "slow": {
+      "kid": "Langsam",
+      "nerd": "0,8 Mbit/s"
+    }
+  },
+  "status": {
+    "slower": {
+      "kid": "Langsamer! Frag nach niedrig",
+      "nerd": "Durchsatz sank: 360p"
+    },
+    "play": {
+      "kid": "Läuft weiter!",
+      "nerd": "Kein Stocken: Puffer hielt"
+    },
+    "guess": {
+      "kid": "Kleinere Boxen: niedrigere Qualität?",
+      "nerd": "Größen verraten die Bitrate"
+    },
+    "locked": {
+      "kid": "Nur die zwei Enden können es lesen",
+      "nerd": "Path, Host, status: ciphertext"
+    }
+  },
+  "shelf": {
+    "hit": {
+      "kid": "Auf dem Regal!",
+      "nerd": "HIT · Age: 31"
+    },
+    "miss": {
+      "kid": "Nicht auf dem Regal…",
+      "nerd": "MISS"
+    },
+    "fetch": {
+      "kid": "Von der Hauptkopie",
+      "nerd": "GET vom Origin"
+    },
+    "kept": {
+      "kid": "Eine Kopie behalten!",
+      "nerd": "Stored · max-age"
+    }
+  },
+  "origin": {
+    "kid": "Hauptkopie",
+    "nerd": "Origin"
+  },
+  "size": {
+    "ask": {
+      "kid": "winzig",
+      "nerd": "400 B"
+    },
+    "med": {
+      "kid": "groß",
+      "nerd": "750 kB"
+    },
+    "low": {
+      "kid": "klein",
+      "nerd": "200 kB"
+    }
+  },
+  "tag": {
+    "mpd": "MPD: 1080p · 720p · 360p",
+    "rate": "throughput ≈ 3 → 0,8 Mbit/s",
+    "range": "Range: bytes=… → 206",
+    "hit": "X-Cache: HIT · Age: 31",
+    "miss": "X-Cache: MISS → origin",
+    "length": "TLS: nur Name und Größen",
+    "guess": "size ÷ 2 s ≈ bitrate"
+  },
+  "1995": {
+    "title": "Eine Seite bestellen",
+    "kid": "1995 schreibt {yours} einen Zettel: die Seite, bitte. Der Webserver findet sie auf seiner Disk, stempelt 200 OK und schickt sie zurück. Dann bittet ein zweiter Zettel um das Bild auf der Seite, und das Bild kommt denselben Weg zurück.",
+    "nerd": "Klares HTTP/1.0, kein TLS (SSL 2.0 kam in Netscape 1995, für Shops): GET /index.html bekommt 200 OK mit Content-Type: text/html, dann holt eine neue TCP-Verbindung GET /picture.gif (image/gif). Jeder Hop auf dem Weg konnte alles lesen. Ein Host-Header war noch nicht nötig, und keine gemeinsamen Caches standen standardmäßig in der Mitte; manche Unis und ISPs liefen Caching-Proxys (CERN httpd, Harvest), auf die Browser eingerichtet waren.",
+    "at": {
+      "web-server": {
+        "title": "Der Webserver antwortet",
+        "kid": "Der Webserver liest jeden Zettel und findet, was er fragt, auf der eigenen Disk: zuerst die Seite, dann ihr Bild. Jede Antwort beginnt mit einem Stempel: 200 OK heißt hier ist es.",
+        "nerd": "Der Server (NCSA HTTPd etwa) liest die Request-Line, findet /index.html unter seiner Document Root und antwortet HTTP/1.0 200 OK mit Content-Type: text/html und Content-Length, dann die Datei; dasselbe für /picture.gif (image/gif). Er schließt die Verbindung nach jeder Antwort. Kein Cache, kein CDN (Akamai begann 1998–99).",
+        "describe": {
+          "kid": "Der Webserver ist am Ende der Straße hervorgehoben. Zettel kommen von {yours}. Auf der Server-Karte sitzen Seite und Bild auf der Disk: die Seite leuchtet, ein 200-OK-Stempel kommt runter und die Seite geht zurück. Dann leuchtet das Bild und geht denselben Weg zurück.",
+          "nerd": "Der Webserver ist der fokussierte Endpunkt. Requests kommen an: auf der Disk-Karte findet GET /index.html die Seite, 200 OK, und die Seite geht zurück; dann GET /picture.gif findet das Bild, 200 OK, und es kehrt zurück. Jede Datei kommt von der eigenen Disk des Servers."
+        }
+      }
+    },
+    "card": {
+      "answer": {
+        "kid": "Beim Server",
+        "nerd": "Platte und Status"
+      },
+      "seen": {
+        "kid": "Was vorbeigeht",
+        "nerd": "Readable, unread"
+      },
+      "locked": {
+        "kid": "Der Brief innen",
+        "nerd": "Plain HTTP"
+      }
+    },
+    "sealed": {
+      "title": "{hop} konnte alles lesen",
+      "kid": "{hop} trägt die Zettel und die Antworten. 1995 waren gewöhnliche Seiten nicht abgeschlossen, also konnte es lesen, welche Seite gefragt ist und was zurückkommt. Aber ein Router liest nur die Adresse auf dem Päckchen und gibt den Rest weiter.",
+      "describe": {
+        "kid": "{hop} steht in der Mitte der Straße. Geschlossene Boxen mit Schriftzeilen gehen vorbei: eine winzige zum Server, eine kleine zurück, noch eine winzige, dann eine größere zurück. Die linke Karte sammelt sie nach Größe. Die rechte Karte zeigt den Brief innen, in klarer Schrift ohne Schloss.",
+        "nerd": "Ein mittlerer Hop sitzt auf der Straße, während klares HTTP beide Richtungen passiert. Die linke Karte reiht auf, was vorbeigeht: eine kleine Request, die Seite, noch eine kleine Request und das größere Bild, mit Größen. Die rechte Karte zeigt die HTTP-Nachricht als lesbare Zeilen, ohne Schloss."
+      },
+      "nerd": "An {hop} ist HTTP Klartext in TCP: Request-Line, Header und Body sind alle auf der Leitung lesbar, und wer Zugriff auf den Link hatte, konnte sie loggen oder ändern. Sogar die Größen stehen da (Content-Length): eine ~300 B Request, die 8-kB-Seite, dann ihr 30-kB-Bild. Ein Router leitet am IP-Header weiter und schaut nicht weiter."
+    },
+    "status": {
+      "locked": {
+        "kid": "Jeder auf dem Weg konnte es lesen",
+        "nerd": "Pfad, Header, Status: Klartext"
+      },
+      "guess": {
+        "kid": "Es könnte sie lesen, tut es aber nicht",
+        "nerd": "Nichts zu raten: lesbar"
+      }
+    },
+    "tag": {
+      "length": "Kein TLS: alles im Klartext",
+      "request": "HTTP/1.0 · kein Host-Header",
+      "page": "Content-Type: text/html",
+      "picture": "Content-Type: image/gif",
+      "guess": "Content-Length im Klartext"
+    },
+    "describe": {
+      "kid": "Eine Straße verbindet {yours} und den Webserver. Auf der linken Karte bittet ein Zettel um die Seite und geht zum Server. Der Server findet die Seite auf der Disk, stempelt 200 OK und schickt sie zurück. Dann bittet der nächste Zettel um das Bild, und das Bild kommt zurück.",
+      "nerd": "Die linke Karte zeigt die Request: GET /index.html HTTP/1.0 und eine Accept-Zeile. Die rechte Karte ist die Disk des Servers: die Seite wird gefunden, gestempelt 200 OK, und geht zurück; dann GET /picture.gif, und das Bild kehrt denselben Weg. No cache, no origin."
+    },
+    "slip": {
+      "page": "Die Seite, bitte!",
+      "picture": "Das Bild, bitte!"
+    },
+    "shelf": {
+      "disk": {
+        "kid": "Auf der Disk!",
+        "nerd": "Von der Platte gelesen"
+      }
+    },
+    "size": {
+      "ask": {
+        "nerd": "300 B"
+      },
+      "med": {
+        "kid": "klein",
+        "nerd": "8 kB"
+      },
+      "low": {
+        "kid": "groß",
+        "nerd": "30 kB"
+      }
+    },
+    "role": {
+      "bridge": {
+        "title": "{hop} trägt es ungelesen",
+        "kid": "{hop} trägt die Zettel und die Antworten in deinem Telefonanruf. 1995 waren gewöhnliche Seiten nicht abgeschlossen, aber {hop} öffnet das Päckchen gar nicht: es gibt den Anruf nur weiter.",
+        "nerd": "An {hop} fahren die PPP-Frames im Call, sodass es das IP-Paket nie sieht, geschweige denn HTTP darin. Dieses HTTP ist Klartext: wer die Leitung anzapfte und den Call dekodierte, konnte Request-Line, Header und Body lesen, und die Größen auch: eine ~300 B Request, die 8-kB-Seite, dann ihr 30-kB-Bild."
+      }
+    }
+  },
+  "2010": {
+    "kid": "{yours} schreibt einen Zettel: das Video, bitte. Der Videoserver findet es auf seinem Regal, stempelt 200 OK und schickt es zurück. 2010 holten die meisten Player das ganze Video als eine Datei; der Trick in der Zeichnung war neu: wird die Verbindung langsamer, bittet der nächste Zettel um niedrigere Qualität, sodass der Film weiterläuft.",
+    "nerd": "2010 ist das klares HTTP, kein TLS (YouTube wechselte zu HTTPS als Default Mitte der 2010s): GET mit Host, und ein 200 OK von einem CDN-Cache, meist in einer größeren Stadt weiter weg. Das meiste Web-Video war eine Datei ganz geholt (progressive Download, mit Range: bytes=… → 206 zum Vorspulen); Adaptive Bitrate wie gezeichnet, die Qualität jedes Stücks, kam gerade (Apples HLS 2009; DASH wurde Standard 2012).",
+    "card": {
+      "seen": {
+        "kid": "Was vorbeigeht",
+        "nerd": "Readable, unread"
+      },
+      "locked": {
+        "kid": "Der Brief innen",
+        "nerd": "Plain HTTP"
+      }
+    },
+    "sealed": {
+      "title": "{hop} konnte alles lesen",
+      "kid": "{hop} trägt die Zettel und die Antworten. 2010 waren Videos nicht abgeschlossen, also konnte es lesen, welches Video gefragt ist. Aber ein Router liest nur die Adresse auf dem Päckchen und gibt den Rest weiter.",
+      "describe": {
+        "kid": "{hop} steht in der Mitte der Straße. Geschlossene Boxen mit Schriftzeilen gehen vorbei: eine winzige zum Server, eine große zurück, noch eine winzige, dann eine kleinere zurück. Die linke Karte sammelt sie nach Größe. Die rechte Karte zeigt den Brief innen, in klarer Schrift ohne Schloss.",
+        "nerd": "Ein mittlerer Hop sitzt auf der Straße, während klares HTTP beide Richtungen passiert. Die linke Karte reiht auf, was vorbeigeht: eine kleine Request, das ganze Video in einer großen Response, eine kleine Range-Request und eine kleinere 206-Response mit dem Rest, mit Größen. Die rechte Karte zeigt die HTTP-Nachricht als lesbare Zeilen, ohne Schloss."
+      },
+      "nerd": "An {hop} ist HTTP Klartext: Video war 2010 nicht verschlüsselt, kein TLS, also konnten URL, Host und Header auf der Leitung gelesen werden (manche ISP-Caches und Filter taten das). Die Größen auch: ein 200 OK, dessen Content-Length das ganze 17-MB-Video ist, dann nach einem Sprung nach vorn eine Range-Request, beantwortet mit 206 Partial Content mit dem Rest. Ein Router leitet am IP-Header weiter und schaut nicht weiter."
+    },
+    "status": {
+      "locked": {
+        "kid": "Jeder auf dem Weg konnte es lesen",
+        "nerd": "Pfad, Host, Status: Klartext"
+      },
+      "guess": {
+        "kid": "Es könnte sie lesen, tut es aber nicht",
+        "nerd": "Vorgespult: Range → 206"
+      }
+    },
+    "tag": {
+      "length": "Kein TLS: alles im Klartext",
+      "mpd": "M3U8: 1080p · 720p · 360p",
+      "guess": "Content-Length = ganzes Video"
+    },
+    "size": {
+      "med": {
+        "nerd": "17 MB"
+      },
+      "low": {
+        "nerd": "8,5 MB"
+      }
+    },
+    "role": {
+      "bridge": {
+        "title": "{hop} trägt es ungelesen",
+        "kid": "{hop} trägt die Zettel und die Antworten. 2010 waren Videos nicht abgeschlossen, aber {hop} liest nicht einmal die Adresse auf dem Päckchen: es gibt es nur weiter.",
+        "nerd": "An {hop} ist HTTP Klartext: Video war 2010 nicht verschlüsselt, kein TLS, also konnten URL, Host und Header auf der Leitung gelesen werden, und die Größen auch: ein 200 OK, dessen Content-Length das ganze 17-MB-Video ist, dann nach einem Sprung nach vorn eine Range-Request, beantwortet mit 206 Partial Content mit dem Rest. {hop} selbst gibt die Frames weiter, ohne auch nur den IP-Header zu lesen."
+      }
+    }
+  }
+}

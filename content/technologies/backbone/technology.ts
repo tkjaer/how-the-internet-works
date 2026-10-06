@@ -11,5 +11,6 @@ export default defineTechnology({
   rate: { down: 100e9, up: 100e9 },
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Internet_backbone', title: 'Internet backbone', level: 'both', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Internet-Backbone', title: 'Internet-Backbone', level: 'both', lang: 'de' },
   ],
 });

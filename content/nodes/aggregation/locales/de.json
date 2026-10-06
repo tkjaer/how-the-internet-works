@@ -1,0 +1,8 @@
+{
+  "name": "Aggregation-Switch",
+  "2010": {
+    "kid": "Ein großer Switch in der Mitte des Rechenzentrums. Jeder Schrank voller Computer hat zwei Wege nach oben; dieser Switch nimmt den vollen, und ein Ersatz steht daneben, falls er kaputtgeht.",
+    "nerd": "Die Aggregation-Schicht eines Three-Tier-Rechenzentrums: ein Chassis-Switch, an dem jeder 10G-Uplink der Access-Switches endet, Layer 2 aufhört und HSRP den Servern das Gateway gibt. Ein Standby-Zwilling wartet daneben; Spanning Tree sperrt die Uplinks dorthin, damit der Baum keine Schleife hat.",
+    "tag": "Aggregation · HSRP · STP"
+  }
+}

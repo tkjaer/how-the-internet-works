@@ -1,0 +1,60 @@
+{
+  "title": "Das geheime Händeschütteln",
+  "kid": "Der Videoserver und {yours} machen ein geheimes Händeschütteln, bevor der Film startet. Der Server zeigt seinen Ausweis mit Goldstempel, und beide Seiten mischen Farben, bis sie dieselbe Schlossfarbe haben. Danach reist jedes Päckchen abgeschlossen.",
+  "nerd": "TLS 1.3, ein Round Trip: der ClientHello trägt SNI und einen X25519 Share g^a; der ServerHello antwortet mit g^b. Beide rechnen g^ab und leiten Keys mit HKDF ab. Dann, schon encrypted, schickt der Server seine Certificate Chain (leaf → intermediate, verankert an einem Root im Trust Store; Name und Daten geprüft) und eine CertificateVerify Signature, die beweist, dass er den Key des Certificate besitzt. Records werden dann mit AEAD geschützt (AES-GCM oder ChaCha20-Poly1305), RFC 8446.",
+  "describe": {
+    "kid": "Eine Straße verbindet {yours} und den Videoserver. Die erste Karte zeigt einen Ausweis und ein Buch mit vertrauten Stempeln. Die zweite zeigt Farbtöpfe, die sich auf beiden Seiten mischen. Ein Rabe sieht nur die öffentlichen Mischungen, blass Pfirsich und Limette. Dann klickt ein Schloss auf das Päckchen, und das abgeschlossene Päckchen reist die Straße entlang.",
+    "nerd": "Die Karten zeigen TLS 1.3 vom Client Endpoint. Die Farb-Gleichungen zeigen zuerst das Key Agreement; die Ausweiskarte dann die Certificate Validation, schon encrypted gesendet. Der Rabe sieht die Public Shares auf dem Wire, nie die Secrets oder das Certificate. Dann wird das Päckchen ein Encrypted Record und geht zum Server."
+  },
+  "at": {
+    "cdn": {
+      "title": "Der Server beweist, wer er ist",
+      "kid": "Der Videoserver zeigt seinen Ausweis mit Goldstempel. Er mischt auch seine geheime Farbe, damit er genau dieselbe Schlossfarbe wie {yours} bekommt. Dann schickt er Video-Päckchen, die nur die zwei Enden öffnen können.",
+      "nerd": "Am Server Endpoint terminiert TLS: das X25519 Secret des Servers kombiniert mit dem Public Share des Clients dieselben Traffic Keys. Dann, schon encrypted, schickt er sein Certificate für video.example und eine CertificateVerify Signature, die beweist, dass er den Key des Certificate hält. Records gehen als Authenticated Ciphertext unter der gewählten TLS 1.3 Cipher Suite raus.",
+      "describe": {
+        "kid": "Der Videoserver ist am Ende der Straße markiert. Er zeigt seinen gestempelten Ausweis, mischt seine Farbe mit der Mischung von {yours} und landet bei derselben Schlossfarbe. Der Rabe kann die blassen Mischungen sehen. Nach dem Schloss reist das Päckchen als abgeschlossene Box, die nur die zwei Enden öffnen können.",
+        "nerd": "Am Server Endpoint zeigen die Karten ECDHE als Farbe und dann die Certificate Chain. Der Server gibt seinen Public Share und leitet passende Traffic Keys ab. Der Rabe auf dem Wire sieht den Server Name und die Public Values, nicht das Certificate, das schon encrypted ist. Danach bewegen sich nur Authenticated Ciphertext Records als abgeschlossene Päckchen."
+      }
+    }
+  },
+  "sealed": {
+    "title": "Unterwegs abgeschlossen",
+    "kid": "Schritt für Schritt: 1. Der Videoserver zeigt {yours} seinen Ausweis. 2. Jede Seite mischt eine geheime Farbe und tauscht nur die Mischung. 3. Beide bekommen dieselbe Farbe, und sie schließt das Päckchen ab. {hop} trägt es nur. Wie der Rabe sieht er nur die Mischungen und eine abgeschlossene Box.",
+    "nerd": "Bei {hop} ist TLS end-to-end versiegelt: 1. ECDHE einigt sich auf einen Key, 2. der Server beweist sich mit Certificate und CertificateVerify Signature, beides schon encrypted, 3. AEAD versiegelt jeden Record. Der Hop forwardet Lower-Layer Headers; er kann den Server Name im ClientHello sehen (SNI, außer Encrypted Client Hello) und die zwei ECDHE Public Shares, aber nicht das Certificate (in TLS 1.3 encrypted), die HTTP Request oder die Keys.",
+    "describe": {
+      "kid": "Ein mittlerer Halt sitzt auf der Straße, {yours} und der Server an den Enden. Karte 1 zeigt die Ausweisprüfung und Karte 2 das Farbmischen, der Rabe sieht die blassen öffentlichen Mischungen. Wenn das Schloss kommt, wird das Gesicht des Päckchens zu Gekritzel. Der Halt trägt nur das abgeschlossene Päckchen weiter.",
+      "nerd": "Diese Non-Endpoint-Ansicht zeigt TLS über dem Hop versiegelt. Die ECDHE Shares und der Server Name sind auf dem Wire sichtbar; das Certificate ist schon encrypted. Das Gerät, bei dem du bist, forwardet nur Lower-Layer Pakete. Sind Records geschützt, ist das wandernde Päckchen abgeschlossen und als Ciphertext gekritzelt, kein lesbares HTTP."
+    }
+  },
+  "label": {
+    "videoName": "video.example",
+    "stamps": "Vertraute Stempel",
+    "locked": "3 · Abgeschlossen!",
+    "crow": "Rabe sieht nur Mischungen",
+    "crowShort": "Nur Mischungen",
+    "prove": {
+      "kid": "1 · Ausweis prüfen",
+      "nerd": "2 · Certificate"
+    },
+    "proveShort": {
+      "kid": "1 · Ausweis",
+      "nerd": "2 · Cert"
+    },
+    "paint": {
+      "kid": "2 · Farben mischen",
+      "nerd": "1 · Key exchange"
+    },
+    "paintShort": {
+      "kid": "2 · Farbe",
+      "nerd": "1 · Keys"
+    },
+    "server": "Server",
+    "tick": "Stempel OK",
+    "router": "Router",
+    "core": "Core"
+  },
+  "tag": {
+    "chain": "encrypted: chain + CertVerify",
+    "ecdhe": "X25519: g^a, g^b"
+  }
+}

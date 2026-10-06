@@ -1,0 +1,28 @@
+{
+  "name": "Zu Hause, Schreibtisch",
+  "access": "Laptop am Kabel",
+  "kid": "Diesmal kein Funk: die Päckchen laufen ein Kabel geradewegs in den Router, dann einen Glasfaden hinaus ins Internet.",
+  "nerd": "Kabelgebunden: Ethernet-Frames gehen direkt vom Port des Laptops zum Heimrouter, der NAT macht und sie über den Glasfaser-Uplink (XGS-PON) zum ISP schickt.",
+  "describe": {
+    "kid": "Ein aufgeschnittenes Haus zeigt einen Schreibtisch, einen Laptop und den Heimrouter. Ein Kabel läuft vom Laptop zum Router, dann geht Glasfaser aus dem Haus zur Internetwolke. Kleine Päckchen gehen als Anfragen raus und als Video zurück.",
+    "nerd": "Diese Übersicht folgt einem kabelgebundenen Weg durchs Haus. Sie startet am Laptop, kreuzt Ethernet zum Router und nutzt XGS-PON-Glasfaser zur Internetwolke. Anfrage-Pakete gehen aufwärts, Video-Pakete kommen zurück."
+  },
+  "tag": {
+    "laptop": "Ethernet · 192.168.1.40",
+    "router": "NAT → 203.0.113.7"
+  },
+  "stop": {
+    "laptop": {
+      "kid": "Der Laptop will auch ein Video. Er schickt seine Anfrage das Kabel runter – ohne Wellen in der Luft.",
+      "nerd": "Dieselbe HTTPS-Anfrage wie auf dem Handy, aber die unterste Schicht ist ein Ethernet-Frame auf Twisted-Pair statt eines Wi-Fi-Radio-Frames."
+    }
+  },
+  "inside": {
+    "internet": {
+      "describe": {
+        "kid": "In der Wolke startet der Weg bei dir zu Hause. Er läuft durch den Straßenkasten, das Glasfaser-Ende, das ISP-Tor und den ISP-Kern. Dann Border-Router, Internetknoten und das Rechenzentrum der Videofirma, eine Box zum Öffnen. Der gestrichelte Abzweig zeigt Transit.",
+        "nerd": "Die aufgeklappte Internetroute startet am Heimzugang, dann Splitterkasten, OLT, BNG und ISP-Kern. Weiter zum Border-Router, IXP und CDN-Rechenzentrum, das sich öffnet. Anfragen und Video laufen entgegengesetzt über Glasfaser, Backbone und Cross-Connects."
+      }
+    }
+  }
+}

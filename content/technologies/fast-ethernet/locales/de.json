@@ -1,0 +1,8 @@
+{
+  "name": "Kabel",
+  "2010": {
+    "kid": "Ein Kupferkabel trägt das Päckchen als winzige elektrische Signale.",
+    "nerd": "Fast Ethernet über zwei Twisted Pairs (100BASE-TX, MLT-3): die Ports des Routers liefen mit 100 Mbit/s.",
+    "tag": "100BASE-TX · Cat 5"
+  }
+}

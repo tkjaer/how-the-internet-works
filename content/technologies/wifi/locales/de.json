@@ -1,0 +1,10 @@
+{
+  "name": "Wi-Fi",
+  "kid": "Die Anfrage fliegt als Funkwellen durch die Luft – kein Kabel nötig!",
+  "nerd": "802.11ax auf 5 GHz: OFDMA-Subträger, 1024-QAM, WPA3-Verschlüsselung zwischen Gerät und AP.",
+  "tag": "5 GHz · OFDM · 1024-QAM",
+  "2010": {
+    "nerd": "802.11n auf 2,4 oder 5 GHz: OFDM-Subträger, 64-QAM, MIMO-Streams, WPA2-Verschlüsselung zwischen Gerät und AP.",
+    "tag": "2,4/5 GHz · OFDM · 64-QAM"
+  }
+}

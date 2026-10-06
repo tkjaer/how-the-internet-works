@@ -1,0 +1,16 @@
+{
+  "name": "Kern",
+  "kid": "Die Autobahn deiner Internetfirma: superschnelle Verbindungen zwischen großen Städten.",
+  "nerd": "Ein MPLS-Kern mit 100–400G-Links; Pakete werden label-switched statt an jedem Hop nachgeschlagen.",
+  "tag": "MPLS · 400G",
+  "1995": {
+    "name": "Router",
+    "kid": "Der eine große Router der Internetfirma, in einem Hinterzimmer. Jedes Päckchen von denen, die einwählen, geht hindurch.",
+    "nerd": "Der eine Router des kleinen ISP: Ethernet zur Modem-Bank, eine gemietete E1 zum Upstream und eine zu DIX. Er schlägt die Adresse jedes Pakets in seiner Tabelle nach; MPLS-Labels gab es noch nicht (RFC 3031, 2001).",
+    "tag": "Router · 2 × E1"
+  },
+  "2010": {
+    "nerd": "Ein MPLS-Kern mit 10–40G-Links, die ersten 100G kamen 2010; Pakete werden label-switched statt an jedem Hop nachgeschlagen.",
+    "tag": "MPLS · 10G"
+  }
+}

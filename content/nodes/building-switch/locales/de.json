@@ -1,0 +1,6 @@
+{
+  "name": "Kellerswitch",
+  "kid": "Eine Box an der Kellerwand. Kabel aus jeder Wohnung treffen sich hier, und ein Glasfaden geht zur Internetfirma hinaus.",
+  "nerd": "Ein Access-Switch der Internetfirma: Kupfer- (oder G.fast-)Ports für die Wohnungen, ein Glasfaser-Uplink und ein VLAN pro Wohnung Richtung BNG.",
+  "tag": "L2 · VLAN je Wohnung"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Amtsleitung",
+  "1995": {
+    "kid": "Eine dicke Telefonleitung zwischen der Vermittlungsstelle der Mobilfunkfirma und der normalen Telefongesellschaft. Sie trägt 30 Anrufe gleichzeitig, jeden auf seinem Platz, und deiner ist einer davon und piept wie ein Modem.",
+    "nerd": "Ein E1-Trunk zwischen MSC und PSTN-Vermittlung: 30 Anrufe à 64 kbit/s, A-law PCM, und Slot 16 für SS7 (ISUP setzt jeden Anruf auf). Dein Slot trägt die V.32-Modemtöne des IWF mit 9,6 kbit/s, die ein Modem beim ISP beantwortet.",
+    "tag": "E1 · SS7 · 64 kbit/s"
+  }
+}

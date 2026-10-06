@@ -14,6 +14,8 @@ export default defineLayer({
   dive: 'ppp-hello',
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/High-Level_Data_Link_Control#Cisco_HDLC', title: 'Cisco HDLC', level: 'nerd', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/High-Level_Data_Link_Control', title: 'High-Level Data Link Control', level: 'nerd', lang: 'de' },
     { url: 'https://en.wikipedia.org/wiki/Leased_line', title: 'Leased line', level: 'both', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Standleitung', title: 'Standleitung', level: 'both', lang: 'de' },
   ],
 });

@@ -23,6 +23,8 @@ export default defineLayer({
   learnMore: [
     { url: 'https://en.wikipedia.org/wiki/Internet_Protocol', title: 'Internet Protocol', level: 'both', lang: 'en' },
     { url: 'https://da.wikipedia.org/wiki/IP-adresse', title: 'IP-adresse', level: 'both', lang: 'da' },
+    { url: 'https://de.wikipedia.org/wiki/Internet_Protocol', title: 'Internet Protocol', level: 'both', lang: 'de' },
     { url: 'https://en.wikipedia.org/wiki/Time_to_live', title: 'Time to live', level: 'nerd', lang: 'en' },
+    { url: 'https://de.wikipedia.org/wiki/Time_to_Live', title: 'Time to Live', level: 'nerd', lang: 'de' },
   ],
 });
