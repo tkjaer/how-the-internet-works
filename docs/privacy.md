@@ -32,23 +32,25 @@ if the server is down, slow or blocked, nothing changes for you.
 **What the server does with it.** The server ([GoatCounter](https://www.goatcounter.com), self-hosted, behind nginx)
 does not log the requests it counts. nginx uses your IP address, in memory only, to limit how many counts one address
 can send, and looks at the browser's User-Agent and prefetch headers to turn away obvious bots and preloads; it passes
-none of those headers on. GoatCounter uses the IP address, again in memory only, to look up the country with a
-database on the server itself, and then adds one to two counters: page loads per language per hour, and per country
-and language per day. Your IP address and your browser's details are not stored, and there is no row per visit; but
-at low traffic a counter can hold a 1, which then describes a single visit (its language, its hour, and its country
-that day). These counters are deleted after 31 days. The server also hosts other sites, and a connection that fails
-before it says it is for `stats.irq.dk` may end up in their logs instead; the app's own requests never do. The
+none of those headers on. GoatCounter uses the IP address, again in memory only (for the few seconds until the count
+is added), to look up the country with a database on the server itself, and then adds one to two counters: page
+loads per language per hour, and per country and language per day. Your IP address and your browser's details are
+not stored, and there is no row per visit; but at low traffic a counter can hold a 1, which then describes a single
+visit (its language, its hour, and its country that day). These counters are deleted after 31 days. The server also
+hosts other sites, and a connection that fails before it says it is for `stats.irq.dk` may end up in their logs
+instead; the app's own requests never do. The
 [open-stats README](https://github.com/tkjaer/open-stats#limits-what-this-can-and-cant-promise) lists this and the
 counts' other limits.
 
 **What is published.** Once a week, totals for the week are published in
-[tkjaer/open-stats](https://github.com/tkjaer/open-stats) (CC0), as three separate tables: page loads per day,
-language per day, and countries per day. Days are in UTC. On a quiet day, with fewer than 20 page loads, only that
+[tkjaer/open-stats-data](https://github.com/tkjaer/open-stats-data) (CC0), as three separate tables: page loads per
+day, language per day, and countries per day. Days are in UTC. On a quiet day, with fewer than 20 page loads, only that
 day's total is published, without its languages or countries, because on such a day the tables could be combined to
 describe single visits. On other days, a country with fewer than 5 page loads that day is counted under "other", so a
 single visit from a small country can't be picked out, and no weekly country numbers are published that the hidden
-days could be worked out from. Published totals are kept for good, in the repo and its history. The server's setup
-and the export program are in the same repo.
+days could be worked out from. That makes combining the tables to single out a visit hard, not impossible. Published
+totals are kept for good, in the repo and its history. The server's setup and the export program are in
+[tkjaer/open-stats](https://github.com/tkjaer/open-stats).
 
 **Turning it off.** Any of these stops it:
 

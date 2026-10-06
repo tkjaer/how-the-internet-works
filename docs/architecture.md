@@ -754,7 +754,8 @@ to `VITE_STATS_URL` with the language, and ignores the answer and any error. It 
 Control or Do Not Track, when the reader turned it off in About (`localStorage` `count=off`, checked again just
 before sending), or when the page isn't `VITE_SITE_URL` itself (same origin and path, `onSite`), so dev,
 `--only=subpath` and forks never count. The server and the published totals are in
-[tkjaer/open-stats](https://github.com/tkjaer/open-stats).
+[tkjaer/open-stats](https://github.com/tkjaer/open-stats) and
+[tkjaer/open-stats-data](https://github.com/tkjaer/open-stats-data).
 
 ## Performance
 
