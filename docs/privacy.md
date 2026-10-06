@@ -30,12 +30,13 @@ request has: your IP address and the browser's standard headers. The answer is i
 slow or blocked, nothing changes for you.
 
 **What the server keeps.** The server ([GoatCounter](https://www.goatcounter.com), self-hosted, behind nginx) does not
-log requests. It uses your IP address only in memory to look up the country, with a database on the server itself, and
-then adds one to two totals: page loads per language per hour, and per country per day. Your IP address, the browser
-details and the time of your visit are not stored, and no record of the single visit is kept. Those totals are
-deleted after 31 days. (The one exception: if the counter itself hits an error, its message in the server's system log
-could rarely include a request's details. The [open-stats README](https://github.com/tkjaer/open-stats#readme) lists
-this and the counts' other limits.)
+log the requests it counts. It uses your IP address only in memory to look up the country, with a database on the
+server itself, and then adds one to two totals: page loads per language per hour, and per country per day. Your IP
+address, the browser details and the time of your visit are not stored, and no record of the single visit is kept.
+Those totals are deleted after 31 days. The server also hosts other sites, and a connection that fails before it says
+it is for `stats.irq.dk` may end up in their logs instead; the app's own requests never do. The
+[open-stats README](https://github.com/tkjaer/open-stats#limits-what-this-can-and-cant-promise) lists this and
+the counts' other limits.
 
 **What is published.** Once a week, totals for the week are published in
 [tkjaer/open-stats](https://github.com/tkjaer/open-stats) (CC0), as three separate tables: page loads per day,
