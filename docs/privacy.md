@@ -33,13 +33,14 @@ The answer is ignored, and if the server is down, slow or blocked, nothing chang
 does not log the requests it counts. nginx looks at the browser's User-Agent and prefetch headers to turn away obvious
 bots and preloads, and passes none of those headers on. There is no limit per IP address, only one cap on all counts
 together. GoatCounter uses your IP address to look up the country with a database on the server itself, and then adds
-one to two counters: page loads per language per hour, and per country and language per day. GoatCounter also keeps
-the IP address in memory (never on disk or in a log) as a key in its rate limiter, for at most one hour: it restarts
-every hour, which clears the rate limiter. The key isn't linked to the page or language. Your IP address and your
-browser's details are not stored on disk, and there is no row per visit; but at low traffic a counter can hold a 1,
-which then describes a single visit (its language, its hour, and its country that day). These counters are deleted
-after 31 days. The server also hosts other sites, and a connection that fails before it says it is for
-`stats.irq.dk` may end up in their logs instead; the app's own requests never do. The
+one to two counters: page loads per language per hour, and per country and language per day. It also keeps copies of
+the same counts in a few other tables, with the screen-size, browser-language and referrer fields left empty.
+GoatCounter also keeps the IP address in memory (never on disk or in a log) as a key in its rate limiter, for at most
+one hour: it restarts every hour, which clears the rate limiter. The key isn't linked to the page or language. Your IP
+address and your browser's details are not stored on disk, and there is no row per visit; but at low traffic a counter
+can hold a 1, which then describes a single visit (its language, its hour, and its country that day). These counters
+and their copies are deleted after 31 days. The server also hosts other sites, and a connection that fails before it
+says it is for `stats.irq.dk` may end up in their logs instead; the app's own requests never do. The
 [open-stats README](https://github.com/tkjaer/open-stats#limits-what-this-can-and-cant-promise) lists this and the
 counts' other limits, and the setup guide
 [explains the rate limiter, with links to its source](https://github.com/tkjaer/open-stats/blob/main/collector/README.md#goatcounters-rate-limiter).
