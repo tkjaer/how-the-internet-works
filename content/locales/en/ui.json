@@ -155,6 +155,10 @@
   "about.license": "License",
   "about.terms": "Terms and credit",
   "about.contributors": "Contributors",
+  "about.countWhat": "Each time the app opens, it sends one anonymous count with its language to the author's own stats server: no cookies, nothing about you. Only totals are kept, and they're published.",
+  "about.count": "Count my visit",
+  "about.countDnt": "Your browser asks sites not to track you, so your visits aren't counted.",
+  "about.privacy": "Privacy",
   "ui.more": "More",
   "ui.on": "on",
   "ui.off": "off"

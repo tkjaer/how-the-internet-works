@@ -155,6 +155,10 @@
   "about.license": "Licens",
   "about.terms": "Vilkår og kreditering",
   "about.contributors": "Bidragydere",
+  "about.countWhat": "Hver gang appen åbnes, sender den én anonym optælling med sit sprog til forfatterens egen statistikserver: ingen cookies, intet om dig. Kun totaler gemmes, og de offentliggøres.",
+  "about.count": "Tæl mit besøg",
+  "about.countDnt": "Din browser beder sider om ikke at spore dig, så dine besøg tælles ikke.",
+  "about.privacy": "Privatliv",
   "ui.more": "Mere",
   "ui.on": "til",
   "ui.off": "fra"

@@ -3,6 +3,7 @@ import App from './App.svelte';
 import './ui/ui.css';
 import { nowEra } from './model/registry';
 import { resolveRoute } from './model/resolve';
+import { countVisit } from './count.svelte';
 import { loadPack } from './model/strings';
 import { loadRouteArt } from './render/lazy.svelte';
 import { current } from './router';
@@ -26,3 +27,4 @@ await Promise.all([
   route.era !== nowEra() && loadPastStrings(),
 ]);
 mount(App, { target: document.body });
+countVisit(start.lang);

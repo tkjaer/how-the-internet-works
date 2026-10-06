@@ -103,7 +103,7 @@ button { cursor: pointer; }
 .menu-opts .btn { min-height: 36px; padding: 6px 10px; font-size: 14px; }
 .menu-opts .btn.on { background: var(--btn-on); color: var(--btn-on-ink); }
 .menu-opts .swatch { width: 18px; height: 18px; border-radius: 6px; }
-/* About (About.svelte): the credit, the licence and the source */
+/* About (About.svelte): the credit, the licence, the source and the visit counting switch */
 .about-box { width: min(360px, calc(100% - 24px)); max-height: calc(100dvh - 130px); overflow: auto; padding: 8px 10px 12px; }
 .about-box:focus { outline: none; }
 .about-head { display: flex; align-items: center; justify-content: space-between; }
@@ -113,6 +113,8 @@ button { cursor: pointer; }
 .about-box .about-credit { margin-bottom: 2px; font-family: var(--heading-font); font-weight: var(--heading-weight); font-size: 18px; line-height: 1.25; color: var(--heading); }
 .about-box .about-fine { color: var(--muted); font-size: 12.5px; font-weight: 700; }
 .about-box .about-links { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-bottom: 0; }
+.about-box .about-count { margin: -2px 0 8px; font-size: 14px; }
+.about-count b { font-weight: 800; }
 .about-links a { color: var(--link); font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
 @media (min-width: 701px) { .menu { min-width: 280px; } .about-box { width: min(420px, calc(100% - 24px)); } }
 .crumb-menu { inset-inline: 12px auto; display: grid; gap: 4px; }

@@ -17,7 +17,7 @@ https://github.com/user-attachments/assets/8b760d17-ea45-498c-a1c6-6a8e7560795a
 
 - [How it's built](docs/architecture.md): the model, the scene tree, the URL format, CI and performance
 - [Adding to it](docs/authoring.md): a node, a layer, a dive scene, an era, a place or a language, each as a folder
-- [Accessibility](docs/accessibility.md) and [privacy](docs/privacy.md) (no tracking, no cookies, nothing loaded from other sites)
+- [Accessibility](docs/accessibility.md) and [privacy](docs/privacy.md) (no cookies, nothing loaded from other sites; one anonymous visit count to the author's own server, off in About)
 - [How the look was chosen](docs/look-and-feel.md) and [the rendering stack](docs/visualisation-spikes.md)
 - What's next: [v1.1: more eras](https://github.com/tkjaer/how-the-internet-works/milestone/2) and [later: learning features](https://github.com/tkjaer/how-the-internet-works/milestone/3)
 - [Contributing](CONTRIBUTING.md): running it locally, tests and checks; [contributors](CONTRIBUTORS.md); [security](SECURITY.md)
