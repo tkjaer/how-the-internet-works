@@ -24,10 +24,10 @@ small server (`stats.irq.dk`), not with an analytics company.
 
 **What your browser sends.** Once each time the app is loaded (opening it, reloading, a new tab), after the page has
 settled, one request: `https://stats.irq.dk/how-the-internet-works/count?lang=da`. The only data the app puts in it
-is the language it opened in (`en` or `da`). Moving around in the app sends nothing more. The request carries no
-cookie, no identifier, no referrer (not even which page you were on) and nothing from `localStorage`. Like any
-request, it does reach the server with your IP address and your browser's standard headers. The answer is ignored, and
-if the server is down, slow or blocked, nothing changes for you.
+is the language it opened in, as a two-letter code (`en`, `da`, `de`). Moving around in the app sends nothing more.
+The request carries no cookie, no identifier, no referrer (not even which page you were on) and nothing from
+`localStorage`. Like any request, it does reach the server with your IP address and your browser's standard headers.
+The answer is ignored, and if the server is down, slow or blocked, nothing changes for you.
 
 **What the server does with it.** The server ([GoatCounter](https://www.goatcounter.com), self-hosted, behind nginx)
 does not log the requests it counts. nginx looks at the browser's User-Agent and prefetch headers to turn away obvious

@@ -155,6 +155,10 @@
   "about.license": "Lizenz",
   "about.terms": "Bedingungen und Namensnennung",
   "about.contributors": "Mitwirkende",
+  "about.countWhat": "Bei jedem Öffnen sendet die App eine Zählung mit ihrer Sprache an den eigenen Statistikserver des Autors: kein Cookie, keine ID. Der Server sieht deine IP-Adresse wie jede Website und nutzt sie nur für dein Land und, höchstens eine Stunde lang im Arbeitsspeicher, um Zählungen zu begrenzen. Er speichert nur Summen, und die werden veröffentlicht.",
+  "about.count": "Meinen Besuch zählen",
+  "about.countDnt": "Dein Browser bittet Websites, dich nicht zu verfolgen, deshalb werden deine Besuche nicht gezählt.",
+  "about.privacy": "Datenschutz",
   "ui.more": "Mehr",
   "ui.on": "an",
   "ui.off": "aus"
