@@ -24,7 +24,7 @@ concurrency:
 jobs:
   build:
     runs-on: ${{ github.event.repository.private && fromJSON('["self-hosted","lab"]') || 'ubuntu-latest' }}
-    container: mcr.microsoft.com/playwright:v1.63.0-noble
+    container: mcr.microsoft.com/playwright:v1.64.1-noble
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -50,7 +50,7 @@ jobs:
     if: github.event_name != 'push'
     runs-on: ${{ github.event.repository.private && fromJSON('["self-hosted","lab"]') || 'ubuntu-latest' }}
     container:
-      image: mcr.microsoft.com/playwright:v1.63.0-noble
+      image: mcr.microsoft.com/playwright:v1.64.1-noble
       # the lab PC's Intel GPU (Mesa): about 3× faster than the software renderer; hosted runners have none
       options: ${{ github.event.repository.private && '--device /dev/dri' || '' }}
     timeout-minutes: 40
