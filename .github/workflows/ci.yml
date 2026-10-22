@@ -18,13 +18,43 @@ concurrency:
 #   a11y jobs with the PC's GPU (/dev/dri, drawn through Mesa). Self-hosted runners cost no Actions minutes.
 # - public: GitHub's hosted runners (free for public repos), the a11y jobs on the software renderer (SWIFTSHADER,
 #   about 15–20 min a job). A public repo's PRs, from forks too, never reach the lab runners.
-# Both run inside the Playwright image, whose version must match package-lock's `playwright` (the install step below is
-# then a no-op; after a Playwright bump it fetches the matching browser until the image tag is bumped too). It brings
-# Chromium and its fonts and libraries; the app's own fonts are bundled.
+# Both run inside the Playwright image, which brings Chromium and its fonts and libraries (the app's own fonts are
+# bundled). Its tag is package-lock's `playwright` version, read by the `playwright` job, so a Playwright bump brings
+# the matching image with it; one that lands before Microsoft publishes the image fails the pull until it appears
+# (usually the same day).
 jobs:
-  build:
+  playwright:
     runs-on: ${{ github.event.repository.private && fromJSON('["self-hosted","lab"]') || 'ubuntu-latest' }}
-    container: mcr.microsoft.com/playwright:v1.64.1-noble
+    timeout-minutes: 2
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      # into its own directory: this job runs outside the image, and on the lab the workspace holds root-owned files
+      # from the jobs inside it
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          sparse-checkout: package-lock.json
+          sparse-checkout-cone-mode: false
+          path: lockfile
+      # plain awk, as the lab's own PATH may have no node or jq; checked, as it goes into the image name
+      - id: version
+        run: |
+          version=$(awk -F'"' '
+            $2 == "node_modules/playwright" { f = 1; next }
+            f && $2 == "version" { print $4; exit }
+            f && /}/ { exit }
+          ' lockfile/package-lock.json)
+          if ! printf '%s\n' "$version" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "::error file=package-lock.json::No x.y.z playwright version to tag the image with (found '$version')"
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: playwright
+    runs-on: ${{ github.event.repository.private && fromJSON('["self-hosted","lab"]') || 'ubuntu-latest' }}
+    container: mcr.microsoft.com/playwright:v${{ needs.playwright.outputs.version }}-noble
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -48,9 +78,10 @@ jobs:
     name: a11y (${{ matrix.mode }})
     # on PRs (and by hand); a push to main is a PR that already passed it on the latest main
     if: github.event_name != 'push'
+    needs: playwright
     runs-on: ${{ github.event.repository.private && fromJSON('["self-hosted","lab"]') || 'ubuntu-latest' }}
     container:
-      image: mcr.microsoft.com/playwright:v1.64.1-noble
+      image: mcr.microsoft.com/playwright:v${{ needs.playwright.outputs.version }}-noble
       # the lab PC's Intel GPU (Mesa): about 3× faster than the software renderer; hosted runners have none
       options: ${{ github.event.repository.private && '--device /dev/dri' || '' }}
     timeout-minutes: 40
@@ -67,7 +98,6 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npx playwright install chromium
       - run: npm run build
       - name: Serve the build
         run: |

@@ -735,9 +735,10 @@ jobs run on two self-hosted runners on a lab PC (label `lab`), inside the Playwr
 minutes; the a11y jobs get the PC's Intel GPU (`--device /dev/dri`, drawn through Mesa; evaluate prints the
 renderer). Once it is public they run on GitHub's hosted runners (`ubuntu-latest`, picked from
 `github.event.repository.private`), so a fork's PR never reaches the lab: the same Playwright image, with no GPU, so
-the a11y jobs draw with SwiftShader (`SWIFTSHADER=1`, about 15–20 minutes a job). Perf (`--only=perf`) stays on a
-developer machine: neither the lab's old CPU and shared GPU nor a hosted runner can measure frame times the way a
-reader's device would.
+the a11y jobs draw with SwiftShader (`SWIFTSHADER=1`, about 15–20 minutes a job). The image's tag is package-lock's
+`playwright` version, which a small first job reads, so a Playwright bump brings the matching image and browsers with
+it. Perf (`--only=perf`) stays on a developer machine: neither the lab's old CPU and shared GPU nor a hosted runner can
+measure frame times the way a reader's device would.
 
 The site is published to GitHub Pages, at <https://tkjaer.github.io/how-the-internet-works/>, by `pages.yml` on every
 push to main (or by hand): it builds and deploys `dist/`, and does nothing while the repo is private. The build uses a
