@@ -556,13 +556,20 @@ in the scene's own folder, so a new dive needs no theme change.
 ☀️/🌙, and on a desktop or tablet the speaker that mutes the sound, #189). Settings you set once go in the ⋯ menu
 (`ui/Menu.svelte`): language, sound (on a phone, upright or on its side, where the bar has no room for the speaker;
 below 400 px day/night too), the style (only with more than one theme) and About.
-- **Entries are data.** `Chrome.svelte` builds a list of `MenuEntry` (`ui/menu.ts`): a `choice` (a label and its
-  options, each a `menuitemradio`, e.g. "Language: English | Dansk"), a `toggle` (a `menuitemcheckbox` that shows its
-  value, "Sound: off") or an `action` (a `menuitem`, e.g. About). A new setting is one more entry.
+- **Entries are data.** `Chrome.svelte` builds a list of `MenuEntry` (`ui/menu.ts`): a `choice` (a label and a few
+  options side by side, each a `menuitemradio`, e.g. "Style: Storybook | …"), a `list` (one of many, "Language: Dansk
+  DA ›": it opens its options in the menu's place, each a `menuitemradio`, with a way back), a `toggle` (a
+  `menuitemcheckbox` that shows its value, "Sound: off") or an `action` (a `menuitem`, e.g. About). A new setting is
+  one more entry.
+- **Languages** are a `list`, as there will be more than fit side by side: each by its own name (in its `lang`), its
+  name in the reader's language where that differs (`languageNote`, from the browser's `Intl.DisplayNames`: "Deutsch ·
+  German") and its code ("DE"), the one you read in ticked. No flags: a flag is a country, and a language isn't one.
 - **Keyboard and screen readers.** The WAI-ARIA menu pattern: ⋯ has `aria-haspopup` and `aria-expanded`; opening it
   focuses the first item; the arrow keys, Home and End move (`menuMove`, tested in `ui/menu.test.ts`); Esc closes it
   and gives focus back to ⋯, Tab closes it and moves on, and a click outside closes it. Choices and toggles leave it
-  open so you see the new value.
+  open so you see the new value. A `list` entry has `aria-haspopup="menu"`: Enter opens its options in the menu's
+  place, focus on the chosen one; picking one, Back or Esc shows the menu again (in the new language), focus on that
+  entry.
 - **About** (`ui/About.svelte`) is a small `role="dialog"` panel: the credit, © and AGPL-3.0-or-later, no warranty,
   the screenshot permission, the "Count my visit" switch (or, when the browser sends Global Privacy Control or Do Not
   Track, a line saying visits aren't counted), and links to the source, `LICENSE`, `NOTICE.md` and the privacy page.

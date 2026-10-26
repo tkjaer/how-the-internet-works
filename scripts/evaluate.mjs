@@ -219,6 +219,8 @@ const A11Y_STATES = [
   // the ⋯ menu over a caught packet's layers (#90)
   { name: 'caught-menu', where: 'home/watch-video', catch: 'video', at: ['router'], menu: true, views: ['desktop', 'phone', 'short'] },
   { name: 'about', where: 'home/watch-video', menu: true, about: true, views: ['desktop', 'phone', 'zoom'] },
+  // the languages, the list ⋯ opens in its place: each by its own name, its name in the reader's and its code
+  { name: 'languages', where: 'home/watch-video', lang: 'da', menu: true, languages: true, views: ['desktop', 'phone', 'short', 'zoom'] },
   // the scene's keys (#53): two stops along, the ring on the Wi‑Fi; and the list view, opened by the skip link
   { name: 'keys', where: 'home/watch-video', keys: 2, views: ['desktop', 'phone', 'short'] },
   { name: 'map', where: 'home/watch-video/internet', map: true, views: ['desktop', 'phone', 'short', 'zoom'] },
@@ -448,6 +450,7 @@ async function a11y(style) {
     if (s.ladder) await p.click('.crumbs .here');
     if (s.menu) { await p.click('.more-btn'); await p.waitForSelector('.menu'); }
     if (s.about) { await p.click('.menu [role=menuitem]:last-child'); await p.waitForSelector('.about-box'); }
+    if (s.languages) { await p.click('.menu [data-list=lang]'); await p.waitForSelector('.menu-pick'); }
     if (s.keys) { await p.focus('.scene-key'); for (let i = 0; i < s.keys; i++) await p.keyboard.press('ArrowRight'); }
     if (s.map) { await p.focus('.skip'); await p.keyboard.press('Enter'); await p.waitForSelector('.map'); }
     await still(p);
@@ -518,6 +521,11 @@ async function a11y(style) {
   if (!(await p.evaluate(() => document.activeElement?.matches('.explore-btn')))) fail('journey: catch', 'letting go, focus is not back on "What can I explore?"');
   await p.focus('.more-btn'); await p.keyboard.press('Enter'); await p.waitForSelector('.menu');
   if (!(await p.evaluate(() => !!document.activeElement?.closest('.menu')))) fail('journey: ⋯', 'focus is not in the menu');
+  // the languages open in the menu's place, on the one you read in; Esc goes back to their entry, then closes ⋯
+  await p.focus('.menu [data-list=lang]'); await p.keyboard.press('Enter'); await p.waitForSelector('.menu-pick');
+  if (!(await p.evaluate(() => document.activeElement?.matches('.menu-pick[aria-checked=true]')))) fail('journey: languages', 'focus is not on the language you read in');
+  await p.keyboard.press('ArrowDown'); await p.keyboard.press('Escape'); await p.waitForTimeout(100);
+  if (!(await p.evaluate(() => document.activeElement?.matches('.menu [data-list=lang]')))) fail('journey: languages', 'Esc: focus is not back on Language');
   await p.keyboard.press('Escape'); await p.waitForTimeout(100);
   if (!(await p.evaluate(() => document.activeElement?.matches('.more-btn')))) fail('journey: ⋯', 'focus is not back on ⋯');
   await p.focus('.caption .foot > .chip'); await p.keyboard.press('Enter'); await still(p);

@@ -103,6 +103,19 @@ button { cursor: pointer; }
 .menu-opts .btn { min-height: 36px; padding: 6px 10px; font-size: 14px; }
 .menu-opts .btn.on { background: var(--btn-on); color: var(--btn-on-ink); }
 .menu-opts .swatch { width: 18px; height: 18px; border-radius: 6px; }
+/* a list entry (the languages): "Language  Dansk DA ›", which opens its options in the menu's place, each by its own
+   name, its name in the reader's language and its code; the chevrons point the other way right to left */
+.menu-value { display: inline-flex; align-items: center; gap: 6px; margin-inline-start: auto; padding-inline-start: 12px; font-weight: 600; }
+.menu-pick .menu-code { margin-inline-start: auto; }
+.menu-pick > span:first-child { padding-inline-end: 12px; }
+.menu-back { font-weight: 800; }
+.menu-pick { font-weight: 600; }
+.menu-pick small { font-size: 13px; color: var(--muted); }
+.menu-pick.on { background: var(--btn-on); color: var(--btn-on-ink); }
+.menu-pick.on :is(small, .menu-code) { color: inherit; }
+.menu-code { font-size: 11px; font-weight: 800; letter-spacing: 0.04em; color: var(--muted); border: 1.5px solid currentColor; border-radius: 6px;
+  padding: 0 4px; line-height: 1.4; }
+[dir='rtl'] :is(.menu-value, .menu-back) svg { transform: scaleX(-1); }
 /* About (About.svelte): the credit, the licence, the source and the visit counting switch */
 .about-box { width: min(360px, calc(100% - 24px)); max-height: calc(100dvh - 130px); overflow: auto; padding: 8px 10px 12px; }
 .about-box:focus { outline: none; }
@@ -504,7 +517,7 @@ button { cursor: pointer; }
   .caption .door { border: 2px solid LinkText; color: LinkText; }
   .caption .verb-name, .caption .tag, .caption .note-name, .ladder .rung svg { color: CanvasText; }
   .ladder .rung.signal { outline: 2px solid CanvasText; outline-offset: -2px; }
-  :is(.seg .btn.on, .menu-opts .btn.on, .ladder .rung.on, .peek header .chip.on, [aria-pressed='true'], .more-btn[aria-expanded='true'], .time-btn[aria-expanded='true'],
+  :is(.seg .btn.on, .menu-opts .btn.on, .menu-pick.on, .ladder .rung.on, .peek header .chip.on, [aria-pressed='true'], .more-btn[aria-expanded='true'], .time-btn[aria-expanded='true'],
     .caption .door:hover) { forced-color-adjust: none; background: Highlight !important; color: HighlightText !important; }
   :focus-visible { outline-color: Highlight !important; }
   .scene-key[data-kind='scene']:focus-visible { outline-color: Highlight !important; }

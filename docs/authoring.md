@@ -576,7 +576,8 @@ extra effort:
 
 We ship only languages someone has reviewed (English, Danish and German for now, issue #11).
 
-The language appears in the switcher at once and loads as its own small chunk. `npm run check:content` shows the coverage.
+The language appears in ⋯'s list of languages at once (by its `name`, its code, and its name in the reader's
+language) and loads as its own chunk. `npm run check:content` shows the coverage.
 
 ## Add a learn-more link (issue #4)
 

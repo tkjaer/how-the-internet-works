@@ -2,7 +2,8 @@
   // Top bar: the depth ladder (breadcrumb, Ladder.svelte), "What can I explore?" (a toggle, #122: the doors light
   // up and the caption lists them; only where there is something to explore), the time machine (#59: on every screen, showing the era you're in), pause (all motion),
   // kid/nerd, day/night (when the theme has a night), mute (#189: one tap, on a desktop or tablet), and ⋯: a menu
-  // (Menu.svelte, entries in `entries` below) with the language, sound (on a phone, where the bar has no room for mute),
+  // (Menu.svelte, entries in `entries` below) with the language (a list it opens: each by its own name, its name in the
+  // reader's language and its code), sound (on a phone, where the bar has no room for mute),
   // read aloud (where there is a voice for the language), the style (only when more than one theme is installed), the
   // list view (TextMap.svelte, opened by the app) and About. The controls keep to the end of the row, so one that comes
   // and goes doesn't move the others; on a phone they wrap under the ladder (below 400 px day/night is in ⋯ too, so
@@ -16,7 +17,7 @@
   import Icon from './Icon.svelte';
   import Ladder from './Ladder.svelte';
   import type MenuT from './Menu.svelte';
-  import type { MenuEntry } from './menu';
+  import { languageNote, type MenuEntry } from './menu';
 
   let { crumbs, below, roomy, onhot, small, short, wide, explore, canExplore, ontoggle, time, timeOpen, ontime, onpretime, paused, onpause, quiet, onmap }: {
     crumbs: { title: string; path: string[] }[]; small: boolean;
@@ -63,8 +64,8 @@
   const entries = $derived<MenuEntry[]>([
     ...(narrow && hasNight() ? [{ kind: 'toggle' as const, id: 'night', icon: view.mode, label: tr('ui.night'), on: view.mode === 'night',
       state: tr(view.mode === 'night' ? 'ui.on' : 'ui.off'), set: (on: boolean) => setMode(on ? 'night' : 'day') } satisfies MenuEntry] : []),
-    { kind: 'choice', id: 'lang', label: tr('ui.language'), value: loc.lang, pick: (lang) => go({ lang }, true),
-      options: languages.map((l) => ({ id: l.code, label: l.name, lang: l.code })) },
+    { kind: 'list', id: 'lang', icon: 'globe', label: tr('ui.language'), value: loc.lang, pick: (lang) => go({ lang }, true),
+      options: languages.map((l) => ({ id: l.code, label: l.name, lang: l.code, note: languageNote(l.code, l.name, loc.lang), badge: l.code.toUpperCase() })) },
     ...(small ? [{ kind: 'toggle' as const, id: 'sound', icon: settings.sound ? 'soundOn' : 'soundOff', label: tr('ui.sound'), on: settings.sound,
       state: tr(settings.sound ? 'ui.on' : 'ui.off'), set: setSound } satisfies MenuEntry] : []),
     ...(canSpeak() ? [{ kind: 'toggle' as const, id: 'speech', icon: 'speak' as const, label: tr('ui.speech'), on: settings.speech,
@@ -118,6 +119,6 @@
         onpointerenter={loadMenu} onfocus={loadMenu} onclick={toggleMenu}><Icon name="more" /></button>
     </div>
   </div>
-  {#if open === 'menu' && Menu}<Menu {entries} label={tr('ui.more')} onclose={close} />{/if}
+  {#if open === 'menu' && Menu}<Menu {entries} label={tr('ui.more')} back={tr('ui.back')} onclose={close} />{/if}
   {#if open === 'about' && About}<About onclose={close} />{/if}
 </header>
