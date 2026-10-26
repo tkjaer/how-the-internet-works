@@ -146,5 +146,8 @@
         }
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Point-to-Point_Protocol", "title": "Point-to-Point Protocol", "level": "both" }
+  ]
 }

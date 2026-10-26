@@ -92,5 +92,9 @@
         "about": "Was drin ist: 6 = TCP (17 ist UDP, 1 ist ICMP)."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Internet_Protocol", "title": "Internet Protocol", "level": "both" },
+    { "url": "https://de.wikipedia.org/wiki/Time_to_Live", "title": "Time to Live", "level": "nerd" }
+  ]
 }

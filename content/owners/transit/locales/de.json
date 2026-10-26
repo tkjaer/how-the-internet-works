@@ -8,5 +8,8 @@
       "kid": "Ein größeres Netz",
       "nerd": "Upstream · AS64502"
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Peering", "title": "Peering", "level": "nerd" }
+  ]
 }

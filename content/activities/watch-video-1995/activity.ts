@@ -22,9 +22,4 @@ export default defineActivity({
       packets: [video.packets[0], { ...down, kind: 'page', size: 40_000 }],
     },
   ],
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/Web_page', title: 'Web page', level: 'both', lang: 'en' },
-    { url: 'https://de.wikipedia.org/wiki/Webseite', title: 'Webseite', level: 'both', lang: 'de' },
-    { url: 'https://www.rfc-editor.org/rfc/rfc1945', title: 'RFC 1945: HTTP/1.0 (1996)', level: 'nerd', lang: 'en' },
-  ],
 });

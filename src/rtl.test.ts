@@ -7,7 +7,7 @@ import type * as State from './state.svelte';
 import { stubBrowser } from './test/stub-browser';
 
 const RTL = 'x-rtl';
-const fixture: Pack = { meta: { name: 'Test RTL', dir: 'rtl' }, strings: { 'node.phone.name': 'enohP' } };
+const fixture: Pack = { meta: { name: 'Test RTL', dir: 'rtl' }, strings: { 'node.phone.name': 'enohP' }, links: {} };
 let strings: typeof Strings;
 let state: typeof State;
 

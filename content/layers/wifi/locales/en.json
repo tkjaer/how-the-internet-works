@@ -65,5 +65,8 @@
         "about": "Packet number for the WPA2 encryption of everything inside."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/IEEE_802.11", "title": "IEEE 802.11", "level": "nerd" }
+  ]
 }

@@ -5,8 +5,4 @@ import { defineNode } from '$core/define';
 export default defineNode({
   kind: 'device',
   role: 'bridge',
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/Mobile_switching_centre_server', title: 'Mobile switching centre', level: 'both', lang: 'en' },
-    { url: 'https://www.3gpp.org/DynaReport/29007.htm', title: '3GPP TS 29.007 (the IWF)', level: 'nerd', lang: 'en' },
-  ],
 });

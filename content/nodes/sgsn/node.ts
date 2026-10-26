@@ -5,7 +5,4 @@ import { defineNode } from '$core/define';
 export default defineNode({
   kind: 'device',
   role: 'bridge',
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/GPRS_core_network', title: 'GPRS core network', level: 'nerd', lang: 'en' },
-  ],
 });

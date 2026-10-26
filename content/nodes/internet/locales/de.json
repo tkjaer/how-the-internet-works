@@ -19,5 +19,9 @@
   "1995": {
     "kid": "Das Internet ist ganz viele Netze, die sich an der Hand halten, und 1995 sind es weniger als zweitausend. Tippe darauf, um zu sehen, was drin ist!",
     "nerd": "Unter 1 700 autonome Systeme, die Routen mit BGP-4 tauschen (die erste Zählung, im Oktober 1996, fand 1 644). Tippe, um den Weg durch den ISP aufzuklappen."
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Internet", "title": "Internet", "level": "both" },
+    { "url": "https://de.wikipedia.org/wiki/Border_Gateway_Protocol", "title": "Border Gateway Protocol", "level": "nerd" }
+  ]
 }

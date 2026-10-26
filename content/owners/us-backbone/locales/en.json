@@ -2,5 +2,8 @@
   "name": {
     "kid": "An American network",
     "nerd": "US backbone · AS64504"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Internet_backbone", "title": "Internet backbone", "level": "both" }
+  ]
 }

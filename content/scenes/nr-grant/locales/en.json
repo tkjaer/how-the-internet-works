@@ -115,5 +115,8 @@
       "afterSeat": "TTI 7 · 15 codes",
       "regrant": "NACK: ask quickly"
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Hybrid_automatic_repeat_request", "title": "Hybrid automatic repeat request (HARQ)", "level": "nerd" }
+  ]
 }

@@ -4,5 +4,9 @@
     "kid": "A box that joins the room’s cables. Whatever comes in on one cable, it shouts out on all the others at once, and only the computer it’s for keeps it.",
     "nerd": "A 10BASE-T repeater hub: it repeats every bit out of every other port as it arrives and reads nothing, so the whole room is one shared, half-duplex collision domain. Switches, which learn the port of each MAC address, took over in the late 1990s.",
     "tag": "10BASE-T · 8 ports"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Ethernet_hub", "title": "Ethernet hub", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/10BASE-T", "title": "10BASE-T", "level": "nerd" }
+  ]
 }

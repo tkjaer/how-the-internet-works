@@ -12,5 +12,9 @@
   "2010": {
     "name": "Core router",
     "nerd": "The core router of the video company’s cage: it peers over BGP at the exchange, announcing the company’s addresses, and routes down over 10G to the load balancer and the aggregation switches."
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Edge_device", "title": "Edge device", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Router_(computing)", "title": "Router", "level": "both" }
+  ]
 }

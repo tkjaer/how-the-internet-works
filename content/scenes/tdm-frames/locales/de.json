@@ -148,5 +148,9 @@
         "nerd": "AMI; B8ZS ersetzt 8 Nullen durch Verletzungen"
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Zeitmultiplexverfahren", "title": "Zeitmultiplexverfahren", "level": "both" },
+    { "url": "https://de.wikipedia.org/wiki/HDB3-Code", "title": "HDB3-Code", "level": "nerd" }
+  ]
 }

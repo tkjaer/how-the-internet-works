@@ -82,5 +82,8 @@
         "about": "Welcher Dienst beim Empfänger: 80 = HTTP, das Web."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Transmission_Control_Protocol", "title": "Transmission Control Protocol", "level": "nerd" }
+  ]
 }

@@ -147,5 +147,8 @@
         "nerd": "Linux · cache processes"
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://simple.wikipedia.org/wiki/Server_(computing)", "title": "Server", "level": "kid" }
+  ]
 }

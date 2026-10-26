@@ -134,5 +134,9 @@
         "about": "Das QoS-Flow-Label von 5G (5G kam 2019); 3G hatte keines: der PDP Context selbst trug die QoS."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Mobilfunknetz", "title": "Mobilfunknetz", "level": "kid" },
+    { "url": "https://de.wikipedia.org/wiki/GPRS_Tunneling_Protocol", "title": "GPRS Tunneling Protocol", "level": "nerd" }
+  ]
 }

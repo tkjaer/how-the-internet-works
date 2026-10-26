@@ -2,5 +2,9 @@
   "name": "Phone line",
   "kid": "The old copper phone line carries the parcel as lots of tiny tones, high above the sounds of a phone call.",
   "nerd": "VDSL2: DMT tones on one copper pair, up to 17 MHz, from a cabinet a few hundred metres away. In 2010 most DSL homes still had ADSL2+ from the exchange (up to about 20 Mbit/s); this line could carry more, but its plan is 20/2 Mbit/s.",
-  "tag": "VDSL2 · 20/2 Mbit/s"
+  "tag": "VDSL2 · 20/2 Mbit/s",
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Digital_subscriber_line", "title": "DSL", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/VDSL", "title": "VDSL", "level": "nerd" }
+  ]
 }

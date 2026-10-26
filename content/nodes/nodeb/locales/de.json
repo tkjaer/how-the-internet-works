@@ -14,5 +14,9 @@
         "nerd": "MAC-hs reiht die Stücke des RNC pro Telefon ein, und der Scheduler sendet sie in den 2-ms-Slots und Codes, die er wählt."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Mobilfunk-Basisstation", "title": "Mobilfunk-Basisstation", "level": "both" },
+    { "url": "https://de.wikipedia.org/wiki/Node_B", "title": "Node B", "level": "nerd" }
+  ]
 }

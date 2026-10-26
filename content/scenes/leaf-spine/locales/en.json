@@ -27,5 +27,11 @@
     "kid": "Same road every time",
     "nerd": "hash(5-tuple)",
     "mod": "mod 4 = {n}"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Clos_network", "title": "Clos network", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Equal-cost_multi-path_routing", "title": "Equal-cost multi-path routing", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Data_center", "title": "Data center", "level": "nerd" },
+    { "url": "https://simple.wikipedia.org/wiki/Data_center", "title": "Data center", "level": "kid" }
+  ]
 }

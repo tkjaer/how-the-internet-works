@@ -38,5 +38,9 @@
       "name": "FCS",
       "about": "Eine Prüfung über den Frame, damit ein Knistern auf der Leitung auffällt."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/High-Level_Data_Link_Control", "title": "High-Level Data Link Control", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/Standleitung", "title": "Standleitung", "level": "both" }
+  ]
 }

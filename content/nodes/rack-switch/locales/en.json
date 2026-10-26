@@ -7,5 +7,9 @@
     "kid": "The switch in a tall cupboard of computers (a rack). It passes parcels to the computers in its own cupboard. It has two roads up: one open, and one kept closed as a spare.",
     "nerd": "The access switch: 48 ports of 1G copper down to the rack’s servers and two 10G uplinks, one to each aggregation switch. It only bridges (layer 2); spanning tree blocks the uplink to the standby switch.",
     "tag": "Access · 48 × 1G · 2 × 10G up"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/19-inch_rack", "title": "19-inch rack", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Network_switch", "title": "Network switch", "level": "nerd" }
+  ]
 }

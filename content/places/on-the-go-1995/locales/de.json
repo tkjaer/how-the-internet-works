@@ -35,5 +35,8 @@
         }
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Circuit_Switched_Data", "title": "Circuit Switched Data", "level": "both" }
+  ]
 }

@@ -62,5 +62,11 @@
     "nerd": "Diese Leitung: {m} m Kupfer"
   },
   "xtalkTitle": "Crosstalk",
-  "xtalkLine": "Nachbarpaare sickern herein"
+  "xtalkLine": "Nachbarpaare sickern herein",
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Digital_Subscriber_Line", "title": "Digital Subscriber Line", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/Very_High_Speed_Digital_Subscriber_Line", "title": "Very High Speed Digital Subscriber Line", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/Orthogonales_Frequenzmultiplexverfahren", "title": "Orthogonales Frequenzmultiplexverfahren", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/%C3%9Cbersprechen", "title": "Übersprechen", "level": "nerd" }
+  ]
 }

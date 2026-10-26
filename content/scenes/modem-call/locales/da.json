@@ -76,5 +76,8 @@
     "nerd": "Eget kredsløb"
   },
   "circuitLine": "Plads {n} af 32 er din",
-  "circuitSub": "Holdt hele opkaldet, også i stilhed"
+  "circuitSub": "Holdt hele opkaldet, også i stilhed",
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Telefonnet", "title": "Telefonnet", "level": "both" }
+  ]
 }

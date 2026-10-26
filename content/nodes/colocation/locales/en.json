@@ -15,5 +15,9 @@
         "nerd": "The colocation view starts at the IXP and zigzags through the core router, load balancer, aggregation switch and access switch over 10G multimode fibre, then over 1000BASE-T copper to the cache server. A caged row of racks with a CRAC unit at each end stands in the back. A dashed branch from the cache leads to the origin. Request and video packets move in opposite directions."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Colocation_centre", "title": "Colocation centre", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Content_delivery_network", "title": "Content delivery network", "level": "nerd" }
+  ]
 }

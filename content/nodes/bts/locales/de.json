@@ -8,5 +8,9 @@
       "kid": "Der Mast öffnet dein Päckchen nicht. Er fängt auf, was dein Telefon funkt, wenn es an der Reihe ist, und gibt es die Leitung hinunter weiter.",
       "nerd": "Die BTS beendet den Radio-Burst und die Kanalkodierung und gibt die RLP-Frames des Anrufs in einem 16 kbit/s-Sub-Slot weiter; hier liest nichts PPP oder IP."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Base_Transceiver_Station", "title": "Base Transceiver Station", "level": "both" },
+    { "url": "https://de.wikipedia.org/wiki/Mobilfunk-Basisstation", "title": "Mobilfunk-Basisstation", "level": "both" }
+  ]
 }

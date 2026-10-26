@@ -38,5 +38,9 @@
       "name": "FCS",
       "about": "A check over the frame, so a crackle on the line is noticed."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/High-Level_Data_Link_Control#Cisco_HDLC", "title": "Cisco HDLC", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Leased_line", "title": "Leased line", "level": "both" }
+  ]
 }

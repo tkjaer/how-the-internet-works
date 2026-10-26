@@ -12,5 +12,9 @@
       "kid": "The fibre terminal peels off the two stickers, puts your parcel in a light envelope with your house number and sends it down the glass thread to every house on your street.",
       "nerd": "The OLT pops the Q-in-Q tags, maps the frame to XGEM Port-ID 1127, encrypts it with that port’s AES key and broadcasts it down the PON."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Optical_line_termination", "title": "Optical line termination", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/IEEE_802.1ad", "title": "IEEE 802.1ad (Q-in-Q)", "level": "nerd" }
+  ]
 }

@@ -65,5 +65,9 @@
         }
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Mobilfunknetz", "title": "Mobilfunknetz", "level": "kid" },
+    { "url": "https://de.wikipedia.org/wiki/GPRS_Tunneling_Protocol", "title": "GPRS Tunneling Protocol", "level": "nerd" }
+  ]
 }

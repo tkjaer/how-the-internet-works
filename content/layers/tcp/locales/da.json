@@ -82,5 +82,8 @@
         "about": "Hvilken tjeneste hos modtageren: 80 = HTTP, nettet."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Transmission_Control_Protocol", "title": "Transmission Control Protocol", "level": "both" }
+  ]
 }

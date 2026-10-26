@@ -35,5 +35,8 @@
         }
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/GSM", "title": "GSM", "level": "both" }
+  ]
 }

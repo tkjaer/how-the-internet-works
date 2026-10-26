@@ -3,5 +3,9 @@
   "1995": {
     "kid": "The page and its picture live here, on a tall beige computer far away. Every visitor gets them from this one computer.",
     "nerd": "A tower PC or a Unix workstation running one web program (NCSA HTTPd, on most sites in August 1995, or the new Apache). It reads each request and sends the file from its own disk: no cache in front of it, no other copy. CDNs began with Akamai in 1998–99."
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Web_server", "title": "Web server", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/NCSA_HTTPd", "title": "NCSA HTTPd", "level": "nerd" }
+  ]
 }

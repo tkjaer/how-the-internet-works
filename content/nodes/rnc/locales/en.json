@@ -14,5 +14,9 @@
         "nerd": "The RNC ends the GTP-U tunnel (by TEID), ciphers and segments the packet in RLC and sends it over Iub to the phone’s NodeB."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Radio_Network_Controller", "title": "Radio Network Controller", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/UMTS", "title": "UMTS", "level": "both" }
+  ]
 }

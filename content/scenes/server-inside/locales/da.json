@@ -147,5 +147,8 @@
         "nerd": "Linux · cacheprocesser"
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Server", "title": "Server", "level": "both" }
+  ]
 }

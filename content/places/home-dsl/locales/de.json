@@ -26,5 +26,8 @@
     "internet": {
       "nerd": "Zugangsnetz (VDSL2 von einer DSLAM im Straßenkasten), eine Aggregationsschicht (L2-Backhaul zur BNG), der MPLS-Kern des ISP, dann settlement-free Peering am IXP oder bezahltes Transit, und am Ende ein CDN-Cache in deiner Nähe. Jede Fläche ist ein Betreibernetz."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Digital_Subscriber_Line", "title": "Digital Subscriber Line", "level": "both" }
+  ]
 }

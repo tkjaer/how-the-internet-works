@@ -5,5 +5,8 @@
   "tag": "802.11ax · L2 bridge",
   "2010": {
     "tag": "802.11n · L2 bridge"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Wireless_access_point", "title": "Wireless access point", "level": "both" }
+  ]
 }

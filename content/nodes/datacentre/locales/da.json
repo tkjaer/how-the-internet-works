@@ -11,5 +11,8 @@
       "kid": "I en stor hal står rækker af høje skabe. Vejen kommer fra knudepunktet til kantrouteren, load balanceren, en spine-switch, en rack-switch og videoserveren. En stiplet vej fører langt væk til hovedkopien. Pakker går ind, og video kommer ud igen.",
       "nerd": "PoP-visningen starter ved IXP’et og går i zigzag gennem kantrouter, L4-load balancer, spine, top-of-rack-leaf og cache-serveren over kort fiber. En stiplet gren fra cachen fører til origin i en cloud-region. Forespørgsler og video bevæger sig i hver sin retning."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Datacenter", "title": "Datacenter", "level": "both" }
+  ]
 }

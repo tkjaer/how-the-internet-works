@@ -32,5 +32,8 @@
       "name": "QoS Flow (SDAP)",
       "about": "Zu welchem QoS Flow das Paket gehört; dieselbe Nummer fährt im GTP-Tunnel mit."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/5G_NR", "title": "5G NR", "level": "both" }
+  ]
 }

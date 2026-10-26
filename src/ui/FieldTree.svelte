@@ -37,7 +37,7 @@
   {#each v.layers as l (l.id + l.change)}
     {@const sealed = l.state === 'sealed'}
     {@const grid = sealed ? null : rows(l.fields)}
-    {@const links = learnMore(route.era, route.content.layers[l.id].learnMore ?? [], loc.lang, 'nerd', 2)}
+    {@const links = learnMore(route.era, [`layer.${l.id}`], loc.lang, 'nerd', 2)}
     <details class="tree-layer {l.state}" class:off={l.change === 'removed'} class:added={l.change === 'added'} open={acts(l)}>
       <summary dir="ltr">
         {#if l.change !== 'kept'}<span class="env-tag" class:on={l.change === 'added'}>{l.change === 'added' ? '+' : '−'}</span>{/if}

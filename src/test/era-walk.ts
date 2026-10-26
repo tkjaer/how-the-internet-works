@@ -1,14 +1,14 @@
 // What a route of an era of the past says (#59), for the tests that keep later technology out of it
 // (era-1995.test.ts, era-2010.test.ts).
-import type { LearnMore, Level } from '../define';
+import type { Level } from '../define';
 import { sceneKeys } from '../model/describe';
 import { pickLinks } from '../model/links';
 import { peekKeys } from '../model/packet';
 import { basePlace, content } from '../model/registry';
-import { stringSources, type Route } from '../model/resolve';
+import { activityKey, stringSources, type Route } from '../model/resolve';
 import { role } from '../model/schema';
 import { formatRate, howLong } from '../model/speed';
-import { lookupLevel, packs, withEra } from '../model/strings';
+import { linksOf, lookupLevel, packs, withEra } from '../model/strings';
 import { childrenOf, sceneRef, type SceneRef } from '../model/tree';
 
 /** Every reachable scene of a route, in both orientations. */
@@ -88,21 +88,20 @@ function labelKeys(r: Route): string[][] {
   return [...keys].map((k) => [k]);
 }
 
-/** The learn-more lists of a route's cards, as the caption picks from them (caption.ts): each layer and dive scene's,
- *  each stop's and link's, the overview's; and each layer's in the peek's field tree (nerd, two). */
-function cards(r: Route): { all: LearnMore[]; level?: Level; max?: number }[] {
-  const c = r.content, out: { all: LearnMore[]; level?: Level; max?: number }[] = [];
+/** The content items whose learn-more links a route's cards show, as the caption picks from them (caption.ts): each
+ *  layer and dive scene's, each stop's and link's, the overview's; and each layer's in the peek's field tree (nerd, two). */
+function cards(r: Route): { items: string[]; level?: Level; max?: number }[] {
+  const out: { items: string[]; level?: Level; max?: number }[] = [];
   const links = [...r.links, ...r.asides.map((a) => a.link)];
   for (const ref of scenes(r)) {
-    const scene = c.scenes[ref.dive!]?.learnMore ?? [];
-    if (ref.kind === 'layer') out.push({ all: [...scene, ...(c.layers[ref.at!.layer]?.learnMore ?? [])] });
-    else if (ref.kind === 'dive') out.push({ all: [...scene, ...((ref.link ? ref.link.link.tech : ref.node!.node).learnMore ?? [])] });
+    if (ref.kind === 'layer') out.push({ items: [`scene.${ref.dive}`, `layer.${ref.at!.layer}`] });
+    else if (ref.kind === 'dive') out.push({ items: [`scene.${ref.dive}`, ref.link ? `tech.${ref.link.link.tech.id}` : `node.${ref.node!.node.id}`] });
   }
-  for (const h of Object.values(r.hops)) out.push({ all: [...(h.node.learnMore ?? []), ...((!r.groups.includes(h) && h.owner && c.owners[h.owner]?.learnMore) || [])] });
-  for (const l of links) out.push({ all: l.tech.learnMore ?? [] });
-  out.push({ all: [...(r.activity.learnMore ?? []), ...r.slots.flatMap((s) => c.places[s.place].learnMore ?? [])] });
+  for (const h of Object.values(r.hops)) out.push({ items: [`node.${h.node.id}`, ...(!r.groups.includes(h) && h.owner ? [`owner.${h.owner}`] : [])] });
+  for (const l of links) out.push({ items: [`tech.${l.tech.id}`] });
+  out.push({ items: [activityKey(r.activity), ...r.slots.map((s) => `place.${s.place}`)] });
   const layers = new Set([...links.flatMap((l) => l.stack), ...r.activity.flows.flatMap((f) => f.stack)]);
-  for (const id of layers) out.push({ all: c.layers[id]?.learnMore ?? [], level: 'nerd', max: 2 });
+  for (const id of layers) out.push({ items: [`layer.${id}`], level: 'nerd', max: 2 });
   return out;
 }
 
@@ -121,7 +120,7 @@ export function routeWords(r: Route): Map<string, string> {
       break;
     }
     if (h) out.set(`${lang} ${level} {rate}`, formatRate(h.bps, lang));
-    for (const card of cards(r)) for (const l of pickLinks(card.all, r.era, lang, card.level ?? level, card.max)) out.set(`${lang} ${level} {link:${l.url}}`, `${l.title} <${l.url}>`);
+    for (const card of cards(r)) for (const l of pickLinks(linksOf(lang, card.items), r.era, lang, card.level ?? level, card.max)) out.set(`${lang} ${level} {link:${l.url}}`, `${l.title} <${l.url}>`);
   }
   return out;
 }

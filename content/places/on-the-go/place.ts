@@ -40,9 +40,4 @@ export default definePlace({
       portrait: { nodes: { 'cell-tower': [200, 1440, 150], 'mobile-core': [740, 1170, 180] }, links: { 'mobile-core-core': { bend: 0.15 } }, owners: { isp: [270, 1090] } },
     },
   },
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/5G', title: '5G', level: 'both', lang: 'en' },
-    { url: 'https://da.wikipedia.org/wiki/5G', title: '5G', level: 'both', lang: 'da' },
-    { url: 'https://de.wikipedia.org/wiki/5G', title: '5G', level: 'both', lang: 'de' },
-  ],
 });

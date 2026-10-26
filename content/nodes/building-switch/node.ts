@@ -4,8 +4,4 @@ import { defineNode } from '$core/define';
 export default defineNode({
   kind: 'device',
   role: 'bridge',
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/Fiber_to_the_x', title: 'Fibre to the building', level: 'nerd', lang: 'en' },
-    { url: 'https://de.wikipedia.org/wiki/FTTx', title: 'FTTx', level: 'nerd', lang: 'de' },
-  ],
 });

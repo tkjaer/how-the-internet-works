@@ -115,5 +115,8 @@
         "nerd": "802.11n-radio"
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Router", "title": "Router", "level": "both" }
+  ]
 }

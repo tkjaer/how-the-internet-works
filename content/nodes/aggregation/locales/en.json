@@ -4,5 +4,10 @@
     "kid": "A big switch in the middle of the data centre. Every cupboard of computers has two roads up to the middle; this switch takes the busy one, and a spare stands beside it in case it breaks.",
     "nerd": "The aggregation layer of a three-tier data centre: a chassis switch where every access switch's 10G uplink ends, layer 2 stops and HSRP gives the servers their gateway. A standby twin waits beside it; spanning tree blocks the uplinks to it so the tree has no loop.",
     "tag": "Aggregation · HSRP · STP"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Hierarchical_internetworking_model", "title": "Hierarchical internetworking model", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Spanning_Tree_Protocol", "title": "Spanning Tree Protocol", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Network_switch", "title": "Network switch", "level": "both" }
+  ]
 }

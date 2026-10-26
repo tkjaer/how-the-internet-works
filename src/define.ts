@@ -3,10 +3,13 @@
 import type { z } from 'zod';
 import type * as S from './model/schema';
 
-export type LearnMore = z.infer<typeof S.learnMore>;
+/** A learn-more link as the app shows it: its `lang` is the locale file's it came from. */
+export type LearnMore = z.infer<typeof S.learnMore> & { lang: string };
 export type Role = z.infer<typeof S.role>;
 export type NodeDef = z.infer<typeof S.node>;
-export type OwnerDef = z.infer<typeof S.owner>;
+/** An owner defines nothing but itself (its folder): its name and links are in its locale files. (The schema's `{}`
+ *  infers as `Record<string, never>`, which no item with an id would fit.) */
+export type OwnerDef = Record<never, never>;
 export type TechDef = z.infer<typeof S.technology>;
 export type LayerDef = z.infer<typeof S.layer>;
 export type SceneDef = z.infer<typeof S.scene>;

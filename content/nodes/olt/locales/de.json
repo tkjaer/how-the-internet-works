@@ -12,5 +12,8 @@
       "kid": "Das Faser-Terminal zieht die zwei Zettel ab, steckt dein Päckchen in einen Licht-Umschlag mit deiner Hausnummer und schickt ihn den Glasfaden hinunter zu jedem Haus in deiner Straße.",
       "nerd": "Das OLT nimmt die Q-in-Q-Tags ab, mappt den Frame auf XGEM Port-ID 1127, verschlüsselt ihn mit dem AES-Schlüssel dieses Ports und sendet ihn das PON hinunter."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/IEEE_802.1ad", "title": "IEEE 802.1ad", "level": "nerd" }
+  ]
 }

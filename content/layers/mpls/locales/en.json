@@ -28,5 +28,8 @@
       "name": "TTL",
       "about": "Copied from the IP TTL when the label goes on and counted down by every label-switching router; when the label comes off, it’s copied back into the IP header (the uniform model)."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Multiprotocol_Label_Switching", "title": "MPLS", "level": "nerd" }
+  ]
 }

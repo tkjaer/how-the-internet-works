@@ -29,5 +29,8 @@
         "nerd": "Dieser Internetblick startet mit gNB und Mobilfunkkern, dann ISP-Kern, Border-Router, IXP und CDN-Rechenzentrum. Die Flächen sind Mobil- oder ISP-Netz, Austausch und Videofirma. Pakete laufen über GTP, Backbone-Glasfaser und Cross-Connects."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/5G", "title": "5G", "level": "both" }
+  ]
 }

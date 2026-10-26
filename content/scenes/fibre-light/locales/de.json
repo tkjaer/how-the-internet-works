@@ -175,5 +175,8 @@
         "nerd": "Die Cross-Connect-Ansicht zeigt einen kurzen Single-Mode-Patch mit einer 1310-nm-Lane: ein Laser an einem Ende, das Licht im Zickzack durch den Kern, ein Detektor am anderen. Das Label sagt 10GBASE-LR bei 1310 nm über Single-Mode-Faser."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Lichtwellenleiter", "title": "Lichtwellenleiter", "level": "both" }
+  ]
 }

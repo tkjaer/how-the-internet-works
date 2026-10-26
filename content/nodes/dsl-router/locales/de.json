@@ -1,5 +1,9 @@
 {
   "name": "Heimrouter",
   "kid": "Die Haustür deines Heimnetzes. Darin steckt ein Modem, das über die Telefonleitung spricht.",
-  "nerd": "Ein VDSL2-Modem und ein Router in einer Box: NAT fürs Zuhause und DMT-Töne auf dem Telefonpaar zum Straßenschrank."
+  "nerd": "Ein VDSL2-Modem und ein Router in einer Box: NAT fürs Zuhause und DMT-Töne auf dem Telefonpaar zum Straßenschrank.",
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/DSL-Modem", "title": "DSL-Modem", "level": "both" },
+    { "url": "https://de.wikipedia.org/wiki/Netzwerkadress%C3%BCbersetzung", "title": "Netzwerkadressübersetzung", "level": "nerd" }
+  ]
 }

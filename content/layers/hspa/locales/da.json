@@ -28,5 +28,8 @@
       "name": "RLC-sekvensnummer",
       "about": "Lægger segmenter i rækkefølge mellem telefon og RNC og beder om tabte igen (ARQ)."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/3G", "title": "3G", "level": "both" }
+  ]
 }

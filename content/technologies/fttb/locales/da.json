@@ -2,5 +2,8 @@
   "name": "Fiber til bygningen",
   "kid": "Fra kælderen suser pakken af sted i sin egen glastråd som lysglimt: én farve op og en anden farve ned.",
   "nerd": "FTTB: en punkt-til-punkt-fiber fra kælderens switch til udbyderen, én tråd med en BiDi-optik i hver ende (1310 nm op, 1490 nm ned).",
-  "tag": "1 Gbit/s · BiDi"
+  "tag": "1 Gbit/s · BiDi",
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Fiber_to_the_x", "title": "Fiber til bygningen", "level": "both" }
+  ]
 }

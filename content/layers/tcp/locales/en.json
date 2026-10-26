@@ -82,5 +82,9 @@
         "about": "Which service on the receiver: 80 = HTTP, the web."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://simple.wikipedia.org/wiki/Transmission_Control_Protocol", "title": "TCP (Simple English)", "level": "kid" },
+    { "url": "https://en.wikipedia.org/wiki/Transmission_Control_Protocol", "title": "TCP", "level": "nerd" }
+  ]
 }

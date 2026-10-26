@@ -38,5 +38,8 @@
       "name": "FCS",
       "about": "A 16-bit check over the frame (PPP’s default), so a crackle on the line is noticed."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Point-to-Point_Protocol", "title": "Point-to-Point Protocol", "level": "nerd" }
+  ]
 }

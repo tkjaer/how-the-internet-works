@@ -2,5 +2,8 @@
   "name": "Backhaul switch",
   "kid": "Big switches carry the parcels from many streets towards your internet company.",
   "nerd": "L2 aggregation with Q-in-Q: an S-VLAN per cabinet and a C-VLAN per subscriber, towards the BNG.",
-  "tag": "L2 · Q-in-Q VLANs"
+  "tag": "L2 · Q-in-Q VLANs",
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/IEEE_802.1ad", "title": "IEEE 802.1ad (Q-in-Q)", "level": "nerd" }
+  ]
 }

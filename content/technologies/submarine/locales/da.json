@@ -1,5 +1,8 @@
 {
   "name": "Søkabel",
   "kid": "Et kabel, der ligger på havbunden, fuldt af glastråde, og forbinder to kyster.",
-  "nerd": "Et fiberkabel på havbunden mellem to landingsstationer korte uden repeatere, lange med optiske repeatere, der får strøm gennem kablet. Her fører det internetudbyderens MPLS-hovednet over havet."
+  "nerd": "Et fiberkabel på havbunden mellem to landingsstationer korte uden repeatere, lange med optiske repeatere, der får strøm gennem kablet. Her fører det internetudbyderens MPLS-hovednet over havet.",
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/S%C3%B8kabel", "title": "Søkabel", "level": "both" }
+  ]
 }

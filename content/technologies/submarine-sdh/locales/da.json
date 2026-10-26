@@ -4,5 +4,8 @@
     "kid": "Et kabel på havbunden forbinder Danmark med Canada, via Færøerne og Island. Det bærer alle telefonopkald og alle pakker imellem dem, og din kører med i et lille hjørne af det.",
     "nerd": "CANTAT-3 (1994): omkring 7.100 km kabel fra Blåbjerg i Danmark til Nova Scotia, via Færøerne og Island; med strækningerne over land fra København og videre til New York er kredsløbet omkring 8.400 km. Hvert fiberpar bærer én farve med 2,5 Gbit/s SDH (STM-16), delt i kredsløb; udbyderens udbyder lejer et par stykker à 2 Mbit/s. Nutidens kabler bærer hundredvis af Tbit/s.",
     "tag": "CANTAT-3 · STM-16 · 2,5 Gbit/s"
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/S%C3%B8kabel", "title": "Søkabel", "level": "both" }
+  ]
 }

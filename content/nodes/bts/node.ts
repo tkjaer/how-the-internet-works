@@ -5,10 +5,4 @@ import { defineNode } from '$core/define';
 export default defineNode({
   kind: 'device',
   role: 'bridge',
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/Base_transceiver_station', title: 'Base transceiver station', level: 'both', lang: 'en' },
-    { url: 'https://de.wikipedia.org/wiki/Base_Transceiver_Station', title: 'Base Transceiver Station', level: 'both', lang: 'de' },
-    { url: 'https://en.wikipedia.org/wiki/Cell_site', title: 'Cell site', level: 'both', lang: 'en' },
-    { url: 'https://de.wikipedia.org/wiki/Mobilfunk-Basisstation', title: 'Mobilfunk-Basisstation', level: 'both', lang: 'de' },
-  ],
 });

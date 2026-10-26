@@ -26,5 +26,8 @@
     "internet": {
       "nerd": "Access network (VDSL2 from a DSLAM in the street cabinet), an aggregation layer (L2 backhaul to the BNG), the ISP’s MPLS core, then either settlement-free peering at an IXP or paid transit, ending at a CDN cache close to you. Each shaded area is one operator’s network."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Digital_subscriber_line", "title": "DSL", "level": "both" }
+  ]
 }

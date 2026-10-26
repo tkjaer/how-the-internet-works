@@ -148,5 +148,8 @@
         "nerd": "AMI; B8ZS erstatter 8 nuller med brud"
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Multiplexing", "title": "Multiplexing", "level": "both" }
+  ]
 }

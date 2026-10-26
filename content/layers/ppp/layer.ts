@@ -13,8 +13,4 @@ export default defineLayer({
   ],
   openAt: ['endpoint', 'router'],
   dive: 'ppp-hello',
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/Point-to-Point_Protocol', title: 'Point-to-Point Protocol', level: 'nerd', lang: 'en' },
-    { url: 'https://de.wikipedia.org/wiki/Point-to-Point_Protocol', title: 'Point-to-Point Protocol', level: 'nerd', lang: 'de' },
-  ],
 });

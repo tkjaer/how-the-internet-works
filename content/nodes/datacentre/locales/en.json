@@ -11,5 +11,9 @@
       "kid": "Inside a big hall stand rows of tall cupboards. The path comes from the exchange to the edge router, the load balancer, a spine switch, a rack switch and the video server. A dashed road leads far away to the main copy. Parcels go in and video comes back out.",
       "nerd": "The PoP view starts at the IXP and zigzags through the edge router, L4 load balancer, spine, top-of-rack leaf and the cache server, over short fibre. A dashed branch from the cache leads to the origin in a cloud region. Request and video packets move in opposite directions."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Data_center", "title": "Data center", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Content_delivery_network", "title": "Content delivery network", "level": "nerd" }
+  ]
 }

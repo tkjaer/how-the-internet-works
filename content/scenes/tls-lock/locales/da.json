@@ -56,5 +56,8 @@
   "tag": {
     "chain": "krypteret: kæde + CertVerify",
     "ecdhe": "X25519: g^a, g^b"
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Transport_Layer_Security", "title": "Transport Layer Security", "level": "both" }
+  ]
 }

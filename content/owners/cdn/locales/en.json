@@ -8,5 +8,8 @@
       "kid": "The web site",
       "nerd": "Web host"
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Content_delivery_network", "title": "Content delivery network", "level": "nerd", "eras": ["2010", "today"] }
+  ]
 }

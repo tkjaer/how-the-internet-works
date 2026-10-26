@@ -6,5 +6,9 @@
   "2010": {
     "nerd": "Inside the data centre in 2010: 10 Gigabit Ethernet over short multimode fibre (10GBASE-SR, 850 nm) between the switches; the servers hang off them on copper.",
     "tag": "10GBASE-SR · OM3"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Data_center", "title": "Data center", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Terabit_Ethernet", "title": "200G and 400G Ethernet", "level": "nerd", "eras": ["today"] }
+  ]
 }

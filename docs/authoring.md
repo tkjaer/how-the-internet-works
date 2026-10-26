@@ -46,10 +46,6 @@ import { defineNode } from '$core/define';
 export default defineNode({
   kind: 'device',
   role: 'endpoint',             // opens every layer, like the phone
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/Laptop', title: 'Laptop', level: 'both', lang: 'en' },
-    { url: 'https://da.wikipedia.org/wiki/B%C3%A6rbar_computer', title: 'Bærbar computer', level: 'both', lang: 'da' },
-  ],
 });
 ```
 
@@ -65,8 +61,13 @@ export default defineNode({
 ```
 
 ```json
-// locales/en.json (and da.json…)
-{ "name": "Laptop", "yours": "your laptop", "kid": "A computer you can fold shut…", "nerd": "An endpoint like the phone, but wired…" }
+// locales/en.json (and da.json…, each with its own language's links)
+{
+  "name": "Laptop", "yours": "your laptop", "kid": "A computer you can fold shut…", "nerd": "An endpoint like the phone, but wired…",
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Laptop", "title": "Laptop", "level": "both" }
+  ]
+}
 ```
 
 **2. The place:** `content/places/desk/`
@@ -126,7 +127,7 @@ the first hop and the NAT at the router, and `#/en/desk/watch-video/internet/hom
 ## Add a node
 
 `content/nodes/<id>/`:
-- `node.ts`: `kind` is `device`, or `network` for a group that unfolds into its own path scene (list it in the activity's `groups`). Add a default `role` and `learnMore`.
+- `node.ts`: `kind` is `device`, or `network` for a group that unfolds into its own path scene (list it in the activity's `groups`). Add a default `role`.
   A group can sit inside another one: list it as `{ id: 'datacentre', in: 'internet' }`, after its parent, and put its
   hops `in` it. It is drawn as one node in its parent's scene and unfolds into its own, entered from the hop before it.
 - `art/Device.svelte`: optional; without it the theme draws a plain fallback body. Draw in a 200×200 box with the vocabulary classes: `body`, `peach`, `orange`, `teal`, `berry`, `cloud`, `screen`, `hi`, `button`, `accent`, `line`, `thin`, `wave`, `roof`. Export `face` if a face fits. It loads, as a small chunk of its own, with the first route that draws it (#91), so a new device adds nothing to the first load.
@@ -144,7 +145,7 @@ the first hop and the NAT at the router, and `#/en/desk/watch-video/internet/hom
 `content/technologies/<id>/technology.ts`:
 
 ```ts
-defineTechnology({ look: 'radio' | 'cable' | 'fibre' | 'trunk', colour: '#rrggbb', stack: ['<layer>', …], rate: { down, up }, dive?: '<scene>', learnMore })
+defineTechnology({ look: 'radio' | 'cable' | 'fibre' | 'trunk', colour: '#rrggbb', stack: ['<layer>', …], rate: { down, up }, dive?: '<scene>' })
 ```
 
 - `rate` (required, bit/s each way): what a reader really got on it in the era it stands for, not the standard's peak
@@ -164,7 +165,7 @@ defineTechnology({ look: 'radio' | 'cable' | 'fibre' | 'trunk', colour: '#rrggbb
 ## Add a layer (issue #5)
 
 `content/layers/<id>/`:
-- `layer.ts`: `defineLayer({ fields, openAt?, seals?, tunnel?, switched?, code?, bytes?, dive?, learnMore })`.
+- `layer.ts`: `defineLayer({ fields, openAt?, seals?, tunnel?, switched?, code?, bytes?, dive? })`.
   - `fields`: its header, in wire order (see below).
   - `openAt`: the roles that read it (TCP, TLS and HTTP: `['endpoint']`). Everyone else leaves it closed. The default
     is everyone.
@@ -219,7 +220,7 @@ move?* A layer scene is the **paper world** of envelopes and stickers; *who is t
 did it arrive intact?* Keep that split so the two don't become near-duplicates.
 
 `content/scenes/<id>/`:
-- `scene.ts`: `defineScene({ learnMore })`.
+- `scene.ts`: `defineScene({})`.
 - `Scene.svelte`: gets `{ subject, time }`: the link it explains, with `subject.link.tech`, `subject.link.stack`, and its hops via `subject.route.hops[subject.link.from]`. It draws in the scene world (landscape 1600×900, portrait 900×1600; read `view.orient`). Build it from:
   - `time`, its clock (seconds), and `view.level`. Animate on `time`, not `view.time` (a content test checks): the
     clock holds still while the scene is hidden, so a dive mounted for a flight doesn't redraw unseen (#181). Pass it
@@ -276,7 +277,7 @@ is the hop id (`#/en/home/watch-video/router`).
 - `content/nodes/<id>/node.ts`: `dive: '<scene id>'`. Only `kind: 'device'` nodes have one (a network is a group,
   which opens up into its own path instead), and only where the device is on the route's chain (not as a group's
   stand-in entry or on a side branch).
-- `content/scenes/<id>/scene.ts`: `defineScene({ explains: 'node', learnMore })`.
+- `content/scenes/<id>/scene.ts`: `defineScene({ explains: 'node' })`.
 - `Scene.svelte`: gets `{ subject }`, a `NodeSubject` (`import type { NodeSubject } from '$core/api'`):
   - `subject.hop`: the hop (its `node`, `role`, `addr`, `natTo`); `subject.sceneNode`: the device as drawn;
   - `subject.in` / `subject.out`: the route links arriving and leaving (null at an end of the route), with `tech`
@@ -305,7 +306,7 @@ adapts to where it is opened rather than having near-duplicates (the IP dive is 
 notebook at a NAT, a carrier-grade NAT at the mobile core, an envelope swap at a bridge, a door plate at an endpoint).
 
 `content/scenes/<id>/`:
-- `scene.ts`: `defineScene({ explains: 'layer', learnMore })`.
+- `scene.ts`: `defineScene({ explains: 'layer' })`.
 - `Scene.svelte`: gets `{ subject }`, a `LayerSubject` (`import type { LayerSubject } from '$core/api'`):
   - `subject.layer`: the layer id; `subject.open`: whether this hop reads it (else it is sealed here);
   - `subject.ctx`: the hop's `LayerCtx`: `to` (this hop, with its `role`), `link` (the link
@@ -566,9 +567,10 @@ extra effort:
 1. `content/locales/<lang>/meta.json`: `{ "name": "Dansk", "dir": "ltr" }` (`rtl` for Arabic, Hebrew…). `name` is
    written in the language itself; it also tells the theme which script's fonts to load.
 2. `content/locales/<lang>/ui.json`: the chrome strings (copy `en/ui.json`).
-3. Add `locales/<lang>.json` to any content folder you translate. Anything missing falls back to English. A string
-   copied over still in English fails `src/translations.test.ts`: translate it, or, for a term your language keeps
-   English on purpose (a header field name, router output), add the line the test prints to
+3. Add `locales/<lang>.json` to any content folder you translate, with its `learnMore` links to pages in your language
+   ([below](#add-a-learn-more-link-issue-4); English links are the fallback). Anything missing falls back to English.
+   A string copied over still in English fails `src/translations.test.ts`: translate it, or, for a term your language
+   keeps English on purpose (a header field name, router output), add the line the test prints to
    `content/locales/<lang>/keep-english.json`. Only the tests read that file.
 4. A new script (Arabic, Greek…) needs its font faces in the theme's `tokens.css`.
 
@@ -578,19 +580,25 @@ The language appears in the switcher at once and loads as its own small chunk. `
 
 ## Add a learn-more link (issue #4)
 
-Add it to the `learnMore` list of the definition it explains (node, technology, layer, scene, place or activity):
+Add it to the `learnMore` list in the locale file of the page's language, in the folder of what it explains (a node,
+owner, technology, layer, scene, place or activity): a Danish page in `locales/da.json`, an English one in `en.json`.
 
-```ts
-{ url: 'https://da.wikipedia.org/wiki/5G', title: '5G', level: 'kid' | 'nerd' | 'both', lang: 'da' }
+```json
+"learnMore": [
+  { "url": "https://da.wikipedia.org/wiki/5G", "title": "5G", "level": "kid" | "nerd" | "both" }
+]
 ```
 
-`title` is in the language of the page. The caption shows up to three links for the reader's level:
+`title` is in the language of the page. English links are every language's fallback, so a language lists only its
+own pages. The caption shows up to three links for the reader's level:
 - in their own language first
 - English nerd links always stay (marked "(en)")
 - other English links only when there's nothing in their language
 
-A link that is true of some eras only lists them: `eras: ['today']` for RFC 9293's TCP, `eras: ['1995', '2010']` for
-RFC 793 (#180). Without `eras` it shows in every era; the era tests read every link a past trip shows.
+A link that is true of some eras only lists them: `"eras": ["today"]` for RFC 9293's TCP, `"eras": ["1995", "2010"]`
+for RFC 793 (#180). Without `eras` it shows in every era; the era tests read every link a past trip shows. The list is
+the file's own, never in an era's block (`"1995": { … }`). A variant activity has no locale files (#59), so its links go
+in its base's, with its era in `eras`.
 
 ## Checklist
 

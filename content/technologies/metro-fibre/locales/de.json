@@ -6,5 +6,8 @@
   "2010": {
     "nerd": "Punkt-zu-Punkt-Faser mit Ethernet (1–10 Gbit/s).",
     "tag": "DWDM · C-Band · 1–10G"
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Metro_Ethernet", "title": "Metro Ethernet", "level": "nerd" }
+  ]
 }

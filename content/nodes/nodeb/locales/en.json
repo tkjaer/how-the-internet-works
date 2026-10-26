@@ -14,5 +14,9 @@
         "nerd": "MAC-hs queues the RNC’s pieces per phone, and the scheduler sends them in the 2 ms slots and codes it picks."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Cell_site", "title": "Cell site", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Node_B", "title": "Node B", "level": "nerd" }
+  ]
 }

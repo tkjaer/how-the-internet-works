@@ -25,5 +25,8 @@
         "nerd": "Die aufgeklappte Route startet am Gebäude: Ethernet-Steigleitung zum Kellerswitch, Glasfaser zum Backhaul-Switch, dann BNG und ISP-Kern. Weiter zum Border-Router, IXP und CDN-Rechenzentrum, das sich öffnet. Anfragen und Video laufen entgegengesetzt."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/FTTx", "title": "FTTx", "level": "both" }
+  ]
 }

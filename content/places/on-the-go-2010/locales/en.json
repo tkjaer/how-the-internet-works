@@ -30,5 +30,9 @@
         }
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/3G", "title": "3G", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/GPRS_core_network", "title": "GPRS core network", "level": "nerd" }
+  ]
 }

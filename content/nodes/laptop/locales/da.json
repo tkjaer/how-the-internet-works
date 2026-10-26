@@ -2,5 +2,8 @@
   "name": "Bærbar",
   "yours": "din bærbare",
   "kid": "En computer, du kan klappe sammen og tage med. Den her har et stik til et netværkskabel.",
-  "nerd": "Et endepunkt ligesom telefonen, men med kabel: dens Ethernet-port sender rammer direkte til routeren, uden radio imellem."
+  "nerd": "Et endepunkt ligesom telefonen, men med kabel: dens Ethernet-port sender rammer direkte til routeren, uden radio imellem.",
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/B%C3%A6rbar_computer", "title": "Bærbar computer", "level": "both" }
+  ]
 }

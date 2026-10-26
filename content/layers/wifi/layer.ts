@@ -15,8 +15,4 @@ export default defineLayer({
     { id: 'fcs', bits: 32, value: '{crc}', use: true },
   ],
   dive: 'wifi-frame',
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/IEEE_802.11', title: 'IEEE 802.11', level: 'nerd', lang: 'en' },
-    { url: 'https://de.wikipedia.org/wiki/IEEE_802.11', title: 'IEEE 802.11', level: 'nerd', lang: 'de' },
-  ],
 });

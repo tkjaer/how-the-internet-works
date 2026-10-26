@@ -11,5 +11,9 @@
       "kid": "In einer großen Halle stehen Reihen hoher Schränke. Der Weg kommt vom Tauschplatz zum Kantenrouter, Load-Balancer, Spine-Switch, Rack-Switch und Video-Server. Eine gestrichelte Straße führt weit zur Hauptkopie. Päckchen rein, Video wieder raus.",
       "nerd": "Die PoP-Ansicht startet am IXP und zickzackt über kurze Glasfaser durch Edge-Router, L4-Load-Balancer, Spine, Top-of-Rack-Leaf und Cache-Server. Ein gestrichelter Ast führt vom Cache zum Origin in einer Cloud-Region. Request- und Videopakete laufen gegeneinander."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Rechenzentrum", "title": "Rechenzentrum", "level": "both" },
+    { "url": "https://de.wikipedia.org/wiki/Content_Delivery_Network", "title": "Content Delivery Network", "level": "nerd" }
+  ]
 }

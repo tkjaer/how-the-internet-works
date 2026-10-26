@@ -115,5 +115,12 @@
         "nerd": "802.11n radio"
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://simple.wikipedia.org/wiki/Router", "title": "Router", "level": "kid" },
+    { "url": "https://en.wikipedia.org/wiki/Residential_gateway", "title": "Residential gateway", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Optical_network_terminal", "title": "Optical network terminal", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Network_switch", "title": "Network switch", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Network_address_translation", "title": "Network address translation", "level": "nerd" }
+  ]
 }

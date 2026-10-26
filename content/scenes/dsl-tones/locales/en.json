@@ -62,5 +62,12 @@
     "nerd": "This line: {m} m of copper"
   },
   "xtalkTitle": "Crosstalk",
-  "xtalkLine": "Neighbours’ pairs leak in"
+  "xtalkLine": "Neighbours’ pairs leak in",
+  "learnMore": [
+    { "url": "https://simple.wikipedia.org/wiki/Digital_subscriber_line", "title": "Digital subscriber line", "level": "kid" },
+    { "url": "https://en.wikipedia.org/wiki/Digital_subscriber_line", "title": "Digital subscriber line", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/VDSL", "title": "VDSL", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Discrete_multitone_modulation", "title": "Discrete multitone modulation", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Crosstalk", "title": "Crosstalk", "level": "nerd" }
+  ]
 }

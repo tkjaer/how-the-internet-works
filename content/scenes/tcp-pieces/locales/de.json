@@ -96,5 +96,8 @@
   },
   "2010": {
     "nerd": "TCP ist end-to-end (RFC 793): ein 3-way Handshake (SYN, SYN-ACK, ACK) einigt sich auf die Start-Sequence Numbers in beide Richtungen. Der Sender hält ein Window von vier Segmenten (vereinfacht: echte Windows sind in Bytes, und Slow Start beginnt bei 2 bis 4 Segmenten, RFC 3390). ACK=5 nennt das nächste erwartete Byte und schiebt das Window auf 5–8; 6, 7 und 8 ziehen je ein Duplicate ACK=5, und das dritte löst Fast Retransmit aus; die App bekommt Bytes erst in Reihenfolge."
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Transmission_Control_Protocol", "title": "Transmission Control Protocol", "level": "both" }
+  ]
 }

@@ -3,5 +3,8 @@
   "1995": {
     "kid": "Siden og dens billede bor her, på en høj beige computer langt væk. Alle besøgende får dem fra den ene computer.",
     "nerd": "En tårn-pc eller en Unix-arbejdsstation med ét webprogram (NCSA HTTPd, som de fleste sider brugte i august 1995, eller det nye Apache). Den læser hver forespørgsel og sender filen fra sin egen disk: ingen cache foran, ingen anden kopi. CDN’er begyndte med Akamai i 1998–99."
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Webserver", "title": "Webserver", "level": "both" }
+  ]
 }

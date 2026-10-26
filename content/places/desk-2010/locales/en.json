@@ -27,5 +27,8 @@
         "nerd": "Access network (VDSL2 from a DSLAM in the street cabinet; most Danish homes in 2010 still had ADSL2+ from the exchange), an aggregation layer (L2 backhaul to the BNG), the ISP’s MPLS core, then either peering at an IXP or paid transit, ending at a CDN cache. Each shaded area is one operator’s network."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Digital_subscriber_line", "title": "DSL", "level": "both" }
+  ]
 }

@@ -2,5 +2,8 @@
   "name": "Gateway",
   "kid": "Hier prüft deine Internetfirma, dass du wirklich du bist, und lässt deine Päckchen ins Internet.",
   "nerd": "Das Broadband Network Gateway beendet Teilnehmer-Sessions (IPoE/PPPoE), vergibt Adressen und setzt Policy und QoS durch.",
-  "tag": "IPoE · per-subscriber"
+  "tag": "IPoE · per-subscriber",
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Breitband-Zugangsserver", "title": "Breitband-Zugangsserver", "level": "nerd" }
+  ]
 }

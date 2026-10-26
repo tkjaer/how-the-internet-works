@@ -38,5 +38,10 @@
         "about": "Hvad der er indeni: 0x0800 IPv4, 0x0806 ARP."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Netv%C3%A6rksswitch", "title": "Netværksswitch", "level": "both" },
+    { "url": "https://da.wikipedia.org/wiki/MAC-adresse", "title": "MAC-adresse", "level": "nerd" },
+    { "url": "https://da.wikipedia.org/wiki/ARP", "title": "ARP", "level": "both" }
+  ]
 }

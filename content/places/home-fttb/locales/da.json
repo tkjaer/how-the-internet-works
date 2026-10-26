@@ -25,5 +25,8 @@
         "nerd": "Den udfoldede internetrute starter ved bygningen: Ethernet-stigkablet til kælderswitchen, dens fiber til backhaul-switchen og så BNG og ISP-kerne. Den fortsætter til grænserouter, IXP og CDN’ets datacenter, som kan foldes ud. Forespørgsler og video går hver sin vej."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Fiber_to_the_x", "title": "Fiber til bygningen", "level": "both" }
+  ]
 }

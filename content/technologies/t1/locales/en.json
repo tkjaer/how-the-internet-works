@@ -4,5 +4,9 @@
     "kid": "The American network rents a line, always on, into the building where the web server lives. It carries one and a half million bits a second.",
     "nerd": "A leased T1 (DS1): 24 timeslots of 64 kbit/s and one framing bit, 193 bits 8,000 times a second, 1.544 Mbit/s on two copper pairs (B8ZS), with Cisco HDLC on top. A typical 1990s university or company line; in Europe it would be an E1.",
     "tag": "T1 · 1.5 Mbit/s · HDLC"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/T-carrier", "title": "T-carrier", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Leased_line", "title": "Leased line", "level": "both" }
+  ]
 }

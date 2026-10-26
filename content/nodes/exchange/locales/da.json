@@ -6,5 +6,8 @@
   "peek": {
     "kid": "Centralen åbner ingenting: den fører bare dit opkald, lyd og det hele, videre til internetfirmaet.",
     "nerd": "Kredsløbskoblet: opkaldet fortsætter i en 64 kbit/s-tidsluke. Her læser intet en ramme; PPP-rammerne rejser inde i modemernes lyd."
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Telefoncentral", "title": "Telefoncentral", "level": "both" }
+  ]
 }

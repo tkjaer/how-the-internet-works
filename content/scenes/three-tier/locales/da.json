@@ -32,5 +32,8 @@
     "kid": "Én vej åben, én lukket",
     "nerd": "Uplink 2: spærret",
     "rate": "48×1G ↓ 10G ↑"
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Datacenter", "title": "Datacenter", "level": "both" }
+  ]
 }

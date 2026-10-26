@@ -6,11 +6,4 @@ import { defineNode } from '$core/define';
 // in every era; it has a node of its own for its backdrop (a hall of grey racks in cages).
 export default defineNode({
   kind: 'network',
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/Colocation_centre', title: 'Colocation centre', level: 'both', lang: 'en' },
-    { url: 'https://da.wikipedia.org/wiki/Datacenter', title: 'Datacenter', level: 'both', lang: 'da' },
-    { url: 'https://de.wikipedia.org/wiki/Colocation_(Serverhousing)', title: 'Colocation (Serverhousing)', level: 'both', lang: 'de' },
-    { url: 'https://en.wikipedia.org/wiki/Content_delivery_network', title: 'Content delivery network', level: 'nerd', lang: 'en' },
-    { url: 'https://de.wikipedia.org/wiki/Content_Delivery_Network', title: 'Content Delivery Network', level: 'nerd', lang: 'de' },
-  ],
 });

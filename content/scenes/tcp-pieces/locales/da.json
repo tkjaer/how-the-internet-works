@@ -96,5 +96,8 @@
   },
   "2010": {
     "nerd": "TCP er ende-til-ende (RFC 793): et 3-vejs-handshake (SYN, SYN-ACK, ACK) aftaler startsekvensnumre i begge retninger. Afsenderen holder et vindue på fire segmenter (forenklet: rigtige vinduer tælles i bytes, og slow start begynder ved 2 til 4 segmenter, RFC 3390). ACK=5 nævner den næste byte, der ventes, og flytter vinduet til 5–8; 6, 7 og 8 giver hver et duplikeret ACK=5, og det tredje udløser fast retransmit; appen får først bytes i rækkefølge."
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Transmission_Control_Protocol", "title": "Transmission Control Protocol", "level": "both" }
+  ]
 }

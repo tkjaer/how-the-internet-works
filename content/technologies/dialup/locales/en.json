@@ -2,5 +2,8 @@
   "name": "Phone call",
   "kid": "The modem turns the parcel into whistles and hisses and sends them down the phone line, like a very fast, very noisy phone call.",
   "nerd": "A V.34 modem call: up to 28.8 kbit/s each way, in practice less (33.6k came in 1996, 56k in 1997; standardised as V.90 in 1998). The call holds one circuit through the exchange for as long as you are online.",
-  "tag": "V.34 · 28.8k"
+  "tag": "V.34 · 28.8k",
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Dial-up_Internet_access", "title": "Dial-up internet access", "level": "both" }
+  ]
 }

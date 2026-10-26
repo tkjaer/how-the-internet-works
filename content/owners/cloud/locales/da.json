@@ -2,5 +2,8 @@
   "name": {
     "kid": "Et cloudfirma",
     "nerd": "Cloud-region · AS64503"
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Cloud_computing", "title": "Cloud computing", "level": "both" }
+  ]
 }

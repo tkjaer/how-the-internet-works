@@ -134,5 +134,8 @@
         "about": "5G’s QoS-flow-mærke (5G kom i 2019); 3G havde intet: PDP-konteksten bar selv QoS’en."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Mobiltelefoni", "title": "Mobiltelefoni", "level": "kid" }
+  ]
 }

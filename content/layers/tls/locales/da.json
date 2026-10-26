@@ -25,5 +25,8 @@
       "name": "Længde",
       "about": "Bytes krypteret indhold der følger: nyttelasten, dens rigtige indholdstype på 1 byte og det 16 bytes autentifikations-tag."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Transport_Layer_Security", "title": "Transport Layer Security", "level": "both" }
+  ]
 }

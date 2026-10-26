@@ -32,5 +32,8 @@
       "name": "QoS-flow (SDAP)",
       "about": "Hvilket QoS-flow pakken hører til; samme nummer følger med i GTP-tunnelen."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/5G", "title": "5G", "level": "both" }
+  ]
 }

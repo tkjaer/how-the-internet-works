@@ -15,5 +15,8 @@
         "nerd": "Der Serverraum beginnt am PoP des Backbones und läuft über den T1 zum Router des Standorts, dann über 10BASE-T durch einen Repeater-Hub zum Webserver, einem beigen Tower. Regale mit Tower-Computern stehen an der Rückwand. Anfrage- und Seitenpakete laufen in entgegengesetzte Richtungen."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Webhosting", "title": "Webhosting", "level": "nerd" }
+  ]
 }

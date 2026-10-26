@@ -65,5 +65,10 @@
         }
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Cellular_network", "title": "Cellular network", "level": "kid" },
+    { "url": "https://en.wikipedia.org/wiki/GPRS_Tunnelling_Protocol", "title": "GPRS Tunnelling Protocol", "level": "nerd" },
+    { "url": "https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1699", "title": "3GPP TS 29.281", "level": "nerd" }
+  ]
 }

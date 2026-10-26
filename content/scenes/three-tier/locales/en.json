@@ -32,5 +32,11 @@
     "kid": "One road open, one closed",
     "nerd": "Uplink 2: blocked",
     "rate": "48×1G ↓ 10G ↑"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Hierarchical_internetworking_model", "title": "Hierarchical internetworking model", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Spanning_Tree_Protocol", "title": "Spanning Tree Protocol", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Hot_Standby_Router_Protocol", "title": "Hot Standby Router Protocol", "level": "nerd" },
+    { "url": "https://simple.wikipedia.org/wiki/Data_center", "title": "Data center", "level": "kid" }
+  ]
 }

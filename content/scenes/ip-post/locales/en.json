@@ -141,5 +141,10 @@
         }
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Routing_table", "title": "Routing table", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Network_address_translation", "title": "Network address translation", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Carrier-grade_NAT", "title": "Carrier-grade NAT", "level": "nerd", "eras": ["2010", "today"] }
+  ]
 }

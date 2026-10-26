@@ -51,5 +51,8 @@
     "for": "Til: {who}",
     "from": "GTP-U {addr}",
     "to": "→ {addr}"
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/MIMO", "title": "MIMO", "level": "nerd" }
+  ]
 }

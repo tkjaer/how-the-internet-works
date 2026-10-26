@@ -38,8 +38,4 @@ export default definePlace({
       portrait: { nodes: { home: [200, 1470, 130], exchange: [610, 1380, 150], bng: [720, 1060, 150] }, links: { 'bng-core': { bend: 0.08 } } },
     },
   },
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/Modem', title: 'Modem', level: 'both', lang: 'en' },
-    { url: 'https://de.wikipedia.org/wiki/Modem', title: 'Modem', level: 'both', lang: 'de' },
-  ],
 });

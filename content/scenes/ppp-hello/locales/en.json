@@ -146,5 +146,10 @@
         }
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://simple.wikipedia.org/wiki/Point-to-Point_Protocol", "title": "Point-to-Point Protocol", "level": "kid" },
+    { "url": "https://www.rfc-editor.org/rfc/rfc1661", "title": "RFC 1661: PPP", "level": "nerd" },
+    { "url": "https://www.rfc-editor.org/rfc/rfc1662", "title": "RFC 1662: PPP in HDLC-like framing", "level": "nerd" }
+  ]
 }

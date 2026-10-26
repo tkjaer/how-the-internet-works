@@ -12,5 +12,8 @@
   "2010": {
     "nerd": "An MPLS core with 10–40G links, the first 100G arriving in 2010; packets are label-switched rather than looked up at every hop.",
     "tag": "MPLS · 10G"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Multiprotocol_Label_Switching", "title": "MPLS", "level": "nerd", "eras": ["2010", "today"] }
+  ]
 }

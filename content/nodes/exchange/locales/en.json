@@ -6,5 +6,8 @@
   "peek": {
     "kid": "The exchange doesn’t open anything: it just carries your call, sound and all, on to the internet company.",
     "nerd": "Circuit-switched: the call goes on as a 64 kbit/s timeslot. Nothing here reads a frame; the PPP frames ride inside the modems’ sound."
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Telephone_exchange", "title": "Telephone exchange", "level": "both" }
+  ]
 }

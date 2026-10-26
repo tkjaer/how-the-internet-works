@@ -185,7 +185,7 @@ describe('validation messages', () => {
     expect(msg).toContain(`${v} › route[2].segment: "datacentre-1995" is a variant of "datacentre"; name "datacentre" (the route's era picks the variant)`);
     // its words go in its base's block for its era, which loads lazily with the past's other words
     const own = formatProblems(validate({ content, packs, files, locales: { ...locales, '/content/activities/watch-video-2010/locales/en.json': { title: 'A small video' } } }));
-    expect(own).toContain('content/activities/watch-video-2010/locales/en.json › strings: a variant has no strings of its own: write them in "2010": { … } in content/activities/watch-video/locales/');
+    expect(own).toContain('content/activities/watch-video-2010/locales/en.json › strings: a variant has no strings or links of its own: write its strings in "2010": { … } and give its links "eras": ["2010"], in content/activities/watch-video/locales/');
   });
 
   it('checks how long it takes (#59): one sized kind, going down, and words for it', () => {
@@ -310,10 +310,25 @@ describe('validation messages', () => {
     expect(msg).toContain('content/places/home/locales/en.json › describe:');
   });
 
-  it('checks schemas and learn-more links', () => {
-    const msg = broken((c) => { (c.nodes.phone as { role: string }).role = 'modem'; c.nodes.phone.learnMore = [{ url: 'http://x.org', title: 'x', level: 'kid', lang: 'dk' }]; });
-    expect(msg).toContain('content/nodes/phone/node.ts › role:');
-    expect(msg).toContain('learnMore[0].url');
-    expect(msg).toContain('learnMore[0].lang: "dk" is not a language. Did you mean "da"?');
+  it('checks schemas', () => {
+    expect(broken((c) => { (c.nodes.phone as { role: string }).role = 'modem'; })).toContain('content/nodes/phone/node.ts › role:');
+  });
+
+  it('checks learn-more links (#201): in a known language, well formed, for known eras, in the file\'s own list', () => {
+    const msg = formatProblems(validate({ content, packs, files, locales: {
+      '/content/nodes/phone/locales/dk.json': { learnMore: [{ url: 'https://da.wikipedia.org/wiki/Smartphone', title: 'Smartphone', level: 'both' }] } as unknown as Json,
+      '/content/nodes/phone/locales/da.json': { learnMore: [
+        { url: 'http://x.org', title: 'x', level: 'kid' },
+        { url: 'https://x.org', title: 'x', level: 'both', lang: 'da', eras: ['1959'] },
+      ] } as unknown as Json,
+      '/content/nodes/core/locales/de.json': { name: 'ISP-Kern', 1995: { learnMore: [] } } as unknown as Json,
+      '/content/segments/isp-to-cdn/locales/en.json': { learnMore: [] } as unknown as Json,
+    } }));
+    expect(msg).toContain('content/nodes/phone/locales/dk.json › language: "dk" is not a language. Did you mean "da"?');
+    expect(msg).toContain('content/nodes/phone/locales/da.json › learnMore[0].url: use a full https:// URL');
+    expect(msg).toContain('content/nodes/phone/locales/da.json › learnMore[1]: Unrecognized key: "lang"');
+    expect(msg).toContain('content/nodes/phone/locales/da.json › learnMore[1].eras[0]: "1959" is not an era.');
+    expect(msg).toContain('content/nodes/core/locales/de.json › 1995.learnMore: links go in the file\'s own "learnMore" list');
+    expect(msg).toContain('content/segments/isp-to-cdn/locales/en.json › learnMore: nothing shows the links of segments');
   });
 });

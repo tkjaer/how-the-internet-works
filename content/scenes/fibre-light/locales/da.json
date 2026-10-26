@@ -175,5 +175,8 @@
         "nerd": "Krydsforbindelsen vises som en kort single-mode-patch med én 1310 nm-bane: en laser i den ene ende, lyset i zigzag gennem kernen og en detektor i den anden. Mærket siger 10GBASE-LR ved 1310 nm over single-mode-fiber."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Lysleder", "title": "Lysleder", "level": "both" }
+  ]
 }

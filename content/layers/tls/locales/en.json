@@ -25,5 +25,10 @@
       "name": "Length",
       "about": "Bytes of ciphertext that follow: the payload, its 1-byte real content type and the 16-byte authentication tag."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://simple.wikipedia.org/wiki/Transport_Layer_Security", "title": "TLS (Simple English)", "level": "kid" },
+    { "url": "https://en.wikipedia.org/wiki/Transport_Layer_Security", "title": "Transport Layer Security", "level": "both" },
+    { "url": "https://datatracker.ietf.org/doc/html/rfc8446", "title": "RFC 8446: TLS 1.3", "level": "nerd" }
+  ]
 }

@@ -10,11 +10,4 @@ export default defineTechnology({
   // a 20/2 Mbit/s line, a common plan in 2010 (most homes had ADSL2+ from the exchange, 8–24 Mbit/s; VDSL2 near a
   // cabinet was sold "best effort", 25–50)
   rate: { down: 20e6, up: 2e6 },
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/Digital_subscriber_line', title: 'DSL', level: 'both', lang: 'en' },
-    { url: 'https://da.wikipedia.org/wiki/DSL', title: 'DSL', level: 'both', lang: 'da' },
-    { url: 'https://de.wikipedia.org/wiki/Digital_Subscriber_Line', title: 'Digital Subscriber Line', level: 'both', lang: 'de' },
-    { url: 'https://en.wikipedia.org/wiki/VDSL', title: 'VDSL', level: 'nerd', lang: 'en' },
-    { url: 'https://de.wikipedia.org/wiki/Very_High_Speed_Digital_Subscriber_Line', title: 'Very High Speed Digital Subscriber Line', level: 'nerd', lang: 'de' },
-  ],
 });

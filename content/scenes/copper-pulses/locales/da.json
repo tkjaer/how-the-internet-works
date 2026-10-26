@@ -70,5 +70,8 @@
       }
     },
     "extra": "Power over Ethernet: sådan et kabel kan også føre strøm, så et adgangspunkt eller et kamera i loftet ikke behøver en stikkontakt. Jævnstrømmen ligger på parrene som en fælles (fantom)spænding, som dataene, der sendes som forskelle, aldrig mærker: 15,4 W med 802.3af (2003) og 30 W med 802.3at, som kom i 2009. Hurtigere kobber: 10GBASE-T (2006) bruger 16 niveauer i stedet for 5 (PAM-16, parret i DSQ128-symboler med LDPC-fejlrettelse), kører 800 MBd pr. par og kræver Cat 6A for de fulde 100 m. I 2010 var det stadig mest til servere."
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Parsnoet_kabel", "title": "Parsnoet kabel", "level": "both" }
+  ]
 }

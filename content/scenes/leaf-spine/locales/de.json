@@ -27,5 +27,8 @@
     "kid": "Immer dieselbe Straße",
     "nerd": "hash(5-tuple)",
     "mod": "mod 4 = {n}"
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Rechenzentrum", "title": "Rechenzentrum", "level": "nerd" }
+  ]
 }

@@ -76,5 +76,10 @@
     "nerd": "Its own circuit"
   },
   "circuitLine": "Slot {n} of 32 is yours",
-  "circuitSub": "Held all call, even when quiet"
+  "circuitSub": "Held all call, even when quiet",
+  "learnMore": [
+    { "url": "https://simple.wikipedia.org/wiki/Modem", "title": "Modem", "level": "kid" },
+    { "url": "https://en.wikipedia.org/wiki/V.34", "title": "V.34", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Dual-tone_multi-frequency_signaling", "title": "Touch tones (DTMF)", "level": "nerd" }
+  ]
 }

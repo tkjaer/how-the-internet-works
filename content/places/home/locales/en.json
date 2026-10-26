@@ -26,5 +26,8 @@
         "nerd": "The expanded internet route starts at the home access edge, then crosses the splitter cabinet, the OLT, BNG and ISP core. It continues to the border router, IXP and the CDN's data centre, which unfolds. Request and video packets move in opposite directions over fibre, backbone and cross-connect links."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Fiber_to_the_x", "title": "Fibre to the home", "level": "nerd" }
+  ]
 }

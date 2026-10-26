@@ -26,5 +26,8 @@
     "internet": {
       "nerd": "Adgangsnet (VDSL2 fra en DSLAM i gadeskabet), et aggregeringslag (L2-backhaul til BNG’en), udbyderens MPLS-kerne og derefter enten peering uden afregning i et IXP eller betalt transit – og til sidst en CDN-cache tæt på dig. Hvert farvet felt er én operatørs net."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/DSL", "title": "DSL", "level": "both" }
+  ]
 }

@@ -25,5 +25,8 @@
         "nerd": "The expanded internet route starts at the building: the Ethernet riser to the basement switch, its fibre to the backhaul switch, then BNG and ISP core. It continues to the border router, IXP and the CDN's data centre, which unfolds. Requests and video move opposite ways."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Fiber_to_the_x", "title": "Fibre to the building", "level": "both" }
+  ]
 }

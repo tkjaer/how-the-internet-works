@@ -5,5 +5,9 @@
     "kid": "A thick grey laptop with a card in its side, and a curly cable from the card to a mobile phone the size of a brick. The phone does the calling; the laptop does the rest.",
     "nerd": "A 1995 laptop with a GSM data card (a PC card, like Nokia’s Cellular Data Card) on a cable to a GSM phone. The endpoint: it runs PPP, IP, TCP and the browser itself; the phone just carries the call.",
     "tag": "GSM · 9.6 kbit/s"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Circuit_Switched_Data", "title": "Circuit Switched Data", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/PC_Card", "title": "PC Card", "level": "nerd" }
+  ]
 }

@@ -32,9 +32,4 @@ export default definePlace({
       portrait: { nodes: { flats: [170, 1470, 130], basement: [710, 1400, 150], backhaul: [180, 1220, 150], bng: [720, 1060, 150] }, links: { 'bng-core': { bend: 0.08 }, 'basement-backhaul': { bend: 0.2 } } },
     },
   },
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/Fiber_to_the_x', title: 'Fibre to the building', level: 'both', lang: 'en' },
-    { url: 'https://da.wikipedia.org/wiki/Fiber_to_the_x', title: 'Fiber til bygningen', level: 'both', lang: 'da' },
-    { url: 'https://de.wikipedia.org/wiki/FTTx', title: 'FTTx', level: 'both', lang: 'de' },
-  ],
 });

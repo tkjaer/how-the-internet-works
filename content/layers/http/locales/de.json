@@ -71,5 +71,8 @@
         "nerd": "Eine Antwort: das nächste Stück der Videodatei."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol", "title": "Hypertext Transfer Protocol", "level": "both" }
+  ]
 }

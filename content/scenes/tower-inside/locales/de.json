@@ -51,5 +51,11 @@
     "for": "Für: {who}",
     "from": "GTP-U {addr}",
     "to": "→ {addr}"
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Remote_Radio_Head", "title": "Remote Radio Head", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/Base_Transceiver_Station", "title": "Base Transceiver Station", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/GPRS_Tunneling_Protocol", "title": "GPRS Tunneling Protocol", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/MIMO_(Nachrichtentechnik)", "title": "MIMO (Nachrichtentechnik)", "level": "nerd" }
+  ]
 }

@@ -76,5 +76,8 @@
     "nerd": "Eigener Kreis"
   },
   "circuitLine": "Slot {n} von 32 ist deiner",
-  "circuitSub": "Den ganzen Call gehalten, auch wenn es still ist"
+  "circuitSub": "Den ganzen Call gehalten, auch wenn es still ist",
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Mehrfrequenzwahlverfahren", "title": "Mehrfrequenzwahlverfahren", "level": "nerd" }
+  ]
 }

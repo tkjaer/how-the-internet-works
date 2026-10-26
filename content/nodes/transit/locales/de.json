@@ -7,5 +7,8 @@
     "kid": "Deine Internetfirma ist klein, darum mietet sie eine Leitung zu einem größeren Netz in Kopenhagen, das ihre Päckchen in den Rest der Welt trägt.",
     "nerd": "Der Upstream: ein größeres dänisches Netz, das IP-Transit über eine gemietete E1 (2 Mbit/s) verkauft, mit eigenen Leitungen über den Atlantik. Wie die meisten kleinen ISPs zeigt unserer nur eine Default-Route darauf.",
     "tag": "Upstream · E1"
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Tier_(Netzwerke)", "title": "Tier (Netzwerke)", "level": "nerd" }
+  ]
 }
