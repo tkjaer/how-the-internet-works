@@ -16,7 +16,7 @@
   const compact = $derived(view.orient === 'landscape' && !L.endNames);
   const serverFocus = $derived(subject.open && ctx.to.id === ctx.server.id);
   const clientFocus = $derived(subject.open && !serverFocus);
-  const nerd = $derived(ctx.level === 'nerd');
+  const technical = $derived(ctx.level === 'technical');
   const clientSpot = $derived(subject.open ? (clientFocus ? L.home[0] : L.ends[0]) : L.ends[0]);
   const serverSpot = $derived(subject.open ? (serverFocus ? L.home[1] : L.ends[1]) : L.ends[1]);
   const hopSpot = $derived(subject.open ? null : L.hop);
@@ -26,7 +26,7 @@
   const win = $derived(windowStart(time));
   const natSticker = $derived(ctx.nat ? `${ctx.nat.insidePort}↔${ctx.nat.outsidePort}` : '');
   const tagA = $derived(beat === 'handshake' ? S('tag.syn') : beat === 'send' ? S('tag.window') : beat === 'loss' ? fill(S('tag.dupAck'), { n: Math.max(1, dupAcks(time)) }) : beat === 'resend' ? S('tag.fast') : S('tag.order'));
-  const tagB = $derived(ctx.nat ? (nerd ? S('tag.nat').replace('{nat}', natSticker) : S('label.port')) : S('tag.seal'));
+  const tagB = $derived(ctx.nat ? (technical ? S('tag.nat').replace('{nat}', natSticker) : S('label.port')) : S('tag.seal'));
   const labels = $derived(cardLabels(time));
   const hello = $derived(helloSpot(L, portrait, clientSpot, hopSpot ?? serverSpot));
   const gap = $derived(cardGap(L.cards[0], portrait));
@@ -92,7 +92,7 @@
 {:else}
   {@const x = roadBoxX()}
   {#if x !== null && moving.n}
-    <RoadBox {x} y={L.road.y - 2} n={moving.n} sealed={!subject.open} glow={moving.glow} scale={L.parcel} port={!subject.open && ctx.nat && Math.abs(x - L.hop.x) < (portrait ? 135 : 170) ? (nerd ? natSticker : S('label.port')) : ''} />
+    <RoadBox {x} y={L.road.y - 2} n={moving.n} sealed={!subject.open} glow={moving.glow} scale={L.parcel} port={!subject.open && ctx.nat && Math.abs(x - L.hop.x) < (portrait ? 135 : 170) ? (technical ? natSticker : S('label.port')) : ''} />
   {/if}
 {/if}
 

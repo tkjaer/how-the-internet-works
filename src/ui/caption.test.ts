@@ -24,26 +24,26 @@ describe('caption scale tag', () => {
   const tag = (path: string[], stop: string | null = null) => caption.captionFor(home, path, stop, 'landscape').tag;
 
   it('says how far the whole trip goes, and how many companies carry it inside the internet', () => {
-    state.setLang('en'); state.setLevel('kid');
+    state.setLang('en'); state.setLevel('simple');
     expect(tag([])).toBe('Your parcels travel about 231 km each way');
     expect(tag(['internet'])).toMatch(/^3 companies pass your parcels along · about 231 km$/);
   });
 
   it('names who runs a stop and how far from you it is; a link says how long it is', () => {
-    state.setLang('en'); state.setLevel('kid');
+    state.setLang('en'); state.setLevel('simple');
     expect(tag(['internet'], 'border')).toBe('Your internet company · 230 km from you');
     expect(tag(['internet'], 'border-ixp')).toBe('About 200 m long');
     expect(tag(['internet'], 'transit')).toBe('A big carrier');
   });
 
-  it('gives nerds the light time and the AS, in their language', () => {
-    state.setLang('da'); state.setLevel('nerd');
+  it('gives Technical readers the light time and the AS, in their language', () => {
+    state.setLang('da'); state.setLevel('technical');
     expect(tag(['internet'], 'border')).toBe('Din udbyder · AS64500 · 230 km henne ad vejen · lys: 1,2 ms');
-    state.setLang('en'); state.setLevel('kid');
+    state.setLang('en'); state.setLevel('simple');
   });
 
   it('tells a stretch of several links how long it is; a single link, like the cross-connect into the exchange, has no count', () => {
-    state.setLang('en'); state.setLevel('kid');
+    state.setLang('en'); state.setLevel('simple');
     const dive = (step: string) => caption.captionFor(home, ['internet', step], null, 'landscape');
     // the PON: from the house through the splitter to the OLT
     expect(dive('home-cabinet')).toMatchObject({ title: 'Light shared by your street', tag: '2 stretches · via Street cabinet · 7.2 km' });
@@ -55,10 +55,10 @@ describe('caption scale tag', () => {
   });
 
   it('links to what the owner is, at a stop it runs', () => {
-    state.setLang('en'); state.setLevel('nerd');
+    state.setLang('en'); state.setLevel('technical');
     const urls = caption.captionFor(home, ['internet'], 'core', 'landscape').links.map((l) => l.url);
     expect(urls).toContain('https://en.wikipedia.org/wiki/Autonomous_system_(Internet)');
-    state.setLevel('kid');
+    state.setLevel('simple');
   });
 });
 
@@ -100,7 +100,7 @@ describe('counts in words', () => {
 
 describe('caption hints', () => {
   it('name the keys after a key and the gestures after a tap, in every kind of scene and stop (#53)', () => {
-    state.setLang('en'); state.setLevel('kid');
+    state.setLang('en'); state.setLevel('simple');
     const at: [string[], string | null][] = [[[], null], [[], 'phone-ap'], [[], 'ap'], [[], 'internet'], [['internet'], null], [['phone-ap'], null], [['router~ip'], null]];
     const hints = (keys: boolean) => { state.view.keys = keys; return at.map(([p, s]) => caption.captionFor(home, p, s, 'landscape').hint!); };
     const taps = hints(false), keys = hints(true);
@@ -120,7 +120,7 @@ describe('caption hints', () => {
 
 describe('a group scene\'s hint (#90)', () => {
   it('says a tap reads a box out only while read aloud is on, with a voice for the language', () => {
-    state.setLang('en'); state.setLevel('kid');
+    state.setLang('en'); state.setLevel('simple');
     const hint = () => caption.captionFor(home, ['internet'], null, 'landscape').hint;
     expect(state.settings.speech).toBe(false);
     expect(hint()).toBe('Tap a box to see what it does. Swipe to walk along.');
@@ -140,15 +140,15 @@ describe('a group scene\'s hint (#90)', () => {
 describe('caption notes', () => {
   const notes = (path: string[], stop: string | null = null) => caption.captionFor(home, path, stop, 'landscape').notes;
 
-  it("gives nerds a dive's extra, for its technology or for the layer (#31); kids get none", () => {
-    state.setLang('en'); state.setLevel('nerd');
+  it("gives Technical readers a dive's extra, for its technology or for the layer (#31); Simple readers get none", () => {
+    state.setLang('en'); state.setLevel('technical');
     expect(notes(['phone-ap'])).toEqual([{ kind: 'extra', text: expect.stringMatching(/^Wi-Fi 7 \(802\.11be\)/) }]);
     expect(notes(['ap-router'])).toEqual([{ kind: 'extra', text: expect.stringMatching(/^Power over Ethernet/) }]);
     expect(notes(['ap~wifi'])).toEqual([{ kind: 'extra', text: expect.stringMatching(/multi-link device \(MLD\)/) }]);
     expect(notes(['router-internet'])).toEqual([{ kind: 'extra', text: expect.stringMatching(/^Two generations on one thread: the older GPON/) }]);
     // the other links in glass have none: the extra is the shared street's
     expect(notes(['internet', 'bng-core'])).toEqual([]);
-    state.setLevel('kid');
+    state.setLevel('simple');
     expect(notes(['phone-ap'])).toEqual([]);
   });
 });
@@ -157,12 +157,12 @@ describe('a layer dive\'s words (#132)', () => {
   const body = (path: string[]) => caption.captionFor(home, path, null, 'landscape').body;
 
   it('names who wrote the frame and the next hop a router asks for, not the client’s address', () => {
-    state.setLang('en'); state.setLevel('kid');
+    state.setLang('en'); state.setLevel('simple');
     expect(body(['router~ethernet'])).toContain('“Who has ISP gateway’s address?”');
     expect(body(['ap~ethernet'])).toContain('from Home router');
-    state.setLevel('nerd');
+    state.setLevel('technical');
     expect(body(['router~ethernet'])).toContain('next hop on the outgoing link (ISP gateway)');
     expect(body(['ap~ethernet'])).toContain('(here Home router and your phone)');
-    state.setLevel('kid');
+    state.setLevel('simple');
   });
 });

@@ -1,37 +1,37 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "The data centre's crossroads",
   "heading": {
-    "kid": "The data centre's crossroads",
-    "nerd": "Leaf–spine fabric"
+    "simple": "The data centre's crossroads",
+    "technical": "Leaf–spine fabric"
   },
-  "kid": "Every cupboard has a road to every crossroad. Parcels spread out over all the crossroads so none gets jammed. Your parcel always takes the same crossroad, so its pieces stay in order.",
-  "nerd": "ECMP gives each leaf equal-cost paths over four spines. The leaf hashes the flow's 5-tuple — source and destination IP, ports and protocol — then hash mod 4 picks spine 2. Same flow, same spine, no reordering; any leaf reaches any other in two hops.",
+  "simple": "Every cupboard has a road to every crossroad. Parcels spread out over all the crossroads so none gets jammed. Your parcel always takes the same crossroad, so its pieces stay in order.",
+  "technical": "ECMP gives each leaf equal-cost paths over four spines. The leaf hashes the flow's 5-tuple — source and destination IP, ports and protocol — then hash mod 4 picks spine 2. Same flow, same spine, no reordering; any leaf reaches any other in two hops.",
   "describe": {
-    "kid": "At the top are four crossroads; the third is bright and named. Below are the load balancer, two other racks and the rack switch. Thin roads connect every bottom box to every crossroad. Small parcels use all roads. Your larger parcel keeps using the bright one.",
-    "nerd": "Four spines sit above four leaves: the load balancers’ leaf, two other racks’ ToRs and this rack’s ToR switch. Every leaf has a link to every spine. Background flows cross all four spines. The highlighted flow hashes to spine 2 and travels load balancer to spine to rack switch."
+    "simple": "At the top are four crossroads; the third is bright and named. Below are the load balancer, two other racks and the rack switch. Thin roads connect every bottom box to every crossroad. Small parcels use all roads. Your larger parcel keeps using the bright one.",
+    "technical": "Four spines sit above four leaves: the load balancers’ leaf, two other racks’ ToRs and this rack’s ToR switch. Every leaf has a link to every spine. Background flows cross all four spines. The highlighted flow hashes to spine 2 and travels load balancer to spine to rack switch."
   },
   "spine": {
     "label": {
-      "kid": "Crossroads",
-      "nerd": "Spine {n}"
+      "simple": "Crossroads",
+      "technical": "Spine {n}"
     }
   },
   "leaf": {
     "other": "Other racks"
   },
   "sticker": {
-    "kid": "Same road every time",
-    "nerd": "hash(5-tuple)",
+    "simple": "Same road every time",
+    "technical": "hash(5-tuple)",
     "mod": "mod 4 = {n}"
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Clos_network", "title": "Clos network", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Equal-cost_multi-path_routing", "title": "Equal-cost multi-path routing", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Data_center", "title": "Data center", "level": "nerd" },
-    { "url": "https://simple.wikipedia.org/wiki/Data_center", "title": "Data center", "level": "kid" }
+    { "url": "https://en.wikipedia.org/wiki/Clos_network", "title": "Clos network", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Equal-cost_multi-path_routing", "title": "Equal-cost multi-path routing", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Data_center", "title": "Data center", "level": "technical" },
+    { "url": "https://simple.wikipedia.org/wiki/Data_center", "title": "Data center", "level": "simple" }
   ]
 }

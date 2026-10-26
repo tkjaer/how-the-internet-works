@@ -2,12 +2,12 @@
   "1995": {
     "stop": {
       "backbone": {
-        "kid": "Her møder linjen fra den anden side af havet et stort amerikansk net i New York. Dets routere sender din pakke videre tværs over landet.",
-        "nerd": "Den amerikanske backbones router i dens PoP i New York: det transatlantiske kredsløb lander på et serielt kort, og pakken forlader den som celler på et ATM OC-3-kort. BGP har fortalt den, at serverens net ligger på den anden side af landet."
+        "simple": "Her møder linjen fra den anden side af havet et stort amerikansk net i New York. Dets routere sender din pakke videre tværs over landet.",
+        "technical": "Den amerikanske backbones router i dens PoP i New York: det transatlantiske kredsløb lander på et serielt kort, og pakken forlader den som celler på et ATM OC-3-kort. BGP har fortalt den, at serverens net ligger på den anden side af landet."
       },
       "pop": {
-        "kid": "Det store nets router tæt på hjemmesiden. Herfra løber en lejet linje ind i bygningen, hvor siden bor.",
-        "nerd": "Backbonens PoP tæt på serveren: ATM-kredsløbet ender her, cellerne bliver til en pakke igen, og den forlader routeren på hostingstedets T1 (Cisco HDLC)."
+        "simple": "Det store nets router tæt på hjemmesiden. Herfra løber en lejet linje ind i bygningen, hvor siden bor.",
+        "technical": "Backbonens PoP tæt på serveren: ATM-kredsløbet ender her, cellerne bliver til en pakke igen, og den forlader routeren på hostingstedets T1 (Cisco HDLC)."
       }
     },
     "tag": {
@@ -16,11 +16,11 @@
     },
     "inside": {
       "internet": {
-        "kid": "I 1995 er internettet meget mindre: færre end to tusind net. Dit opkald går gennem telefoncentralen til dit internetfirmas modemer. Derfra løber en lejet linje til et større net i København, under Atlanten i ét glaskabel, tværs over Amerika og ind i rummet, hvor hjemmesiden bor.",
-        "nerd": "Telefonnettet (et kredsløb gennem centralen, så et PRI) til udbyderens modembank og dens ene router. En lejet E1 til leverandøren i København, CANTAT-3 til Nordamerika, en ATM-backbone tværs over USA og en T1 ind til hostingstedet. Hvert farvet felt er én operatørs net; dansk trafik går til DIX i stedet.",
+        "simple": "I 1995 er internettet meget mindre: færre end to tusind net. Dit opkald går gennem telefoncentralen til dit internetfirmas modemer. Derfra løber en lejet linje til et større net i København, under Atlanten i ét glaskabel, tværs over Amerika og ind i rummet, hvor hjemmesiden bor.",
+        "technical": "Telefonnettet (et kredsløb gennem centralen, så et PRI) til udbyderens modembank og dens ene router. En lejet E1 til leverandøren i København, CANTAT-3 til Nordamerika, en ATM-backbone tværs over USA og en T1 ind til hostingstedet. Hvert farvet felt er én operatørs net; dansk trafik går til DIX i stedet.",
         "describe": {
-          "kid": "Inde i skyen starter vejen hjemme hos dig. Den går gennem telefoncentralen og modembanken til internetfirmaets router, med en stiplet sidevej til den danske udveksling. Så går den til et større net, under havet til to amerikanske routere og ind i serverrummet, en kasse du kan åbne.",
-          "nerd": "Den udfoldede vej i 1995: hjemmet, telefoncentralen, modembanken og udbyderens router, med DIX som stiplet sidevej. Så leverandøren på en E1, CANTAT-3 til den amerikanske backbones router i New York, ATM tværs over landet til dens PoP og en T1 ind i serverrummet, der kan foldes ud. Forespørgsler og sidens pakker bevæger sig hver sin vej."
+          "simple": "Inde i skyen starter vejen hjemme hos dig. Den går gennem telefoncentralen og modembanken til internetfirmaets router, med en stiplet sidevej til den danske udveksling. Så går den til et større net, under havet til to amerikanske routere og ind i serverrummet, en kasse du kan åbne.",
+          "technical": "Den udfoldede vej i 1995: hjemmet, telefoncentralen, modembanken og udbyderens router, med DIX som stiplet sidevej. Så leverandøren på en E1, CANTAT-3 til den amerikanske backbones router i New York, ATM tværs over landet til dens PoP og en T1 ind i serverrummet, der kan foldes ud. Forespørgsler og sidens pakker bevæger sig hver sin vej."
         }
       }
     }

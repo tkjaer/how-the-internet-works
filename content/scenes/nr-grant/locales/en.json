@@ -1,42 +1,42 @@
 {
   "title": "5G seat tickets",
-  "kid": "Your phone gets a tiny seat ticket from the tower, then each radio piece is checked. If one is smudged, the tower or phone says “again!”",
-  "nerd": "NR scheduling and HARQ around one UE: SR on PUCCH, grant DCI on PDCCH with CRC scrambled by C-RNTI 0x4601, then MAC/RLC/PDCP pieces on 30 kHz SCS, 0.5 ms slots.",
+  "simple": "Your phone gets a tiny seat ticket from the tower, then each radio piece is checked. If one is smudged, the tower or phone says “again!”",
+  "technical": "NR scheduling and HARQ around one UE: SR on PUCCH, grant DCI on PDCCH with CRC scrambled by C-RNTI 0x4601, then MAC/RLC/PDCP pieces on 30 kHz SCS, 0.5 ms slots.",
   "role": {
     "bridge": {
       "title": "The tower hands out radio seats",
-      "kid": "The tower is the classroom helper. Your phone raises its hand, the tower gives phone no. 4601 a turn, and then checks every piece. Underneath, the envelope travels as a radio beam.",
-      "nerd": "At the gNB, an uplink SR on PUCCH leads to an UL grant in DCI on PDCCH, CRC-scrambled with the UE’s C-RNTI 0x4601. The scheduler assigns slot 6, RB 20–31. If the PUSCH fails its CRC, the gNB sends no NACK: it schedules a retransmission with a new DCI for HARQ process 7 with the NDI not toggled (RV 2), and soft-combines the copies. RLC ARQ above catches residual loss, with PDCP ciphering plus SN preserved.",
+      "simple": "The tower is the classroom helper. Your phone raises its hand, the tower gives phone no. 4601 a turn, and then checks every piece. Underneath, the envelope travels as a radio beam.",
+      "technical": "At the gNB, an uplink SR on PUCCH leads to an UL grant in DCI on PDCCH, CRC-scrambled with the UE’s C-RNTI 0x4601. The scheduler assigns slot 6, RB 20–31. If the PUSCH fails its CRC, the gNB sends no NACK: it schedules a retransmission with a new DCI for HARQ process 7 with the NDI not toggled (RV 2), and soft-combines the copies. RLC ARQ above catches residual loss, with PDCP ciphering plus SN preserved.",
       "describe": {
-        "kid": "The road shows phone, tower and mobile core, with the tower drawn largest. On the first card, the phone asks for a turn. The tower’s list lights up phone number 4601 in slot 6. On the second card, radio pieces move, one gets smudged, “Again!” appears, and a clean piece gets a tick.",
-        "nerd": "The gNB card highlights the request-to-grant flow for C-RNTI 0x4601, slot 6 and RB 20 to 31. The HARQ card animates a bad transport block, a new grant with the NDI not toggled, retransmission with RV 2, soft combining and a checked block. Labels name the logical channel, RLC, PDCP and QoS flow."
+        "simple": "The road shows phone, tower and mobile core, with the tower drawn largest. On the first card, the phone asks for a turn. The tower’s list lights up phone number 4601 in slot 6. On the second card, radio pieces move, one gets smudged, “Again!” appears, and a clean piece gets a tick.",
+        "technical": "The gNB card highlights the request-to-grant flow for C-RNTI 0x4601, slot 6 and RB 20 to 31. The HARQ card animates a bad transport block, a new grant with the NDI not toggled, retransmission with RV 2, soft combining and a checked block. Labels name the logical channel, RLC, PDCP and QoS flow."
       }
     },
     "endpoint": {
       "title": "The phone looks for its number",
-      "kid": "Your phone reads the tower’s list and only picks up pieces marked phone no. 4601. If one is smudged, it says “again!”, keeps the smudged copy too, and puts the two together into one clear piece. Underneath, the envelope travels as a radio beam.",
-      "nerd": "The UE monitors PDCCH candidates for DCI whose CRC unscrambles with C-RNTI 0x4601, then receives its PDSCH allocation. It reports HARQ ACK/NACK within roughly 1 ms; incremental redundancy and soft combining recover the transport block before RLC/PDCP see it.",
+      "simple": "Your phone reads the tower’s list and only picks up pieces marked phone no. 4601. If one is smudged, it says “again!”, keeps the smudged copy too, and puts the two together into one clear piece. Underneath, the envelope travels as a radio beam.",
+      "technical": "The UE monitors PDCCH candidates for DCI whose CRC unscrambles with C-RNTI 0x4601, then receives its PDSCH allocation. It reports HARQ ACK/NACK within roughly 1 ms; incremental redundancy and soft combining recover the transport block before RLC/PDCP see it.",
       "describe": {
-        "kid": "The phone is the largest stop on the road, watching the tower’s list. A circle scans until phone number 4601 lights up. Then an envelope marked 4601 travels over the radio beam. A smudged piece asks for “Again!”, and two copies join into one clear piece.",
-        "nerd": "The UE view scans PDCCH rows for C-RNTI 0x4601, then shows its PDSCH grant for slot 6 and RB 20 to 31. The HARQ card shows the NACK bubble, retransmitted redundancy, soft combining into a checked block, and RLC and PDCP sequence labels."
+        "simple": "The phone is the largest stop on the road, watching the tower’s list. A circle scans until phone number 4601 lights up. Then an envelope marked 4601 travels over the radio beam. A smudged piece asks for “Again!”, and two copies join into one clear piece.",
+        "technical": "The UE view scans PDCCH rows for C-RNTI 0x4601, then shows its PDSCH grant for slot 6 and RB 20 to 31. The HARQ card shows the NACK bubble, retransmitted redundancy, soft combining into a checked block, and RLC and PDCP sequence labels."
       }
     }
   },
   "sealed": {
     "title": "NR passes by",
-    "kid": "This stop carries the 5G envelope but does not make the radio-seat choices.",
-    "nerd": "The NR MAC/RLC/PDCP frame is meaningful only at the UE and gNB ends of the radio link."
+    "simple": "This stop carries the 5G envelope but does not make the radio-seat choices.",
+    "technical": "The NR MAC/RLC/PDCP frame is meaningful only at the UE and gNB ends of the radio link."
   },
   "card": {
     "seat": "Asking for a seat",
     "harq": "Did it arrive?"
   },
   "label": {
-    "ticketKid": "Phone no. {n}",
+    "ticketSimple": "Phone no. {n}",
     "ticketPortrait": "No. {n} · slot 6",
-    "ticketNerd": "C-RNTI {n}",
-    "grantKid": "slot 6",
-    "grantNerd": "slot 6 · RB 20–31",
+    "ticketTechnical": "C-RNTI {n}",
+    "grantSimple": "slot 6",
+    "grantTechnical": "slot 6 · RB 20–31",
     "ask": "✋ may I send?",
     "schedule": "Tower schedule",
     "phoneNo": "Phone no. {n}",
@@ -50,7 +50,7 @@
     "combine": "two copies combine",
     "ack": "ACK: clear piece",
     "dci": "DCI: C-RNTI · HARQ 7",
-    "harqNerd": "HARQ 7 · NDI 1 · RV 2",
+    "harqTechnical": "HARQ 7 · NDI 1 · RV 2",
     "sn": "LCID 4 · RLC SN {rlcsn} · PDCP SN {pdcpsn} · QFI 9",
     "snShort": "L4 · R{rlcsn} · P{pdcpsn} · Q9",
     "snA": "LCID 4 · RLC SN {rlcsn}",
@@ -61,52 +61,52 @@
     "afterSeat": "slot 6 · RB 44–51"
   },
   "tag": {
-    "bridgeKid": "tower scheduler",
-    "endpointKid": "only my number",
-    "bridgeNerd": "SR → DCI grant",
-    "endpointNerd": "C-RNTI watch",
+    "bridgeSimple": "tower scheduler",
+    "endpointSimple": "only my number",
+    "bridgeTechnical": "SR → DCI grant",
+    "endpointTechnical": "C-RNTI watch",
     "harq": "16 HARQ · soft combining · ~1 ms"
   },
   "2010": {
     "title": "3G turn tickets",
-    "kid": "Your phone shares the tower’s radio wave with every phone nearby. The tower gives each phone a number and a turn, 2 ms at a time, and checks every piece. If one is smudged, it says “again!”",
-    "nerd": "HSDPA scheduling and HARQ around one UE: the NodeB’s MAC-hs picks who gets each 2 ms TTI, announces it on the HS-SCCH masked with the UE’s H-RNTI 0x2317, then sends on up to 15 shared HS-PDSCH codes.",
+    "simple": "Your phone shares the tower’s radio wave with every phone nearby. The tower gives each phone a number and a turn, 2 ms at a time, and checks every piece. If one is smudged, it says “again!”",
+    "technical": "HSDPA scheduling and HARQ around one UE: the NodeB’s MAC-hs picks who gets each 2 ms TTI, announces it on the HS-SCCH masked with the UE’s H-RNTI 0x2317, then sends on up to 15 shared HS-PDSCH codes.",
     "role": {
       "bridge": {
         "title": "The tower hands out 2 ms turns",
-        "kid": "The tower is the classroom helper. Phones raise their hands, the tower gives phone no. 2317 a turn of 2 ms, and then checks every piece. Underneath, the envelope travels on the radio wave everyone shares.",
-        "nerd": "At the NodeB, MAC-hs schedules each 2 ms TTI from the UEs’ CQI reports: an HS-SCCH addressed to H-RNTI 0x2317 gives TTI 6, 5 codes (SF16, 16-QAM). The UE answers ACK/NACK on the HS-DPCCH about 5 ms later; up to 8 HARQ processes keep the pipe full.",
+        "simple": "The tower is the classroom helper. Phones raise their hands, the tower gives phone no. 2317 a turn of 2 ms, and then checks every piece. Underneath, the envelope travels on the radio wave everyone shares.",
+        "technical": "At the NodeB, MAC-hs schedules each 2 ms TTI from the UEs’ CQI reports: an HS-SCCH addressed to H-RNTI 0x2317 gives TTI 6, 5 codes (SF16, 16-QAM). The UE answers ACK/NACK on the HS-DPCCH about 5 ms later; up to 8 HARQ processes keep the pipe full.",
         "describe": {
-          "kid": "The road shows phone, tower and radio controller, with the tower drawn largest. On the first card, the phone asks for a turn. The tower’s list lights up phone number 2317 in turn 6. On the second card, radio pieces move, one gets smudged, “Again!” appears, and a clean piece gets a tick.",
-          "nerd": "The NodeB card highlights the HS-SCCH for H-RNTI 0x2317, TTI 6 and 5 codes. The HARQ card animates a bad transport block, NACK, retransmission with a new redundancy version, soft combining and ACK. Labels name the priority queue, TSN and RLC sequence number."
+          "simple": "The road shows phone, tower and radio controller, with the tower drawn largest. On the first card, the phone asks for a turn. The tower’s list lights up phone number 2317 in turn 6. On the second card, radio pieces move, one gets smudged, “Again!” appears, and a clean piece gets a tick.",
+          "technical": "The NodeB card highlights the HS-SCCH for H-RNTI 0x2317, TTI 6 and 5 codes. The HARQ card animates a bad transport block, NACK, retransmission with a new redundancy version, soft combining and ACK. Labels name the priority queue, TSN and RLC sequence number."
         }
       },
       "endpoint": {
         "title": "The phone looks for its number",
-        "kid": "Your phone listens to the tower’s list and only picks up pieces marked phone no. 2317. If one is smudged, it says “again!”, keeps the smudged copy too, and puts the two together into one clear piece.",
-        "nerd": "The UE watches up to four HS-SCCHs for its H-RNTI 0x2317, then decodes its HS-PDSCH codes two slots later. It sends ACK/NACK and CQI on the HS-DPCCH; soft combining recovers the block before MAC-hs reorders by TSN and RLC sees it.",
+        "simple": "Your phone listens to the tower’s list and only picks up pieces marked phone no. 2317. If one is smudged, it says “again!”, keeps the smudged copy too, and puts the two together into one clear piece.",
+        "technical": "The UE watches up to four HS-SCCHs for its H-RNTI 0x2317, then decodes its HS-PDSCH codes two slots later. It sends ACK/NACK and CQI on the HS-DPCCH; soft combining recovers the block before MAC-hs reorders by TSN and RLC sees it.",
         "describe": {
-          "kid": "The phone is the largest stop on the road, watching the tower’s list. A circle scans until phone number 2317 lights up. Then an envelope marked 2317 travels over the radio wave. A smudged piece asks for “Again!”, and two copies join into one clear piece.",
-          "nerd": "The UE view scans HS-SCCH rows for H-RNTI 0x2317, then shows its grant for TTI 6 and 5 codes. The HARQ card shows the NACK bubble, the resent redundancy version, soft combining into a checked block, and the queue, TSN and RLC labels."
+          "simple": "The phone is the largest stop on the road, watching the tower’s list. A circle scans until phone number 2317 lights up. Then an envelope marked 2317 travels over the radio wave. A smudged piece asks for “Again!”, and two copies join into one clear piece.",
+          "technical": "The UE view scans HS-SCCH rows for H-RNTI 0x2317, then shows its grant for TTI 6 and 5 codes. The HARQ card shows the NACK bubble, the resent redundancy version, soft combining into a checked block, and the queue, TSN and RLC labels."
         }
       }
     },
     "at": {
       "rnc": {
         "title": "The controller checks the order",
-        "kid": "The controller behind the tower doesn’t hand out turns: the tower does that itself, fast. The controller numbers the pieces, locks them so nobody can listen in, and asks again for any piece the tower couldn’t fix.",
-        "nerd": "RLC (acknowledged mode) ends here, in the RNC: it ciphers (KASUMI), segments and numbers the PDUs, and ARQ-resends what HARQ missed, tens of ms later. The 2 ms scheduling and HARQ shown here run in the NodeB.",
+        "simple": "The controller behind the tower doesn’t hand out turns: the tower does that itself, fast. The controller numbers the pieces, locks them so nobody can listen in, and asks again for any piece the tower couldn’t fix.",
+        "technical": "RLC (acknowledged mode) ends here, in the RNC: it ciphers (KASUMI), segments and numbers the PDUs, and ARQ-resends what HARQ missed, tens of ms later. The 2 ms scheduling and HARQ shown here run in the NodeB.",
         "describe": {
-          "kid": "The road shows phone, tower and radio controller. The cards show how the tower hands out turns and checks pieces; this controller numbers them and asks again for lost ones.",
-          "nerd": "The scene shows the NodeB’s HS-SCCH grant for H-RNTI 0x2317 and its HARQ loop. The RNC ends RLC: the labels show the RLC sequence number it resends by."
+          "simple": "The road shows phone, tower and radio controller. The cards show how the tower hands out turns and checks pieces; this controller numbers them and asks again for lost ones.",
+          "technical": "The scene shows the NodeB’s HS-SCCH grant for H-RNTI 0x2317 and its HARQ loop. The RNC ends RLC: the labels show the RLC sequence number it resends by."
         }
       }
     },
     "label": {
       "ticketPortrait": "No. {n} · turn 6",
-      "ticketNerd": "H-RNTI {n}",
-      "grantKid": "turn 6",
-      "grantNerd": "TTI 6 · 5 codes",
+      "ticketTechnical": "H-RNTI {n}",
+      "grantSimple": "turn 6",
+      "grantTechnical": "TTI 6 · 5 codes",
       "sn": "Queue 1 · TSN {tsn} · RLC SN {rlcsn}",
       "snShort": "Q1 · T{tsn} · R{rlcsn}",
       "before": "0x1c40",
@@ -117,6 +117,6 @@
     }
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Hybrid_automatic_repeat_request", "title": "Hybrid automatic repeat request (HARQ)", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Hybrid_automatic_repeat_request", "title": "Hybrid automatic repeat request (HARQ)", "level": "technical" }
   ]
 }

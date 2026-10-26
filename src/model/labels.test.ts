@@ -1,5 +1,5 @@
 // Issue #90: a path scene's text never leaves its world (the panel it is drawn on, or the screen at the root) — device
-// names, link names, owner signs and nerd tags, in every place, activity, path scene, orientation and language, at the
+// names, link names, owner signs and technical tags, in every place, activity, path scene, orientation and language, at the
 // authored size and at the biggest the labels grow on a small screen.
 import { describe, expect, it } from 'vitest';
 import { WORLD_SIZE, type Orient } from '../engine/geometry';
@@ -75,7 +75,7 @@ describe('moving a box clear of another', () => {
   });
 });
 
-describe('a nerd tag on a crowded screen (#72)', () => {
+describe('a technical tag on a crowded screen (#72)', () => {
   const n = { id: 'x', x: 400, y: 450, size: 100, label: 'below' } as SNode;
   const place = (badges: Texts['badges'], tag = 'XGS-PON · 10 Gbit/s · 20 km') =>
     placeTexts({ nodes: [{ n, name: 'Box', tag }], links: [], signs: [], badges }, AUTHORED, per, W, false).nodes[0].tag;
@@ -125,7 +125,7 @@ describe('path scene text stays inside its world (#90)', () => {
     const out = new Set<string>(), crossed = new Set<string>();
     for (const lang of Object.keys(packs)) for (const activity of activityIds()) for (const place of Object.keys(content.places)) {
       const r = resolveRoute({ activity, places: [place] });
-      const str = (k: string) => firstOf(lang, withEra([k], r.era === nowEra() ? undefined : r.era), 'nerd') ?? '';
+      const str = (k: string) => firstOf(lang, withEra([k], r.era === nowEra() ? undefined : r.era), 'technical') ?? '';
       for (const o of ['landscape', 'portrait'] as const) for (const s of [AUTHORED, small(o)]) {
         const WO = WORLD_SIZE[o], portrait = o === 'portrait';
         const walk = (path: string[]): void => {

@@ -1,11 +1,11 @@
 {
   "name": "At home, on the phone line",
   "access": "Laptop on Wi‑Fi",
-  "kid": "Parcels zoom through the air, down a cable to the router, then along the old copper phone line as tiny tones to a box on your street – and the video comes back the same way!",
-  "nerd": "The same home network, but the router's uplink is VDSL2: DMT tones on the copper phone pair to a DSLAM in the street cabinet a few hundred metres away, then fibre to the ISP.",
+  "simple": "Parcels zoom through the air, down a cable to the router, then along the old copper phone line as tiny tones to a box on your street – and the video comes back the same way!",
+  "technical": "The same home network, but the router's uplink is VDSL2: DMT tones on the copper phone pair to a DSLAM in the street cabinet a few hundred metres away, then fibre to the ISP.",
   "describe": {
-    "kid": "A cut-away house sits on green hills, with an old telephone on a little table and a slider phone left on the sofa. Your laptop, with a star sticker, sends parcels by Wi‑Fi to the access point, by cable to the router, then along the phone line to the internet cloud. Requests go out and video comes back.",
-    "nerd": "The home view shows the LAN path from laptop to access point and router, whose uplink is the copper phone line (VDSL2). The landline telephone shares the same pair. A 2010 touch: a slider phone on the sofa, a second antenna on the router. Packets go up over Wi‑Fi, Ethernet and VDSL; video returns the same way."
+    "simple": "A cut-away house sits on green hills, with an old telephone on a little table and a slider phone left on the sofa. Your laptop, with a star sticker, sends parcels by Wi‑Fi to the access point, by cable to the router, then along the phone line to the internet cloud. Requests go out and video comes back.",
+    "technical": "The home view shows the LAN path from laptop to access point and router, whose uplink is the copper phone line (VDSL2). The landline telephone shares the same pair. A 2010 touch: a slider phone on the sofa, a second antenna on the router. Packets go up over Wi‑Fi, Ethernet and VDSL; video returns the same way."
   },
   "tag": {
     "laptop": "Wi-Fi 4 · 192.168.1.23",
@@ -14,17 +14,17 @@
   },
   "stop": {
     "laptop": {
-      "kid": "Around 2010 you went online on a laptop, without a cable: its Wi‑Fi sends your parcels through the air to the box on the wall.",
-      "nerd": "A laptop with an 802.11n (Wi‑Fi 4) card, a few tens of Mbit/s on the air: more than the DSL line behind it could carry. It got 192.168.1.23 from the router by DHCP."
+      "simple": "Around 2010 you went online on a laptop, without a cable: its Wi‑Fi sends your parcels through the air to the box on the wall.",
+      "technical": "A laptop with an 802.11n (Wi‑Fi 4) card, a few tens of Mbit/s on the air: more than the DSL line behind it could carry. It got 192.168.1.23 from the router by DHCP."
     },
     "router": {
-      "kid": "The router is the front door of your home. It writes your home’s address on the parcel, and its modem sings it down the phone line.",
-      "nerd": "NAT rewrites 192.168.1.23 to the public 203.0.113.7; the built-in VDSL2 modem then sends the frames as DMT tones on the phone pair."
+      "simple": "The router is the front door of your home. It writes your home’s address on the parcel, and its modem sings it down the phone line.",
+      "technical": "NAT rewrites 192.168.1.23 to the public 203.0.113.7; the built-in VDSL2 modem then sends the frames as DMT tones on the phone pair."
     }
   },
   "inside": {
     "internet": {
-      "nerd": "Access network (VDSL2 from a DSLAM in the street cabinet), an aggregation layer (L2 backhaul to the BNG), the ISP’s MPLS core, then either settlement-free peering at an IXP or paid transit, ending at a CDN cache close to you. Each shaded area is one operator’s network."
+      "technical": "Access network (VDSL2 from a DSLAM in the street cabinet), an aggregation layer (L2 backhaul to the BNG), the ISP’s MPLS core, then either settlement-free peering at an IXP or paid transit, ending at a CDN cache close to you. Each shaded area is one operator’s network."
     }
   },
   "learnMore": [

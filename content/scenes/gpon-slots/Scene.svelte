@@ -12,7 +12,7 @@
   const S = strings('scene.gpon-slots');
   const L = $derived(layoutFor(view.orient, view.vp));
   const T = $derived(L.size);
-  const nerd = $derived(subject.ctx.level === 'nerd');
+  const technical = $derived(subject.ctx.level === 'technical');
   const compact = $derived(!!L.compact);
   const portrait = $derived(view.orient === 'portrait');
   const st = $derived(sceneState(view.still ? 3.1 : time));
@@ -23,7 +23,7 @@
   const tagTexts = $derived(
     compact
       ? []
-      : nerd
+      : technical
         ? (portrait ? [] : [S('tag.down'), S('tag.up')])
         : [S('label.keeps'), S('label.yourTurn')]
   );
@@ -32,16 +32,16 @@
   const fieldRows = $derived([
     fill(S('field.pli'), { value: '424' }),
     S('field.keyidx'),
-    S(nerd ? 'field.portNerd' : 'field.portKid'),
+    S(technical ? 'field.portTechnical' : 'field.portSimple'),
     S('field.optlf'),
     fill(S('field.hec'), { value: '0x1c2' }),
   ]);
   const portRow = 2;
-  const slotLabels = $derived(nerd ? ['0x21', '0x8A', '0x467', '0x133'] : ['1', '2', '3', '4']);
+  const slotLabels = $derived(technical ? ['0x21', '0x8A', '0x467', '0x133'] : ['1', '2', '3', '4']);
   const yourSlot = 2;
   const mix = (a: number, b: number, k: number) => a + (b - a) * k;
   const down = $derived.by(() => {
-    const fieldW = nerd && !compact && !portrait ? Math.min(270, c0.w * 0.42) : 0;
+    const fieldW = technical && !compact && !portrait ? Math.min(270, c0.w * 0.42) : 0;
     const x0 = c0.x + (fieldW ? fieldW + 50 : compact ? 42 : 52);
     const w = c0.w - (fieldW ? fieldW + 82 : compact ? 84 : 104);
     const olt = { x: x0 + w / 2, y: c0.y + (portrait ? 145 : compact ? 118 : 118) };
@@ -111,7 +111,7 @@
 <Card x={c0.x} y={c0.y} w={c0.w} h={c0.h} tint="var(--teal)" active={!activeTurns} />
 <Text x={c0.x + 34} y={c0.y + (portrait || compact ? 82 : 70)} text={S(compact ? 'label.everyoneCompact' : 'label.everyone')} size={compact ? T.big * 0.76 : T.big} kind="big" anchor="start" />
 <g>
-  {#if nerd && !compact && !portrait}
+  {#if technical && !compact && !portrait}
     <Text x={c0.x + 34} y={c0.y + 116} text={S('label.header')} size={T.text * 0.76} kind="small" anchor="start" />
     {#each fieldRows as row, i}
       <rect x={c0.x + 28} y={c0.y + 130 + i * 40} width={down.fieldW - 34} height="34" rx="10" fill={i === portRow ? 'var(--sun)' : 'var(--paper-2)'} stroke="var(--line)" stroke-width={i === portRow ? 4 : 2.5} />
@@ -154,14 +154,14 @@
     {@const x = slotX(up.strip, slot)}
     {@const w = up.strip.w / 4}
     <rect x={x + 5} y={up.strip.y + 8} width={w - 10} height={up.strip.h - 16} rx="13" fill={slot === yourSlot ? 'var(--sun)' : 'var(--kraft)'} stroke="var(--line)" stroke-width={slot === yourSlot ? 5 : 2.5} opacity={slot === yourSlot ? 1 : 0.72} />
-    {#if nerd}
+    {#if technical}
       <path d={`M${x} ${up.strip.y + up.strip.h + 8} V${up.strip.y + up.strip.h + 20}`} stroke="var(--line)" stroke-width="3" />
       <Text x={x + w / 2} y={up.strip.y + up.strip.h * 0.60} text={slotLabels[slot]} size={slotLabelSize} kind={slot === yourSlot ? 'node' : 'small'} colour={slot === yourSlot ? 'var(--face)' : undefined} on={slot === yourSlot ? 'var(--sun)' : undefined} />
     {:else}
       <Text x={x + w / 2} y={up.strip.y + up.strip.h * 0.60} text={portrait ? String(slot + 1) : `${S('label.slot')} ${slot + 1}`} size={slotLabelSize * 0.82} kind={slot === yourSlot ? 'node' : 'small'} colour={slot === yourSlot ? 'var(--face)' : undefined} on={slot === yourSlot ? 'var(--sun)' : undefined} />
     {/if}
   {/each}
-  {#if nerd && !portrait && !compact}
+  {#if technical && !portrait && !compact}
     <Text x={up.strip.x} y={up.strip.y + up.strip.h + (portrait ? 45 : 36)} text="0 µs" size={T.text * 0.48} kind="small" anchor="start" />
     <Text x={up.strip.x + up.strip.w} y={up.strip.y + up.strip.h + (portrait ? 45 : 36)} text="125 µs" size={T.text * 0.48} kind="small" anchor="end" />
   {/if}
@@ -173,7 +173,7 @@
     <rect x={portrait ? -34 : -28} y={portrait ? -20 : -16} width={portrait ? 68 : 56} height={portrait ? 40 : 32} rx="10" fill={st.slot === yourSlot ? 'var(--sun)' : 'var(--teal)'} stroke="var(--line)" stroke-width="4" />
     <path d={portrait ? 'M-22 -5 H22 M-16 8 H16' : 'M-18 -4 H18 M-13 7 H13'} stroke="var(--face)" stroke-width="4" stroke-linecap="round" />
   </g>
-  {#if !nerd}
+  {#if !technical}
     {#each [0, 1, 2, 3] as slot}
       {@const x = slotX(up.strip, slot) + up.strip.w / 8}
       <g transform="translate({x} {lowerBurstY})" opacity={slot === st.slot ? 1 : 0.55}>
@@ -186,9 +186,9 @@
     {/if}
   {/if}
 </g>
-{#if !compact && nerd}
+{#if !compact && technical}
   <rect x={c1.x + (portrait ? 30 : 48)} y={c1.y + c1.h - (portrait ? 88 : 62)} width={c1.w - (portrait ? 60 : 96)} height={portrait ? 64 : 42} rx="14" fill="var(--paper-2)" stroke="var(--line)" stroke-width="4" />
-  <Text x={c1.x + c1.w / 2} y={c1.y + c1.h - (portrait ? 47 : 34)} text={S('label.nerdGrant')} size={portrait ? 26 : 26} kind="big" />
+  <Text x={c1.x + c1.w / 2} y={c1.y + c1.h - (portrait ? 47 : 34)} text={S('label.technicalGrant')} size={portrait ? 26 : 26} kind="big" />
 {/if}
 
 {#each tagTexts.slice(0, L.tags.length) as tag, i}

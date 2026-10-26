@@ -58,4 +58,4 @@
 {#each boosters as b}<Text x={b.x} y={b.y} text={S(`${words}.booster`)} size={28} kind="big" />{/each}
 {#if haul.km}<Text x={counter.x} y={counter.y} text={`${counter.km} km`} size={30} kind="big" colour={colours[0]} />{/if}
 <TagAt x={tag.x} y={tag.y} text={S(`tag.${words}`)} size={24} fit />
-{#each one ? [] : laneNumbers(lanes, o, 0.62) as l}<Text x={l.x} y={l.y + 7} text={(view.level === 'nerd' ? 'λ' : '') + l.n} size={20} kind="small" />{/each}
+{#each one ? [] : laneNumbers(lanes, o, 0.62) as l}<Text x={l.x} y={l.y + 7} text={(view.level === 'technical' ? 'λ' : '') + l.n} size={20} kind="small" />{/each}

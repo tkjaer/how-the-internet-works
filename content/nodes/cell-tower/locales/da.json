@@ -1,16 +1,16 @@
 {
   "name": "Mobilmast",
-  "kid": "En mast med smarte antenner. Den taler med alle telefoner i nærheden via radio og sender deres pakker videre gennem en glastråd.",
-  "nerd": "En 5G-basestation (gNB): massive MIMO-antennepaneler, radioplanlæggeren og en fiber-backhaul, der tunnelerer brugertrafik (GTP-U) til mobilkernen.",
+  "simple": "En mast med smarte antenner. Den taler med alle telefoner i nærheden via radio og sender deres pakker videre gennem en glastråd.",
+  "technical": "En 5G-basestation (gNB): massive MIMO-antennepaneler, radioplanlæggeren og en fiber-backhaul, der tunnelerer brugertrafik (GTP-U) til mobilkernen.",
   "tag": "gNB · n78 · 3,5 GHz",
   "peek": {
     "up": {
-      "kid": "Masten tager din pakke af radioen og putter den i en tunnel-kuvert adresseret til mobilnettets kerne.",
-      "nerd": "gNB’en afslutter radiolinket (NR) og tunnellerer pakken i GTP-U til UPF’en; TEID’en angiver telefonens session."
+      "simple": "Masten tager din pakke af radioen og putter den i en tunnel-kuvert adresseret til mobilnettets kerne.",
+      "technical": "gNB’en afslutter radiolinket (NR) og tunnellerer pakken i GTP-U til UPF’en; TEID’en angiver telefonens session."
     },
     "down": {
-      "kid": "Masten pakker tunnel-kuverten ud og sender din pakke til telefonen via radio.",
-      "nerd": "gNB’en afslutter GTP-U-tunnelen (TEID’en siger hvilken telefon) og sender pakken over radioen (NR)."
+      "simple": "Masten pakker tunnel-kuverten ud og sender din pakke til telefonen via radio.",
+      "technical": "gNB’en afslutter GTP-U-tunnelen (TEID’en siger hvilken telefon) og sender pakken over radioen (NR)."
     }
   }
 }

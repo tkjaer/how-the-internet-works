@@ -10,7 +10,7 @@
   let { subject, time }: { subject: LayerSubject; time: number } = $props();
   const S = strings('scene.atm-cells');
   const legible = legibleSize();
-  const nerd = $derived(subject.ctx.level === 'nerd');
+  const technical = $derived(subject.ctx.level === 'technical');
   const portrait = $derived(view.orient === 'portrait');
   const compact = $derived(view.orient === 'landscape' && view.vp.h < 470);
   const fs = (size: number) => (compact ? legible(size) : size);
@@ -81,7 +81,7 @@
   <path d="M-34 -14 H22 M12 -24 L22 -14 L12 -4 M34 14 H-22 M-12 4 L-22 14 L-12 24" fill="none" stroke-width="5" stroke-linecap="round" />
 </g>
 <Text x={mid} y={L.line.y + 80} text={S('switch')} size={L.name} kind="node" />
-{#if nerd && !compact}
+{#if technical && !compact}
   <Text x={(wire.x0 + mid) / 2} y={L.line.y - 54} text={IN} size={L.name} kind="big" />
   <Text x={(mid + wire.x1) / 2} y={L.line.y - 54} text={OUT} size={L.name} kind="big" />
 {/if}

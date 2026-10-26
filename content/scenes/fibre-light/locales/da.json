@@ -1,7 +1,7 @@
 {
   "title": "Lys i en glastråd",
-  "kid": "En fiber er en glastråd, omtrent lige så tynd som et hår. Lysglimt hopper frem inde i den. Forskellige farver kan dele den samme tråd uden at blive blandet sammen!",
-  "nerd": "Lyset holdes inde i kernen af total intern refleksion ved grænsen mellem kerne og kappe. DWDM multiplekser snesevis af bølgelængder omkring 1550 nm på én fiber, hver en uafhængig kanal på 100–800 Gbit/s.",
+  "simple": "En fiber er en glastråd, omtrent lige så tynd som et hår. Lysglimt hopper frem inde i den. Forskellige farver kan dele den samme tråd uden at blive blandet sammen!",
+  "technical": "Lyset holdes inde i kernen af total intern refleksion ved grænsen mellem kerne og kappe. DWDM multiplekser snesevis af bølgelængder omkring 1550 nm på én fiber, hver en uafhængig kanal på 100–800 Gbit/s.",
   "core": "Kerne",
   "cladding": "Kappe",
   "mux": "Saml farverne",
@@ -20,12 +20,12 @@
   },
   "gpon": {
     "title": "Lys delt af hele vejen",
-    "kid": "Denne glastråd deles af alle husene på din vej. Ved splitteren går lyset på vej hjem til hvert eneste hus, og hvert hus beholder kun sine egne pakker. På vej op skiftes husene til, så deres lysglimt aldrig støder ind i hinanden.",
-    "nerd": "Et passivt optisk net: en splitter uden strøm deler én fiber mellem 32–64 hjem. Nedstrøms på 1577 nm sendes til alle hjem, og hver ONT beholder kun sine egne (krypterede) rammer. Opstrøms på 1270 nm deles i tid: OLT'en tildeler hvert hjem sine tidsluker (XGS-PON).",
+    "simple": "Denne glastråd deles af alle husene på din vej. Ved splitteren går lyset på vej hjem til hvert eneste hus, og hvert hus beholder kun sine egne pakker. På vej op skiftes husene til, så deres lysglimt aldrig støder ind i hinanden.",
+    "technical": "Et passivt optisk net: en splitter uden strøm deler én fiber mellem 32–64 hjem. Nedstrøms på 1577 nm sendes til alle hjem, og hver ONT beholder kun sine egne (krypterede) rammer. Opstrøms på 1270 nm deles i tid: OLT'en tildeler hvert hjem sine tidsluker (XGS-PON).",
     "extra": "To generationer på én tråd: den ældre GPON (2,5 Gbit/s ned, 1,25 op) bruger 1490 nm ned og 1310 nm op, så den kan dele denne splitter med XGS-PON's 1577 og 1270 nm. Et sameksistensfilter (WDM) i centralen samler de to, og hver ONT i hjemmene beholder kun de farver, den taler, så en gade kan skifte til 10G ét hus ad gangen.",
     "describe": {
-      "kid": "En række huse deler én glastråd gennem en splitter. Blåt lys på vej hjem løber ned ad den fælles fiber og ud til alle huse. Rødt lys på vej op forlader husene én ad gangen. Små glimt hopper i glaskernen.",
-      "nerd": "Access-visningen viser et PON-træ. Dropfibre fra hjem mødes i en passiv splitter, og én delt fiber går mod OLT’en. Nedstrøms pulser (blå) sendes til alle ONT’er. Opstrøms pulser (røde) bruger tidsrum, så kun ét hjem sender på den delte strækning ad gangen. Mærket viser 1:32 og 1270/1577 nm."
+      "simple": "En række huse deler én glastråd gennem en splitter. Blåt lys på vej hjem løber ned ad den fælles fiber og ud til alle huse. Rødt lys på vej op forlader husene én ad gangen. Små glimt hopper i glaskernen.",
+      "technical": "Access-visningen viser et PON-træ. Dropfibre fra hjem mødes i en passiv splitter, og én delt fiber går mod OLT’en. Nedstrøms pulser (blå) sendes til alle ONT’er. Opstrøms pulser (røde) bruger tidsrum, så kun ét hjem sender på den delte strækning ad gangen. Mærket viser 1:32 og 1270/1577 nm."
     },
     "down": "På vej hjem",
     "everyone": "til alle huse",
@@ -36,48 +36,48 @@
   },
   "metro-fibre": {
     "title": "Farver deler én tråd",
-    "kid": "En glastråd løber under gaden fra skab til skab, hele vejen til centralen. Lyset hopper frem inde i kernen, og nogle få farver deler den samme tråd uden at blive blandet sammen: hver farve er sin egen kanal.",
-    "nerd": "Metrofiber: single-mode-forbindelser mellem gadeskabe, aggregeringspunkter og centralen, typisk 10–100 Gbit/s Ethernet-optik, hvor CWDM eller DWDM lægger en håndfuld bølgelængder på ét fiberpar.",
+    "simple": "En glastråd løber under gaden fra skab til skab, hele vejen til centralen. Lyset hopper frem inde i kernen, og nogle få farver deler den samme tråd uden at blive blandet sammen: hver farve er sin egen kanal.",
+    "technical": "Metrofiber: single-mode-forbindelser mellem gadeskabe, aggregeringspunkter og centralen, typisk 10–100 Gbit/s Ethernet-optik, hvor CWDM eller DWDM lægger en håndfuld bølgelængder på ét fiberpar.",
     "describe": {
-      "kid": "Én glasfiber går fra en lampeende til en modtagerende. Fire nummererede lys, 1 rød, 2 gul, 3 grøn og 4 blå, samles i kernen, hopper gennem tråden og deles igen, hver til modtageren med sit eget nummer. Tekster peger på kernen, kappen og boksene, der samler farverne.",
-      "nerd": "Metrofiber-visningen viser fire bølgelængdekanaler, λ1 til λ4 (tegnet rød, gul, grøn og blå og nummereret i begge ender), der går ind i en mux og gennem en single-mode-kerne. De forlader fiberen gennem en demux. Bevægelige pulser markerer hver kanal, mens tekster peger på kerne, kappe og DWDM. Mærket viser C-båndets 50 GHz grid."
+      "simple": "Én glasfiber går fra en lampeende til en modtagerende. Fire nummererede lys, 1 rød, 2 gul, 3 grøn og 4 blå, samles i kernen, hopper gennem tråden og deles igen, hver til modtageren med sit eget nummer. Tekster peger på kernen, kappen og boksene, der samler farverne.",
+      "technical": "Metrofiber-visningen viser fire bølgelængdekanaler, λ1 til λ4 (tegnet rød, gul, grøn og blå og nummereret i begge ender), der går ind i en mux og gennem en single-mode-kerne. De forlader fiberen gennem en demux. Bevægelige pulser markerer hver kanal, mens tekster peger på kerne, kappe og DWDM. Mærket viser C-båndets 50 GHz grid."
     }
   },
   "backbone": {
     "title": "Lys på motorvejen",
-    "kid": "Internettets motorveje er glastråde under vejene, fra by til by. Lyset bliver svagere undervejs, så på en lang tråd gør en forstærker cirka hver 80. km alle farverne klare igen på én gang. Se tælleren: den lægger kilometerne sammen.",
-    "nerd": "Long-haul DWDM: 64–96 bølgelængder i C-båndet, hver på 100–800 Gbit/s med kohærent optik. Erbium-doterede fiberforstærkere (EDFA’er) cirka hver 80. km forstærker alle farverne på én gang; en kort strækning klarer sig uden.",
+    "simple": "Internettets motorveje er glastråde under vejene, fra by til by. Lyset bliver svagere undervejs, så på en lang tråd gør en forstærker cirka hver 80. km alle farverne klare igen på én gang. Se tælleren: den lægger kilometerne sammen.",
+    "technical": "Long-haul DWDM: 64–96 bølgelængder i C-båndet, hver på 100–800 Gbit/s med kohærent optik. Erbium-doterede fiberforstærkere (EDFA’er) cirka hver 80. km forstærker alle farverne på én gang; en kort strækning klarer sig uden.",
     "describe": {
-      "kid": "En lang glastråd med et brudmærke står for mange kilometer. Otte lys, nummereret 1 til 8 og farvet som en regnbue fra rød til lyserød, løber sammen gennem kernen og bliver lidt svagere undervejs. Et rødt tal under det første lys tæller kilometerne. Lange tråde får forstærkere, der gør lyset klart igen.",
-      "nerd": "Long-haul-visningen viser otte DWDM-bølgelængder i én fiber, λ1 til λ8, nummereret ved laserne og modtagerne. Brudmærker står for den rigtige længde, og en tæller følger λ1 i km. Fiberen deles i strækninger på op til 80 km; pulser dæmpes over hver, og en EDFA forstærker alle kanaler mellem dem. Mærket nævner 96 bølgelængder og EDFA hver 80 km."
+      "simple": "En lang glastråd med et brudmærke står for mange kilometer. Otte lys, nummereret 1 til 8 og farvet som en regnbue fra rød til lyserød, løber sammen gennem kernen og bliver lidt svagere undervejs. Et rødt tal under det første lys tæller kilometerne. Lange tråde får forstærkere, der gør lyset klart igen.",
+      "technical": "Long-haul-visningen viser otte DWDM-bølgelængder i én fiber, λ1 til λ8, nummereret ved laserne og modtagerne. Brudmærker står for den rigtige længde, og en tæller følger λ1 i km. Fiberen deles i strækninger på op til 80 km; pulser dæmpes over hver, og en EDFA forstærker alle kanaler mellem dem. Mærket nævner 96 bølgelængder og EDFA hver 80 km."
     },
     "booster": "Forstærker"
   },
   "cross-connect": {
     "title": "Over gangen",
-    "kid": "I knudepunktets bygning har hvert firma sine egne bokse, og et kort glaskabel forbinder dem. Dine pakker krydser det på et øjeblik: nogle få farver deler tråden, og hver farve er sin egen kanal.",
-    "nerd": "En krydsforbindelse: en single-mode-patch gennem meet-me-rummet, højst et par hundrede meter. En 100GBASE-LR4-optik lægger fire 25G-baner på fire bølgelængder omkring 1310 nm (LAN-WDM) og deler dem igen i den anden ende.",
+    "simple": "I knudepunktets bygning har hvert firma sine egne bokse, og et kort glaskabel forbinder dem. Dine pakker krydser det på et øjeblik: nogle få farver deler tråden, og hver farve er sin egen kanal.",
+    "technical": "En krydsforbindelse: en single-mode-patch gennem meet-me-rummet, højst et par hundrede meter. En 100GBASE-LR4-optik lægger fire 25G-baner på fire bølgelængder omkring 1310 nm (LAN-WDM) og deler dem igen i den anden ende.",
     "describe": {
-      "kid": "Inde i knudepunktet ses en kort glastråd tæt på. Fire nummererede lys, 1 rød, 2 gul, 3 grøn og 4 blå, går ind, hopper gennem kernen og deles i den anden ende. De bevægende glimt krydser rummet meget hurtigt, én farve pr. kanal.",
-      "nerd": "Krydsforbindelsen bruger metro-tegningen til en kort patch gennem meet-me-rummet. Fire LAN-WDM-baner, λ1 til λ4 (tegnet rød, gul, grøn og blå og nummereret i begge ender), går ind i muxen, løber gennem single-mode-kernen og forlader demuxen. Mærket viser fire bølgelængder fra 1295 til 1310 nm, med pulser på hver bane."
+      "simple": "Inde i knudepunktet ses en kort glastråd tæt på. Fire nummererede lys, 1 rød, 2 gul, 3 grøn og 4 blå, går ind, hopper gennem kernen og deles i den anden ende. De bevægende glimt krydser rummet meget hurtigt, én farve pr. kanal.",
+      "technical": "Krydsforbindelsen bruger metro-tegningen til en kort patch gennem meet-me-rummet. Fire LAN-WDM-baner, λ1 til λ4 (tegnet rød, gul, grøn og blå og nummereret i begge ender), går ind i muxen, løber gennem single-mode-kernen og forlader demuxen. Mærket viser fire bølgelængder fra 1295 til 1310 nm, med pulser på hver bane."
     }
   },
   "dc-fibre": {
     "title": "Lys mellem racks",
-    "kid": "Inde i datacentret forbinder korte glaskabler kasserne: hoveddøren, vejkrydsene og skabene med computere. De er kun få meter lange, så lyset krydser dem på et øjeblik. Fire farver deler hver tråd, så den bærer fire gange så meget.",
-    "nerd": "Datacenteroptik: 400GBASE-FR4 lægger fire 100G-baner på fire CWDM-bølgelængder (1271–1331 nm) over ét single-mode-par, op til 2 km; de sidste meter ind til en server er ofte kobber (DAC). Hver forbindelse er ét hop i leaf–spine-fabric’en.",
+    "simple": "Inde i datacentret forbinder korte glaskabler kasserne: hoveddøren, vejkrydsene og skabene med computere. De er kun få meter lange, så lyset krydser dem på et øjeblik. Fire farver deler hver tråd, så den bærer fire gange så meget.",
+    "technical": "Datacenteroptik: 400GBASE-FR4 lægger fire 100G-baner på fire CWDM-bølgelængder (1271–1331 nm) over ét single-mode-par, op til 2 km; de sidste meter ind til en server er ofte kobber (DAC). Hver forbindelse er ét hop i leaf–spine-fabric’en.",
     "describe": {
-      "kid": "En kort glastråd mellem to kasser i datacentret vises tæt på. Fire farvede lys samles i den ene ende, hopper gennem kernen og deles i den anden. Glimtene krydser på et øjeblik.",
-      "nerd": "Fabric-visningen bruger metrotegningen til en kort single-mode-strækning. Fire CWDM-baner går ind i muxen, gennem kernen og ud gennem demuxen. Mærket viser fire bølgelængder fra 1271 til 1331 nm med lysglimt på hver bane."
+      "simple": "En kort glastråd mellem to kasser i datacentret vises tæt på. Fire farvede lys samles i den ene ende, hopper gennem kernen og deles i den anden. Glimtene krydser på et øjeblik.",
+      "technical": "Fabric-visningen bruger metrotegningen til en kort single-mode-strækning. Fire CWDM-baner går ind i muxen, gennem kernen og ud gennem demuxen. Mærket viser fire bølgelængder fra 1271 til 1331 nm med lysglimt på hver bane."
     }
   },
   "fttb": {
     "title": "En glastråd til din bygning",
-    "kid": "Med fiber til bygningen stopper glastråden i kælderen under din boligblok, og almindelige kabler løber op ad trappen til hver lejlighed. Tråden er bygningens egen, og den bærer lys begge veje på én gang: én farve op og en anden farve ned, så de aldrig støder sammen.",
-    "nerd": "FTTB: en punkt-til-punkt single-mode-fiber fra udbyderens aggregeringsswitch til en switch i kælderen, tit med en BiDi-optik i hver ende (1 Gbit/s: 1310 nm op, 1490 nm ned på én tråd; 10G-BiDi bruger 1270/1330 nm). Indenfor når Cat 5e/6-kobber eller G.fast over de gamle telefonledninger ud til hver lejlighed.",
+    "simple": "Med fiber til bygningen stopper glastråden i kælderen under din boligblok, og almindelige kabler løber op ad trappen til hver lejlighed. Tråden er bygningens egen, og den bærer lys begge veje på én gang: én farve op og en anden farve ned, så de aldrig støder sammen.",
+    "technical": "FTTB: en punkt-til-punkt single-mode-fiber fra udbyderens aggregeringsswitch til en switch i kælderen, tit med en BiDi-optik i hver ende (1 Gbit/s: 1310 nm op, 1490 nm ned på én tråd; 10G-BiDi bruger 1270/1330 nm). Indenfor når Cat 5e/6-kobber eller G.fast over de gamle telefonledninger ud til hver lejlighed.",
     "describe": {
-      "kid": "Én glastråd går fra kælderen under en boligblok til internetfirmaet. Røde glimt på vej op og blå glimt på vej ned hopper gennem kernen hver sin vej, hver fra sin egen lampe til sin egen fanger.",
-      "nerd": "Bygningsvisningen viser én single-mode-fiber med to bølgelængder i hver sin retning: op fra kælderswitchen på 1310 nm og ned fra aggregeringsswitchen på 1490 nm, hver ind gennem et WDM-filter. Mærkaten nævner en BiDi-optik på én tråd."
+      "simple": "Én glastråd går fra kælderen under en boligblok til internetfirmaet. Røde glimt på vej op og blå glimt på vej ned hopper gennem kernen hver sin vej, hver fra sin egen lampe til sin egen fanger.",
+      "technical": "Bygningsvisningen viser én single-mode-fiber med to bølgelængder i hver sin retning: op fra kælderswitchen på 1310 nm og ned fra aggregeringsswitchen på 1490 nm, hver ind gennem et WDM-filter. Mærkaten nævner en BiDi-optik på én tråd."
     },
     "up": "På vej op",
     "upColour": "i én farve",
@@ -86,69 +86,69 @@
   },
   "submarine": {
     "title": "Lys under havet",
-    "kid": "Her krydser internettet havet! Glastrådene ligger i et kabel, så tykt som en haveslange, helt nede på havbunden. Strøm løber gennem kablet fra land ud til forstærkerne, som gør lyset klart igen på vejen over.",
-    "nerd": "Et søkabel: nogle få fiberpar i et stålrør, omviklet med kobber og polyethylen, armeret og nedgravet nær kysten mod ankre og trawl. Landingsstationerne sender flere kV jævnstrøm gennem kobberet til repeaterne (EDFA’er), én for omtrent hver 50–80 km på lange kabler; en så kort overfart bygges ofte helt uden.",
+    "simple": "Her krydser internettet havet! Glastrådene ligger i et kabel, så tykt som en haveslange, helt nede på havbunden. Strøm løber gennem kablet fra land ud til forstærkerne, som gør lyset klart igen på vejen over.",
+    "technical": "Et søkabel: nogle få fiberpar i et stålrør, omviklet med kobber og polyethylen, armeret og nedgravet nær kysten mod ankre og trawl. Landingsstationerne sender flere kV jævnstrøm gennem kobberet til repeaterne (EDFA’er), én for omtrent hver 50–80 km på lange kabler; en så kort overfart bygges ofte helt uden.",
     "describe": {
-      "kid": "Et kig fra siden ned i havet mellem to landingsstationer på kysten. Et kabel løber ned ad skrænten og hen ad havbunden med forstærkere på. Farvede lysglimt og små gule gnister af strøm farer langs kablet, et rødt tal tæller kilometerne, og en haj svømmer forbi. En cirkel viser kablet skåret over.",
-      "nerd": "Et kig fra siden på et søkabel mellem to landingsstationer. Kablet er nedgravet nær kysten og ligger på havbunden med en repeater for hver strækning på op til 60 km. Fire bølgelængder krydser og dæmpes over hver strækning; gnister viser jævnstrøm fra land. Et tværsnit viser fibre i et rør, kobber og stålarmering. En tæller følger λ1 i km."
+      "simple": "Et kig fra siden ned i havet mellem to landingsstationer på kysten. Et kabel løber ned ad skrænten og hen ad havbunden med forstærkere på. Farvede lysglimt og små gule gnister af strøm farer langs kablet, et rødt tal tæller kilometerne, og en haj svømmer forbi. En cirkel viser kablet skåret over.",
+      "technical": "Et kig fra siden på et søkabel mellem to landingsstationer. Kablet er nedgravet nær kysten og ligger på havbunden med en repeater for hver strækning på op til 60 km. Fire bølgelængder krydser og dæmpes over hver strækning; gnister viser jævnstrøm fra land. Et tværsnit viser fibre i et rør, kobber og stålarmering. En tæller følger λ1 i km."
     },
     "landing": "Landingsstation",
     "repeater": {
-      "kid": "Forstærker",
-      "nerd": "Repeater"
+      "simple": "Forstærker",
+      "technical": "Repeater"
     },
     "inside": "Inde i kablet",
     "copper": {
-      "kid": "Strøm",
-      "nerd": "Kobber: strøm"
+      "simple": "Strøm",
+      "technical": "Kobber: strøm"
     },
     "glass": {
-      "kid": "Glastråde",
-      "nerd": "Fiberpar"
+      "simple": "Glastråde",
+      "technical": "Fiberpar"
     }
   },
   "atm": {
     "title": "Én farve tværs over Amerika",
-    "kid": "Denne glastråd krydser Amerika og bærer det store nets små celler. I 1995 bærer hver tråd kun én farve lys. For hver få dusin kilometer fanger en maskine det svage lys, læser det og sender det videre, klart og frisk.",
-    "nerd": "Langdistance i 1995: SONET på single-mode-fiber, én bølgelængde pr. fiber ved 1310 eller 1550 nm. Backbonens ATM-switche møder den ved OC-3 (155 Mbit/s) eller OC-12 (622 Mbit/s). Elektroniske regeneratorer hver 40–80 km gør lyset til bit og tilbage; de første EDFA’er var lige på vej, og DWDM kom i 1996.",
+    "simple": "Denne glastråd krydser Amerika og bærer det store nets små celler. I 1995 bærer hver tråd kun én farve lys. For hver få dusin kilometer fanger en maskine det svage lys, læser det og sender det videre, klart og frisk.",
+    "technical": "Langdistance i 1995: SONET på single-mode-fiber, én bølgelængde pr. fiber ved 1310 eller 1550 nm. Backbonens ATM-switche møder den ved OC-3 (155 Mbit/s) eller OC-12 (622 Mbit/s). Elektroniske regeneratorer hver 40–80 km gør lyset til bit og tilbage; de første EDFA’er var lige på vej, og DWDM kom i 1996.",
     "describe": {
-      "kid": "En lang glastråd med brudmærker står for mange kilometer. Ét rødt lys løber gennem kernen og falmer lidt undervejs, og maskiner langs tråden gør det klart igen. Et rødt tal under lyset tæller kilometerne.",
-      "nerd": "Langdistancevisningen med en enkelt bølgelængde i én fiber, så der er ingen mux eller demux. Brudmærker står for den rigtige længde, og en tæller følger lyset i km. Fiberen er delt i spænd; pulsen falmer over hvert og en regenerator genopretter den mellem spændene. Mærkatet nævner SONET OC-3 og regeneratorer."
+      "simple": "En lang glastråd med brudmærker står for mange kilometer. Ét rødt lys løber gennem kernen og falmer lidt undervejs, og maskiner langs tråden gør det klart igen. Et rødt tal under lyset tæller kilometerne.",
+      "technical": "Langdistancevisningen med en enkelt bølgelængde i én fiber, så der er ingen mux eller demux. Brudmærker står for den rigtige længde, og en tæller følger lyset i km. Fiberen er delt i spænd; pulsen falmer over hvert og en regenerator genopretter den mellem spændene. Mærkatet nævner SONET OC-3 og regeneratorer."
     },
     "booster": {
-      "kid": "Forstærker",
-      "nerd": "Regenerator"
+      "simple": "Forstærker",
+      "technical": "Regenerator"
     }
   },
   "submarine-sdh": {
     "title": "Én tråd under Atlanten",
-    "kid": "I 1995 krydser pakkerne til Amerika havet i CANTAT-3, et kabel fra Danmark forbi Færøerne og Island til Canada, færdigt i 1994. Hver glastråd bærer én farve lys. Maskiner på havbunden fanger det svage lys og sender det klart videre, med strøm gennem kablet fra kysten.",
-    "nerd": "CANTAT-3 (1994): omkring 7.100 km kabel fra Blåbjerg via Færøerne og Island til Nova Scotia (med strækningerne over land fra København til New York omkring 8.400 km), 3 × 2,5 Gbit/s SDH (STM-16), én bølgelængde pr. fiberpar. Repeaterne er regeneratorer (NL-16), der gør lys til bit og tilbage; optisk forstærkede kabler nåede Atlanten i 1996 (TAT-12/13). Leverandøren lejer 2 Mbit/s-kredsløb i det.",
+    "simple": "I 1995 krydser pakkerne til Amerika havet i CANTAT-3, et kabel fra Danmark forbi Færøerne og Island til Canada, færdigt i 1994. Hver glastråd bærer én farve lys. Maskiner på havbunden fanger det svage lys og sender det klart videre, med strøm gennem kablet fra kysten.",
+    "technical": "CANTAT-3 (1994): omkring 7.100 km kabel fra Blåbjerg via Færøerne og Island til Nova Scotia (med strækningerne over land fra København til New York omkring 8.400 km), 3 × 2,5 Gbit/s SDH (STM-16), én bølgelængde pr. fiberpar. Repeaterne er regeneratorer (NL-16), der gør lys til bit og tilbage; optisk forstærkede kabler nåede Atlanten i 1996 (TAT-12/13). Leverandøren lejer 2 Mbit/s-kredsløb i det.",
     "describe": {
-      "kid": "Havet set fra siden mellem to landingsstationer på kysten. Et kabel løber ned ad skrænten og hen ad havbunden med maskiner på. Én farve lys og små gule gnister af strøm bevæger sig langs kablet, et rødt tal tæller kilometerne, og en haj svømmer forbi. En cirkel viser kablet skåret op.",
-      "nerd": "CANTAT-3 set fra siden mellem to landingsstationer. Kablet ligger på havbunden med regeneratorer langs det. Én bølgelængde krydser og falmer over hvert spænd; gnister viser jævnstrøm fra kysten. Et tværsnit viser fiber, kobber og stålarmering. En tæller følger lyset i km."
+      "simple": "Havet set fra siden mellem to landingsstationer på kysten. Et kabel løber ned ad skrænten og hen ad havbunden med maskiner på. Én farve lys og små gule gnister af strøm bevæger sig langs kablet, et rødt tal tæller kilometerne, og en haj svømmer forbi. En cirkel viser kablet skåret op.",
+      "technical": "CANTAT-3 set fra siden mellem to landingsstationer. Kablet ligger på havbunden med regeneratorer langs det. Én bølgelængde krydser og falmer over hvert spænd; gnister viser jævnstrøm fra kysten. Et tværsnit viser fiber, kobber og stålarmering. En tæller følger lyset i km."
     },
     "landing": "Landingsstation",
     "repeater": {
-      "kid": "Forstærker",
-      "nerd": "Regenerator"
+      "simple": "Forstærker",
+      "technical": "Regenerator"
     },
     "inside": "Inde i kablet",
     "copper": {
-      "kid": "Strøm",
-      "nerd": "Kobber: strøm"
+      "simple": "Strøm",
+      "technical": "Kobber: strøm"
     },
     "glass": {
-      "kid": "Glastråde",
-      "nerd": "Fiberpar"
+      "simple": "Glastråde",
+      "technical": "Fiberpar"
     }
   },
   "2010": {
     "backbone": {
-      "nerd": "Long-haul DWDM i 2010: 40–80 bølgelængder i C-båndet, mest 10 eller 40 Gbit/s hver; de første kohærente 100G-kanaler var lige på vej. Erbium-doterede fiberforstærkere (EDFA’er) cirka hver 80. km forstærker alle farverne på én gang; en kort strækning klarer sig uden.",
+      "technical": "Long-haul DWDM i 2010: 40–80 bølgelængder i C-båndet, mest 10 eller 40 Gbit/s hver; de første kohærente 100G-kanaler var lige på vej. Erbium-doterede fiberforstærkere (EDFA’er) cirka hver 80. km forstærker alle farverne på én gang; en kort strækning klarer sig uden.",
       "describe": {
-        "kid": "En lang glastråd med et brudmærke står for mange kilometer. Otte lys, nummereret 1 til 8 og farvet som en regnbue fra rød til lyserød, løber sammen gennem kernen og bliver lidt svagere undervejs. Et rødt tal under det første lys tæller kilometerne. Lange tråde får forstærkere, der gør lyset klart igen.",
-        "nerd": "Long-haul-visningen viser otte DWDM-bølgelængder i én fiber, λ1 til λ8, nummereret ved laserne og modtagerne. Brudmærker står for den rigtige længde, og en tæller følger λ1 i km. Fiberen deles i strækninger på op til 80 km; pulser dæmpes over hver, og en EDFA forstærker alle kanaler mellem dem. Mærket nævner 40–80 bølgelængder og EDFA hver 80 km."
+        "simple": "En lang glastråd med et brudmærke står for mange kilometer. Otte lys, nummereret 1 til 8 og farvet som en regnbue fra rød til lyserød, løber sammen gennem kernen og bliver lidt svagere undervejs. Et rødt tal under det første lys tæller kilometerne. Lange tråde får forstærkere, der gør lyset klart igen.",
+        "technical": "Long-haul-visningen viser otte DWDM-bølgelængder i én fiber, λ1 til λ8, nummereret ved laserne og modtagerne. Brudmærker står for den rigtige længde, og en tæller følger λ1 i km. Fiberen deles i strækninger på op til 80 km; pulser dæmpes over hver, og en EDFA forstærker alle kanaler mellem dem. Mærket nævner 40–80 bølgelængder og EDFA hver 80 km."
       }
     },
     "tag": {
@@ -157,22 +157,22 @@
       "cross-connect": "10GBASE-LR · 1310 nm · SMF"
     },
     "dc-fibre": {
-      "nerd": "Datacenteroptik i 2010: 10GBASE-SR, én 850 nm-laser (en VCSEL) i hver retning over et par multimode-fibre (OM3), op til 300 m. Én farve pr. fiber, intet at samle eller dele. Serverne hænger på access-switchene med kobber (1000BASE-T). Hver forbindelse er ét hop i træet med tre lag.",
-      "kid": "Inde i datacentret forbinder korte glaskabler de store switches. De er kun få meter lange, så lyset krydser dem på et øjeblik. Hver tråd bærer én farve, lige efter rød: så dyb en rød, at vores øjne ikke kan se den.",
+      "technical": "Datacenteroptik i 2010: 10GBASE-SR, én 850 nm-laser (en VCSEL) i hver retning over et par multimode-fibre (OM3), op til 300 m. Én farve pr. fiber, intet at samle eller dele. Serverne hænger på access-switchene med kobber (1000BASE-T). Hver forbindelse er ét hop i træet med tre lag.",
+      "simple": "Inde i datacentret forbinder korte glaskabler de store switches. De er kun få meter lange, så lyset krydser dem på et øjeblik. Hver tråd bærer én farve, lige efter rød: så dyb en rød, at vores øjne ikke kan se den.",
       "describe": {
-        "kid": "En kort glastråd mellem to switches i datacentret vises tæt på. Ét lys i den ene ende hopper gennem kernen til den anden ende. Glimtene krydser på et øjeblik.",
-        "nerd": "Datacenterforbindelsen vises som en kort multimode-strækning med én 850 nm-bane: en laser i den ene ende, lyset i zigzag gennem kernen og en detektor i den anden. Mærket siger 10GBASE-SR ved 850 nm over OM3."
+        "simple": "En kort glastråd mellem to switches i datacentret vises tæt på. Ét lys i den ene ende hopper gennem kernen til den anden ende. Glimtene krydser på et øjeblik.",
+        "technical": "Datacenterforbindelsen vises som en kort multimode-strækning med én 850 nm-bane: en laser i den ene ende, lyset i zigzag gennem kernen og en detektor i den anden. Mærket siger 10GBASE-SR ved 850 nm over OM3."
       }
     },
     "metro-fibre": {
-      "nerd": "Metrofiber: single-mode-forbindelser mellem gadeskabe, aggregeringspunkter og centralen. I 2010 mest 1 eller 10 Gbit/s Ethernet-optik, hvor CWDM eller DWDM lægger en håndfuld bølgelængder på ét fiberpar."
+      "technical": "Metrofiber: single-mode-forbindelser mellem gadeskabe, aggregeringspunkter og centralen. I 2010 mest 1 eller 10 Gbit/s Ethernet-optik, hvor CWDM eller DWDM lægger en håndfuld bølgelængder på ét fiberpar."
     },
     "cross-connect": {
-      "kid": "I knudepunktets bygning har hvert firma sine egne bokse, og et kort glaskabel forbinder dem. Dine pakker krydser det på et øjeblik, som glimt i én farve lige efter rød: så dyb en rød, at vores øjne ikke kan se den.",
-      "nerd": "En krydsforbindelse: en single-mode-patch gennem meet-me-rummet, højst et par hundrede meter. I 2010 mest 10GBASE-LR: én 1310 nm-laser i hver retning over et par single-mode-fibre, god til op til 10 km. Én farve pr. fiber, intet at samle eller dele.",
+      "simple": "I knudepunktets bygning har hvert firma sine egne bokse, og et kort glaskabel forbinder dem. Dine pakker krydser det på et øjeblik, som glimt i én farve lige efter rød: så dyb en rød, at vores øjne ikke kan se den.",
+      "technical": "En krydsforbindelse: en single-mode-patch gennem meet-me-rummet, højst et par hundrede meter. I 2010 mest 10GBASE-LR: én 1310 nm-laser i hver retning over et par single-mode-fibre, god til op til 10 km. Én farve pr. fiber, intet at samle eller dele.",
       "describe": {
-        "kid": "Inde i knudepunktet ses en kort glastråd tæt på. Ét lys i den ene ende hopper gennem kernen til den anden ende. Glimtene krydser rummet på et øjeblik.",
-        "nerd": "Krydsforbindelsen vises som en kort single-mode-patch med én 1310 nm-bane: en laser i den ene ende, lyset i zigzag gennem kernen og en detektor i den anden. Mærket siger 10GBASE-LR ved 1310 nm over single-mode-fiber."
+        "simple": "Inde i knudepunktet ses en kort glastråd tæt på. Ét lys i den ene ende hopper gennem kernen til den anden ende. Glimtene krydser rummet på et øjeblik.",
+        "technical": "Krydsforbindelsen vises som en kort single-mode-patch med én 1310 nm-bane: en laser i den ene ende, lyset i zigzag gennem kernen og en detektor i den anden. Mærket siger 10GBASE-LR ved 1310 nm over single-mode-fiber."
       }
     }
   },

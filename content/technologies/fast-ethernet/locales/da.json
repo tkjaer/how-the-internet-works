@@ -1,8 +1,8 @@
 {
   "name": "Netværkskabel",
   "2010": {
-    "kid": "Et kobberkabel bærer pakken som bittesmå elektriske signaler.",
-    "nerd": "Fast Ethernet over to snoede par (100BASE-TX, MLT-3): routerens porte kørte 100 Mbit/s.",
+    "simple": "Et kobberkabel bærer pakken som bittesmå elektriske signaler.",
+    "technical": "Fast Ethernet over to snoede par (100BASE-TX, MLT-3): routerens porte kørte 100 Mbit/s.",
     "tag": "100BASE-TX · Cat 5"
   },
   "learnMore": [

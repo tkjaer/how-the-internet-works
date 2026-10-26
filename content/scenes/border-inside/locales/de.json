@@ -1,70 +1,70 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Im Grenzrouter",
   "heading": {
-    "kid": "Im Grenzrouter",
-    "nerd": "Border-Router-RIB"
+    "simple": "Im Grenzrouter",
+    "technical": "Border-Router-RIB"
   },
-  "kid": "Das ist die Tür aus deiner Internetfirma. Der Grenzrouter nimmt den Autobahnaufkleber ab, liest Zettel von den Nachbarn und wählt die Abkürzung durch den Knoten, wo niemand pro Päckchen zahlt. Die bezahlte Transit-Straße ist bereit, aber dein Päckchen braucht sie nicht.",
-  "nerd": "Am PE/ASBR muss das letzte MPLS-Label weg sein, bevor das Ethernet-only Peering-LAN kommt; standardmäßig (penultimate-hop popping) entfernt der Core-Router davor es, und hier poppt der Border es selbst. eBGP-Updates vom IXP-Peer und vom Transit-Provider füllen die RIB, und local preference wählt Peering vor bezahltem Transit für 198.51.100.0/24.",
+  "simple": "Das ist die Tür aus deiner Internetfirma. Der Grenzrouter nimmt den Autobahnaufkleber ab, liest Zettel von den Nachbarn und wählt die Abkürzung durch den Knoten, wo niemand pro Päckchen zahlt. Die bezahlte Transit-Straße ist bereit, aber dein Päckchen braucht sie nicht.",
+  "technical": "Am PE/ASBR muss das letzte MPLS-Label weg sein, bevor das Ethernet-only Peering-LAN kommt; standardmäßig (penultimate-hop popping) entfernt der Core-Router davor es, und hier poppt der Border es selbst. eBGP-Updates vom IXP-Peer und vom Transit-Provider füllen die RIB, und local preference wählt Peering vor bezahltem Transit für 198.51.100.0/24.",
   "describe": {
-    "kid": "Der Kern deiner Internetfirma ist links. Rechts zwei Ausgänge: der Knoten und ein gedimmter Carrier, den man bezahlt. Ein Päckchen kommt mit Autobahnaufkleber. Der Aufkleber geht ab. Zettel von beiden Nachbarn fliegen ins Routenbuch. Die Zeile vom Knoten leuchtet, und das Päckchen fährt zum Knoten.",
-    "nerd": "Im Grenzrouter poppt die Linecard zur Core-Seite das MPLS-Label. Eine BGP-Routing-Tabelle listet das Video-Prefix mit IXP-Peer- und Transit-Pfaden. UPDATE-Zettel kommen von beiden Nachbarn. Die Zeile mit local-pref 200 leuchtet, und das Paket geht zum IXP."
+    "simple": "Der Kern deiner Internetfirma ist links. Rechts zwei Ausgänge: der Knoten und ein gedimmter Carrier, den man bezahlt. Ein Päckchen kommt mit Autobahnaufkleber. Der Aufkleber geht ab. Zettel von beiden Nachbarn fliegen ins Routenbuch. Die Zeile vom Knoten leuchtet, und das Päckchen fährt zum Knoten.",
+    "technical": "Im Grenzrouter poppt die Linecard zur Core-Seite das MPLS-Label. Eine BGP-Routing-Tabelle listet das Video-Prefix mit IXP-Peer- und Transit-Pfaden. UPDATE-Zettel kommen von beiden Nachbarn. Die Zeile mit local-pref 200 leuchtet, und das Paket geht zum IXP."
   },
   "rib": {
     "title": {
-      "kid": "Routenbuch",
-      "nerd": "BGP RIB"
+      "simple": "Routenbuch",
+      "technical": "BGP RIB"
     },
     "dest": {
-      "kid": "Geht zu",
-      "nerd": "Prefix"
+      "simple": "Geht zu",
+      "technical": "Prefix"
     },
     "target": {
-      "kid": "die Videofirma",
-      "nerd": "198.51.100.0/24"
+      "simple": "die Videofirma",
+      "technical": "198.51.100.0/24"
     },
     "exchange": {
-      "kid": "über den Knoten",
-      "nerd": "via IXP peer",
+      "simple": "über den Knoten",
+      "technical": "via IXP peer",
       "detail": {
-        "kid": "kurze Straße · keine Gebühr pro Päckchen",
-        "nerd": "AS path: 1 AS · local-pref 200"
+        "simple": "kurze Straße · keine Gebühr pro Päckchen",
+        "technical": "AS path: 1 AS · local-pref 200"
       }
     },
     "transit": {
-      "kid": "über Transit",
-      "nerd": "via transit",
+      "simple": "über Transit",
+      "technical": "via transit",
       "detail": {
-        "kid": "lange Straße · bezahlt",
-        "nerd": "AS path: 3 ASes · local-pref 100"
+        "simple": "lange Straße · bezahlt",
+        "technical": "AS path: 3 ASes · local-pref 100"
       }
     }
   },
   "pop": {
     "tag": {
-      "kid": "Autobahnaufkleber ab",
-      "nerd": "pop label"
+      "simple": "Autobahnaufkleber ab",
+      "technical": "pop label"
     },
     "short": {
-      "kid": "ab",
-      "nerd": "pop"
+      "simple": "ab",
+      "technical": "pop"
     }
   },
   "note": {
     "short": {
-      "kid": "Zettel",
-      "nerd": "UPDATE"
+      "simple": "Zettel",
+      "technical": "UPDATE"
     }
   },
   "learnMore": [
-    { "url": "https://de.wikipedia.org/wiki/Border_Gateway_Protocol", "title": "Border Gateway Protocol", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/Border_Gateway_Protocol", "title": "Border Gateway Protocol", "level": "technical" },
     { "url": "https://de.wikipedia.org/wiki/Multiprotocol_Label_Switching", "title": "Multiprotocol Label Switching", "level": "both" },
     { "url": "https://de.wikipedia.org/wiki/Routingtabelle", "title": "Routingtabelle", "level": "both" },
-    { "url": "https://de.wikipedia.org/wiki/Peering", "title": "Peering", "level": "nerd" },
-    { "url": "https://de.wikipedia.org/wiki/Transitverkehr_(Netzwerk)", "title": "Transitverkehr (Netzwerk)", "level": "nerd" }
+    { "url": "https://de.wikipedia.org/wiki/Peering", "title": "Peering", "level": "technical" },
+    { "url": "https://de.wikipedia.org/wiki/Transitverkehr_(Netzwerk)", "title": "Transitverkehr (Netzwerk)", "level": "technical" }
   ]
 }

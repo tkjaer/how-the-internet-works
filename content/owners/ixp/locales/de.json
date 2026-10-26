@@ -1,12 +1,12 @@
 {
   "name": {
-    "kid": "Der Knoten",
-    "nerd": "IXP · Peering-LAN"
+    "simple": "Der Knoten",
+    "technical": "IXP · Peering-LAN"
   },
   "1995": {
     "name": {
-      "kid": "Der dänische Knoten",
-      "nerd": "DIX · Lyngby"
+      "simple": "Der dänische Knoten",
+      "technical": "DIX · Lyngby"
     }
   },
   "learnMore": [

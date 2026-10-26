@@ -1,11 +1,11 @@
 {
   "name": {
-    "kid": "Små stykker med mærkat",
-    "nerd": "ATM-celle"
+    "simple": "Små stykker med mærkat",
+    "technical": "ATM-celle"
   },
   "note": {
-    "kid": "Her bliver pakken skåret i bittesmå stykker, der er lige store, med hver sin lille mærkat. Switchene læser kun mærkaten og bytter den til en ny, når stykket kommer forbi.",
-    "nerd": "AAL5 skærer pakken i stykker på 48 byte, hver bag en header på 5 byte: celler på 53 byte. Switche sender videre på VPI/VCI og skriver den om ved hvert hop; routeren i den anden ende samler pakken igen."
+    "simple": "Her bliver pakken skåret i bittesmå stykker, der er lige store, med hver sin lille mærkat. Switchene læser kun mærkaten og bytter den til en ny, når stykket kommer forbi.",
+    "technical": "AAL5 skærer pakken i stykker på 48 byte, hver bag en header på 5 byte: celler på 53 byte. Switche sender videre på VPI/VCI og skriver den om ved hvert hop; routeren i den anden ende samler pakken igen."
   },
   "line": "ATM, VPI/VCI: 1/{vci}",
   "field": {
@@ -15,8 +15,8 @@
     },
     "vci": {
       "name": {
-        "kid": "Mærkat",
-        "nerd": "VCI"
+        "simple": "Mærkat",
+        "technical": "VCI"
       },
       "about": "Virtuel kanal: kredsløbets nummer på denne strækning. Hver switch bytter det til det næste."
     },

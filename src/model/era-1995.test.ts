@@ -306,7 +306,7 @@ describe('the 1995 trip', () => {
     let seen = 0;
     for (const r of trips()) for (const ref of scenes(r)) {
       if (ref.kind !== 'layer' || ref.at!.layer !== 'http' || r.hops[ref.at!.hop].role !== 'bridge') continue;
-      for (const lang of Object.keys(packs)) for (const level of ['kid', 'nerd'] as Level[]) {
+      for (const lang of Object.keys(packs)) for (const level of ['simple', 'technical'] as Level[]) {
         expect(firstOf(lang, withEra(layerKeys(r, ref), r.era), level), `${lang} ${level} ${ref.path.join('/')}`).not.toMatch(/router/i);
         seen++;
       }
@@ -318,7 +318,7 @@ describe('the 1995 trip', () => {
     const r = trips()[0], page = r.activity.flows[0].packets.find((p) => p.kind === 'page')!;
     for (const lang of Object.keys(packs)) {
       const size = (q: string) => {
-        const [, n, unit] = firstOf(lang, withEra([`scene.http-chunk.size.${q}`], r.era), 'nerd')!.match(/^([\d.,]+) (B|kB)$/)!;
+        const [, n, unit] = firstOf(lang, withEra([`scene.http-chunk.size.${q}`], r.era), 'technical')!.match(/^([\d.,]+) (B|kB)$/)!;
         return Number(n.replace(',', '.')) * (unit === 'kB' ? 1000 : 1);
       };
       expect(size('ask')).toBeLessThan(1000);
@@ -381,9 +381,9 @@ describe('the 1995 trip', () => {
       const room = scenes(r).filter((s) => s.path[1] === 'datacentre');
       const keys = room.flatMap((ref) => [
         ...sceneKeys(r, ref).flatMap((k) => ['', '.describe', '.extra', '.title'].map((x) => k.map((y) => y + x))),
-        ...(ref.kind === 'dive' ? ['kid', 'nerd', 'title'].map((k) => [`scene.${ref.dive}.${diveSubject(ref)}.${k}`]) : []),
+        ...(ref.kind === 'dive' ? ['simple', 'technical', 'title'].map((k) => [`scene.${ref.dive}.${diveSubject(ref)}.${k}`]) : []),
       ]);
-      for (const k of keys) for (const lang of Object.keys(packs)) for (const level of ['kid', 'nerd'] as Level[]) {
+      for (const k of keys) for (const lang of Object.keys(packs)) for (const level of ['simple', 'technical'] as Level[]) {
         const s = firstOf(lang, withEra(k, r.era), level);
         if (s && TODAY.test(s)) bad.add(`${lang} ${level} ${k[0]}: ${s}`);
       }
@@ -392,10 +392,10 @@ describe('the 1995 trip', () => {
   });
 
   it('counts the networks of its own time', () => {
-    const nerd = (era: string | undefined) => firstOf('en', withEra(['node.internet'], era), 'nerd')!;
-    expect(nerd(undefined)).toMatch(/80 000/);
-    expect(nerd('2010')).toMatch(/35 000/);
-    expect(nerd('1995')).toMatch(/1 700/);
+    const technical = (era: string | undefined) => firstOf('en', withEra(['node.internet'], era), 'technical')!;
+    expect(technical(undefined)).toMatch(/80 000/);
+    expect(technical('2010')).toMatch(/35 000/);
+    expect(technical('1995')).toMatch(/1 700/);
     expect(Object.keys(content.eras)).toEqual(expect.arrayContaining(['1995', '2010']));
   });
 });

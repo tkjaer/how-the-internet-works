@@ -1,9 +1,9 @@
 {
   "name": "ISP gateway",
-  "kid": "Here your internet company checks it’s really you and lets your parcels onto the internet.",
-  "nerd": "The Broadband Network Gateway terminates subscriber sessions (IPoE/PPPoE), assigns addresses and applies policy and QoS.",
+  "simple": "Here your internet company checks it’s really you and lets your parcels onto the internet.",
+  "technical": "The Broadband Network Gateway terminates subscriber sessions (IPoE/PPPoE), assigns addresses and applies policy and QoS.",
   "tag": "IPoE · per-subscriber",
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Broadband_remote_access_server", "title": "Broadband network gateway", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Broadband_remote_access_server", "title": "Broadband network gateway", "level": "technical" }
   ]
 }

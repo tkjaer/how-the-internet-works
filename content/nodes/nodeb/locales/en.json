@@ -1,22 +1,22 @@
 {
   "name": "Cell tower",
   "2010": {
-    "kid": "A mast with three flat antennas, each covering a slice of the area around it. It talks to all the phones nearby by radio and sends their parcels on to its controller.",
-    "nerd": "A 3G base station (NodeB): three sector antennas, the HSDPA scheduler and HARQ (MAC-hs), and an Iub line back to its RNC, often E1 lines with ATM or a microwave link in 2010.",
+    "simple": "A mast with three flat antennas, each covering a slice of the area around it. It talks to all the phones nearby by radio and sends their parcels on to its controller.",
+    "technical": "A 3G base station (NodeB): three sector antennas, the HSDPA scheduler and HARQ (MAC-hs), and an Iub line back to its RNC, often E1 lines with ATM or a microwave link in 2010.",
     "tag": "NodeB · 2.1 GHz · Iub",
     "peek": {
       "up": {
-        "kid": "The tower takes your parcel off the radio and sends it down the line to the controller, still in its radio envelope.",
-        "nerd": "The NodeB ends the air interface (WCDMA, HARQ) and forwards the RLC pieces over Iub to the RNC; it doesn’t open them."
+        "simple": "The tower takes your parcel off the radio and sends it down the line to the controller, still in its radio envelope.",
+        "technical": "The NodeB ends the air interface (WCDMA, HARQ) and forwards the RLC pieces over Iub to the RNC; it doesn’t open them."
       },
       "down": {
-        "kid": "The tower queues your parcel and sends it to your phone by radio when it’s your phone’s turn.",
-        "nerd": "MAC-hs queues the RNC’s pieces per phone, and the scheduler sends them in the 2 ms slots and codes it picks."
+        "simple": "The tower queues your parcel and sends it to your phone by radio when it’s your phone’s turn.",
+        "technical": "MAC-hs queues the RNC’s pieces per phone, and the scheduler sends them in the 2 ms slots and codes it picks."
       }
     }
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Cell_site", "title": "Cell site", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Node_B", "title": "Node B", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Node_B", "title": "Node B", "level": "technical" }
   ]
 }

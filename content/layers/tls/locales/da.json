@@ -1,15 +1,15 @@
 {
   "name": {
-    "kid": "Låst kasse",
-    "nerd": "TLS-record"
+    "simple": "Låst kasse",
+    "technical": "TLS-record"
   },
   "note": {
-    "kid": "Kun {yours} og serveren har nøglen.",
-    "nerd": "Krypteret og autentificeret fra ende til ende."
+    "simple": "Kun {yours} og serveren har nøglen.",
+    "technical": "Krypteret og autentificeret fra ende til ende."
   },
   "sealed": {
-    "kid": "Låst. Ingen på vejen kan læse, hvad der er inden i.",
-    "nerd": "Krypteret: mellemliggende hop kan ikke læse den eller ændre den, uden at det opdages."
+    "simple": "Låst. Ingen på vejen kan læse, hvad der er inden i.",
+    "technical": "Krypteret: mellemliggende hop kan ikke læse den eller ændre den, uden at det opdages."
   },
   "line": "Transport Layer Security: applikationsdata, længde {length}",
   "field": {

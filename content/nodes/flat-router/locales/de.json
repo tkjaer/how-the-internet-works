@@ -1,9 +1,9 @@
 {
   "name": "Heimrouter",
-  "kid": "Die Haustür des Netzes deiner Wohnung. Ein Kabel läuft von ihm die Treppe hinunter in den Keller.",
-  "nerd": "Wi-Fi und NAT für die Wohnung; der Uplink ist schlichtes Ethernet zum Switch des Gebäudes im Keller.",
+  "simple": "Die Haustür des Netzes deiner Wohnung. Ein Kabel läuft von ihm die Treppe hinunter in den Keller.",
+  "technical": "Wi-Fi und NAT für die Wohnung; der Uplink ist schlichtes Ethernet zum Switch des Gebäudes im Keller.",
   "learnMore": [
     { "url": "https://de.wikipedia.org/wiki/Residential_Gateway", "title": "Residential Gateway", "level": "both" },
-    { "url": "https://de.wikipedia.org/wiki/Netzwerkadress%C3%BCbersetzung", "title": "Netzwerkadressübersetzung", "level": "nerd" }
+    { "url": "https://de.wikipedia.org/wiki/Netzwerkadress%C3%BCbersetzung", "title": "Netzwerkadressübersetzung", "level": "technical" }
   ]
 }

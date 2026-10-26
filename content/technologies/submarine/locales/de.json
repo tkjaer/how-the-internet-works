@@ -1,7 +1,7 @@
 {
   "name": "Seekabel",
-  "kid": "Ein Kabel auf dem Meeresboden, voller Glasfäden, das zwei Küsten verbindet.",
-  "nerd": "Ein Untersee-Faserkabel zwischen zwei Landestationen, kurze ohne Repeater, lange mit optischen Repeatern, die über das Kabel Strom bekommen. Hier trägt es das MPLS-Backbone des ISP über das Meer.",
+  "simple": "Ein Kabel auf dem Meeresboden, voller Glasfäden, das zwei Küsten verbindet.",
+  "technical": "Ein Untersee-Faserkabel zwischen zwei Landestationen, kurze ohne Repeater, lange mit optischen Repeatern, die über das Kabel Strom bekommen. Hier trägt es das MPLS-Backbone des ISP über das Meer.",
   "learnMore": [
     { "url": "https://de.wikipedia.org/wiki/Seekabel", "title": "Seekabel", "level": "both" }
   ]

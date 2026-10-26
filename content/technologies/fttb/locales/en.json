@@ -1,10 +1,10 @@
 {
   "name": "Fibre to the building",
-  "kid": "From the basement, the parcel races along a glass thread of its own as flashes of light: one colour going up, another coming down.",
-  "nerd": "FTTB: a point-to-point fibre from the basement switch to the ISP, one strand with a BiDi optic at each end (1310 nm up, 1490 nm down).",
+  "simple": "From the basement, the parcel races along a glass thread of its own as flashes of light: one colour going up, another coming down.",
+  "technical": "FTTB: a point-to-point fibre from the basement switch to the ISP, one strand with a BiDi optic at each end (1310 nm up, 1490 nm down).",
   "tag": "1 Gbit/s · BiDi",
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Fiber_to_the_x", "title": "Fibre to the building", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Bidirectional_optical_transceiver", "title": "BiDi optics", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Bidirectional_optical_transceiver", "title": "BiDi optics", "level": "technical" }
   ]
 }

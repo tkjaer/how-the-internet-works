@@ -1,10 +1,10 @@
 {
   "name": "Krydsforbindelse",
-  "kid": "Et kort glaskabel inde i én bygning, der forbinder to firmaers bokse.",
-  "nerd": "En krydsforbindelse (cross-connect): et single-mode-fiberpar, der patches gennem datacentrets meet-me-rum mellem to lejeres porte, typisk 10–100G Ethernet.",
+  "simple": "Et kort glaskabel inde i én bygning, der forbinder to firmaers bokse.",
+  "technical": "En krydsforbindelse (cross-connect): et single-mode-fiberpar, der patches gennem datacentrets meet-me-rum mellem to lejeres porte, typisk 10–100G Ethernet.",
   "tag": "100GBASE-LR4 · SMF",
   "2010": {
-    "nerd": "En krydsforbindelse (cross-connect): et single-mode-fiberpar, der patches gennem datacentrets meet-me-rum mellem to lejeres porte, typisk 1–10G Ethernet; de første 100G-porte kom i 2010.",
+    "technical": "En krydsforbindelse (cross-connect): et single-mode-fiberpar, der patches gennem datacentrets meet-me-rum mellem to lejeres porte, typisk 1–10G Ethernet; de første 100G-porte kom i 2010.",
     "tag": "10GBASE-LR · SMF"
   }
 }

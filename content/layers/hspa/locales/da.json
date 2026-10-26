@@ -1,18 +1,18 @@
 {
   "name": {
-    "kid": "3G-radiokuvert",
-    "nerd": "3G HSPA-ramme (RLC · MAC-hs)"
+    "simple": "3G-radiokuvert",
+    "technical": "3G HSPA-ramme (RLC · MAC-hs)"
   },
   "note": {
-    "kid": "Sendt gennem luften i de tider, masten giver din telefon. Styringen bag masten tjekker, at hver bid kom frem, og beder om den igen, hvis den blev væk.",
-    "nerd": "MAC-hs i NodeB’en sender den i de 2 ms-TTI’er, dens planlægger tildeler, og gensender med HARQ; RLC i RNC’en krypterer den og gensender det, HARQ missede."
+    "simple": "Sendt gennem luften i de tider, masten giver din telefon. Styringen bag masten tjekker, at hver bid kom frem, og beder om den igen, hvis den blev væk.",
+    "technical": "MAC-hs i NodeB’en sender den i de 2 ms-TTI’er, dens planlægger tildeler, og gensender med HARQ; RLC i RNC’en krypterer den og gensender det, HARQ missede."
   },
   "line": "3G HSPA brugerplan, H-RNTI {hrnti}, RLC SN {rlcsn}",
   "field": {
     "hrnti": {
       "name": {
-        "kid": "Telefon nr.",
-        "nerd": "H-RNTI"
+        "simple": "Telefon nr.",
+        "technical": "H-RNTI"
       },
       "about": "NodeB’ens korte navn for telefonen på den delte HSDPA-kanal (det markerer telefonens tider på kontrolkanalen)."
     },

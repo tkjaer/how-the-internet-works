@@ -1,5 +1,5 @@
 {
   "name": "Hjemmerouter",
-  "kid": "Hoveddøren til dit hjemmenetværk. Den her har et modem indeni, der taler over telefonlinjen.",
-  "nerd": "Et VDSL2-modem og en router i én kasse: NAT for hjemmet og DMT-toner på telefonparret ud til gadeskabet."
+  "simple": "Hoveddøren til dit hjemmenetværk. Den her har et modem indeni, der taler over telefonlinjen.",
+  "technical": "Et VDSL2-modem og en router i én kasse: NAT for hjemmet og DMT-toner på telefonparret ud til gadeskabet."
 }

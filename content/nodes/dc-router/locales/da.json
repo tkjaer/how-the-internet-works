@@ -1,16 +1,16 @@
 {
   "name": "Kantrouter",
-  "kid": "Datacentrets hoveddør. Den lukker pakker ind fra knudepunktet og sender videoen ud igen.",
-  "nerd": "PoP’ens kantrouter: den peerer over BGP på knudepunktet, annoncerer videofirmaets adresser og router ind i fabric’en, hvor den fordeler trafikken over load balancerne.",
+  "simple": "Datacentrets hoveddør. Den lukker pakker ind fra knudepunktet og sender videoen ud igen.",
+  "technical": "PoP’ens kantrouter: den peerer over BGP på knudepunktet, annoncerer videofirmaets adresser og router ind i fabric’en, hvor den fordeler trafikken over load balancerne.",
   "tag": "eBGP · AS64501",
   "1995": {
     "name": "Router",
-    "kid": "Serverrummets hoveddør. Den lejede linje fra det store net ender her, og siden går samme vej ud igen.",
-    "nerd": "Hostingstedets router: T1’eren fra backbonens PoP ender på en seriel port (Cisco HDLC) med en statisk standardrute tilbage op ad den. Et så lille sted har ingen BGP selv.",
+    "simple": "Serverrummets hoveddør. Den lejede linje fra det store net ender her, og siden går samme vej ud igen.",
+    "technical": "Hostingstedets router: T1’eren fra backbonens PoP ender på en seriel port (Cisco HDLC) med en statisk standardrute tilbage op ad den. Et så lille sted har ingen BGP selv.",
     "tag": "T1 · statisk rute"
   },
   "2010": {
     "name": "Core-router",
-    "nerd": "Core-routeren i videofirmaets bur: den peerer over BGP på knudepunktet, annoncerer firmaets adresser og router ned over 10G til load balanceren og aggregeringsswitchene."
+    "technical": "Core-routeren i videofirmaets bur: den peerer over BGP på knudepunktet, annoncerer firmaets adresser og router ned over 10G til load balanceren og aggregeringsswitchene."
   }
 }

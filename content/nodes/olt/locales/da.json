@@ -1,16 +1,16 @@
 {
   "name": "Fiberterminal",
-  "kid": "I en af dit internetfirmas bygninger lytter en stor kasse til lyset fra mange gader og siger til hvert hus, hvornår det må sende.",
-  "nerd": "OLT’en (optical line terminal) i centralen: den styrer PON’et (giver hvert hjem dets tidsluker opstrøms, krypterer det, der går ned) og bridger så hvert hjems Ethernet-rammer videre med Q-in-Q-tags mod BNG’en.",
+  "simple": "I en af dit internetfirmas bygninger lytter en stor kasse til lyset fra mange gader og siger til hvert hus, hvornår det må sende.",
+  "technical": "OLT’en (optical line terminal) i centralen: den styrer PON’et (giver hvert hjem dets tidsluker opstrøms, krypterer det, der går ned) og bridger så hvert hjems Ethernet-rammer videre med Q-in-Q-tags mod BNG’en.",
   "tag": "OLT · Q-in-Q VLANs",
   "peek": {
     "up": {
-      "kid": "Fiberterminalen tager din pakke ud af lys-kuverten og sætter to mærkater på: én for din gade og én for dit hjem.",
-      "nerd": "OLT’en afslutter XGS-PON (XGEM-headeren tages af), bridger Ethernet-rammen videre og sætter to 802.1ad-tags på: S-VLAN 101 for PON’et og C-VLAN 2042 for dette hjem."
+      "simple": "Fiberterminalen tager din pakke ud af lys-kuverten og sætter to mærkater på: én for din gade og én for dit hjem.",
+      "technical": "OLT’en afslutter XGS-PON (XGEM-headeren tages af), bridger Ethernet-rammen videre og sætter to 802.1ad-tags på: S-VLAN 101 for PON’et og C-VLAN 2042 for dette hjem."
     },
     "down": {
-      "kid": "Fiberterminalen piller de to mærkater af, lægger din pakke i en lys-kuvert med dit husnummer og sender den ned ad glastråden til alle huse på din gade.",
-      "nerd": "OLT’en fjerner Q-in-Q-tags, lægger rammen på XGEM-port-ID 1127, krypterer den med portens AES-nøgle og sender den ud til alle på PON’et."
+      "simple": "Fiberterminalen piller de to mærkater af, lægger din pakke i en lys-kuvert med dit husnummer og sender den ned ad glastråden til alle huse på din gade.",
+      "technical": "OLT’en fjerner Q-in-Q-tags, lægger rammen på XGEM-port-ID 1127, krypterer den med portens AES-nøgle og sender den ud til alle på PON’et."
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "Gadeskab",
-  "kid": "I et skab på din gade ender telefonlinjerne fra en masse huse. En maskine her lytter til deres toner og sender pakkerne videre ad en glastråd.",
-  "nerd": "En DSLAM: et VDSL2-linjekort pr. bundt kobberpar, der lækker ind i hinanden (krydstale), og en fiber-uplink mod udbyderen.",
+  "simple": "I et skab på din gade ender telefonlinjerne fra en masse huse. En maskine her lytter til deres toner og sender pakkerne videre ad en glastråd.",
+  "technical": "En DSLAM: et VDSL2-linjekort pr. bundt kobberpar, der lækker ind i hinanden (krydstale), og en fiber-uplink mod udbyderen.",
   "tag": "DSLAM · VDSL2"
 }

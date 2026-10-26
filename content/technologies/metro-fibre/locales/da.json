@@ -1,10 +1,10 @@
 {
   "name": "Fiberforbindelse",
-  "kid": "En glastråd bærer pakkerne som lysglimt.",
-  "nerd": "Punkt-til-punkt-fiber med Ethernet (10–100 Gbit/s).",
+  "simple": "En glastråd bærer pakkerne som lysglimt.",
+  "technical": "Punkt-til-punkt-fiber med Ethernet (10–100 Gbit/s).",
   "tag": "DWDM · C-bånd · 10–100G",
   "2010": {
-    "nerd": "Punkt-til-punkt-fiber med Ethernet (1–10 Gbit/s).",
+    "technical": "Punkt-til-punkt-fiber med Ethernet (1–10 Gbit/s).",
     "tag": "DWDM · C-bånd · 1–10G"
   }
 }

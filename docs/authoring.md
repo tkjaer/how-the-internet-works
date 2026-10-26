@@ -18,8 +18,9 @@ the pieces fit together.
 - **Folder name = id.** Use lower-case kebab-case (`cell-tower`).
 - **Imports.** Definition files (`*.ts`) import only from `$core/define` and relative files. Svelte files import only from `$core/api` and relative files. A test enforces this.
 - **Strings.** Every folder has `locales/en.json`; other languages are optional and fall back to English per string. Keys are namespaced for you: `content/nodes/laptop/locales/en.json` → `node.laptop.*`.
-- **Levels.** Any string can be split by level: `"kid": "…", "nerd": "…"`, or `"stop": { "router": { "kid": …, "nerd": … } }`.
-- **Spoken descriptions (`describe`, issue #53).** Every scene a reader can reach has a `"describe": { "kid": …, "nerd": … }`
+- **Levels.** Any string can be split by level, Simple and Technical: `"simple": "…", "technical": "…"`, or `"stop": { "router": { "simple": …, "technical": … } }`.
+  These are the only names for the levels, in content and in code (#196); the old `kid` and `nerd` fail validation.
+- **Spoken descriptions (`describe`, issue #53).** Every scene a reader can reach has a `"describe": { "simple": …, "technical": … }`
   next to its caption text, in **every** shipped language (no English fallback: a test fails if one is missing, and
   lists the keys it tried). It is what the picture shows, for someone who can't see it: the announcer and read aloud
   say it on arrival. Write it to be heard: two to four short sentences, in the order you'd see things (the big
@@ -28,7 +29,7 @@ the pieces fit together.
   technology, device, hop or role is the same key with `.describe`:
   - a link or device dive: `describe`, or `<tech or node id>.describe`
   - a layer dive: `describe`, `<layer>.describe`, `role.<role>.describe`, `at.<node>.describe`, `sealed.describe`
-    (most specific first, as for `kid`/`nerd`; `{hop}`, `{yours}`, `{layer}`, `{sender}` and `{next}` are filled in)
+    (most specific first, as for `simple`/`technical`; `{hop}`, `{yours}`, `{layer}`, `{sender}` and `{next}` are filled in)
   - the overview: the place's own `describe` (one per place on the route, said in turn)
   - inside a group: the node's `inside.describe`, or a place's `inside.<group>.describe`
 - **Addresses.** Use the documentation ranges: 192.0.2.0/24, 198.51.100.0/24 and 203.0.113.0/24 for public addresses; 192.168.x, 10.x and 100.64/10 (CGNAT) for private ones.
@@ -63,7 +64,7 @@ export default defineNode({
 ```json
 // locales/en.json (and da.json…, each with its own language's links)
 {
-  "name": "Laptop", "yours": "your laptop", "kid": "A computer you can fold shut…", "nerd": "An endpoint like the phone, but wired…",
+  "name": "Laptop", "yours": "your laptop", "simple": "A computer you can fold shut…", "technical": "An endpoint like the phone, but wired…",
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Laptop", "title": "Laptop", "level": "both" }
   ]
@@ -115,9 +116,9 @@ export default definePlace({
 {
   "name": "At home, at the desk",
   "access": "Laptop on a cable",                             // its chip in "How do you get online?"
-  "kid": "No radio this time: …", "nerd": "Wired: Ethernet frames go straight …",
+  "simple": "No radio this time: …", "technical": "Wired: Ethernet frames go straight …",
   "tag":  { "laptop": "Ethernet · 192.168.1.40" },
-  "stop": { "laptop": { "kid": "The laptop wants a video too. …", "nerd": "…" } }
+  "stop": { "laptop": { "simple": "The laptop wants a video too. …", "technical": "…" } }
 }
 ```
 
@@ -132,9 +133,9 @@ the first hop and the NAT at the router, and `#/en/desk/watch-video/internet/hom
   hops `in` it. It is drawn as one node in its parent's scene and unfolds into its own, entered from the hop before it.
 - `art/Device.svelte`: optional; without it the theme draws a plain fallback body. Draw in a 200×200 box with the vocabulary classes: `body`, `peach`, `orange`, `teal`, `berry`, `cloud`, `screen`, `hi`, `button`, `accent`, `line`, `thin`, `wave`, `roof`. Export `face` if a face fits. It loads, as a small chunk of its own, with the first route that draws it (#91), so a new device adds nothing to the first load.
 - `locales/en.json`:
-  - `name` (required) and `kid`/`nerd` (the caption when it's the stop)
-  - optionally `tag` (a small technical label in nerd mode) and `yours` ("your phone", used when this is the reader's device)
-  - for network nodes, `inside` (`title`, `kid`, `nerd`, `describe`) for the unfolded scene, and optionally
+  - `name` (required) and `simple`/`technical` (the caption when it's the stop)
+  - optionally `tag` (a small technical label at the Technical level) and `yours` ("your phone", used when this is the reader's device)
+  - for network nodes, `inside` (`title`, `simple`, `technical`, `describe`) for the unfolded scene, and optionally
     `inside.coach`: what a first visit's coach mark on its *Open up* says ("There's a whole world inside the
     internet — open it up!"; else a generic line, `coach.expand`)
 - `art/Backdrop.svelte` (network nodes, optional): drawn over the theme's backdrop in the unfolded scene (the data
@@ -155,7 +156,7 @@ defineTechnology({ look: 'radio' | 'cable' | 'fibre' | 'trunk', colour: '#rrggbb
 
 - `stack` holds the **lower** layers, outermost first; the activity's flow adds IP and above. A link can override it (`{ link: 'metro-fibre', stack: ['ethernet', 'gtp'] }`).
 - `look` picks how every theme draws the link, so a new technology needs no theme change.
-- Strings: `name` (the link label), `kid`/`nerd`, and optionally `tag`.
+- Strings: `name` (the link label), `simple`/`technical`, and optionally `tag`.
 - Every technology needs a `dive` (its signal: an existing scene with per-technology strings, or a new one), and every
   layer in its `stack` a layer dive, so a reader can always go all the way down (a content test checks this).
 - Consecutive links with the same technology (and the same dive) are **one sideways stop** at dive level: they are one
@@ -179,14 +180,14 @@ defineTechnology({ look: 'radio' | 'cable' | 'fibre' | 'trunk', colour: '#rrggbb
   - `bytes`: size not described by `bits` (a text header, a body), `{ up, down }`.
   - `dive`: a layer dive scene (see below): its envelope in the peek gets a magnifier that flies into it.
 - Strings: `name` and `note` (levelled), `line` (the one-line summary in the detail tree, with `{fieldId}` values),
-  `sealed` (optional, levelled: what kids read on it where it's closed), and per field
+  `sealed` (optional, levelled: what the Simple level says on it where it's closed), and per field
   `field.<id>.name` (levelled) and `field.<id>.about`.
 
 Then reference it from a technology `stack`, a link override, or a flow `stack`.
 
 ### Add a header field
 
-A field is `{ id, bits?, value, use?, kid? }`:
+A field is `{ id, bits?, value, use?, simple? }`:
 - `bits`: its size on the wire. Give every field `bits` and the detail view draws the header diagram.
 - `value`: a template. Plain text is the same on every hop (`'4'`, `'010 (DF)'`); `{ up, down }` differs by direction;
   facts fill in per link: `{src}` `{dst}` `{sport}` `{dport}` `{ttl}` `{mac.src}` `{mac.dst}` `{mac.tx}` `{mac.rx}`
@@ -194,17 +195,17 @@ A field is `{ id, bits?, value, use?, kid? }`:
   [architecture](architecture.md#the-packet-model-modelpacketts)). `'@ask'` shows the string `value.ask` instead. An
   empty value leaves the field out in that direction.
 - `use`: the roles that act on it when the packet arrives (`['router', 'nat']` for TTL), or `true` for every hop that
-  receives the layer. Used fields are highlighted; kids see only used, changed or new fields.
-- `kid`: show it to kids: `true` (addresses become names like "your phone") or a kid value.
+  receives the layer. Used fields are highlighted; the Simple level shows only used, changed or new fields.
+- `simple`: show it at the Simple level: `true` (addresses become names like "your phone") or a simpler value.
 - `bitsIn`: its size in an era where it differed, by era (`{ 1995: 6 }`: RFC 793's six reserved bits and six flags,
   before ECN took two of each). Give the era's own `about` in the layer's era block (`1995.field.<id>.about`).
 
 ```ts
-{ id: 'ttl', bits: 8, value: '{ttl}', use: ['router', 'nat'], kid: true },
+{ id: 'ttl', bits: 8, value: '{ttl}', use: ['router', 'nat'], simple: true },
 ```
 
 ```json
-"field": { "ttl": { "name": { "kid": "Steps left", "nerd": "Time to live" }, "about": "Each router takes one off; at 0 the packet is dropped." } }
+"field": { "ttl": { "name": { "simple": "Steps left", "technical": "Time to live" }, "about": "Each router takes one off; at 0 the packet is dropped." } }
 ```
 
 Nothing is written per hop: values change because the route changes (a NAT's `natTo: 'addr:port'`, a router's TTL, a
@@ -235,7 +236,7 @@ did it arrive intact?* Keep that split so the two don't become near-duplicates.
     tap or key has let audio start, else `null`. Read both in a `$effect`; it reruns when either changes (so a reader
     who arrived by link hears it from their first tap), and its cleanup stops the sound when the reader leaves or
     mutes. Keep it short (a few seconds) and only ever behind `soundOut()`.
-- Strings: `title` (required) and `kid`/`nerd`. Per-technology variants such as `gpon.title` or `gpon.kid` win when the subject is that technology.
+- Strings: `title` (required) and `simple`/`technical`. Per-technology variants such as `gpon.title` or `gpon.simple` win when the subject is that technology.
   When one scene explains several technologies that can sit next to each other on a route, give each its own
   `<tech>.title` and draw the difference: a reader steps from one stretch to the next and should see what changed (a
   content test checks the titles differ). `fibre-light` picks a mode from `subject.link.tech` (`light.ts` › `modeOf`):
@@ -247,7 +248,7 @@ did it arrive intact?* Keep that split so the two don't become near-duplicates.
   #42), so give each link its real-ish `km`. Each mode is its own component with portrait, landscape and
   short-landscape layouts. 1995's technologies reuse the last two (`atm`: long haul, `submarine-sdh`: under the sea)
   with one colour on the thread, as before DWDM (1996), and their words under their own id (`light.ts` ›
-  `oneColour`, `wordsOf`: `atm.title`, `submarine-sdh.kid`).
+  `oneColour`, `wordsOf`: `atm.title`, `submarine-sdh.simple`).
 - `copper-pulses` picks its line code from the link's `rate` (`copper.ts` › `codeOf`): up to 10 Mbit/s it's
   10BASE-T's Manchester on two pairs taking turns (1995's ISP rack), up to 100 Mbit/s 100BASE-TX's MLT-3 on two
   pairs both ways at once (a 2010 home router's LAN ports: the `fast-ethernet` technology), above it 1000BASE-T's
@@ -257,10 +258,10 @@ did it arrive intact?* Keep that split so the two don't become near-duplicates.
 - The caption adds **What it carries** chips by itself, one per layer in `subject.link.stack` that has a dive, and
   the dives of those layers get a **How it travels** chip back to this scene; the title names it there, so make it
   say what the signal is ("Electricity in copper").
-- An optional `extra` (issue #31) is a nerd-only note under the caption's text, for what's next or beside the picture
+- An optional `extra` (issue #31) is a Technical-only note under the caption's text, for what's next or beside the picture
   (PoE and 10GBASE-T on copper, Wi‑Fi 7 MLO, XGS-PON next to GPON) without a new scene. It is looked up like the
   text, most specific first: `<tech>.extra` then `extra` in a link or device dive; in a layer dive `at.<node>.extra`,
-  `role.<role>.extra`, … then `extra`. Give it in every language (it is a plain string, nerd only); keep it to two or
+  `role.<role>.extra`, … then `extra`. Give it in every language (it is a plain string, Technical only); keep it to two or
   three sentences, since a phone's folded card cuts it to one line.
 
 Point a technology's `dive` at it, or a single link's `dive`.
@@ -290,7 +291,7 @@ is the hop id (`#/en/home/watch-video/router`).
   zoom out to the next stop, and Chrome lays hinted SVG text out again each time (this cost frames at 6× CPU).
 - A phone on its side, as for layer dives: no text under 14 px (`legibleSize()`, about 42 world units there), so the
   router and the cell tower have a compact layout with wider rooms, their titles only and no device names.
-- Strings: `title` and `kid`/`nerd`, or per device (`<node id>.title`, `<node id>.kid`…) for a scene serving several.
+- Strings: `title` and `simple`/`technical`, or per device (`<node id>.title`, `<node id>.simple`…) for a scene serving several.
   The caption adds **What it carries** chips by itself: the envelopes of the links either side that have a dive, at
   this device; the depth ladder shows the envelopes it handles on one of its links, over that link's signal.
 - A device with a dive of its own **ends a stretch**: two links of the same technology either side of it become two
@@ -326,11 +327,11 @@ notebook at a NAT, a carrier-grade NAT at the mobile core, an envelope swap at a
   inside a group scaled by `k`, use `legible(36 * k) / k`) and let its box grow with it. In short landscape 14 px is
   about 42 world units: hide detail that can't be that big (draw an envelope's rows as lines, shorten long values).
 - Loop on `time` with a pure maths file (as `ip-post/post.ts`), so screenshots at a fixed clock are stable.
-- Strings (`locales/en.json`, `da.json`), looked up most specific first for `title` and `kid`/`nerd`:
+- Strings (`locales/en.json`, `da.json`), looked up most specific first for `title` and `simple`/`technical`:
   1. `at.<node id>` (one hop, e.g. `at.mobile-core` for carrier-grade NAT)
   2. `role.<role>` (e.g. `role.nat`; a router that only switches an MPLS label tries `role.switched` first)
   3. `sealed` (when this hop can't open the layer)
-  4. the plain `title`/`kid`/`nerd`
+  4. the plain `title`/`simple`/`technical`
 
   Each is looked up first under the layer (`<layer>.at.<node id>`, `<layer>.role.<role>`, `<layer>.sealed`,
   `<layer>`), so **one scene can serve several layers** by switching on `subject.layer` (`sticker-doors` is
@@ -339,9 +340,9 @@ notebook at a NAT, a carrier-grade NAT at the mobile core, an envelope swap at a
   "your phone", since the device depends on the place and the era. From the link frame, `{sender}` (the hop that
   wrote it: bridges pass frames on) and `{next}` (the next hop the packet goes to, the one a router ARPs for) are too:
   write those rather than an address or a device, which differ by hop and direction. Scene labels are your own keys,
-  read with `strings('scene.<id>')`; nerd callouts conventionally live under `tag.*`.
+  read with `strings('scene.<id>')`; technical callouts conventionally live under `tag.*`.
 - A link layer (one in a technology's `stack`: Wi‑Fi, Ethernet, GPON…) is the envelope for one stretch; its dive
-  gets a **How it travels** chip down to that link's signal by itself. End kid texts with a line bridging down
+  gets a **How it travels** chip down to that link's signal by itself. End Simple texts with a line bridging down
   ("Underneath, it travels as flashes of light").
 
 Then set `dive: '<id>'` in `content/layers/<layer>/layer.ts`. The layer panels of a hop stack vertically around it in
@@ -355,7 +356,7 @@ its path scene, so nothing else needs a layout. Dive scenes are loaded on demand
 
 The internet is a network of networks. `content/owners/<id>/owner.ts` (`defineOwner({})`) is a company that runs
 some of the hops: your internet company, the exchange, the video company, a transit carrier. Its only string is
-`name`, split by level (`"name": { "kid": "Your internet company", "nerd": "Your ISP · AS64500" }`; use the
+`name`, split by level (`"name": { "simple": "Your internet company", "technical": "Your ISP · AS64500" }`; use the
 documentation AS numbers 64496–64511).
 - A hop (or `aside`) says `owner: '<id>'`. Inside a group, the hops of one owner get a tinted, rounded region, and the
   owners on the packets' way are named on a sign; a side branch's region stays faint and unnamed. The tone is the
@@ -363,14 +364,14 @@ documentation AS numbers 64496–64511).
 - A layout may place the signs: `owners: { isp: [x, y] }` next to `nodes`; the region reaches out to the sign.
   Without one, the sign sits on the region's top edge.
 - Give every link a rough `km`. The caption turns them into the trip's scale: how far the video is, how many
-  companies carry it, how far a stop is from you and how long a link is (with light's time in fibre for nerds).
+  companies carry it, how far a stop is from you and how long a link is (with light's time in fibre at Technical).
 
 ## Add a place
 
 `content/places/<id>/`: as in the worked example.
 - `place.ts` (`definePlace`) starts with the reader's device and ends with the link into the activity's next segment.
 - `art/Backdrop.svelte` is optional.
-- Strings: `name` (required), `kid`/`nerd`, `tag.<instance>`, `stop.<instance or link id>`, and `inside.<group>`.
+- Strings: `name` (required), `simple`/`technical`, `tag.<instance>`, `stop.<instance or link id>`, and `inside.<group>`.
 - A place of its own (not a variant, below) says where it is, `where` ("at home", "on the go"), and has a `picture`
   in "Where are you?": a node of kind `place` whose art stands for it (`home`: the house; `on-the-go`: a phone on the
   move). Its variants show the same picture. Validation fails without them.
@@ -380,7 +381,7 @@ documentation AS numbers 64496–64511).
   `label: [-66, 15, 'end']`). As the name and badge grow on a small screen the name moves out to stay clear of the
   badge, and where its spot is taken it goes to the nearest free side of the badge.
 - On a small screen, names and badges draw up to about twice their authored size. Leave room for that:
-  `overlap.test.ts` fails when names, badges, owner signs, nerd tags and devices overlap at that size, in any
+  `overlap.test.ts` fails when names, badges, owner signs, technical tags and devices overlap at that size, in any
   language. Tags shorten to their first fact, or wait for a zoom, where they have no room, but never on a big screen.
   When it fails, nudge the devices a little (it prints which two meet, at which size).
 
@@ -419,13 +420,13 @@ says so. Every family has a member in each era today (on the go in 1995 is `on-t
 call), so this is for a family added later.
 - `content/eras/<id>/era.ts`: `defineEra({ year: 1995 })`. The folder name is the id (`today` is the present,
   whose `year` is the current one). The panel lists eras by `year`.
-- Strings in `locales/<lang>.json`: `name` (the year, or "Today"), `kid`/`nerd` (what home internet was like then, as
-  the panel shows it) and `describe.kid`/`describe.nerd`: what the panel's picture of that era shows, which is the
+- Strings in `locales/<lang>.json`: `name` (the year, or "Today"), `simple`/`technical` (what home internet was like then, as
+  the panel shows it) and `describe.simple`/`describe.technical`: what the panel's picture of that era shows, which is the
   start device of that era's trip (its first hop: the PC, the laptop, the phone). Write `describe` in English, Danish
   and German. The place picker shows the time machine's line ("In 1995 you'd have done this at home.") under a place
   with no way online in the era you are in.
-  Where an era has a member of the place's family, `at.<place>`, else `at.<base place>` (`kid`, `nerd`,
-  `describe.kid`/`.nerd`), takes the place of the era's own words in the panel and the arrival (2010's `at.on-the-go`:
+  Where an era has a member of the place's family, `at.<place>`, else `at.<base place>` (`simple`, `technical`,
+  `describe.simple`/`.technical`), takes the place of the era's own words in the panel and the arrival (2010's `at.on-the-go`:
   phones on 3G; `at.desk-2010`: a cable to the DSL modem). The era texts load with the dive strings, when the panel
   opens.
 - Each base place says where it is, `where` ("at home", "on the go"), for the time machine's "In 1995 you'd have
@@ -453,16 +454,16 @@ call), so this is for a family added later.
   `src/test/era-walk.ts`, which reads every key of a dive the route reaches, so a word of a mode the era never draws
   (gigabit's PAM-5 card on 1995's copper) goes on the test's `UNSHOWN` list, with why.
 - **Words for an era** (#59): any content item's locale file may hold a block for an era of the past, with the
-  same keys as the rest of the file, for what is different then (`"1995": { "name": "Web server", "kid": … }` in
+  same keys as the rest of the file, for what is different then (`"1995": { "name": "Web server", "simple": … }` in
   `nodes/cdn`, `"1995": { "sealed": { … } }` in a dive). On a route of that era every lookup tries the block first,
   key by key, then today's words, so a dive needs no code to say "your PC" or "plain HTTP". A more specific key of
-  today's still wins over a general one of the era (`sealed` over the era's `kid`), so put the era's words at the
-  same depth (`"1995": { "sealed": … }`). A `describe` in a block needs both `kid` and `nerd`. Blocks load lazily
+  today's still wins over a general one of the era (`sealed` over the era's `simple`), so put the era's words at the
+  same depth (`"1995": { "sealed": … }`). A `describe` in a block needs both `simple` and `technical`. Blocks load lazily
   (dives' with the dive strings, the rest as the small chunk of the words of the past), so they cost the first load
   nothing; write them in English, Danish and German.
 - **An item that only exists in the past** (a place of 2010, a 3G mast, the RNC) keeps only its required, eager
   keys at the top (`name`, a place's `access`, a device's `yours`) and puts everything else in its era's block
-  (`"2010": { "kid": …, "nerd": …, "stop": { … } }`): it is only ever shown on that era's routes, so its words load
+  (`"2010": { "simple": …, "technical": …, "stop": { … } }`): it is only ever shown on that era's routes, so its words load
   with the words of the past and cost the first load nothing.
 - **A dive that serves an older technology too** (`nr-radio` for 5G and 3G): pick the drawing by the technology
   (or layer) id inside the scene, as `fibre-light` and `tdm-frames` do (a `MODES` table keyed by id), and the words
@@ -508,14 +509,14 @@ defineActivity({
 
 - **How long it takes (#59).** Give the one kind going down that the reader waits for a `size` in bytes (the whole
   page, clip or video), and `plays` in seconds if it's watched as it comes (`{ kind: 'video', …, size: 100_000_000,
-  plays: 180 }`). Then a `takes` string (kid and nerd) is required, and the overview's caption shows it under the
+  plays: 180 }`). Then a `takes` string (`simple` and `technical`) is required, and the overview's caption shows it under the
   text, filled in: `{time}` (how long at the route's slowest link), `{size}`, `{rate}`, `{link}` (that link's name),
   `{plays}` and `{faster}` (how many times faster than it plays), and `{now}`/`{nowSize}` (today's thing, the base
   activity's, at this route's rate). An era variant's own words go in the base's era block
-  (`"1995": { "takes": { … } }`); it's the bits alone, so say in the nerd text what adds to it.
+  (`"1995": { "takes": { … } }`); it's the bits alone, so say in the technical text what adds to it.
 
 Strings:
-- `title` and `kid`/`nerd`: keep them device-neutral ("You ask for a video"), since any place can start it
+- `title` and `simple`/`technical`: keep them device-neutral ("You ask for a video"), since any place can start it
 - `peek.<kind>` ("Caught: a piece of video")
 - `stop.*`
 
@@ -586,14 +587,14 @@ owner, technology, layer, scene, place or activity): a Danish page in `locales/d
 
 ```json
 "learnMore": [
-  { "url": "https://da.wikipedia.org/wiki/5G", "title": "5G", "level": "kid" | "nerd" | "both" }
+  { "url": "https://da.wikipedia.org/wiki/5G", "title": "5G", "level": "simple" | "technical" | "both" }
 ]
 ```
 
 `title` is in the language of the page. English links are every language's fallback, so a language lists only its
 own pages. The caption shows up to three links for the reader's level:
 - in their own language first
-- English nerd links always stay (marked "(en)")
+- English technical links always stay (marked "(en)")
 - other English links only when there's nothing in their language
 
 A link that is true of some eras only lists them: `"eras": ["today"]` for RFC 9293's TCP, `"eras": ["1995", "2010"]`
@@ -611,7 +612,7 @@ in its base's, with its era in `eras`.
   `model/doors.test.ts` check).
 - [ ] A new technology has a `dive`, and each layer in its `stack` a layer dive (all the way down), and a `rate`
   true to its era.
-- [ ] A dive's labels near its panel's edge (the device names at either end, its nerd tag) have `fit`, so they slide
+- [ ] A dive's labels near its panel's edge (the device names at either end, its technical tag) have `fit`, so they slide
   inside the frame at a phone's sizes and in longer languages; `npm run evaluate -- --only=fit` walks every dive on a
   phone, upright and on its side, and fails on anything cut (#136).
 - [ ] Art uses palette tokens, not colour literals, and looks right at night (`?mode=night`).

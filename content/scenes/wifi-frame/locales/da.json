@@ -1,25 +1,25 @@
 {
   "title": "Radio-kuverten",
-  "kid": "Alle i rummet kan høre en Wi-Fi-kuvert, så den siger tydeligt, hvem den er til. Modtageren svarer “Modtaget!”, og først så får den næste kuvert tur. Nedenunder rejser kuverten som radiobølger.",
-  "nerd": "En 802.11-dataramme navngiver modtager, sender og den fjerne adresse på kabelsiden, beskytter indholdet med WPA3/CCMP og bruger CSMA/CA med ACK, sekvensnumre og gensendinger på fælles airtime.",
+  "simple": "Alle i rummet kan høre en Wi-Fi-kuvert, så den siger tydeligt, hvem den er til. Modtageren svarer “Modtaget!”, og først så får den næste kuvert tur. Nedenunder rejser kuverten som radiobølger.",
+  "technical": "En 802.11-dataramme navngiver modtager, sender og den fjerne adresse på kabelsiden, beskytter indholdet med WPA3/CCMP og bruger CSMA/CA med ACK, sekvensnumre og gensendinger på fælles airtime.",
   "extra": "Wi-Fi 7 multi-link operation: enheden og adgangspunktet er hver en multi-link-enhed (MLD) med flere radioer. I luften har hver radio sin egen link-adresse; over dem sørger én MLD-adresse, én sekvenstæller og én block-ack-aftale for, at en ramme kan sendes på den forbindelse (2,4, 5 eller 6 GHz), der er ledig, og stadig når frem i rækkefølge.",
   "role": {
     "bridge": {
       "title": "Radioramme, kabelramme",
-      "kid": "Ved adgangspunktet kommer Wi-Fi-kuverten af. “Videre til”-mærket bliver kabelkuvertens “til”-mærke, men pakken siger stadig, at den kom fra {yours}. Nedenunder rejser kuverten som radiobølger.",
-      "nerd": "I bridgen har uplinkets 802.11 QoS-dataramme RA=AP, TA=STA og adr. 3=destinationen i distributionssystemet. AP’et dekapsulerer den, tjekker CCMP/FCS og sender en Ethernet-ramme mod routeren; IP-pakken røres ikke.",
+      "simple": "Ved adgangspunktet kommer Wi-Fi-kuverten af. “Videre til”-mærket bliver kabelkuvertens “til”-mærke, men pakken siger stadig, at den kom fra {yours}. Nedenunder rejser kuverten som radiobølger.",
+      "technical": "I bridgen har uplinkets 802.11 QoS-dataramme RA=AP, TA=STA og adr. 3=destinationen i distributionssystemet. AP’et dekapsulerer den, tjekker CCMP/FCS og sender en Ethernet-ramme mod routeren; IP-pakken røres ikke.",
       "describe": {
-        "kid": "På vejen står {yours}, adgangspunktet og routeren. Papirkort viser adresser og turtagning. En radiokuvert går fra {yours} til adgangspunktet. Dér åbner den og bliver til en kabelkuvert mod routeren. Turtagningen viser lyt, vent, bump, nyt forsøg og “Modtaget!”.",
-        "nerd": "Adressekortet viser uplinkets 802.11-ramme ved siden af Ethernet-rammen. Det viser To DS, addr1 AP, addr2 STA og addr3 router, derefter DA og SA på kabel. Sendetidsstriben animerer AIFS, backoff, data, ingen ACK, nyt forsøg, SIFS plus ACK samt sekvens, nyt forsøg og CCMP."
+        "simple": "På vejen står {yours}, adgangspunktet og routeren. Papirkort viser adresser og turtagning. En radiokuvert går fra {yours} til adgangspunktet. Dér åbner den og bliver til en kabelkuvert mod routeren. Turtagningen viser lyt, vent, bump, nyt forsøg og “Modtaget!”.",
+        "technical": "Adressekortet viser uplinkets 802.11-ramme ved siden af Ethernet-rammen. Det viser To DS, addr1 AP, addr2 STA og addr3 router, derefter DA og SA på kabel. Sendetidsstriben animerer AIFS, backoff, data, ingen ACK, nyt forsøg, SIFS plus ACK samt sekvens, nyt forsøg og CCMP."
       }
     },
     "endpoint": {
       "title": "En radio-kuvert til dig",
-      "kid": "På vejen tilbage gør adgangspunktet kabelkuverten til en radio-kuvert: til {yours}, fra adgangspunktet, kom fra routeren. Så åbner {yours} den, efter den har sagt “Modtaget!”. Nedenunder rejser kuverten som radiobølger.",
-      "nerd": "På downlink sender AP’et en 802.11 QoS-dataramme med RA=STA, TA=AP og adr. 3=kilden i distributionssystemet. Stationen tjekker CCMP/FCS, kvitterer efter SIFS, smider dubletter væk via sekvensnummeret og afleverer indholdet opad.",
+      "simple": "På vejen tilbage gør adgangspunktet kabelkuverten til en radio-kuvert: til {yours}, fra adgangspunktet, kom fra routeren. Så åbner {yours} den, efter den har sagt “Modtaget!”. Nedenunder rejser kuverten som radiobølger.",
+      "technical": "På downlink sender AP’et en 802.11 QoS-dataramme med RA=STA, TA=AP og adr. 3=kilden i distributionssystemet. Stationen tjekker CCMP/FCS, kvitterer efter SIFS, smider dubletter væk via sekvensnummeret og afleverer indholdet opad.",
       "describe": {
-        "kid": "Vejen viser adgangspunktet, der sender mod {yours}. Papirkort viser, at kuvertens yderside skifter. En kabelkuvert når adgangspunktet, åbner sig og bliver til en radiokuvert til {yours}. Tidslinjen venter, sender, prøver igen efter et bump og ender med “Modtaget!”.",
-        "nerd": "Adressekortet viser en downlink Ethernet-ramme, der bliver til en 802.11-ramme. Det viser From DS, addr1 STA, addr2 AP og addr3 router. Den bevægende radioramme går mod enheden du er ved. Sendetidsstriben viser backoff, nyt forsøg, ACK, sekvens, FCS og CCMP."
+        "simple": "Vejen viser adgangspunktet, der sender mod {yours}. Papirkort viser, at kuvertens yderside skifter. En kabelkuvert når adgangspunktet, åbner sig og bliver til en radiokuvert til {yours}. Tidslinjen venter, sender, prøver igen efter et bump og ender med “Modtaget!”.",
+        "technical": "Adressekortet viser en downlink Ethernet-ramme, der bliver til en 802.11-ramme. Det viser From DS, addr1 STA, addr2 AP og addr3 router. Den bevægende radioramme går mod enheden du er ved. Sendetidsstriben viser backoff, nyt forsøg, ACK, sekvens, FCS og CCMP."
       }
     }
   },
@@ -44,18 +44,18 @@
     "aifs": "AIFS",
     "data": "data",
     "sifsAck": "SIFS+ACK",
-    "listenKid": "lyt",
-    "waitKid": "vent",
-    "sendKid": "send",
+    "listenSimple": "lyt",
+    "waitSimple": "vent",
+    "sendSimple": "send",
     "gotIt": "Modtaget!",
     "gotItStep": "OK!",
-    "ackNerd": "ACK",
+    "ackTechnical": "ACK",
     "bump": "bump!",
     "noAck": "ingen ACK",
     "retryFlag": "retry",
     "neighbour": "nabo",
-    "kidStrip": "Lyt først. Kollision? Vent og prøv igen.",
-    "nerdStrip": "sekvens {seq} · retry · CCMP PN",
+    "simpleStrip": "Lyt først. Kollision? Vent og prøv igen.",
+    "technicalStrip": "sekvens {seq} · retry · CCMP PN",
     "radioToYou": "til {yours}"
   },
   "field": {
@@ -77,14 +77,14 @@
   },
   "2010": {
     "extra": "Wi‑Fi 4 (802.11n, 2009): frame aggregation (A-MPDU) pakker flere rammer i én udsendelse med én block ack, og med to eller flere antenner i hver ende (MIMO) deler flere strømme kanalen, op til 150 Mbit/s hver på en 40 MHz-kanal i 2,4 eller 5 GHz. Multi-link kom først med Wi‑Fi 7 i 2024.",
-    "nerd": "En 802.11-dataramme navngiver modtager, sender og den fjerne adresse på kabelsiden, beskytter indholdet med WPA2/CCMP og bruger CSMA/CA med ACK, sekvensnumre og gensendinger på fælles airtime.",
+    "technical": "En 802.11-dataramme navngiver modtager, sender og den fjerne adresse på kabelsiden, beskytter indholdet med WPA2/CCMP og bruger CSMA/CA med ACK, sekvensnumre og gensendinger på fælles airtime.",
     "tag": {
       "encrypt": "WPA2/CCMP skjuler indholdet"
     }
   },
   "learnMore": [
-    { "url": "https://da.wikipedia.org/wiki/IEEE_802.11", "title": "IEEE 802.11", "level": "nerd" },
+    { "url": "https://da.wikipedia.org/wiki/IEEE_802.11", "title": "IEEE 802.11", "level": "technical" },
     { "url": "https://da.wikipedia.org/wiki/Wi-Fi", "title": "Wi-Fi", "level": "both" },
-    { "url": "https://da.wikipedia.org/wiki/WPA", "title": "WPA", "level": "nerd" }
+    { "url": "https://da.wikipedia.org/wiki/WPA", "title": "WPA", "level": "technical" }
   ]
 }

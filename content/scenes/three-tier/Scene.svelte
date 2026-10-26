@@ -14,7 +14,7 @@
   const portrait = $derived(view.orient === 'portrait');
   const compact = $derived(!portrait && view.vp.h < 470);
   const night = $derived(view.mode === 'night');
-  const nerd = $derived(S('mode') === 'nerd');
+  const technical = $derived(S('mode') === 'technical');
   const L = $derived(tierLayout(view.orient, compact));
   const legible = legibleSize();
   const T = $derived(portrait
@@ -40,7 +40,7 @@
     { tech: subject.in?.tech, d: wire(L.before, L.aggs[ACTIVE]) },
     { tech: beyond?.tech ?? subject.out?.tech, d: wire(L.racks.after, L.outPort) },
   ].flatMap((e) => (e.tech ? [{ tech: e.tech, d: e.d }] : [])));
-  const stickerLines = $derived(nerd ? [S('sticker'), S('sticker.rate')] : [S('sticker')]);
+  const stickerLines = $derived(technical ? [S('sticker'), S('sticker.rate')] : [S('sticker')]);
 </script>
 
 <g text-rendering="geometricPrecision">
@@ -89,7 +89,7 @@
   <rect x={L.sticker.x + 6} y={L.sticker.y + 8} width={L.sticker.w} height={L.sticker.h} rx="14" fill="var(--shade)" opacity="0.12" />
   <rect x={L.sticker.x} y={L.sticker.y} width={L.sticker.w} height={L.sticker.h} rx="14" fill="var(--kraft)" stroke="var(--line)" stroke-width="5" />
   {#each stickerLines as line, i (line)}
-    <text x={L.sticker.x + L.sticker.w / 2} y={L.sticker.y + L.sticker.h / 2 + T.sticker * (i - (stickerLines.length - 1) / 2) * 1.08 + T.sticker * 0.34} text-anchor="middle" font-family={nerd ? 'var(--tag-font)' : 'var(--label-font)'} font-size={T.sticker} font-weight="900" fill="var(--line)">{line}</text>
+    <text x={L.sticker.x + L.sticker.w / 2} y={L.sticker.y + L.sticker.h / 2 + T.sticker * (i - (stickerLines.length - 1) / 2) * 1.08 + T.sticker * 0.34} text-anchor="middle" font-family={technical ? 'var(--tag-font)' : 'var(--label-font)'} font-size={T.sticker} font-weight="900" fill="var(--line)">{line}</text>
   {/each}
 
   {#if before}

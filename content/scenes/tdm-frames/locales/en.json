@@ -1,158 +1,158 @@
 {
   "title": "A line cut into slots",
-  "kid": "This line doesn’t carry one call: it carries lots, taking turns. Every tiny moment it sends a row of boxes, one box for each conversation, eight thousand rows a second. Each conversation always gets the same box.",
-  "nerd": "Time-division multiplexing: a frame of 8-bit timeslots, 8,000 frames a second (one every 125 µs), so each slot is a steady 64 kbit/s channel. Both ends count slots from the frame alignment pattern.",
+  "simple": "This line doesn’t carry one call: it carries lots, taking turns. Every tiny moment it sends a row of boxes, one box for each conversation, eight thousand rows a second. Each conversation always gets the same box.",
+  "technical": "Time-division multiplexing: a frame of 8-bit timeslots, 8,000 frames a second (one every 125 µs), so each slot is a steady 64 kbit/s channel. Both ends count slots from the frame alignment pattern.",
   "describe": {
-    "kid": "Two machines at the ends of a line send rows of little coloured boxes to each other. One card shows a row box by box; the other shows the line’s ups and downs.",
-    "nerd": "Two ends of a TDM line exchange trains of frames. One card shows a frame’s timeslots; the other the line code on the copper."
+    "simple": "Two machines at the ends of a line send rows of little coloured boxes to each other. One card shows a row box by box; the other shows the line’s ups and downs.",
+    "technical": "Two ends of a TDM line exchange trains of frames. One card shows a frame’s timeslots; the other the line code on the copper."
   },
   "pri": {
     "title": "Thirty calls on one line",
-    "kid": "Your phone call left the telephone exchange in a box on a big line together with 29 other calls: each call keeps its own box in every row. One box keeps the rows in step, and one carries the exchange’s messages: a new call, a hang-up. The internet company’s modem rack gets all thirty calls at once.",
-    "nerd": "An ISDN Primary Rate Interface (ITU-T I.431) on an E1: 32 timeslots × 64 kbit/s = 2.048 Mbit/s. Slot 0 carries frame alignment, slot 16 the D channel (Q.931 call set-up and clear-down), and slots 1–15 and 17–31 are 30 B channels, each one digitised modem call. The access server’s digital modems answer the calls straight off the slots.",
+    "simple": "Your phone call left the telephone exchange in a box on a big line together with 29 other calls: each call keeps its own box in every row. One box keeps the rows in step, and one carries the exchange’s messages: a new call, a hang-up. The internet company’s modem rack gets all thirty calls at once.",
+    "technical": "An ISDN Primary Rate Interface (ITU-T I.431) on an E1: 32 timeslots × 64 kbit/s = 2.048 Mbit/s. Slot 0 carries frame alignment, slot 16 the D channel (Q.931 call set-up and clear-down), and slots 1–15 and 17–31 are 30 B channels, each one digitised modem call. The access server’s digital modems answer the calls straight off the slots.",
     "describe": {
-      "kid": "The telephone exchange and the internet company’s modem rack, joined by a line full of rows of boxes. One card shows a row: a yellow box to keep step, a teal box for messages, your call’s box and the other callers’ boxes. The other card shows the line going up and down.",
-      "nerd": "The exchange and the access server exchange E1 frames on an ISDN PRI. One card shows the 32 timeslots: 0 for alignment, 16 for the D channel, slot 7 your call and the rest other B channels, some idle. The other shows HDB3 on the copper."
+      "simple": "The telephone exchange and the internet company’s modem rack, joined by a line full of rows of boxes. One card shows a row: a yellow box to keep step, a teal box for messages, your call’s box and the other callers’ boxes. The other card shows the line going up and down.",
+      "technical": "The exchange and the access server exchange E1 frames on an ISDN PRI. One card shows the 32 timeslots: 0 for alignment, 16 for the D channel, slot 7 your call and the rest other B channels, some idle. The other shows HDB3 on the copper."
     }
   },
   "e1": {
     "title": "A rented line to the next network",
-    "kid": "The internet company rents a line from the telephone company: 31 boxes in every row, all theirs, glued together into one pipe for parcels. It’s always on, day and night, and costs the same whether it’s busy or not.",
-    "nerd": "A leased E1 (G.703/G.704): 32 timeslots at 8,000 frames a second. Slot 0 is frame alignment; slots 1–31 are bundled into one 1.984 Mbit/s channel carrying Cisco HDLC frames with the IP packets. A CSU/DSU at each end meets the telco’s circuit.",
+    "simple": "The internet company rents a line from the telephone company: 31 boxes in every row, all theirs, glued together into one pipe for parcels. It’s always on, day and night, and costs the same whether it’s busy or not.",
+    "technical": "A leased E1 (G.703/G.704): 32 timeslots at 8,000 frames a second. Slot 0 is frame alignment; slots 1–31 are bundled into one 1.984 Mbit/s channel carrying Cisco HDLC frames with the IP packets. A CSU/DSU at each end meets the telco’s circuit.",
     "describe": {
-      "kid": "Two routers at the ends of a rented line send rows of boxes to each other. One card shows a row: a yellow box to keep step, then 31 boxes glued into one pipe. The other shows the line going up and down.",
-      "nerd": "Two routers on a leased E1. One card shows the frame: slot 0 for alignment and slots 1–31 bundled at 1.984 Mbit/s. The other shows HDB3 on the copper."
+      "simple": "Two routers at the ends of a rented line send rows of boxes to each other. One card shows a row: a yellow box to keep step, then 31 boxes glued into one pipe. The other shows the line going up and down.",
+      "technical": "Two routers on a leased E1. One card shows the frame: slot 0 for alignment and slots 1–31 bundled at 1.984 Mbit/s. The other shows HDB3 on the copper."
     }
   },
   "t1": {
     "title": "An American rented line",
-    "kid": "In America the rented lines have 24 boxes in every row, not 32, and one extra blip to keep step. All 24 are glued into one pipe for parcels, to the building where the web site lives.",
-    "nerd": "A T1 (DS1): 24 timeslots plus one framing bit, (24 × 8 + 1) × 8,000 = 1.544 Mbit/s; 1.536 Mbit/s for data. ESF framing, B8ZS line code. Leased to the hosting site, with Cisco HDLC on top.",
+    "simple": "In America the rented lines have 24 boxes in every row, not 32, and one extra blip to keep step. All 24 are glued into one pipe for parcels, to the building where the web site lives.",
+    "technical": "A T1 (DS1): 24 timeslots plus one framing bit, (24 × 8 + 1) × 8,000 = 1.544 Mbit/s; 1.536 Mbit/s for data. ESF framing, B8ZS line code. Leased to the hosting site, with Cisco HDLC on top.",
     "describe": {
-      "kid": "Two routers at the ends of an American rented line send rows of boxes to each other. One card shows a row: one small blip to keep step and 24 boxes glued into one pipe. The other shows the line going up and down.",
-      "nerd": "Two routers on a leased T1. One card shows the frame: the framing bit and 24 timeslots bundled at 1.536 Mbit/s. The other shows AMI pulses on the copper."
+      "simple": "Two routers at the ends of an American rented line send rows of boxes to each other. One card shows a row: one small blip to keep step and 24 boxes glued into one pipe. The other shows the line going up and down.",
+      "technical": "Two routers on a leased T1. One card shows the frame: the framing bit and 24 timeslots bundled at 1.536 Mbit/s. The other shows AMI pulses on the copper."
     }
   },
   "abis": {
     "title": "Four calls in every box",
-    "kid": "From the mast to the mobile company’s switch, a GSM call is so small that four of them share one box in every row: each call keeps its own quarter, row after row, for as long as it lasts. Another box carries the mast’s messages.",
-    "nerd": "Abis and Ater on an E1: 32 timeslots × 64 kbit/s. Slot 0 is frame alignment, slot 1 the BTS’s signalling (LAPD); each traffic slot carries four 16 kbit/s sub-slots, one GSM channel each. Your data call is a quarter of slot 7: 12 kbit/s of RLP frames plus framing, rate-adapted at the TRAU into a whole 64 kbit/s slot for the MSC.",
+    "simple": "From the mast to the mobile company’s switch, a GSM call is so small that four of them share one box in every row: each call keeps its own quarter, row after row, for as long as it lasts. Another box carries the mast’s messages.",
+    "technical": "Abis and Ater on an E1: 32 timeslots × 64 kbit/s. Slot 0 is frame alignment, slot 1 the BTS’s signalling (LAPD); each traffic slot carries four 16 kbit/s sub-slots, one GSM channel each. Your data call is a quarter of slot 7: 12 kbit/s of RLP frames plus framing, rate-adapted at the TRAU into a whole 64 kbit/s slot for the MSC.",
     "describe": {
-      "kid": "The mast and the controller box (or the controller and the mobile switch), joined by a line full of rows of boxes. One card shows a row: a yellow box to keep step, a teal box for messages, and boxes cut into four, one quarter of one box yours. The other card shows the line going up and down.",
-      "nerd": "Two ends of an Abis or Ater E1. One card shows the 32 timeslots: 0 for alignment, 1 for LAPD, and traffic slots cut into four 16 kbit/s sub-slots, your call in a quarter of slot 7, some free. The other shows HDB3 on the copper."
+      "simple": "The mast and the controller box (or the controller and the mobile switch), joined by a line full of rows of boxes. One card shows a row: a yellow box to keep step, a teal box for messages, and boxes cut into four, one quarter of one box yours. The other card shows the line going up and down.",
+      "technical": "Two ends of an Abis or Ater E1. One card shows the 32 timeslots: 0 for alignment, 1 for LAPD, and traffic slots cut into four 16 kbit/s sub-slots, your call in a quarter of slot 7, some free. The other shows HDB3 on the copper."
     }
   },
   "trunk": {
     "title": "Thirty calls between two switches",
-    "kid": "The mobile company’s switch and the phone company’s exchange share a big line with 30 calls on it: each call keeps its own box in every row. Your laptop’s call is one of them, beeping like a modem. One box carries the switches’ messages: a new call, a hang-up.",
-    "nerd": "An E1 trunk between the MSC and the PSTN: 32 timeslots × 64 kbit/s. Slot 0 is frame alignment, slot 16 carries SS7 (ISUP sets up and clears each circuit), and the other 30 are calls in A-law PCM. Your circuit carries the IWF’s V.32 modem tones, 9.6 kbit/s inside a 64 kbit/s slot.",
+    "simple": "The mobile company’s switch and the phone company’s exchange share a big line with 30 calls on it: each call keeps its own box in every row. Your laptop’s call is one of them, beeping like a modem. One box carries the switches’ messages: a new call, a hang-up.",
+    "technical": "An E1 trunk between the MSC and the PSTN: 32 timeslots × 64 kbit/s. Slot 0 is frame alignment, slot 16 carries SS7 (ISUP sets up and clears each circuit), and the other 30 are calls in A-law PCM. Your circuit carries the IWF’s V.32 modem tones, 9.6 kbit/s inside a 64 kbit/s slot.",
     "describe": {
-      "kid": "The mobile switch and the telephone exchange, joined by a line full of rows of boxes. One card shows a row: a yellow box to keep step, a teal box for messages, your call’s box and the other callers’ boxes. The other card shows the line going up and down.",
-      "nerd": "The MSC and the exchange exchange E1 frames on a trunk. One card shows the 32 timeslots: 0 for alignment, 16 for SS7, slot 7 your circuit and the rest other circuits, some idle. The other shows HDB3 on the copper."
+      "simple": "The mobile switch and the telephone exchange, joined by a line full of rows of boxes. One card shows a row: a yellow box to keep step, a teal box for messages, your call’s box and the other callers’ boxes. The other card shows the line going up and down.",
+      "technical": "The MSC and the exchange exchange E1 frames on a trunk. One card shows the 32 timeslots: 0 for alignment, 16 for SS7, slot 7 your circuit and the rest other circuits, some idle. The other shows HDB3 on the copper."
     }
   },
   "wire": {
-    "kid": "A row of boxes, 8,000 times a second",
-    "nerd": "One frame every 125 µs, each way"
+    "simple": "A row of boxes, 8,000 times a second",
+    "technical": "One frame every 125 µs, each way"
   },
   "frameTitle": {
-    "kid": "One row of boxes",
-    "nerd": "One frame, slot by slot"
+    "simple": "One row of boxes",
+    "technical": "One frame, slot by slot"
   },
   "legend": {
     "sync": {
-      "kid": "Keeps in step",
-      "nerd": "0: alignment"
+      "simple": "Keeps in step",
+      "technical": "0: alignment"
     },
     "fbit": {
-      "kid": "Keeps in step",
-      "nerd": "F: framing bit"
+      "simple": "Keeps in step",
+      "technical": "F: framing bit"
     },
     "signal": {
-      "kid": "Messages",
-      "nerd": "16: D channel"
+      "simple": "Messages",
+      "technical": "16: D channel"
     },
     "yours": {
-      "kid": "Your call",
-      "nerd": "Your B channel"
+      "simple": "Your call",
+      "technical": "Your B channel"
     },
     "other": {
-      "kid": "Other callers",
-      "nerd": "Other B channels"
+      "simple": "Other callers",
+      "technical": "Other B channels"
     },
     "idle": {
-      "kid": "Free",
-      "nerd": "Idle"
+      "simple": "Free",
+      "technical": "Idle"
     },
     "pipe": {
-      "kid": "One pipe",
-      "nerd": "1–31: one channel"
+      "simple": "One pipe",
+      "technical": "1–31: one channel"
     },
     "pipeT1": {
-      "kid": "One pipe",
-      "nerd": "1–24: one channel"
+      "simple": "One pipe",
+      "technical": "1–24: one channel"
     },
     "ss7": {
-      "kid": "Messages",
-      "nerd": "16: SS7"
+      "simple": "Messages",
+      "technical": "16: SS7"
     },
     "circuit": {
-      "kid": "Your call",
-      "nerd": "Your circuit"
+      "simple": "Your call",
+      "technical": "Your circuit"
     },
     "circuits": {
-      "kid": "Other callers",
-      "nerd": "Other circuits"
+      "simple": "Other callers",
+      "technical": "Other circuits"
     },
     "lapd": {
-      "kid": "Mast messages",
-      "nerd": "1: LAPD"
+      "simple": "Mast messages",
+      "technical": "1: LAPD"
     },
     "quarter": {
-      "kid": "Your call: a quarter",
-      "nerd": "Your 16k sub-slot"
+      "simple": "Your call: a quarter",
+      "technical": "Your 16k sub-slot"
     },
     "quarters": {
-      "kid": "Calls, four a box",
-      "nerd": "16k sub-slots"
+      "simple": "Calls, four a box",
+      "technical": "16k sub-slots"
     }
   },
   "sum": {
     "e1": {
-      "kid": "32 boxes × 8,000 rows a second",
-      "nerd": "32 × 8 bit × 8,000/s = 2.048 Mbit/s"
+      "simple": "32 boxes × 8,000 rows a second",
+      "technical": "32 × 8 bit × 8,000/s = 2.048 Mbit/s"
     },
     "t1": {
-      "kid": "24 boxes × 8,000 rows a second",
-      "nerd": "(24 × 8 + 1) × 8,000/s = 1.544 Mbit/s"
+      "simple": "24 boxes × 8,000 rows a second",
+      "technical": "(24 × 8 + 1) × 8,000/s = 1.544 Mbit/s"
     }
   },
   "code": {
     "e1": {
       "title": {
-        "kid": "Ups and downs on the copper",
-        "nerd": "HDB3 line code"
+        "simple": "Ups and downs on the copper",
+        "technical": "HDB3 line code"
       },
       "line": {
-        "kid": "Each 1 flips up or down; long quiet runs get a fake blip",
-        "nerd": "AMI, but 0000 goes as 000V or B00V"
+        "simple": "Each 1 flips up or down; long quiet runs get a fake blip",
+        "technical": "AMI, but 0000 goes as 000V or B00V"
       }
     },
     "t1": {
       "title": {
-        "kid": "Ups and downs on the copper",
-        "nerd": "AMI line code"
+        "simple": "Ups and downs on the copper",
+        "technical": "AMI line code"
       },
       "line": {
-        "kid": "Each 1 flips up or down, so the line stays balanced",
-        "nerd": "AMI; B8ZS replaces 8 zeros with violations"
+        "simple": "Each 1 flips up or down, so the line stays balanced",
+        "technical": "AMI; B8ZS replaces 8 zeros with violations"
       }
     }
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Time-division_multiplexing", "title": "Time-division multiplexing", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/E-carrier", "title": "E-carrier", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/T-carrier", "title": "T-carrier", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Modified_AMI_code", "title": "HDB3 and B8ZS", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/E-carrier", "title": "E-carrier", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/T-carrier", "title": "T-carrier", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Modified_AMI_code", "title": "HDB3 and B8ZS", "level": "technical" }
   ]
 }

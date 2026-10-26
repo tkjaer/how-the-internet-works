@@ -1,16 +1,16 @@
 {
   "name": "Video-Server",
-  "kid": "Das Video wohnt hier, auf einem Computer in einem der Schränke. Die Videofirma legt Kopien beliebter Videos an vielen Orten ab, damit keiner zu weit weg ist.",
-  "nerd": "Ein CDN-Cache-Server: die Video-App läuft in einem Container und liefert das Segment aus Speicher oder SSD; nur Cache-Misses gehen weiter, zurück zum Origin.",
+  "simple": "Das Video wohnt hier, auf einem Computer in einem der Schränke. Die Videofirma legt Kopien beliebter Videos an vielen Orten ab, damit keiner zu weit weg ist.",
+  "technical": "Ein CDN-Cache-Server: die Video-App läuft in einem Container und liefert das Segment aus Speicher oder SSD; nur Cache-Misses gehen weiter, zurück zum Origin.",
   "2010": {
-    "kid": "Das Video wohnt hier, auf einem Computer in einem der Schränke. Die Videofirma legt Kopien beliebter Videos in ein paar großen Städten ab, deshalb ist die nächste weiter weg als heute.",
-    "nerd": "Ein CDN-Cache-Server 2010: Linux und ein Cache-Programm direkt auf der Hardware, heißes Video im RAM und der Rest auf rotierenden Platten; nur Cache-Misses gehen weiter, zurück zum Origin."
+    "simple": "Das Video wohnt hier, auf einem Computer in einem der Schränke. Die Videofirma legt Kopien beliebter Videos in ein paar großen Städten ab, deshalb ist die nächste weiter weg als heute.",
+    "technical": "Ein CDN-Cache-Server 2010: Linux und ein Cache-Programm direkt auf der Hardware, heißes Video im RAM und der Rest auf rotierenden Platten; nur Cache-Misses gehen weiter, zurück zum Origin."
   },
   "learnMore": [
     { "url": "https://de.wikipedia.org/wiki/Content_Delivery_Network", "title": "Content Delivery Network", "level": "both" },
-    { "url": "https://de.wikipedia.org/wiki/Reverse_Proxy", "title": "Reverse Proxy", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/Reverse_Proxy", "title": "Reverse Proxy", "level": "technical" },
     { "url": "https://de.wikipedia.org/wiki/Cache", "title": "Cache", "level": "both" },
-    { "url": "https://de.wikipedia.org/wiki/Virtuelle_Maschine", "title": "Virtuelle Maschine", "level": "nerd" },
-    { "url": "https://de.wikipedia.org/wiki/Containervirtualisierung", "title": "Containervirtualisierung", "level": "nerd" }
+    { "url": "https://de.wikipedia.org/wiki/Virtuelle_Maschine", "title": "Virtuelle Maschine", "level": "technical" },
+    { "url": "https://de.wikipedia.org/wiki/Containervirtualisierung", "title": "Containervirtualisierung", "level": "technical" }
   ]
 }

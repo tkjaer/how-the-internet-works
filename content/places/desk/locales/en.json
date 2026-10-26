@@ -1,11 +1,11 @@
 {
   "name": "At home, at the desk",
   "access": "Laptop on a cable",
-  "kid": "No radio this time: the parcels run along a cable straight into the router, then out along a glass thread to the internet.",
-  "nerd": "Wired: Ethernet frames go straight from the laptop's port to the home router, which NATs the packets and forwards them over the fibre uplink (XGS-PON) to the ISP.",
+  "simple": "No radio this time: the parcels run along a cable straight into the router, then out along a glass thread to the internet.",
+  "technical": "Wired: Ethernet frames go straight from the laptop's port to the home router, which NATs the packets and forwards them over the fibre uplink (XGS-PON) to the ISP.",
   "describe": {
-    "kid": "A cut-away house shows a desk, a laptop and the home router. A cable runs from the laptop to the router, then fibre leaves the house for the internet cloud. Small parcels move out as requests and back as video.",
-    "nerd": "This overview follows a wired path through the home. It starts at the laptop, crosses Ethernet to the router, then uses XGS-PON fibre to reach the internet cloud. Request packets move upstream, and video packets return downstream."
+    "simple": "A cut-away house shows a desk, a laptop and the home router. A cable runs from the laptop to the router, then fibre leaves the house for the internet cloud. Small parcels move out as requests and back as video.",
+    "technical": "This overview follows a wired path through the home. It starts at the laptop, crosses Ethernet to the router, then uses XGS-PON fibre to reach the internet cloud. Request packets move upstream, and video packets return downstream."
   },
   "tag": {
     "laptop": "Ethernet · 192.168.1.40",
@@ -13,19 +13,19 @@
   },
   "stop": {
     "laptop": {
-      "kid": "The laptop wants a video too. It sends its request down the cable – no waves in the air needed.",
-      "nerd": "Same HTTPS request as on the phone, but the lowest layer is an Ethernet frame on a twisted-pair cable instead of a Wi-Fi radio frame."
+      "simple": "The laptop wants a video too. It sends its request down the cable – no waves in the air needed.",
+      "technical": "Same HTTPS request as on the phone, but the lowest layer is an Ethernet frame on a twisted-pair cable instead of a Wi-Fi radio frame."
     }
   },
   "inside": {
     "internet": {
       "describe": {
-        "kid": "Inside the cloud, the path starts at your home. It runs through the street cabinet, the fibre terminal, ISP gateway and ISP core. Then it reaches the border router, internet exchange and the video company's data centre, a box you can open. A dashed side road shows transit.",
-        "nerd": "The expanded internet route starts at the home access edge, then crosses the splitter cabinet, the OLT, BNG and ISP core. It continues to the border router, IXP and the CDN's data centre, which unfolds. Request and video packets move in opposite directions over fibre, backbone and cross-connect links."
+        "simple": "Inside the cloud, the path starts at your home. It runs through the street cabinet, the fibre terminal, ISP gateway and ISP core. Then it reaches the border router, internet exchange and the video company's data centre, a box you can open. A dashed side road shows transit.",
+        "technical": "The expanded internet route starts at the home access edge, then crosses the splitter cabinet, the OLT, BNG and ISP core. It continues to the border router, IXP and the CDN's data centre, which unfolds. Request and video packets move in opposite directions over fibre, backbone and cross-connect links."
       }
     }
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Ethernet_over_twisted_pair", "title": "Ethernet cables", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Ethernet_over_twisted_pair", "title": "Ethernet cables", "level": "technical" }
   ]
 }

@@ -32,7 +32,7 @@ export function formatKm(km: number, lang: string): string {
   if (km < 1) return new Intl.NumberFormat(lang, { style: 'unit', unit: 'meter', maximumSignificantDigits: 2 }).format(km * 1000);
   return new Intl.NumberFormat(lang, { style: 'unit', unit: 'kilometer', maximumFractionDigits: km < 10 ? 1 : 0 }).format(km);
 }
-/** Light's time over `km` of fibre for nerds: microseconds under a millisecond. */
+/** Light's time over `km` of fibre, at Technical: microseconds under a millisecond. */
 export function formatLight(km: number, lang: string): string {
   const ms = lightMs(km), us = ms < 1;
   return new Intl.NumberFormat(lang, { style: 'unit', unit: us ? 'microsecond' : 'millisecond', maximumSignificantDigits: 2 }).format(us ? ms * 1000 : ms);

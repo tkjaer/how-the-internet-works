@@ -33,8 +33,8 @@
   const says = $derived(fill(trFirst(peekKeys(route, hop, dir), loc.level), { hop: at === client ? yours(at) : nameOf(at) }));
   const off = $derived(v.layers.filter((l) => l.change === 'removed'));
   const kept = $derived(v.layers.filter((l) => l.change !== 'removed'));
-  // what changed here (kids: only the fields they are shown)
-  const changed = $derived(kept.flatMap((l) => l.fields.filter((f) => f.before && (loc.level === 'nerd' || f.kid)).map((f) => trl(`layer.${l.id}.field.${f.id}.name`))));
+  // what changed here (at Simple: only the fields it shows)
+  const changed = $derived(kept.flatMap((l) => l.fields.filter((f) => f.before && (loc.level === 'technical' || f.simple)).map((f) => trl(`layer.${l.id}.field.${f.id}.name`))));
   const dives = $derived(new Map(v.layers.flatMap((l) => {
     const p = layerPath(route, at.id, l.id);
     return p ? [[l.id, p] as const] : [];

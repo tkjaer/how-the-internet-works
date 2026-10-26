@@ -8,7 +8,7 @@
   let { subject, time }: { subject: LinkSubject; time: number } = $props();
   const S = strings('scene.copper-pulses');
   const legible = legibleSize();
-  const nerd = $derived(S('mode') === 'nerd');
+  const technical = $derived(S('mode') === 'technical');
   const o = $derived(view.orient);
   const portrait = $derived(o === 'portrait');
   const compact = $derived(o === 'landscape' && view.vp.h < 470);
@@ -19,8 +19,8 @@
   const code = $derived(codeOf(subject.link.rate.down));
   const C = $derived(CODES[code]);
   const M = $derived(code === 'pam5' ? '' : `${code}.`);
-  const lit = $derived(litPairs(code, nerd));
-  const sparks = $derived(copperSparks(time, view.still, nerd, code));
+  const lit = $derived(litPairs(code, technical));
+  const sparks = $derived(copperSparks(time, view.still, technical, code));
   const fromHop = $derived(subject.route.hops[subject.link.from]);
   const toHop = $derived(subject.route.hops[subject.link.to]);
   const fromNode = $derived(fromHop.node.id);
@@ -33,7 +33,7 @@
     if (portrait) return {
       node: { size: 170, fromLabel: { x: 205, y: 1570 }, toLabel: { x: 205, y: 280 } },
       twist: { x: 330, y: 150, w: 540, h: 350 },
-      kid: { x: 330, y: 600, w: 540, h: 350 },
+      simple: { x: 330, y: 600, w: 540, h: 350 },
       pam: { x: 330, y: 515, w: 540, h: 390 },
       eye: { x: 330, y: 940, w: 540, h: 430 },
       title: { x: 610, y: 100 }, cableLabel: { x: 610, y: 1390 }, text: { title: 40, head: 34, body: 36, small: 36, tick: 32 },
@@ -42,20 +42,20 @@
     // and bigger words on the cards
     if (compact) return {
       node: { size: 170, fromLabel: { x: 30, y: 400 }, toLabel: { x: 1570, y: 400 } },
-      twist: { x: nerd ? 70 : 150, y: nerd ? 470 : 440, w: nerd ? 460 : 620, h: nerd ? 300 : 420 }, kid: { x: 830, y: 440, w: 620, h: 420 }, pam: { x: 570, y: 470, w: 460, h: 300 }, eye: { x: 1070, y: 470, w: 460, h: 300 },
+      twist: { x: technical ? 70 : 150, y: technical ? 470 : 440, w: technical ? 460 : 620, h: technical ? 300 : 420 }, simple: { x: 830, y: 440, w: 620, h: 420 }, pam: { x: 570, y: 470, w: 460, h: 300 }, eye: { x: 1070, y: 470, w: 460, h: 300 },
       title: { x: 800, y: 90 }, cableLabel: { x: 800, y: 400 }, text: { title: 38, head: 44, body: 44, small: 42, tick: 42 },
     };
     return {
       node: { size: 220, fromLabel: { x: fromPos.x + 60, y: fromPos.y + 145 }, toLabel: { x: toPos.x - 40, y: toPos.y + 145 } },
-      twist: { x: nerd ? 70 : 220, y: 505, w: nerd ? 450 : 520, h: 315 },
-      kid: { x: 860, y: 505, w: 520, h: 315 },
+      twist: { x: technical ? 70 : 220, y: 505, w: technical ? 450 : 520, h: 315 },
+      simple: { x: 860, y: 505, w: 520, h: 315 },
       pam: { x: 575, y: 505, w: 450, h: 315 },
       eye: { x: 1080, y: 505, w: 450, h: 315 },
       title: { x: 800, y: 130 }, cableLabel: { x: 800, y: 466 }, text: { title: 42, head: 30, body: 24, small: 22, tick: 22 },
     };
   });
-  const twistScale = $derived(portrait ? 1.12 : nerd ? 1.05 : 1.22);
-  const pulseD = $derived(squareWavePath(L.kid.x + 76, L.kid.y + (portrait ? 112 : 96), L.kid.w - 152, portrait ? 78 : 62, [1, 0, 1, 1, 0, 0, 1, 0]));
+  const twistScale = $derived(portrait ? 1.12 : technical ? 1.05 : 1.22);
+  const pulseD = $derived(squareWavePath(L.simple.x + 76, L.simple.y + (portrait ? 112 : 96), L.simple.w - 152, portrait ? 78 : 62, [1, 0, 1, 1, 0, 0, 1, 0]));
   // the code card's wave: Manchester's and MLT-3's are lower, to leave a row under them for their bits
   const waveH = $derived(M ? (portrait ? 120 : 76) : portrait ? 168 : 102);
   const BITS = [1, 0, 1, 1, 0, 0, 1, 0];
@@ -87,7 +87,7 @@
 
 <Card x={L.twist.x} y={L.twist.y} w={L.twist.w} h={L.twist.h} tint="var(--teal)" />
 <text x={L.twist.x + L.twist.w / 2} y={L.twist.y + 42} text-anchor="middle" font-family="var(--label-font)" font-size={fs(L.text.head)} font-weight="900" fill="var(--line)" stroke="var(--paper)" stroke-width="6" paint-order="stroke">{S('twistTitle')}</text>
-<g transform={`translate(${L.twist.x + (portrait ? 54 : nerd ? 42 : 60)} ${L.twist.y + (portrait ? 92 : 88)}) scale(${twistScale})`}>
+<g transform={`translate(${L.twist.x + (portrait ? 54 : technical ? 42 : 60)} ${L.twist.y + (portrait ? 92 : 88)}) scale(${twistScale})`}>
   <path d="M0 46 C55 0 115 92 170 46 S285 0 340 46" fill="none" stroke="var(--line)" stroke-width="18" stroke-linecap="round" opacity="0.24" />
   <path d="M0 46 C55 0 115 92 170 46 S285 0 340 46" fill="none" stroke="var(--orange)" stroke-width="12" stroke-linecap="round" />
   <path d="M0 46 C55 92 115 0 170 46 S285 92 340 46" fill="none" stroke="var(--paper)" stroke-width="15" stroke-linecap="round" />
@@ -98,9 +98,9 @@
   <path d="M70 78 H86" stroke="var(--line)" stroke-width="4.5" stroke-linecap="round" />
   <path d="M254 -10 l18 28 l-15 -4 l13 38 l-34 -48 l17 6 Z" fill="var(--sun)" stroke="var(--face)" stroke-width="4" />
 </g>
-{#if !(compact && nerd)}<text x={L.twist.x + 34} y={L.twist.y + L.twist.h - 40} font-family="var(--label-font)" font-size={fs(L.text.body)} font-weight="800" fill="var(--line)">{S(nerd ? 'twistLineNerd' : 'twistLine')}</text>{/if}
+{#if !(compact && technical)}<text x={L.twist.x + 34} y={L.twist.y + L.twist.h - 40} font-family="var(--label-font)" font-size={fs(L.text.body)} font-weight="800" fill="var(--line)">{S(technical ? 'twistLineTechnical' : 'twistLine')}</text>{/if}
 
-{#if nerd}
+{#if technical}
   {@const P = L.pam}
   <Card x={P.x} y={P.y} w={P.w} h={P.h} tint="var(--blue)" />
   <text x={P.x + P.w / 2} y={P.y + 42} text-anchor="middle" font-family="var(--label-font)" font-size={fs(L.text.head)} font-weight="900" fill="var(--line)" stroke="var(--paper)" stroke-width="6" paint-order="stroke">{S(M ? M + 'title' : 'pamTitle')}</text>
@@ -149,7 +149,7 @@
     {#if !portrait}<text x={E.x + 34} y={E.y + E.h - 30} font-family="var(--tag-font)" font-size={fs(L.text.small)} font-weight="800" fill="var(--line)">{S(M ? M + 'duplex' : 'tag.duplexShort')} · {S(M ? M + 'cat' : 'tag.catShort')}</text>{/if}
   {/if}
 {:else}
-  {@const K = L.kid}
+  {@const K = L.simple}
   <Card x={K.x} y={K.y} w={K.w} h={K.h} tint="var(--sun)" />
   <text x={K.x + K.w / 2} y={K.y + 42} text-anchor="middle" font-family="var(--label-font)" font-size={fs(L.text.head)} font-weight="900" fill="var(--face)">{S('pushTitle')}</text>
   <path d={pulseD} fill="none" stroke="var(--line)" stroke-width="17" stroke-linejoin="round" stroke-linecap="round" opacity="0.26" />

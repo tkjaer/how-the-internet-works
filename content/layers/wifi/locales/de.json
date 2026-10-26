@@ -1,11 +1,11 @@
 {
   "name": {
-    "kid": "Funkumschlag",
-    "nerd": "Wi-Fi-Frame (802.11)"
+    "simple": "Funkumschlag",
+    "technical": "Wi-Fi-Frame (802.11)"
   },
   "note": {
-    "kid": "Durch die Luft geschickt. Nur die WLAN-Box und {yours} hören danach.",
-    "nerd": "Jeder Frame wird vom Empfänger bestätigt (oft in Blöcken), verlorene werden nachgesendet. Die Payload ist verschlüsselt (WPA3)."
+    "simple": "Durch die Luft geschickt. Nur die WLAN-Box und {yours} hören danach.",
+    "technical": "Jeder Frame wird vom Empfänger bestätigt (oft in Blöcken), verlorene werden nachgesendet. Die Payload ist verschlüsselt (WPA3)."
   },
   "line": "IEEE 802.11 QoS Data, RA: {addr1}, TA: {addr2}",
   "field": {
@@ -19,15 +19,15 @@
     },
     "addr1": {
       "name": {
-        "kid": "Für",
-        "nerd": "Receiver (Addr 1)"
+        "simple": "Für",
+        "technical": "Receiver (Addr 1)"
       },
       "about": "Wer in der Luft diesen Frame nehmen soll."
     },
     "addr2": {
       "name": {
-        "kid": "Von",
-        "nerd": "Transmitter (Addr 2)"
+        "simple": "Von",
+        "technical": "Transmitter (Addr 2)"
       },
       "about": "Wer ihn durch die Luft geschickt hat."
     },
@@ -58,7 +58,7 @@
   },
   "2010": {
     "note": {
-      "nerd": "Jeder Frame wird vom Empfänger bestätigt (oft in Blöcken), verlorene werden nachgesendet. Die Payload ist verschlüsselt (WPA2)."
+      "technical": "Jeder Frame wird vom Empfänger bestätigt (oft in Blöcken), verlorene werden nachgesendet. Die Payload ist verschlüsselt (WPA2)."
     },
     "field": {
       "ccmp": {
@@ -67,6 +67,6 @@
     }
   },
   "learnMore": [
-    { "url": "https://de.wikipedia.org/wiki/IEEE_802.11", "title": "IEEE 802.11", "level": "nerd" }
+    { "url": "https://de.wikipedia.org/wiki/IEEE_802.11", "title": "IEEE 802.11", "level": "technical" }
   ]
 }

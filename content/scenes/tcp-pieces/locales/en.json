@@ -1,39 +1,39 @@
 {
   "title": "TCP keeps the pieces in order",
-  "kid": "The video server and {yours} number every little piece. If one falls in a hole, {yours} keeps pointing at the gap until the server sends that piece again.",
-  "nerd": "TCP is end-to-end (RFC 9293): a 3-way handshake (SYN, SYN-ACK, ACK) agrees the starting sequence numbers both ways. The sender keeps a four-segment window (simplified: real windows are in bytes and start at about 10 segments). ACK=5 names the next byte expected and slides the window to 5–8; 6, 7 and 8 each draw a duplicate ACK=5, and the third triggers fast retransmit; delivery to the app waits for in-order bytes.",
+  "simple": "The video server and {yours} number every little piece. If one falls in a hole, {yours} keeps pointing at the gap until the server sends that piece again.",
+  "technical": "TCP is end-to-end (RFC 9293): a 3-way handshake (SYN, SYN-ACK, ACK) agrees the starting sequence numbers both ways. The sender keeps a four-segment window (simplified: real windows are in bytes and start at about 10 segments). ACK=5 names the next byte expected and slides the window to 5–8; 6, 7 and 8 each draw a duplicate ACK=5, and the third triggers fast retransmit; delivery to the app waits for in-order bytes.",
   "describe": {
-    "kid": "A road links {yours} and the video server, with cards for Server and Shelf. Numbered boxes 1 to 8 line up. Four at a time can travel. Speech tickets say hello, “got 4” and “got 8”. Box 5 falls into the pothole, the shelf leaves a gap and keeps saying “waiting for 5”, then 5 walks again and the row fills.",
-    "nerd": "The cards show the TCP send window and the receiver’s in-order buffer. SYN, SYN-ACK and ACK tickets start the loop. Data segments cross the road, ACK tickets travel back, and duplicate ACK 5 keeps the gap. Segment 5 is fast retransmitted, the window slides, and delivery waits for ordered bytes."
+    "simple": "A road links {yours} and the video server, with cards for Server and Shelf. Numbered boxes 1 to 8 line up. Four at a time can travel. Speech tickets say hello, “got 4” and “got 8”. Box 5 falls into the pothole, the shelf leaves a gap and keeps saying “waiting for 5”, then 5 walks again and the row fills.",
+    "technical": "The cards show the TCP send window and the receiver’s in-order buffer. SYN, SYN-ACK and ACK tickets start the loop. Data segments cross the road, ACK tickets travel back, and duplicate ACK 5 keeps the gap. Segment 5 is fast retransmitted, the window slides, and delivery waits for ordered bytes."
   },
   "at": {
     "cdn": {
       "title": "The server sends numbered TCP pieces",
-      "kid": "The video server lines up pieces and lets four travel at a time. When {yours} says piece 5 is missing, the server sends 5 again before the app gets the row.",
-      "nerd": "From the server endpoint, TCP transmits segments with sequence numbers, observes cumulative ACKs, slides the send window, and fast-retransmits segment 5 after three duplicate ACKs without waiting for the RTO.",
+      "simple": "The video server lines up pieces and lets four travel at a time. When {yours} says piece 5 is missing, the server sends 5 again before the app gets the row.",
+      "technical": "From the server endpoint, TCP transmits segments with sequence numbers, observes cumulative ACKs, slides the send window, and fast-retransmits segment 5 after three duplicate ACKs without waiting for the RTO.",
       "describe": {
-        "kid": "The video server is the busy end of the road. Its Server card lines up numbered boxes, and the frame around four boxes shows how many may travel at once. Boxes walk toward the shelf. When the ticket from {yours} says 5 is missing, box 5 lights up and walks again before the shelf is complete.",
-        "nerd": "From the server endpoint, the picture centres on the send queue and sliding window. Segments leave with sequence numbers. Cumulative ACK tickets return, and repeated ACK 5 keeps the receive shelf gapped. Highlighted segment 5 is fast retransmitted, then the receiver can deliver an in-order byte stream."
+        "simple": "The video server is the busy end of the road. Its Server card lines up numbered boxes, and the frame around four boxes shows how many may travel at once. Boxes walk toward the shelf. When the ticket from {yours} says 5 is missing, box 5 lights up and walks again before the shelf is complete.",
+        "technical": "From the server endpoint, the picture centres on the send queue and sliding window. Segments leave with sequence numbers. Cumulative ACK tickets return, and repeated ACK 5 keeps the receive shelf gapped. Highlighted segment 5 is fast retransmitted, then the receiver can deliver an in-order byte stream."
       }
     }
   },
   "sealed": {
     "title": "TCP passes by sealed",
-    "kid": "This stop carries the numbered boxes, but it does not open them. It can see sealed piece 5 pass once, fall after the stop, and pass again when the server retries.",
-    "nerd": "At this non-endpoint hop, TCP remains opaque: routers and bridges forward the IP packet and do not inspect sequence or ACK state. The retransmitted segment 5 is just another sealed payload passing through.",
+    "simple": "This stop carries the numbered boxes, but it does not open them. It can see sealed piece 5 pass once, fall after the stop, and pass again when the server retries.",
+    "technical": "At this non-endpoint hop, TCP remains opaque: routers and bridges forward the IP packet and do not inspect sequence or ACK state. The retransmitted segment 5 is just another sealed payload passing through.",
     "describe": {
-      "kid": "A middle stop sits on the road between {yours} and the video server. The Server and Shelf cards still show boxes lining up, but the boxes on the road are sealed. This stop just carries them past. It can see box 5 fall after it and pass again when it is sent a second time.",
-      "nerd": "At a non-endpoint hop, the top cards show TCP state at the endpoints. The road shows only sealed payloads. The hop forwards IP packets without reading sequence numbers or ACKs. Segment 5’s loss and fast retransmit appear as another sealed segment crossing the road."
+      "simple": "A middle stop sits on the road between {yours} and the video server. The Server and Shelf cards still show boxes lining up, but the boxes on the road are sealed. This stop just carries them past. It can see box 5 fall after it and pass again when it is sent a second time.",
+      "technical": "At a non-endpoint hop, the top cards show TCP state at the endpoints. The road shows only sealed payloads. The hop forwards IP packets without reading sequence numbers or ACKs. Segment 5’s loss and fast retransmit appear as another sealed segment crossing the road."
     }
   },
   "role": {
     "nat": {
       "title": "A NAT only peeks at the port sticker",
-      "kid": "This box is still sealed here. The NAT only reads the tiny port sticker so replies can find the right device, then leaves the numbered pieces alone.",
-      "nerd": "NAT is the exception to pure opacity: it reads and rewrites the TCP/UDP port tuple (for example 51034 ↔ the outside mapping) while leaving sequence numbers and data semantics end-to-end.",
+      "simple": "This box is still sealed here. The NAT only reads the tiny port sticker so replies can find the right device, then leaves the numbered pieces alone.",
+      "technical": "NAT is the exception to pure opacity: it reads and rewrites the TCP/UDP port tuple (for example 51034 ↔ the outside mapping) while leaving sequence numbers and data semantics end-to-end.",
       "describe": {
-        "kid": "The numbered box stays sealed as it walks past the NAT on the road. The same Server and Shelf cards show the order story, but the NAT uses a magnifying glass only on the tiny port sticker. The port sticker appears near the stop while box 5 may fall, return and pass again.",
-        "nerd": "This middle-hop view keeps TCP opaque except for the NAT tuple. Sealed segments pass the NAT you are at. A port label, such as inside to outside, appears near the hop, and the magnifier marks that rewrite. Sequence numbers, ACK state and retransmission remain end to end."
+        "simple": "The numbered box stays sealed as it walks past the NAT on the road. The same Server and Shelf cards show the order story, but the NAT uses a magnifying glass only on the tiny port sticker. The port sticker appears near the stop while box 5 may fall, return and pass again.",
+        "technical": "This middle-hop view keeps TCP opaque except for the NAT tuple. Sealed segments pass the NAT you are at. A port label, such as inside to outside, appears near the hop, and the magnifier marks that rewrite. Sequence numbers, ACK state and retransmission remain end to end."
       }
     }
   },
@@ -72,35 +72,35 @@
     "nat": "ports: {nat}"
   },
   "1995": {
-    "kid": "The server and {yours} number every little piece of the page. If one falls in a hole, {yours} keeps pointing at the gap until the server sends that piece again.",
+    "simple": "The server and {yours} number every little piece of the page. If one falls in a hole, {yours} keeps pointing at the gap until the server sends that piece again.",
     "describe": {
-      "kid": "A road links {yours} and the server, with cards for Server and Shelf. Numbered boxes 1 to 8 line up. Four at a time can travel. Speech tickets say hello, “got 4” and “got 8”. Box 5 falls into the pothole, the shelf leaves a gap and keeps saying “waiting for 5”, then 5 walks again and the row fills.",
-      "nerd": "The cards show the TCP send window and the receiver’s in-order buffer. SYN, SYN-ACK and ACK tickets start the loop. Data segments cross the road, ACK tickets travel back, and duplicate ACK 5 keeps the gap. Segment 5 is fast retransmitted, the window slides, and delivery waits for ordered bytes."
+      "simple": "A road links {yours} and the server, with cards for Server and Shelf. Numbered boxes 1 to 8 line up. Four at a time can travel. Speech tickets say hello, “got 4” and “got 8”. Box 5 falls into the pothole, the shelf leaves a gap and keeps saying “waiting for 5”, then 5 walks again and the row fills.",
+      "technical": "The cards show the TCP send window and the receiver’s in-order buffer. SYN, SYN-ACK and ACK tickets start the loop. Data segments cross the road, ACK tickets travel back, and duplicate ACK 5 keeps the gap. Segment 5 is fast retransmitted, the window slides, and delivery waits for ordered bytes."
     },
     "at": {
       "web-server": {
-        "kid": "The server lines up pieces and lets four travel at a time. When {yours} says piece 5 is missing, the server sends 5 again before the browser gets the row.",
+        "simple": "The server lines up pieces and lets four travel at a time. When {yours} says piece 5 is missing, the server sends 5 again before the browser gets the row.",
         "describe": {
-          "kid": "The server is the busy end of the road. Its Server card lines up numbered boxes, and the frame around four boxes shows how many may travel at once. Boxes walk toward the shelf. When the ticket from {yours} says 5 is missing, box 5 lights up and walks again before the shelf is complete.",
-          "nerd": "From the server endpoint, the picture centres on the send queue and sliding window. Segments leave with sequence numbers. Cumulative ACK tickets return, and repeated ACK 5 keeps the receive shelf gapped. Highlighted segment 5 is fast retransmitted, then the receiver can deliver an in-order byte stream."
+          "simple": "The server is the busy end of the road. Its Server card lines up numbered boxes, and the frame around four boxes shows how many may travel at once. Boxes walk toward the shelf. When the ticket from {yours} says 5 is missing, box 5 lights up and walks again before the shelf is complete.",
+          "technical": "From the server endpoint, the picture centres on the send queue and sliding window. Segments leave with sequence numbers. Cumulative ACK tickets return, and repeated ACK 5 keeps the receive shelf gapped. Highlighted segment 5 is fast retransmitted, then the receiver can deliver an in-order byte stream."
         }
       }
     },
     "sealed": {
       "describe": {
-        "kid": "A middle stop sits on the road between {yours} and the server. The Server and Shelf cards still show boxes lining up, but the boxes on the road are sealed. This stop just carries them past. It can see box 5 fall after it and pass again when it is sent a second time.",
-        "nerd": "At a non-endpoint hop, the top cards show TCP state at the endpoints. The road shows only sealed payloads. The hop forwards IP packets without reading sequence numbers or ACKs. Segment 5’s loss and fast retransmit appear as another sealed segment crossing the road."
+        "simple": "A middle stop sits on the road between {yours} and the server. The Server and Shelf cards still show boxes lining up, but the boxes on the road are sealed. This stop just carries them past. It can see box 5 fall after it and pass again when it is sent a second time.",
+        "technical": "At a non-endpoint hop, the top cards show TCP state at the endpoints. The road shows only sealed payloads. The hop forwards IP packets without reading sequence numbers or ACKs. Segment 5’s loss and fast retransmit appear as another sealed segment crossing the road."
       }
     },
-    "nerd": "TCP is end-to-end (RFC 793, 1981): a 3-way handshake (SYN, SYN-ACK, ACK) agrees the starting sequence numbers both ways. The sender keeps a four-segment window (simplified: real windows are in bytes, and slow start (Jacobson, 1988) begins at about 1 segment and doubles it every round trip). ACK=5 names the next byte expected and slides the window to 5–8; 6, 7 and 8 each draw a duplicate ACK=5, and the third triggers fast retransmit (BSD, 1990); delivery to the app waits for in-order bytes."
+    "technical": "TCP is end-to-end (RFC 793, 1981): a 3-way handshake (SYN, SYN-ACK, ACK) agrees the starting sequence numbers both ways. The sender keeps a four-segment window (simplified: real windows are in bytes, and slow start (Jacobson, 1988) begins at about 1 segment and doubles it every round trip). ACK=5 names the next byte expected and slides the window to 5–8; 6, 7 and 8 each draw a duplicate ACK=5, and the third triggers fast retransmit (BSD, 1990); delivery to the app waits for in-order bytes."
   },
   "2010": {
-    "nerd": "TCP is end-to-end (RFC 793): a 3-way handshake (SYN, SYN-ACK, ACK) agrees the starting sequence numbers both ways. The sender keeps a four-segment window (simplified: real windows are in bytes, and slow start begins at 2 to 4 segments, RFC 3390). ACK=5 names the next byte expected and slides the window to 5–8; 6, 7 and 8 each draw a duplicate ACK=5, and the third triggers fast retransmit; delivery to the app waits for in-order bytes."
+    "technical": "TCP is end-to-end (RFC 793): a 3-way handshake (SYN, SYN-ACK, ACK) agrees the starting sequence numbers both ways. The sender keeps a four-segment window (simplified: real windows are in bytes, and slow start begins at 2 to 4 segments, RFC 3390). ACK=5 names the next byte expected and slides the window to 5–8; 6, 7 and 8 each draw a duplicate ACK=5, and the third triggers fast retransmit; delivery to the app waits for in-order bytes."
   },
   "learnMore": [
-    { "url": "https://simple.wikipedia.org/wiki/Transmission_Control_Protocol", "title": "TCP (Simple English)", "level": "kid" },
+    { "url": "https://simple.wikipedia.org/wiki/Transmission_Control_Protocol", "title": "TCP (Simple English)", "level": "simple" },
     { "url": "https://en.wikipedia.org/wiki/Transmission_Control_Protocol", "title": "Transmission Control Protocol", "level": "both" },
-    { "url": "https://www.rfc-editor.org/rfc/rfc9293", "title": "RFC 9293: TCP", "level": "nerd", "eras": ["today"] },
-    { "url": "https://www.rfc-editor.org/rfc/rfc793", "title": "RFC 793: TCP", "level": "nerd", "eras": ["1995", "2010"] }
+    { "url": "https://www.rfc-editor.org/rfc/rfc9293", "title": "RFC 9293: TCP", "level": "technical", "eras": ["today"] },
+    { "url": "https://www.rfc-editor.org/rfc/rfc793", "title": "RFC 793: TCP", "level": "technical", "eras": ["1995", "2010"] }
   ]
 }

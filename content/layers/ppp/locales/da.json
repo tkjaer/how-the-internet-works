@@ -1,17 +1,17 @@
 {
   "name": {
-    "kid": "Opkalds-kuvert",
-    "nerd": "PPP-ramme"
+    "simple": "Opkalds-kuvert",
+    "technical": "PPP-ramme"
   },
   "note": {
-    "kid": "Computeren lægger pakken i en enkel kuvert til telefonopkaldet. Kun din computer og internetfirmaet åbner den.",
-    "nerd": "PPP i HDLC-lignende indramning: ingen adresser, for et opkald har kun to ender. LCP, et login (PAP eller CHAP) og IPCP sætter det op, når opkaldet starter."
+    "simple": "Computeren lægger pakken i en enkel kuvert til telefonopkaldet. Kun din computer og internetfirmaet åbner den.",
+    "technical": "PPP i HDLC-lignende indramning: ingen adresser, for et opkald har kun to ender. LCP, et login (PAP eller CHAP) og IPCP sætter det op, når opkaldet starter."
   },
   "line": "PPP, protokol {proto}",
   "value": {
     "ip": {
-      "kid": "En internetpakke",
-      "nerd": "IPv4 indeni"
+      "simple": "En internetpakke",
+      "technical": "IPv4 indeni"
     }
   },
   "field": {
@@ -29,8 +29,8 @@
     },
     "proto": {
       "name": {
-        "kid": "Hvad der er indeni",
-        "nerd": "Protokol"
+        "simple": "Hvad der er indeni",
+        "technical": "Protokol"
       },
       "about": "Hvad rammen bærer: 0x0021 er en IPv4-pakke; LCP, PAP, CHAP og IPCP har deres egne numre."
     },

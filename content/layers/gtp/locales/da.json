@@ -1,11 +1,11 @@
 {
   "name": {
-    "kid": "Tunnel-kuvert",
-    "nerd": "GTP-U-tunnel (ydre IP/UDP)"
+    "simple": "Tunnel-kuvert",
+    "technical": "GTP-U-tunnel (ydre IP/UDP)"
   },
   "note": {
-    "kid": "Masten putter din pakke ind i en større, adresseret til mobilnettets kerne, så nettet kan finde din telefon, hvor du end går.",
-    "nerd": "gNB’en pakker telefonens egen IP-pakke ind i IP/UDP/GTP-U (port 2152) til UPF’en; TEID’en angiver telefonens session."
+    "simple": "Masten putter din pakke ind i en større, adresseret til mobilnettets kerne, så nettet kan finde din telefon, hvor du end går.",
+    "technical": "gNB’en pakker telefonens egen IP-pakke ind i IP/UDP/GTP-U (port 2152) til UPF’en; TEID’en angiver telefonens session."
   },
   "line": "GTP-U, {osrc} → {odst}, TEID {teid}",
   "value": {
@@ -51,15 +51,15 @@
     },
     "osrc": {
       "name": {
-        "kid": "Fra",
-        "nerd": "Ydre afsender"
+        "simple": "Fra",
+        "technical": "Ydre afsender"
       },
       "about": "Den ene ende af tunnelen."
     },
     "odst": {
       "name": {
-        "kid": "Til",
-        "nerd": "Ydre modtager"
+        "simple": "Til",
+        "technical": "Ydre modtager"
       },
       "about": "Den anden ende: masten på vej ned, kernen (UPF) på vej op."
     },
@@ -93,8 +93,8 @@
     },
     "teid": {
       "name": {
-        "kid": "Billet nr.",
-        "nerd": "TEID"
+        "simple": "Billet nr.",
+        "technical": "TEID"
       },
       "about": "Tunnel endpoint ID: hvilken telefons session det er. Hver ende vælger den TEID, den vil modtage."
     },
@@ -109,8 +109,8 @@
   },
   "2010": {
     "note": {
-      "kid": "Radiostyringen putter din pakke ind i en større, adresseret til mobilselskabets port, så nettet kan finde din telefon, uanset hvor du går.",
-      "nerd": "Med Direct Tunnel pakker RNC’en telefonens egen IP-pakke ind i IP/UDP/GTP-U (port 2152) til GGSN’en; TEID’et navngiver telefonens PDP-kontekst."
+      "simple": "Radiostyringen putter din pakke ind i en større, adresseret til mobilselskabets port, så nettet kan finde din telefon, uanset hvor du går.",
+      "technical": "Med Direct Tunnel pakker RNC’en telefonens egen IP-pakke ind i IP/UDP/GTP-U (port 2152) til GGSN’en; TEID’et navngiver telefonens PDP-kontekst."
     },
     "value": {
       "flags": "0x30 (v1, GTP)",
@@ -136,6 +136,6 @@
     }
   },
   "learnMore": [
-    { "url": "https://da.wikipedia.org/wiki/Mobiltelefoni", "title": "Mobiltelefoni", "level": "kid" }
+    { "url": "https://da.wikipedia.org/wiki/Mobiltelefoni", "title": "Mobiltelefoni", "level": "simple" }
   ]
 }

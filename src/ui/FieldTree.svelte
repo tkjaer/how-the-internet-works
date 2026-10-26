@@ -8,8 +8,8 @@
   import { learnMore } from './caption';
   import Change from './Change.svelte';
   let { v, route }: { v: HopView; route: Route } = $props();
-  const nerd = (key: string) => trl(key, 'nerd');
-  const summary = (id: string, fields: FieldView[]) => fill(nerd(`layer.${id}.line`), Object.fromEntries(fields.map((f) => [f.id, f.value.key ? trl(f.value.key) : f.value.text])));
+  const technical = (key: string) => trl(key, 'technical');
+  const summary = (id: string, fields: FieldView[]) => fill(technical(`layer.${id}.line`), Object.fromEntries(fields.map((f) => [f.id, f.value.key ? trl(f.value.key) : f.value.text])));
   const vars = $derived({ yours: yours(route.chain[0]) });
 
   /** Header diagram: fields laid 32 bits a row, a field crossing a row end split in two. */
@@ -37,22 +37,22 @@
   {#each v.layers as l (l.id + l.change)}
     {@const sealed = l.state === 'sealed'}
     {@const grid = sealed ? null : rows(l.fields)}
-    {@const links = learnMore(route.era, [`layer.${l.id}`], loc.lang, 'nerd', 2)}
+    {@const links = learnMore(route.era, [`layer.${l.id}`], loc.lang, 'technical', 2)}
     <details class="tree-layer {l.state}" class:off={l.change === 'removed'} class:added={l.change === 'added'} open={acts(l)}>
       <summary dir="ltr">
         {#if l.change !== 'kept'}<span class="env-tag" class:on={l.change === 'added'}>{l.change === 'added' ? '+' : '−'}</span>{/if}
-        <span class="tree-line">{sealed ? nerd(`layer.${l.id}.name`) : summary(l.id, l.fields)}</span>
+        <span class="tree-line">{sealed ? technical(`layer.${l.id}.name`) : summary(l.id, l.fields)}</span>
         {#if sealed}<span class="env-tag">{trl('peek.sealed')}</span>{/if}
       </summary>
       {#if l.change === 'removed'}<p class="tree-note">{tr('peek.off')}</p>{/if}
       {#if !sealed}
-        <p class="tree-note" dir="auto">{fill(nerd(`layer.${l.id}.note`), vars)}</p>
+        <p class="tree-note" dir="auto">{fill(technical(`layer.${l.id}.note`), vars)}</p>
         {#if grid}
-          <div class="diagram" dir="ltr" role="img" aria-label={nerd(`layer.${l.id}.name`)}>
+          <div class="diagram" dir="ltr" role="img" aria-label={technical(`layer.${l.id}.name`)}>
             {#each grid as row}
               {#each row as c}
                 <span class="bitbox" class:used={c.f.used} class:changed={!!c.f.before} style:grid-column="{c.col + 1} / span {c.span}"
-                  title="{nerd(`layer.${l.id}.field.${c.f.id}.name`)} · {fill(tr('peek.bits'), { n: c.f.bits! })}">{c.first && c.span >= 4 ? nerd(`layer.${l.id}.field.${c.f.id}.name`) : ''}</span>
+                  title="{technical(`layer.${l.id}.field.${c.f.id}.name`)} · {fill(tr('peek.bits'), { n: c.f.bits! })}">{c.first && c.span >= 4 ? technical(`layer.${l.id}.field.${c.f.id}.name`) : ''}</span>
               {/each}
             {/each}
           </div>
@@ -60,7 +60,7 @@
         <dl class="tree-fields">
           {#each l.fields as f (f.id)}
             <div class:used={f.used} class:changed={!!f.before}>
-              <dt>{nerd(`layer.${l.id}.field.${f.id}.name`)}{#if f.bits}<small> · {fill(tr('peek.bits'), { n: f.bits })}</small>{/if}</dt>
+              <dt>{technical(`layer.${l.id}.field.${f.id}.name`)}{#if f.bits}<small> · {fill(tr('peek.bits'), { n: f.bits })}</small>{/if}</dt>
               <dd dir="ltr">{#if f.before}<Change was={f.before.text} now={f.value.key ? trl(f.value.key) : f.value.text} />{:else}{f.value.key ? trl(f.value.key) : f.value.text}{/if}</dd>
               <dd class="about" dir="auto">{trl(`layer.${l.id}.field.${f.id}.about`)}</dd>
             </div>

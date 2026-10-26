@@ -1,15 +1,15 @@
 {
   "name": {
-    "kid": "Nummereret stykke",
-    "nerd": "TCP-segment"
+    "simple": "Nummereret stykke",
+    "technical": "TCP-segment"
   },
   "note": {
-    "kid": "Videoen er skåret i nummererede stykker, så intet bliver væk eller blandet sammen.",
-    "nerd": "En pålidelig, ordnet strøm af bytes mellem to porte: sekvensnumre, kvitteringer, gensending, flow- og trængselsstyring."
+    "simple": "Videoen er skåret i nummererede stykker, så intet bliver væk eller blandet sammen.",
+    "technical": "En pålidelig, ordnet strøm af bytes mellem to porte: sekvensnumre, kvitteringer, gensending, flow- og trængselsstyring."
   },
   "sealed": {
-    "kid": "Forseglet. Kun {yours} og serveren åbner den: de tjekker, at ingen stykker mangler.",
-    "nerd": "Undersøges ikke undervejs: ende-til-ende mellem de to ender (rækkefølge, gensending, trængselsstyring)."
+    "simple": "Forseglet. Kun {yours} og serveren åbner den: de tjekker, at ingen stykker mangler.",
+    "technical": "Undersøges ikke undervejs: ende-til-ende mellem de to ender (rækkefølge, gensending, trængselsstyring)."
   },
   "line": "Transmission Control Protocol, afs.-port: {sport}, modt.-port: {dport}, seq: {seq}, ack: {ack}",
   "field": {
@@ -23,8 +23,8 @@
     },
     "seq": {
       "name": {
-        "kid": "Stykke nr.",
-        "nerd": "Sekvensnummer"
+        "simple": "Stykke nr.",
+        "technical": "Sekvensnummer"
       },
       "about": "Hvor dataene hører til i strømmen af bytes, så modtageren kan lægge stykkerne i rækkefølge."
     },
@@ -73,7 +73,7 @@
       }
     },
     "note": {
-      "kid": "Siden er skåret i nummererede stykker, så intet bliver væk eller blandet sammen."
+      "simple": "Siden er skåret i nummererede stykker, så intet bliver væk eller blandet sammen."
     }
   },
   "2010": {

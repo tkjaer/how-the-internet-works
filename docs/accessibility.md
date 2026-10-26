@@ -9,7 +9,7 @@ The work comes in four slices:
 |---|---|---|
 | 1 | Pause everything, the automated check (axe + keyboard) in `npm run evaluate` and CI, focus and announcer fixes | done |
 | 2 | A text map (list view) and the keyboard in the scene, sharing one focus model | done |
-| 3 | Spoken descriptions of each scene (`describe`, kid/nerd, every language) and read aloud from ⋯ | done |
+| 3 | Spoken descriptions of each scene (`describe`, `simple`/`technical`, every language) and read aloud from ⋯ | done |
 | 4 | Not by colour alone, non-text contrast, `forced-colors`, targets and 200 % zoom (with #45) | done |
 
 ## What works today
@@ -117,7 +117,7 @@ The work comes in four slices:
     (`arrival` in `ui/announce.svelte.ts`); when focus moved to the caption's heading, which says the title, just the
     rest. At a stop along the way it says the stop's name and the first sentence of its caption. In the peek it says
     the hop ("Home router, 3 of 9. It swaps the address…"). Nothing else is `aria-live`.
-- **Spoken descriptions.** Every scene has one (`describe`, kid and nerd, English, Danish and German): what the picture shows
+- **Spoken descriptions.** Every scene has one (`describe`, `simple` and `technical`, English, Danish and German): what the picture shows
   and what moves, in short sentences in the order you'd see things. A test fails if a scene a reader can reach has
   none in some language, at either level (no English fallback). How to write them: [authoring](authoring.md).
 - **Read aloud.** "Read aloud" in ⋯ (after Sound, on a phone) has the browser's own voice read each scene as you arrive: its
@@ -144,7 +144,7 @@ The work comes in four slices:
   halo (`Text`'s `on`).
 - **Not by colour alone.** The owners' regions (home, ISP, transit, the video's network) differ by their edge's
   dash pattern as well as colour, and carry their name. A request travels as a parcel, the answer as a round film
-  reel. The fibre's colours are numbered at both ends (1, 2, 3…; λ1, λ2… for nerds) and the descriptions name them
+  reel. The fibre's colours are numbered at both ends (1, 2, 3…; λ1, λ2… at Technical) and the descriptions name them
   ("1 red, 2 yellow…"). The scene's doors differ by their mark (+, magnifier, ✎), not just their colour. `--only=vision`
   shows a few scenes and the chrome through protanopia, deuteranopia, tritanopia and achromatopsia to look at.
 - **Forced colours** (Windows contrast themes, `forced-colors: active`): the chrome keeps its edges (buttons and
@@ -173,19 +173,19 @@ self-hosted lab runners, with the lab PC's GPU). It checks each state once it st
 animation or transition is running (`document.getAnimations()`), so nothing is judged mid-fade, however slow the
 machine (#70). It checks:
 - **axe-core** (WCAG 2.0, 2.1, 2.2 A and AA, plus best practice) on the overview, inside the internet, the Wi‑Fi,
-  router and IP-layer dives, "What can I explore?" on (the overview and the Wi‑Fi dive), Danish nerd, a caught packet (and its details; on a phone, its sheet opened all the way, #139), the picker, the time machine (from the top bar; from the street on 1995, the era's own trip at home; from its chip in Danish), the open ladder, the ⋯
+  router and IP-layer dives, "What can I explore?" on (the overview and the Wi‑Fi dive), Danish Technical, a caught packet (and its details; on a phone, its sheet opened all the way, #139), the picker, the time machine (from the top bar; from the street on 1995, the era's own trip at home; from its chip in Danish), the open ladder, the ⋯
   menu, its list of languages (in Danish) and About, read aloud on (the caption's "Read again", ⋯ with its toggle), the scene's keys on a stop, the list
   view and the first-run coach marks (the first card, "What can I explore?" and the time machine's, and the one card a
-  returning reader gets), a nerd's extra in a dive and the list view with it, on a desktop, a portrait phone and a short landscape screen, and most of them at 200 % zoom. **Zero
+  returning reader gets), a Technical extra in a dive and the list view with it, on a desktop, a portrait phone and a short landscape screen, and most of them at 200 % zoom. **Zero
   violations** is the bar; there is no baseline of allowed ones.
 - **Controls** in each of those states: at least 24 × 24 px, not cut off by the window or a box that doesn't scroll,
   and not under another control (an open pop-up aside). An open pop-up's own controls must be on top of everything,
   so ⋯ over a caught packet's panel is checked too (#90).
-- **The scene's labels** in every path scene and dive, kid and nerd on a desktop and kid on a phone, the clock held
+- **The scene's labels** in every path scene and dive, Simple and Technical on a desktop and Simple on a phone, the clock held
   still: each visible text (not faded below 60 %, not under the chrome or later art) against its halo, or the median
   of the pixels behind it with the text hidden, whichever is more. A halo in the ink's own tone (dark round dark)
   smears the letters, so it fails whatever the picture behind. No text may leave its panel (inside the frame) or, at
-  the top level, the window; the path scenes are checked that way in Danish and nerd and in short landscape too (#90).
+  the top level, the window; the path scenes are checked that way in Danish and Technical and in short landscape too (#90).
 - **Tab once round** each of those states: focus must never land on the page, on something inert, hidden or off
   screen, or on a control without a visible ring (for the scene's keys: on a stop, the theme's ring in the scene).
 - **Journeys:** "What can I explore?" (no list before it; pressed, focus in its list, the announcer says how many

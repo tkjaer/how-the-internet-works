@@ -1,8 +1,8 @@
 {
   "name": "Aggregeringsswitch",
   "2010": {
-    "kid": "En stor switch midt i datacentret. Hvert skab med computere har to veje op til midten; denne switch tager den travle, og en reserve står ved siden af, hvis den går i stykker.",
-    "nerd": "Aggregeringslaget i et datacenter i tre lag: en chassis-switch, hvor hver access-switchs 10G-uplink ender, lag 2 stopper, og HSRP giver serverne deres gateway. En standby-tvilling venter ved siden af; spanning tree blokerer uplinkene til den, så træet ikke har nogen løkke.",
+    "simple": "En stor switch midt i datacentret. Hvert skab med computere har to veje op til midten; denne switch tager den travle, og en reserve står ved siden af, hvis den går i stykker.",
+    "technical": "Aggregeringslaget i et datacenter i tre lag: en chassis-switch, hvor hver access-switchs 10G-uplink ender, lag 2 stopper, og HSRP giver serverne deres gateway. En standby-tvilling venter ved siden af; spanning tree blokerer uplinkene til den, så træet ikke har nogen løkke.",
     "tag": "Aggregering · HSRP · STP"
   },
   "learnMore": [

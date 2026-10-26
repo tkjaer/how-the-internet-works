@@ -1,9 +1,9 @@
 {
   "name": "Home router",
-  "kid": "The front door of your flat’s network. A cable runs from it down the stairs to the basement.",
-  "nerd": "Wi‑Fi and NAT for the flat; its uplink is plain Ethernet to the building’s switch in the basement.",
+  "simple": "The front door of your flat’s network. A cable runs from it down the stairs to the basement.",
+  "technical": "Wi‑Fi and NAT for the flat; its uplink is plain Ethernet to the building’s switch in the basement.",
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Residential_gateway", "title": "Home router", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Network_address_translation", "title": "Network address translation", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Network_address_translation", "title": "Network address translation", "level": "technical" }
   ]
 }

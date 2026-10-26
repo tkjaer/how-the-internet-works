@@ -1,6 +1,6 @@
 {
   "name": "Udbydergateway",
-  "kid": "Her tjekker dit internetfirma, at det virkelig er dig, og lukker dine pakker ud på internettet.",
-  "nerd": "Broadband Network Gateway’en afslutter kundesessioner (IPoE/PPPoE), tildeler adresser og håndhæver politik og QoS.",
+  "simple": "Her tjekker dit internetfirma, at det virkelig er dig, og lukker dine pakker ud på internettet.",
+  "technical": "Broadband Network Gateway’en afslutter kundesessioner (IPoE/PPPoE), tildeler adresser og håndhæver politik og QoS.",
   "tag": "IPoE · per-subscriber"
 }

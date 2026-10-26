@@ -7,7 +7,7 @@ export default defineLayer({
     { id: 'flag', bits: 8, value: '0x7E' },
     { id: 'address', bits: 8, value: '0x0F' },
     { id: 'control', bits: 8, value: '0x00' },
-    { id: 'proto', bits: 16, value: '{inner.ethertype}', use: ['router', 'endpoint'], kid: '@ip' },
+    { id: 'proto', bits: 16, value: '{inner.ethertype}', use: ['router', 'endpoint'], simple: '@ip' },
     { id: 'fcs', bits: 16, value: '{crc}', use: ['router', 'endpoint'] },
   ],
   openAt: ['endpoint', 'router'],

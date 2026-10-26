@@ -1,126 +1,126 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Inside the home router",
-  "kid": "The home router is four little rooms in one box. Your parcel comes in through a socket, and the brain swaps your device’s name on it for your home’s, so the answer finds its way back. Then the light box turns the bits into flashes of light for the glass thread up the street.",
-  "nerd": "A home gateway is several boxes in one: an Ethernet switch, a Wi‑Fi radio, a router doing NAT (it swaps the private source address and port for its public address and a port of its own, and remembers the pair so replies get back in) and an ONT that sends the frames upstream as XGS-PON bursts of light in its time slots.",
+  "simple": "The home router is four little rooms in one box. Your parcel comes in through a socket, and the brain swaps your device’s name on it for your home’s, so the answer finds its way back. Then the light box turns the bits into flashes of light for the glass thread up the street.",
+  "technical": "A home gateway is several boxes in one: an Ethernet switch, a Wi‑Fi radio, a router doing NAT (it swaps the private source address and port for its public address and a port of its own, and remembers the pair so replies get back in) and an ONT that sends the frames upstream as XGS-PON bursts of light in its time slots.",
   "describe": {
-    "kid": "An opened router box is split into four small rooms: cable sockets, Wi‑Fi radio, brain and light box. One cable socket glows where the parcel comes in. The parcel walks through the brain, its sender sticker changes, and it leaves as flashing light.",
-    "nerd": "The cutaway gateway shows switch, Wi‑Fi radio, router with NAT and ONT rooms. Only the rooms used on this trip are lit. The packet enters on the active copper link, passes through the NAT rewrite as bits, and leaves the ONT as XGS-PON light bursts."
+    "simple": "An opened router box is split into four small rooms: cable sockets, Wi‑Fi radio, brain and light box. One cable socket glows where the parcel comes in. The parcel walks through the brain, its sender sticker changes, and it leaves as flashing light.",
+    "technical": "The cutaway gateway shows switch, Wi‑Fi radio, router with NAT and ONT rooms. Only the rooms used on this trip are lit. The packet enters on the active copper link, passes through the NAT rewrite as bits, and leaves the ONT as XGS-PON light bursts."
   },
   "from": "From: {who}",
   "outside": "Home",
   "switch": {
     "title": {
-      "kid": "Cable sockets",
-      "nerd": "Switch"
+      "simple": "Cable sockets",
+      "technical": "Switch"
     },
     "line": {
-      "kid": "Electricity → bits",
-      "nerd": "4 × 1 Gbit/s ports"
+      "simple": "Electricity → bits",
+      "technical": "4 × 1 Gbit/s ports"
     },
     "idle": {
-      "kid": "Resting",
-      "nerd": "Idle this trip"
+      "simple": "Resting",
+      "technical": "Idle this trip"
     }
   },
   "wifi": {
     "title": {
-      "kid": "Wi‑Fi radio",
-      "nerd": "Wi‑Fi radio"
+      "simple": "Wi‑Fi radio",
+      "technical": "Wi‑Fi radio"
     },
     "line": {
-      "kid": "Radio ↔ bits",
-      "nerd": "802.11ax radio"
+      "simple": "Radio ↔ bits",
+      "technical": "802.11ax radio"
     },
     "idle": {
-      "kid": "Resting",
-      "nerd": "Idle this trip"
+      "simple": "Resting",
+      "technical": "Idle this trip"
     }
   },
   "brain": {
     "title": {
-      "kid": "The brain",
-      "nerd": "Router + NAT"
+      "simple": "The brain",
+      "technical": "Router + NAT"
     },
     "line": {
-      "kid": "Swaps the sender",
-      "nerd": "Rewrites the source"
+      "simple": "Swaps the sender",
+      "technical": "Rewrites the source"
     }
   },
   "ont": {
     "title": {
-      "kid": "Light box",
-      "nerd": "ONT"
+      "simple": "Light box",
+      "technical": "ONT"
     },
     "line": {
-      "kid": "Bits → light",
-      "nerd": "XGS-PON · 1270/1577 nm"
+      "simple": "Bits → light",
+      "technical": "XGS-PON · 1270/1577 nm"
     },
     "idle": {
-      "kid": "Resting",
-      "nerd": "Idle this trip"
+      "simple": "Resting",
+      "technical": "Idle this trip"
     }
   },
   "modem": {
     "title": {
-      "kid": "Tone box",
-      "nerd": "DSL modem"
+      "simple": "Tone box",
+      "technical": "DSL modem"
     },
     "line": {
-      "kid": "Bits → tones",
-      "nerd": "VDSL2 · DMT tones"
+      "simple": "Bits → tones",
+      "technical": "VDSL2 · DMT tones"
     },
     "idle": {
-      "kid": "Resting",
-      "nerd": "Idle this trip"
+      "simple": "Resting",
+      "technical": "Idle this trip"
     }
   },
   "dsl-router": {
-    "kid": "This home router is four little rooms in one box. Your parcel comes in through a socket, and the brain swaps your device’s name on it for your home’s. Then the tone box turns the bits into tones for the old phone line.",
-    "nerd": "A DSL gateway: an Ethernet switch, a Wi‑Fi radio, a router doing NAT, and a VDSL2 modem that sends the frames as DMT tones on the phone pair, above the low band the telephone uses.",
+    "simple": "This home router is four little rooms in one box. Your parcel comes in through a socket, and the brain swaps your device’s name on it for your home’s. Then the tone box turns the bits into tones for the old phone line.",
+    "technical": "A DSL gateway: an Ethernet switch, a Wi‑Fi radio, a router doing NAT, and a VDSL2 modem that sends the frames as DMT tones on the phone pair, above the low band the telephone uses.",
     "describe": {
-      "kid": "An opened router box is split into four small rooms: cable sockets, Wi‑Fi radio, brain and tone box. One cable socket glows where the parcel comes in. The parcel walks through the brain, its sender sticker changes, and it leaves as wiggly tones on the phone line.",
-      "nerd": "The cutaway gateway shows switch, Wi‑Fi radio, router with NAT and modem rooms. Only the rooms used on this trip are lit. The packet enters on the active copper port, passes the NAT rewrite as bits, and leaves the modem as VDSL2 tones on the phone pair."
+      "simple": "An opened router box is split into four small rooms: cable sockets, Wi‑Fi radio, brain and tone box. One cable socket glows where the parcel comes in. The parcel walks through the brain, its sender sticker changes, and it leaves as wiggly tones on the phone line.",
+      "technical": "The cutaway gateway shows switch, Wi‑Fi radio, router with NAT and modem rooms. Only the rooms used on this trip are lit. The packet enters on the active copper port, passes the NAT rewrite as bits, and leaves the modem as VDSL2 tones on the phone pair."
     }
   },
   "flat-router": {
-    "kid": "This home router is four little rooms in one box. Your parcel comes in through a socket, and the brain swaps your device’s name on it for your home’s. Then it leaves through its own out socket, down a cable to the basement.",
-    "nerd": "With fibre to the building, the gateway’s uplink is a plain Ethernet WAN port: in on a LAN port, NAT in the router, out on the WAN port to the building’s switch in the basement. No ONT or modem: the fibre ends downstairs.",
+    "simple": "This home router is four little rooms in one box. Your parcel comes in through a socket, and the brain swaps your device’s name on it for your home’s. Then it leaves through its own out socket, down a cable to the basement.",
+    "technical": "With fibre to the building, the gateway’s uplink is a plain Ethernet WAN port: in on a LAN port, NAT in the router, out on the WAN port to the building’s switch in the basement. No ONT or modem: the fibre ends downstairs.",
     "describe": {
-      "kid": "An opened router box is split into four small rooms: cable sockets, Wi‑Fi radio, brain and out socket. One cable socket glows where the parcel comes in. The parcel walks through the brain, its sender sticker changes, and it leaves through the glowing out socket.",
-      "nerd": "The cutaway gateway shows switch, Wi‑Fi radio, router with NAT and WAN port rooms. The packet enters on a LAN port, passes the NAT rewrite as bits, and leaves the WAN port as Ethernet towards the switch in the basement. The radio room is idle."
+      "simple": "An opened router box is split into four small rooms: cable sockets, Wi‑Fi radio, brain and out socket. One cable socket glows where the parcel comes in. The parcel walks through the brain, its sender sticker changes, and it leaves through the glowing out socket.",
+      "technical": "The cutaway gateway shows switch, Wi‑Fi radio, router with NAT and WAN port rooms. The packet enters on a LAN port, passes the NAT rewrite as bits, and leaves the WAN port as Ethernet towards the switch in the basement. The radio room is idle."
     }
   },
   "wan": {
     "title": {
-      "kid": "Out socket",
-      "nerd": "WAN port"
+      "simple": "Out socket",
+      "technical": "WAN port"
     },
     "line": {
-      "kid": "Cable out",
-      "nerd": "1000BASE-T · outside"
+      "simple": "Cable out",
+      "technical": "1000BASE-T · outside"
     }
   },
   "2010": {
     "switch": {
       "line": {
-        "nerd": "4 × 100 Mbit/s ports"
+        "technical": "4 × 100 Mbit/s ports"
       }
     },
     "wifi": {
       "line": {
-        "nerd": "802.11n radio"
+        "technical": "802.11n radio"
       }
     }
   },
   "learnMore": [
-    { "url": "https://simple.wikipedia.org/wiki/Router", "title": "Router", "level": "kid" },
+    { "url": "https://simple.wikipedia.org/wiki/Router", "title": "Router", "level": "simple" },
     { "url": "https://en.wikipedia.org/wiki/Residential_gateway", "title": "Residential gateway", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Optical_network_terminal", "title": "Optical network terminal", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Network_switch", "title": "Network switch", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Network_address_translation", "title": "Network address translation", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Optical_network_terminal", "title": "Optical network terminal", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Network_switch", "title": "Network switch", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Network_address_translation", "title": "Network address translation", "level": "technical" }
   ]
 }

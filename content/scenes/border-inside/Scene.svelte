@@ -16,7 +16,7 @@
   const portrait = $derived(view.orient === 'portrait');
   const compact = $derived(!portrait && view.vp.h < 470);
   const night = $derived(view.mode === 'night');
-  const nerd = $derived(S('mode') === 'nerd');
+  const technical = $derived(S('mode') === 'technical');
   const legible = legibleSize();
   const L = $derived(borderLayout(view.orient, compact));
   const T = $derived(portrait
@@ -37,7 +37,7 @@
   const pLine = (pts: Pt[]) => `M${pts.map((p) => `${p.x} ${p.y}`).join(' L')}`;
   const wire = (a: Pt, b: Pt) => `M${a.x} ${a.y} L${b.x} ${b.y}`;
   const linkName = (id: string) => strings(`tech.${id}`)('name');
-  const boardFont = $derived(nerd ? 'var(--tag-font)' : 'var(--label-font)');
+  const boardFont = $derived(technical ? 'var(--tag-font)' : 'var(--label-font)');
   const rowText = $derived({
     destination: { a: S('rib.dest'), b: S('rib.target') },
     exchange: { a: S('rib.exchange'), b: S('rib.exchange.detail') },

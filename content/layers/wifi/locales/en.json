@@ -1,11 +1,11 @@
 {
   "name": {
-    "kid": "Radio envelope",
-    "nerd": "Wi-Fi frame (802.11)"
+    "simple": "Radio envelope",
+    "technical": "Wi-Fi frame (802.11)"
   },
   "note": {
-    "kid": "Sent through the air. Only the access point and {yours} listen for it.",
-    "nerd": "Every frame is acknowledged by the receiver (often in blocks), and lost ones are resent. The payload is encrypted (WPA3)."
+    "simple": "Sent through the air. Only the access point and {yours} listen for it.",
+    "technical": "Every frame is acknowledged by the receiver (often in blocks), and lost ones are resent. The payload is encrypted (WPA3)."
   },
   "line": "IEEE 802.11 QoS Data, RA: {addr1}, TA: {addr2}",
   "field": {
@@ -19,15 +19,15 @@
     },
     "addr1": {
       "name": {
-        "kid": "For",
-        "nerd": "Receiver (addr 1)"
+        "simple": "For",
+        "technical": "Receiver (addr 1)"
       },
       "about": "Who on the air should take this frame."
     },
     "addr2": {
       "name": {
-        "kid": "From",
-        "nerd": "Transmitter (addr 2)"
+        "simple": "From",
+        "technical": "Transmitter (addr 2)"
       },
       "about": "Who sent it over the air."
     },
@@ -58,7 +58,7 @@
   },
   "2010": {
     "note": {
-      "nerd": "Every frame is acknowledged by the receiver (often in blocks), and lost ones are resent. The payload is encrypted (WPA2)."
+      "technical": "Every frame is acknowledged by the receiver (often in blocks), and lost ones are resent. The payload is encrypted (WPA2)."
     },
     "field": {
       "ccmp": {
@@ -67,6 +67,6 @@
     }
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/IEEE_802.11", "title": "IEEE 802.11", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/IEEE_802.11", "title": "IEEE 802.11", "level": "technical" }
   ]
 }

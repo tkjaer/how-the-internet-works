@@ -2,7 +2,7 @@
 <script lang="ts">
   // The phone line between a home's DSL modem and the DSLAM in the street cabinet: one thin twisted pair carrying a
   // slow phone-call wave and many small tones both ways. Cards: lanes by pitch (bits per tone), speed against line
-  // length with this line marked, and (nerd) crosstalk from the neighbours' pairs.
+  // length with this line marked, and (technical) crosstalk from the neighbours' pairs.
   import { Node, Text, labelInk, legibleSize, nameOf, strings, view, type LinkSubject } from '$core/api';
   import { toScene, trackMatrix } from '../copper-pulses/copper';
   import Card from '../copper-pulses/art/Card.svelte';
@@ -11,7 +11,7 @@
   let { subject, time }: { subject: LinkSubject; time: number } = $props();
   const S = strings('scene.dsl-tones');
   const legible = legibleSize();
-  const nerd = $derived(S('mode') === 'nerd');
+  const technical = $derived(S('mode') === 'technical');
   const o = $derived(view.orient);
   const portrait = $derived(o === 'portrait');
   const compact = $derived(o === 'landscape' && view.vp.h < 470);
@@ -28,31 +28,31 @@
   const fromPos = $derived(toScene({ x: LINE.fromX, y: LINE.nodeY + trackShift }, o));
   const toPos = $derived(toScene({ x: LINE.toX, y: LINE.nodeY + trackShift }, o));
   const tones = $derived(lineTones(time, view.still));
-  const spans = $derived(bandSpans(nerd));
-  const bars = $derived(toneBars(spans, km, time, view.still, nerd ? 0.016 : 0.024));
+  const spans = $derived(bandSpans(technical));
+  const bars = $derived(toneBars(spans, km, time, view.still, technical ? 0.016 : 0.024));
   const mbit = $derived(Math.round(speedAt(km) / 5) * 5);
 
   type Box = { x: number; y: number; w: number; h: number };
   const L = $derived.by((): { node: { size: number; from: { x: number; y: number }; to: { x: number; y: number } }; bands: Box; dist: Box; xtalk: Box; text: { title: number; head: number; body: number; tick: number } } => {
     if (portrait) return {
       node: { size: 170, from: { x: 220, y: 1570 }, to: { x: 220, y: 280 } },
-      bands: nerd ? { x: 330, y: 250, w: 540, h: 400 } : { x: 330, y: 330, w: 540, h: 440 },
-      dist: nerd ? { x: 330, y: 690, w: 540, h: 340 } : { x: 330, y: 830, w: 540, h: 440 },
+      bands: technical ? { x: 330, y: 250, w: 540, h: 400 } : { x: 330, y: 330, w: 540, h: 440 },
+      dist: technical ? { x: 330, y: 690, w: 540, h: 340 } : { x: 330, y: 830, w: 540, h: 440 },
       xtalk: { x: 330, y: 1070, w: 540, h: 340 },
       text: { title: 40, head: 34, body: 28, tick: 22 },
     };
     // a phone on its side: no title, the names in a row under the line, fewer and bigger words on the cards
     if (compact) return {
       node: { size: 170, from: { x: 30, y: 400 }, to: { x: 1570, y: 400 } },
-      bands: nerd ? { x: 70, y: 470, w: 460, h: 300 } : { x: 150, y: 450, w: 620, h: 410 },
-      dist: nerd ? { x: 570, y: 470, w: 460, h: 300 } : { x: 830, y: 450, w: 620, h: 410 },
+      bands: technical ? { x: 70, y: 470, w: 460, h: 300 } : { x: 150, y: 450, w: 620, h: 410 },
+      dist: technical ? { x: 570, y: 470, w: 460, h: 300 } : { x: 830, y: 450, w: 620, h: 410 },
       xtalk: { x: 1070, y: 470, w: 460, h: 300 },
       text: { title: 38, head: 44, body: 44, tick: 40 },
     };
     return {
       node: { size: 220, from: { x: fromPos.x + 60, y: fromPos.y + 145 }, to: { x: toPos.x - 40, y: toPos.y + 145 } },
-      bands: nerd ? { x: 70, y: 500, w: 560, h: 330 } : { x: 180, y: 500, w: 600, h: 330 },
-      dist: nerd ? { x: 660, y: 500, w: 420, h: 330 } : { x: 840, y: 500, w: 580, h: 330 },
+      bands: technical ? { x: 70, y: 500, w: 560, h: 330 } : { x: 180, y: 500, w: 600, h: 330 },
+      dist: technical ? { x: 660, y: 500, w: 420, h: 330 } : { x: 840, y: 500, w: 580, h: 330 },
       xtalk: { x: 1110, y: 500, w: 420, h: 330 },
       text: { title: 42, head: 30, body: 24, tick: 20 },
     };
@@ -128,7 +128,7 @@
 <text x={head(L.bands).x} y={head(L.bands).y} text-anchor="middle" font-family="var(--label-font)" font-size={fs(L.text.head)} font-weight="900" fill="var(--line)" stroke="var(--paper)" stroke-width="6" paint-order="stroke">{S('bandsTitle')}</text>
 {#each spans as s, i (i)}
   <rect x={C.x0 + s.x0 * C.w} y={C.top} width={(s.x1 - s.x0) * C.w} height={C.base - C.top} fill={PAINT[s.band]} opacity="0.16" />
-  {#if s.band !== 'voice' || !nerd}
+  {#if s.band !== 'voice' || !technical}
     <text x={C.x0 + ((s.x0 + s.x1) / 2) * C.w} y={C.top - 12} text-anchor="middle" font-family="var(--label-font)" font-size={fs(L.text.tick + 2)} font-weight="900" fill={INK[s.band]}>{S(`band.${s.band}`)}</text>
   {/if}
 {/each}
@@ -138,7 +138,7 @@
   <rect x={C.x0 + b.x * C.w - 3} y={C.base - h} width="6" height={h} rx="2" fill={PAINT[b.band]} stroke="var(--line)" stroke-width="1.5" />
 {/each}
 <path d={`M${C.x0} ${C.base} H${C.x0 + C.w}`} stroke="var(--line)" stroke-width="4" stroke-linecap="round" />
-{#if nerd}
+{#if technical}
   {#each TICKS as t (t.key)}
     {#if !compact || t.key === 'tick.top'}<text x={C.x0 + t.x * C.w} y={C.base + L.text.tick + 8} text-anchor={t.anchor} font-family="var(--tag-font)" font-size={fs(L.text.tick)} font-weight="800" fill="var(--line)">{S(t.key)}</text>{/if}
   {/each}
@@ -164,7 +164,7 @@
 <text x={you.x + 22} y={you.y - 16} font-family="var(--label-font)" font-size={fs(L.text.tick + 4)} font-weight="900" fill="var(--line)" stroke="var(--paper)" stroke-width="6" paint-order="stroke">{S('you').replace('{n}', String(mbit))}</text>
 {#if !compact}<text x={L.dist.x + 34} y={L.dist.y + L.dist.h - 26} font-family="var(--label-font)" font-size={L.text.body} font-weight="800" fill="var(--line)">{S('distLine').replace('{m}', String(Math.round(km * 1000)))}</text>{/if}
 
-{#if nerd}
+{#if technical}
   <!-- crosstalk: the neighbours' pairs in the same cable leak into this one (vectoring, which cancels it, came in 2012) -->
   {@const V = L.xtalk}
   {@const ys = [V.y + (compact ? 120 : 110), V.y + (compact ? 175 : 160), V.y + (compact ? 230 : 210)]}

@@ -1,39 +1,39 @@
 {
   "title": "TCP holder styr på stykkerne",
-  "kid": "Videoserveren og {yours} giver hvert lille stykke et nummer. Hvis et stykke falder i et hul, bliver {yours} ved med at pege på hullet, indtil serveren sender stykket igen.",
-  "nerd": "TCP er ende-til-ende (RFC 9293): et 3-vejs-handshake (SYN, SYN-ACK, ACK) aftaler startsekvensnumre i begge retninger. Afsenderen holder et vindue på fire segmenter (forenklet: rigtige vinduer tælles i bytes og starter ved ca. 10 segmenter). ACK=5 nævner den næste byte, der ventes, og flytter vinduet til 5–8; 6, 7 og 8 giver hver et duplikeret ACK=5, og det tredje udløser fast retransmit; appen får først bytes i rækkefølge.",
+  "simple": "Videoserveren og {yours} giver hvert lille stykke et nummer. Hvis et stykke falder i et hul, bliver {yours} ved med at pege på hullet, indtil serveren sender stykket igen.",
+  "technical": "TCP er ende-til-ende (RFC 9293): et 3-vejs-handshake (SYN, SYN-ACK, ACK) aftaler startsekvensnumre i begge retninger. Afsenderen holder et vindue på fire segmenter (forenklet: rigtige vinduer tælles i bytes og starter ved ca. 10 segmenter). ACK=5 nævner den næste byte, der ventes, og flytter vinduet til 5–8; 6, 7 og 8 giver hver et duplikeret ACK=5, og det tredje udløser fast retransmit; appen får først bytes i rækkefølge.",
   "describe": {
-    "kid": "En vej forbinder {yours} og videoserveren, med kort for Server og Hylde. Nummererede kasser 1 til 8 står på række. Fire ad gangen må rejse. Talebobler siger hej, “fik 4” og “fik 8”. Kasse 5 falder i hullet, hylden lader et hul stå og bliver ved med at sige “mangler 5”, så går 5 igen, og rækken fyldes.",
-    "nerd": "Kortene viser TCP’s send-vindue og modtagerens buffer i rækkefølge. SYN, SYN-ACK og ACK-sedler starter løkken. Datasegmenter går over vejen, ACK-sedler går tilbage, og gentaget ACK 5 holder hullet åbent. Segment 5 sendes hurtigt igen med fast retransmit, vinduet flyttes, og bytes leveres først i orden."
+    "simple": "En vej forbinder {yours} og videoserveren, med kort for Server og Hylde. Nummererede kasser 1 til 8 står på række. Fire ad gangen må rejse. Talebobler siger hej, “fik 4” og “fik 8”. Kasse 5 falder i hullet, hylden lader et hul stå og bliver ved med at sige “mangler 5”, så går 5 igen, og rækken fyldes.",
+    "technical": "Kortene viser TCP’s send-vindue og modtagerens buffer i rækkefølge. SYN, SYN-ACK og ACK-sedler starter løkken. Datasegmenter går over vejen, ACK-sedler går tilbage, og gentaget ACK 5 holder hullet åbent. Segment 5 sendes hurtigt igen med fast retransmit, vinduet flyttes, og bytes leveres først i orden."
   },
   "at": {
     "cdn": {
       "title": "Serveren sender nummererede TCP-stykker",
-      "kid": "Videoserveren stiller stykkerne op og lader fire være på vej ad gangen. Når {yours} siger, at stykke 5 mangler, sender serveren 5 igen, før appen får rækken.",
-      "nerd": "Set fra server-endepunktet sender TCP segmenter med sekvensnumre, ser kumulative ACKs, flytter send-vinduet og gensender segment 5 hurtigt efter tre duplikerede ACKs uden at vente på RTO.",
+      "simple": "Videoserveren stiller stykkerne op og lader fire være på vej ad gangen. Når {yours} siger, at stykke 5 mangler, sender serveren 5 igen, før appen får rækken.",
+      "technical": "Set fra server-endepunktet sender TCP segmenter med sekvensnumre, ser kumulative ACKs, flytter send-vinduet og gensender segment 5 hurtigt efter tre duplikerede ACKs uden at vente på RTO.",
       "describe": {
-        "kid": "Videoserveren er den travle ende af vejen. Dens Server-kort stiller nummererede kasser op, og rammen om fire kasser viser, hvor mange der må være af sted. Kasser går mod hylden. Når sedlen fra {yours} siger, at 5 mangler, lyser kasse 5 og går igen, før hylden er fuld.",
-        "nerd": "Fra server-endepunktet fokuserer billedet på sendekøen og det glidende vindue. Segmenter sendes med sekvensnumre. Kumulative ACK-sedler kommer tilbage, og gentaget ACK 5 holder hullet på modtagerhylden. Det markerede segment 5 sendes hurtigt igen med fast retransmit, og derefter kan bytes leveres i rækkefølge."
+        "simple": "Videoserveren er den travle ende af vejen. Dens Server-kort stiller nummererede kasser op, og rammen om fire kasser viser, hvor mange der må være af sted. Kasser går mod hylden. Når sedlen fra {yours} siger, at 5 mangler, lyser kasse 5 og går igen, før hylden er fuld.",
+        "technical": "Fra server-endepunktet fokuserer billedet på sendekøen og det glidende vindue. Segmenter sendes med sekvensnumre. Kumulative ACK-sedler kommer tilbage, og gentaget ACK 5 holder hullet på modtagerhylden. Det markerede segment 5 sendes hurtigt igen med fast retransmit, og derefter kan bytes leveres i rækkefølge."
       }
     }
   },
   "sealed": {
     "title": "TCP kører forbi forseglet",
-    "kid": "Dette stop bærer de nummererede kasser, men åbner dem ikke. Det kan se det forseglede stykke 5 køre forbi én gang, falde efter stoppet og køre forbi igen, når serveren prøver igen.",
-    "nerd": "Ved dette mellemhop er TCP uigennemsigtigt: routere og broer videresender IP-pakken og undersøger ikke sekvens- eller ACK-tilstand. Det gensendte segment 5 er bare endnu en forseglet nyttelast på vej forbi.",
+    "simple": "Dette stop bærer de nummererede kasser, men åbner dem ikke. Det kan se det forseglede stykke 5 køre forbi én gang, falde efter stoppet og køre forbi igen, når serveren prøver igen.",
+    "technical": "Ved dette mellemhop er TCP uigennemsigtigt: routere og broer videresender IP-pakken og undersøger ikke sekvens- eller ACK-tilstand. Det gensendte segment 5 er bare endnu en forseglet nyttelast på vej forbi.",
     "describe": {
-      "kid": "Et mellemstop står på vejen mellem {yours} og videoserveren. Server- og Hylde-kortene viser stadig kasser, der ordnes, men kasserne på vejen er forseglede. Stoppet bærer dem bare forbi. Det kan se kasse 5 falde efter sig og komme forbi igen, når den sendes anden gang.",
-      "nerd": "Ved et ikke-endepunkt viser de øverste kort TCP-tilstanden i enderne. Vejen viser kun forseglet nyttelast. Hoppet videresender IP-pakker uden at læse sekvensnumre eller ACKs. Segment 5’s tab og fast retransmit ses som endnu et forseglet segment over vejen."
+      "simple": "Et mellemstop står på vejen mellem {yours} og videoserveren. Server- og Hylde-kortene viser stadig kasser, der ordnes, men kasserne på vejen er forseglede. Stoppet bærer dem bare forbi. Det kan se kasse 5 falde efter sig og komme forbi igen, når den sendes anden gang.",
+      "technical": "Ved et ikke-endepunkt viser de øverste kort TCP-tilstanden i enderne. Vejen viser kun forseglet nyttelast. Hoppet videresender IP-pakker uden at læse sekvensnumre eller ACKs. Segment 5’s tab og fast retransmit ses som endnu et forseglet segment over vejen."
     }
   },
   "role": {
     "nat": {
       "title": "En NAT kigger kun på portmærket",
-      "kid": "Kassen er stadig forseglet her. NAT’en læser kun det lille portmærke, så svarene finder den rigtige enhed, og lader de nummererede stykker være i fred.",
-      "nerd": "NAT er undtagelsen fra ren uigennemsigtighed: den læser og omskriver TCP/UDP-port-tuplen (for eksempel 51034 ↔ den udvendige mapping), mens sekvensnumre og data forbliver ende-til-ende.",
+      "simple": "Kassen er stadig forseglet her. NAT’en læser kun det lille portmærke, så svarene finder den rigtige enhed, og lader de nummererede stykker være i fred.",
+      "technical": "NAT er undtagelsen fra ren uigennemsigtighed: den læser og omskriver TCP/UDP-port-tuplen (for eksempel 51034 ↔ den udvendige mapping), mens sekvensnumre og data forbliver ende-til-ende.",
       "describe": {
-        "kid": "Den nummererede kasse er stadig forseglet, når den går forbi NAT’en på vejen. De samme Server- og Hylde-kort viser rækkefølgen, men NAT’en bruger kun et forstørrelsesglas på det lille portmærke. Portmærket vises ved stoppet, mens kasse 5 kan falde, komme igen og passere på ny.",
-        "nerd": "Denne mellemhop-visning holder TCP uigennemsigtig bortset fra NAT-tuplen. Forseglede segmenter passerer den NAT, du er ved. Et portmærke, som indvendig til udvendig, vises tæt på hoppet, og glasset markerer omskrivningen. Sekvensnumre, ACK-tilstand og gensending forbliver ende til ende."
+        "simple": "Den nummererede kasse er stadig forseglet, når den går forbi NAT’en på vejen. De samme Server- og Hylde-kort viser rækkefølgen, men NAT’en bruger kun et forstørrelsesglas på det lille portmærke. Portmærket vises ved stoppet, mens kasse 5 kan falde, komme igen og passere på ny.",
+        "technical": "Denne mellemhop-visning holder TCP uigennemsigtig bortset fra NAT-tuplen. Forseglede segmenter passerer den NAT, du er ved. Et portmærke, som indvendig til udvendig, vises tæt på hoppet, og glasset markerer omskrivningen. Sekvensnumre, ACK-tilstand og gensending forbliver ende til ende."
       }
     }
   },
@@ -72,30 +72,30 @@
     "nat": "porte: {nat}"
   },
   "1995": {
-    "kid": "Serveren og {yours} giver hvert lille stykke af siden et nummer. Hvis et stykke falder i et hul, bliver {yours} ved med at pege på hullet, indtil serveren sender stykket igen.",
+    "simple": "Serveren og {yours} giver hvert lille stykke af siden et nummer. Hvis et stykke falder i et hul, bliver {yours} ved med at pege på hullet, indtil serveren sender stykket igen.",
     "describe": {
-      "kid": "En vej forbinder {yours} og serveren, med kort for Server og Hylde. Nummererede kasser 1 til 8 står på række. Fire ad gangen må rejse. Talebobler siger hej, “fik 4” og “fik 8”. Kasse 5 falder i hullet, hylden lader et hul stå og bliver ved med at sige “mangler 5”, så går 5 igen, og rækken fyldes.",
-      "nerd": "Kortene viser TCP’s send-vindue og modtagerens buffer i rækkefølge. SYN, SYN-ACK og ACK-sedler starter løkken. Datasegmenter går over vejen, ACK-sedler går tilbage, og gentaget ACK 5 holder hullet åbent. Segment 5 sendes hurtigt igen med fast retransmit, vinduet flyttes, og bytes leveres først i orden."
+      "simple": "En vej forbinder {yours} og serveren, med kort for Server og Hylde. Nummererede kasser 1 til 8 står på række. Fire ad gangen må rejse. Talebobler siger hej, “fik 4” og “fik 8”. Kasse 5 falder i hullet, hylden lader et hul stå og bliver ved med at sige “mangler 5”, så går 5 igen, og rækken fyldes.",
+      "technical": "Kortene viser TCP’s send-vindue og modtagerens buffer i rækkefølge. SYN, SYN-ACK og ACK-sedler starter løkken. Datasegmenter går over vejen, ACK-sedler går tilbage, og gentaget ACK 5 holder hullet åbent. Segment 5 sendes hurtigt igen med fast retransmit, vinduet flyttes, og bytes leveres først i orden."
     },
     "at": {
       "web-server": {
-        "kid": "Serveren stiller stykkerne op og lader fire være på vej ad gangen. Når {yours} siger, at stykke 5 mangler, sender serveren 5 igen, før browseren får rækken.",
+        "simple": "Serveren stiller stykkerne op og lader fire være på vej ad gangen. Når {yours} siger, at stykke 5 mangler, sender serveren 5 igen, før browseren får rækken.",
         "describe": {
-          "kid": "Serveren er den travle ende af vejen. Dens Server-kort stiller nummererede kasser op, og rammen om fire kasser viser, hvor mange der må være af sted. Kasser går mod hylden. Når sedlen fra {yours} siger, at 5 mangler, lyser kasse 5 og går igen, før hylden er fuld.",
-          "nerd": "Fra server-endepunktet fokuserer billedet på sendekøen og det glidende vindue. Segmenter sendes med sekvensnumre. Kumulative ACK-sedler kommer tilbage, og gentaget ACK 5 holder hullet på modtagerhylden. Det markerede segment 5 sendes hurtigt igen med fast retransmit, og derefter kan bytes leveres i rækkefølge."
+          "simple": "Serveren er den travle ende af vejen. Dens Server-kort stiller nummererede kasser op, og rammen om fire kasser viser, hvor mange der må være af sted. Kasser går mod hylden. Når sedlen fra {yours} siger, at 5 mangler, lyser kasse 5 og går igen, før hylden er fuld.",
+          "technical": "Fra server-endepunktet fokuserer billedet på sendekøen og det glidende vindue. Segmenter sendes med sekvensnumre. Kumulative ACK-sedler kommer tilbage, og gentaget ACK 5 holder hullet på modtagerhylden. Det markerede segment 5 sendes hurtigt igen med fast retransmit, og derefter kan bytes leveres i rækkefølge."
         }
       }
     },
     "sealed": {
       "describe": {
-        "kid": "Et mellemstop står på vejen mellem {yours} og serveren. Server- og Hylde-kortene viser stadig kasser, der ordnes, men kasserne på vejen er forseglede. Stoppet bærer dem bare forbi. Det kan se kasse 5 falde efter sig og komme forbi igen, når den sendes anden gang.",
-        "nerd": "Ved et ikke-endepunkt viser de øverste kort TCP-tilstanden i enderne. Vejen viser kun forseglet nyttelast. Hoppet videresender IP-pakker uden at læse sekvensnumre eller ACKs. Segment 5’s tab og fast retransmit ses som endnu et forseglet segment over vejen."
+        "simple": "Et mellemstop står på vejen mellem {yours} og serveren. Server- og Hylde-kortene viser stadig kasser, der ordnes, men kasserne på vejen er forseglede. Stoppet bærer dem bare forbi. Det kan se kasse 5 falde efter sig og komme forbi igen, når den sendes anden gang.",
+        "technical": "Ved et ikke-endepunkt viser de øverste kort TCP-tilstanden i enderne. Vejen viser kun forseglet nyttelast. Hoppet videresender IP-pakker uden at læse sekvensnumre eller ACKs. Segment 5’s tab og fast retransmit ses som endnu et forseglet segment over vejen."
       }
     },
-    "nerd": "TCP er ende-til-ende (RFC 793, 1981): et 3-vejs-handshake (SYN, SYN-ACK, ACK) aftaler startsekvensnumre i begge retninger. Afsenderen holder et vindue på fire segmenter (forenklet: rigtige vinduer tælles i bytes, og slow start (Jacobson, 1988) begynder ved ca. 1 segment og fordobler det for hver tur frem og tilbage). ACK=5 nævner den næste byte, der ventes, og flytter vinduet til 5–8; 6, 7 og 8 giver hver et duplikeret ACK=5, og det tredje udløser fast retransmit (BSD, 1990); appen får først bytes i rækkefølge."
+    "technical": "TCP er ende-til-ende (RFC 793, 1981): et 3-vejs-handshake (SYN, SYN-ACK, ACK) aftaler startsekvensnumre i begge retninger. Afsenderen holder et vindue på fire segmenter (forenklet: rigtige vinduer tælles i bytes, og slow start (Jacobson, 1988) begynder ved ca. 1 segment og fordobler det for hver tur frem og tilbage). ACK=5 nævner den næste byte, der ventes, og flytter vinduet til 5–8; 6, 7 og 8 giver hver et duplikeret ACK=5, og det tredje udløser fast retransmit (BSD, 1990); appen får først bytes i rækkefølge."
   },
   "2010": {
-    "nerd": "TCP er ende-til-ende (RFC 793): et 3-vejs-handshake (SYN, SYN-ACK, ACK) aftaler startsekvensnumre i begge retninger. Afsenderen holder et vindue på fire segmenter (forenklet: rigtige vinduer tælles i bytes, og slow start begynder ved 2 til 4 segmenter, RFC 3390). ACK=5 nævner den næste byte, der ventes, og flytter vinduet til 5–8; 6, 7 og 8 giver hver et duplikeret ACK=5, og det tredje udløser fast retransmit; appen får først bytes i rækkefølge."
+    "technical": "TCP er ende-til-ende (RFC 793): et 3-vejs-handshake (SYN, SYN-ACK, ACK) aftaler startsekvensnumre i begge retninger. Afsenderen holder et vindue på fire segmenter (forenklet: rigtige vinduer tælles i bytes, og slow start begynder ved 2 til 4 segmenter, RFC 3390). ACK=5 nævner den næste byte, der ventes, og flytter vinduet til 5–8; 6, 7 og 8 giver hver et duplikeret ACK=5, og det tredje udløser fast retransmit; appen får først bytes i rækkefølge."
   },
   "learnMore": [
     { "url": "https://da.wikipedia.org/wiki/Transmission_Control_Protocol", "title": "Transmission Control Protocol", "level": "both" }

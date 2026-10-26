@@ -11,11 +11,11 @@ import type { Hop, Link, Route } from './resolve';
 
 export type Dir = 'up' | 'down';
 
-/** A resolved value: its text; the hop it names (an address or MAC belongs to someone: kids see its name); or a
- *  string key (a kid value written "@key" in the schema is the string layer.<id>.value.<key>). */
+/** A resolved value: its text; the hop it names (an address or MAC belongs to someone: the Simple level shows its name); or a
+ *  string key (a simple value written "@key" in the schema is the string layer.<id>.value.<key>). */
 export interface Val { text: string; who?: Hop; key?: string }
-/** kid: what kids see (null: not shown to kids). */
-export interface FieldVal { id: string; bits?: number; value: Val; kid: Val | null }
+/** simple: what the Simple level shows (null: not shown there). */
+export interface FieldVal { id: string; bits?: number; value: Val; simple: Val | null }
 /** bytes: the size of this layer's own header (and trailer). */
 export interface LayerVal { id: string; fields: FieldVal[]; bytes: number }
 
@@ -204,7 +204,7 @@ export function packetOn(r: Route, flow: FlowDef, i: number, dir: Dir): LayerVal
       const tpl = pick(f.value, dir);
       if (!tpl) continue;
       const value = fill(tpl);
-      fields.push({ id: f.id, bits: bitsIn(f, r.era), value, kid: f.kid === undefined ? null : f.kid === true ? value : fill(pick(f.kid, dir)) });
+      fields.push({ id: f.id, bits: bitsIn(f, r.era), value, simple: f.simple === undefined ? null : f.simple === true ? value : fill(pick(f.simple, dir)) });
     }
     // checksums last: over this layer's other fields (+ the addresses, like TCP's pseudo-header); a frame check
     // sequence over everything inside too

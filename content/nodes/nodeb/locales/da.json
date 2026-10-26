@@ -1,17 +1,17 @@
 {
   "name": "Mobilmast",
   "2010": {
-    "kid": "En mast med tre flade antenner, der hver dækker et stykke af området omkring den. Den taler med alle telefoner i nærheden via radio og sender deres pakker videre til sin styring.",
-    "nerd": "En 3G-basestation (NodeB): tre sektorantenner, HSDPA-planlæggeren og HARQ (MAC-hs) og en Iub-linje tilbage til sin RNC, i 2010 ofte E1-linjer med ATM eller et mikrobølgelink.",
+    "simple": "En mast med tre flade antenner, der hver dækker et stykke af området omkring den. Den taler med alle telefoner i nærheden via radio og sender deres pakker videre til sin styring.",
+    "technical": "En 3G-basestation (NodeB): tre sektorantenner, HSDPA-planlæggeren og HARQ (MAC-hs) og en Iub-linje tilbage til sin RNC, i 2010 ofte E1-linjer med ATM eller et mikrobølgelink.",
     "tag": "NodeB · 2,1 GHz · Iub",
     "peek": {
       "up": {
-        "kid": "Masten tager din pakke af radioen og sender den ad linjen til styringen, stadig i sit radiokuvert.",
-        "nerd": "NodeB’en afslutter luftinterfacet (WCDMA, HARQ) og sender RLC-stykkerne over Iub til RNC’en; den åbner dem ikke."
+        "simple": "Masten tager din pakke af radioen og sender den ad linjen til styringen, stadig i sit radiokuvert.",
+        "technical": "NodeB’en afslutter luftinterfacet (WCDMA, HARQ) og sender RLC-stykkerne over Iub til RNC’en; den åbner dem ikke."
       },
       "down": {
-        "kid": "Masten sætter din pakke i kø og sender den til din telefon via radio, når det er din telefons tur.",
-        "nerd": "MAC-hs sætter RNC’ens stykker i kø pr. telefon, og planlæggeren sender dem i de 2 ms-tider og koder, den vælger."
+        "simple": "Masten sætter din pakke i kø og sender den til din telefon via radio, når det er din telefons tur.",
+        "technical": "MAC-hs sætter RNC’ens stykker i kø pr. telefon, og planlæggeren sender dem i de 2 ms-tider og koder, den vælger."
       }
     }
   }

@@ -2,7 +2,7 @@
 <script lang="ts">
   // Under the sea (#39): the same trunk, in a cable lying on the sea floor between two landing stations. Repeaters
   // along it make the light bright again, powered through the cable's copper from the shore; a slice shows what is
-  // inside, a counter follows the first colour across (#42), and for kids a shark swims by.
+  // inside, a counter follows the first colour across (#42), and at Simple a shark swims by.
   import { TagAt, Text, fill, legibleSize, strings, view, type LinkSubject } from '$core/api';
   import { boostersOf, fadeAt, kmAt, oneColour, stretchKm, wordsOf } from './light';
   import { CABLE_W, SEA, cable, cablePulses, ground, seaHaul, shark, sparks, water } from './sea';
@@ -29,7 +29,7 @@
   const repeaters = $derived(boostersOf(haul));
   const pulses = $derived(cablePulses(time, route, colours.length));
   const power = $derived(sparks(time, route));
-  const kid = $derived(view.level === 'kid');
+  const simple = $derived(view.level === 'simple');
   const legible = legibleSize();
   /** A long cable's boosters stand closer than their names are wide: every other name goes up a line (down on a phone,
    *  where they always take turns), and where even that is too close only the middle one is named. Their pills narrow
@@ -52,7 +52,7 @@
 </script>
 
 <Sea water={water(sea)} ground={ground(sea)} land={sea.land} shore={sea.shore} surface={sea.surface} w={sea.w} {time} />
-{#if kid}<Shark x={fish.x} y={fish.y} left={fish.left} {time} />{/if}
+{#if simple}<Shark x={fish.x} y={fish.y} left={fish.left} {time} />{/if}
 <!-- the slice is cut from the cable just below it -->
 <line x1={L.slice.x} y1={L.slice.y + L.slice.r} x2={L.slice.x} y2={sea.floor - CABLE_W} stroke="var(--line)" stroke-width="5" stroke-dasharray="4 14" stroke-linecap="round" />
 <Slice x={L.slice.x} y={L.slice.y} r={L.slice.r} {colours} />

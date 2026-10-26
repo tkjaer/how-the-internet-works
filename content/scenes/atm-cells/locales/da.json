@@ -1,55 +1,55 @@
 {
   "title": "Små celler med etiketter",
-  "kid": "På denne store amerikanske motorvej bliver din pakke hakket i små stykker, alle lige store, hver med en lille etiket foran. Maskiner på vejen læser kun etiketten, bytter den til en ny og sender stykket videre. I den anden ende limes stykkerne sammen til din pakke igen.",
-  "nerd": "ATM: faste celler på 53 byte, 5 byte header og 48 byte nyttelast. Routeren skærer hver IP-pakke op med AAL5 (RFC 1483 LLC/SNAP, så en 8-byte trailer med længde og CRC-32, fyldt op til 48). Switchene videresender på VPI/VCI for et permanent virtuelt kredsløb og skriver den om for hvert hop, ligesom MPLS ville bytte etiketter fra 2001. Routeren i den anden ende samler pakken ved cellen, der er mærket sidst (PTI).",
+  "simple": "På denne store amerikanske motorvej bliver din pakke hakket i små stykker, alle lige store, hver med en lille etiket foran. Maskiner på vejen læser kun etiketten, bytter den til en ny og sender stykket videre. I den anden ende limes stykkerne sammen til din pakke igen.",
+  "technical": "ATM: faste celler på 53 byte, 5 byte header og 48 byte nyttelast. Routeren skærer hver IP-pakke op med AAL5 (RFC 1483 LLC/SNAP, så en 8-byte trailer med længde og CRC-32, fyldt op til 48). Switchene videresender på VPI/VCI for et permanent virtuelt kredsløb og skriver den om for hvert hop, ligesom MPLS ville bytte etiketter fra 2001. Routeren i den anden ende samler pakken ved cellen, der er mærket sidst (PTI).",
   "describe": {
-    "kid": "To motorvejsroutere med en linje imellem og en switch i midten. Små firkantede stykker strømmer langs linjen, hver med en orange etiket, der bliver blågrøn, når switchen bytter den. Det ene kort viser din pakke skåret i 32 stykker; det andet viser ét stykke: en lille etiket og en stor del af din pakke.",
-    "nerd": "To routere forbundet af et ATM-kredsløb gennem en switch, der skriver VPI/VCI 1/112 om til 1/87. Det ene kort viser en pakke på 1500 byte skåret af AAL5 i 32 celler, 1696 byte på linjen; det andet en celle på 53 byte: VPI/VCI, PTI og CLP, HEC og 48 byte nyttelast."
+    "simple": "To motorvejsroutere med en linje imellem og en switch i midten. Små firkantede stykker strømmer langs linjen, hver med en orange etiket, der bliver blågrøn, når switchen bytter den. Det ene kort viser din pakke skåret i 32 stykker; det andet viser ét stykke: en lille etiket og en stor del af din pakke.",
+    "technical": "To routere forbundet af et ATM-kredsløb gennem en switch, der skriver VPI/VCI 1/112 om til 1/87. Det ene kort viser en pakke på 1500 byte skåret af AAL5 i 32 celler, 1696 byte på linjen; det andet en celle på 53 byte: VPI/VCI, PTI og CLP, HEC og 48 byte nyttelast."
   },
   "switch": {
-    "kid": "Etiketbytter",
-    "nerd": "ATM-switch"
+    "simple": "Etiketbytter",
+    "technical": "ATM-switch"
   },
   "cutTitle": {
-    "kid": "Din pakke, hakket i stykker",
-    "nerd": "AAL5: pakke til celler"
+    "simple": "Din pakke, hakket i stykker",
+    "technical": "AAL5: pakke til celler"
   },
   "packet": {
-    "kid": "Din pakke",
-    "nerd": "IP-pakke, {bytes} byte"
+    "simple": "Din pakke",
+    "technical": "IP-pakke, {bytes} byte"
   },
   "cutLine": {
-    "kid": "{n} stykker, hver med sin egen etiket",
-    "nerd": "{n} celler = {bytes} byte på linjen ({pct} % ekstra)"
+    "simple": "{n} stykker, hver med sin egen etiket",
+    "technical": "{n} celler = {bytes} byte på linjen ({pct} % ekstra)"
   },
   "cellTitle": {
-    "kid": "Ét stykke",
-    "nerd": "Én celle, 53 byte"
+    "simple": "Ét stykke",
+    "technical": "Én celle, 53 byte"
   },
   "cellBytes": {
-    "kid": "Lille etiket, stort stykke",
-    "nerd": "{head} B header + {body} B nyttelast"
+    "simple": "Lille etiket, stort stykke",
+    "technical": "{head} B header + {body} B nyttelast"
   },
   "field": {
     "label": {
-      "kid": "Hvilken vej",
-      "nerd": "VPI/VCI: kredsløbet"
+      "simple": "Hvilken vej",
+      "technical": "VPI/VCI: kredsløbet"
     },
     "type": {
-      "kid": "Er det sidste stykke?",
-      "nerd": "PTI (sidste celle), CLP"
+      "simple": "Er det sidste stykke?",
+      "technical": "PTI (sidste celle), CLP"
     },
     "check": {
-      "kid": "Et tjek af etiketten",
-      "nerd": "HEC: header-tjek"
+      "simple": "Et tjek af etiketten",
+      "technical": "HEC: header-tjek"
     },
     "payload": {
-      "kid": "Et stykke af din pakke",
-      "nerd": "48 B af AAL5-rammen"
+      "simple": "Et stykke af din pakke",
+      "technical": "48 B af AAL5-rammen"
     }
   },
   "cellLine": {
-    "kid": "Omkring en tiendedel af hvert stykke er etiket",
-    "nerd": "5 af 53 byte ≈ 9,4 % header, hver celle"
+    "simple": "Omkring en tiendedel af hvert stykke er etiket",
+    "technical": "5 af 53 byte ≈ 9,4 % header, hver celle"
   }
 }

@@ -1,12 +1,12 @@
 {
   "name": "ATM backbone",
   "1995": {
-    "kid": "A big American network carries your parcel across the country. On the way it is cut into lots of tiny pieces, each with a label, and put back together at the other end.",
-    "nerd": "IP over ATM on SONET: routers at the edges, ATM switches in between, OC-3c at 155 Mbit/s (DS3s at 45 Mbit/s on smaller routes). The packet is cut into 53-byte cells (AAL5). Packet over SONET took over from about 1997, and MPLS came around 2001.",
+    "simple": "A big American network carries your parcel across the country. On the way it is cut into lots of tiny pieces, each with a label, and put back together at the other end.",
+    "technical": "IP over ATM on SONET: routers at the edges, ATM switches in between, OC-3c at 155 Mbit/s (DS3s at 45 Mbit/s on smaller routes). The packet is cut into 53-byte cells (AAL5). Packet over SONET took over from about 1997, and MPLS came around 2001.",
     "tag": "ATM · OC-3c · 155 Mbit/s"
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode", "title": "Asynchronous Transfer Mode", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Optical_Carrier_transmission_rates", "title": "Optical carrier (OC-3)", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode", "title": "Asynchronous Transfer Mode", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Optical_Carrier_transmission_rates", "title": "Optical carrier (OC-3)", "level": "technical" }
   ]
 }

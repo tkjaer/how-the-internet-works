@@ -1,11 +1,11 @@
 {
   "name": "Transit-udbyder",
-  "kid": "Hvis der ikke er en genvej, betaler dit internetfirma et større net for at bære pakken.",
-  "nerd": "Betalt IP-transit fra en tier-1- eller tier-2-udbyder: en fuld routingtabel og adgang til alt.",
+  "simple": "Hvis der ikke er en genvej, betaler dit internetfirma et større net for at bære pakken.",
+  "technical": "Betalt IP-transit fra en tier-1- eller tier-2-udbyder: en fuld routingtabel og adgang til alt.",
   "tag": "Tier-1 · paid transit",
   "1995": {
-    "kid": "Dit internetfirma er lille, så det lejer én linje til et større net i København, som bærer dets pakker ud i resten af verden.",
-    "nerd": "Leverandøren: et større dansk net, der sælger IP-transit over en lejet E1 (2 Mbit/s) og har egne kredsløb over Atlanten. Som de fleste små udbydere peger vores bare en standardrute på den.",
+    "simple": "Dit internetfirma er lille, så det lejer én linje til et større net i København, som bærer dets pakker ud i resten af verden.",
+    "technical": "Leverandøren: et større dansk net, der sælger IP-transit over en lejet E1 (2 Mbit/s) og har egne kredsløb over Atlanten. Som de fleste små udbydere peger vores bare en standardrute på den.",
     "tag": "Leverandør · E1"
   }
 }

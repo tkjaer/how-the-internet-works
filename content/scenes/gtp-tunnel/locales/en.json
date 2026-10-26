@@ -1,7 +1,7 @@
 {
   "title": "The tunnel envelope",
-  "kid": "The mobile network makes a private tunnel between the tower and the mobile core. Your parcel keeps the same phone address while the big tunnel envelope changes around it.",
-  "nerd": "GTP-U carries the UE IP packet through the operator network. The gNB and UPF/PGW use outer IP plus UDP/2152 with a TEID, one per direction, each chosen by the end that receives on it, and a PDU Session Container extension header carrying QFI 9 (3GPP TS 29.281, 38.415).",
+  "simple": "The mobile network makes a private tunnel between the tower and the mobile core. Your parcel keeps the same phone address while the big tunnel envelope changes around it.",
+  "technical": "GTP-U carries the UE IP packet through the operator network. The gNB and UPF/PGW use outer IP plus UDP/2152 with a TEID, one per direction, each chosen by the end that receives on it, and a PDU Session Container extension header carrying QFI 9 (3GPP TS 29.281, 38.415).",
   "label": {
     "sameAddress": "Same address!",
     "walk": "you can walk",
@@ -18,26 +18,26 @@
   "at": {
     "cell-tower": {
       "title": "The tower opens the tunnel",
-      "kid": "At the tower, the big tunnel envelope comes off. Your parcel still says 100.64.12.7, so the tower can send it over the radio to your phone.",
-      "nerd": "On the downlink the gNB terminates the GTP-U leg from the UPF: outer IP 10.20.0.1 → 10.20.0.5, UDP/2152, TEID 0x0000a17e (chosen by the gNB). It decapsulates the UE packet for 100.64.12.7 and schedules it onto NR radio. In a handover, the SMF tells the UPF the new gNB’s address and downlink TEID; the uplink TEID can stay, and the UE IP stays anchored.",
+      "simple": "At the tower, the big tunnel envelope comes off. Your parcel still says 100.64.12.7, so the tower can send it over the radio to your phone.",
+      "technical": "On the downlink the gNB terminates the GTP-U leg from the UPF: outer IP 10.20.0.1 → 10.20.0.5, UDP/2152, TEID 0x0000a17e (chosen by the gNB). It decapsulates the UE packet for 100.64.12.7 and schedules it onto NR radio. In a handover, the SMF tells the UPF the new gNB’s address and downlink TEID; the uplink TEID can stay, and the UE IP stays anchored.",
       "describe": {
-        "kid": "On the road, the phone, two towers and the mobile core sit beside a thick tunnel. The tower tunnel mouth is highlighted. A big tunnel envelope moves between tower and core. It opens at the tower to show the small parcel and address 100.64.12.7. The handover card bends the tunnel to the next tower.",
-        "nerd": "The gNB end of the GTP-U tunnel is highlighted on the road, with the downlink TEID 0x0000a17e. The envelope moves between gNB and UPF. It opens at the tower side to expose the UE packet for 100.64.12.7. The handover card moves the tunnel endpoint while the UE IP stays anchored."
+        "simple": "On the road, the phone, two towers and the mobile core sit beside a thick tunnel. The tower tunnel mouth is highlighted. A big tunnel envelope moves between tower and core. It opens at the tower to show the small parcel and address 100.64.12.7. The handover card bends the tunnel to the next tower.",
+        "technical": "The gNB end of the GTP-U tunnel is highlighted on the road, with the downlink TEID 0x0000a17e. The envelope moves between gNB and UPF. It opens at the tower side to expose the UE packet for 100.64.12.7. The handover card moves the tunnel endpoint while the UE IP stays anchored."
       }
     },
     "mobile-core": {
       "title": "The core opens the tunnel",
-      "kid": "At the mobile core, the tunnel envelope opens and your parcel can go on to the internet. Even if you walk to the next tower, your phone keeps the same address.",
-      "nerd": "On the uplink the UPF/PGW receives GTP-U from the gNB: outer IP 10.20.0.5 → 10.20.0.1, UDP/2152, TEID 0x1f3a92c4 (chosen by the UPF). It decapsulates the UE packet (100.64.12.7), applies policy/NAT, and forwards it. In handover, the UPF updates the N3/S1-U tunnel endpoint; the UE IP remains anchored.",
+      "simple": "At the mobile core, the tunnel envelope opens and your parcel can go on to the internet. Even if you walk to the next tower, your phone keeps the same address.",
+      "technical": "On the uplink the UPF/PGW receives GTP-U from the gNB: outer IP 10.20.0.5 → 10.20.0.1, UDP/2152, TEID 0x1f3a92c4 (chosen by the UPF). It decapsulates the UE packet (100.64.12.7), applies policy/NAT, and forwards it. In handover, the UPF updates the N3/S1-U tunnel endpoint; the UE IP remains anchored.",
       "describe": {
-        "kid": "On the road, the phone, towers and mobile core sit beside a thick tunnel. The core tunnel mouth is highlighted. A tunnel envelope moves to the core, opens to reveal address 100.64.12.7, then travels back. The handover card keeps the address while the tunnel bends to the next tower.",
-        "nerd": "The UPF and mobile-core end is the highlighted tunnel mouth, tagged with the uplink TEID 0x1f3a92c4 and the UE IP anchor. The GTP-U envelope opens at the core to reveal packet 100.64.12.7. The handover card shows the N3 or S1-U endpoint moving without changing the UE address."
+        "simple": "On the road, the phone, towers and mobile core sit beside a thick tunnel. The core tunnel mouth is highlighted. A tunnel envelope moves to the core, opens to reveal address 100.64.12.7, then travels back. The handover card keeps the address while the tunnel bends to the next tower.",
+        "technical": "The UPF and mobile-core end is the highlighted tunnel mouth, tagged with the uplink TEID 0x1f3a92c4 and the UE IP anchor. The GTP-U envelope opens at the core to reveal packet 100.64.12.7. The handover card shows the N3 or S1-U endpoint moving without changing the UE address."
       }
     }
   },
   "2010": {
-    "kid": "The mobile network makes a private tunnel between the radio controller and the mobile company’s gate (the GGSN). Your parcel keeps the same phone address while the big tunnel envelope changes around it.",
-    "nerd": "With Direct Tunnel (3GPP Rel-7), GTP-U carries the phone’s IP packet from the RNC straight to the GGSN: outer IP plus UDP/2152 with a TEID per direction, chosen by the receiving end (3GPP TS 29.060). Without it, the SGSN sat in the middle and there were two tunnels.",
+    "simple": "The mobile network makes a private tunnel between the radio controller and the mobile company’s gate (the GGSN). Your parcel keeps the same phone address while the big tunnel envelope changes around it.",
+    "technical": "With Direct Tunnel (3GPP Rel-7), GTP-U carries the phone’s IP packet from the RNC straight to the GGSN: outer IP plus UDP/2152 with a TEID per direction, chosen by the receiving end (3GPP TS 29.060). Without it, the SGSN sat in the middle and there were two tunnels.",
     "label": {
       "toCore": "To the GGSN",
       "fromCore": "Back to the RNC"
@@ -48,27 +48,27 @@
     "at": {
       "rnc": {
         "title": "The radio controller opens the tunnel",
-        "kid": "At the radio controller, the big tunnel envelope comes off. Your parcel still says 10.152.33.7, so the controller can cut it into radio pieces and send it through the mast to your phone.",
-        "nerd": "On the downlink the RNC ends the GTP-U tunnel from the GGSN: outer IP 10.30.0.1 → 10.30.4.9, UDP/2152, TEID 0x0000a17e (chosen by the RNC). It ciphers and segments the packet for 10.152.33.7 in RLC and sends it over Iub to the NodeB. Walking between masts of one RNC doesn’t move the tunnel; to another RNC, an SRNS relocation moves its end while the phone’s address stays.",
+        "simple": "At the radio controller, the big tunnel envelope comes off. Your parcel still says 10.152.33.7, so the controller can cut it into radio pieces and send it through the mast to your phone.",
+        "technical": "On the downlink the RNC ends the GTP-U tunnel from the GGSN: outer IP 10.30.0.1 → 10.30.4.9, UDP/2152, TEID 0x0000a17e (chosen by the RNC). It ciphers and segments the packet for 10.152.33.7 in RLC and sends it over Iub to the NodeB. Walking between masts of one RNC doesn’t move the tunnel; to another RNC, an SRNS relocation moves its end while the phone’s address stays.",
         "describe": {
-          "kid": "On the road, the phone, two radio controllers and the mobile company’s gate sit beside a thick tunnel. The controller’s tunnel mouth is highlighted. A big tunnel envelope moves between controller and gate. It opens at the controller to show the small parcel and address 10.152.33.7. The handover card bends the tunnel to the next controller.",
-          "nerd": "The RNC end of the GTP-U tunnel is highlighted on the road, with the downlink TEID 0x0000a17e. The envelope moves between RNC and GGSN. It opens at the RNC side to expose the phone’s packet for 10.152.33.7. The handover card shows an SRNS relocation moving the tunnel endpoint while the phone’s IP stays anchored."
+          "simple": "On the road, the phone, two radio controllers and the mobile company’s gate sit beside a thick tunnel. The controller’s tunnel mouth is highlighted. A big tunnel envelope moves between controller and gate. It opens at the controller to show the small parcel and address 10.152.33.7. The handover card bends the tunnel to the next controller.",
+          "technical": "The RNC end of the GTP-U tunnel is highlighted on the road, with the downlink TEID 0x0000a17e. The envelope moves between RNC and GGSN. It opens at the RNC side to expose the phone’s packet for 10.152.33.7. The handover card shows an SRNS relocation moving the tunnel endpoint while the phone’s IP stays anchored."
         }
       },
       "mobile-core": {
         "title": "The gate opens the tunnel",
-        "kid": "At the mobile company’s gate, the tunnel envelope opens and your parcel can go on to the internet. Even if you walk far, your phone keeps the same address.",
-        "nerd": "On the uplink the GGSN receives GTP-U from the RNC: outer IP 10.30.4.9 → 10.30.0.1, UDP/2152, TEID 0x1f3a92c4 (chosen by the GGSN). It decapsulates the phone’s packet (10.152.33.7), applies policy and NAT, and forwards it. The phone’s address is anchored here for as long as its PDP context lasts.",
+        "simple": "At the mobile company’s gate, the tunnel envelope opens and your parcel can go on to the internet. Even if you walk far, your phone keeps the same address.",
+        "technical": "On the uplink the GGSN receives GTP-U from the RNC: outer IP 10.30.4.9 → 10.30.0.1, UDP/2152, TEID 0x1f3a92c4 (chosen by the GGSN). It decapsulates the phone’s packet (10.152.33.7), applies policy and NAT, and forwards it. The phone’s address is anchored here for as long as its PDP context lasts.",
         "describe": {
-          "kid": "On the road, the phone, the radio controllers and the mobile company’s gate sit beside a thick tunnel. The gate’s tunnel mouth is highlighted. A tunnel envelope moves to the gate, opens to reveal address 10.152.33.7, then travels back. The handover card keeps the address while the tunnel bends to the next controller.",
-          "nerd": "The GGSN end is the highlighted tunnel mouth, tagged with the uplink TEID 0x1f3a92c4 and the phone’s IP anchor. The GTP-U envelope opens at the GGSN to reveal packet 10.152.33.7. The handover card shows the Gn/Iu-PS endpoint moving without changing the phone’s address."
+          "simple": "On the road, the phone, the radio controllers and the mobile company’s gate sit beside a thick tunnel. The gate’s tunnel mouth is highlighted. A tunnel envelope moves to the gate, opens to reveal address 10.152.33.7, then travels back. The handover card keeps the address while the tunnel bends to the next controller.",
+          "technical": "The GGSN end is the highlighted tunnel mouth, tagged with the uplink TEID 0x1f3a92c4 and the phone’s IP anchor. The GTP-U envelope opens at the GGSN to reveal packet 10.152.33.7. The handover card shows the Gn/Iu-PS endpoint moving without changing the phone’s address."
         }
       }
     }
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Cellular_network", "title": "Cellular network", "level": "kid" },
-    { "url": "https://en.wikipedia.org/wiki/GPRS_Tunnelling_Protocol", "title": "GPRS Tunnelling Protocol", "level": "nerd" },
-    { "url": "https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1699", "title": "3GPP TS 29.281", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Cellular_network", "title": "Cellular network", "level": "simple" },
+    { "url": "https://en.wikipedia.org/wiki/GPRS_Tunnelling_Protocol", "title": "GPRS Tunnelling Protocol", "level": "technical" },
+    { "url": "https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1699", "title": "3GPP TS 29.281", "level": "technical" }
   ]
 }

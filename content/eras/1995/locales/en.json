@@ -1,25 +1,25 @@
 {
   "name": "1995",
-  "kid": "Home internet was a phone call. The computer’s modem rang the internet company, beeping and screeching, and while you were online, nobody could use the phone.",
-  "nerd": "Dial-up: a modem at 28.8 kbit/s (56k came in 1997; V.90 in 1998) calls the ISP’s modem bank, and PPP gives the PC its own public address. No Wi‑Fi, no router, no NAT.",
+  "simple": "Home internet was a phone call. The computer’s modem rang the internet company, beeping and screeching, and while you were online, nobody could use the phone.",
+  "technical": "Dial-up: a modem at 28.8 kbit/s (56k came in 1997; V.90 in 1998) calls the ISP’s modem bank, and PPP gives the PC its own public address. No Wi‑Fi, no router, no NAT.",
   "describe": {
-    "kid": "A big beige computer with a deep screen, and a keyboard on a cable. Its modem sits on a shelf, blinking, and phones the internet company.",
-    "nerd": "A desktop PC: its external modem dials the ISP on the phone line, with no router in between."
+    "simple": "A big beige computer with a deep screen, and a keyboard on a cable. Its modem sits on a shelf, blinking, and phones the internet company.",
+    "technical": "A desktop PC: its external modem dials the ISP on the phone line, with no router in between."
   },
   "at": {
     "on-the-go": {
-      "kid": "Out and about, hardly anyone went online, but you could: a laptop with a cable to a mobile phone rang the internet company. Three times slower than at home, and every minute cost money.",
-      "nerd": "GSM circuit-switched data: 9.6 kbit/s in one radio time slot, billed per minute like a call. The mobile switch’s modems (the IWF) call the ISP like a home modem; GPRS’s always-on packets came in 2000.",
+      "simple": "Out and about, hardly anyone went online, but you could: a laptop with a cable to a mobile phone rang the internet company. Three times slower than at home, and every minute cost money.",
+      "technical": "GSM circuit-switched data: 9.6 kbit/s in one radio time slot, billed per minute like a call. The mobile switch’s modems (the IWF) call the ISP like a home modem; GPRS’s always-on packets came in 2000.",
       "describe": {
-        "kid": "A thick laptop with a curly cable to a mobile phone the size of a brick, on the street.",
-        "nerd": "A 1995 laptop with a GSM data card on a cable to a GSM phone, dialling the ISP at 9.6 kbit/s."
+        "simple": "A thick laptop with a curly cable to a mobile phone the size of a brick, on the street.",
+        "technical": "A 1995 laptop with a GSM data card on a cable to a GSM phone, dialling the ISP at 9.6 kbit/s."
       }
     }
   },
   "peek": {
     "role": {
       "router": {
-        "nerd": "Routed: longest-prefix match on the destination, TTL − 1, and a new link frame."
+        "technical": "Routed: longest-prefix match on the destination, TTL − 1, and a new link frame."
       }
     }
   }

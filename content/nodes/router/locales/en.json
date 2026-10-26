@@ -1,9 +1,9 @@
 {
   "name": "Home router",
-  "kid": "The front door of your home network.",
-  "nerd": "Routes between the home LAN and the ISP, and does NAT so the whole home shares one public address.",
+  "simple": "The front door of your home network.",
+  "technical": "Routes between the home LAN and the ISP, and does NAT so the whole home shares one public address.",
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Residential_gateway", "title": "Home router", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Network_address_translation", "title": "Network address translation", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Network_address_translation", "title": "Network address translation", "level": "technical" }
   ]
 }

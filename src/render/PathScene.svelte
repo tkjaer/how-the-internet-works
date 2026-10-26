@@ -1,6 +1,6 @@
 <svelte:options namespace="svg" />
 <script lang="ts">
-  // A path scene: backdrop, owner regions, links, nodes, labels, nerd tags, doors and packets. The root scene also draws the chosen places' backdrops (the house, the street), their era's props (#59) and the swap door on the
+  // A path scene: backdrop, owner regions, links, nodes, labels, technical tags, doors and packets. The root scene also draws the chosen places' backdrops (the house, the street), their era's props (#59) and the swap door on the
   // start device; a group's scene draws the road the packets take through it. Doors (model/doors.ts) are drawn in two
   // parts: a glow around what they open, under the nodes, and a badge over them. Owner regions (model/regions.ts) too:
   // their areas under the road, their signs over the devices.
@@ -36,7 +36,7 @@
   const W = $derived(WORLD_SIZE[view.orient]);
   const portrait = $derived(view.orient === 'portrait');
   const A = $derived(themeState.current.art);
-  const nerd = $derived(loc.level === 'nerd');
+  const technical = $derived(loc.level === 'technical');
   const backdrops = $derived(places ?? route.slots.map((s) => ({ id: s.place, alpha: 1, dx: 0 })));
   const mark = $derived(eraArt(route.era)?.Packet ?? null);
   // the era's props (root only): the devices to draw on, the traffic on the first link for the modem's lights, and the
@@ -48,7 +48,7 @@
     for (const id of shown.keys()) if (!ids.has(id)) shown.delete(id);
   });
   const devices = $derived(root ? Object.fromEntries(ps.nodes.map((n) => [n.id, n])) : {});
-  const nodeTag = (n: SNode) => (nerd ? trFirst([...routeKeys(`tag.${n.id}`), `node.${n.node.id}.tag`]) : '');
+  const nodeTag = (n: SNode) => (technical ? trFirst([...routeKeys(`tag.${n.id}`), `node.${n.node.id}.tag`]) : '');
   const flowColour = (flow: string, kind: string) =>
     route.activity.flows.find((f) => f.id === flow)?.packets.find((p) => p.kind === kind)?.colour ?? '#fff';
   const GroupBackdrop = $derived(ps.group ? groupBackdrop(route.hops[ps.group].node.id) : null);
@@ -71,7 +71,7 @@
   const doorTime = $derived(view.still ? 0 : scene.time);
   const doorLabel = (d: Door) => tr(`door.${d.kind}`);
   const labelW = (d: Door) => per(doorLabel(d), 'label') * doorPx;
-  const linkTag = (l: PathScene['links'][number]) => (nerd ? trFirst([...routeKeys(`tag.${l.id}`), `tech.${l.link.tech.id}.tag`]) : '');
+  const linkTag = (l: PathScene['links'][number]) => (technical ? trFirst([...routeKeys(`tag.${l.id}`), `tech.${l.link.tech.id}.tag`]) : '');
   const texts = $derived.by(() => {
     const badges = doors.map((d) => badgeBox(d.at, doorPx));
     return placeTexts({
@@ -152,7 +152,7 @@
   {#if root}{@render flavour('front')}{/if}
   <!-- the packets go beneath the text (#137, labels win: a parcel at rest on a link doesn't hide its name) -->
   {#each packets as p (p.id)}{#if view.followId !== p.id}{@render packet(p)}{/if}{/each}
-  <!-- beneath the node names and tags: when it gets crowded (nerd tags), the boxes stay readable -->
+  <!-- beneath the node names and tags: when it gets crowded (technical tags), the boxes stay readable -->
   {#each named as g, i (g.owner)}
     <A.Region part="sign" d={g.d} tone={g.tone} aside={g.aside} x={texts.signs[i].x} y={texts.signs[i].y} label={trl(`owner.${g.owner}.name`)} size={signPx} />
   {/each}

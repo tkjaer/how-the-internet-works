@@ -2,12 +2,12 @@
   "name": "Laptop mit GSM-Telefon",
   "yours": "dein Laptop",
   "1995": {
-    "kid": "Ein dicker grauer Laptop mit einer Karte in der Seite und einem Spiralkabel von der Karte zu einem Mobiltelefon so groß wie ein Ziegelstein. Das Telefon führt den Anruf; der Laptop macht den Rest.",
-    "nerd": "Ein Laptop von 1995 mit einer GSM-Datenkarte (eine PC-Karte, wie Nokias Cellular Data Card) an einem Kabel zu einem GSM-Telefon. Der Endpunkt: er selbst führt PPP, IP, TCP und den Browser aus; das Telefon trägt nur den Anruf.",
+    "simple": "Ein dicker grauer Laptop mit einer Karte in der Seite und einem Spiralkabel von der Karte zu einem Mobiltelefon so groß wie ein Ziegelstein. Das Telefon führt den Anruf; der Laptop macht den Rest.",
+    "technical": "Ein Laptop von 1995 mit einer GSM-Datenkarte (eine PC-Karte, wie Nokias Cellular Data Card) an einem Kabel zu einem GSM-Telefon. Der Endpunkt: er selbst führt PPP, IP, TCP und den Browser aus; das Telefon trägt nur den Anruf.",
     "tag": "GSM · 9,6 kbit/s"
   },
   "learnMore": [
     { "url": "https://de.wikipedia.org/wiki/Circuit_Switched_Data", "title": "Circuit Switched Data", "level": "both" },
-    { "url": "https://de.wikipedia.org/wiki/PC_Card", "title": "PC Card", "level": "nerd" }
+    { "url": "https://de.wikipedia.org/wiki/PC_Card", "title": "PC Card", "level": "technical" }
   ]
 }

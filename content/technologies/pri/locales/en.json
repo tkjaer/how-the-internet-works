@@ -1,12 +1,12 @@
 {
   "name": "ISDN line",
   "1995": {
-    "kid": "The phone company bundles 30 phone calls onto one line to your internet company. Your call gets its own little slot in it, and keeps it for as long as you’re online.",
-    "nerd": "An ISDN primary-rate line: an E1 with 30 B channels of 64 kbit/s and a D channel (slot 16) for call set-up (Q.931). Your call is slot 7. The ISP’s digital modem rack (an Ascend MAX, say) decodes the tones straight from the slot.",
+    "simple": "The phone company bundles 30 phone calls onto one line to your internet company. Your call gets its own little slot in it, and keeps it for as long as you’re online.",
+    "technical": "An ISDN primary-rate line: an E1 with 30 B channels of 64 kbit/s and a D channel (slot 16) for call set-up (Q.931). Your call is slot 7. The ISP’s digital modem rack (an Ascend MAX, say) decodes the tones straight from the slot.",
     "tag": "E1 PRI · 30B+D"
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Primary_Rate_Interface", "title": "Primary Rate Interface", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Network_access_server", "title": "Network access server", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Primary_Rate_Interface", "title": "Primary Rate Interface", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Network_access_server", "title": "Network access server", "level": "technical" }
   ]
 }

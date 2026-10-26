@@ -1,15 +1,15 @@
 {
   "name": {
-    "kid": "Die Videofirma",
-    "nerd": "Video-CDN · AS64501"
+    "simple": "Die Videofirma",
+    "technical": "Video-CDN · AS64501"
   },
   "1995": {
     "name": {
-      "kid": "Die Website",
-      "nerd": "Webhost"
+      "simple": "Die Website",
+      "technical": "Webhost"
     }
   },
   "learnMore": [
-    { "url": "https://de.wikipedia.org/wiki/Content_Delivery_Network", "title": "Content Delivery Network", "level": "nerd", "eras": ["2010", "today"] }
+    { "url": "https://de.wikipedia.org/wiki/Content_Delivery_Network", "title": "Content Delivery Network", "level": "technical", "eras": ["2010", "today"] }
   ]
 }

@@ -4,20 +4,20 @@
     "title": "Inside the data centre"
   },
   "2010": {
-    "kid": "A big windowless building full of computers in tall cupboards, in a bigger city further away than today’s. Lots of companies rent rooms in it. Tap it to look inside!",
-    "nerd": "A colocation centre in a bigger city: the video company rents a caged row of racks in a shared hall, and a cross-connect joins it to the exchange. Inside: a core router, a load balancer and a three-tier tree of switches. Tap to unfold it.",
+    "simple": "A big windowless building full of computers in tall cupboards, in a bigger city further away than today’s. Lots of companies rent rooms in it. Tap it to look inside!",
+    "technical": "A colocation centre in a bigger city: the video company rents a caged row of racks in a shared hall, and a cross-connect joins it to the exchange. Inside: a core router, a load balancer and a three-tier tree of switches. Tap to unfold it.",
     "tag": "Colocation · three-tier",
     "inside": {
-      "kid": "Your parcel comes in through the building’s front door, the core router. A traffic warden picks a computer that isn’t busy, a big switch in the middle sends the parcel down to the right cupboard, and the cupboard’s switch hands it to the video server on a copper cable. If the server doesn’t have the video yet, it fetches it from the main copy far away.",
-      "nerd": "A rented cage at a colocation centre: the core router takes the cross-connect from the exchange, a hardware load balancer holds the service address (VIP), and a three-tier tree (core, aggregation, access) reaches the racks, with 10G fibre between the switches and 1G copper to the servers. Spanning tree keeps each rack’s second uplink blocked. A cache miss goes back to the origin.",
+      "simple": "Your parcel comes in through the building’s front door, the core router. A traffic warden picks a computer that isn’t busy, a big switch in the middle sends the parcel down to the right cupboard, and the cupboard’s switch hands it to the video server on a copper cable. If the server doesn’t have the video yet, it fetches it from the main copy far away.",
+      "technical": "A rented cage at a colocation centre: the core router takes the cross-connect from the exchange, a hardware load balancer holds the service address (VIP), and a three-tier tree (core, aggregation, access) reaches the racks, with 10G fibre between the switches and 1G copper to the servers. Spanning tree keeps each rack’s second uplink blocked. A cache miss goes back to the origin.",
       "describe": {
-        "kid": "Inside a big hall with a tiled floor stands a row of grey cupboards behind a wire fence, with a cooling machine at each end. The path comes from the exchange to the core router, the load balancer, an aggregation switch, a rack switch and the video server. A dashed road leads far away to the main copy. Parcels go in and video comes back out.",
-        "nerd": "The colocation view starts at the IXP and zigzags through the core router, load balancer, aggregation switch and access switch over 10G multimode fibre, then over 1000BASE-T copper to the cache server. A caged row of racks with a CRAC unit at each end stands in the back. A dashed branch from the cache leads to the origin. Request and video packets move in opposite directions."
+        "simple": "Inside a big hall with a tiled floor stands a row of grey cupboards behind a wire fence, with a cooling machine at each end. The path comes from the exchange to the core router, the load balancer, an aggregation switch, a rack switch and the video server. A dashed road leads far away to the main copy. Parcels go in and video comes back out.",
+        "technical": "The colocation view starts at the IXP and zigzags through the core router, load balancer, aggregation switch and access switch over 10G multimode fibre, then over 1000BASE-T copper to the cache server. A caged row of racks with a CRAC unit at each end stands in the back. A dashed branch from the cache leads to the origin. Request and video packets move in opposite directions."
       }
     }
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Colocation_centre", "title": "Colocation centre", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Content_delivery_network", "title": "Content delivery network", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Content_delivery_network", "title": "Content delivery network", "level": "technical" }
   ]
 }

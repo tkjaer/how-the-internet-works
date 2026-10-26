@@ -13,7 +13,7 @@
   const S = strings('scene.nr-grant');
   const legible = legibleSize();
   const ctx = $derived(subject.ctx);
-  const nerd = $derived(ctx.level === 'nerd');
+  const technical = $derived(ctx.level === 'technical');
   // the phone, the tower and what's behind it (the mobile core; in 3G the radio controller)
   const phoneHop = $derived(ctx.client);
   const towerHop = $derived(subject.route.chain[1]);
@@ -43,22 +43,22 @@
   const phoneName = $derived(nameOf(phoneHop));
   const towerName = $derived(nameOf(towerHop));
   const coreName = $derived(nameOf(coreHop));
-  // the layer's fields as they are in this direction; the phone's number is the one kids see
+  // the layer's fields as they are in this direction; the phone's number is the one Simple shows
   const fields = $derived(subject.route.content.layers[subject.layer].fields);
   const vals = $derived(Object.fromEntries(fields.map((f) => [f.id, typeof f.value === 'string' ? f.value : f.value[ctx.dir]])));
-  const rnti = $derived(vals[fields.find((f) => f.kid)!.id]);
-  const kidRnti = $derived(rnti.replace(/^0x/, ''));
-  const ticketText = $derived(nerd ? fill(S('label.ticketNerd'), { n: rnti }) : fill(S('label.ticketKid'), { n: kidRnti }));
-  const grantLine = $derived(nerd ? S('label.grantNerd') : S('label.grantKid'));
-  const scheduleRows = $derived(nerd
+  const rnti = $derived(vals[fields.find((f) => f.simple)!.id]);
+  const simpleRnti = $derived(rnti.replace(/^0x/, ''));
+  const ticketText = $derived(technical ? fill(S('label.ticketTechnical'), { n: rnti }) : fill(S('label.ticketSimple'), { n: simpleRnti }));
+  const grantLine = $derived(technical ? S('label.grantTechnical') : S('label.grantSimple'));
+  const scheduleRows = $derived(technical
     ? [
         { n: S('label.before'), seat: S('label.beforeSeat'), on: false },
-        { n: rnti, seat: S('label.grantNerd'), on: true },
+        { n: rnti, seat: S('label.grantTechnical'), on: true },
         { n: S('label.after'), seat: S('label.afterSeat'), on: false },
       ]
     : [
         { n: fill(S('label.phoneNo'), { n: '1288' }), seat: S('label.otherTurn'), on: false },
-        { n: fill(S('label.phoneNo'), { n: kidRnti }), seat: S('label.myTurn'), on: true },
+        { n: fill(S('label.phoneNo'), { n: simpleRnti }), seat: S('label.myTurn'), on: true },
         { n: fill(S('label.phoneNo'), { n: '3066' }), seat: S('label.otherTurn'), on: false },
       ]);
   const scanOn = $derived(focus === 'phone' && (st.phase === 'grant' || st.phase === 'send'));
@@ -68,7 +68,7 @@
 
   // the envelope's number: unscaled on a phone on its side, where it would fall under the label minimum (issue #33)
   const envScale = $derived(portrait ? 1.05 : compact ? 1 : 0.9);
-  const envNo = $derived(nerd ? rnti : kidRnti);
+  const envNo = $derived(technical ? rnti : simpleRnti);
   const envNoW = $derived(compact ? Math.max(84, textBox(envNo, legible(34), 'middle', 0.6, '--label-font').w + 24) : 84);
 
   function tx(a: number, b: number, p: number) { return mix(a, b, p); }
@@ -104,7 +104,7 @@
   <g opacity={ticketK > 0 ? 0.4 + ticketK * 0.6 : 0.25}>
     <rect x={c0.x + (portrait ? 340 : 390)} y={c0.y + (portrait ? 198 : 162)} width={portrait ? 410 : 230} height={portrait ? 96 : 62} rx="18" fill="var(--paper-2)" stroke="var(--line)" stroke-width="5" />
   </g>
-  <Text x={c0.x + (portrait ? 545 : 505)} y={c0.y + (portrait ? 257 : 187)} text={portrait && !nerd ? fill(S('label.ticketPortrait'), { n: kidRnti }) : ticketText} size={portrait ? 25 : 22} kind="big" colour="var(--brick)" />
+  <Text x={c0.x + (portrait ? 545 : 505)} y={c0.y + (portrait ? 257 : 187)} text={portrait && !technical ? fill(S('label.ticketPortrait'), { n: simpleRnti }) : ticketText} size={portrait ? 25 : 22} kind="big" colour="var(--brick)" />
   {#if !portrait}<Text x={c0.x + 505} y={c0.y + 214} text={grantLine} size={20} kind="node" colour="var(--brick)" />{/if}
 {/if}
 
@@ -112,18 +112,18 @@
 {#if !compact}<Text x={L.schedule.x} y={listLabelY} text={S('label.schedule')} size={T.text * (portrait ? 0.78 : 0.72)} kind="big" anchor="start" colour="var(--brick)" />{/if}
 {#each scheduleRows as row, i}
   {@const y = L.schedule.y + i * L.schedule.row}
-  <rect x={L.schedule.x} y={y - T.small * (portrait ? 1.3 : compact ? 1.05 : 0.95)} width={L.schedule.w} height={T.small * (portrait ? 2.15 : compact ? 1.75 : 1.55)} rx="16" fill={row.on && rowLit ? 'var(--sun)' : 'var(--paper-2)'} stroke="var(--line)" stroke-width={row.on && rowLit ? 5 : 3} opacity={row.on || nerd ? 1 : 0.78} />
+  <rect x={L.schedule.x} y={y - T.small * (portrait ? 1.3 : compact ? 1.05 : 0.95)} width={L.schedule.w} height={T.small * (portrait ? 2.15 : compact ? 1.75 : 1.55)} rx="16" fill={row.on && rowLit ? 'var(--sun)' : 'var(--paper-2)'} stroke="var(--line)" stroke-width={row.on && rowLit ? 5 : 3} opacity={row.on || technical ? 1 : 0.78} />
   {#if row.on && scanOn}
     <circle cx={L.schedule.x + 18 + st.p * (L.schedule.w - 36)} cy={y} r={T.small * 0.62} fill="none" stroke="var(--teal)" stroke-width="7" opacity="0.82" />
   {/if}
   <Text x={L.schedule.x + (portrait ? 22 : 18)} y={y + T.small * 0.35} text={row.n} size={T.small * (portrait ? 0.92 : 0.9)} kind="node" anchor="start" colour={row.on && rowLit ? 'var(--face)' : undefined} on={row.on && rowLit ? 'var(--sun)' : undefined} />
-  <Text x={L.schedule.x + L.schedule.w - (portrait ? 22 : 18)} y={y + T.small * 0.35} text={row.seat} size={T.small * (nerd ? 0.74 : 0.78)} kind={row.on && rowLit ? 'big' : 'small'} anchor="end" colour={row.on && rowLit ? 'var(--face)' : 'var(--line)'} on={row.on && rowLit ? 'var(--sun)' : undefined} />
+  <Text x={L.schedule.x + L.schedule.w - (portrait ? 22 : 18)} y={y + T.small * 0.35} text={row.seat} size={T.small * (technical ? 0.74 : 0.78)} kind={row.on && rowLit ? 'big' : 'small'} anchor="end" colour={row.on && rowLit ? 'var(--face)' : 'var(--line)'} on={row.on && rowLit ? 'var(--sun)' : undefined} />
 {/each}
 
 <Card x={c1.x} y={c1.y} w={c1.w} h={c1.h} tint="var(--teal)" />
 <Text x={c1.x + 34} y={c1.y + (portrait || compact ? 82 : 70)} text={S('card.harq')} size={T.title} kind="big" anchor="start" />
 <g>
-  {#if !nerd}<g opacity="0.88">
+  {#if !technical}<g opacity="0.88">
     <Node id={(focus === 'phone' ? phoneHop : focus === 'tower' ? towerHop : coreHop).node.id} x={rxX} y={c1.y + c1.h - (portrait ? 92 : compact ? 150 : 66)} size={portrait || compact ? 62 : 68} />
   </g>{/if}
   {#if st.phase === 'combine'}
@@ -150,18 +150,18 @@
       <Text x={0} y={-T.text * 0.05} text={S(st.phase === 'ack' ? 'label.got' : 'label.again')} size={T.text} kind="big" colour={st.phase === 'ack' ? 'var(--leaf-ink)' : 'var(--berry-ink)'} />
     </g>
   {/if}
-  {#if nerd}
+  {#if technical}
     <g opacity="0.95">
       <rect x={c1.x + c1.w * (portrait ? 0.53 : 0.52) - (portrait ? 170 : 150)} y={portrait ? c1.y + c1.h - 160 : harqY + T.piece * 0.78} width={portrait ? 340 : 300} height={portrait ? 40 : 32} rx="12" fill="var(--paper-2)" stroke="var(--line)" stroke-width="3" />
-      <Text x={c1.x + c1.w * (portrait ? 0.53 : 0.52)} y={portrait ? c1.y + c1.h - 132 : harqY + T.piece * 1.05} text={S('label.harqNerd')} size={portrait ? 24 : 22} kind="small" colour="var(--line)" />
+      <Text x={c1.x + c1.w * (portrait ? 0.53 : 0.52)} y={portrait ? c1.y + c1.h - 132 : harqY + T.piece * 1.05} text={S('label.harqTechnical')} size={portrait ? 24 : 22} kind="small" colour="var(--line)" />
     </g>
   {/if}
-  {#if !nerd}
+  {#if !technical}
     <Text x={c1.x + c1.w / 2} y={c1.y + c1.h - (portrait || compact ? 46 : 28)} text={S(st.phase === 'combine' ? 'label.combine' : st.phase === 'nack' ? (focus === 'phone' ? 'label.nack' : 'label.regrant') : st.phase === 'ack' ? 'label.ack' : 'label.check')} size={T.small} kind="big" colour={st.phase === 'nack' ? 'var(--berry-ink)' : 'var(--teal-ink)'} />
   {/if}
 </g>
 
-{#if nerd && !compact}
+{#if technical && !compact}
   <g opacity="0.94">
     <rect x={c1.x + 34} y={c1.y + c1.h - (portrait ? 88 : 82)} width={c1.w - 68} height={portrait ? 72 : 42} rx="14" fill="var(--paper-2)" stroke="var(--line)" stroke-width="3" opacity="0.86" />
     {#if portrait}

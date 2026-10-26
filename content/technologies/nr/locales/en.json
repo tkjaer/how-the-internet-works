@@ -1,12 +1,12 @@
 {
   "name": "5G",
-  "kid": "Your phone talks to the tower by radio. The tower aims a beam right at your phone, so lots of phones can talk at once.",
-  "nerd": "5G NR in the 3.5 GHz band: OFDMA with 30 kHz sub-carriers, beamformed by a massive-MIMO panel, scheduled every 0.5 ms slot.",
+  "simple": "Your phone talks to the tower by radio. The tower aims a beam right at your phone, so lots of phones can talk at once.",
+  "technical": "5G NR in the 3.5 GHz band: OFDMA with 30 kHz sub-carriers, beamformed by a massive-MIMO panel, scheduled every 0.5 ms slot.",
   "tag": "NR · 100 MHz · 256-QAM",
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Beamforming", "title": "Beamforming", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Orthogonal_frequency-division_multiple_access", "title": "OFDMA", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Orthogonal_frequency-division_multiple_access", "title": "OFDMA", "level": "technical" },
     { "url": "https://en.wikipedia.org/wiki/5G", "title": "5G", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/5G_NR", "title": "5G NR", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/5G_NR", "title": "5G NR", "level": "technical" }
   ]
 }

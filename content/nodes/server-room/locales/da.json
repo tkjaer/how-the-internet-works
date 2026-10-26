@@ -4,15 +4,15 @@
     "title": "Inde i serverrummet"
   },
   "1995": {
-    "kid": "Et lille rum hos et universitet eller et firma langt væk i Amerika. Hjemmesiden bor her, på én computer på en hylde. Tryk for at se indenfor!",
-    "nerd": "Hostingstedets serverrum: T1’eren fra backbonen ender på dets router, og en 10 Mbit/s-hub forbinder routeren med webserveren. Tryk for at folde det ud.",
+    "simple": "Et lille rum hos et universitet eller et firma langt væk i Amerika. Hjemmesiden bor her, på én computer på en hylde. Tryk for at se indenfor!",
+    "technical": "Hostingstedets serverrum: T1’eren fra backbonen ender på dets router, og en 10 Mbit/s-hub forbinder routeren med webserveren. Tryk for at folde det ud.",
     "tag": "T1 · 10BASE-T-hub",
     "inside": {
-      "kid": "Din pakke kommer ind ad den lejede linje til rummets router. En hub kopierer den ud i alle rummets kabler, og webserveren kan se, at den er til den. Serveren finder siden på sin egen disk og sender den tilbage samme vej. Der er ingen kopier andre steder: den ene computer er hjemmesiden.",
-      "nerd": "Et hostingsted i 1995: T1’eren ender på stedets router (Cisco HDLC på en seriel port), som router ud på ét 10BASE-T-segment. Hubben gentager hver ramme ud af hver port, og webserverens netkort beholder dem, der er adresseret til dens MAC. Ingen load balancer, ingen cache, ingen origin: serverens disk har den eneste kopi.",
+      "simple": "Din pakke kommer ind ad den lejede linje til rummets router. En hub kopierer den ud i alle rummets kabler, og webserveren kan se, at den er til den. Serveren finder siden på sin egen disk og sender den tilbage samme vej. Der er ingen kopier andre steder: den ene computer er hjemmesiden.",
+      "technical": "Et hostingsted i 1995: T1’eren ender på stedets router (Cisco HDLC på en seriel port), som router ud på ét 10BASE-T-segment. Hubben gentager hver ramme ud af hver port, og webserverens netkort beholder dem, der er adresseret til dens MAC. Ingen load balancer, ingen cache, ingen origin: serverens disk har den eneste kopi.",
       "describe": {
-        "kid": "Et lille rum med tre hylder med beige computere langs væggen. Vejen kommer fra det store netværks router ad en lejet linje til rummets router og så ad tynde kabler gennem en flad kasse med små lamper til én høj computer. Pakker går ind, og siden kommer ud igen.",
-        "nerd": "Serverrummet starter ved backbonens PoP og går ad T1’eren til stedets router og så over 10BASE-T gennem en repeater-hub til webserveren, et beige tårn. Hylder med tårn-computere står langs bagvæggen. Forespørgsler og sidepakker bevæger sig i hver sin retning."
+        "simple": "Et lille rum med tre hylder med beige computere langs væggen. Vejen kommer fra det store netværks router ad en lejet linje til rummets router og så ad tynde kabler gennem en flad kasse med små lamper til én høj computer. Pakker går ind, og siden kommer ud igen.",
+        "technical": "Serverrummet starter ved backbonens PoP og går ad T1’eren til stedets router og så over 10BASE-T gennem en repeater-hub til webserveren, et beige tårn. Hylder med tårn-computere står langs bagvæggen. Forespørgsler og sidepakker bevæger sig i hver sin retning."
       }
     }
   },

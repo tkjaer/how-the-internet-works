@@ -3,7 +3,7 @@
   // A dial-up call: the computer's modem phones the internet company through the telephone exchange. Arriving plays
   // the handshake once (beeps, ring, the answer tone, the training screech) as waves on the line and words in a
   // speech bubble; with sound on, the modem's speaker plays it too, briefly. Cards: the handshake's steps, how slowly a
-  // photo came in, and the phone being busy (kid) or the call's own timeslot on the trunk (nerd). PPP has its own dive.
+  // photo came in, and the phone being busy (simple) or the call's own timeslot on the trunk (technical). PPP has its own dive.
   import { untrack } from 'svelte';
   import { Node, Text, arrived, labelInk, legibleSize, nameOf, soundOut, strings, textBox, view, type LinkSubject } from '$core/api';
   import { toScene, trackMatrix } from '../copper-pulses/copper';
@@ -14,7 +14,7 @@
   let { subject, time }: { subject: LinkSubject; time: number } = $props();
   const S = strings('scene.modem-call');
   const legible = legibleSize();
-  const nerd = $derived(S('mode') === 'nerd');
+  const technical = $derived(S('mode') === 'technical');
   const o = $derived(view.orient);
   const portrait = $derived(o === 'portrait');
   const compact = $derived(o === 'landscape' && view.vp.h < 470);
@@ -175,7 +175,7 @@
 {#if !compact}<text x={B.x + B.w / 2} y={B.y + B.h - (portrait ? 30 : 20)} text-anchor="middle" font-size={L.text.body - 2} font-weight="800" font-family="var(--label-font)" fill="var(--line)">{S('slowSub')}</text>{/if}
 
 <Card x={C.x} y={C.y} w={C.w} h={C.h} tint="var(--berry)" />
-{#if nerd}
+{#if technical}
   <!-- the exchange gives the call its own timeslot on the trunk (an E1: 32 slots, 8000 times a second), held all call -->
   {@const cols = 8}
   {@const cell = Math.min((C.w - 80) / cols, (C.h - (compact ? 190 : 200)) / 4)}

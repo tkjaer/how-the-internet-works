@@ -1,31 +1,31 @@
 {
   "name": "Mobilkerne",
-  "kid": "Mobilselskabets kontrolrum. Det tjekker dit SIM-kort, pakker dine pakker ud af mastens tunnel og giver dem en internetadresse.",
-  "nerd": "5G-kernen (5GC): AMF/SMF håndterer login og sessioner; UPF’en afslutter GTP-U-tunnelen, håndhæver politikker og laver carrier-grade NAT mod internettet.",
+  "simple": "Mobilselskabets kontrolrum. Det tjekker dit SIM-kort, pakker dine pakker ud af mastens tunnel og giver dem en internetadresse.",
+  "technical": "5G-kernen (5GC): AMF/SMF håndterer login og sessioner; UPF’en afslutter GTP-U-tunnelen, håndhæver politikker og laver carrier-grade NAT mod internettet.",
   "tag": "5GC · UPF · CGNAT",
   "peek": {
     "up": {
-      "kid": "Mobilnettets kerne åbner tunnel-kuverten og bytter så telefonens adresse og dørnummer ud med sine egne, som mange telefoner deler.",
-      "nerd": "UPF’en afslutter GTP-U-tunnelen (via TEID), så omskriver carrier-grade NAT afsenderadresse og -port, retter checksummerne og router videre (TTL − 1)."
+      "simple": "Mobilnettets kerne åbner tunnel-kuverten og bytter så telefonens adresse og dørnummer ud med sine egne, som mange telefoner deler.",
+      "technical": "UPF’en afslutter GTP-U-tunnelen (via TEID), så omskriver carrier-grade NAT afsenderadresse og -port, retter checksummerne og router videre (TTL − 1)."
     },
     "down": {
-      "kid": "Mobilnettets kerne slår op, hvilken telefon der spurgte, skifter adressen tilbage og putter pakken i tunnelen til den rigtige mast.",
-      "nerd": "CGNAT retur (adresse og port fra tabellen), så tunnellerer UPF’en den i GTP-U til telefonens gNB (TEID)."
+      "simple": "Mobilnettets kerne slår op, hvilken telefon der spurgte, skifter adressen tilbage og putter pakken i tunnelen til den rigtige mast.",
+      "technical": "CGNAT retur (adresse og port fra tabellen), så tunnellerer UPF’en den i GTP-U til telefonens gNB (TEID)."
     }
   },
   "2010": {
     "name": "Mobilport",
-    "kid": "Mobilselskabets port til internettet. Den pakker dine pakker ud af radiostyringens tunnel og giver dem en internetadresse, som mange telefoner deles om.",
-    "nerd": "GGSN’en i 3G-pakkekernen: den afslutter GTP-U-tunnelen (én PDP-kontekst pr. telefon), giver telefonen dens adresse, anvender politik og laver NAT mod internettet (Gi).",
+    "simple": "Mobilselskabets port til internettet. Den pakker dine pakker ud af radiostyringens tunnel og giver dem en internetadresse, som mange telefoner deles om.",
+    "technical": "GGSN’en i 3G-pakkekernen: den afslutter GTP-U-tunnelen (én PDP-kontekst pr. telefon), giver telefonen dens adresse, anvender politik og laver NAT mod internettet (Gi).",
     "tag": "GGSN · Gi · NAT",
     "peek": {
       "up": {
-        "kid": "Porten åbner tunnel-kuverten og bytter så din telefons adresse og dørnummer ud med sin egen, som mange telefoner deles om.",
-        "nerd": "GGSN’en afslutter GTP-U-tunnelen (via TEID), så omskriver NAT kildeadresse og port, retter checksummerne og router videre (TTL − 1)."
+        "simple": "Porten åbner tunnel-kuverten og bytter så din telefons adresse og dørnummer ud med sin egen, som mange telefoner deles om.",
+        "technical": "GGSN’en afslutter GTP-U-tunnelen (via TEID), så omskriver NAT kildeadresse og port, retter checksummerne og router videre (TTL − 1)."
       },
       "down": {
-        "kid": "Porten slår op, hvilken telefon der spurgte, skifter adressen tilbage og putter pakken i tunnelen til den rigtige radiostyring.",
-        "nerd": "NAT baglæns (adresse og port fra tabellen), så tunnelerer GGSN’en den i GTP-U til telefonens RNC (TEID)."
+        "simple": "Porten slår op, hvilken telefon der spurgte, skifter adressen tilbage og putter pakken i tunnelen til den rigtige radiostyring.",
+        "technical": "NAT baglæns (adresse og port fra tabellen), så tunnelerer GGSN’en den i GTP-U til telefonens RNC (TEID)."
       }
     }
   }

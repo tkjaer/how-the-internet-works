@@ -1,19 +1,19 @@
 {
   "name": "Data centre",
-  "kid": "A big building full of computers in tall cupboards, right next to the exchange. Tap it to look inside!",
-  "nerd": "The video company’s point of presence (PoP): an edge router, load balancers and a leaf–spine fabric of server racks. Tap to unfold it.",
+  "simple": "A big building full of computers in tall cupboards, right next to the exchange. Tap it to look inside!",
+  "technical": "The video company’s point of presence (PoP): an edge router, load balancers and a leaf–spine fabric of server racks. Tap to unfold it.",
   "tag": "CDN PoP · leaf–spine",
   "inside": {
     "title": "Inside the data centre",
-    "kid": "Your parcel comes in through the building’s front door. A traffic warden picks a computer that isn’t busy, a big crossroads sends the parcel to the right cupboard, and the cupboard’s switch hands it to the video server. If the server doesn’t have the video yet, it fetches it from the main copy far away.",
-    "nerd": "An edge PoP: the edge router takes the cross-connect from the exchange, an L4 load balancer spreads connections for the service address (VIP) over the cache servers, and a leaf–spine (Clos) fabric gives every rack many equal-cost paths. A cache miss goes back to the origin in a cloud region.",
+    "simple": "Your parcel comes in through the building’s front door. A traffic warden picks a computer that isn’t busy, a big crossroads sends the parcel to the right cupboard, and the cupboard’s switch hands it to the video server. If the server doesn’t have the video yet, it fetches it from the main copy far away.",
+    "technical": "An edge PoP: the edge router takes the cross-connect from the exchange, an L4 load balancer spreads connections for the service address (VIP) over the cache servers, and a leaf–spine (Clos) fabric gives every rack many equal-cost paths. A cache miss goes back to the origin in a cloud region.",
     "describe": {
-      "kid": "Inside a big hall stand rows of tall cupboards. The path comes from the exchange to the edge router, the load balancer, a spine switch, a rack switch and the video server. A dashed road leads far away to the main copy. Parcels go in and video comes back out.",
-      "nerd": "The PoP view starts at the IXP and zigzags through the edge router, L4 load balancer, spine, top-of-rack leaf and the cache server, over short fibre. A dashed branch from the cache leads to the origin in a cloud region. Request and video packets move in opposite directions."
+      "simple": "Inside a big hall stand rows of tall cupboards. The path comes from the exchange to the edge router, the load balancer, a spine switch, a rack switch and the video server. A dashed road leads far away to the main copy. Parcels go in and video comes back out.",
+      "technical": "The PoP view starts at the IXP and zigzags through the edge router, L4 load balancer, spine, top-of-rack leaf and the cache server, over short fibre. A dashed branch from the cache leads to the origin in a cloud region. Request and video packets move in opposite directions."
     }
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Data_center", "title": "Data center", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Content_delivery_network", "title": "Content delivery network", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Content_delivery_network", "title": "Content delivery network", "level": "technical" }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "name": "Telefontrunk",
   "1995": {
-    "kid": "En tyk telefonlinje mellem mobilselskabets central og det almindelige telefonselskabs. Den bærer 30 opkald på én gang, hver på sin egen plads, og dit er et af dem og bipper som et modem.",
-    "nerd": "En E1-trunk mellem MSC’en og telefonnettets central: 30 opkald à 64 kbit/s, A-law PCM, og luke 16 til SS7 (ISUP sætter hvert opkald op). Din luke bærer IWF’ens V.32-modemtoner på 9,6 kbit/s, som et modem hos udbyderen svarer.",
+    "simple": "En tyk telefonlinje mellem mobilselskabets central og det almindelige telefonselskabs. Den bærer 30 opkald på én gang, hver på sin egen plads, og dit er et af dem og bipper som et modem.",
+    "technical": "En E1-trunk mellem MSC’en og telefonnettets central: 30 opkald à 64 kbit/s, A-law PCM, og luke 16 til SS7 (ISUP sætter hvert opkald op). Din luke bærer IWF’ens V.32-modemtoner på 9,6 kbit/s, som et modem hos udbyderen svarer.",
     "tag": "E1 · SS7 · 64 kbit/s"
   }
 }

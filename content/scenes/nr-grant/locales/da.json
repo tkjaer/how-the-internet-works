@@ -1,42 +1,42 @@
 {
   "title": "5G-pladsbilletter",
-  "kid": "Din telefon får en lille pladsbillet fra masten, og bagefter bliver hver radiobid tjekket. Er en bid utydelig, siger masten eller telefonen: “igen!”",
-  "nerd": "NR-planlægning og HARQ omkring én UE: SR på PUCCH, grant-DCI på PDCCH med CRC scrambled af C-RNTI 0x4601, derefter MAC/RLC/PDCP-bidder i 30 kHz SCS og 0,5 ms slots.",
+  "simple": "Din telefon får en lille pladsbillet fra masten, og bagefter bliver hver radiobid tjekket. Er en bid utydelig, siger masten eller telefonen: “igen!”",
+  "technical": "NR-planlægning og HARQ omkring én UE: SR på PUCCH, grant-DCI på PDCCH med CRC scrambled af C-RNTI 0x4601, derefter MAC/RLC/PDCP-bidder i 30 kHz SCS og 0,5 ms slots.",
   "role": {
     "bridge": {
       "title": "Masten deler radiopladser ud",
-      "kid": "Masten er klassens hjælper. Din telefon rækker hånden op, masten giver telefon nr. 4601 en tur og tjekker hver bid. Nedenunder rejser kuverten som en radiostråle.",
-      "nerd": "Ved gNB’en fører en uplink-SR på PUCCH til et UL-grant i DCI på PDCCH, hvor CRC’en er scrambled med UE’ens C-RNTI 0x4601. Scheduleren tildeler slot 6, RB 20–31. Hvis PUSCH fejler CRC, sender gNB’en ikke et NACK: den planlægger en gensending med en ny DCI til HARQ-proces 7 med uændret NDI (RV 2) og soft-combiner kopierne. RLC ARQ ovenover fanger resterende tab, med PDCP-kryptering plus SN bevaret.",
+      "simple": "Masten er klassens hjælper. Din telefon rækker hånden op, masten giver telefon nr. 4601 en tur og tjekker hver bid. Nedenunder rejser kuverten som en radiostråle.",
+      "technical": "Ved gNB’en fører en uplink-SR på PUCCH til et UL-grant i DCI på PDCCH, hvor CRC’en er scrambled med UE’ens C-RNTI 0x4601. Scheduleren tildeler slot 6, RB 20–31. Hvis PUSCH fejler CRC, sender gNB’en ikke et NACK: den planlægger en gensending med en ny DCI til HARQ-proces 7 med uændret NDI (RV 2) og soft-combiner kopierne. RLC ARQ ovenover fanger resterende tab, med PDCP-kryptering plus SN bevaret.",
       "describe": {
-        "kid": "Vejen viser telefon, mast og mobilkerne, og masten er størst. På det første kort beder telefonen om en tur. Mastens liste lyser ved telefon nummer 4601 i slot 6. På det andet kort flytter radiobidder sig, én bliver udtværet, “Igen!” dukker op, og en tydelig bid får flueben.",
-        "nerd": "gNB-kortet fremhæver vejen fra anmodning til grant for C-RNTI 0x4601, slot 6 og RB 20 til 31. HARQ-kortet animerer en dårlig transportblok, et nyt grant med uændret NDI, gensending med RV 2, soft combining og en afkrydset blok. Mærker viser logisk kanal, RLC, PDCP og QoS-flow."
+        "simple": "Vejen viser telefon, mast og mobilkerne, og masten er størst. På det første kort beder telefonen om en tur. Mastens liste lyser ved telefon nummer 4601 i slot 6. På det andet kort flytter radiobidder sig, én bliver udtværet, “Igen!” dukker op, og en tydelig bid får flueben.",
+        "technical": "gNB-kortet fremhæver vejen fra anmodning til grant for C-RNTI 0x4601, slot 6 og RB 20 til 31. HARQ-kortet animerer en dårlig transportblok, et nyt grant med uændret NDI, gensending med RV 2, soft combining og en afkrydset blok. Mærker viser logisk kanal, RLC, PDCP og QoS-flow."
       }
     },
     "endpoint": {
       "title": "Telefonen leder efter sit nummer",
-      "kid": "Din telefon læser mastens liste og samler kun bidder op med telefon nr. 4601. Hvis en bid er utydelig, siger den “igen!”, beholder også den utydelige kopi og lægger de to sammen til én tydelig bid. Nedenunder rejser kuverten som en radiostråle.",
-      "nerd": "UE’en overvåger PDCCH-kandidater for DCI, hvis CRC kan unscrambles med C-RNTI 0x4601, og modtager derefter sin PDSCH-tildeling. Den sender HARQ ACK/NACK efter omtrent 1 ms; incremental redundancy og soft combining genskaber transportblokken, før RLC/PDCP ser den.",
+      "simple": "Din telefon læser mastens liste og samler kun bidder op med telefon nr. 4601. Hvis en bid er utydelig, siger den “igen!”, beholder også den utydelige kopi og lægger de to sammen til én tydelig bid. Nedenunder rejser kuverten som en radiostråle.",
+      "technical": "UE’en overvåger PDCCH-kandidater for DCI, hvis CRC kan unscrambles med C-RNTI 0x4601, og modtager derefter sin PDSCH-tildeling. Den sender HARQ ACK/NACK efter omtrent 1 ms; incremental redundancy og soft combining genskaber transportblokken, før RLC/PDCP ser den.",
       "describe": {
-        "kid": "Telefonen er det største stop på vejen og holder øje med mastens liste. En cirkel leder, til telefon nummer 4601 lyser. Så rejser en kuvert med 4601 over radiostrålen. En udtværet bid beder om “Igen!”, og to kopier samles til én tydelig bid.",
-        "nerd": "UE-visningen scanner PDCCH-rækker for C-RNTI 0x4601 og viser derefter PDSCH-tildelingen til slot 6 og RB 20 til 31. HARQ-kortet viser NACK-boblen, gensendt redundans, soft combining til en afkrydset blok og RLC- og PDCP-sekvensmærker."
+        "simple": "Telefonen er det største stop på vejen og holder øje med mastens liste. En cirkel leder, til telefon nummer 4601 lyser. Så rejser en kuvert med 4601 over radiostrålen. En udtværet bid beder om “Igen!”, og to kopier samles til én tydelig bid.",
+        "technical": "UE-visningen scanner PDCCH-rækker for C-RNTI 0x4601 og viser derefter PDSCH-tildelingen til slot 6 og RB 20 til 31. HARQ-kortet viser NACK-boblen, gensendt redundans, soft combining til en afkrydset blok og RLC- og PDCP-sekvensmærker."
       }
     }
   },
   "sealed": {
     "title": "NR passerer forbi",
-    "kid": "Dette stop bærer 5G-kuverten, men vælger ikke radiopladserne.",
-    "nerd": "NR MAC/RLC/PDCP-rammen giver kun mening ved UE- og gNB-enderne af radiolinket."
+    "simple": "Dette stop bærer 5G-kuverten, men vælger ikke radiopladserne.",
+    "technical": "NR MAC/RLC/PDCP-rammen giver kun mening ved UE- og gNB-enderne af radiolinket."
   },
   "card": {
     "seat": "At bede om en plads",
     "harq": "Kom den frem?"
   },
   "label": {
-    "ticketKid": "Telefon nr. {n}",
+    "ticketSimple": "Telefon nr. {n}",
     "ticketPortrait": "Nr. {n} · slot 6",
-    "ticketNerd": "C-RNTI {n}",
-    "grantKid": "slot 6",
-    "grantNerd": "slot 6 · RB 20–31",
+    "ticketTechnical": "C-RNTI {n}",
+    "grantSimple": "slot 6",
+    "grantTechnical": "slot 6 · RB 20–31",
     "ask": "✋ må jeg sende?",
     "schedule": "Mastens liste",
     "phoneNo": "Telefon nr. {n}",
@@ -50,7 +50,7 @@
     "combine": "to kopier samles",
     "ack": "ACK: tydelig bid",
     "dci": "DCI: C-RNTI · HARQ 7",
-    "harqNerd": "HARQ 7 · NDI 1 · RV 2",
+    "harqTechnical": "HARQ 7 · NDI 1 · RV 2",
     "sn": "LCID 4 · RLC SN {rlcsn} · PDCP SN {pdcpsn} · QFI 9",
     "snShort": "L4 · R{rlcsn} · P{pdcpsn} · Q9",
     "snA": "LCID 4 · RLC SN {rlcsn}",
@@ -61,52 +61,52 @@
     "afterSeat": "slot 6 · RB 44–51"
   },
   "tag": {
-    "bridgeKid": "masten planlægger",
-    "endpointKid": "kun mit nummer",
-    "bridgeNerd": "SR → DCI-grant",
-    "endpointNerd": "C-RNTI-lytning",
+    "bridgeSimple": "masten planlægger",
+    "endpointSimple": "kun mit nummer",
+    "bridgeTechnical": "SR → DCI-grant",
+    "endpointTechnical": "C-RNTI-lytning",
     "harq": "16 HARQ · soft combining · ~1 ms"
   },
   "2010": {
     "title": "3G-turbilletter",
-    "kid": "Din telefon deler mastens radiobølge med alle telefoner i nærheden. Masten giver hver telefon et nummer og en tur, 2 ms ad gangen, og tjekker hver bid. Hvis en er udtværet, siger den “igen!”",
-    "nerd": "HSDPA-planlægning og HARQ omkring én UE: NodeB’ens MAC-hs vælger, hvem der får hver 2 ms TTI, melder det på HS-SCCH maskeret med UE’ens H-RNTI 0x2317 og sender så på op til 15 delte HS-PDSCH-koder.",
+    "simple": "Din telefon deler mastens radiobølge med alle telefoner i nærheden. Masten giver hver telefon et nummer og en tur, 2 ms ad gangen, og tjekker hver bid. Hvis en er udtværet, siger den “igen!”",
+    "technical": "HSDPA-planlægning og HARQ omkring én UE: NodeB’ens MAC-hs vælger, hvem der får hver 2 ms TTI, melder det på HS-SCCH maskeret med UE’ens H-RNTI 0x2317 og sender så på op til 15 delte HS-PDSCH-koder.",
     "role": {
       "bridge": {
         "title": "Masten deler 2 ms-ture ud",
-        "kid": "Masten er klassens hjælper. Telefonerne rækker hånden op, masten giver telefon nr. 2317 en tur på 2 ms og tjekker så hver bid. Nedenunder rejser kuverten på den radiobølge, alle deler.",
-        "nerd": "I NodeB’en planlægger MAC-hs hver 2 ms TTI ud fra UE’ernes CQI-rapporter: en HS-SCCH til H-RNTI 0x2317 giver TTI 6, 5 koder (SF16, 16-QAM). UE’en svarer ACK/NACK på HS-DPCCH omkring 5 ms senere; op til 8 HARQ-processer holder røret fyldt.",
+        "simple": "Masten er klassens hjælper. Telefonerne rækker hånden op, masten giver telefon nr. 2317 en tur på 2 ms og tjekker så hver bid. Nedenunder rejser kuverten på den radiobølge, alle deler.",
+        "technical": "I NodeB’en planlægger MAC-hs hver 2 ms TTI ud fra UE’ernes CQI-rapporter: en HS-SCCH til H-RNTI 0x2317 giver TTI 6, 5 koder (SF16, 16-QAM). UE’en svarer ACK/NACK på HS-DPCCH omkring 5 ms senere; op til 8 HARQ-processer holder røret fyldt.",
         "describe": {
-          "kid": "Vejen viser telefon, mast og radiostyring, med masten tegnet størst. På det første kort beder telefonen om en tur. Mastens liste lyser telefon nummer 2317 op i tur 6. På det andet kort bevæger radiobidder sig, én bliver udtværet, “Igen!” dukker op, og en ren bid får et flueben.",
-          "nerd": "NodeB-kortet fremhæver HS-SCCH for H-RNTI 0x2317, TTI 6 og 5 koder. HARQ-kortet animerer en dårlig transportblok, NACK, genudsendelse med en ny redundansversion, soft combining og ACK. Mærker viser prioritetskøen, TSN og RLC-sekvensnummeret."
+          "simple": "Vejen viser telefon, mast og radiostyring, med masten tegnet størst. På det første kort beder telefonen om en tur. Mastens liste lyser telefon nummer 2317 op i tur 6. På det andet kort bevæger radiobidder sig, én bliver udtværet, “Igen!” dukker op, og en ren bid får et flueben.",
+          "technical": "NodeB-kortet fremhæver HS-SCCH for H-RNTI 0x2317, TTI 6 og 5 koder. HARQ-kortet animerer en dårlig transportblok, NACK, genudsendelse med en ny redundansversion, soft combining og ACK. Mærker viser prioritetskøen, TSN og RLC-sekvensnummeret."
         }
       },
       "endpoint": {
         "title": "Telefonen leder efter sit nummer",
-        "kid": "Din telefon lytter til mastens liste og samler kun bidder op, der er mærket telefon nr. 2317. Hvis en er udtværet, siger den “igen!”, beholder også den udtværede kopi og lægger de to sammen til én tydelig bid.",
-        "nerd": "UE’en holder øje med op til fire HS-SCCH’er efter sin H-RNTI 0x2317 og afkoder så sine HS-PDSCH-koder to slots senere. Den sender ACK/NACK og CQI på HS-DPCCH; soft combining redder blokken, før MAC-hs sorterer efter TSN, og RLC ser den.",
+        "simple": "Din telefon lytter til mastens liste og samler kun bidder op, der er mærket telefon nr. 2317. Hvis en er udtværet, siger den “igen!”, beholder også den udtværede kopi og lægger de to sammen til én tydelig bid.",
+        "technical": "UE’en holder øje med op til fire HS-SCCH’er efter sin H-RNTI 0x2317 og afkoder så sine HS-PDSCH-koder to slots senere. Den sender ACK/NACK og CQI på HS-DPCCH; soft combining redder blokken, før MAC-hs sorterer efter TSN, og RLC ser den.",
         "describe": {
-          "kid": "Telefonen er det største stop på vejen og holder øje med mastens liste. En cirkel scanner, indtil telefon nummer 2317 lyser op. Så rejser en kuvert mærket 2317 over radiobølgen. En udtværet bid beder om “Igen!”, og to kopier bliver til én tydelig bid.",
-          "nerd": "UE-visningen scanner HS-SCCH-rækker efter H-RNTI 0x2317 og viser så sin tildeling til TTI 6 og 5 koder. HARQ-kortet viser NACK-boblen, den genudsendte redundansversion, soft combining til en tjekket blok og mærker for kø, TSN og RLC."
+          "simple": "Telefonen er det største stop på vejen og holder øje med mastens liste. En cirkel scanner, indtil telefon nummer 2317 lyser op. Så rejser en kuvert mærket 2317 over radiobølgen. En udtværet bid beder om “Igen!”, og to kopier bliver til én tydelig bid.",
+          "technical": "UE-visningen scanner HS-SCCH-rækker efter H-RNTI 0x2317 og viser så sin tildeling til TTI 6 og 5 koder. HARQ-kortet viser NACK-boblen, den genudsendte redundansversion, soft combining til en tjekket blok og mærker for kø, TSN og RLC."
         }
       }
     },
     "at": {
       "rnc": {
         "title": "Styringen tjekker rækkefølgen",
-        "kid": "Styringen bag masten deler ikke ture ud: det gør masten selv, hurtigt. Styringen nummererer bidderne, låser dem, så ingen kan lytte med, og spørger igen efter enhver bid, masten ikke kunne redde.",
-        "nerd": "RLC (acknowledged mode) ender her, i RNC’en: den krypterer (KASUMI), opdeler og nummererer PDU’erne og genudsender med ARQ, hvad HARQ missede, titals ms senere. Planlægningen og HARQ på 2 ms, vist her, kører i NodeB’en.",
+        "simple": "Styringen bag masten deler ikke ture ud: det gør masten selv, hurtigt. Styringen nummererer bidderne, låser dem, så ingen kan lytte med, og spørger igen efter enhver bid, masten ikke kunne redde.",
+        "technical": "RLC (acknowledged mode) ender her, i RNC’en: den krypterer (KASUMI), opdeler og nummererer PDU’erne og genudsender med ARQ, hvad HARQ missede, titals ms senere. Planlægningen og HARQ på 2 ms, vist her, kører i NodeB’en.",
         "describe": {
-          "kid": "Vejen viser telefon, mast og radiostyring. Kortene viser, hvordan masten deler ture ud og tjekker bidder; denne styring nummererer dem og spørger igen efter tabte.",
-          "nerd": "Scenen viser NodeB’ens HS-SCCH-tildeling til H-RNTI 0x2317 og dens HARQ-løkke. RNC’en afslutter RLC: mærkerne viser RLC-sekvensnummeret, den genudsender efter."
+          "simple": "Vejen viser telefon, mast og radiostyring. Kortene viser, hvordan masten deler ture ud og tjekker bidder; denne styring nummererer dem og spørger igen efter tabte.",
+          "technical": "Scenen viser NodeB’ens HS-SCCH-tildeling til H-RNTI 0x2317 og dens HARQ-løkke. RNC’en afslutter RLC: mærkerne viser RLC-sekvensnummeret, den genudsender efter."
         }
       }
     },
     "label": {
       "ticketPortrait": "Nr. {n} · tur 6",
-      "ticketNerd": "H-RNTI {n}",
-      "grantKid": "tur 6",
-      "grantNerd": "TTI 6 · 5 koder",
+      "ticketTechnical": "H-RNTI {n}",
+      "grantSimple": "tur 6",
+      "grantTechnical": "TTI 6 · 5 koder",
       "sn": "Kø 1 · TSN {tsn} · RLC SN {rlcsn}",
       "snShort": "K1 · T{tsn} · R{rlcsn}",
       "before": "0x1c40",

@@ -1,7 +1,7 @@
 {
   "name": {
-    "kid": "Ein US-Netz",
-    "nerd": "Backbone · AS64504"
+    "simple": "Ein US-Netz",
+    "technical": "Backbone · AS64504"
   },
   "learnMore": [
     { "url": "https://de.wikipedia.org/wiki/Internet-Backbone", "title": "Internet-Backbone", "level": "both" }

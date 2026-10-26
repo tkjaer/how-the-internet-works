@@ -1,20 +1,20 @@
 {
   "name": "Funkmast",
-  "kid": "Ein Mast mit klugen Antennen. Er spricht per Funk mit allen Telefonen in der Nähe und schickt ihre Päckchen durch einen Glasfaden weiter.",
-  "nerd": "Eine 5G-Basisstation (gNB): Massive-MIMO-Antennenpaneele, der Radio-Scheduler und ein Glasfaser-Backhaul, der Nutzerverkehr (GTP-U) zum Mobile Core tunnelt.",
+  "simple": "Ein Mast mit klugen Antennen. Er spricht per Funk mit allen Telefonen in der Nähe und schickt ihre Päckchen durch einen Glasfaden weiter.",
+  "technical": "Eine 5G-Basisstation (gNB): Massive-MIMO-Antennenpaneele, der Radio-Scheduler und ein Glasfaser-Backhaul, der Nutzerverkehr (GTP-U) zum Mobile Core tunnelt.",
   "tag": "gNB · n78 · 3,5 GHz",
   "peek": {
     "up": {
-      "kid": "Der Mast nimmt dein Päckchen vom Funk und steckt es in einen Tunnel-Umschlag an den Mobilfunkkern.",
-      "nerd": "Die gNB beendet die Funkstrecke (NR) und tunnelt das Paket in GTP-U zur UPF; die TEID nennt die Session dieses Telefons."
+      "simple": "Der Mast nimmt dein Päckchen vom Funk und steckt es in einen Tunnel-Umschlag an den Mobilfunkkern.",
+      "technical": "Die gNB beendet die Funkstrecke (NR) und tunnelt das Paket in GTP-U zur UPF; die TEID nennt die Session dieses Telefons."
     },
     "down": {
-      "kid": "Der Mast packt den Tunnel-Umschlag aus und schickt dein Päckchen per Funk an dein Telefon.",
-      "nerd": "Die gNB beendet den GTP-U-Tunnel (die TEID sagt welches Telefon) und plant das Paket auf dem Funk (NR)."
+      "simple": "Der Mast packt den Tunnel-Umschlag aus und schickt dein Päckchen per Funk an dein Telefon.",
+      "technical": "Die gNB beendet den GTP-U-Tunnel (die TEID sagt welches Telefon) und plant das Paket auf dem Funk (NR)."
     }
   },
   "learnMore": [
     { "url": "https://de.wikipedia.org/wiki/Mobilfunk-Basisstation", "title": "Mobilfunk-Basisstation", "level": "both" },
-    { "url": "https://de.wikipedia.org/wiki/5G_NR", "title": "5G NR", "level": "nerd" }
+    { "url": "https://de.wikipedia.org/wiki/5G_NR", "title": "5G NR", "level": "technical" }
   ]
 }

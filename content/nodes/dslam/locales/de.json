@@ -1,9 +1,9 @@
 {
   "name": "Straßenschrank",
-  "kid": "In einer Box an deiner Straße enden die Telefonleitungen vieler Häuser. Eine Maschine hier hört ihre Töne und schickt die Päckchen einen Glasfaden entlang weiter.",
-  "nerd": "Ein DSLAM: eine VDSL2-Line-Card pro Bündel Kupferpaare, die ineinander lecken (Crosstalk), und ein Glasfaser-Uplink Richtung ISP.",
+  "simple": "In einer Box an deiner Straße enden die Telefonleitungen vieler Häuser. Eine Maschine hier hört ihre Töne und schickt die Päckchen einen Glasfaden entlang weiter.",
+  "technical": "Ein DSLAM: eine VDSL2-Line-Card pro Bündel Kupferpaare, die ineinander lecken (Crosstalk), und ein Glasfaser-Uplink Richtung ISP.",
   "tag": "DSLAM · VDSL2",
   "learnMore": [
-    { "url": "https://de.wikipedia.org/wiki/Digital_Subscriber_Line_Access_Multiplexer", "title": "Digital Subscriber Line Access Multiplexer", "level": "nerd" }
+    { "url": "https://de.wikipedia.org/wiki/Digital_Subscriber_Line_Access_Multiplexer", "title": "Digital Subscriber Line Access Multiplexer", "level": "technical" }
   ]
 }

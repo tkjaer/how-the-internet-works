@@ -3,12 +3,12 @@
   "to": "To",
   "server": "the video server",
   "name": {
-    "kid": "Address label",
-    "nerd": "IP packet (IPv4)"
+    "simple": "Address label",
+    "technical": "IP packet (IPv4)"
   },
   "note": {
-    "kid": "The address label: who it’s from and who it’s for. Every router on the way reads it.",
-    "nerd": "Best-effort delivery between any two addresses on the internet: routers forward it on the destination address, hop by hop."
+    "simple": "The address label: who it’s from and who it’s for. Every router on the way reads it.",
+    "technical": "Best-effort delivery between any two addresses on the internet: routers forward it on the destination address, hop by hop."
   },
   "line": "Internet Protocol Version 4, Src: {src}, Dst: {dst}",
   "field": {
@@ -46,8 +46,8 @@
     },
     "ttl": {
       "name": {
-        "kid": "Steps left",
-        "nerd": "Time to live"
+        "simple": "Steps left",
+        "technical": "Time to live"
       },
       "about": "Every router takes one off and drops the packet at 0, so a routing loop can’t keep it forever. Inside an MPLS core, the label’s TTL is counted instead and copied back here at the edge."
     },
@@ -61,15 +61,15 @@
     },
     "src": {
       "name": {
-        "kid": "From",
-        "nerd": "Source address"
+        "simple": "From",
+        "technical": "Source address"
       },
       "about": "Who sent it, as seen here: a NAT rewrites it to its own outside address."
     },
     "dst": {
       "name": {
-        "kid": "To",
-        "nerd": "Destination address"
+        "simple": "To",
+        "technical": "Destination address"
       },
       "about": "Where it’s going: routers look it up in their forwarding table (longest prefix match)."
     }
@@ -95,6 +95,6 @@
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Internet_Protocol", "title": "Internet Protocol", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Time_to_live", "title": "Time to live", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Time_to_live", "title": "Time to live", "level": "technical" }
   ]
 }

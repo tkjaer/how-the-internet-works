@@ -4,20 +4,20 @@
     "title": "Inside the server room"
   },
   "1995": {
-    "kid": "A small room at a university or a company far away in America. The web site lives here, on one computer on a shelf. Tap it to look inside!",
-    "nerd": "The hosting site’s server room: the T1 from the backbone ends on its router, and a 10 Mbit/s hub joins the router to the web server. Tap to unfold it.",
+    "simple": "A small room at a university or a company far away in America. The web site lives here, on one computer on a shelf. Tap it to look inside!",
+    "technical": "The hosting site’s server room: the T1 from the backbone ends on its router, and a 10 Mbit/s hub joins the router to the web server. Tap to unfold it.",
     "tag": "T1 · 10BASE-T hub",
     "inside": {
-      "kid": "Your parcel comes in on the rented line to the room’s router. A hub copies it down every cable in the room, and the web server sees that it’s for it. The server finds the page on its own disk and sends it back the same way. There are no copies anywhere else: this one computer is the web site.",
-      "nerd": "A 1995 hosting site: the T1 ends on the site’s router (Cisco HDLC on a serial port), which routes onto one 10BASE-T segment. The hub repeats every frame out of every port, and the web server’s NIC keeps the ones addressed to its MAC. No load balancer, no cache, no origin: the server’s disk holds the only copy.",
+      "simple": "Your parcel comes in on the rented line to the room’s router. A hub copies it down every cable in the room, and the web server sees that it’s for it. The server finds the page on its own disk and sends it back the same way. There are no copies anywhere else: this one computer is the web site.",
+      "technical": "A 1995 hosting site: the T1 ends on the site’s router (Cisco HDLC on a serial port), which routes onto one 10BASE-T segment. The hub repeats every frame out of every port, and the web server’s NIC keeps the ones addressed to its MAC. No load balancer, no cache, no origin: the server’s disk holds the only copy.",
       "describe": {
-        "kid": "A small room with three shelves of beige computers along the wall. The path comes in from the big network’s router on a rented line to the room’s router, then on thin cables through a flat box with little lights to one tall computer. Parcels go in and the page comes back out.",
-        "nerd": "The server room starts at the backbone’s PoP and runs on the T1 to the site’s router, then over 10BASE-T through a repeater hub to the web server, a beige tower. Shelves of tower computers line the back wall. Request and page packets move in opposite directions."
+        "simple": "A small room with three shelves of beige computers along the wall. The path comes in from the big network’s router on a rented line to the room’s router, then on thin cables through a flat box with little lights to one tall computer. Parcels go in and the page comes back out.",
+        "technical": "The server room starts at the backbone’s PoP and runs on the T1 to the site’s router, then over 10BASE-T through a repeater hub to the web server, a beige tower. Shelves of tower computers line the back wall. Request and page packets move in opposite directions."
       }
     }
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Server_room", "title": "Server room", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Web_hosting_service", "title": "Web hosting service", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Web_hosting_service", "title": "Web hosting service", "level": "technical" }
   ]
 }

@@ -1,14 +1,14 @@
 {
   "name": "Transit provider",
-  "kid": "If there’s no shortcut, your internet company pays a bigger network to carry the parcel.",
-  "nerd": "Paid IP transit from a tier-1 or tier-2 provider: a full routing table and reach to everything.",
+  "simple": "If there’s no shortcut, your internet company pays a bigger network to carry the parcel.",
+  "technical": "Paid IP transit from a tier-1 or tier-2 provider: a full routing table and reach to everything.",
   "tag": "Tier-1 · paid transit",
   "1995": {
-    "kid": "Your internet company is small, so it rents one line to a bigger network in Copenhagen, which carries its parcels to the rest of the world.",
-    "nerd": "The upstream: a bigger Danish network selling IP transit over a leased E1 (2 Mbit/s), with its own circuits across the Atlantic. Like most small ISPs, ours just points a default route at it.",
+    "simple": "Your internet company is small, so it rents one line to a bigger network in Copenhagen, which carries its parcels to the rest of the world.",
+    "technical": "The upstream: a bigger Danish network selling IP transit over a leased E1 (2 Mbit/s), with its own circuits across the Atlantic. Like most small ISPs, ours just points a default route at it.",
     "tag": "Upstream · E1"
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Tier_1_network", "title": "Tier 1 network", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Tier_1_network", "title": "Tier 1 network", "level": "technical" }
   ]
 }

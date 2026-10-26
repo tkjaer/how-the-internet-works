@@ -1,15 +1,15 @@
 {
   "name": {
-    "kid": "A big carrier",
-    "nerd": "Transit · AS64502"
+    "simple": "A big carrier",
+    "technical": "Transit · AS64502"
   },
   "1995": {
     "name": {
-      "kid": "A bigger network",
-      "nerd": "Upstream · AS64502"
+      "simple": "A bigger network",
+      "technical": "Upstream · AS64502"
     }
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Peering", "title": "Peering and transit", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Peering", "title": "Peering and transit", "level": "technical" }
   ]
 }

@@ -1,11 +1,11 @@
 {
   "name": "Rack-switch",
-  "kid": "Switchen øverst i et højt skab fuld af computere (et rack). Den giver pakkerne videre til computerne i sit eget skab.",
-  "nerd": "Top-of-rack-switchen (ToR) er en leaf: et uplink til hver spine og 25–100G ned til de par dusin servere i racket.",
+  "simple": "Switchen øverst i et højt skab fuld af computere (et rack). Den giver pakkerne videre til computerne i sit eget skab.",
+  "technical": "Top-of-rack-switchen (ToR) er en leaf: et uplink til hver spine og 25–100G ned til de par dusin servere i racket.",
   "tag": "ToR-leaf · 25G til servere",
   "2010": {
-    "kid": "Switchen i et højt skab fuld af computere (et rack). Den giver pakkerne videre til computerne i sit eget skab. Den har to veje op: én åben og én, der holdes lukket som reserve.",
-    "nerd": "Access-switchen: 48 porte med 1G-kobber ned til rackets servere og to 10G-uplinks, ét til hver aggregeringsswitch. Den bridger kun (lag 2); spanning tree blokerer uplinket til standby-switchen.",
+    "simple": "Switchen i et højt skab fuld af computere (et rack). Den giver pakkerne videre til computerne i sit eget skab. Den har to veje op: én åben og én, der holdes lukket som reserve.",
+    "technical": "Access-switchen: 48 porte med 1G-kobber ned til rackets servere og to 10G-uplinks, ét til hver aggregeringsswitch. Den bridger kun (lag 2); spanning tree blokerer uplinket til standby-switchen.",
     "tag": "Access · 48 × 1G · 2 × 10G op"
   }
 }

@@ -1,25 +1,25 @@
 {
   "title": "The radio envelope",
-  "kid": "Everyone in the room can hear a Wi-Fi envelope, so it says exactly who it is for. The receiver answers, “Got it!”, and only then does the next envelope get a turn. Underneath, the envelope travels as radio waves.",
-  "nerd": "An 802.11 data frame names the receiver, transmitter and far wired-side address, protects the payload with WPA3/CCMP, and relies on CSMA/CA plus ACKs, sequence numbers and retries on shared airtime.",
+  "simple": "Everyone in the room can hear a Wi-Fi envelope, so it says exactly who it is for. The receiver answers, “Got it!”, and only then does the next envelope get a turn. Underneath, the envelope travels as radio waves.",
+  "technical": "An 802.11 data frame names the receiver, transmitter and far wired-side address, protects the payload with WPA3/CCMP, and relies on CSMA/CA plus ACKs, sequence numbers and retries on shared airtime.",
   "extra": "Wi-Fi 7 multi-link operation: the device and the access point are each a multi-link device (MLD) with several radios. On the air every radio keeps its own link address; above them one MLD address, one sequence counter and one block-ack agreement let a frame go on whichever link (2.4, 5 or 6 GHz) is free and still arrive in order.",
   "role": {
     "bridge": {
       "title": "Radio frame, cable frame",
-      "kid": "At the access point, the Wi-Fi envelope comes off. The “then to” sticker becomes the cable envelope’s “for” sticker, but the parcel still says it came from {yours}. Underneath, the envelope travels as radio waves.",
-      "nerd": "At the bridge, the uplink 802.11 QoS data frame has RA=AP, TA=STA and addr3=the distribution-system destination. The AP decapsulates it, verifies CCMP/FCS, then emits an Ethernet frame toward the router; the IP packet is untouched.",
+      "simple": "At the access point, the Wi-Fi envelope comes off. The “then to” sticker becomes the cable envelope’s “for” sticker, but the parcel still says it came from {yours}. Underneath, the envelope travels as radio waves.",
+      "technical": "At the bridge, the uplink 802.11 QoS data frame has RA=AP, TA=STA and addr3=the distribution-system destination. The AP decapsulates it, verifies CCMP/FCS, then emits an Ethernet frame toward the router; the IP packet is untouched.",
       "describe": {
-        "kid": "The road holds {yours}, the access point and the router. Paper cards show addresses and taking turns. A radio envelope walks from {yours} to the access point. It opens there and changes into a cable envelope for the router. The turn card shows listen, wait, bump, try again and “Got it!”.",
-        "nerd": "The address card shows the uplink 802.11 frame beside the Ethernet frame. It lists To DS, addr1 AP, addr2 STA and addr3 router, then DA and SA on cable. The airtime strip animates AIFS, backoff, data, no ACK, retry, SIFS plus ACK, and sequence, retry and CCMP labels."
+        "simple": "The road holds {yours}, the access point and the router. Paper cards show addresses and taking turns. A radio envelope walks from {yours} to the access point. It opens there and changes into a cable envelope for the router. The turn card shows listen, wait, bump, try again and “Got it!”.",
+        "technical": "The address card shows the uplink 802.11 frame beside the Ethernet frame. It lists To DS, addr1 AP, addr2 STA and addr3 router, then DA and SA on cable. The airtime strip animates AIFS, backoff, data, no ACK, retry, SIFS plus ACK, and sequence, retry and CCMP labels."
       }
     },
     "endpoint": {
       "title": "A radio envelope for you",
-      "kid": "On the way back, the access point turns the cable envelope into a radio one: for {yours}, from the access point, came from the router. Then {yours} opens it after saying “Got it!”. Underneath, the envelope travels as radio waves.",
-      "nerd": "On downlink the AP transmits an 802.11 QoS data frame with RA=STA, TA=AP and addr3=the distribution-system source. The station verifies CCMP/FCS, ACKs after SIFS, drops duplicates by sequence number, and passes the payload up.",
+      "simple": "On the way back, the access point turns the cable envelope into a radio one: for {yours}, from the access point, came from the router. Then {yours} opens it after saying “Got it!”. Underneath, the envelope travels as radio waves.",
+      "technical": "On downlink the AP transmits an 802.11 QoS data frame with RA=STA, TA=AP and addr3=the distribution-system source. The station verifies CCMP/FCS, ACKs after SIFS, drops duplicates by sequence number, and passes the payload up.",
       "describe": {
-        "kid": "The road shows the access point sending toward {yours}. Paper cards show the outside envelope changing. A cable envelope reaches the access point, opens, and turns into a radio envelope for {yours}. The timeline waits, sends, tries again after a bump, and ends with “Got it!”.",
-        "nerd": "The address card shows a downlink Ethernet frame becoming an 802.11 frame. It lists From DS, addr1 STA, addr2 AP and addr3 router. The moving radio frame heads to the device you are at. The airtime strip steps through backoff, retry, ACK, sequence, FCS and CCMP markers."
+        "simple": "The road shows the access point sending toward {yours}. Paper cards show the outside envelope changing. A cable envelope reaches the access point, opens, and turns into a radio envelope for {yours}. The timeline waits, sends, tries again after a bump, and ends with “Got it!”.",
+        "technical": "The address card shows a downlink Ethernet frame becoming an 802.11 frame. It lists From DS, addr1 STA, addr2 AP and addr3 router. The moving radio frame heads to the device you are at. The airtime strip steps through backoff, retry, ACK, sequence, FCS and CCMP markers."
       }
     }
   },
@@ -44,18 +44,18 @@
     "aifs": "AIFS",
     "data": "data",
     "sifsAck": "SIFS+ACK",
-    "listenKid": "listen",
-    "waitKid": "wait",
-    "sendKid": "send",
+    "listenSimple": "listen",
+    "waitSimple": "wait",
+    "sendSimple": "send",
     "gotIt": "Got it!",
     "gotItStep": "Got it!",
-    "ackNerd": "ACK",
+    "ackTechnical": "ACK",
     "bump": "bump!",
     "noAck": "no ACK",
     "retryFlag": "retry",
     "neighbour": "neighbour",
-    "kidStrip": "Listen first. Clash? Wait and retry.",
-    "nerdStrip": "seq {seq} · retry · CCMP PN",
+    "simpleStrip": "Listen first. Clash? Wait and retry.",
+    "technicalStrip": "seq {seq} · retry · CCMP PN",
     "radioToYou": "for {yours}"
   },
   "field": {
@@ -77,15 +77,15 @@
   },
   "2010": {
     "extra": "Wi‑Fi 4 (802.11n, 2009): frame aggregation (A-MPDU) packs several frames into one transmission with one block ack, and with two or more antennas each side (MIMO) several streams share the channel, up to 150 Mbit/s each on a 40 MHz channel in 2.4 or 5 GHz. Multi-link operation came only with Wi‑Fi 7 in 2024.",
-    "nerd": "An 802.11 data frame names the receiver, transmitter and far wired-side address, protects the payload with WPA2/CCMP, and relies on CSMA/CA plus ACKs, sequence numbers and retries on shared airtime.",
+    "technical": "An 802.11 data frame names the receiver, transmitter and far wired-side address, protects the payload with WPA2/CCMP, and relies on CSMA/CA plus ACKs, sequence numbers and retries on shared airtime.",
     "tag": {
       "encrypt": "WPA2/CCMP hides the payload"
     }
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/IEEE_802.11#Data_frame", "title": "IEEE 802.11 frame", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/IEEE_802.11#Data_frame", "title": "IEEE 802.11 frame", "level": "technical" },
     { "url": "https://en.wikipedia.org/wiki/Wi-Fi", "title": "Wi-Fi", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Carrier-sense_multiple_access_with_collision_avoidance", "title": "CSMA/CA", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access", "title": "Wi-Fi Protected Access", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Carrier-sense_multiple_access_with_collision_avoidance", "title": "CSMA/CA", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access", "title": "Wi-Fi Protected Access", "level": "technical" }
   ]
 }

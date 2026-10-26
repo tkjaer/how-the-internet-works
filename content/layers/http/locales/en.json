@@ -1,21 +1,21 @@
 {
   "name": {
-    "kid": "The letter",
-    "nerd": "HTTP message"
+    "simple": "The letter",
+    "technical": "HTTP message"
   },
   "note": {
-    "kid": "The message itself, inside the locked box.",
-    "nerd": "The application message: a request for the next video segment, or a piece of the response. Shown in HTTP/1.1’s text form; most video today travels as HTTP/2 or HTTP/3 (over QUIC), which carry the same fields in binary frames."
+    "simple": "The message itself, inside the locked box.",
+    "technical": "The application message: a request for the next video segment, or a piece of the response. Shown in HTTP/1.1’s text form; most video today travels as HTTP/2 or HTTP/3 (over QUIC), which carry the same fields in binary frames."
   },
   "line": "Hypertext Transfer Protocol: {start}",
   "value": {
     "ask": {
-      "kid": "“Please send me the next bit of the cat video!”",
-      "nerd": "A request for the next video segment."
+      "simple": "“Please send me the next bit of the cat video!”",
+      "technical": "A request for the next video segment."
     },
     "send": {
-      "kid": "“Here’s the next bit of the cat video!”",
-      "nerd": "A response: the next video segment."
+      "simple": "“Here’s the next bit of the cat video!”",
+      "technical": "A response: the next video segment."
     },
     "get": "GET /video/720p/42.m4s HTTP/1.1",
     "ok": "HTTP/1.1 200 OK",
@@ -25,8 +25,8 @@
   "field": {
     "start": {
       "name": {
-        "kid": "The letter says",
-        "nerd": "Start line"
+        "simple": "The letter says",
+        "technical": "Start line"
       },
       "about": "The request (method and path) or the response status."
     },
@@ -37,8 +37,8 @@
   },
   "1995": {
     "note": {
-      "kid": "The message itself, in plain writing: ordinary pages weren’t locked in 1995.",
-      "nerd": "The application message in plain HTTP/1.0: a request for the page or its picture, or a piece of the answer."
+      "simple": "The message itself, in plain writing: ordinary pages weren’t locked in 1995.",
+      "technical": "The application message in plain HTTP/1.0: a request for the page or its picture, or a piece of the answer."
     },
     "value": {
       "get": "GET /index.html HTTP/1.0",
@@ -46,29 +46,29 @@
       "host": "User-Agent: Mozilla/1.1N",
       "type": "Content-Type: text/html",
       "ask": {
-        "kid": "“Please send me the page with the picture!”",
-        "nerd": "A request for the page."
+        "simple": "“Please send me the page with the picture!”",
+        "technical": "A request for the page."
       },
       "send": {
-        "kid": "“Here’s the page!”",
-        "nerd": "A response: a piece of the page."
+        "simple": "“Here’s the page!”",
+        "technical": "A response: a piece of the page."
       }
     }
   },
   "2010": {
     "note": {
-      "kid": "The message itself, in plain writing: video wasn't locked in 2010.",
-      "nerd": "The application message in plain HTTP: a request for the video, or a piece of the response."
+      "simple": "The message itself, in plain writing: video wasn't locked in 2010.",
+      "technical": "The application message in plain HTTP: a request for the video, or a piece of the response."
     },
     "value": {
       "get": "GET /videos/42.mp4 HTTP/1.1",
       "ask": {
-        "kid": "“Please send me the cat video!”",
-        "nerd": "A request for the video file."
+        "simple": "“Please send me the cat video!”",
+        "technical": "A request for the video file."
       },
       "send": {
-        "kid": "“Here’s the next bit of the cat video!”",
-        "nerd": "A response: the next piece of the video file."
+        "simple": "“Here’s the next bit of the cat video!”",
+        "technical": "A response: the next piece of the video file."
       }
     }
   },

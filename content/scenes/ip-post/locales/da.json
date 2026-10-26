@@ -1,85 +1,85 @@
 {
   "title": "Hvilken vej nu?",
-  "kid": "En router læser adressemærket på hver pakke og kigger på sine vejskilte: hvilken vej kommer den tættere på den adresse? Så sender den pakken af sted ad den vej.",
-  "nerd": "En router slår destinationen op i sin forwarding-tabel. Det længste matchende præfiks vinder (et /24 slår standardruten 0.0.0.0/0), TTL tælles én ned, og pakken sendes ud ad rutens interface.",
+  "simple": "En router læser adressemærket på hver pakke og kigger på sine vejskilte: hvilken vej kommer den tættere på den adresse? Så sender den pakken af sted ad den vej.",
+  "technical": "En router slår destinationen op i sin forwarding-tabel. Det længste matchende præfiks vinder (et /24 slår standardruten 0.0.0.0/0), TTL tælles én ned, og pakken sendes ud ad rutens interface.",
   "describe": {
-    "kid": "En papirvej forbinder din enhed, denne router og videoserveren. Ét kort viser pakkens adressemærke. Et andet kort er en pæl med vejskilte. En gående pakke stopper her, et forstørrelsesglas læser mærket, et skilt lyser, og pakken går videre.",
-    "nerd": "Nærbilledet viser IP-headeren med Fra, Til og TTL. Routerens skilte viser et klientpræfiks og en standard- eller serverrute. Når pakken holder pause, lyser destinationsrækken. Længste præfiks-match vælger et skilt, TTL tælles ned, og pakken sendes videre."
+    "simple": "En papirvej forbinder din enhed, denne router og videoserveren. Ét kort viser pakkens adressemærke. Et andet kort er en pæl med vejskilte. En gående pakke stopper her, et forstørrelsesglas læser mærket, et skilt lyser, og pakken går videre.",
+    "technical": "Nærbilledet viser IP-headeren med Fra, Til og TTL. Routerens skilte viser et klientpræfiks og en standard- eller serverrute. Når pakken holder pause, lyser destinationsrækken. Længste præfiks-match vælger et skilt, TTL tælles ned, og pakken sendes videre."
   },
   "role": {
     "nat": {
       "title": "Byttebogen",
-      "kid": "Alt derhjemme deler én adresse udadtil. Routeren bytter afsender-mærkatet ud med sin egen adresse og skriver det ned i sin notesbog, så den ved, hvem der spurgte, når svaret kommer tilbage.",
-      "nerd": "NAPT: den private afsenderadresse og port omskrives til den offentlige adresse. Koblingen (indvendig adresse:port ↔ udvendig port) gemmes i forbindelsestabellen, og svar slås op i den og omskrives tilbage.",
+      "simple": "Alt derhjemme deler én adresse udadtil. Routeren bytter afsender-mærkatet ud med sin egen adresse og skriver det ned i sin notesbog, så den ved, hvem der spurgte, når svaret kommer tilbage.",
+      "technical": "NAPT: den private afsenderadresse og port omskrives til den offentlige adresse. Koblingen (indvendig adresse:port ↔ udvendig port) gemmes i forbindelsestabellen, og svar slås op i den og omskrives tilbage.",
       "describe": {
-        "kid": "En vej forbinder dine enheder, hjemmerouteren og videoserveren. Adressekortet skifter Fra-mærket til routeren. Byttebogen viser Dig og en anden enhed med numre. Pakken stopper ved routeren, mærket ændres, og svarene kommer tilbage gennem bogen.",
-        "nerd": "Nærbilledet viser IP-afsenderen, der omskrives ved siden af NAT-tabellen. Rækker kobler indvendig vært og port til en udvendig port. Den aktive række dukker op og lyser på svarvejen. Pakken fortsætter, og TTL tælles ned som ved et routerhop."
+        "simple": "En vej forbinder dine enheder, hjemmerouteren og videoserveren. Adressekortet skifter Fra-mærket til routeren. Byttebogen viser Dig og en anden enhed med numre. Pakken stopper ved routeren, mærket ændres, og svarene kommer tilbage gennem bogen.",
+        "technical": "Nærbilledet viser IP-afsenderen, der omskrives ved siden af NAT-tabellen. Rækker kobler indvendig vært og port til en udvendig port. Den aktive række dukker op og lyser på svarvejen. Pakken fortsætter, og TTL tælles ned som ved et routerhop."
       }
     },
     "bridge": {
       "title": "Bare på gennemrejse",
-      "kid": "Den her boks læser slet ikke adressemærket! Den tager kuverten af, som pakken kom i, og giver den en ny på til næste stykke vej.",
-      "nerd": "En lag 2-enhed: den sender rammen videre efter modtager-MAC'en (eller pakker den om til næste links rammetype), men læser aldrig IP-headeren. MAC-adresserne forbliver dem på enhederne i hver ende af lag 2-strækningen, som regel to routere; IP-headeren, også TTL, røres aldrig. (Et tunnelendepunkt, som en mobilmast, er anderledes: rammen ender der, og pakken sendes videre inde i en ny ydre header med tunnelendepunktets egne adresser og MAC.)",
+      "simple": "Den her boks læser slet ikke adressemærket! Den tager kuverten af, som pakken kom i, og giver den en ny på til næste stykke vej.",
+      "technical": "En lag 2-enhed: den sender rammen videre efter modtager-MAC'en (eller pakker den om til næste links rammetype), men læser aldrig IP-headeren. MAC-adresserne forbliver dem på enhederne i hver ende af lag 2-strækningen, som regel to routere; IP-headeren, også TTL, røres aldrig. (Et tunnelendepunkt, som en mobilmast, er anderledes: rammen ender der, og pakken sendes videre inde i en ny ydre header med tunnelendepunktets egne adresser og MAC.)",
       "describe": {
-        "kid": "En vej forbinder din enhed, dette gennemgangsstop og videoserveren. Adressekortet har lukkede øjne, og det andet kort viser den gamle og den nye kuvert. Pakken beholder adressemærket lukket, mens én kuvert løftes af og en frisk lægges på til næste strækning.",
-        "nerd": "IP-headerkortet vises, men læses ikke. Link-kortet viser indgående og udgående kuverter. Tekniske mærker siger, at MAC-adresserne sendes uændret videre (et tunnelendepunkt sætter sin egen på), og at IP-headeren er urørt. Under pausen løftes den gamle kuvert af, den næste lander, og pakken fortsætter med samme IP-mærke og TTL."
+        "simple": "En vej forbinder din enhed, dette gennemgangsstop og videoserveren. Adressekortet har lukkede øjne, og det andet kort viser den gamle og den nye kuvert. Pakken beholder adressemærket lukket, mens én kuvert løftes af og en frisk lægges på til næste strækning.",
+        "technical": "IP-headerkortet vises, men læses ikke. Link-kortet viser indgående og udgående kuverter. Tekniske mærker siger, at MAC-adresserne sendes uændret videre (et tunnelendepunkt sætter sin egen på), og at IP-headeren er urørt. Under pausen løftes den gamle kuvert af, den næste lander, og pakken fortsætter med samme IP-mærke og TTL."
       }
     },
     "switched": {
       "title": "Kun mærkaten læses",
-      "kid": "Midt i internettets hurtige kerne læser denne router slet ikke adressemærket. Den læser kun motorvejsmærkaten udenpå, bytter den til den næste og sender pakken videre i en ny kuvert.",
-      "nerd": "En label-switchende router (en MPLS P-router): den slår kun den øverste label op, bytter den, tæller labelens TTL ned og lægger pakken i en ny Ethernet-ramme. IP-headeren indeni læses aldrig, så dens TTL og checksum bliver, som de er; TTL’en indhenter det, når labelen tages af ved kanten (RFC 3443’s uniforme model).",
+      "simple": "Midt i internettets hurtige kerne læser denne router slet ikke adressemærket. Den læser kun motorvejsmærkaten udenpå, bytter den til den næste og sender pakken videre i en ny kuvert.",
+      "technical": "En label-switchende router (en MPLS P-router): den slår kun den øverste label op, bytter den, tæller labelens TTL ned og lægger pakken i en ny Ethernet-ramme. IP-headeren indeni læses aldrig, så dens TTL og checksum bliver, som de er; TTL’en indhenter det, når labelen tages af ved kanten (RFC 3443’s uniforme model).",
       "describe": {
-        "kid": "En vej forbinder din enhed, denne router og videoserveren. Adressekortet har lukkede øjne, og det andet kort viser den gamle og den nye kuvert med motorvejsmærkaten. Pakken beholder adressemærket lukket, mens én kuvert løftes af og en frisk lægges på til næste strækning.",
-        "nerd": "IP-headerkortet vises, men læses ikke, og dens TTL ændrer sig ikke. Link-kortet viser de indgående og udgående Ethernet- og MPLS-kuverter. Tekniske mærker viser routerens egen MAC-adresse og siger, at IP-headeren er urørt. Under pausen løftes den gamle kuvert af, den næste lander, og pakken fortsætter med samme IP-mærke og TTL."
+        "simple": "En vej forbinder din enhed, denne router og videoserveren. Adressekortet har lukkede øjne, og det andet kort viser den gamle og den nye kuvert med motorvejsmærkaten. Pakken beholder adressemærket lukket, mens én kuvert løftes af og en frisk lægges på til næste strækning.",
+        "technical": "IP-headerkortet vises, men læses ikke, og dens TTL ændrer sig ikke. Link-kortet viser de indgående og udgående Ethernet- og MPLS-kuverter. Tekniske mærker viser routerens egen MAC-adresse og siger, at IP-headeren er urørt. Under pausen løftes den gamle kuvert af, den næste lander, og pakken fortsætter med samme IP-mærke og TTL."
       }
     },
     "endpoint": {
       "title": "Er den til mig?",
-      "kid": "For enden af vejen tjekker computeren adressemærket mod sin egen adresse. Det passer! Den åbner pakken og sender det nummererede stykke indeni videre op. På alt, den selv sender, skriver den selv mærkatet.",
-      "nerd": "Destinationen er en lokal adresse, så IP-headeren fjernes, og indholdet sendes op til TCP (protokol 6). På udgående pakker skriver værten selv afsender, modtager og en frisk TTL (64 her, som på Linux, Android, iOS og macOS; Windows bruger 128, og Windows 95 brugte 32).",
+      "simple": "For enden af vejen tjekker computeren adressemærket mod sin egen adresse. Det passer! Den åbner pakken og sender det nummererede stykke indeni videre op. På alt, den selv sender, skriver den selv mærkatet.",
+      "technical": "Destinationen er en lokal adresse, så IP-headeren fjernes, og indholdet sendes op til TCP (protokol 6). På udgående pakker skriver værten selv afsender, modtager og en frisk TTL (64 her, som på Linux, Android, iOS og macOS; Windows bruger 128, og Windows 95 brugte 32).",
       "describe": {
-        "kid": "Vejen ender ved den enhed, der bliver tjekket. Ét kort viser adressemærket, og et andet viser enhedens egen adresse som et dørskilt. En pakke kommer frem, mærket passer, og et lille nummereret stykke stiger op til næste lag. På vej ud skrives mærket, før pakken går.",
-        "nerd": "Ved et endepunkt sammenlignes IP-headeren med den lokale adresse på skiltet. Den indgående nyttelast stiger mod næste lag. På vej ud skriver værten frisk afsender, modtager og TTL 64. Mærker viser protokol 6 til TCP og nye pakker med TTL 64."
+        "simple": "Vejen ender ved den enhed, der bliver tjekket. Ét kort viser adressemærket, og et andet viser enhedens egen adresse som et dørskilt. En pakke kommer frem, mærket passer, og et lille nummereret stykke stiger op til næste lag. På vej ud skrives mærket, før pakken går.",
+        "technical": "Ved et endepunkt sammenlignes IP-headeren med den lokale adresse på skiltet. Den indgående nyttelast stiger mod næste lag. På vej ud skriver værten frisk afsender, modtager og TTL 64. Mærker viser protokol 6 til TCP og nye pakker med TTL 64."
       }
     }
   },
   "at": {
     "mobile-core": {
       "title": "En hel gade deler én adresse",
-      "kid": "Telefoner på mobilnettet får ikke deres egen internetadresse. Mobilcentralen bytter afsender-mærkatet på en masse telefoner ud med den samme ene adresse og giver hver sit eget billetnummer i sin notesbog.",
-      "nerd": "Carrier-grade NAT: abonnenter får adresser fra det delte område 100.64.0.0/10 (RFC 6598), og typisk fra et par dusin til et par hundrede deler én offentlig IPv4-adresse med hver sin blok af porte. Det er en stor grund til IPv6.",
+      "simple": "Telefoner på mobilnettet får ikke deres egen internetadresse. Mobilcentralen bytter afsender-mærkatet på en masse telefoner ud med den samme ene adresse og giver hver sit eget billetnummer i sin notesbog.",
+      "technical": "Carrier-grade NAT: abonnenter får adresser fra det delte område 100.64.0.0/10 (RFC 6598), og typisk fra et par dusin til et par hundrede deler én offentlig IPv4-adresse med hver sin blok af porte. Det er en stor grund til IPv6.",
       "describe": {
-        "kid": "Vejen viser flere telefoner, der deler en mobilkerne på turen til videoserveren. Adressekortet ændrer Fra til mobilkernen. Byttebogen er fuld af naboer med numre. En pakke stopper i kernen, får skiftet mærkatet og går videre. Svarene bruger bogen til at finde den rigtige telefon.",
-        "nerd": "Det er NAT-varianten for carrier-grade NAT. Kortet omskriver en kilde fra 100.64.0.0/10 til operatørens offentlige adresse. Tabellen kobler flere indvendige adresser og porte til udvendige porte. Pakken holder pause for omskrivningen, TTL falder, og videresendelsen fortsætter."
+        "simple": "Vejen viser flere telefoner, der deler en mobilkerne på turen til videoserveren. Adressekortet ændrer Fra til mobilkernen. Byttebogen er fuld af naboer med numre. En pakke stopper i kernen, får skiftet mærkatet og går videre. Svarene bruger bogen til at finde den rigtige telefon.",
+        "technical": "Det er NAT-varianten for carrier-grade NAT. Kortet omskriver en kilde fra 100.64.0.0/10 til operatørens offentlige adresse. Tabellen kobler flere indvendige adresser og porte til udvendige porte. Pakken holder pause for omskrivningen, TTL falder, og videresendelsen fortsætter."
       }
     },
     "exchange": {
-      "nerd": "Telefoncentralen stiller modemmets opkald igennem til internetudbyderens modembank. PPP-rammerne kører inde i opkaldet som lyd; intet her læser IP-headeren, og der er ingen MAC-adresser på en telefonlinje. IP-headeren, også TTL, røres aldrig.",
+      "technical": "Telefoncentralen stiller modemmets opkald igennem til internetudbyderens modembank. PPP-rammerne kører inde i opkaldet som lyd; intet her læser IP-headeren, og der er ingen MAC-adresser på en telefonlinje. IP-headeren, også TTL, røres aldrig.",
       "describe": {
-        "kid": "En vej forbinder din enhed, dette gennemgangsstop og serveren. Adressekortet har lukkede øjne, og det andet kort viser den gamle og den nye kuvert. Pakken beholder adressemærket lukket, mens én kuvert løftes af og en frisk lægges på til næste strækning.",
-        "nerd": "IP-headerkortet vises, men læses ikke. Link-kortet viser indgående og udgående kuverter. Tekniske mærker siger, at der ingen MAC-adresser er her, og at IP-headeren er urørt. Under pausen løftes én kuvert af, den næste lander, og pakken fortsætter med samme IP-mærke og TTL."
+        "simple": "En vej forbinder din enhed, dette gennemgangsstop og serveren. Adressekortet har lukkede øjne, og det andet kort viser den gamle og den nye kuvert. Pakken beholder adressemærket lukket, mens én kuvert løftes af og en frisk lægges på til næste strækning.",
+        "technical": "IP-headerkortet vises, men læses ikke. Link-kortet viser indgående og udgående kuverter. Tekniske mærker siger, at der ingen MAC-adresser er her, og at IP-headeren er urørt. Under pausen løftes én kuvert af, den næste lander, og pakken fortsætter med samme IP-mærke og TTL."
       }
     },
     "cell-tower": {
-      "nerd": "Et tunnelendepunkt, ikke en almindelig bridge: basestationen (gNB) flytter pakken mellem 5G-radiolinket og en GTP-U-tunnel (i UDP/IP) til mobilkernen uden at læse IP-headeren. Mod kernen rejser tunnelpakken i en Ethernet-ramme, der starter eller ender her, med gNB'ens egen MAC-adresse. Den indre IP-header, også TTL, røres aldrig.",
+      "technical": "Et tunnelendepunkt, ikke en almindelig bridge: basestationen (gNB) flytter pakken mellem 5G-radiolinket og en GTP-U-tunnel (i UDP/IP) til mobilkernen uden at læse IP-headeren. Mod kernen rejser tunnelpakken i en Ethernet-ramme, der starter eller ender her, med gNB'ens egen MAC-adresse. Den indre IP-header, også TTL, røres aldrig.",
       "describe": {
-        "kid": "En vej forbinder din enhed, dette gennemgangsstop og videoserveren. Adressekortet har lukkede øjne, og det andet kort viser den gamle og den nye kuvert. Pakken beholder adressemærket lukket, mens én kuvert løftes af og en frisk lægges på til næste strækning.",
-        "nerd": "IP-headerkortet vises, men læses ikke. Link-kortet viser én kuvert, der løftes af, og en tunnelkuvert, der tager dens plads. Tekniske mærker viser tunnelendepunktets egen MAC-adresse og siger, at IP-headeren er urørt. Pakken fortsætter inde i tunnelen med samme IP-mærke og TTL."
+        "simple": "En vej forbinder din enhed, dette gennemgangsstop og videoserveren. Adressekortet har lukkede øjne, og det andet kort viser den gamle og den nye kuvert. Pakken beholder adressemærket lukket, mens én kuvert løftes af og en frisk lægges på til næste strækning.",
+        "technical": "IP-headerkortet vises, men læses ikke. Link-kortet viser én kuvert, der løftes af, og en tunnelkuvert, der tager dens plads. Tekniske mærker viser tunnelendepunktets egen MAC-adresse og siger, at IP-headeren er urørt. Pakken fortsætter inde i tunnelen med samme IP-mærke og TTL."
       }
     },
     "rnc": {
-      "nerd": "Et tunnelendepunkt, ikke en almindelig bridge: RNC'en afslutter 3G-radiolinket og flytter pakken ind i en GTP-U-tunnel (i UDP/IP) til pakkekernen uden at læse IP-headeren. Mod kernen rejser tunnelpakken i en Ethernet-ramme, der starter eller ender her, med RNC'ens egen MAC-adresse. Den indre IP-header, også TTL, røres aldrig.",
+      "technical": "Et tunnelendepunkt, ikke en almindelig bridge: RNC'en afslutter 3G-radiolinket og flytter pakken ind i en GTP-U-tunnel (i UDP/IP) til pakkekernen uden at læse IP-headeren. Mod kernen rejser tunnelpakken i en Ethernet-ramme, der starter eller ender her, med RNC'ens egen MAC-adresse. Den indre IP-header, også TTL, røres aldrig.",
       "describe": {
-        "kid": "En vej forbinder din enhed, dette gennemgangsstop og videoserveren. Adressekortet har lukkede øjne, og det andet kort viser den gamle og den nye kuvert. Pakken beholder adressemærket lukket, mens én kuvert løftes af og en frisk lægges på til næste strækning.",
-        "nerd": "IP-headerkortet vises, men læses ikke. Link-kortet viser én kuvert, der løftes af, og en tunnelkuvert, der tager dens plads. Tekniske mærker viser tunnelendepunktets egen MAC-adresse og siger, at IP-headeren er urørt. Pakken fortsætter inde i tunnelen med samme IP-mærke og TTL."
+        "simple": "En vej forbinder din enhed, dette gennemgangsstop og videoserveren. Adressekortet har lukkede øjne, og det andet kort viser den gamle og den nye kuvert. Pakken beholder adressemærket lukket, mens én kuvert løftes af og en frisk lægges på til næste strækning.",
+        "technical": "IP-headerkortet vises, men læses ikke. Link-kortet viser én kuvert, der løftes af, og en tunnelkuvert, der tager dens plads. Tekniske mærker viser tunnelendepunktets egen MAC-adresse og siger, at IP-headeren er urørt. Pakken fortsætter inde i tunnelen med samme IP-mærke og TTL."
       }
     },
     "nodeb": {
-      "nerd": "NodeB'en sender pakken videre mellem 3G-radioen og sin linje til RNC'en, som afslutter radiolinket og tunnelen. Ingen Ethernet-ramme og ingen MAC-adresser på denne strækning; IP-headeren, også TTL, bliver aldrig læst eller rørt.",
+      "technical": "NodeB'en sender pakken videre mellem 3G-radioen og sin linje til RNC'en, som afslutter radiolinket og tunnelen. Ingen Ethernet-ramme og ingen MAC-adresser på denne strækning; IP-headeren, også TTL, bliver aldrig læst eller rørt.",
       "describe": {
-        "kid": "En vej forbinder din enhed, dette gennemgangsstop og videoserveren. Adressekortet har lukkede øjne, og det andet kort viser den gamle og den nye kuvert. Pakken beholder adressemærket lukket, mens én kuvert løftes af og en frisk lægges på til næste strækning.",
-        "nerd": "IP-headerkortet vises, men læses ikke. Link-kortet viser indgående og udgående kuverter. Tekniske mærker siger, at der ingen MAC-adresser er her, og at IP-headeren er urørt. Under pausen løftes én kuvert af, den næste lander, og pakken fortsætter med samme IP-mærke og TTL."
+        "simple": "En vej forbinder din enhed, dette gennemgangsstop og videoserveren. Adressekortet har lukkede øjne, og det andet kort viser den gamle og den nye kuvert. Pakken beholder adressemærket lukket, mens én kuvert løftes af og en frisk lægges på til næste strækning.",
+        "technical": "IP-headerkortet vises, men læses ikke. Link-kortet viser indgående og udgående kuverter. Tekniske mærker siger, at der ingen MAC-adresser er her, og at IP-headeren er urørt. Under pausen løftes én kuvert af, den næste lander, og pakken fortsætter med samme IP-mærke og TTL."
       }
     }
   },
@@ -112,18 +112,18 @@
   },
   "1995": {
     "describe": {
-      "kid": "En papirvej forbinder din enhed, denne router og serveren. Ét kort viser pakkens adressemærke. Et andet kort er en pæl med vejskilte. En gående pakke stopper her, et forstørrelsesglas læser mærket, et skilt lyser, og pakken går videre.",
-      "nerd": "Nærbilledet viser IP-headeren med Fra, Til og TTL. Routerens skilte viser et klientpræfiks og en standard- eller serverrute. Når pakken holder pause, lyser destinationsrækken. Længste præfiks-match vælger et skilt, TTL tælles ned, og pakken sendes videre."
+      "simple": "En papirvej forbinder din enhed, denne router og serveren. Ét kort viser pakkens adressemærke. Et andet kort er en pæl med vejskilte. En gående pakke stopper her, et forstørrelsesglas læser mærket, et skilt lyser, og pakken går videre.",
+      "technical": "Nærbilledet viser IP-headeren med Fra, Til og TTL. Routerens skilte viser et klientpræfiks og en standard- eller serverrute. Når pakken holder pause, lyser destinationsrækken. Længste præfiks-match vælger et skilt, TTL tælles ned, og pakken sendes videre."
     },
     "role": {
       "bridge": {
         "describe": {
-          "kid": "En vej forbinder din enhed, dette gennemgangsstop og serveren. Adressekortet har lukkede øjne, og det andet kort viser den gamle og den nye kuvert. Pakken beholder adressemærket lukket, mens én kuvert løftes af og en frisk lægges på til næste strækning.",
-          "nerd": "IP-headerkortet vises, men læses ikke. Link-kortet viser indgående og udgående kuverter. Tekniske mærker siger, at MAC-adresserne sendes uændret videre (et tunnelendepunkt sætter sin egen på), og at IP-headeren er urørt. Under pausen løftes den gamle kuvert af, den næste lander, og pakken fortsætter med samme IP-mærke og TTL."
+          "simple": "En vej forbinder din enhed, dette gennemgangsstop og serveren. Adressekortet har lukkede øjne, og det andet kort viser den gamle og den nye kuvert. Pakken beholder adressemærket lukket, mens én kuvert løftes af og en frisk lægges på til næste strækning.",
+          "technical": "IP-headerkortet vises, men læses ikke. Link-kortet viser indgående og udgående kuverter. Tekniske mærker siger, at MAC-adresserne sendes uændret videre (et tunnelendepunkt sætter sin egen på), og at IP-headeren er urørt. Under pausen løftes den gamle kuvert af, den næste lander, og pakken fortsætter med samme IP-mærke og TTL."
         }
       },
       "endpoint": {
-        "nerd": "Destinationen er en lokal adresse, så IP-headeren fjernes, og indholdet sendes op til TCP (protokol 6). På udgående pakker skriver værten selv afsender, modtager og en frisk TTL (64 her, som RFC 1700 anbefaler; nogle systemer brugte 32 eller 255)."
+        "technical": "Destinationen er en lokal adresse, så IP-headeren fjernes, og indholdet sendes op til TCP (protokol 6). På udgående pakker skriver værten selv afsender, modtager og en frisk TTL (64 her, som RFC 1700 anbefaler; nogle systemer brugte 32 eller 255)."
       }
     }
   },
@@ -133,11 +133,11 @@
     },
     "at": {
       "mobile-core": {
-        "kid": "Telefoner på mobilnettet får ikke deres egen internetadresse. Mobilporten bytter afsender-mærkatet på en masse telefoner ud med den samme ene adresse og giver hver sit eget billetnummer i sin notesbog.",
-        "nerd": "Carrier-grade NAT i GGSN’en: telefonerne får private adresser, her fra 10.0.0.0/8, og typisk fra et par dusin til et par hundrede deler én offentlig IPv4-adresse med hver sin blok af porte. Et delt område kun til dette, 100.64.0.0/10, kom senere (RFC 6598, 2012). Det er en stor grund til IPv6.",
+        "simple": "Telefoner på mobilnettet får ikke deres egen internetadresse. Mobilporten bytter afsender-mærkatet på en masse telefoner ud med den samme ene adresse og giver hver sit eget billetnummer i sin notesbog.",
+        "technical": "Carrier-grade NAT i GGSN’en: telefonerne får private adresser, her fra 10.0.0.0/8, og typisk fra et par dusin til et par hundrede deler én offentlig IPv4-adresse med hver sin blok af porte. Et delt område kun til dette, 100.64.0.0/10, kom senere (RFC 6598, 2012). Det er en stor grund til IPv6.",
         "describe": {
-          "kid": "Vejen viser flere telefoner, der deler en mobilport på turen til videoserveren. Adressekortet ændrer Fra til mobilporten. Byttebogen er fuld af naboer med numre. En pakke stopper i porten, får skiftet mærkatet og går videre. Svarene bruger bogen til at finde den rigtige telefon.",
-          "nerd": "Det er NAT-varianten for carrier-grade NAT. Kortet omskriver en privat kilde fra 10.0.0.0/8 til operatørens offentlige adresse. Tabellen kobler flere indvendige adresser og porte til udvendige porte. Pakken holder pause for omskrivningen, TTL falder, og videresendelsen fortsætter."
+          "simple": "Vejen viser flere telefoner, der deler en mobilport på turen til videoserveren. Adressekortet ændrer Fra til mobilporten. Byttebogen er fuld af naboer med numre. En pakke stopper i porten, får skiftet mærkatet og går videre. Svarene bruger bogen til at finde den rigtige telefon.",
+          "technical": "Det er NAT-varianten for carrier-grade NAT. Kortet omskriver en privat kilde fra 10.0.0.0/8 til operatørens offentlige adresse. Tabellen kobler flere indvendige adresser og porte til udvendige porte. Pakken holder pause for omskrivningen, TTL falder, og videresendelsen fortsætter."
         }
       }
     }

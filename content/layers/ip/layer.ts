@@ -12,12 +12,12 @@ export default defineLayer({
     { id: 'flags', bits: 3, value: '010 (DF)' },
     { id: 'frag', bits: 13, value: '0' },
     // every router takes one off; at 0 the packet is dropped (no loops forever)
-    { id: 'ttl', bits: 8, value: '{ttl}', use: ['router', 'nat'], kid: true },
+    { id: 'ttl', bits: 8, value: '{ttl}', use: ['router', 'nat'], simple: true },
     // routers hash src, dst, protocol and the two ports (the 5-tuple) to pick one of several equal paths (ECMP)
     { id: 'proto', bits: 8, value: '{inner.ipproto}', use: ['router', 'nat', 'endpoint'] },
     { id: 'checksum', bits: 16, value: '{sum}', use: ['router', 'nat', 'endpoint'] },
-    { id: 'src', bits: 32, value: '{src}', use: ['router', 'nat', 'endpoint'], kid: true },
-    { id: 'dst', bits: 32, value: '{dst}', use: ['router', 'nat', 'endpoint'], kid: true },
+    { id: 'src', bits: 32, value: '{src}', use: ['router', 'nat', 'endpoint'], simple: true },
+    { id: 'dst', bits: 32, value: '{dst}', use: ['router', 'nat', 'endpoint'], simple: true },
   ],
   dive: 'ip-post',
 });

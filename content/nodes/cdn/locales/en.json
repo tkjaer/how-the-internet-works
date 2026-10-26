@@ -1,16 +1,16 @@
 {
   "name": "Video server",
-  "kid": "The video lives here, on a computer in one of the cupboards. The video company keeps copies of popular videos in lots of places, so none of them is ever too far away.",
-  "nerd": "A CDN cache server: the video app runs in a container and serves the segment from memory or SSD; only cache misses go further, back to the origin.",
+  "simple": "The video lives here, on a computer in one of the cupboards. The video company keeps copies of popular videos in lots of places, so none of them is ever too far away.",
+  "technical": "A CDN cache server: the video app runs in a container and serves the segment from memory or SSD; only cache misses go further, back to the origin.",
   "2010": {
-    "kid": "The video lives here, on a computer in one of the cupboards. The video company keeps copies of popular videos in a few big cities, so the nearest one is further away than today’s.",
-    "nerd": "A CDN cache server in 2010: Linux and a cache program straight on the hardware, with hot video in RAM and the rest on spinning disks; only cache misses go further, back to the origin."
+    "simple": "The video lives here, on a computer in one of the cupboards. The video company keeps copies of popular videos in a few big cities, so the nearest one is further away than today’s.",
+    "technical": "A CDN cache server in 2010: Linux and a cache program straight on the hardware, with hot video in RAM and the rest on spinning disks; only cache misses go further, back to the origin."
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Content_delivery_network", "title": "Content delivery network", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Web_cache", "title": "Web cache", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Web_cache", "title": "Web cache", "level": "technical" },
     { "url": "https://en.wikipedia.org/wiki/Cache_(computing)", "title": "Cache (computing)", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Virtual_machine", "title": "Virtual machine", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/OS-level_virtualization", "title": "OS-level virtualization", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Virtual_machine", "title": "Virtual machine", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/OS-level_virtualization", "title": "OS-level virtualization", "level": "technical" }
   ]
 }

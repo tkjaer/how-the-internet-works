@@ -1,13 +1,13 @@
 {
   "name": "Fibre",
-  "kid": "A glass thread carries the parcels as flashes of light.",
-  "nerd": "Point-to-point fibre carrying Ethernet (10–100 Gbit/s).",
+  "simple": "A glass thread carries the parcels as flashes of light.",
+  "technical": "Point-to-point fibre carrying Ethernet (10–100 Gbit/s).",
   "tag": "DWDM · C-band · 10–100G",
   "2010": {
-    "nerd": "Point-to-point fibre carrying Ethernet (1–10 Gbit/s).",
+    "technical": "Point-to-point fibre carrying Ethernet (1–10 Gbit/s).",
     "tag": "DWDM · C-band · 1–10G"
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Metro_Ethernet", "title": "Metro Ethernet", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Metro_Ethernet", "title": "Metro Ethernet", "level": "technical" }
   ]
 }

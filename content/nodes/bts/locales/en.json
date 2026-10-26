@@ -1,12 +1,12 @@
 {
   "name": "Mast",
   "1995": {
-    "kid": "A tall metal mast with thin aerials at the top. Its radios share each wave between eight phones, taking turns, and send every call down a line to the controller box.",
-    "nerd": "A GSM base station (BTS) on 900 MHz: a lattice mast with sector aerials and a few transceivers in the cabinet, one 200 kHz carrier each, eight time slots per carrier. It sends each call on over Abis, unopened.",
+    "simple": "A tall metal mast with thin aerials at the top. Its radios share each wave between eight phones, taking turns, and send every call down a line to the controller box.",
+    "technical": "A GSM base station (BTS) on 900 MHz: a lattice mast with sector aerials and a few transceivers in the cabinet, one 200 kHz carrier each, eight time slots per carrier. It sends each call on over Abis, unopened.",
     "tag": "BTS · GSM 900",
     "peek": {
-      "kid": "The mast doesn’t open your parcel. It catches your phone’s radio turn and passes what was in it on down the line.",
-      "nerd": "The BTS ends the radio burst and the channel coding and passes the call’s RLP frames on in a 16 kbit/s sub-slot; nothing here reads PPP or IP."
+      "simple": "The mast doesn’t open your parcel. It catches your phone’s radio turn and passes what was in it on down the line.",
+      "technical": "The BTS ends the radio burst and the channel coding and passes the call’s RLP frames on in a 16 kbit/s sub-slot; nothing here reads PPP or IP."
     }
   },
   "learnMore": [

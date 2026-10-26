@@ -1,17 +1,17 @@
 {
   "name": {
-    "kid": "Phone-call envelope",
-    "nerd": "PPP frame"
+    "simple": "Phone-call envelope",
+    "technical": "PPP frame"
   },
   "note": {
-    "kid": "The computer puts the parcel in a simple envelope for the phone call. Only your computer and the internet company open it.",
-    "nerd": "PPP in HDLC-like framing: no addresses, as a call has only two ends. LCP, a login (PAP or CHAP) and IPCP set it up when the call starts."
+    "simple": "The computer puts the parcel in a simple envelope for the phone call. Only your computer and the internet company open it.",
+    "technical": "PPP in HDLC-like framing: no addresses, as a call has only two ends. LCP, a login (PAP or CHAP) and IPCP set it up when the call starts."
   },
   "line": "PPP, protocol {proto}",
   "value": {
     "ip": {
-      "kid": "An internet parcel",
-      "nerd": "IPv4 inside"
+      "simple": "An internet parcel",
+      "technical": "IPv4 inside"
     }
   },
   "field": {
@@ -29,8 +29,8 @@
     },
     "proto": {
       "name": {
-        "kid": "What’s inside",
-        "nerd": "Protocol"
+        "simple": "What’s inside",
+        "technical": "Protocol"
       },
       "about": "What the frame carries: 0x0021 is an IPv4 packet; LCP, PAP, CHAP and IPCP have numbers of their own."
     },
@@ -40,6 +40,6 @@
     }
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Point-to-Point_Protocol", "title": "Point-to-Point Protocol", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Point-to-Point_Protocol", "title": "Point-to-Point Protocol", "level": "technical" }
   ]
 }

@@ -1,14 +1,14 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Calling the internet",
-  "kid": "Before broadband, the computer phoned the internet. Its modem dialled a number, and when the internet company’s modem answered, the two whistled and screeched at each other until they agreed how to talk. Then your parcels went down the phone line as sounds, very slowly, and nobody else could use the phone.",
-  "nerd": "A V.34 modem call: DTMF dialling, the answer tone, V.8 negotiation and line probing, then up to 28.8 kbit/s each way, less on a noisy line. The exchange switches a 64 kbit/s circuit, one timeslot on its trunk, for the whole call. PPP runs over it to log you in and hand out an address.",
+  "simple": "Before broadband, the computer phoned the internet. Its modem dialled a number, and when the internet company’s modem answered, the two whistled and screeched at each other until they agreed how to talk. Then your parcels went down the phone line as sounds, very slowly, and nobody else could use the phone.",
+  "technical": "A V.34 modem call: DTMF dialling, the answer tone, V.8 negotiation and line probing, then up to 28.8 kbit/s each way, less on a noisy line. The exchange switches a 64 kbit/s circuit, one timeslot on its trunk, for the whole call. PPP runs over it to log you in and hand out an address.",
   "describe": {
-    "kid": "A phone line runs from the computer to the telephone exchange and on to the internet company’s modems. A speech bubble says the sounds: beeps, a ring, a long whistle and a screech, then connected. Cards show the steps, a photo arriving line by line, and the phone being busy.",
-    "nerd": "The call runs as copper to the exchange, then a 64 kbit/s circuit to the ISP's modem bank. Waves show DTMF, the answer tone, V.34 training, then slow data. Cards show the handshake steps, a 30 kB photo taking about 8 seconds, and the call holding timeslot 7 of a 32-slot trunk."
+    "simple": "A phone line runs from the computer to the telephone exchange and on to the internet company’s modems. A speech bubble says the sounds: beeps, a ring, a long whistle and a screech, then connected. Cards show the steps, a photo arriving line by line, and the phone being busy.",
+    "technical": "The call runs as copper to the exchange, then a 64 kbit/s circuit to the ISP's modem bank. Waves show DTMF, the answer tone, V.34 training, then slow data. Cards show the handshake steps, a 30 kB photo taking about 8 seconds, and the call holding timeslot 7 of a 32-slot trunk."
   },
   "say": {
     "dial": "Beep boop beep…",
@@ -16,70 +16,70 @@
     "answer": "Eeeeeeee!",
     "train": "Krrrshhh! Bong bong!",
     "online": {
-      "kid": "Connected!",
-      "nerd": "CONNECT 28800"
+      "simple": "Connected!",
+      "technical": "CONNECT 28800"
     }
   },
   "part": {
     "loop": {
-      "kid": "Phone line",
-      "nerd": "Copper pair"
+      "simple": "Phone line",
+      "technical": "Copper pair"
     },
     "trunk": {
-      "kid": "Telephone network",
-      "nerd": "64 kbit/s circuit"
+      "simple": "Telephone network",
+      "technical": "64 kbit/s circuit"
     }
   },
   "stepsTitle": {
-    "kid": "How it calls",
-    "nerd": "The handshake"
+    "simple": "How it calls",
+    "technical": "The handshake"
   },
   "step": {
     "dial": {
-      "kid": "Dial the number",
-      "nerd": "DTMF digits"
+      "simple": "Dial the number",
+      "technical": "DTMF digits"
     },
     "ring": {
-      "kid": "Ring ring",
-      "nerd": "Ringback"
+      "simple": "Ring ring",
+      "technical": "Ringback"
     },
     "answer": {
-      "kid": "The modem answers",
-      "nerd": "Answer tone 2100 Hz"
+      "simple": "The modem answers",
+      "technical": "Answer tone 2100 Hz"
     },
     "train": {
-      "kid": "Modems shake hands",
-      "nerd": "V.8, then training"
+      "simple": "Modems shake hands",
+      "technical": "V.8, then training"
     },
     "online": {
-      "kid": "Online!",
-      "nerd": "PPP up, online"
+      "simple": "Online!",
+      "technical": "PPP up, online"
     }
   },
   "slowTitle": {
-    "kid": "So slow!",
-    "nerd": "28.8k, at best"
+    "simple": "So slow!",
+    "technical": "28.8k, at best"
   },
   "slowLine": {
-    "kid": "One photo: {s} seconds",
-    "nerd": "30 kB at 28.8 kbit/s: {s} s"
+    "simple": "One photo: {s} seconds",
+    "technical": "30 kB at 28.8 kbit/s: {s} s"
   },
   "slowSub": {
-    "kid": "Today it’s there in a blink.",
-    "nerd": "On 1 Gbit/s fibre: under 1 ms"
+    "simple": "Today it’s there in a blink.",
+    "technical": "On 1 Gbit/s fibre: under 1 ms"
   },
   "busyTitle": "Phone busy!",
   "beep": "Beep",
   "busyLine": "Online, so nobody can call.",
   "circuitTitle": {
-    "kid": "A line just for you",
-    "nerd": "Its own circuit"
+    "simple": "A line just for you",
+    "technical": "Its own circuit"
   },
   "circuitLine": "Slot {n} of 32 is yours",
   "circuitSub": "Held all call, even when quiet",
   "learnMore": [
-    { "url": "https://simple.wikipedia.org/wiki/Modem", "title": "Modem", "level": "kid" },
-    { "url": "https://en.wikipedia.org/wiki/V.34", "title": "V.34", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Dual-tone_multi-frequency_signaling", "title": "Touch tones (DTMF)", "level": "nerd" }
+    { "url": "https://simple.wikipedia.org/wiki/Modem", "title": "Modem", "level": "simple" },
+    { "url": "https://en.wikipedia.org/wiki/V.34", "title": "V.34", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Dual-tone_multi-frequency_signaling", "title": "Touch tones (DTMF)", "level": "technical" }
   ]
 }

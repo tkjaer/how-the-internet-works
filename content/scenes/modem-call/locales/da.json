@@ -1,14 +1,14 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Ring op til internettet",
-  "kid": "Før bredbånd ringede computeren op til internettet. Dens modem tastede et nummer, og når internetselskabets modem svarede, fløjtede og skreg de to ad hinanden, til de var enige om, hvordan de skulle tale. Så gik dine pakker ned ad telefonlinjen som lyde, meget langsomt, og ingen andre kunne bruge telefonen.",
-  "nerd": "Et V.34-modemopkald: DTMF-tonevalg, svartonen, V.8-forhandling og linjeprøvning, derefter op til 28,8 kbit/s hver vej, mindre på en støjende linje. Centralen kobler et 64 kbit/s-kredsløb, én tidsluke på dens trunk, i hele opkaldet. PPP kører ovenpå for at logge dig ind og uddele en adresse.",
+  "simple": "Før bredbånd ringede computeren op til internettet. Dens modem tastede et nummer, og når internetselskabets modem svarede, fløjtede og skreg de to ad hinanden, til de var enige om, hvordan de skulle tale. Så gik dine pakker ned ad telefonlinjen som lyde, meget langsomt, og ingen andre kunne bruge telefonen.",
+  "technical": "Et V.34-modemopkald: DTMF-tonevalg, svartonen, V.8-forhandling og linjeprøvning, derefter op til 28,8 kbit/s hver vej, mindre på en støjende linje. Centralen kobler et 64 kbit/s-kredsløb, én tidsluke på dens trunk, i hele opkaldet. PPP kører ovenpå for at logge dig ind og uddele en adresse.",
   "describe": {
-    "kid": "En telefonlinje går fra computeren til telefoncentralen og videre til internetselskabets modemer. En taleboble siger lydene: bip, en ringetone, et langt fløjt og et skrig, og så forbundet. Kort viser trinnene, et foto, der kommer linje for linje, og at telefonen er optaget.",
-    "nerd": "Opkaldet går som kobber til centralen og så som et 64 kbit/s-kredsløb til udbyderens modembank. Bølger viser DTMF, svartonen, V.34-træning og så langsomme data. Kort viser håndtrykkets trin, et foto på 30 kB, der tager omkring 8 sekunder, og opkaldet, der holder plads 7 af 32 på trunken."
+    "simple": "En telefonlinje går fra computeren til telefoncentralen og videre til internetselskabets modemer. En taleboble siger lydene: bip, en ringetone, et langt fløjt og et skrig, og så forbundet. Kort viser trinnene, et foto, der kommer linje for linje, og at telefonen er optaget.",
+    "technical": "Opkaldet går som kobber til centralen og så som et 64 kbit/s-kredsløb til udbyderens modembank. Bølger viser DTMF, svartonen, V.34-træning og så langsomme data. Kort viser håndtrykkets trin, et foto på 30 kB, der tager omkring 8 sekunder, og opkaldet, der holder plads 7 af 32 på trunken."
   },
   "say": {
     "dial": "Bip bup bip…",
@@ -16,64 +16,64 @@
     "answer": "Iiiiiiii!",
     "train": "Krrrshhh! Bong bong!",
     "online": {
-      "kid": "Forbundet!",
-      "nerd": "CONNECT 28800"
+      "simple": "Forbundet!",
+      "technical": "CONNECT 28800"
     }
   },
   "part": {
     "loop": {
-      "kid": "Telefonlinje",
-      "nerd": "Kobberpar"
+      "simple": "Telefonlinje",
+      "technical": "Kobberpar"
     },
     "trunk": {
-      "kid": "Telefonnettet",
-      "nerd": "64 kbit/s-kredsløb"
+      "simple": "Telefonnettet",
+      "technical": "64 kbit/s-kredsløb"
     }
   },
   "stepsTitle": {
-    "kid": "Sådan ringer den",
-    "nerd": "Håndtrykket"
+    "simple": "Sådan ringer den",
+    "technical": "Håndtrykket"
   },
   "step": {
     "dial": {
-      "kid": "Tast nummeret",
-      "nerd": "DTMF-cifre"
+      "simple": "Tast nummeret",
+      "technical": "DTMF-cifre"
     },
     "ring": {
-      "kid": "Ring ring",
-      "nerd": "Ringetone"
+      "simple": "Ring ring",
+      "technical": "Ringetone"
     },
     "answer": {
-      "kid": "Modemmet svarer",
-      "nerd": "Svartone 2100 Hz"
+      "simple": "Modemmet svarer",
+      "technical": "Svartone 2100 Hz"
     },
     "train": {
-      "kid": "Modemer giver hånd",
-      "nerd": "V.8, så træning"
+      "simple": "Modemer giver hånd",
+      "technical": "V.8, så træning"
     },
     "online": {
-      "kid": "Online!",
-      "nerd": "PPP oppe, online"
+      "simple": "Online!",
+      "technical": "PPP oppe, online"
     }
   },
   "slowTitle": {
-    "kid": "Så langsomt!",
-    "nerd": "28,8k, i bedste fald"
+    "simple": "Så langsomt!",
+    "technical": "28,8k, i bedste fald"
   },
   "slowLine": {
-    "kid": "Ét foto: {s} sekunder",
-    "nerd": "30 kB ved 28,8 kbit/s: {s} s"
+    "simple": "Ét foto: {s} sekunder",
+    "technical": "30 kB ved 28,8 kbit/s: {s} s"
   },
   "slowSub": {
-    "kid": "I dag er det der på et øjeblik.",
-    "nerd": "På 1 Gbit/s-fiber: under 1 ms"
+    "simple": "I dag er det der på et øjeblik.",
+    "technical": "På 1 Gbit/s-fiber: under 1 ms"
   },
   "busyTitle": "Optaget!",
   "beep": "Bip",
   "busyLine": "Online, så ingen kan ringe.",
   "circuitTitle": {
-    "kid": "En linje kun til dig",
-    "nerd": "Eget kredsløb"
+    "simple": "En linje kun til dig",
+    "technical": "Eget kredsløb"
   },
   "circuitLine": "Plads {n} af 32 er din",
   "circuitSub": "Holdt hele opkaldet, også i stilhed",

@@ -10,12 +10,13 @@ import { coverage, formatProblems, validate } from './validate';
 
 const files = Object.keys(import.meta.glob('/content/*/*/Scene.svelte'));
 const locales = import.meta.glob<Json>('/content/*/*/locales/*.json', { eager: true, import: 'default' });
+const ui = import.meta.glob<Json>('/content/locales/*/ui.json', { eager: true, import: 'default' });
 
 describe('content', () => {
   beforeAll(loadAllPacks);
 
   it('validates', () => {
-    const problems = validate({ content, packs, files, locales });
+    const problems = validate({ content, packs, files, locales, ui });
     if (problems.length) throw new Error(`\n${formatProblems(problems)}\n`);
   });
 
@@ -68,7 +69,7 @@ describe('content', () => {
     for (const activity of activityIds()) for (const place of Object.keys(content.places)) for (const o of ['landscape', 'portrait'] as const) {
       const r = resolveRoute({ activity, places: [place] });
       const walk = (ref: SceneRef): void => {
-        for (const keys of describeKeys(r, ref).map((k) => withEra(k, r.era === nowEra() ? undefined : r.era))) for (const lang of Object.keys(packs)) for (const level of ['kid', 'nerd'] as Level[]) {
+        for (const keys of describeKeys(r, ref).map((k) => withEra(k, r.era === nowEra() ? undefined : r.era))) for (const lang of Object.keys(packs)) for (const level of ['simple', 'technical'] as Level[]) {
           const k = keys.find((k) => lookupLevel(lang, k, level) !== undefined);
           if (!k || !packs[lang].strings[`${k}.${level}`]) bad.add(`${lang} ${level} ${place}/${activity} /${ref.path.join('/')}: tried ${keys.join(', ')}`);
         }
@@ -82,7 +83,7 @@ describe('content', () => {
   it('gives every era its name, text and picture description, at both levels, in every language (#59)', () => {
     const bad: string[] = [];
     for (const era of Object.keys(content.eras)) for (const lang of Object.keys(packs))
-      for (const k of ['name', 'kid', 'nerd', 'describe.kid', 'describe.nerd']) if (!packs[lang].strings[`era.${era}.${k}`]) bad.push(`${lang} era.${era}.${k}`);
+      for (const k of ['name', 'simple', 'technical', 'describe.simple', 'describe.technical']) if (!packs[lang].strings[`era.${era}.${k}`]) bad.push(`${lang} era.${era}.${k}`);
     expect(bad).toEqual([]);
   });
 
@@ -257,14 +258,14 @@ describe('validation messages', () => {
     const msg = broken((c) => { c.eras['1985'] = { year: 1985.5, id: '1985', file: 'content/eras/1985/era.ts' }; });
     expect(msg).toContain('content/eras/1985/era.ts › year:');
     expect(msg).toContain('content/eras/1985/era.ts › strings: missing English string "era.1985.name"');
-    expect(msg).toContain('missing English string "era.1985" or "era.1985.kid"');
-    expect(msg).toContain('missing English string "era.1985.describe.kid"');
+    expect(msg).toContain('missing English string "era.1985" or "era.1985.simple"');
+    expect(msg).toContain('missing English string "era.1985.describe.simple"');
   });
 
   it('asks for missing English strings', () => {
     const msg = broken((c) => { c.nodes.gizmo = { ...c.nodes.phone, id: 'gizmo', file: 'content/nodes/gizmo/node.ts' }; c.layers.zip = { ...c.layers.ip, id: 'zip', file: 'content/layers/zip/layer.ts' }; });
     expect(msg).toContain('content/nodes/gizmo/node.ts › strings: missing English string "node.gizmo.name" (in content/nodes/gizmo/locales/en.json)');
-    expect(msg).toContain('content/layers/zip/layer.ts › strings: missing English string "layer.zip.field.ttl.name" or "layer.zip.field.ttl.name.kid"');
+    expect(msg).toContain('content/layers/zip/layer.ts › strings: missing English string "layer.zip.field.ttl.name" or "layer.zip.field.ttl.name.simple"');
   });
 
   it('checks header fields: unique ids, known facts and codes', () => {
@@ -301,11 +302,11 @@ describe('validation messages', () => {
 
   it('checks spoken descriptions: both levels, short, in every locale file', () => {
     const msg = formatProblems(validate({ content, packs, files, locales: {
-      '/content/scenes/wifi-radio/locales/da.json': { describe: { kid: 'En bølge.' }, role: { nat: { describe: { kid: 'x', nerd: 'y'.repeat(401), kids: 'z' } } } },
+      '/content/scenes/wifi-radio/locales/da.json': { describe: { simple: 'En bølge.' }, role: { nat: { describe: { simple: 'x', technical: 'y'.repeat(401), simpel: 'z' } } } },
       '/content/places/home/locales/en.json': { describe: 'A house.' },
     } }));
-    expect(msg).toContain('content/scenes/wifi-radio/locales/da.json › describe.nerd:');
-    expect(msg).toContain('content/scenes/wifi-radio/locales/da.json › role.nat.describe.nerd:');
+    expect(msg).toContain('content/scenes/wifi-radio/locales/da.json › describe.technical:');
+    expect(msg).toContain('content/scenes/wifi-radio/locales/da.json › role.nat.describe.technical:');
     expect(msg).toContain('content/scenes/wifi-radio/locales/da.json › role.nat.describe:');
     expect(msg).toContain('content/places/home/locales/en.json › describe:');
   });
@@ -314,11 +315,31 @@ describe('validation messages', () => {
     expect(broken((c) => { (c.nodes.phone as { role: string }).role = 'modem'; })).toContain('content/nodes/phone/node.ts › role:');
   });
 
+  it('names the levels\' old names (#196), which would otherwise fall back to English', () => {
+    const c: Content = structuredClone(content);
+    (c.layers.ip.fields[0] as Record<string, unknown>).kid = true;
+    const msg = formatProblems(validate({ content: c, packs, files, locales: {
+      '/content/nodes/phone/locales/da.json': {
+        kid: 'x', stop: { cabinet: { nerd: 'y' } }, describe: { kid: 'a', nerd: 'b' },
+        learnMore: [{ url: 'https://da.wikipedia.org/wiki/Smartphone', title: 'Smartphone', level: 'nerd' }],
+      } as unknown as Json,
+    }, ui: { '/content/locales/da/ui.json': { 'mode.kid': 'Enkel' } } }));
+    const f = 'content/nodes/phone/locales/da.json';
+    expect(msg).toContain(`${f} › kid: "kid" is the old name of a level: write "simple" (#196)`);
+    expect(msg).toContain(`${f} › stop.cabinet.nerd: "nerd" is the old name of a level: write "technical" (#196)`);
+    expect(msg).toContain(`${f} › describe.kid: "kid" is the old name`);
+    expect(msg).not.toContain(`${f} › describe:`);
+    expect(msg).toContain(`${f} › learnMore[0].level: "nerd" is the old name of a level: write "technical" (#196)`);
+    expect(msg).not.toContain(`${f} › learnMore[0].level: Invalid`);
+    expect(msg).toContain('content/locales/da/ui.json › mode.kid: "kid" is the old name of a level: write "simple" (#196)');
+    expect(msg).toMatch(/content\/layers\/ip\/layer\.ts › fields\[0\]: Unrecognized key: "kid"\. "kid" is the old name of a level: write "simple" \(#196\)/);
+  });
+
   it('checks learn-more links (#201): in a known language, well formed, for known eras, in the file\'s own list', () => {
     const msg = formatProblems(validate({ content, packs, files, locales: {
       '/content/nodes/phone/locales/dk.json': { learnMore: [{ url: 'https://da.wikipedia.org/wiki/Smartphone', title: 'Smartphone', level: 'both' }] } as unknown as Json,
       '/content/nodes/phone/locales/da.json': { learnMore: [
-        { url: 'http://x.org', title: 'x', level: 'kid' },
+        { url: 'http://x.org', title: 'x', level: 'simple' },
         { url: 'https://x.org', title: 'x', level: 'both', lang: 'da', eras: ['1959'] },
       ] } as unknown as Json,
       '/content/nodes/core/locales/de.json': { name: 'ISP-Kern', 1995: { learnMore: [] } } as unknown as Json,

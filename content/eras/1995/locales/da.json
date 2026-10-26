@@ -1,25 +1,25 @@
 {
   "name": "1995",
-  "kid": "Internet derhjemme var et telefonopkald. Computerens modem ringede op til internetfirmaet med bip og hvin, og mens man var på nettet, kunne ingen bruge telefonen.",
-  "nerd": "Opkaldsforbindelse: et modem på 28,8 kbit/s (56k kom i 1997; V.90 i 1998) ringer til udbyderens modembank, og PPP giver pc’en sin egen offentlige adresse. Ingen Wi‑Fi, ingen router, ingen NAT.",
+  "simple": "Internet derhjemme var et telefonopkald. Computerens modem ringede op til internetfirmaet med bip og hvin, og mens man var på nettet, kunne ingen bruge telefonen.",
+  "technical": "Opkaldsforbindelse: et modem på 28,8 kbit/s (56k kom i 1997; V.90 i 1998) ringer til udbyderens modembank, og PPP giver pc’en sin egen offentlige adresse. Ingen Wi‑Fi, ingen router, ingen NAT.",
   "describe": {
-    "kid": "En stor beige computer med en dyb skærm og et tastatur i en ledning. Modemmet står blinkende på en hylde og ringer op til internetfirmaet.",
-    "nerd": "En stationær pc: dens eksterne modem ringer op til udbyderen på telefonlinjen, uden nogen router imellem."
+    "simple": "En stor beige computer med en dyb skærm og et tastatur i en ledning. Modemmet står blinkende på en hylde og ringer op til internetfirmaet.",
+    "technical": "En stationær pc: dens eksterne modem ringer op til udbyderen på telefonlinjen, uden nogen router imellem."
   },
   "at": {
     "on-the-go": {
-      "kid": "Ude i byen var næsten ingen på nettet, men man kunne godt: en bærbar med en ledning til en mobiltelefon ringede til internetfirmaet. Tre gange langsommere end derhjemme, og hvert minut kostede penge.",
-      "nerd": "GSM’s kredsløbskoblede data: 9,6 kbit/s i én radiotidsslot, betalt pr. minut som et opkald. Mobilcentralens modemmer (IWF’en) ringer til udbyderen som et modem derhjemme; GPRS’ altid-tændte pakker kom i 2000.",
+      "simple": "Ude i byen var næsten ingen på nettet, men man kunne godt: en bærbar med en ledning til en mobiltelefon ringede til internetfirmaet. Tre gange langsommere end derhjemme, og hvert minut kostede penge.",
+      "technical": "GSM’s kredsløbskoblede data: 9,6 kbit/s i én radiotidsslot, betalt pr. minut som et opkald. Mobilcentralens modemmer (IWF’en) ringer til udbyderen som et modem derhjemme; GPRS’ altid-tændte pakker kom i 2000.",
       "describe": {
-        "kid": "En tyk bærbar med en krøllet ledning til en mobiltelefon på størrelse med en mursten, ude på gaden.",
-        "nerd": "En bærbar fra 1995 med et GSM-datakort i en ledning til en GSM-telefon, der ringer til udbyderen med 9,6 kbit/s."
+        "simple": "En tyk bærbar med en krøllet ledning til en mobiltelefon på størrelse med en mursten, ude på gaden.",
+        "technical": "En bærbar fra 1995 med et GSM-datakort i en ledning til en GSM-telefon, der ringer til udbyderen med 9,6 kbit/s."
       }
     }
   },
   "peek": {
     "role": {
       "router": {
-        "nerd": "Routet: longest-prefix match på modtageren, TTL − 1 og en ny link-ramme."
+        "technical": "Routet: longest-prefix match på modtageren, TTL − 1 og en ny link-ramme."
       }
     }
   }

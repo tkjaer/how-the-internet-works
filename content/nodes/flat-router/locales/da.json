@@ -1,5 +1,5 @@
 {
   "name": "Hjemmerouter",
-  "kid": "Hoveddøren til din lejligheds netværk. Et kabel løber fra den ned ad trappen til kælderen.",
-  "nerd": "Wi‑Fi og NAT for lejligheden; dens uplink er almindeligt Ethernet til bygningens switch i kælderen."
+  "simple": "Hoveddøren til din lejligheds netværk. Et kabel løber fra den ned ad trappen til kælderen.",
+  "technical": "Wi‑Fi og NAT for lejligheden; dens uplink er almindeligt Ethernet til bygningens switch i kælderen."
 }

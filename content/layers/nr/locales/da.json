@@ -1,18 +1,18 @@
 {
   "name": {
-    "kid": "5G-radiokuvert",
-    "nerd": "5G NR-ramme (SDAP · PDCP · RLC · MAC)"
+    "simple": "5G-radiokuvert",
+    "technical": "5G NR-ramme (SDAP · PDCP · RLC · MAC)"
   },
   "note": {
-    "kid": "Sendt gennem luften på din telefons egne pladser. Masten tjekker, at hver bid kom frem, og beder om den igen, hvis den blev væk.",
-    "nerd": "Sendt på de ressourceblokke, gNB’en tildelte telefonen; HARQ gensender tabte blokke, og PDCP krypterer indholdet."
+    "simple": "Sendt gennem luften på din telefons egne pladser. Masten tjekker, at hver bid kom frem, og beder om den igen, hvis den blev væk.",
+    "technical": "Sendt på de ressourceblokke, gNB’en tildelte telefonen; HARQ gensender tabte blokke, og PDCP krypterer indholdet."
   },
   "line": "5G NR brugerplan, C-RNTI {rnti}, QFI {qfi}",
   "field": {
     "rnti": {
       "name": {
-        "kid": "Telefon nr.",
-        "nerd": "C-RNTI"
+        "simple": "Telefon nr.",
+        "technical": "C-RNTI"
       },
       "about": "Mastens korte navn for telefonen i denne celle (den indgår i scrambling af tildelingen, ikke som headerbyte)."
     },

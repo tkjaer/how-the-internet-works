@@ -1,11 +1,11 @@
 {
   "name": "Hjemme, i gamle dage",
   "access": "Opkald med modem (i gamle dage)",
-  "kid": "For længe siden ringede computeren op til internettet! Dens modem bippede, fløjtede og skreg ned ad telefonlinjen, og mens du var online, kunne ingen bruge telefonen. Siden og dens billede sivede meget, meget langsomt tilbage.",
-  "nerd": "Opkald i 1990’erne: pc’ens V.34-modem ringer til udbyderen. Centralen kobler opkaldet gennem telefonnettet og afleverer det som én tidsluke på et ISDN PRI til udbyderens modembank; PPP giver pc’en sin egen offentlige adresse. Ingen Wi‑Fi, ingen router, ingen NAT og 28,8 kbit/s på en god linje.",
+  "simple": "For længe siden ringede computeren op til internettet! Dens modem bippede, fløjtede og skreg ned ad telefonlinjen, og mens du var online, kunne ingen bruge telefonen. Siden og dens billede sivede meget, meget langsomt tilbage.",
+  "technical": "Opkald i 1990’erne: pc’ens V.34-modem ringer til udbyderen. Centralen kobler opkaldet gennem telefonnettet og afleverer det som én tidsluke på et ISDN PRI til udbyderens modembank; PPP giver pc’en sin egen offentlige adresse. Ingen Wi‑Fi, ingen router, ingen NAT og 28,8 kbit/s på en god linje.",
   "describe": {
-    "kid": "Det gennemskårne hus har et skrivebord med en computer og en mus på musemåtten, og en gammel telefon på et lille bord. En kalender på væggen siger 1995. Modemmet på hylden blinker med lysene, mens det ringer til internetselskabet ad telefonlinjen til internetskyen. Forespørgsler går ud, og siden kravler tilbage, meget langsomt.",
-    "nerd": "Oversigten over et hjem i 1995 (det siger kalenderen på væggen): én computer, hvis eksterne modem på en hylde ringer til udbyderen over telefonlinjen, som telefonen deler; dets send- og modtag-lys blinker med dataene. Intet LAN og ingen NAT: PPP går fra computeren til udbyderens gateway. Forespørgsler går op, og siden kommer tilbage med modemfart."
+    "simple": "Det gennemskårne hus har et skrivebord med en computer og en mus på musemåtten, og en gammel telefon på et lille bord. En kalender på væggen siger 1995. Modemmet på hylden blinker med lysene, mens det ringer til internetselskabet ad telefonlinjen til internetskyen. Forespørgsler går ud, og siden kravler tilbage, meget langsomt.",
+    "technical": "Oversigten over et hjem i 1995 (det siger kalenderen på væggen): én computer, hvis eksterne modem på en hylde ringer til udbyderen over telefonlinjen, som telefonen deler; dets send- og modtag-lys blinker med dataene. Intet LAN og ingen NAT: PPP går fra computeren til udbyderens gateway. Forespørgsler går op, og siden kommer tilbage med modemfart."
   },
   "tag": {
     "pc": "28,8k-modem · 203.0.113.7",
@@ -13,12 +13,12 @@
   },
   "stop": {
     "pc": {
-      "kid": "Computerens modem står på en hylde ved skrivebordet. Det ringer til internetselskabets telefonnummer og synger så din pakke ned ad telefonlinjen som fløjt og sus.",
-      "nerd": "Ingen router: modemets PPP-forbindelse gør computeren selv til en vært på internettet med den offentlige adresse 203.0.113.7, som den fik fra IPCP til dette opkald."
+      "simple": "Computerens modem står på en hylde ved skrivebordet. Det ringer til internetselskabets telefonnummer og synger så din pakke ned ad telefonlinjen som fløjt og sus.",
+      "technical": "Ingen router: modemets PPP-forbindelse gør computeren selv til en vært på internettet med den offentlige adresse 203.0.113.7, som den fik fra IPCP til dette opkald."
     },
     "bng": {
-      "kid": "Her svarer dit internetselskabs modemer opkaldet. De tjekker din adgangskode, giver computeren en adresse og sender pakkerne videre ud på internettet.",
-      "nerd": "Udbyderens adgangsserver: en bank af digitale modemer på ISDN PRI-linjer fra centralen, 30 opkald pr. linje. Den svarer, tjekker dit login (PAP eller CHAP), tildeler en adresse (IPCP) og router PPP-sessionens pakker ud på udbyderens 10 Mbit/s-Ethernet."
+      "simple": "Her svarer dit internetselskabs modemer opkaldet. De tjekker din adgangskode, giver computeren en adresse og sender pakkerne videre ud på internettet.",
+      "technical": "Udbyderens adgangsserver: en bank af digitale modemer på ISDN PRI-linjer fra centralen, 30 opkald pr. linje. Den svarer, tjekker dit login (PAP eller CHAP), tildeler en adresse (IPCP) og router PPP-sessionens pakker ud på udbyderens 10 Mbit/s-Ethernet."
     }
   }
 }

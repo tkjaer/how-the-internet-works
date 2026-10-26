@@ -1,9 +1,9 @@
 {
   "name": "Backbone",
-  "kid": "Super-fast connections between big network boxes.",
-  "nerd": "100–400G links between routers, often carrying MPLS.",
+  "simple": "Super-fast connections between big network boxes.",
+  "technical": "100–400G links between routers, often carrying MPLS.",
   "2010": {
-    "nerd": "10–40G links between routers, often carrying MPLS; the first 100G links came in 2010."
+    "technical": "10–40G links between routers, often carrying MPLS; the first 100G links came in 2010."
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Internet_backbone", "title": "Internet backbone", "level": "both" }

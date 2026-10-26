@@ -12,7 +12,7 @@
   let { subject, time }: { subject: LinkSubject; time: number } = $props();
   const S = strings('scene.tdm-frames');
   const legible = legibleSize();
-  const nerd = $derived(S('mode') === 'nerd');
+  const technical = $derived(S('mode') === 'technical');
   const portrait = $derived(view.orient === 'portrait');
   const compact = $derived(view.orient === 'landscape' && view.vp.h < 470);
   const fs = (size: number) => (compact ? legible(size) : size);
@@ -30,8 +30,8 @@
   const quarters = $derived(quartersOf(mode).map((q) => q && q.map(fillOf)));
   /** The signalling slot's letter on the grid: the D channel, SS7, the mast's LAPD. */
   const SIGNAL: Partial<Record<Mode, string>> = { trunk: 'S', abis: 'L' };
-  /** The slots worth naming on the grid (nerd): frame sync, the signalling, your call's slot. */
-  const labels = $derived(nerd ? kinds.map((k, i) => (k === 'sync' ? (mode === 't1' ? 'F' : '0') : k === 'signal' ? (SIGNAL[mode] ?? 'D') : k === 'yours' ? String(i) : '')) : []);
+  /** The slots worth naming on the grid (technical): frame sync, the signalling, your call's slot. */
+  const labels = $derived(technical ? kinds.map((k, i) => (k === 'sync' ? (mode === 't1' ? 'F' : '0') : k === 'signal' ? (SIGNAL[mode] ?? 'D') : k === 'yours' ? String(i) : '')) : []);
   /** The legend's words where a line names a slot its own way. */
   const KEY: Partial<Record<Mode, Partial<Record<Kind, string>>>> = {
     t1: { sync: 'fbit', pipe: 'pipeT1' },
@@ -126,6 +126,6 @@
 <path d={pulsePath(code, P.x, P.y, P.w, P.h)} fill="none" stroke={colour} stroke-width="7" stroke-linejoin="round" stroke-linecap="round" />
 {#each code as c, i (i)}
   <text x={P.x + (i + 0.45) * step} y={P.y + P.h + fs(L.row) * 1.3} text-anchor="middle" font-size={fs(L.row)} font-weight="900" font-family="var(--tag-font)" fill="var(--line)">{c.bit}</text>
-  {#if c.v && nerd}<text x={P.x + (i + 0.45) * step} y={P.y + P.h / 2 - (c.level * P.h) / 2 - 10} text-anchor="middle" font-size={fs(L.row)} font-weight="900" font-family="var(--tag-font)" fill="var(--line)">V</text>{/if}
+  {#if c.v && technical}<text x={P.x + (i + 0.45) * step} y={P.y + P.h / 2 - (c.level * P.h) / 2 - 10} text-anchor="middle" font-size={fs(L.row)} font-weight="900" font-family="var(--tag-font)" fill="var(--line)">V</text>{/if}
 {/each}
 {#if !compact}<text x={B.x + B.w / 2} y={B.y + B.h - 28} text-anchor="middle" font-size={L.row} font-weight="900" font-family="var(--label-font)" fill="var(--line)">{S(`code.${line}.line`)}</text>{/if}

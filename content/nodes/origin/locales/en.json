@@ -1,11 +1,11 @@
 {
   "name": "Origin",
-  "kid": "The main copy of every video, kept in a cloud far away. A video server that doesn’t have a video yet fetches it from here.",
-  "nerd": "The origin: the master copy in object storage in a cloud region, stored three times over (often in different buildings), so losing a disk or a building loses nothing. Cache misses fill from here, sometimes across an ocean.",
+  "simple": "The main copy of every video, kept in a cloud far away. A video server that doesn’t have a video yet fetches it from here.",
+  "technical": "The origin: the master copy in object storage in a cloud region, stored three times over (often in different buildings), so losing a disk or a building loses nothing. Cache misses fill from here, sometimes across an ocean.",
   "tag": "Object storage · 3 copies",
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Object_storage", "title": "Object storage", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Replication_(computing)", "title": "Replication", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Object_storage", "title": "Object storage", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Replication_(computing)", "title": "Replication", "level": "technical" },
     { "url": "https://en.wikipedia.org/wiki/Cloud_storage", "title": "Cloud storage", "level": "both" }
   ]
 }

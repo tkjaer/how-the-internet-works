@@ -1,8 +1,8 @@
 {
   "name": "Computer",
   "yours": "your computer",
-  "kid": "A big beige box on the desk, with a heavy screen on top and a keyboard on a cable. It can't go anywhere.",
-  "nerd": "A desktop PC: the endpoint, with a modem on a phone line instead of a network card.",
+  "simple": "A big beige box on the desk, with a heavy screen on top and a keyboard on a cable. It can't go anywhere.",
+  "technical": "A desktop PC: the endpoint, with a modem on a phone line instead of a network card.",
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Desktop_computer", "title": "Desktop computer", "level": "both" }
   ]

@@ -1,7 +1,7 @@
 // Issue #64: nothing a reader reads or taps in a path scene lands on something else. For every place × activity, every
 // path scene (the root and each group, all the way down), both orientations and every language and level, at the
 // authored size (a big screen) and at the biggest the labels and badges are drawn at rest on a small screen: door
-// badges, device names, link names, owner signs and nerd tags (#72), where `placeTexts` puts them, keep apart from each
+// badges, device names, link names, owner signs and technical tags (#72), where `placeTexts` puts them, keep apart from each
 // other and from the devices' art, and every link keeps a stretch of itself clear for its packets. The era's props
 // (#59) keep to their spots, and the spots keep off all of those. Labels win (#137): while "What can I explore?" lights
 // every door, no door's label covers any of that text or another door's label.
@@ -21,7 +21,7 @@ import { childrenOf, diveRuns, sceneRef } from './tree';
 const per: Per = (text, font) => text.length * (font === 'tag' ? 0.62 : 0.52);
 /** A device's art, as a circle: links start at 0.45 of its size from its centre. */
 const ART = 0.42;
-const LEVELS: Level[] = ['kid', 'nerd'];
+const LEVELS: Level[] = ['simple', 'technical'];
 
 /** What a path scene draws at `g` times the authored size (1: a big screen), as PathScene clamps it: labels and signs
  *  to `m`, the smallest legible size in scene units, tags to 0.85 of it, badges to 0.8. */
@@ -43,11 +43,11 @@ function overlap(a: Shape, b: Shape): boolean {
 /** Everything drawn in a path scene that must keep apart, at `g` times the authored size; and the doors' labelled
  *  pills while "What can I explore?" lights them all (#137), as `layoutDoors` lays them out. */
 function shapes(r: Route, ps: PathScene, root: boolean, o: Orient, lang: string, level: Level, g: number): { ss: Shape[]; cut: string[]; lit: Shape[]; waiting: string[] } {
-  const s = sizesAt(g), str = (k: string) => firstOf(lang, withEra([k], r.era === nowEra() ? undefined : r.era), level) ?? '', nerd = level === 'nerd';
+  const s = sizesAt(g), str = (k: string) => firstOf(lang, withEra([k], r.era === nowEra() ? undefined : r.era), level) ?? '', technical = level === 'technical';
   const name = (n: SNode) => str(`node.${n.node.id}.name`);
   const doors = doorsOf(ps, root, diveRuns(r, ps.group, o).byLink, o, (n) => per(name(n), 'label') * 28);
   const regions = regionsOf(r, ps).filter((x) => !x.aside);
-  const tag = (keys: string[]) => (nerd ? keys.map(str).find(Boolean) ?? '' : '');
+  const tag = (keys: string[]) => (technical ? keys.map(str).find(Boolean) ?? '' : '');
   const routeTag = (id: string) => stringSources(r).map((x) => `${x}.tag.${id}`);
   const nodes = ps.nodes.map((n) => ({ n, name: name(n), tag: tag([...routeTag(n.id), `node.${n.node.id}.tag`]) }));
   // link names are drawn at the root only

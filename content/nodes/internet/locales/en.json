@@ -1,27 +1,27 @@
 {
   "name": "The internet",
-  "kid": "The internet is lots of networks holding hands. Tap it to see what’s inside!",
-  "nerd": "~80 000 autonomous systems exchanging routes with BGP. Tap to unfold the path through the ISP.",
+  "simple": "The internet is lots of networks holding hands. Tap it to see what’s inside!",
+  "technical": "~80 000 autonomous systems exchanging routes with BGP. Tap to unfold the path through the ISP.",
   "tag": "AS64500 · BGP",
   "inside": {
     "coach": "There’s a whole world inside the internet — open it up!",
     "title": "Inside the internet",
-    "kid": "The internet isn’t one big cloud. It’s lots of networks, each run by a different company, holding hands. The coloured patches show whose boxes your parcel passes – and the faint circles far away are a few of the many other networks.",
-    "nerd": "A network of networks: your ISP’s access network and MPLS core, then settlement-free peering at an internet exchange (or paid transit), ending at a CDN cache close to you. Each shaded area is one operator; tens of thousands of other autonomous systems are out there too.",
+    "simple": "The internet isn’t one big cloud. It’s lots of networks, each run by a different company, holding hands. The coloured patches show whose boxes your parcel passes – and the faint circles far away are a few of the many other networks.",
+    "technical": "A network of networks: your ISP’s access network and MPLS core, then settlement-free peering at an internet exchange (or paid transit), ending at a CDN cache close to you. Each shaded area is one operator; tens of thousands of other autonomous systems are out there too.",
     "describe": {
-      "kid": "Inside the cloud, the path starts at your home. It runs through the street cabinet, backhaul switch, ISP gateway and ISP core. Then it reaches the border router, internet exchange and the video company's data centre, a box you can open. A dashed side road shows transit.",
-      "nerd": "The expanded internet route starts at the home access edge, then crosses the cabinet, backhaul switch, BNG and ISP core. It continues to the border router, IXP and the CDN's data centre, which unfolds. Request and video packets move in opposite directions over fibre, backbone and cross-connect links."
+      "simple": "Inside the cloud, the path starts at your home. It runs through the street cabinet, backhaul switch, ISP gateway and ISP core. Then it reaches the border router, internet exchange and the video company's data centre, a box you can open. A dashed side road shows transit.",
+      "technical": "The expanded internet route starts at the home access edge, then crosses the cabinet, backhaul switch, BNG and ISP core. It continues to the border router, IXP and the CDN's data centre, which unfolds. Request and video packets move in opposite directions over fibre, backbone and cross-connect links."
     }
   },
   "2010": {
-    "nerd": "~35 000 autonomous systems exchanging routes with BGP. Tap to unfold the path through the ISP."
+    "technical": "~35 000 autonomous systems exchanging routes with BGP. Tap to unfold the path through the ISP."
   },
   "1995": {
-    "kid": "The internet is lots of networks holding hands, and in 1995 there are fewer than two thousand of them. Tap it to see what’s inside!",
-    "nerd": "Under 1 700 autonomous systems exchanging routes with BGP-4 (the first count, in October 1996, found 1 644). Tap to unfold the path through the ISP."
+    "simple": "The internet is lots of networks holding hands, and in 1995 there are fewer than two thousand of them. Tap it to see what’s inside!",
+    "technical": "Under 1 700 autonomous systems exchanging routes with BGP-4 (the first count, in October 1996, found 1 644). Tap to unfold the path through the ISP."
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Internet", "title": "Internet", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Border_Gateway_Protocol", "title": "Border Gateway Protocol", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Border_Gateway_Protocol", "title": "Border Gateway Protocol", "level": "technical" }
   ]
 }

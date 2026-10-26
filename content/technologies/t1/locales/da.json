@@ -1,8 +1,8 @@
 {
   "name": "Lejet linje",
   "1995": {
-    "kid": "Det amerikanske net lejer en linje, som altid er tændt, ind i bygningen, hvor webserveren bor. Den bærer halvanden million bit i sekundet.",
-    "nerd": "En lejet T1 (DS1): 24 tidsslots à 64 kbit/s og én rammebit, 193 bit 8.000 gange i sekundet, 1,544 Mbit/s på to kobberpar (B8ZS), med Cisco HDLC ovenpå. En typisk universitets- eller firmalinje i 1990’erne; i Europa ville det være en E1.",
+    "simple": "Det amerikanske net lejer en linje, som altid er tændt, ind i bygningen, hvor webserveren bor. Den bærer halvanden million bit i sekundet.",
+    "technical": "En lejet T1 (DS1): 24 tidsslots à 64 kbit/s og én rammebit, 193 bit 8.000 gange i sekundet, 1,544 Mbit/s på to kobberpar (B8ZS), med Cisco HDLC ovenpå. En typisk universitets- eller firmalinje i 1990’erne; i Europa ville det være en E1.",
     "tag": "T1 · 1,5 Mbit/s · HDLC"
   }
 }

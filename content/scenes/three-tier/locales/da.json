@@ -1,36 +1,36 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Datacentrets træ",
   "heading": {
-    "kid": "Switches i tre etager",
-    "nerd": "Tre lag: core, aggregering, access"
+    "simple": "Switches i tre etager",
+    "technical": "Tre lag: core, aggregering, access"
   },
-  "kid": "I 2010 stod switchene som et træ: store hovedveje øverst, en stor switch i midten og en switch i hvert skab med computere. Hvert skab har to veje op til midten, men den ene holdes lukket, så pakkerne ikke kan køre i ring. Alle pakkerne klemmer sig gennem de åbne veje.",
-  "nerd": "Tre lag, det almindelige design i 2000’erne: access-switches i racks (48 × 1G ned, 2 × 10G op), et aggregeringspar, hvor lag 2 slutter og HSRP giver serverne én gateway, og et core-par ovenover. Spanning tree blokerer hvert racks uplink til standby-switchen for at bryde løkken, så halvdelen af uplinkene står stille, og 48 servere deler ét 10G-uplink (4,8 : 1 overbooket).",
+  "simple": "I 2010 stod switchene som et træ: store hovedveje øverst, en stor switch i midten og en switch i hvert skab med computere. Hvert skab har to veje op til midten, men den ene holdes lukket, så pakkerne ikke kan køre i ring. Alle pakkerne klemmer sig gennem de åbne veje.",
+  "technical": "Tre lag, det almindelige design i 2000’erne: access-switches i racks (48 × 1G ned, 2 × 10G op), et aggregeringspar, hvor lag 2 slutter og HSRP giver serverne én gateway, og et core-par ovenover. Spanning tree blokerer hvert racks uplink til standby-switchen for at bryde løkken, så halvdelen af uplinkene står stille, og 48 servere deler ét 10G-uplink (4,8 : 1 overbooket).",
   "extra": "Leaf–spine-fabrics (Clos, med ECMP over alle uplinks og uden spanning tree) bredte sig med de store cloudfirmaer i begyndelsen af 2010’erne og var det almindelige design fra midten af 2010’erne.",
   "describe": {
-    "kid": "Tre rækker switches. Øverst to hovedveje; i midten den lyse aggregeringsswitch med navn og en bleg reserve. Nederst tre skab-switches; den sidste er din. Hvert skab har en vej op til begge switches i midten, men vejene til reserven er stiplede og lukket med et rødt skilt. Din pakke kommer fra load balanceren, gennem den lyse switch og ned til dit skab.",
-    "nerd": "Core-par øverst, aggregeringsparret i midten (denne aktiv, tvillingen på standby), tre access-switches nederst. Hver access-switch har uplinks til begge, men spanning tree blokerer dem til standby, markeret med forbudsskilte. Dit flow går load balancer → aktiv switch → rack; de andre racks’ flows går op til core eller på tværs, alle via den aktive switch."
+    "simple": "Tre rækker switches. Øverst to hovedveje; i midten den lyse aggregeringsswitch med navn og en bleg reserve. Nederst tre skab-switches; den sidste er din. Hvert skab har en vej op til begge switches i midten, men vejene til reserven er stiplede og lukket med et rødt skilt. Din pakke kommer fra load balanceren, gennem den lyse switch og ned til dit skab.",
+    "technical": "Core-par øverst, aggregeringsparret i midten (denne aktiv, tvillingen på standby), tre access-switches nederst. Hver access-switch har uplinks til begge, men spanning tree blokerer dem til standby, markeret med forbudsskilte. Dit flow går load balancer → aktiv switch → rack; de andre racks’ flows går op til core eller på tværs, alle via den aktive switch."
   },
   "core": {
     "label": {
-      "kid": "Hovedvej",
-      "nerd": "Core {n}"
+      "simple": "Hovedvej",
+      "technical": "Core {n}"
     }
   },
   "standby": {
-    "kid": "Reserve",
-    "nerd": "Standby (HSRP)"
+    "simple": "Reserve",
+    "technical": "Standby (HSRP)"
   },
   "rack": {
     "other": "Andre racks"
   },
   "sticker": {
-    "kid": "Én vej åben, én lukket",
-    "nerd": "Uplink 2: spærret",
+    "simple": "Én vej åben, én lukket",
+    "technical": "Uplink 2: spærret",
     "rate": "48×1G ↓ 10G ↑"
   },
   "learnMore": [

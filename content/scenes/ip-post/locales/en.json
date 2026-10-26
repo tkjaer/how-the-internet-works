@@ -1,85 +1,85 @@
 {
   "title": "Which road next?",
-  "kid": "A router reads the address label on every parcel and checks its signposts: which road takes it closer to that address? Then off the parcel goes, down that road.",
-  "nerd": "A router looks up the destination in its forwarding table. The longest matching prefix wins (a /24 beats the default route 0.0.0.0/0), the TTL goes down by one, and the packet leaves on that route’s interface.",
+  "simple": "A router reads the address label on every parcel and checks its signposts: which road takes it closer to that address? Then off the parcel goes, down that road.",
+  "technical": "A router looks up the destination in its forwarding table. The longest matching prefix wins (a /24 beats the default route 0.0.0.0/0), the TTL goes down by one, and the packet leaves on that route’s interface.",
   "describe": {
-    "kid": "A paper road links your device, this router and the video server. One card shows the parcel’s address label. Another card is a post with road signs. A walking parcel stops here, a magnifying glass reads the label, one sign glows, and the parcel walks on.",
-    "nerd": "The close-up shows the IP header with From, To and TTL. The router’s signs show a client prefix and a default or server route. When the packet pauses, the destination row lights up. Longest-prefix match chooses a sign, TTL counts down, and the packet leaves."
+    "simple": "A paper road links your device, this router and the video server. One card shows the parcel’s address label. Another card is a post with road signs. A walking parcel stops here, a magnifying glass reads the label, one sign glows, and the parcel walks on.",
+    "technical": "The close-up shows the IP header with From, To and TTL. The router’s signs show a client prefix and a default or server route. When the packet pauses, the destination row lights up. Longest-prefix match chooses a sign, TTL counts down, and the packet leaves."
   },
   "role": {
     "nat": {
       "title": "The swap notebook",
-      "kid": "Everything at home shares one outside address. The home router swaps the sender sticker for its own address and writes it in its notebook, so when the answer comes back it knows who asked.",
-      "nerd": "NAPT: the private source address and port are rewritten to the public address. The mapping (inside address:port ↔ outside port) stays in the connection table, and replies are matched on it and rewritten back.",
+      "simple": "Everything at home shares one outside address. The home router swaps the sender sticker for its own address and writes it in its notebook, so when the answer comes back it knows who asked.",
+      "technical": "NAPT: the private source address and port are rewritten to the public address. The mapping (inside address:port ↔ outside port) stays in the connection table, and replies are matched on it and rewritten back.",
       "describe": {
-        "kid": "A road links your devices, the home router and the video server. The address card changes the From sticker to the router. The swap notebook lists you and another device with ticket numbers. The parcel pauses at the router, the label changes, and replies come back through the notebook.",
-        "nerd": "The close-up shows the IP source being rewritten beside the NAT table. Rows map the inside host and port to an outside port. The active row appears and glows on the return leg. The packet keeps moving, with TTL counted down like any routed hop."
+        "simple": "A road links your devices, the home router and the video server. The address card changes the From sticker to the router. The swap notebook lists you and another device with ticket numbers. The parcel pauses at the router, the label changes, and replies come back through the notebook.",
+        "technical": "The close-up shows the IP source being rewritten beside the NAT table. Rows map the inside host and port to an outside port. The active row appears and glows on the return leg. The packet keeps moving, with TTL counted down like any routed hop."
       }
     },
     "bridge": {
       "title": "Just passing through",
-      "kid": "This box doesn’t even read the address label! It takes off the envelope the parcel came in and puts on a new one for the next stretch.",
-      "nerd": "A layer-2 device: it forwards the frame by its destination MAC (or, between different media, re-wraps it in the next link’s frame) but never reads the IP header. The MAC addresses stay those of the devices at either end of this layer-2 stretch, usually two routers; the IP header, TTL included, is never touched. (A tunnel end, such as a cell tower, is different: the frame ends there, and the packet leaves inside a new outer header with the tunnel end’s own addresses and MAC.)",
+      "simple": "This box doesn’t even read the address label! It takes off the envelope the parcel came in and puts on a new one for the next stretch.",
+      "technical": "A layer-2 device: it forwards the frame by its destination MAC (or, between different media, re-wraps it in the next link’s frame) but never reads the IP header. The MAC addresses stay those of the devices at either end of this layer-2 stretch, usually two routers; the IP header, TTL included, is never touched. (A tunnel end, such as a cell tower, is different: the frame ends there, and the packet leaves inside a new outer header with the tunnel end’s own addresses and MAC.)",
       "describe": {
-        "kid": "A road links your device, this passing box and the video server. The address card has sleepy eyes, and the other card shows the old and new envelopes. The parcel keeps its address label closed while one envelope lifts away and a fresh one drops on for the next stretch.",
-        "nerd": "The IP header card is shown but not read. The link card shows incoming and outgoing envelopes. Technical labels say the MAC addresses are passed on unchanged (a tunnel end puts on its own), and the IP header is untouched. During the pause, the old envelope lifts off, the next one lands, and the packet continues with the same IP label and TTL."
+        "simple": "A road links your device, this passing box and the video server. The address card has sleepy eyes, and the other card shows the old and new envelopes. The parcel keeps its address label closed while one envelope lifts away and a fresh one drops on for the next stretch.",
+        "technical": "The IP header card is shown but not read. The link card shows incoming and outgoing envelopes. Technical labels say the MAC addresses are passed on unchanged (a tunnel end puts on its own), and the IP header is untouched. During the pause, the old envelope lifts off, the next one lands, and the packet continues with the same IP label and TTL."
       }
     },
     "switched": {
       "title": "Only the sticker is read",
-      "kid": "In the fast middle of the internet, this router doesn’t even read the address label. It reads only the motorway sticker on the outside, swaps it for the next one and sends the parcel on in a new envelope.",
-      "nerd": "A label-switching router (an MPLS P router): it looks up only the top label, swaps it, counts down the label’s TTL and puts the packet in a new Ethernet frame. The IP header inside is never read, so its TTL and checksum stay as they are; the TTL catches up when the label comes off at the edge (RFC 3443’s uniform model).",
+      "simple": "In the fast middle of the internet, this router doesn’t even read the address label. It reads only the motorway sticker on the outside, swaps it for the next one and sends the parcel on in a new envelope.",
+      "technical": "A label-switching router (an MPLS P router): it looks up only the top label, swaps it, counts down the label’s TTL and puts the packet in a new Ethernet frame. The IP header inside is never read, so its TTL and checksum stay as they are; the TTL catches up when the label comes off at the edge (RFC 3443’s uniform model).",
       "describe": {
-        "kid": "A road links your device, this router and the video server. The address card has sleepy eyes, and the other card shows the old and new envelopes with the motorway sticker. The parcel keeps its address label closed while one envelope lifts away and a fresh one drops on for the next stretch.",
-        "nerd": "The IP header card is shown but not read, and its TTL doesn’t change. The link card shows the incoming and outgoing Ethernet and MPLS envelopes. Technical labels show the router’s own MAC address and say the IP header is untouched. During the pause, the old envelope lifts off, the next one lands, and the packet continues with the same IP label and TTL."
+        "simple": "A road links your device, this router and the video server. The address card has sleepy eyes, and the other card shows the old and new envelopes with the motorway sticker. The parcel keeps its address label closed while one envelope lifts away and a fresh one drops on for the next stretch.",
+        "technical": "The IP header card is shown but not read, and its TTL doesn’t change. The link card shows the incoming and outgoing Ethernet and MPLS envelopes. Technical labels show the router’s own MAC address and say the IP header is untouched. During the pause, the old envelope lifts off, the next one lands, and the packet continues with the same IP label and TTL."
       }
     },
     "endpoint": {
       "title": "Is it for me?",
-      "kid": "At the end of the road the computer checks the address label against its own address. It’s a match! It opens the parcel and hands the numbered piece inside up. On everything it sends, it writes the label itself.",
-      "nerd": "The destination matches a local address, so the IP header is stripped and the payload goes up to TCP (protocol 6). For outgoing packets the host writes the source, the destination and a fresh TTL (64 here, as on Linux, Android, iOS and macOS; Windows uses 128, and Windows 95 used 32).",
+      "simple": "At the end of the road the computer checks the address label against its own address. It’s a match! It opens the parcel and hands the numbered piece inside up. On everything it sends, it writes the label itself.",
+      "technical": "The destination matches a local address, so the IP header is stripped and the payload goes up to TCP (protocol 6). For outgoing packets the host writes the source, the destination and a fresh TTL (64 here, as on Linux, Android, iOS and macOS; Windows uses 128, and Windows 95 used 32).",
       "describe": {
-        "kid": "The road ends at the device being checked. One card shows the address label, and another shows the device’s own address like a door plate. A parcel arrives, the label matches, and a small numbered piece rises to the next layer. On the way out, the label is written before the parcel leaves.",
-        "nerd": "At an endpoint, the IP header is compared with the local address on the plate. The incoming payload rises toward the next layer. On the outgoing leg, the host writes a fresh source, destination and TTL 64. Labels show protocol 6 to TCP and new packets with TTL 64."
+        "simple": "The road ends at the device being checked. One card shows the address label, and another shows the device’s own address like a door plate. A parcel arrives, the label matches, and a small numbered piece rises to the next layer. On the way out, the label is written before the parcel leaves.",
+        "technical": "At an endpoint, the IP header is compared with the local address on the plate. The incoming payload rises toward the next layer. On the outgoing leg, the host writes a fresh source, destination and TTL 64. Labels show protocol 6 to TCP and new packets with TTL 64."
       }
     }
   },
   "at": {
     "mobile-core": {
       "title": "A whole street shares one address",
-      "kid": "Phones on the mobile network don’t get an internet address of their own. The mobile core swaps the sender sticker of lots of phones for the same single address, and gives each its own ticket number in its notebook.",
-      "nerd": "Carrier-grade NAT: subscribers get addresses from the shared space 100.64.0.0/10 (RFC 6598), and dozens to hundreds of them share one public IPv4 address, each with its own block of ports. This is a big reason for IPv6.",
+      "simple": "Phones on the mobile network don’t get an internet address of their own. The mobile core swaps the sender sticker of lots of phones for the same single address, and gives each its own ticket number in its notebook.",
+      "technical": "Carrier-grade NAT: subscribers get addresses from the shared space 100.64.0.0/10 (RFC 6598), and dozens to hundreds of them share one public IPv4 address, each with its own block of ports. This is a big reason for IPv6.",
       "describe": {
-        "kid": "The road shows several phones sharing a mobile core on the way to the video server. The address card changes From to Mobile core. The swap notebook is full of neighbours with ticket numbers. A parcel stops at the core, gets its sticker changed, then walks on. Replies use the notebook to find the right phone.",
-        "nerd": "This is the NAT variant for carrier-grade NAT. The card rewrites a source from 100.64.0.0/10 to the carrier’s public address. The table maps several inside address and port pairs to outside ports. The packet pauses for the rewrite, TTL drops, and forwarding continues."
+        "simple": "The road shows several phones sharing a mobile core on the way to the video server. The address card changes From to Mobile core. The swap notebook is full of neighbours with ticket numbers. A parcel stops at the core, gets its sticker changed, then walks on. Replies use the notebook to find the right phone.",
+        "technical": "This is the NAT variant for carrier-grade NAT. The card rewrites a source from 100.64.0.0/10 to the carrier’s public address. The table maps several inside address and port pairs to outside ports. The packet pauses for the rewrite, TTL drops, and forwarding continues."
       }
     },
     "exchange": {
-      "nerd": "The telephone exchange switches the modem’s call through to the internet company’s modem pool. PPP frames ride inside the call as sound; nothing here reads the IP header, and there are no MAC addresses on a phone line. The IP header, TTL included, is never touched.",
+      "technical": "The telephone exchange switches the modem’s call through to the internet company’s modem pool. PPP frames ride inside the call as sound; nothing here reads the IP header, and there are no MAC addresses on a phone line. The IP header, TTL included, is never touched.",
       "describe": {
-        "kid": "A road links your device, this passing box and the server. The address card has sleepy eyes, and the other card shows the old and new envelopes. The parcel keeps its address label closed while one envelope lifts away and a fresh one drops on for the next stretch.",
-        "nerd": "The IP header card is shown but not read. The link card shows incoming and outgoing envelopes. Technical labels say there are no MAC addresses here and the IP header is untouched. During the pause, one envelope lifts off, the next one lands, and the packet continues with the same IP label and TTL."
+        "simple": "A road links your device, this passing box and the server. The address card has sleepy eyes, and the other card shows the old and new envelopes. The parcel keeps its address label closed while one envelope lifts away and a fresh one drops on for the next stretch.",
+        "technical": "The IP header card is shown but not read. The link card shows incoming and outgoing envelopes. Technical labels say there are no MAC addresses here and the IP header is untouched. During the pause, one envelope lifts off, the next one lands, and the packet continues with the same IP label and TTL."
       }
     },
     "cell-tower": {
-      "nerd": "A tunnel end, not a plain bridge: the base station (gNB) moves the packet between the 5G radio link and a GTP-U tunnel (in UDP/IP) to the mobile core, without reading its IP header. Towards the core, the tunnel packet travels in an Ethernet frame that starts or ends here, with the gNB’s own MAC address. The inner IP header, TTL included, is never touched.",
+      "technical": "A tunnel end, not a plain bridge: the base station (gNB) moves the packet between the 5G radio link and a GTP-U tunnel (in UDP/IP) to the mobile core, without reading its IP header. Towards the core, the tunnel packet travels in an Ethernet frame that starts or ends here, with the gNB’s own MAC address. The inner IP header, TTL included, is never touched.",
       "describe": {
-        "kid": "A road links your device, this passing box and the video server. The address card has sleepy eyes, and the other card shows the old and new envelopes. The parcel keeps its address label closed while one envelope lifts away and a fresh one drops on for the next stretch.",
-        "nerd": "The IP header card is shown but not read. The link card shows one envelope lifting off and a tunnel envelope taking its place. Technical labels show the tunnel end’s own MAC address and say the IP header is untouched. The packet continues inside the tunnel with the same IP label and TTL."
+        "simple": "A road links your device, this passing box and the video server. The address card has sleepy eyes, and the other card shows the old and new envelopes. The parcel keeps its address label closed while one envelope lifts away and a fresh one drops on for the next stretch.",
+        "technical": "The IP header card is shown but not read. The link card shows one envelope lifting off and a tunnel envelope taking its place. Technical labels show the tunnel end’s own MAC address and say the IP header is untouched. The packet continues inside the tunnel with the same IP label and TTL."
       }
     },
     "rnc": {
-      "nerd": "A tunnel end, not a plain bridge: the RNC ends the 3G radio link and moves the packet into a GTP-U tunnel (in UDP/IP) to the packet core, without reading its IP header. Towards the core, the tunnel packet travels in an Ethernet frame that starts or ends here, with the RNC’s own MAC address. The inner IP header, TTL included, is never touched.",
+      "technical": "A tunnel end, not a plain bridge: the RNC ends the 3G radio link and moves the packet into a GTP-U tunnel (in UDP/IP) to the packet core, without reading its IP header. Towards the core, the tunnel packet travels in an Ethernet frame that starts or ends here, with the RNC’s own MAC address. The inner IP header, TTL included, is never touched.",
       "describe": {
-        "kid": "A road links your device, this passing box and the video server. The address card has sleepy eyes, and the other card shows the old and new envelopes. The parcel keeps its address label closed while one envelope lifts away and a fresh one drops on for the next stretch.",
-        "nerd": "The IP header card is shown but not read. The link card shows one envelope lifting off and a tunnel envelope taking its place. Technical labels show the tunnel end’s own MAC address and say the IP header is untouched. The packet continues inside the tunnel with the same IP label and TTL."
+        "simple": "A road links your device, this passing box and the video server. The address card has sleepy eyes, and the other card shows the old and new envelopes. The parcel keeps its address label closed while one envelope lifts away and a fresh one drops on for the next stretch.",
+        "technical": "The IP header card is shown but not read. The link card shows one envelope lifting off and a tunnel envelope taking its place. Technical labels show the tunnel end’s own MAC address and say the IP header is untouched. The packet continues inside the tunnel with the same IP label and TTL."
       }
     },
     "nodeb": {
-      "nerd": "The NodeB relays the packet between the 3G radio and its line to the RNC, which ends the radio link and the tunnel. No Ethernet frame and no MAC addresses on this stretch; the IP header, TTL included, is never read or touched.",
+      "technical": "The NodeB relays the packet between the 3G radio and its line to the RNC, which ends the radio link and the tunnel. No Ethernet frame and no MAC addresses on this stretch; the IP header, TTL included, is never read or touched.",
       "describe": {
-        "kid": "A road links your device, this passing box and the video server. The address card has sleepy eyes, and the other card shows the old and new envelopes. The parcel keeps its address label closed while one envelope lifts away and a fresh one drops on for the next stretch.",
-        "nerd": "The IP header card is shown but not read. The link card shows incoming and outgoing envelopes. Technical labels say there are no MAC addresses here and the IP header is untouched. During the pause, one envelope lifts off, the next one lands, and the packet continues with the same IP label and TTL."
+        "simple": "A road links your device, this passing box and the video server. The address card has sleepy eyes, and the other card shows the old and new envelopes. The parcel keeps its address label closed while one envelope lifts away and a fresh one drops on for the next stretch.",
+        "technical": "The IP header card is shown but not read. The link card shows incoming and outgoing envelopes. Technical labels say there are no MAC addresses here and the IP header is untouched. During the pause, one envelope lifts off, the next one lands, and the packet continues with the same IP label and TTL."
       }
     }
   },
@@ -112,18 +112,18 @@
   },
   "1995": {
     "describe": {
-      "kid": "A paper road links your device, this router and the server. One card shows the parcel’s address label. Another card is a post with road signs. A walking parcel stops here, a magnifying glass reads the label, one sign glows, and the parcel walks on.",
-      "nerd": "The close-up shows the IP header with From, To and TTL. The router’s signs show a client prefix and a default or server route. When the packet pauses, the destination row lights up. Longest-prefix match chooses a sign, TTL counts down, and the packet leaves."
+      "simple": "A paper road links your device, this router and the server. One card shows the parcel’s address label. Another card is a post with road signs. A walking parcel stops here, a magnifying glass reads the label, one sign glows, and the parcel walks on.",
+      "technical": "The close-up shows the IP header with From, To and TTL. The router’s signs show a client prefix and a default or server route. When the packet pauses, the destination row lights up. Longest-prefix match chooses a sign, TTL counts down, and the packet leaves."
     },
     "role": {
       "bridge": {
         "describe": {
-          "kid": "A road links your device, this passing box and the server. The address card has sleepy eyes, and the other card shows the old and new envelopes. The parcel keeps its address label closed while one envelope lifts away and a fresh one drops on for the next stretch.",
-          "nerd": "The IP header card is shown but not read. The link card shows incoming and outgoing envelopes. Technical labels say the MAC addresses are passed on unchanged (a tunnel end puts on its own), and the IP header is untouched. During the pause, the old envelope lifts off, the next one lands, and the packet continues with the same IP label and TTL."
+          "simple": "A road links your device, this passing box and the server. The address card has sleepy eyes, and the other card shows the old and new envelopes. The parcel keeps its address label closed while one envelope lifts away and a fresh one drops on for the next stretch.",
+          "technical": "The IP header card is shown but not read. The link card shows incoming and outgoing envelopes. Technical labels say the MAC addresses are passed on unchanged (a tunnel end puts on its own), and the IP header is untouched. During the pause, the old envelope lifts off, the next one lands, and the packet continues with the same IP label and TTL."
         }
       },
       "endpoint": {
-        "nerd": "The destination matches a local address, so the IP header is stripped and the payload goes up to TCP (protocol 6). For outgoing packets the host writes the source, the destination and a fresh TTL (64 here, the default RFC 1700 recommends; some systems used 32 or 255)."
+        "technical": "The destination matches a local address, so the IP header is stripped and the payload goes up to TCP (protocol 6). For outgoing packets the host writes the source, the destination and a fresh TTL (64 here, the default RFC 1700 recommends; some systems used 32 or 255)."
       }
     }
   },
@@ -133,18 +133,18 @@
     },
     "at": {
       "mobile-core": {
-        "kid": "Phones on the mobile network don’t get an internet address of their own. The mobile gate swaps the sender sticker of lots of phones for the same single address, and gives each its own ticket number in its notebook.",
-        "nerd": "Carrier-grade NAT at the GGSN: phones get private addresses, here from 10.0.0.0/8, and dozens to hundreds of them share one public IPv4 address, each with its own block of ports. A shared space just for this, 100.64.0.0/10, came later (RFC 6598, 2012). This is a big reason for IPv6.",
+        "simple": "Phones on the mobile network don’t get an internet address of their own. The mobile gate swaps the sender sticker of lots of phones for the same single address, and gives each its own ticket number in its notebook.",
+        "technical": "Carrier-grade NAT at the GGSN: phones get private addresses, here from 10.0.0.0/8, and dozens to hundreds of them share one public IPv4 address, each with its own block of ports. A shared space just for this, 100.64.0.0/10, came later (RFC 6598, 2012). This is a big reason for IPv6.",
         "describe": {
-          "kid": "The road shows several phones sharing a mobile gate on the way to the video server. The address card changes From to Mobile gate. The swap notebook is full of neighbours with ticket numbers. A parcel stops at the gate, gets its sticker changed, then walks on. Replies use the notebook to find the right phone.",
-          "nerd": "This is the NAT variant for carrier-grade NAT. The card rewrites a private source from 10.0.0.0/8 to the carrier’s public address. The table maps several inside address and port pairs to outside ports. The packet pauses for the rewrite, TTL drops, and forwarding continues."
+          "simple": "The road shows several phones sharing a mobile gate on the way to the video server. The address card changes From to Mobile gate. The swap notebook is full of neighbours with ticket numbers. A parcel stops at the gate, gets its sticker changed, then walks on. Replies use the notebook to find the right phone.",
+          "technical": "This is the NAT variant for carrier-grade NAT. The card rewrites a private source from 10.0.0.0/8 to the carrier’s public address. The table maps several inside address and port pairs to outside ports. The packet pauses for the rewrite, TTL drops, and forwarding continues."
         }
       }
     }
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Routing_table", "title": "Routing table", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Routing_table", "title": "Routing table", "level": "technical" },
     { "url": "https://en.wikipedia.org/wiki/Network_address_translation", "title": "Network address translation", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Carrier-grade_NAT", "title": "Carrier-grade NAT", "level": "nerd", "eras": ["2010", "today"] }
+    { "url": "https://en.wikipedia.org/wiki/Carrier-grade_NAT", "title": "Carrier-grade NAT", "level": "technical", "eras": ["2010", "today"] }
   ]
 }

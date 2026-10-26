@@ -1,154 +1,154 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Inside the video server",
-  "kid": "The video server is a computer that keeps popular videos close to you. Light from the data-centre link becomes bits on the network card. The video app looks on the shelves; if the piece is there, it sends it straight back. If not, it asks the main copy far away, saves a copy, and then sends yours.",
-  "nerd": "A CDN cache server terminates the fibre on a NIC, and the cache software usually runs on bare metal (e.g. FreeBSD + NGINX), streaming hot objects from RAM and NVMe straight to the NIC. The app checks the RAM cache, then the NVMe SSDs. A HIT is served locally; a MISS fetches from origin, stores a copy according to cache-control and TTL, then replies.",
+  "simple": "The video server is a computer that keeps popular videos close to you. Light from the data-centre link becomes bits on the network card. The video app looks on the shelves; if the piece is there, it sends it straight back. If not, it asks the main copy far away, saves a copy, and then sends yours.",
+  "technical": "A CDN cache server terminates the fibre on a NIC, and the cache software usually runs on bare metal (e.g. FreeBSD + NGINX), streaming hot objects from RAM and NVMe straight to the NIC. The app checks the RAM cache, then the NVMe SSDs. A HIT is served locally; a MISS fetches from origin, stores a copy according to cache-control and TTL, then replies.",
   "describe": {
-    "kid": "An open server case shows a network card, the computer, memory and video shelves. A request comes in as light, reaches the video app, then the shelf either sends a film piece back or asks the far-away main copy first.",
-    "nerd": "The cutaway cache server shows NIC, host CPU running the bare-metal cache app, RAM and NVMe SSD cache. The request enters on fibre and reaches the highlighted app. Hit cycles return a video segment from cache; miss cycles go to origin, store a copy, then return."
+    "simple": "An open server case shows a network card, the computer, memory and video shelves. A request comes in as light, reaches the video app, then the shelf either sends a film piece back or asks the far-away main copy first.",
+    "technical": "The cutaway cache server shows NIC, host CPU running the bare-metal cache app, RAM and NVMe SSD cache. The request enters on fibre and reaches the highlighted app. Hit cycles return a video segment from cache; miss cycles go to origin, store a copy, then return."
   },
   "app": "Video app",
   "hit": {
-    "kid": "Got it!",
-    "nerd": "HIT · served from cache"
+    "simple": "Got it!",
+    "technical": "HIT · served from cache"
   },
   "miss": {
-    "kid": "Not here: ask the main copy",
-    "nerd": "MISS · fetch origin, store copy"
+    "simple": "Not here: ask the main copy",
+    "technical": "MISS · fetch origin, store copy"
   },
   "origin": {
-    "kid": "Main copy, far away",
-    "nerd": "Origin keeps 3 copies"
+    "simple": "Main copy, far away",
+    "technical": "Origin keeps 3 copies"
   },
   "nic": {
     "title": {
-      "kid": "Network card",
-      "nerd": "NIC 2×100G"
+      "simple": "Network card",
+      "technical": "NIC 2×100G"
     },
     "line": {
-      "kid": "Light → bits",
-      "nerd": "Fibre frames → DMA"
+      "simple": "Light → bits",
+      "technical": "Fibre frames → DMA"
     }
   },
   "compute": {
     "title": {
-      "kid": "The computer",
-      "nerd": "Host CPU"
+      "simple": "The computer",
+      "technical": "Host CPU"
     },
     "line": {
-      "kid": "Runs the video app",
-      "nerd": "Bare-metal cache app"
+      "simple": "Runs the video app",
+      "technical": "Bare-metal cache app"
     }
   },
   "memory": {
     "title": {
-      "kid": "Memory",
-      "nerd": "RAM cache"
+      "simple": "Memory",
+      "technical": "RAM cache"
     },
     "line": {
-      "kid": "Fast shelf",
-      "nerd": "Hot objects in RAM"
+      "simple": "Fast shelf",
+      "technical": "Hot objects in RAM"
     }
   },
   "ssd": {
     "title": {
-      "kid": "SSD shelves",
-      "nerd": "NVMe SSD cache"
+      "simple": "SSD shelves",
+      "technical": "NVMe SSD cache"
     },
     "line": {
-      "kid": "Shelves of videos",
-      "nerd": "Cache objects on disk"
+      "simple": "Shelves of videos",
+      "technical": "Cache objects on disk"
     }
   },
   "1995": {
     "title": "Inside the web server",
-    "kid": "The web site is this one computer, a tall beige box on a shelf. Your request comes off the hub’s cable into the network card, and the web program asks the hard disk for the page. The disk spins, the arm reads the page, and it goes back out the same way. Then the same again for the picture.",
-    "nerd": "A 1995 web server: one tower PC or workstation with a 10BASE-T NIC, one CPU and one disk, running one program (NCSA HTTPd, or the new Apache). HTTP/1.0 opens a new TCP connection for each file: GET /index.html, then GET /picture.gif, each read from disk and sent with 200 OK. No cache, no CDN (Akamai began in 1998–99), no virtual machines.",
+    "simple": "The web site is this one computer, a tall beige box on a shelf. Your request comes off the hub’s cable into the network card, and the web program asks the hard disk for the page. The disk spins, the arm reads the page, and it goes back out the same way. Then the same again for the picture.",
+    "technical": "A 1995 web server: one tower PC or workstation with a 10BASE-T NIC, one CPU and one disk, running one program (NCSA HTTPd, or the new Apache). HTTP/1.0 opens a new TCP connection for each file: GET /index.html, then GET /picture.gif, each read from disk and sent with 200 OK. No cache, no CDN (Akamai began in 1998–99), no virtual machines.",
     "describe": {
-      "kid": "A beige computer with its side off shows a network card, the computer with one program in it, and a spinning disk. A parcel comes in from the hub, goes to the program and on to the disk, and a page, then a picture, comes back out to the hub.",
-      "nerd": "The cutaway tower shows the 10BASE-T NIC, the CPU running httpd and the hard disk. The request comes in from the hub on the Ethernet cable and reaches httpd, which reads the file from disk; the reply, the page one cycle and its picture the next, goes back out with 200 OK."
+      "simple": "A beige computer with its side off shows a network card, the computer with one program in it, and a spinning disk. A parcel comes in from the hub, goes to the program and on to the disk, and a page, then a picture, comes back out to the hub.",
+      "technical": "The cutaway tower shows the 10BASE-T NIC, the CPU running httpd and the hard disk. The request comes in from the hub on the Ethernet cable and reaches httpd, which reads the file from disk; the reply, the page one cycle and its picture the next, goes back out with 200 OK."
     },
     "app": "Web program",
     "nic": {
       "title": {
-        "nerd": "NIC 10BASE-T"
+        "technical": "NIC 10BASE-T"
       },
       "line": {
-        "kid": "Pulses → bits",
-        "nerd": "Manchester → frames"
+        "simple": "Pulses → bits",
+        "technical": "Manchester → frames"
       }
     },
     "compute": {
       "title": {
-        "nerd": "CPU · one OS"
+        "technical": "CPU · one OS"
       },
       "line": {
-        "kid": "One program",
-        "nerd": "One httpd, no VMs"
+        "simple": "One program",
+        "technical": "One httpd, no VMs"
       }
     },
     "disk": {
       "title": {
-        "kid": "Disk",
-        "nerd": "Hard disk"
+        "simple": "Disk",
+        "technical": "Hard disk"
       },
       "line": {
-        "kid": "Pages and pictures",
-        "nerd": "Files on disk"
+        "simple": "Pages and pictures",
+        "technical": "Files on disk"
       }
     },
     "ok": {
       "page": {
-        "kid": "Here’s the page!",
-        "nerd": "GET /index.html → 200 OK"
+        "simple": "Here’s the page!",
+        "technical": "GET /index.html → 200 OK"
       },
       "picture": {
-        "kid": "And here’s the picture!",
-        "nerd": "GET /picture.gif → 200 OK"
+        "simple": "And here’s the picture!",
+        "technical": "GET /picture.gif → 200 OK"
       }
     }
   },
   "2010": {
-    "nerd": "A 2010 CDN cache server: a 1U or 2U box whose 1G copper NIC (1000BASE-T) goes to the rack’s access switch, running Linux and a cache program (Squid, Varnish or the CDN’s own) straight on the hardware, no VMs. Hot objects sit in RAM, the rest on spinning disks; SSDs were only starting to appear. A HIT is served locally; a MISS fetches from origin, stores a copy according to cache-control and TTL, then replies.",
+    "technical": "A 2010 CDN cache server: a 1U or 2U box whose 1G copper NIC (1000BASE-T) goes to the rack’s access switch, running Linux and a cache program (Squid, Varnish or the CDN’s own) straight on the hardware, no VMs. Hot objects sit in RAM, the rest on spinning disks; SSDs were only starting to appear. A HIT is served locally; a MISS fetches from origin, stores a copy according to cache-control and TTL, then replies.",
     "describe": {
-      "kid": "An open server case shows a network card, the computer with its helpers, memory and shelves of disks. A request comes in on a copper cable and reaches the video program, then the shelf either sends a film piece back or asks the far-away main copy first.",
-      "nerd": "The cutaway cache server shows the 1000BASE-T NIC, the CPU running cache processes on bare Linux, RAM and the hard-disk cache. The request arrives over copper from the access switch and reaches the highlighted process. Hit cycles return a video segment from cache; miss cycles go to origin, store a copy, then return."
+      "simple": "An open server case shows a network card, the computer with its helpers, memory and shelves of disks. A request comes in on a copper cable and reaches the video program, then the shelf either sends a film piece back or asks the far-away main copy first.",
+      "technical": "The cutaway cache server shows the 1000BASE-T NIC, the CPU running cache processes on bare Linux, RAM and the hard-disk cache. The request arrives over copper from the access switch and reaches the highlighted process. Hit cycles return a video segment from cache; miss cycles go to origin, store a copy, then return."
     },
     "nic": {
       "title": {
-        "nerd": "NIC 2×1G"
+        "technical": "NIC 2×1G"
       },
       "line": {
-        "kid": "Pulses → bits",
-        "nerd": "1000BASE-T → frames"
+        "simple": "Pulses → bits",
+        "technical": "1000BASE-T → frames"
       }
     },
     "ssd": {
       "title": {
-        "nerd": "Hard-disk cache",
-        "kid": "Disk shelves"
+        "technical": "Hard-disk cache",
+        "simple": "Disk shelves"
       },
       "line": {
-        "nerd": "Objects on hard disks",
-        "kid": "Shelves of videos"
+        "technical": "Objects on hard disks",
+        "simple": "Shelves of videos"
       }
     },
-    "kid": "The video server is a computer that keeps popular videos in a big city’s data centre. Your request comes in on a copper cable from the rack’s switch and becomes bits on the network card. The video program looks in its memory and on its disks; if the piece is there, it sends it straight back. If not, it asks the main copy far away, saves a copy, and then sends yours.",
+    "simple": "The video server is a computer that keeps popular videos in a big city’s data centre. Your request comes in on a copper cable from the rack’s switch and becomes bits on the network card. The video program looks in its memory and on its disks; if the piece is there, it sends it straight back. If not, it asks the main copy far away, saves a copy, and then sends yours.",
     "app": "Video program",
     "compute": {
       "title": {
-        "nerd": "CPU · bare metal"
+        "technical": "CPU · bare metal"
       },
       "line": {
-        "kid": "Helpers at work",
-        "nerd": "Linux · cache processes"
+        "simple": "Helpers at work",
+        "technical": "Linux · cache processes"
       }
     }
   },
   "learnMore": [
-    { "url": "https://simple.wikipedia.org/wiki/Server_(computing)", "title": "Server", "level": "kid" }
+    { "url": "https://simple.wikipedia.org/wiki/Server_(computing)", "title": "Server", "level": "simple" }
   ]
 }

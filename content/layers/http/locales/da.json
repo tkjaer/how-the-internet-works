@@ -1,21 +1,21 @@
 {
   "name": {
-    "kid": "Brevet",
-    "nerd": "HTTP-besked"
+    "simple": "Brevet",
+    "technical": "HTTP-besked"
   },
   "note": {
-    "kid": "Selve beskeden, inde i den låste kasse.",
-    "nerd": "Applikationsbeskeden: en forespørgsel på det næste videosegment eller et stykke af svaret. Vist i HTTP/1.1’s tekstform; det meste video i dag rejser som HTTP/2 eller HTTP/3 (over QUIC), der bærer de samme felter i binære rammer."
+    "simple": "Selve beskeden, inde i den låste kasse.",
+    "technical": "Applikationsbeskeden: en forespørgsel på det næste videosegment eller et stykke af svaret. Vist i HTTP/1.1’s tekstform; det meste video i dag rejser som HTTP/2 eller HTTP/3 (over QUIC), der bærer de samme felter i binære rammer."
   },
   "line": "Hypertext Transfer Protocol: {start}",
   "value": {
     "ask": {
-      "kid": "“Send mig lige det næste stykke af kattevideoen!”",
-      "nerd": "En forespørgsel på det næste videosegment."
+      "simple": "“Send mig lige det næste stykke af kattevideoen!”",
+      "technical": "En forespørgsel på det næste videosegment."
     },
     "send": {
-      "kid": "“Her er det næste stykke af kattevideoen!”",
-      "nerd": "Et svar: det næste videosegment."
+      "simple": "“Her er det næste stykke af kattevideoen!”",
+      "technical": "Et svar: det næste videosegment."
     },
     "get": "GET /video/720p/42.m4s HTTP/1.1",
     "ok": "HTTP/1.1 200 OK",
@@ -25,8 +25,8 @@
   "field": {
     "start": {
       "name": {
-        "kid": "Brevet siger",
-        "nerd": "Startlinje"
+        "simple": "Brevet siger",
+        "technical": "Startlinje"
       },
       "about": "Forespørgslen (metode og sti) eller svarets status."
     },
@@ -37,8 +37,8 @@
   },
   "1995": {
     "note": {
-      "kid": "Selve beskeden, i almindelig skrift: almindelige sider var ikke låst i 1995.",
-      "nerd": "Applikationsbeskeden i almindelig HTTP/1.0: en forespørgsel på siden eller dens billede eller et stykke af svaret."
+      "simple": "Selve beskeden, i almindelig skrift: almindelige sider var ikke låst i 1995.",
+      "technical": "Applikationsbeskeden i almindelig HTTP/1.0: en forespørgsel på siden eller dens billede eller et stykke af svaret."
     },
     "value": {
       "get": "GET /index.html HTTP/1.0",
@@ -46,29 +46,29 @@
       "host": "User-Agent: Mozilla/1.1N",
       "type": "Content-Type: text/html",
       "ask": {
-        "kid": "“Send mig lige siden med billedet!”",
-        "nerd": "En forespørgsel på siden."
+        "simple": "“Send mig lige siden med billedet!”",
+        "technical": "En forespørgsel på siden."
       },
       "send": {
-        "kid": "“Her er siden!”",
-        "nerd": "Et svar: et stykke af siden."
+        "simple": "“Her er siden!”",
+        "technical": "Et svar: et stykke af siden."
       }
     }
   },
   "2010": {
     "note": {
-      "kid": "Selve beskeden, i almindelig skrift: video var ikke låst i 2010.",
-      "nerd": "Applikationsbeskeden i almindelig HTTP: en forespørgsel på videoen eller et stykke af svaret."
+      "simple": "Selve beskeden, i almindelig skrift: video var ikke låst i 2010.",
+      "technical": "Applikationsbeskeden i almindelig HTTP: en forespørgsel på videoen eller et stykke af svaret."
     },
     "value": {
       "get": "GET /videos/42.mp4 HTTP/1.1",
       "ask": {
-        "kid": "“Send mig lige kattevideoen!”",
-        "nerd": "En forespørgsel på videofilen."
+        "simple": "“Send mig lige kattevideoen!”",
+        "technical": "En forespørgsel på videofilen."
       },
       "send": {
-        "kid": "“Her er det næste stykke af kattevideoen!”",
-        "nerd": "Et svar: det næste stykke af videofilen."
+        "simple": "“Her er det næste stykke af kattevideoen!”",
+        "technical": "Et svar: det næste stykke af videofilen."
       }
     }
   }

@@ -11,28 +11,28 @@ const link = (r: typeof home, id: string) => r.links.find((l) => l.id === id)!;
 
 describe('addresses', () => {
   it('rewrites the source at the home NAT', () => {
-    const inside = layerCtx(home, link(home, 'ap-router'), 'video', 'request', 'up', 'kid');
+    const inside = layerCtx(home, link(home, 'ap-router'), 'video', 'request', 'up', 'simple');
     expect([inside.src, inside.dst]).toEqual(['192.168.1.23', '198.51.100.20']);
     expect(inside.nat).toEqual({ inside: '192.168.1.23', outside: '203.0.113.7', insidePort: 51034, outsidePort: 61757 });
     expect([inside.sport, inside.dport]).toEqual([51034, 443]);
-    const outside = layerCtx(home, link(home, 'router-cabinet'), 'video', 'request', 'up', 'kid');
+    const outside = layerCtx(home, link(home, 'router-cabinet'), 'video', 'request', 'up', 'simple');
     expect(outside.src).toBe('203.0.113.7');
-    const back = layerCtx(home, link(home, 'phone-ap'), 'video', 'video', 'down', 'kid');
+    const back = layerCtx(home, link(home, 'phone-ap'), 'video', 'video', 'down', 'simple');
     expect([back.src, back.dst]).toEqual(['198.51.100.20', '192.168.1.23']);
   });
 
   it('does carrier-grade NAT in the mobile core', () => {
-    const tunnel = layerCtx(street, link(street, 'cell-tower-mobile-core'), 'video', 'request', 'up', 'nerd');
+    const tunnel = layerCtx(street, link(street, 'cell-tower-mobile-core'), 'video', 'request', 'up', 'technical');
     expect(tunnel.src).toBe('100.64.12.7');
     expect(tunnel.nat).toEqual({ inside: '100.64.12.7', outside: '192.0.2.44', insidePort: 51034, outsidePort: 20517 });
-    const out = layerCtx(street, link(street, 'mobile-core-core'), 'video', 'request', 'up', 'nerd');
+    const out = layerCtx(street, link(street, 'mobile-core-core'), 'video', 'request', 'up', 'technical');
     expect([out.src, out.sport]).toEqual(['192.0.2.44', 20517]);
-    const back = layerCtx(street, link(street, 'mobile-core-core'), 'video', 'video', 'down', 'nerd');
+    const back = layerCtx(street, link(street, 'mobile-core-core'), 'video', 'video', 'down', 'technical');
     expect([back.dst, back.dport, back.sport]).toEqual(['192.0.2.44', 20517, 443]);
   });
 
   it('knows when the next hop only switches a label (#134)', () => {
-    const at = (l: string, dir: 'up' | 'down') => layerCtx(home, link(home, l), 'video', 'request', dir, 'nerd').switched;
+    const at = (l: string, dir: 'up' | 'down') => layerCtx(home, link(home, l), 'video', 'request', dir, 'technical').switched;
     expect(at('bng-core', 'up')).toBe(true);
     expect(at('core-border', 'down')).toBe(true);
     // the edges push and pop: they read the packet
@@ -50,7 +50,7 @@ describe('addresses', () => {
 
 describe('link frames (#132)', () => {
   const ids = (c: ReturnType<typeof layerCtx>) => [c.frame.src.id, c.frame.dst.id, c.next?.id ?? null];
-  const ctx = (r: typeof home, l: string, dir: 'up' | 'down') => layerCtx(r, link(r, l), 'video', 'request', dir, 'nerd');
+  const ctx = (r: typeof home, l: string, dir: 'up' | 'down') => layerCtx(r, link(r, l), 'video', 'request', dir, 'technical');
 
   it('passes a frame through bridges with the MACs of the hops at either end', () => {
     expect(ids(ctx(home, 'phone-ap', 'up'))).toEqual(['phone', 'router', 'router']);
@@ -80,13 +80,13 @@ describe('strings', () => {
     expect(Object.keys(packs.da.strings).length).toBeGreaterThan(100);
   });
   it('falls back level → level-less → English', () => {
-    expect(lookupLevel('da', 'node.phone.name', 'kid')).toBe('Telefon');
-    expect(lookupLevel('da', 'layer.tcp.name', 'nerd')).toBeTruthy();
+    expect(lookupLevel('da', 'node.phone.name', 'simple')).toBe('Telefon');
+    expect(lookupLevel('da', 'layer.tcp.name', 'technical')).toBeTruthy();
     const untranslated = { ...packs, da: { ...packs.da, strings: {} } };
-    expect(lookupLevel('da', 'node.cabinet.kid', 'kid', untranslated)).toBe(lookupLevel('en', 'node.cabinet.kid', 'kid'));
+    expect(lookupLevel('da', 'node.cabinet.simple', 'simple', untranslated)).toBe(lookupLevel('en', 'node.cabinet.simple', 'simple'));
   });
   it('prefers the most specific source', () => {
-    expect(firstOf('en', ['place.on-the-go.stop.phone', 'activity.watch-video.stop.phone'], 'kid')).toContain('even out here');
-    expect(firstOf('en', ['place.home.stop.phone', 'activity.watch-video.stop.phone'], 'kid')).toContain('cat video');
+    expect(firstOf('en', ['place.on-the-go.stop.phone', 'activity.watch-video.stop.phone'], 'simple')).toContain('even out here');
+    expect(firstOf('en', ['place.home.stop.phone', 'activity.watch-video.stop.phone'], 'simple')).toContain('cat video');
   });
 });

@@ -1,20 +1,20 @@
 {
   "name": "Fibre terminal",
-  "kid": "In a building of your internet company, a big box listens to the light from many streets and tells each house when it may send.",
-  "nerd": "The OLT (optical line terminal) at the exchange: it runs the PON (grants each home its upstream slots, encrypts what goes down), then bridges each home’s Ethernet frames on with Q-in-Q tags towards the BNG.",
+  "simple": "In a building of your internet company, a big box listens to the light from many streets and tells each house when it may send.",
+  "technical": "The OLT (optical line terminal) at the exchange: it runs the PON (grants each home its upstream slots, encrypts what goes down), then bridges each home’s Ethernet frames on with Q-in-Q tags towards the BNG.",
   "tag": "OLT · Q-in-Q VLANs",
   "peek": {
     "up": {
-      "kid": "The fibre terminal takes your parcel out of its light envelope and puts two stickers on it: one for your street, one for your home.",
-      "nerd": "The OLT ends XGS-PON (the XGEM header comes off), bridges the Ethernet frame on and pushes two 802.1ad tags: S-VLAN 101 for the PON, C-VLAN 2042 for this home."
+      "simple": "The fibre terminal takes your parcel out of its light envelope and puts two stickers on it: one for your street, one for your home.",
+      "technical": "The OLT ends XGS-PON (the XGEM header comes off), bridges the Ethernet frame on and pushes two 802.1ad tags: S-VLAN 101 for the PON, C-VLAN 2042 for this home."
     },
     "down": {
-      "kid": "The fibre terminal peels off the two stickers, puts your parcel in a light envelope with your house number and sends it down the glass thread to every house on your street.",
-      "nerd": "The OLT pops the Q-in-Q tags, maps the frame to XGEM Port-ID 1127, encrypts it with that port’s AES key and broadcasts it down the PON."
+      "simple": "The fibre terminal peels off the two stickers, puts your parcel in a light envelope with your house number and sends it down the glass thread to every house on your street.",
+      "technical": "The OLT pops the Q-in-Q tags, maps the frame to XGEM Port-ID 1127, encrypts it with that port’s AES key and broadcasts it down the PON."
     }
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Optical_line_termination", "title": "Optical line termination", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/IEEE_802.1ad", "title": "IEEE 802.1ad (Q-in-Q)", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Optical_line_termination", "title": "Optical line termination", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/IEEE_802.1ad", "title": "IEEE 802.1ad (Q-in-Q)", "level": "technical" }
   ]
 }

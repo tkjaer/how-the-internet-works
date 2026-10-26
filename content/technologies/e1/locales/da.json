@@ -1,8 +1,8 @@
 {
   "name": "Lejet linje",
   "1995": {
-    "kid": "Dit internetselskab lejer en linje af telefonselskabet, som altid er tændt, hele vejen til et større net. Den bærer pakkerne for alle dets kunder: 2 millioner bit i sekundet.",
-    "nerd": "En lejet E1 (G.703/G.704): 2,048 Mbit/s i 32 tidsslots à 64 kbit/s. Slot 0 holder rammerne i takt, og de andre 31 er ét rør til Cisco HDLC. En lille udbyder købte tit mindre, 64 eller 128 kbit/s (et eller to slots), eller et Frame Relay-kredsløb.",
+    "simple": "Dit internetselskab lejer en linje af telefonselskabet, som altid er tændt, hele vejen til et større net. Den bærer pakkerne for alle dets kunder: 2 millioner bit i sekundet.",
+    "technical": "En lejet E1 (G.703/G.704): 2,048 Mbit/s i 32 tidsslots à 64 kbit/s. Slot 0 holder rammerne i takt, og de andre 31 er ét rør til Cisco HDLC. En lille udbyder købte tit mindre, 64 eller 128 kbit/s (et eller to slots), eller et Frame Relay-kredsløb.",
     "tag": "E1 · 2 Mbit/s · HDLC"
   }
 }

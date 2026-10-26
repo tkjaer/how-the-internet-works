@@ -1,25 +1,25 @@
 {
   "name": {
-    "kid": "Kabel-kuvert",
-    "nerd": "Ethernet-ramme"
+    "simple": "Kabel-kuvert",
+    "technical": "Ethernet-ramme"
   },
   "note": {
-    "kid": "Hver boks på vejen tager kuverten af og sætter en ny på til det næste kabel.",
-    "nerd": "Kun lokalt: der skrives en ny ramme med nye MAC-adresser for hvert hop."
+    "simple": "Hver boks på vejen tager kuverten af og sætter en ny på til det næste kabel.",
+    "technical": "Kun lokalt: der skrives en ny ramme med nye MAC-adresser for hvert hop."
   },
   "line": "Ethernet II, afs.: {src}, modt.: {dst}",
   "field": {
     "dst": {
       "name": {
-        "kid": "Til",
-        "nerd": "Modtager-MAC"
+        "simple": "Til",
+        "technical": "Modtager-MAC"
       },
       "about": "Den næste boks på kablet. Hver router skriver en ny ramme til det næste link."
     },
     "src": {
       "name": {
-        "kid": "Fra",
-        "nerd": "Afsender-MAC"
+        "simple": "Fra",
+        "technical": "Afsender-MAC"
       },
       "about": "Boksen der sendte rammen på kablet. Switche og adgangspunkter giver den uændret videre."
     },
@@ -41,7 +41,7 @@
   },
   "learnMore": [
     { "url": "https://da.wikipedia.org/wiki/Netv%C3%A6rksswitch", "title": "Netværksswitch", "level": "both" },
-    { "url": "https://da.wikipedia.org/wiki/MAC-adresse", "title": "MAC-adresse", "level": "nerd" },
+    { "url": "https://da.wikipedia.org/wiki/MAC-adresse", "title": "MAC-adresse", "level": "technical" },
     { "url": "https://da.wikipedia.org/wiki/ARP", "title": "ARP", "level": "both" }
   ]
 }

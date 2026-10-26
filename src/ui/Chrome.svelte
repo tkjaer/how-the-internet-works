@@ -1,7 +1,7 @@
 <script lang="ts">
   // Top bar: the depth ladder (breadcrumb, Ladder.svelte), "What can I explore?" (a toggle, #122: the doors light
   // up and the caption lists them; only where there is something to explore), the time machine (#59: on every screen, showing the era you're in), pause (all motion),
-  // kid/nerd, day/night (when the theme has a night), mute (#189: one tap, on a desktop or tablet), and ⋯: a menu
+  // simple/technical, day/night (when the theme has a night), mute (#189: one tap, on a desktop or tablet), and ⋯: a menu
   // (Menu.svelte, entries in `entries` below) with the language (a list it opens: each by its own name, its name in the
   // reader's language and its code), sound (on a phone, where the bar has no room for mute),
   // read aloud (where there is a voice for the language), the style (only when more than one theme is installed), the
@@ -100,7 +100,7 @@
       <button class="btn icon-btn" aria-pressed={paused} aria-label={tr('ui.pause')} title={tr('ui.pause')} onclick={onpause}><Icon name={paused ? 'play' : 'pause'} /></button>
     </div>
     <div class="card seg" role="group" aria-label={tr('ui.level')}>
-      {#each ['kid', 'nerd'] as const as lv}
+      {#each ['simple', 'technical'] as const as lv}
         <button class="btn" class:on={loc.level === lv} aria-pressed={loc.level === lv} onclick={() => setLevel(lv)}>{tr(small ? `mode.${lv}.short` : `mode.${lv}`)}</button>
       {/each}
     </div>

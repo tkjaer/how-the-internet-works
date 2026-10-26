@@ -1,24 +1,24 @@
 {
   "name": "Today",
-  "kid": "A thin glass thread brings the internet into the house as flashes of light, fast enough for everyone at home to watch videos at once.",
-  "nerd": "Fibre to the home or to the building: GPON or XGS-PON (gigabits, shared by a neighbourhood), or Ethernet from the basement. Wi‑Fi 6 and NAT at home.",
+  "simple": "A thin glass thread brings the internet into the house as flashes of light, fast enough for everyone at home to watch videos at once.",
+  "technical": "Fibre to the home or to the building: GPON or XGS-PON (gigabits, shared by a neighbourhood), or Ethernet from the basement. Wi‑Fi 6 and NAT at home.",
   "describe": {
-    "kid": "A phone in your hand. It’s on Wi‑Fi to the router, and the router has a glass thread to the internet.",
-    "nerd": "A smartphone on Wi‑Fi 6 behind a home router, with fibre, or a cable from the basement, as its uplink."
+    "simple": "A phone in your hand. It’s on Wi‑Fi to the router, and the router has a glass thread to the internet.",
+    "technical": "A smartphone on Wi‑Fi 6 behind a home router, with fibre, or a cable from the basement, as its uplink."
   },
   "at": {
     "on-the-go": {
-      "kid": "Out on the street, phones are on 5G: radio to a cell tower nearby, then a glass thread to the internet. Fast enough for big videos.",
-      "nerd": "5G NR: wide carriers and many antennas give a phone tens to hundreds of Mbit/s. The gNB tunnels the packets (GTP-U) over fibre to the core’s UPF.",
+      "simple": "Out on the street, phones are on 5G: radio to a cell tower nearby, then a glass thread to the internet. Fast enough for big videos.",
+      "technical": "5G NR: wide carriers and many antennas give a phone tens to hundreds of Mbit/s. The gNB tunnels the packets (GTP-U) over fibre to the core’s UPF.",
       "describe": {
-        "kid": "A phone in your hand, out on the street, on 5G to a cell tower.",
-        "nerd": "A smartphone on 5G NR to a gNB, with fibre backhaul to the mobile core."
+        "simple": "A phone in your hand, out on the street, on 5G to a cell tower.",
+        "technical": "A smartphone on 5G NR to a gNB, with fibre backhaul to the mobile core."
       }
     },
     "desk": {
       "describe": {
-        "kid": "A laptop on the desk, with a cable to the router, and the router has a glass thread to the internet.",
-        "nerd": "A laptop on Ethernet to the home router, with fibre (XGS-PON) as its uplink."
+        "simple": "A laptop on the desk, with a cable to the router, and the router has a glass thread to the internet.",
+        "technical": "A laptop on Ethernet to the home router, with fibre (XGS-PON) as its uplink."
       }
     }
   }

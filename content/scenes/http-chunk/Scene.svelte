@@ -17,7 +17,7 @@
   const L = $derived(layoutFor(view.orient, view.vp));
   const T = $derived(L.size);
   const portrait = $derived(view.orient === 'portrait');
-  const nerd = $derived(ctx.level === 'nerd');
+  const technical = $derived(ctx.level === 'technical');
   const flow = $derived(subject.route.activity.flows.find((f) => f.id === ctx.flow));
   // HTTP inside TLS is locked at every hop between the ends; plain HTTP (1995, 2010) could be read on the way
   const lock = $derived(!!flow?.stack.includes('tls'));
@@ -85,7 +85,7 @@
   <Text x={ask.x + 34} y={titleY(ask)} text={S('card.ask')} size={T.big} kind="big" anchor="start" />
   <rect x={slip.x} y={slip.y} width={slip.w} height={slip.h} rx="14" fill="var(--paper-white)" stroke="var(--line)" stroke-width="5" />
   <rect x={slip.x + 3} y={slip.y + 3} width={slip.w - 6} height="18" rx="10" fill="var(--sun)" />
-  {#if nerd}
+  {#if technical}
     {#each slipLines as line, i}
       <text x={slip.x + 20} y={slip.y + 22 + (slip.h - 22) * (i + 1) / (slipLines.length + 1) + mono * 0.35} font-family="var(--mono-font)" font-size={mono} font-weight={i ? 600 : 800} fill="var(--line)" opacity={m.write}>{line}</text>
     {/each}
@@ -101,7 +101,7 @@
     {@const mx = slip.x + slip.w + 20 + meterW / 2}
     {@const barsH = slip.h * 0.5}
     <Bars x={mx + barsH * 0.13} y={slip.y + 6} h={barsH} bars={m.bars} />
-    <Text x={mx} y={slip.y + barsH + 6 + T.text * 1.25} text={S(m.bars > 2 ? 'meter.fast' : 'meter.slow', L.compact ? 'kid' : undefined)} size={L.compact ? T.text : T.text * 0.85} kind="node" />
+    <Text x={mx} y={slip.y + barsH + 6 + T.text * 1.25} text={S(m.bars > 2 ? 'meter.fast' : 'meter.slow', L.compact ? 'simple' : undefined)} size={L.compact ? T.text : T.text * 0.85} kind="node" />
   {/if}
   {#if askStatus}<Text x={ask.x + ask.w / 2} y={statusY(ask)} text={askStatus} size={T.status} kind="big" colour={m.beat === 'play' ? 'var(--leaf-ink)' : 'var(--berry-ink)'} />{/if}
 

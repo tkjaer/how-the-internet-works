@@ -1,15 +1,15 @@
 {
   "name": {
-    "kid": "The video company",
-    "nerd": "Video CDN · AS64501"
+    "simple": "The video company",
+    "technical": "Video CDN · AS64501"
   },
   "1995": {
     "name": {
-      "kid": "The web site",
-      "nerd": "Web host"
+      "simple": "The web site",
+      "technical": "Web host"
     }
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Content_delivery_network", "title": "Content delivery network", "level": "nerd", "eras": ["2010", "today"] }
+    { "url": "https://en.wikipedia.org/wiki/Content_delivery_network", "title": "Content delivery network", "level": "technical", "eras": ["2010", "today"] }
   ]
 }

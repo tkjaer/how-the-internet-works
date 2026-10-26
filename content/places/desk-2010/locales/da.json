@@ -2,11 +2,11 @@
   "name": "Hjemme, ved skrivebordet",
   "access": "Bærbar med kabel",
   "2010": {
-    "kid": "Den bærbare sender sine pakker gennem et kabel til routeren. Routerens modem synger dem ud ad den gamle kobbertelefonlinje som små toner, til et skab på din gade.",
-    "nerd": "Med kabel, omkring 2010: Ethernet fra den bærbare til en DSL-modemrouter, som NAT-oversætter pakkerne og sender dem som VDSL2-toner på kobbertelefonparret til en DSLAM i gadeskabet og derefter med fiber til udbyderen.",
+    "simple": "Den bærbare sender sine pakker gennem et kabel til routeren. Routerens modem synger dem ud ad den gamle kobbertelefonlinje som små toner, til et skab på din gade.",
+    "technical": "Med kabel, omkring 2010: Ethernet fra den bærbare til en DSL-modemrouter, som NAT-oversætter pakkerne og sender dem som VDSL2-toner på kobbertelefonparret til en DSLAM i gadeskabet og derefter med fiber til udbyderen.",
     "describe": {
-      "kid": "Et gennemskåret hus viser et skrivebord med en bærbar, en gammel telefon på et lille bord og routeren. Et kabel går fra den bærbare til routeren, og telefonlinjen tager pakkerne ud til internetskyen. Forespørgsler går ud, og video kommer tilbage.",
-      "nerd": "Oversigten følger et kablet hjem i 2010: den bærbare med et stjerneklistermærke på Ethernet til en DSL-router med to antenner, hvis uplink er kobbertelefonlinjen (VDSL2), som den deler med telefonen. Forespørgsler går opstrøms; videopakker kommer nedstrøms tilbage."
+      "simple": "Et gennemskåret hus viser et skrivebord med en bærbar, en gammel telefon på et lille bord og routeren. Et kabel går fra den bærbare til routeren, og telefonlinjen tager pakkerne ud til internetskyen. Forespørgsler går ud, og video kommer tilbage.",
+      "technical": "Oversigten følger et kablet hjem i 2010: den bærbare med et stjerneklistermærke på Ethernet til en DSL-router med to antenner, hvis uplink er kobbertelefonlinjen (VDSL2), som den deler med telefonen. Forespørgsler går opstrøms; videopakker kommer nedstrøms tilbage."
     },
     "tag": {
       "laptop": "Ethernet · 192.168.1.40",
@@ -14,17 +14,17 @@
     },
     "stop": {
       "laptop": {
-        "kid": "I 2010 gik den bærbare ved skrivebordet også på nettet gennem et kabel. Dens forespørgsel løber gennem kablet til routeren.",
-        "nerd": "En bærbar fra 2010 med en gigabit-Ethernetport, sat i en af modemrouterens LAN-porte på 100 Mbit/s, så kablet kører 100: stadig langt hurtigere end DSL-linjen bagved, ofte 8–20 Mbit/s ned."
+        "simple": "I 2010 gik den bærbare ved skrivebordet også på nettet gennem et kabel. Dens forespørgsel løber gennem kablet til routeren.",
+        "technical": "En bærbar fra 2010 med en gigabit-Ethernetport, sat i en af modemrouterens LAN-porte på 100 Mbit/s, så kablet kører 100: stadig langt hurtigere end DSL-linjen bagved, ofte 8–20 Mbit/s ned."
       },
       "router": {
-        "kid": "Routeren er hjemmets hoveddør. Den skriver dit hjems adresse på pakken, og dens modem synger den ud ad telefonlinjen.",
-        "nerd": "NAT omskriver 192.168.1.40 til den offentlige 203.0.113.7; det indbyggede VDSL2-modem sender så rammerne som DMT-toner på telefonparret."
+        "simple": "Routeren er hjemmets hoveddør. Den skriver dit hjems adresse på pakken, og dens modem synger den ud ad telefonlinjen.",
+        "technical": "NAT omskriver 192.168.1.40 til den offentlige 203.0.113.7; det indbyggede VDSL2-modem sender så rammerne som DMT-toner på telefonparret."
       }
     },
     "inside": {
       "internet": {
-        "nerd": "Adgangsnet (VDSL2 fra en DSLAM i gadeskabet; de fleste danske hjem havde i 2010 stadig ADSL2+ fra centralen), et aggregeringslag (L2-backhaul til BNG’en), udbyderens MPLS-kerne og derefter enten peering i et IXP eller betalt transit – og til sidst en CDN-cache. Hvert farvet felt er én operatørs net."
+        "technical": "Adgangsnet (VDSL2 fra en DSLAM i gadeskabet; de fleste danske hjem havde i 2010 stadig ADSL2+ fra centralen), et aggregeringslag (L2-backhaul til BNG’en), udbyderens MPLS-kerne og derefter enten peering i et IXP eller betalt transit – og til sidst en CDN-cache. Hvert farvet felt er én operatørs net."
       }
     }
   },

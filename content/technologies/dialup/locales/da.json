@@ -1,7 +1,7 @@
 {
   "name": "Telefonopkald",
-  "kid": "Modemmet laver pakken om til fløjt og sus og sender dem ned ad telefonlinjen, som et meget hurtigt og meget larmende telefonopkald.",
-  "nerd": "Et V.34-modemopkald: op til 28,8 kbit/s begge veje, i praksis mindre (33,6k kom i 1996, 56k i 1997; standardiseret som V.90 i 1998). Opkaldet holder ét kredsløb gennem centralen, så længe du er online.",
+  "simple": "Modemmet laver pakken om til fløjt og sus og sender dem ned ad telefonlinjen, som et meget hurtigt og meget larmende telefonopkald.",
+  "technical": "Et V.34-modemopkald: op til 28,8 kbit/s begge veje, i praksis mindre (33,6k kom i 1996, 56k i 1997; standardiseret som V.90 i 1998). Opkaldet holder ét kredsløb gennem centralen, så længe du er online.",
   "tag": "V.34 · 28,8k",
   "learnMore": [
     { "url": "https://da.wikipedia.org/wiki/Modem", "title": "Modem", "level": "both" }

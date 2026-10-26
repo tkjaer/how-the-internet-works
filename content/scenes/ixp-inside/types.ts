@@ -29,7 +29,7 @@ export interface ExchangeLayout {
   outLabel: Tag;
   inTech: Tag;
   outTech: Tag;
-  /** Where the other members' one shared name goes (each gets its AS number for nerds). */
+  /** Where the other members' one shared name goes (each gets its AS number at Technical). */
   othersLabel: Tag;
 }
 

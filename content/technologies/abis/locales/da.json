@@ -1,8 +1,8 @@
 {
   "name": "Mastlinje",
   "1995": {
-    "kid": "Fra masten går en linje til styreboksen og videre til mobilselskabets store central. Et GSM-opkald er så lille, at fire af dem deler én lille plads på linjen.",
-    "nerd": "Abis (mast → BSC) og Ater (BSC → transcoder): E1-linjer, 32 tidsluker à 64 kbit/s. Et opkald fylder en kvart luke, 16 kbit/s; luke 1 bærer mastens signalering (LAPD). Mange net (Nokia, Siemens) satte transcoderen (TRAU) ved MSC’en, så kvarterne gik hele vejen dertil; i TRAU’en tilpasses data til en hel luke på 64 kbit/s, som V.110 gør det.",
+    "simple": "Fra masten går en linje til styreboksen og videre til mobilselskabets store central. Et GSM-opkald er så lille, at fire af dem deler én lille plads på linjen.",
+    "technical": "Abis (mast → BSC) og Ater (BSC → transcoder): E1-linjer, 32 tidsluker à 64 kbit/s. Et opkald fylder en kvart luke, 16 kbit/s; luke 1 bærer mastens signalering (LAPD). Mange net (Nokia, Siemens) satte transcoderen (TRAU) ved MSC’en, så kvarterne gik hele vejen dertil; i TRAU’en tilpasses data til en hel luke på 64 kbit/s, som V.110 gør det.",
     "tag": "E1 · 16 kbit/s-delluke"
   }
 }

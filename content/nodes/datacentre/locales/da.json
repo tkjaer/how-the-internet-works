@@ -1,15 +1,15 @@
 {
   "name": "Datacenter",
-  "kid": "En stor bygning fuld af computere i høje skabe, lige ved siden af knudepunktet. Tryk på den for at kigge ind!",
-  "nerd": "Videofirmaets point of presence (PoP): en kantrouter, load balancere og en leaf–spine-fabric af serverracks. Tryk for at folde det ud.",
+  "simple": "En stor bygning fuld af computere i høje skabe, lige ved siden af knudepunktet. Tryk på den for at kigge ind!",
+  "technical": "Videofirmaets point of presence (PoP): en kantrouter, load balancere og en leaf–spine-fabric af serverracks. Tryk for at folde det ud.",
   "tag": "CDN-PoP · leaf–spine",
   "inside": {
     "title": "Inde i datacentret",
-    "kid": "Din pakke kommer ind ad bygningens hoveddør. En trafikbetjent vælger en computer, der ikke har travlt, et stort vejkryds sender pakken til det rigtige skab, og skabets switch giver den til videoserveren. Hvis serveren ikke har videoen endnu, henter den den fra hovedkopien langt væk.",
-    "nerd": "En kant-PoP: kantrouteren tager krydsforbindelsen fra knudepunktet, en L4-load balancer fordeler forbindelserne til serviceadressen (VIP) over cache-serverne, og en leaf–spine-fabric (Clos) giver hvert rack mange lige gode veje. Et cache-miss går tilbage til origin i en cloud-region.",
+    "simple": "Din pakke kommer ind ad bygningens hoveddør. En trafikbetjent vælger en computer, der ikke har travlt, et stort vejkryds sender pakken til det rigtige skab, og skabets switch giver den til videoserveren. Hvis serveren ikke har videoen endnu, henter den den fra hovedkopien langt væk.",
+    "technical": "En kant-PoP: kantrouteren tager krydsforbindelsen fra knudepunktet, en L4-load balancer fordeler forbindelserne til serviceadressen (VIP) over cache-serverne, og en leaf–spine-fabric (Clos) giver hvert rack mange lige gode veje. Et cache-miss går tilbage til origin i en cloud-region.",
     "describe": {
-      "kid": "I en stor hal står rækker af høje skabe. Vejen kommer fra knudepunktet til kantrouteren, load balanceren, en spine-switch, en rack-switch og videoserveren. En stiplet vej fører langt væk til hovedkopien. Pakker går ind, og video kommer ud igen.",
-      "nerd": "PoP-visningen starter ved IXP’et og går i zigzag gennem kantrouter, L4-load balancer, spine, top-of-rack-leaf og cache-serveren over kort fiber. En stiplet gren fra cachen fører til origin i en cloud-region. Forespørgsler og video bevæger sig i hver sin retning."
+      "simple": "I en stor hal står rækker af høje skabe. Vejen kommer fra knudepunktet til kantrouteren, load balanceren, en spine-switch, en rack-switch og videoserveren. En stiplet vej fører langt væk til hovedkopien. Pakker går ind, og video kommer ud igen.",
+      "technical": "PoP-visningen starter ved IXP’et og går i zigzag gennem kantrouter, L4-load balancer, spine, top-of-rack-leaf og cache-serveren over kort fiber. En stiplet gren fra cachen fører til origin i en cloud-region. Forespørgsler og video bevæger sig i hver sin retning."
     }
   },
   "learnMore": [

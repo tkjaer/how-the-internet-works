@@ -1,13 +1,13 @@
 {
   "name": "Aggregation-Switch",
   "2010": {
-    "kid": "Ein großer Switch in der Mitte des Rechenzentrums. Jeder Schrank voller Computer hat zwei Wege nach oben; dieser Switch nimmt den vollen, und ein Ersatz steht daneben, falls er kaputtgeht.",
-    "nerd": "Die Aggregation-Schicht eines Three-Tier-Rechenzentrums: ein Chassis-Switch, an dem jeder 10G-Uplink der Access-Switches endet, Layer 2 aufhört und HSRP den Servern das Gateway gibt. Ein Standby-Zwilling wartet daneben; Spanning Tree sperrt die Uplinks dorthin, damit der Baum keine Schleife hat.",
+    "simple": "Ein großer Switch in der Mitte des Rechenzentrums. Jeder Schrank voller Computer hat zwei Wege nach oben; dieser Switch nimmt den vollen, und ein Ersatz steht daneben, falls er kaputtgeht.",
+    "technical": "Die Aggregation-Schicht eines Three-Tier-Rechenzentrums: ein Chassis-Switch, an dem jeder 10G-Uplink der Access-Switches endet, Layer 2 aufhört und HSRP den Servern das Gateway gibt. Ein Standby-Zwilling wartet daneben; Spanning Tree sperrt die Uplinks dorthin, damit der Baum keine Schleife hat.",
     "tag": "Aggregation · HSRP · STP"
   },
   "learnMore": [
-    { "url": "https://de.wikipedia.org/wiki/Hierarchisches_Internetworking-Modell", "title": "Hierarchisches Internetworking-Modell", "level": "nerd" },
-    { "url": "https://de.wikipedia.org/wiki/Spanning_Tree_Protocol", "title": "Spanning Tree Protocol", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/Hierarchisches_Internetworking-Modell", "title": "Hierarchisches Internetworking-Modell", "level": "technical" },
+    { "url": "https://de.wikipedia.org/wiki/Spanning_Tree_Protocol", "title": "Spanning Tree Protocol", "level": "technical" },
     { "url": "https://de.wikipedia.org/wiki/Switch_(Netzwerktechnik)", "title": "Switch (Netzwerktechnik)", "level": "both" }
   ]
 }

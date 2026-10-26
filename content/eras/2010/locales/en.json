@@ -1,26 +1,26 @@
 {
   "name": "2010",
-  "kid": "The phone line carried the internet and phone calls at the same time, as tones too high to hear. A box with a modem inside sent Wi‑Fi to every room.",
-  "nerd": "DSL: ADSL2+ and then VDSL2 from street cabinets, from a few to tens of Mbit/s on the copper pair. A modem-router at home does NAT, with an 802.11n access point.",
+  "simple": "The phone line carried the internet and phone calls at the same time, as tones too high to hear. A box with a modem inside sent Wi‑Fi to every room.",
+  "technical": "DSL: ADSL2+ and then VDSL2 from street cabinets, from a few to tens of Mbit/s on the copper pair. A modem-router at home does NAT, with an 802.11n access point.",
   "describe": {
-    "kid": "A laptop, open on the table. It’s on Wi‑Fi, with no cable: the box with the modem inside sings down the phone line.",
-    "nerd": "A laptop on 802.11n Wi‑Fi to a DSL modem-router, which does NAT and sends DMT tones down the phone pair."
+    "simple": "A laptop, open on the table. It’s on Wi‑Fi, with no cable: the box with the modem inside sings down the phone line.",
+    "technical": "A laptop on 802.11n Wi‑Fi to a DSL modem-router, which does NAT and sends DMT tones down the phone pair."
   },
   "at": {
     "on-the-go": {
-      "kid": "Phones could watch videos now, over 3G. Everyone near the mast shared its radio waves, so a video came small, and sometimes it stopped to load.",
-      "nerd": "3G with HSPA: HSDPA peaked at 7.2–14 Mbit/s, shared by the whole cell, and a phone got 1–3 Mbit/s in practice. NodeB → RNC → GGSN, with the packets in GTP-U tunnels; 360p was typical.",
+      "simple": "Phones could watch videos now, over 3G. Everyone near the mast shared its radio waves, so a video came small, and sometimes it stopped to load.",
+      "technical": "3G with HSPA: HSDPA peaked at 7.2–14 Mbit/s, shared by the whole cell, and a phone got 1–3 Mbit/s in practice. NodeB → RNC → GGSN, with the packets in GTP-U tunnels; 360p was typical.",
       "describe": {
-        "kid": "A phone with one round button under its screen, on 3G to a mast down the street.",
-        "nerd": "A 2010 smartphone on HSPA (3G) to a NodeB, with the RNC and the GGSN behind it."
+        "simple": "A phone with one round button under its screen, on 3G to a mast down the street.",
+        "technical": "A 2010 smartphone on HSPA (3G) to a NodeB, with the RNC and the GGSN behind it."
       }
     },
     "desk-2010": {
-      "kid": "The phone line carried the internet and phone calls at the same time, as tones too high to hear. At the desk, a cable ran from the laptop to the box with the modem inside.",
-      "nerd": "DSL: ADSL2+ and then VDSL2 from street cabinets, from a few to tens of Mbit/s on the copper pair. The laptop has a 100 Mbit/s Ethernet cable to the modem-router, which does NAT.",
+      "simple": "The phone line carried the internet and phone calls at the same time, as tones too high to hear. At the desk, a cable ran from the laptop to the box with the modem inside.",
+      "technical": "DSL: ADSL2+ and then VDSL2 from street cabinets, from a few to tens of Mbit/s on the copper pair. The laptop has a 100 Mbit/s Ethernet cable to the modem-router, which does NAT.",
       "describe": {
-        "kid": "A laptop on the desk, with a cable to the box with the modem inside, which sings down the phone line.",
-        "nerd": "A laptop on Ethernet to a DSL modem-router, which does NAT and sends DMT tones down the phone pair."
+        "simple": "A laptop on the desk, with a cable to the box with the modem inside, which sings down the phone line.",
+        "technical": "A laptop on Ethernet to a DSL modem-router, which does NAT and sends DMT tones down the phone pair."
       }
     }
   }

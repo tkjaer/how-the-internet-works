@@ -1,7 +1,7 @@
 {
   "title": "Light in a glass thread",
-  "kid": "Fibre is a glass thread about as thin as a hair. Flashes of light bounce along inside it. Different colours can share the same thread without getting mixed up!",
-  "nerd": "Light is confined to the core by total internal reflection at the core/cladding boundary. DWDM multiplexes dozens of wavelengths around 1550 nm onto one fibre, each an independent channel of 100–800 Gbit/s.",
+  "simple": "Fibre is a glass thread about as thin as a hair. Flashes of light bounce along inside it. Different colours can share the same thread without getting mixed up!",
+  "technical": "Light is confined to the core by total internal reflection at the core/cladding boundary. DWDM multiplexes dozens of wavelengths around 1550 nm onto one fibre, each an independent channel of 100–800 Gbit/s.",
   "core": "Core",
   "cladding": "Cladding",
   "mux": "Combine colours",
@@ -20,12 +20,12 @@
   },
   "gpon": {
     "title": "Light shared by your street",
-    "kid": "This glass thread is shared by all the houses on your street. At the splitter the light coming home goes to every house, and each house keeps only its own parcels. Going up, the houses take turns, so their flashes never bump into each other.",
-    "nerd": "A passive optical network: an unpowered splitter shares one fibre among 32–64 homes. Downstream at 1577 nm is broadcast to every home, and each ONT keeps only its own (encrypted) frames. Upstream at 1270 nm is time-shared: the OLT grants each home its slots (XGS-PON).",
+    "simple": "This glass thread is shared by all the houses on your street. At the splitter the light coming home goes to every house, and each house keeps only its own parcels. Going up, the houses take turns, so their flashes never bump into each other.",
+    "technical": "A passive optical network: an unpowered splitter shares one fibre among 32–64 homes. Downstream at 1577 nm is broadcast to every home, and each ONT keeps only its own (encrypted) frames. Upstream at 1270 nm is time-shared: the OLT grants each home its slots (XGS-PON).",
     "extra": "Two generations on one thread: the older GPON (2.5 Gbit/s down, 1.25 up) uses 1490 nm down and 1310 nm up, so it can share this splitter with XGS-PON's 1577 and 1270 nm. A coexistence filter (WDM) at the exchange combines the two, and each home's ONT keeps only the colours it speaks, so a street can move to 10G one house at a time.",
     "describe": {
-      "kid": "A row of houses shares one glass thread through a splitter. Blue light going home travels down the shared fibre and out to every house. Red light going up leaves one house at a time. Sparkles bounce inside the glass core.",
-      "nerd": "The access view shows a PON tree. Drop fibres from homes meet a passive splitter, then one shared fibre runs toward the OLT. Downstream pulses (blue) broadcast to every ONT. Upstream pulses (red) use time slots so only one home sends on the shared span at a time. The label shows 1:32 and 1270/1577 nm."
+      "simple": "A row of houses shares one glass thread through a splitter. Blue light going home travels down the shared fibre and out to every house. Red light going up leaves one house at a time. Sparkles bounce inside the glass core.",
+      "technical": "The access view shows a PON tree. Drop fibres from homes meet a passive splitter, then one shared fibre runs toward the OLT. Downstream pulses (blue) broadcast to every ONT. Upstream pulses (red) use time slots so only one home sends on the shared span at a time. The label shows 1:32 and 1270/1577 nm."
     },
     "down": "Coming home",
     "everyone": "to every house",
@@ -36,48 +36,48 @@
   },
   "metro-fibre": {
     "title": "Colours sharing one thread",
-    "kid": "A glass thread runs under the street from box to box, all the way to the exchange. The light bounces along inside its core, and a few colours share the same thread without getting mixed up: each colour is its own channel.",
-    "nerd": "Metro fibre: single-mode links between street cabinets, aggregation sites and the exchange, typically 10–100 Gbit/s Ethernet optics, with CWDM or DWDM putting a handful of wavelengths on one fibre pair.",
+    "simple": "A glass thread runs under the street from box to box, all the way to the exchange. The light bounces along inside its core, and a few colours share the same thread without getting mixed up: each colour is its own channel.",
+    "technical": "Metro fibre: single-mode links between street cabinets, aggregation sites and the exchange, typically 10–100 Gbit/s Ethernet optics, with CWDM or DWDM putting a handful of wavelengths on one fibre pair.",
     "describe": {
-      "kid": "One glass fibre stretches from a lamp end to a receiver end. Four numbered lights, 1 red, 2 yellow, 3 green and 4 blue, combine into the core, bounce along the thread, then split apart again, each to the receiver with its own number. Labels point to the core, the cladding and the colour boxes.",
-      "nerd": "The metro fibre view shows four wavelength channels, λ1 to λ4 (drawn red, yellow, green and blue, and numbered at both ends), entering a mux and travelling through a single-mode core. They leave through a demux at the far end. Moving pulses mark each channel, while labels call out core, cladding and DWDM. The label shows the C-band 50 GHz grid."
+      "simple": "One glass fibre stretches from a lamp end to a receiver end. Four numbered lights, 1 red, 2 yellow, 3 green and 4 blue, combine into the core, bounce along the thread, then split apart again, each to the receiver with its own number. Labels point to the core, the cladding and the colour boxes.",
+      "technical": "The metro fibre view shows four wavelength channels, λ1 to λ4 (drawn red, yellow, green and blue, and numbered at both ends), entering a mux and travelling through a single-mode core. They leave through a demux at the far end. Moving pulses mark each channel, while labels call out core, cladding and DWDM. The label shows the C-band 50 GHz grid."
     }
   },
   "backbone": {
     "title": "Light on the motorway",
-    "kid": "The internet's motorways are glass threads under the roads, from town to town. The light gets fainter as it goes, so on a long thread a booster every 80 km or so makes all the colours bright again at once. Watch the counter: it adds up the kilometres.",
-    "nerd": "Long-haul DWDM: 64–96 wavelengths in the C-band, each 100–800 Gbit/s with coherent optics. Erbium-doped fibre amplifiers (EDFAs) about every 80 km boost all the colours at once; a short stretch needs none.",
+    "simple": "The internet's motorways are glass threads under the roads, from town to town. The light gets fainter as it goes, so on a long thread a booster every 80 km or so makes all the colours bright again at once. Watch the counter: it adds up the kilometres.",
+    "technical": "Long-haul DWDM: 64–96 wavelengths in the C-band, each 100–800 Gbit/s with coherent optics. Erbium-doped fibre amplifiers (EDFAs) about every 80 km boost all the colours at once; a short stretch needs none.",
     "describe": {
-      "kid": "A long glass thread with a break mark stands for many kilometres. Eight lights, numbered 1 to 8 and coloured like a rainbow from red to pink, run together through the core and fade a little as they go. A red number under the first light counts the kilometres. Long threads get boosters that make the light bright again.",
-      "nerd": "The long-haul view shows eight DWDM wavelengths in one fibre, λ1 to λ8, numbered at the lasers and the receivers. Break marks stand for the real length, and a counter follows λ1 in km. The fibre is cut into spans of up to 80 km; pulses fade across each span and an EDFA boosts all channels between spans. The label notes 96 wavelengths and EDFA every 80 km."
+      "simple": "A long glass thread with a break mark stands for many kilometres. Eight lights, numbered 1 to 8 and coloured like a rainbow from red to pink, run together through the core and fade a little as they go. A red number under the first light counts the kilometres. Long threads get boosters that make the light bright again.",
+      "technical": "The long-haul view shows eight DWDM wavelengths in one fibre, λ1 to λ8, numbered at the lasers and the receivers. Break marks stand for the real length, and a counter follows λ1 in km. The fibre is cut into spans of up to 80 km; pulses fade across each span and an EDFA boosts all channels between spans. The label notes 96 wavelengths and EDFA every 80 km."
     },
     "booster": "Booster"
   },
   "cross-connect": {
     "title": "Across the hall",
-    "kid": "In the exchange's building, every company has its own boxes, and a short glass cable joins them. Your parcels cross it in a blink: a few colours share the thread, each its own channel.",
-    "nerd": "A cross-connect: a single-mode patch through the meet-me room, a few hundred metres at most. A 100GBASE-LR4 optic puts four 25G lanes on four wavelengths near 1310 nm (LAN-WDM) and splits them again at the far port.",
+    "simple": "In the exchange's building, every company has its own boxes, and a short glass cable joins them. Your parcels cross it in a blink: a few colours share the thread, each its own channel.",
+    "technical": "A cross-connect: a single-mode patch through the meet-me room, a few hundred metres at most. A 100GBASE-LR4 optic puts four 25G lanes on four wavelengths near 1310 nm (LAN-WDM) and splits them again at the far port.",
     "describe": {
-      "kid": "Inside the exchange, a short glass thread is shown close up. Four numbered lights, 1 red, 2 yellow, 3 green and 4 blue, enter, bounce through the core, and split apart at the far end. The moving flashes cross the hall very quickly, one colour per channel.",
-      "nerd": "The cross-connect view uses the metro drawing for a short meet-me-room patch. Four LAN-WDM lanes, λ1 to λ4 (drawn red, yellow, green and blue, and numbered at both ends), enter the mux, travel through the single-mode core and leave through the demux. The label shows four wavelengths from 1295 to 1310 nm, with moving pulses on each lane."
+      "simple": "Inside the exchange, a short glass thread is shown close up. Four numbered lights, 1 red, 2 yellow, 3 green and 4 blue, enter, bounce through the core, and split apart at the far end. The moving flashes cross the hall very quickly, one colour per channel.",
+      "technical": "The cross-connect view uses the metro drawing for a short meet-me-room patch. Four LAN-WDM lanes, λ1 to λ4 (drawn red, yellow, green and blue, and numbered at both ends), enter the mux, travel through the single-mode core and leave through the demux. The label shows four wavelengths from 1295 to 1310 nm, with moving pulses on each lane."
     }
   },
   "dc-fibre": {
     "title": "Light between the racks",
-    "kid": "Inside the data centre, short glass cables join the boxes: the front door, the crossroads and the cupboards of computers. They are only a few metres long, so the light crosses them in a blink. Four colours share each thread, so it carries four times as much.",
-    "nerd": "Data-centre optics: 400GBASE-FR4 puts four 100G lanes on four CWDM wavelengths (1271–1331 nm) over one single-mode pair, up to 2 km; the last metres to a server are often copper (DAC). Each link is one hop of the leaf–spine fabric.",
+    "simple": "Inside the data centre, short glass cables join the boxes: the front door, the crossroads and the cupboards of computers. They are only a few metres long, so the light crosses them in a blink. Four colours share each thread, so it carries four times as much.",
+    "technical": "Data-centre optics: 400GBASE-FR4 puts four 100G lanes on four CWDM wavelengths (1271–1331 nm) over one single-mode pair, up to 2 km; the last metres to a server are often copper (DAC). Each link is one hop of the leaf–spine fabric.",
     "describe": {
-      "kid": "A short glass thread between two boxes in the data centre is shown close up. Four coloured lights join at one end, bounce along the core, and split apart at the other. The flashes cross in a blink.",
-      "nerd": "The fabric link view uses the metro drawing for a short single-mode run. Four CWDM lanes enter the mux, travel through the core and leave through the demux. The label shows four wavelengths from 1271 to 1331 nm, with moving pulses on each lane."
+      "simple": "A short glass thread between two boxes in the data centre is shown close up. Four coloured lights join at one end, bounce along the core, and split apart at the other. The flashes cross in a blink.",
+      "technical": "The fabric link view uses the metro drawing for a short single-mode run. Four CWDM lanes enter the mux, travel through the core and leave through the demux. The label shows four wavelengths from 1271 to 1331 nm, with moving pulses on each lane."
     }
   },
   "fttb": {
     "title": "A glass thread to your building",
-    "kid": "With fibre to the building, the glass thread stops in the basement of your block of flats, and ordinary cables run up the stairs to every flat. The thread is the building’s own, and it carries light both ways at once: one colour going up and another colour coming down, so they never bump.",
-    "nerd": "FTTB: a point-to-point single-mode fibre from the ISP’s aggregation switch to a switch in the basement, often a BiDi optic at each end (1 Gbit/s: 1310 nm up, 1490 nm down on one strand; 10G BiDi uses 1270/1330 nm). Inside, Cat 5e/6 copper or G.fast over the old phone wiring reaches each flat.",
+    "simple": "With fibre to the building, the glass thread stops in the basement of your block of flats, and ordinary cables run up the stairs to every flat. The thread is the building’s own, and it carries light both ways at once: one colour going up and another colour coming down, so they never bump.",
+    "technical": "FTTB: a point-to-point single-mode fibre from the ISP’s aggregation switch to a switch in the basement, often a BiDi optic at each end (1 Gbit/s: 1310 nm up, 1490 nm down on one strand; 10G BiDi uses 1270/1330 nm). Inside, Cat 5e/6 copper or G.fast over the old phone wiring reaches each flat.",
     "describe": {
-      "kid": "One glass thread runs from the basement of a block of flats to the internet company. Red flashes going up and blue flashes coming down bounce along the core in opposite directions, each from its own lamp to its own catcher.",
-      "nerd": "The building view shows one single-mode fibre carrying two wavelengths in opposite directions: upstream from the basement switch at 1310 nm and downstream from the aggregation switch at 1490 nm, each entering through a WDM filter. The label notes a BiDi optic on one strand."
+      "simple": "One glass thread runs from the basement of a block of flats to the internet company. Red flashes going up and blue flashes coming down bounce along the core in opposite directions, each from its own lamp to its own catcher.",
+      "technical": "The building view shows one single-mode fibre carrying two wavelengths in opposite directions: upstream from the basement switch at 1310 nm and downstream from the aggregation switch at 1490 nm, each entering through a WDM filter. The label notes a BiDi optic on one strand."
     },
     "up": "Going up",
     "upColour": "in one colour",
@@ -86,69 +86,69 @@
   },
   "submarine": {
     "title": "Light under the sea",
-    "kid": "Here the internet crosses the sea! The glass threads lie inside a cable as thick as a garden hose, right on the sea floor. Electricity runs through the cable from the shore to power the boosters, which make the light bright again on the way across.",
-    "nerd": "A submarine cable: a few fibre pairs in a steel tube, wrapped in copper and polyethylene, armoured and buried near the shore against anchors and trawls. The landing stations feed several kV of DC through the copper to power the repeaters (EDFAs), one about every 50–80 km on long cables; a crossing this short is often built without any.",
+    "simple": "Here the internet crosses the sea! The glass threads lie inside a cable as thick as a garden hose, right on the sea floor. Electricity runs through the cable from the shore to power the boosters, which make the light bright again on the way across.",
+    "technical": "A submarine cable: a few fibre pairs in a steel tube, wrapped in copper and polyethylene, armoured and buried near the shore against anchors and trawls. The landing stations feed several kV of DC through the copper to power the repeaters (EDFAs), one about every 50–80 km on long cables; a crossing this short is often built without any.",
     "describe": {
-      "kid": "A side view of the sea between two landing stations on the shore. A cable runs down the slope and along the sea floor, with boosters on it. Coloured flashes of light and little yellow sparks of electricity travel along the cable, a red number counts the kilometres, and a shark swims by. A circle shows the cable cut open.",
-      "nerd": "A side view of a submarine cable between two landing stations. The cable is buried near the shore and lies on the sea floor, with a repeater every span of up to 60 km. Four wavelengths cross, fading over each span; sparks show DC power from the shore. A cross-section shows fibres in a tube, copper and steel armour. A counter follows λ1 in km."
+      "simple": "A side view of the sea between two landing stations on the shore. A cable runs down the slope and along the sea floor, with boosters on it. Coloured flashes of light and little yellow sparks of electricity travel along the cable, a red number counts the kilometres, and a shark swims by. A circle shows the cable cut open.",
+      "technical": "A side view of a submarine cable between two landing stations. The cable is buried near the shore and lies on the sea floor, with a repeater every span of up to 60 km. Four wavelengths cross, fading over each span; sparks show DC power from the shore. A cross-section shows fibres in a tube, copper and steel armour. A counter follows λ1 in km."
     },
     "landing": "Landing station",
     "repeater": {
-      "kid": "Booster",
-      "nerd": "Repeater"
+      "simple": "Booster",
+      "technical": "Repeater"
     },
     "inside": "Inside the cable",
     "copper": {
-      "kid": "Power",
-      "nerd": "Copper: power"
+      "simple": "Power",
+      "technical": "Copper: power"
     },
     "glass": {
-      "kid": "Glass threads",
-      "nerd": "Fibre pairs"
+      "simple": "Glass threads",
+      "technical": "Fibre pairs"
     }
   },
   "atm": {
     "title": "One colour across America",
-    "kid": "This glass thread crosses America, carrying the big network’s little cells. In 1995 each thread carries just one colour of light. Every few dozen kilometres a machine catches the faint light, reads it and sends it on, bright and fresh.",
-    "nerd": "1995 long haul: SONET on single-mode fibre, one wavelength per fibre at 1310 or 1550 nm. The backbone’s ATM switches meet it at OC-3 (155 Mbit/s) or OC-12 (622 Mbit/s). Electronic regenerators every 40–80 km turn the light into bits and back; the first EDFAs were only just arriving, and DWDM came in 1996.",
+    "simple": "This glass thread crosses America, carrying the big network’s little cells. In 1995 each thread carries just one colour of light. Every few dozen kilometres a machine catches the faint light, reads it and sends it on, bright and fresh.",
+    "technical": "1995 long haul: SONET on single-mode fibre, one wavelength per fibre at 1310 or 1550 nm. The backbone’s ATM switches meet it at OC-3 (155 Mbit/s) or OC-12 (622 Mbit/s). Electronic regenerators every 40–80 km turn the light into bits and back; the first EDFAs were only just arriving, and DWDM came in 1996.",
     "describe": {
-      "kid": "A long glass thread with break marks stands for many kilometres. One red light runs through the core and fades a little as it goes, and machines along the thread make it bright again. A red number under the light counts the kilometres.",
-      "nerd": "The long-haul view with a single wavelength in one fibre, so there is no mux or demux. Break marks stand for the real length, and a counter follows the light in km. The fibre is cut into spans; the pulse fades across each one and a regenerator restores it between spans. The label notes SONET OC-3 and regenerators."
+      "simple": "A long glass thread with break marks stands for many kilometres. One red light runs through the core and fades a little as it goes, and machines along the thread make it bright again. A red number under the light counts the kilometres.",
+      "technical": "The long-haul view with a single wavelength in one fibre, so there is no mux or demux. Break marks stand for the real length, and a counter follows the light in km. The fibre is cut into spans; the pulse fades across each one and a regenerator restores it between spans. The label notes SONET OC-3 and regenerators."
     },
     "booster": {
-      "kid": "Booster",
-      "nerd": "Regenerator"
+      "simple": "Booster",
+      "technical": "Regenerator"
     }
   },
   "submarine-sdh": {
     "title": "One thread under the Atlantic",
-    "kid": "In 1995 the parcels to America cross the sea in CANTAT-3, a cable from Denmark past the Faroe Islands and Iceland to Canada, finished in 1994. Each glass thread carries one colour of light. Machines lying on the sea floor catch the faint light and send it on bright, powered through the cable from the shore.",
-    "nerd": "CANTAT-3 (1994): about 7,100 km of cable from Blåbjerg via the Faroes and Iceland to Nova Scotia (with the land legs from Copenhagen to New York, about 8,400 km), 3 × 2.5 Gbit/s SDH (STM-16), one wavelength per fibre pair. Its repeaters are regenerators (NL-16) that turn light into bits and back; optically amplified cables reached the Atlantic in 1996 (TAT-12/13). The upstream rents 2 Mbit/s circuits in it.",
+    "simple": "In 1995 the parcels to America cross the sea in CANTAT-3, a cable from Denmark past the Faroe Islands and Iceland to Canada, finished in 1994. Each glass thread carries one colour of light. Machines lying on the sea floor catch the faint light and send it on bright, powered through the cable from the shore.",
+    "technical": "CANTAT-3 (1994): about 7,100 km of cable from Blåbjerg via the Faroes and Iceland to Nova Scotia (with the land legs from Copenhagen to New York, about 8,400 km), 3 × 2.5 Gbit/s SDH (STM-16), one wavelength per fibre pair. Its repeaters are regenerators (NL-16) that turn light into bits and back; optically amplified cables reached the Atlantic in 1996 (TAT-12/13). The upstream rents 2 Mbit/s circuits in it.",
     "describe": {
-      "kid": "A side view of the sea between two landing stations on the shore. A cable runs down the slope and along the sea floor, with machines on it. One colour of light and little yellow sparks of electricity travel along the cable, a red number counts the kilometres, and a shark swims by. A circle shows the cable cut open.",
-      "nerd": "A side view of CANTAT-3 between two landing stations. The cable lies on the sea floor with regenerators along it. One wavelength crosses, fading over each span; sparks show DC power from the shore. A cross-section shows the fibre, copper and steel armour. A counter follows the light in km."
+      "simple": "A side view of the sea between two landing stations on the shore. A cable runs down the slope and along the sea floor, with machines on it. One colour of light and little yellow sparks of electricity travel along the cable, a red number counts the kilometres, and a shark swims by. A circle shows the cable cut open.",
+      "technical": "A side view of CANTAT-3 between two landing stations. The cable lies on the sea floor with regenerators along it. One wavelength crosses, fading over each span; sparks show DC power from the shore. A cross-section shows the fibre, copper and steel armour. A counter follows the light in km."
     },
     "landing": "Landing station",
     "repeater": {
-      "kid": "Booster",
-      "nerd": "Regenerator"
+      "simple": "Booster",
+      "technical": "Regenerator"
     },
     "inside": "Inside the cable",
     "copper": {
-      "kid": "Power",
-      "nerd": "Copper: power"
+      "simple": "Power",
+      "technical": "Copper: power"
     },
     "glass": {
-      "kid": "Glass threads",
-      "nerd": "Fibre pairs"
+      "simple": "Glass threads",
+      "technical": "Fibre pairs"
     }
   },
   "2010": {
     "backbone": {
-      "nerd": "Long-haul DWDM in 2010: 40–80 wavelengths in the C-band, mostly 10 or 40 Gbit/s each; the first 100G coherent channels were just arriving. Erbium-doped fibre amplifiers (EDFAs) about every 80 km boost all the colours at once; a short stretch needs none.",
+      "technical": "Long-haul DWDM in 2010: 40–80 wavelengths in the C-band, mostly 10 or 40 Gbit/s each; the first 100G coherent channels were just arriving. Erbium-doped fibre amplifiers (EDFAs) about every 80 km boost all the colours at once; a short stretch needs none.",
       "describe": {
-        "kid": "A long glass thread with a break mark stands for many kilometres. Eight lights, numbered 1 to 8 and coloured like a rainbow from red to pink, run together through the core and fade a little as they go. A red number under the first light counts the kilometres. Long threads get boosters that make the light bright again.",
-        "nerd": "The long-haul view shows eight DWDM wavelengths in one fibre, λ1 to λ8, numbered at the lasers and the receivers. Break marks stand for the real length, and a counter follows λ1 in km. The fibre is cut into spans of up to 80 km; pulses fade across each span and an EDFA boosts all channels between spans. The label notes 40–80 wavelengths and EDFA every 80 km."
+        "simple": "A long glass thread with a break mark stands for many kilometres. Eight lights, numbered 1 to 8 and coloured like a rainbow from red to pink, run together through the core and fade a little as they go. A red number under the first light counts the kilometres. Long threads get boosters that make the light bright again.",
+        "technical": "The long-haul view shows eight DWDM wavelengths in one fibre, λ1 to λ8, numbered at the lasers and the receivers. Break marks stand for the real length, and a counter follows λ1 in km. The fibre is cut into spans of up to 80 km; pulses fade across each span and an EDFA boosts all channels between spans. The label notes 40–80 wavelengths and EDFA every 80 km."
       }
     },
     "tag": {
@@ -157,27 +157,27 @@
       "cross-connect": "10GBASE-LR · 1310 nm · SMF"
     },
     "dc-fibre": {
-      "nerd": "Data-centre optics in 2010: 10GBASE-SR, one 850 nm laser (a VCSEL) per direction over a pair of multimode fibres (OM3), up to 300 m. One colour per fibre, nothing to combine or split. The servers hang off the access switches on copper (1000BASE-T). Each link is one hop of the three-tier tree.",
-      "kid": "Inside the data centre, short glass cables join the big switches. They are only a few metres long, so the light crosses them in a blink. Each thread carries one colour, just past red: too deep a red for our eyes to see.",
+      "technical": "Data-centre optics in 2010: 10GBASE-SR, one 850 nm laser (a VCSEL) per direction over a pair of multimode fibres (OM3), up to 300 m. One colour per fibre, nothing to combine or split. The servers hang off the access switches on copper (1000BASE-T). Each link is one hop of the three-tier tree.",
+      "simple": "Inside the data centre, short glass cables join the big switches. They are only a few metres long, so the light crosses them in a blink. Each thread carries one colour, just past red: too deep a red for our eyes to see.",
       "describe": {
-        "kid": "A short glass thread between two switches in the data centre is shown close up. One light, at one end, bounces along the core to the other end. The flashes cross in a blink.",
-        "nerd": "The data-centre link view shows a short multimode run with one 850 nm lane: a laser at one end, the light zig-zagging through the core, a detector at the other. The label says 10GBASE-SR at 850 nm over OM3."
+        "simple": "A short glass thread between two switches in the data centre is shown close up. One light, at one end, bounces along the core to the other end. The flashes cross in a blink.",
+        "technical": "The data-centre link view shows a short multimode run with one 850 nm lane: a laser at one end, the light zig-zagging through the core, a detector at the other. The label says 10GBASE-SR at 850 nm over OM3."
       }
     },
     "metro-fibre": {
-      "nerd": "Metro fibre: single-mode links between street cabinets, aggregation sites and the exchange. In 2010 mostly 1 or 10 Gbit/s Ethernet optics, with CWDM or DWDM putting a handful of wavelengths on one fibre pair."
+      "technical": "Metro fibre: single-mode links between street cabinets, aggregation sites and the exchange. In 2010 mostly 1 or 10 Gbit/s Ethernet optics, with CWDM or DWDM putting a handful of wavelengths on one fibre pair."
     },
     "cross-connect": {
-      "kid": "In the exchange's building, every company has its own boxes, and a short glass cable joins them. Your parcels cross it in a blink, as flashes of one colour just past red: too deep a red for our eyes to see.",
-      "nerd": "A cross-connect: a single-mode patch through the meet-me room, a few hundred metres at most. In 2010 mostly 10GBASE-LR: one 1310 nm laser per direction over a pair of single-mode fibres, good for up to 10 km. One colour per fibre, nothing to combine or split.",
+      "simple": "In the exchange's building, every company has its own boxes, and a short glass cable joins them. Your parcels cross it in a blink, as flashes of one colour just past red: too deep a red for our eyes to see.",
+      "technical": "A cross-connect: a single-mode patch through the meet-me room, a few hundred metres at most. In 2010 mostly 10GBASE-LR: one 1310 nm laser per direction over a pair of single-mode fibres, good for up to 10 km. One colour per fibre, nothing to combine or split.",
       "describe": {
-        "kid": "Inside the exchange, a short glass thread is shown close up. One light, at one end, bounces along the core to the other end. The flashes cross the hall in a blink.",
-        "nerd": "The cross-connect view shows a short single-mode patch with one 1310 nm lane: a laser at one end, the light zig-zagging through the core, a detector at the other. The label says 10GBASE-LR at 1310 nm over single-mode fibre."
+        "simple": "Inside the exchange, a short glass thread is shown close up. One light, at one end, bounces along the core to the other end. The flashes cross the hall in a blink.",
+        "technical": "The cross-connect view shows a short single-mode patch with one 1310 nm lane: a laser at one end, the light zig-zagging through the core, a detector at the other. The label says 10GBASE-LR at 1310 nm over single-mode fibre."
       }
     }
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Optical_fiber", "title": "Optical fiber", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Wavelength-division_multiplexing", "title": "Wavelength-division multiplexing", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Wavelength-division_multiplexing", "title": "Wavelength-division multiplexing", "level": "technical" }
   ]
 }

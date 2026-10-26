@@ -1,8 +1,8 @@
 {
   "name": "Indtjekning",
   "2010": {
-    "kid": "Mobilselskabets indtjekning. Den tjekker dit SIM-kort og sætter din telefons tunnel op, og så lader den pakkerne køre forbi.",
-    "nerd": "SGSN’en: tilmelding og godkendelse (med HLR’en), mobilitet og PDP-konteksten. Med Direct Tunnel (3GPP Rel-7) sætter den GTP-U-tunnelen op mellem RNC og GGSN og holder sig uden for brugerplanet.",
+    "simple": "Mobilselskabets indtjekning. Den tjekker dit SIM-kort og sætter din telefons tunnel op, og så lader den pakkerne køre forbi.",
+    "technical": "SGSN’en: tilmelding og godkendelse (med HLR’en), mobilitet og PDP-konteksten. Med Direct Tunnel (3GPP Rel-7) sætter den GTP-U-tunnelen op mellem RNC og GGSN og holder sig uden for brugerplanet.",
     "tag": "SGSN · Gn"
   }
 }

@@ -18,7 +18,7 @@
 
   const ctx = $derived(subject.ctx);
   const route = $derived(subject.route);
-  const nerd = $derived(ctx.level === 'nerd');
+  const technical = $derived(ctx.level === 'technical');
   // a router that only switches the label doesn't read this label either: it just swaps the envelopes
   const mode = $derived<Mode>(ctx.switched ? 'bridge' : ctx.role);
   const L = $derived(layoutFor(view.orient, view.vp));
@@ -33,16 +33,16 @@
   const legUp = $derived<[boolean, boolean]>(mode === 'endpoint' && !atServer ? [false, true] : [true, false]);
   const up = $derived(legUp[m.leg]);
 
-  // addresses and kid names on the label, as they arrive here
+  // addresses and Simple-level names on the label, as they arrive here
   const serverAddr = $derived(ctx.server.addr ?? '');
   const clientAddr = $derived(ctx.dir === 'up' ? ctx.src : ctx.dst);
-  const me = $derived(nerd ? clientAddr : yours(ctx.client));
-  const them = $derived(nerd ? serverAddr : IP('server'));
+  const me = $derived(technical ? clientAddr : yours(ctx.client));
+  const them = $derived(technical ? serverAddr : IP('server'));
   const cgnat = $derived(!!ctx.nat && carrierNat(ctx.nat.inside));
   const PORT = $derived(ctx.nat?.insidePort ?? 0);
   const OUT = $derived(ctx.nat?.outsidePort ?? PORT);
-  const inside = $derived(nerd ? `${ctx.nat?.inside}:${PORT}` : yours(ctx.client));
-  const outside = $derived(nerd ? `${ctx.nat?.outside}:${OUT}` : nameOf(ctx.to));
+  const inside = $derived(technical ? `${ctx.nat?.inside}:${PORT}` : yours(ctx.client));
+  const outside = $derived(technical ? `${ctx.nat?.outside}:${OUT}` : nameOf(ctx.to));
 
   // the job at this hop, 0..1 through the act (1 once done on this leg)
   const act = $derived(m.phase === 'act' ? m.p : m.phase === 'in' ? 0 : 1);
@@ -69,7 +69,7 @@
       if (m.leg === 0) to.lit = act > 0.35 && m.phase === 'act';
       else { from.typed = ramp(writing, 0, 0.45); to.typed = ramp(writing, 0.5, 0.95); ttl = '64'; }
     }
-    return nerd ? [from, to, { k: 'TTL', v: ttl, lit: false, typed: to.typed }] : [from, to];
+    return technical ? [from, to, { k: 'TTL', v: ttl, lit: false, typed: to.typed }] : [from, to];
   });
 
   // router: signposts built from the route
@@ -94,7 +94,7 @@
 
   // bridge: the link envelopes coming off and going on
   const nextLink = $derived(route.links[ctx.dir === 'up' ? idx : idx - 1]);
-  const stackName = (ids: string[]) => ids.map((id) => LN(`${id}.name`, 'kid'));
+  const stackName = (ids: string[]) => ids.map((id) => LN(`${id}.name`, 'simple'));
   const offNames = $derived(stackName((up ? ctx.link : nextLink)?.stack ?? []));
   const onNames = $derived(stackName((up ? nextLink : ctx.link)?.stack ?? []));
   const wrapColours = [OLD, NEW];
@@ -105,7 +105,7 @@
   // endpoint: whose door, and the layer the contents go up to
   const flowStack = $derived(route.activity.flows.find((f) => f.id === ctx.flow)?.stack ?? []);
   const above = $derived(flowStack[flowStack.indexOf(subject.layer) + 1]);
-  const plate = $derived(nerd ? (atServer ? serverAddr : clientAddr) : atServer ? IP('server') : yours(ctx.client));
+  const plate = $derived(technical ? (atServer ? serverAddr : clientAddr) : atServer ? IP('server') : yours(ctx.client));
 
   const hopSpot = $derived(mode === 'endpoint' ? L.home[atServer ? 1 : 0] : L.hop);
   const ends = $derived(mode === 'endpoint' ? [L.ends[atServer ? 0 : 1]] : L.ends);
@@ -174,19 +174,19 @@
     {@const y = card.y + h * (i + 0.5)}
     {@const on = i === lit ? (m.phase === 'act' ? ramp(m.p, 0.35, 0.6) : m.phase === 'out' ? 1 : 0) : 0}
     <Sign x={card.x + card.w / 2} {y} w={card.w * 0.92} h={Math.min(h * 0.78, T.text * 2)} to={s.to} lit={on} />
-    <Text x={card.x + card.w / 2 + (s.to === 'back' ? 14 : -14)} y={y + T.text * 0.35} text={nerd ? s.prefix : s.name ?? S('elsewhere')} size={T.text} kind="node" colour={on > 0.5 ? 'var(--face)' : undefined} on={on > 0.5 ? 'var(--sun)' : undefined} />
+    <Text x={card.x + card.w / 2 + (s.to === 'back' ? 14 : -14)} y={y + T.text * 0.35} text={technical ? s.prefix : s.name ?? S('elsewhere')} size={T.text} kind="node" colour={on > 0.5 ? 'var(--face)' : undefined} on={on > 0.5 ? 'var(--sun)' : undefined} />
   {/each}
 {:else}
   <Card x={card.x} y={card.y} w={card.w} h={cardH} tint={mode === 'nat' ? NEW : mode === 'bridge' ? OLD : 'var(--leaf)'} />
-  <Text x={card.x + 34} y={card.y + 72} text={nerd && mode === 'nat' ? fill(S('table'), { addr: ctx.nat?.outside ?? '' }) : cardTitle} size={T.big} kind="big" anchor="start" />
+  <Text x={card.x + 34} y={card.y + 72} text={technical && mode === 'nat' ? fill(S('table'), { addr: ctx.nat?.outside ?? '' }) : cardTitle} size={T.big} kind="big" anchor="start" />
   {#if mode === 'nat'}
     {#each notes as r, i}
       {@const y = cardRow(i)}
       {@const on = r.you && m.leg === 1 && m.phase === 'act'}
       <g opacity={r.you ? written : 1}>
         {#if r.you}<rect x={card.x + 18} y={y - T.text * 0.75} width={card.w - 36} height={T.text * 1.45} rx="12" fill={on ? UP : 'var(--paper-2)'} stroke="var(--line)" stroke-width={on ? 5 : 0} />{/if}
-        <Text x={card.x + 34} y={y + T.text * 0.35} text={nerd ? r.inside : r.name} size={T.text * (nerd ? 0.85 : 1)} kind={r.you ? 'node' : 'small'} anchor="start" colour={on ? 'var(--face)' : undefined} on={on ? UP : undefined} />
-        <Text x={card.x + card.w - 34} y={y + T.text * 0.35} text={nerd ? `:${r.port}` : fill(S('ticket'), { n: String(r.port) })} size={T.text * (nerd ? 0.85 : 1)} kind={r.you ? 'node' : 'small'} anchor="end" colour={on ? 'var(--face)' : undefined} on={on ? UP : undefined} />
+        <Text x={card.x + 34} y={y + T.text * 0.35} text={technical ? r.inside : r.name} size={T.text * (technical ? 0.85 : 1)} kind={r.you ? 'node' : 'small'} anchor="start" colour={on ? 'var(--face)' : undefined} on={on ? UP : undefined} />
+        <Text x={card.x + card.w - 34} y={y + T.text * 0.35} text={technical ? `:${r.port}` : fill(S('ticket'), { n: String(r.port) })} size={T.text * (technical ? 0.85 : 1)} kind={r.you ? 'node' : 'small'} anchor="end" colour={on ? 'var(--face)' : undefined} on={on ? UP : undefined} />
       </g>
     {/each}
   {:else if mode === 'bridge'}

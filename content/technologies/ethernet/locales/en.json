@@ -1,10 +1,10 @@
 {
   "name": "Cable",
-  "kid": "A copper cable carries the parcel as tiny electrical signals.",
-  "nerd": "Gigabit Ethernet over four twisted pairs (1000BASE-T, PAM-5).",
+  "simple": "A copper cable carries the parcel as tiny electrical signals.",
+  "technical": "Gigabit Ethernet over four twisted pairs (1000BASE-T, PAM-5).",
   "tag": "1000BASE-T · Cat 5e/6",
   "1995": {
-    "nerd": "10 Mbit/s Ethernet over two twisted pairs (10BASE-T, Manchester code).",
+    "technical": "10 Mbit/s Ethernet over two twisted pairs (10BASE-T, Manchester code).",
     "tag": "10BASE-T · Cat 3"
   },
   "learnMore": [

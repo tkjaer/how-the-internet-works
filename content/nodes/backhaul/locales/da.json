@@ -1,6 +1,6 @@
 {
   "name": "Backhaul-switch",
-  "kid": "Store switche bærer pakkerne fra mange gader hen mod dit internetfirma.",
-  "nerd": "L2-aggregering med Q-in-Q: et S-VLAN pr. skab og et C-VLAN pr. kunde, mod BNG’en.",
+  "simple": "Store switche bærer pakkerne fra mange gader hen mod dit internetfirma.",
+  "technical": "L2-aggregering med Q-in-Q: et S-VLAN pr. skab og et C-VLAN pr. kunde, mod BNG’en.",
   "tag": "L2 · Q-in-Q VLANs"
 }

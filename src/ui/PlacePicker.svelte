@@ -4,7 +4,7 @@
   // the chosen place has some of its era, "How do you get online?" offers them. The picker stays in the era you are
   // in (#59): each place goes to its member of that era, or, with none, to the era's own trip, with the time
   // machine's line under it ("In 1995 you'd have done this at home"), part of the option's description and said on
-  // arrival (with the nerds' note, as the time machine's arrival). Other years are the time machine's ("Other years" opens it). A card on wide screens, a bottom sheet on
+  // arrival (with the Technical note, as the time machine's arrival). Other years are the time machine's ("Other years" opens it). A card on wide screens, a bottom sheet on
   // phones.
   import { onMount } from 'svelte';
   import { activityIds, basePlace, content, inEra } from '../model/registry';

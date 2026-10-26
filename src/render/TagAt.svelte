@@ -1,6 +1,6 @@
 <svelte:options namespace="svg" />
 <script lang="ts">
-  // Nerd-mode callout, drawn by the theme's Tag slot with a clamped size. Only shown at the nerd level. With `fit` it
+  // Technical-level callout, drawn by the theme's Tag slot with a clamped size. Only shown at the Technical level. With `fit` it
   // keeps inside its panel's frame, as Text does (#136).
   import { WORLD_SIZE } from '../engine/geometry';
   import { perPx } from '../engine/svg';
@@ -14,7 +14,7 @@
   const Tag = $derived(themeState.current.art.Tag);
 </script>
 
-{#if loc.level === 'nerd' && text}
+{#if loc.level === 'technical' && text}
   <!-- callouts are technical (Latin, numbers): keep them LTR so "5 GHz" doesn't get reordered in RTL -->
   <g class="tag" direction="ltr"><Tag x={at.x} y={at.y} {text} size={px} {anchor} time={scene.time} /></g>
 {/if}

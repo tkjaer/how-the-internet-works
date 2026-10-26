@@ -1,24 +1,24 @@
 {
   "name": "I dag",
-  "kid": "En tynd glastråd bringer internettet ind i huset som lysglimt, hurtigt nok til at alle derhjemme kan se video på én gang.",
-  "nerd": "Fiber til huset eller til bygningen: GPON eller XGS-PON (gigabit, delt af et kvarter) eller Ethernet fra kælderen. Wi‑Fi 6 og NAT derhjemme.",
+  "simple": "En tynd glastråd bringer internettet ind i huset som lysglimt, hurtigt nok til at alle derhjemme kan se video på én gang.",
+  "technical": "Fiber til huset eller til bygningen: GPON eller XGS-PON (gigabit, delt af et kvarter) eller Ethernet fra kælderen. Wi‑Fi 6 og NAT derhjemme.",
   "describe": {
-    "kid": "En telefon i din hånd. Den er på Wi‑Fi til routeren, og routeren har en glastråd ud til internettet.",
-    "nerd": "En smartphone på Wi‑Fi 6 bag en hjemmerouter med fiber eller et kabel fra kælderen som forbindelse udadtil."
+    "simple": "En telefon i din hånd. Den er på Wi‑Fi til routeren, og routeren har en glastråd ud til internettet.",
+    "technical": "En smartphone på Wi‑Fi 6 bag en hjemmerouter med fiber eller et kabel fra kælderen som forbindelse udadtil."
   },
   "at": {
     "on-the-go": {
-      "kid": "Ude på gaden er telefoner på 5G: radio til en mobilmast tæt på, så en glastråd til internettet. Hurtigt nok til store videoer.",
-      "nerd": "5G NR: brede bærebølger og mange antenner giver en telefon titals til hundredvis af Mbit/s. gNB’en tunnelerer pakkerne (GTP-U) over fiber til kernens UPF.",
+      "simple": "Ude på gaden er telefoner på 5G: radio til en mobilmast tæt på, så en glastråd til internettet. Hurtigt nok til store videoer.",
+      "technical": "5G NR: brede bærebølger og mange antenner giver en telefon titals til hundredvis af Mbit/s. gNB’en tunnelerer pakkerne (GTP-U) over fiber til kernens UPF.",
       "describe": {
-        "kid": "En telefon i din hånd, ude på gaden, på 5G til en mobilmast.",
-        "nerd": "En smartphone på 5G NR til en gNB, med fiber-backhaul til mobilkernen."
+        "simple": "En telefon i din hånd, ude på gaden, på 5G til en mobilmast.",
+        "technical": "En smartphone på 5G NR til en gNB, med fiber-backhaul til mobilkernen."
       }
     },
     "desk": {
       "describe": {
-        "kid": "En bærbar på skrivebordet, med et kabel til routeren, og routeren har en glastråd til internettet.",
-        "nerd": "En bærbar på Ethernet til hjemmerouteren, med fiber (XGS-PON) som forbindelse ud."
+        "simple": "En bærbar på skrivebordet, med et kabel til routeren, og routeren har en glastråd til internettet.",
+        "technical": "En bærbar på Ethernet til hjemmerouteren, med fiber (XGS-PON) som forbindelse ud."
       }
     }
   }

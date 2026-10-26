@@ -1,13 +1,13 @@
 {
   "name": "Glasfaden",
-  "kid": "Ein Glasfaden trägt die Päckchen als Lichtblitze.",
-  "nerd": "Punkt-zu-Punkt-Faser mit Ethernet (10–100 Gbit/s).",
+  "simple": "Ein Glasfaden trägt die Päckchen als Lichtblitze.",
+  "technical": "Punkt-zu-Punkt-Faser mit Ethernet (10–100 Gbit/s).",
   "tag": "DWDM · C-Band · 10–100G",
   "2010": {
-    "nerd": "Punkt-zu-Punkt-Faser mit Ethernet (1–10 Gbit/s).",
+    "technical": "Punkt-zu-Punkt-Faser mit Ethernet (1–10 Gbit/s).",
     "tag": "DWDM · C-Band · 1–10G"
   },
   "learnMore": [
-    { "url": "https://de.wikipedia.org/wiki/Metro_Ethernet", "title": "Metro Ethernet", "level": "nerd" }
+    { "url": "https://de.wikipedia.org/wiki/Metro_Ethernet", "title": "Metro Ethernet", "level": "technical" }
   ]
 }

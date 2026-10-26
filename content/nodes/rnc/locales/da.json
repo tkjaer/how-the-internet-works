@@ -1,17 +1,17 @@
 {
   "name": "Radiostyring",
   "2010": {
-    "kid": "Chefen for snesevis af master. Den tjekker, at hver bid kom gennem luften, låser dem, så ingen kan lytte med, og sender pakkerne videre i en tunnel til mobilselskabets port.",
-    "nerd": "RNC’en: den afslutter RLC (ARQ, kryptering) og radiostyringen (RRC), styrer handover mellem sine NodeB’er og sender med Direct Tunnel brugerpakker i GTP-U direkte til GGSN’en.",
+    "simple": "Chefen for snesevis af master. Den tjekker, at hver bid kom gennem luften, låser dem, så ingen kan lytte med, og sender pakkerne videre i en tunnel til mobilselskabets port.",
+    "technical": "RNC’en: den afslutter RLC (ARQ, kryptering) og radiostyringen (RRC), styrer handover mellem sine NodeB’er og sender med Direct Tunnel brugerpakker i GTP-U direkte til GGSN’en.",
     "tag": "RNC · Iub · Iu-PS",
     "peek": {
       "up": {
-        "kid": "Styringen pakker radiokuverten ud, låser stykkerne op og putter din pakke i en tunnelkuvert adresseret til mobilselskabets port.",
-        "nerd": "RNC’en samler og dekrypterer RLC-stykkerne og tunnelerer IP-pakken i GTP-U til GGSN’en; TEID’et navngiver telefonens PDP-kontekst."
+        "simple": "Styringen pakker radiokuverten ud, låser stykkerne op og putter din pakke i en tunnelkuvert adresseret til mobilselskabets port.",
+        "technical": "RNC’en samler og dekrypterer RLC-stykkerne og tunnelerer IP-pakken i GTP-U til GGSN’en; TEID’et navngiver telefonens PDP-kontekst."
       },
       "down": {
-        "kid": "Styringen åbner tunnelkuverten, låser din pakke, skærer den i radiostykker og sender dem til den mast, din telefon er nær.",
-        "nerd": "RNC’en afslutter GTP-U-tunnelen (via TEID), krypterer og segmenterer pakken i RLC og sender den over Iub til telefonens NodeB."
+        "simple": "Styringen åbner tunnelkuverten, låser din pakke, skærer den i radiostykker og sender dem til den mast, din telefon er nær.",
+        "technical": "RNC’en afslutter GTP-U-tunnelen (via TEID), krypterer og segmenterer pakken i RLC og sender den over Iub til telefonens NodeB."
       }
     }
   }

@@ -1,49 +1,49 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Inde i mobilmasten",
-  "kid": "Masten er fire små rum: to oppe på masten, to i skabet ved foden. Antennerne fanger din radiobølge, radioenheden laver den til bits, sortereren lægger pakken i en tunnelkuvert, og fiberen sender den videre som lys.",
-  "nerd": "En 5G-gNB er delt i to: en aktiv antenneenhed på masten (massive-MIMO-antennerne og RU’en i én kasse, her tegnet som to rum), DU/CU-baseband i skabet. Pakken pakkes i GTP-U til mobilkernen og fortsætter på metrofiber.",
+  "simple": "Masten er fire små rum: to oppe på masten, to i skabet ved foden. Antennerne fanger din radiobølge, radioenheden laver den til bits, sortereren lægger pakken i en tunnelkuvert, og fiberen sender den videre som lys.",
+  "technical": "En 5G-gNB er delt i to: en aktiv antenneenhed på masten (massive-MIMO-antennerne og RU’en i én kasse, her tegnet som to rum), DU/CU-baseband i skabet. Pakken pakkes i GTP-U til mobilkernen og fortsætter på metrofiber.",
   "describe": {
-    "kid": "Mobilmasten er åbnet som en høj kasse med rum på masten og i skabet. En bølgende radiobølge rammer antennerne og bliver til bits i radioen. Sortereren giver pakken en tunnelkuvert. Så går pakken ud i fiberen som lys.",
-    "nerd": "Den åbne gNB viser antennepaneler og RU på masten samt baseband DU, CU og fiber i skabet. Den animerede pakke skifter fra NR-radiobølge til bits, får en GTP-U-tunnelmærkat i baseband og forlader scenen som metrofiber-lys."
+    "simple": "Mobilmasten er åbnet som en høj kasse med rum på masten og i skabet. En bølgende radiobølge rammer antennerne og bliver til bits i radioen. Sortereren giver pakken en tunnelkuvert. Så går pakken ud i fiberen som lys.",
+    "technical": "Den åbne gNB viser antennepaneler og RU på masten samt baseband DU, CU og fiber i skabet. Den animerede pakke skifter fra NR-radiobølge til bits, får en GTP-U-tunnelmærkat i baseband og forlader scenen som metrofiber-lys."
   },
   "antenna": {
     "title": {
-      "kid": "Antenner",
-      "nerd": "Massive MIMO"
+      "simple": "Antenner",
+      "technical": "Massive MIMO"
     },
     "line": {
-      "kid": "Fanger radiobølger",
-      "nerd": "Beamformet NR-panel"
+      "simple": "Fanger radiobølger",
+      "technical": "Beamformet NR-panel"
     }
   },
   "radio": {
     "title": {
-      "kid": "Radioenhed",
-      "nerd": "Radioenhed (RU)"
+      "simple": "Radioenhed",
+      "technical": "Radioenhed (RU)"
     },
     "line": {
-      "kid": "Radio ↔ bits",
-      "nerd": "RF ↔ digital · eCPRI"
+      "simple": "Radio ↔ bits",
+      "technical": "RF ↔ digital · eCPRI"
     }
   },
   "baseband": {
     "title": {
-      "kid": "Sortereren",
-      "nerd": "Baseband DU/CU"
+      "simple": "Sortereren",
+      "technical": "Baseband DU/CU"
     }
   },
   "fibre": {
     "title": {
-      "kid": "Fiber ud",
-      "nerd": "Metrofiber"
+      "simple": "Fiber ud",
+      "technical": "Metrofiber"
     },
     "line": {
-      "kid": "Bits → lys",
-      "nerd": "GTP-U på lys"
+      "simple": "Bits → lys",
+      "technical": "GTP-U på lys"
     }
   },
   "tunnel": {
@@ -53,6 +53,6 @@
     "to": "→ {addr}"
   },
   "learnMore": [
-    { "url": "https://da.wikipedia.org/wiki/MIMO", "title": "MIMO", "level": "nerd" }
+    { "url": "https://da.wikipedia.org/wiki/MIMO", "title": "MIMO", "level": "technical" }
   ]
 }

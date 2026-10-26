@@ -2,11 +2,11 @@
   "name": "På farten",
   "where": "på farten",
   "access": "5G",
-  "kid": "Ude på gaden er der ingen Wi-Fi, så pakkerne flyver via radio til en mobilmast og derfra langs en glastråd ud til internettet.",
-  "nerd": "På 5G taler telefonen NR med en gNB, der tunnelerer pakkerne (GTP-U) over fiber til mobilkernen; dens UPF laver carrier-grade NAT mod internettet.",
+  "simple": "Ude på gaden er der ingen Wi-Fi, så pakkerne flyver via radio til en mobilmast og derfra langs en glastråd ud til internettet.",
+  "technical": "På 5G taler telefonen NR med en gNB, der tunnelerer pakkerne (GTP-U) over fiber til mobilkernen; dens UPF laver carrier-grade NAT mod internettet.",
   "describe": {
-    "kid": "En gade med butikker, lygtepæl, vej og bil ligger foran grønne bakker. Telefonen sender pakker med 5G-radio til mobilmasten. Fiber fører dem videre til internetskyen. Forespørgsler og video bevæger sig begge veje.",
-    "nerd": "Gadevisningen viser telefonen, et NR-radiolink til mobilmasten, fiber-backhaul og internetskyen. Forespørgsler går op gennem gNB’en og mobilkernen. Videopakker kommer tilbage gennem fiber og radio."
+    "simple": "En gade med butikker, lygtepæl, vej og bil ligger foran grønne bakker. Telefonen sender pakker med 5G-radio til mobilmasten. Fiber fører dem videre til internetskyen. Forespørgsler og video bevæger sig begge veje.",
+    "technical": "Gadevisningen viser telefonen, et NR-radiolink til mobilmasten, fiber-backhaul og internetskyen. Forespørgsler går op gennem gNB’en og mobilkernen. Videopakker kommer tilbage gennem fiber og radio."
   },
   "tag": {
     "phone": "5G · 100.64.12.7",
@@ -14,19 +14,19 @@
   },
   "stop": {
     "phone": {
-      "kid": "Din telefon vil se en kattevideo, også herude. Den sender en lille forespørgsel via radio."
+      "simple": "Din telefon vil se en kattevideo, også herude. Den sender en lille forespørgsel via radio."
     },
     "cell-tower-internet": {
-      "kid": "Fra masten rejser dine pakker inde i en tunnel langs en glastråd til mobilselskabet.",
-      "nerd": "Fiber-backhaul fra gNB’en til kernen; brugerpakkerne kører inde i GTP-U-tunneler (UDP 2152), én pr. session."
+      "simple": "Fra masten rejser dine pakker inde i en tunnel langs en glastråd til mobilselskabet.",
+      "technical": "Fiber-backhaul fra gNB’en til kernen; brugerpakkerne kører inde i GTP-U-tunneler (UDP 2152), én pr. session."
     }
   },
   "inside": {
     "internet": {
-      "nerd": "Mobilkernen (5GC) afslutter radiotunnelen og laver carrier-grade NAT; derfra er det det samme internet: udbyderens kerne, peering i et IXP (eller betalt transit) og en CDN-cache tæt på dig. Hvert farvet felt er én operatørs net.",
+      "technical": "Mobilkernen (5GC) afslutter radiotunnelen og laver carrier-grade NAT; derfra er det det samme internet: udbyderens kerne, peering i et IXP (eller betalt transit) og en CDN-cache tæt på dig. Hvert farvet felt er én operatørs net.",
       "describe": {
-        "kid": "Inde i skyen starter ruten ved mobilmasten og mobilkernen. Den går gennem ISP-kernen, grænserouteren og internetknudepunktet til videofirmaets datacenter. En stiplet sidevej viser transit. Pakker bevæger sig begge veje.",
-        "nerd": "Internetvisningen starter med gNB og mobilkerne, derefter ISP-kerne, grænserouter, IXP og CDN’ets datacenter. De farvede felter viser mobil- eller ISP-nettet, internetknudepunktet og videofirmaet. Pakker går begge veje over GTP, backbone-fiber og krydsforbindelser."
+        "simple": "Inde i skyen starter ruten ved mobilmasten og mobilkernen. Den går gennem ISP-kernen, grænserouteren og internetknudepunktet til videofirmaets datacenter. En stiplet sidevej viser transit. Pakker bevæger sig begge veje.",
+        "technical": "Internetvisningen starter med gNB og mobilkerne, derefter ISP-kerne, grænserouter, IXP og CDN’ets datacenter. De farvede felter viser mobil- eller ISP-nettet, internetknudepunktet og videofirmaet. Pakker går begge veje over GTP, backbone-fiber og krydsforbindelser."
       }
     }
   },

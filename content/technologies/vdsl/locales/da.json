@@ -1,7 +1,7 @@
 {
   "name": "Telefonlinje",
-  "kid": "Den gamle kobbertelefonlinje bærer pakken som en masse små toner, højt over lydene fra en telefonsamtale.",
-  "nerd": "VDSL2: DMT-toner på ét kobberpar, op til 17 MHz, fra et skab et par hundrede meter væk. I 2010 havde de fleste DSL-hjem stadig ADSL2+ fra centralen (op til omkring 20 Mbit/s); denne linje kunne bære mere, men abonnementet er 20/2 Mbit/s.",
+  "simple": "Den gamle kobbertelefonlinje bærer pakken som en masse små toner, højt over lydene fra en telefonsamtale.",
+  "technical": "VDSL2: DMT-toner på ét kobberpar, op til 17 MHz, fra et skab et par hundrede meter væk. I 2010 havde de fleste DSL-hjem stadig ADSL2+ fra centralen (op til omkring 20 Mbit/s); denne linje kunne bære mere, men abonnementet er 20/2 Mbit/s.",
   "tag": "VDSL2 · 20/2 Mbit/s",
   "learnMore": [
     { "url": "https://da.wikipedia.org/wiki/DSL", "title": "DSL", "level": "both" }

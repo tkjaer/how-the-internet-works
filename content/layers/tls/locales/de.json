@@ -1,15 +1,15 @@
 {
   "name": {
-    "kid": "Abgeschlossene Box",
-    "nerd": "TLS-Record"
+    "simple": "Abgeschlossene Box",
+    "technical": "TLS-Record"
   },
   "note": {
-    "kid": "Nur {yours} und der Server haben den Schlüssel.",
-    "nerd": "Ende-zu-Ende verschlüsselt und authentifiziert."
+    "simple": "Nur {yours} und der Server haben den Schlüssel.",
+    "technical": "Ende-zu-Ende verschlüsselt und authentifiziert."
   },
   "sealed": {
-    "kid": "Abgeschlossen. Niemand auf dem Weg kann lesen, was drin ist.",
-    "nerd": "Ciphertext: Zwischen-Hops können es nicht lesen und nicht unbemerkt ändern."
+    "simple": "Abgeschlossen. Niemand auf dem Weg kann lesen, was drin ist.",
+    "technical": "Ciphertext: Zwischen-Hops können es nicht lesen und nicht unbemerkt ändern."
   },
   "line": "Transport Layer Security: Application Data, Länge {length}",
   "field": {

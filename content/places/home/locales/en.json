@@ -2,11 +2,11 @@
   "name": "At home",
   "where": "at home",
   "access": "Wi‑Fi · fibre",
-  "kid": "Little parcels of data zoom through the air, down a cable and along a glass thread to the internet – and the video comes back the same way!",
-  "nerd": "At home, packets leave over 802.11 Wi-Fi, are bridged onto Ethernet at the access point, NATed by the home router and forwarded over a fibre uplink to the ISP.",
+  "simple": "Little parcels of data zoom through the air, down a cable and along a glass thread to the internet – and the video comes back the same way!",
+  "technical": "At home, packets leave over 802.11 Wi-Fi, are bridged onto Ethernet at the access point, NATed by the home router and forwarded over a fibre uplink to the ISP.",
   "describe": {
-    "kid": "A cut-away house sits on green hills, with a smart speaker on a shelf. The path starts at your phone, hops by Wi‑Fi to the access point, runs by cable to the router, then follows fibre to the internet cloud. Parcels go out as requests and back as video.",
-    "nerd": "The home view shows the LAN path from phone to access point, router and fibre uplink, with a smart speaker on the wall shelf. Packets go upstream over Wi‑Fi, Ethernet and XGS-PON. Video packets return downstream along the same path."
+    "simple": "A cut-away house sits on green hills, with a smart speaker on a shelf. The path starts at your phone, hops by Wi‑Fi to the access point, runs by cable to the router, then follows fibre to the internet cloud. Parcels go out as requests and back as video.",
+    "technical": "The home view shows the LAN path from phone to access point, router and fibre uplink, with a smart speaker on the wall shelf. Packets go upstream over Wi‑Fi, Ethernet and XGS-PON. Video packets return downstream along the same path."
   },
   "tag": {
     "phone": "Wi-Fi 6 · 192.168.1.23",
@@ -14,20 +14,20 @@
   },
   "stop": {
     "router": {
-      "kid": "The router is the front door of your home. It writes your home’s address on the parcel and remembers who asked.",
-      "nerd": "NAT rewrites the private source address 192.168.1.23 to the public 203.0.113.7 and tracks the connection so replies find their way back."
+      "simple": "The router is the front door of your home. It writes your home’s address on the parcel and remembers who asked.",
+      "technical": "NAT rewrites the private source address 192.168.1.23 to the public 203.0.113.7 and tracks the connection so replies find their way back."
     }
   },
   "inside": {
     "internet": {
-      "nerd": "Access network (XGS-PON: a passive splitter in the street, the OLT at the exchange), Q-in-Q VLANs on to the BNG, the ISP’s MPLS core, then either settlement-free peering at an IXP or paid transit, ending at a CDN cache close to you. Each shaded area is one operator’s network.",
+      "technical": "Access network (XGS-PON: a passive splitter in the street, the OLT at the exchange), Q-in-Q VLANs on to the BNG, the ISP’s MPLS core, then either settlement-free peering at an IXP or paid transit, ending at a CDN cache close to you. Each shaded area is one operator’s network.",
       "describe": {
-        "kid": "Inside the cloud, the path starts at your home. It runs through the street cabinet, the fibre terminal, ISP gateway and ISP core. Then it reaches the border router, internet exchange and the video company's data centre, a box you can open. A dashed side road shows transit.",
-        "nerd": "The expanded internet route starts at the home access edge, then crosses the splitter cabinet, the OLT, BNG and ISP core. It continues to the border router, IXP and the CDN's data centre, which unfolds. Request and video packets move in opposite directions over fibre, backbone and cross-connect links."
+        "simple": "Inside the cloud, the path starts at your home. It runs through the street cabinet, the fibre terminal, ISP gateway and ISP core. Then it reaches the border router, internet exchange and the video company's data centre, a box you can open. A dashed side road shows transit.",
+        "technical": "The expanded internet route starts at the home access edge, then crosses the splitter cabinet, the OLT, BNG and ISP core. It continues to the border router, IXP and the CDN's data centre, which unfolds. Request and video packets move in opposite directions over fibre, backbone and cross-connect links."
       }
     }
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Fiber_to_the_x", "title": "Fibre to the home", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Fiber_to_the_x", "title": "Fibre to the home", "level": "technical" }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "name": "Trådløst adgangspunkt",
-  "kid": "Adgangspunktet fanger radiobølgerne og sender pakken videre ned i et kabel.",
-  "nerd": "En lag 2-bro: den bytter 802.11-rammen ud med en Ethernet-ramme og læser aldrig IP-adressen.",
+  "simple": "Adgangspunktet fanger radiobølgerne og sender pakken videre ned i et kabel.",
+  "technical": "En lag 2-bro: den bytter 802.11-rammen ud med en Ethernet-ramme og læser aldrig IP-adressen.",
   "tag": "802.11ax · L2 bridge",
   "2010": {
     "tag": "802.11n · L2 bridge"

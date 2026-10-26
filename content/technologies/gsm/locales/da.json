@@ -1,8 +1,8 @@
 {
   "name": "GSM-data",
   "1995": {
-    "kid": "Den bærbares telefon ringer til internetfirmaet, via radio til masten. Opkaldet får sin egen plads i radiobølgerne, et bitte øjeblik, der kommer igen og igen, og beholder den, til du lægger på. Det går langsomt, og hvert minut koster penge.",
-    "nerd": "GSM’s kredsløbskoblede data (CSD): en fuld trafikkanal, TCH/F9.6, én tidsslot af otte på en 200 kHz-bærebølge omkring 900 MHz, din så længe opkaldet varer. 12 kbit/s RLP-rammer (sendt igen, hvis de bliver ødelagt) kodet til 22,8 kbit/s i luften; 9,6 kbit/s tilbage til PPP. Betalt pr. minut, som et opkald.",
+    "simple": "Den bærbares telefon ringer til internetfirmaet, via radio til masten. Opkaldet får sin egen plads i radiobølgerne, et bitte øjeblik, der kommer igen og igen, og beholder den, til du lægger på. Det går langsomt, og hvert minut koster penge.",
+    "technical": "GSM’s kredsløbskoblede data (CSD): en fuld trafikkanal, TCH/F9.6, én tidsslot af otte på en 200 kHz-bærebølge omkring 900 MHz, din så længe opkaldet varer. 12 kbit/s RLP-rammer (sendt igen, hvis de bliver ødelagt) kodet til 22,8 kbit/s i luften; 9,6 kbit/s tilbage til PPP. Betalt pr. minut, som et opkald.",
     "tag": "CSD · 9,6 kbit/s · 1 slot"
   },
   "learnMore": [

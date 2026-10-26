@@ -1,14 +1,14 @@
 {
   "name": "Data-centre fibre",
-  "kid": "Short glass cables between the boxes in one building, all belonging to the same company.",
-  "nerd": "Inside the fabric: 100–400G Ethernet over short single-mode fibre (or copper for the last metres to a server).",
+  "simple": "Short glass cables between the boxes in one building, all belonging to the same company.",
+  "technical": "Inside the fabric: 100–400G Ethernet over short single-mode fibre (or copper for the last metres to a server).",
   "tag": "400GBASE-FR4 · SMF",
   "2010": {
-    "nerd": "Inside the data centre in 2010: 10 Gigabit Ethernet over short multimode fibre (10GBASE-SR, 850 nm) between the switches; the servers hang off them on copper.",
+    "technical": "Inside the data centre in 2010: 10 Gigabit Ethernet over short multimode fibre (10GBASE-SR, 850 nm) between the switches; the servers hang off them on copper.",
     "tag": "10GBASE-SR · OM3"
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Data_center", "title": "Data center", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Terabit_Ethernet", "title": "200G and 400G Ethernet", "level": "nerd", "eras": ["today"] }
+    { "url": "https://en.wikipedia.org/wiki/Terabit_Ethernet", "title": "200G and 400G Ethernet", "level": "technical", "eras": ["today"] }
   ]
 }

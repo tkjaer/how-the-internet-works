@@ -1,50 +1,50 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Inside the internet exchange",
   "heading": {
-    "kid": "Inside the internet exchange",
-    "nerd": "IXP peering LAN"
+    "simple": "Inside the internet exchange",
+    "technical": "IXP peering LAN"
   },
-  "kid": "An internet exchange is a meeting table for networks. The helper shares notes about who can reach what. Then your parcel swaps straight across the shared switch, without paying per parcel or visiting the helper.",
-  "nerd": "The IXP is a shared Ethernet fabric. Members peer with BGP, often through a route server that redistributes routes but does not forward traffic. Your packet takes one data-plane hop across the peering LAN from ISP port to CDN port.",
+  "simple": "An internet exchange is a meeting table for networks. The helper shares notes about who can reach what. Then your parcel swaps straight across the shared switch, without paying per parcel or visiting the helper.",
+  "technical": "The IXP is a shared Ethernet fabric. Members peer with BGP, often through a route server that redistributes routes but does not forward traffic. Your packet takes one data-plane hop across the peering LAN from ISP port to CDN port.",
   "describe": {
-    "kid": "A long shared switch sits in the middle. Your internet company's router plugs in at one end, and the video company's at the other. Four more networks plug in too. A helper box has its own cable. Little notes ride the switch to the helper and back. Then your parcel crosses the switch straight to the video company.",
-    "nerd": "A peering LAN switch with six member ports. The route server has a port of its own. BGP UPDATE notes cross the fabric to the route server and back to every member. Then the packet crosses the fabric in one hop, from the ISP's border port to the CDN's port. It never visits the route server."
+    "simple": "A long shared switch sits in the middle. Your internet company's router plugs in at one end, and the video company's at the other. Four more networks plug in too. A helper box has its own cable. Little notes ride the switch to the helper and back. Then your parcel crosses the switch straight to the video company.",
+    "technical": "A peering LAN switch with six member ports. The route server has a port of its own. BGP UPDATE notes cross the fabric to the route server and back to every member. Then the packet crosses the fabric in one hop, from the ISP's border port to the CDN's port. It never visits the route server."
   },
   "fabric": {
-    "kid": "Shared switch",
-    "nerd": "Peering LAN"
+    "simple": "Shared switch",
+    "technical": "Peering LAN"
   },
   "routeServer": {
-    "kid": "Route helper",
-    "nerd": "Route server"
+    "simple": "Route helper",
+    "technical": "Route server"
   },
   "routeServerLine": {
-    "kid": "passes notes",
-    "nerd": "BGP · no traffic"
+    "simple": "passes notes",
+    "technical": "BGP · no traffic"
   },
   "member": {
     "other": "Other networks",
     "as": "AS{n}"
   },
   "straight": {
-    "kid": "Parcels go straight across",
-    "nerd": "Data: one hop, port to port"
+    "simple": "Parcels go straight across",
+    "technical": "Data: one hop, port to port"
   },
   "1995": {
-    "kid": "Drawn as today’s exchange. DIX was a room at a university near Copenhagen where the Danish networks plugged into one shared cable and swapped Danish parcels for free. A page from America never comes this way.",
-    "nerd": "Drawn as today. DIX (1994, run by UNI•C at DTU in Lyngby) was a shared Ethernet where Danish ISPs peered with BGP-4, so Danish traffic stayed in Denmark. Only Danish routes are learned here: a page from America comes via the upstream instead.",
+    "simple": "Drawn as today’s exchange. DIX was a room at a university near Copenhagen where the Danish networks plugged into one shared cable and swapped Danish parcels for free. A page from America never comes this way.",
+    "technical": "Drawn as today. DIX (1994, run by UNI•C at DTU in Lyngby) was a shared Ethernet where Danish ISPs peered with BGP-4, so Danish traffic stayed in Denmark. Only Danish routes are learned here: a page from America comes via the upstream instead.",
     "describe": {
-      "kid": "A long shared switch sits in the middle. Your internet company's router plugs in at one end, and a Danish web server's network at the other. Four more networks plug in too. A helper box has its own cable. Little notes ride the switch to the helper and back. Then a parcel crosses the switch straight to the Danish network.",
-      "nerd": "Drawn as today: a peering LAN switch with six member ports, and a route server with a port of its own. BGP UPDATE notes cross the fabric to the route server and back to every member. Then a packet crosses the fabric in one hop, from the ISP's port to a Danish network's port. It never visits the route server."
+      "simple": "A long shared switch sits in the middle. Your internet company's router plugs in at one end, and a Danish web server's network at the other. Four more networks plug in too. A helper box has its own cable. Little notes ride the switch to the helper and back. Then a parcel crosses the switch straight to the Danish network.",
+      "technical": "Drawn as today: a peering LAN switch with six member ports, and a route server with a port of its own. BGP UPDATE notes cross the fabric to the route server and back to every member. Then a packet crosses the fabric in one hop, from the ISP's port to a Danish network's port. It never visits the route server."
     }
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Internet_exchange_point", "title": "Internet exchange point", "level": "both" },
     { "url": "https://en.wikipedia.org/wiki/Peering", "title": "Peering", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Route_server", "title": "Route server", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Route_server", "title": "Route server", "level": "technical" }
   ]
 }

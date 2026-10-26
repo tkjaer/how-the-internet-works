@@ -1,6 +1,6 @@
 {
   "name": "Kælderswitch",
-  "kid": "En kasse på væggen i kælderen. Kablerne fra alle lejlighederne mødes her, og én glastråd går videre til internetfirmaet.",
-  "nerd": "En adgangsswitch, som udbyderen ejer: kobberporte (eller G.fast) til lejlighederne, en fiber-uplink og et VLAN pr. lejlighed mod BNG’en.",
+  "simple": "En kasse på væggen i kælderen. Kablerne fra alle lejlighederne mødes her, og én glastråd går videre til internetfirmaet.",
+  "technical": "En adgangsswitch, som udbyderen ejer: kobberporte (eller G.fast) til lejlighederne, en fiber-uplink og et VLAN pr. lejlighed mod BNG’en.",
   "tag": "L2 · VLAN pr. lejlighed"
 }

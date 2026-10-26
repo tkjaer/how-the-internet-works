@@ -1,11 +1,11 @@
 {
   "name": {
-    "kid": "Tiny labelled pieces",
-    "nerd": "ATM cell"
+    "simple": "Tiny labelled pieces",
+    "technical": "ATM cell"
   },
   "note": {
-    "kid": "Here the parcel is cut into tiny pieces of the same size, each with a little label. The switches only read the label, and swap it for a new one as the piece goes by.",
-    "nerd": "AAL5 cuts the packet into 48-byte payloads, each behind a 5-byte header: 53-byte cells. Switches forward on VPI/VCI and rewrite it at every hop; the far router reassembles the packet."
+    "simple": "Here the parcel is cut into tiny pieces of the same size, each with a little label. The switches only read the label, and swap it for a new one as the piece goes by.",
+    "technical": "AAL5 cuts the packet into 48-byte payloads, each behind a 5-byte header: 53-byte cells. Switches forward on VPI/VCI and rewrite it at every hop; the far router reassembles the packet."
   },
   "line": "ATM, VPI/VCI: 1/{vci}",
   "field": {
@@ -15,8 +15,8 @@
     },
     "vci": {
       "name": {
-        "kid": "Label",
-        "nerd": "VCI"
+        "simple": "Label",
+        "technical": "VCI"
       },
       "about": "Virtual channel: this circuit’s number on this stretch. Every switch swaps it for the next one."
     },
@@ -34,7 +34,7 @@
     }
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode", "title": "Asynchronous Transfer Mode", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/ATM_Adaptation_Layer_5", "title": "AAL5", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode", "title": "Asynchronous Transfer Mode", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/ATM_Adaptation_Layer_5", "title": "AAL5", "level": "technical" }
   ]
 }

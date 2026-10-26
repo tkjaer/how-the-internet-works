@@ -1,17 +1,17 @@
 {
   "name": {
-    "kid": "Leased-line envelope",
-    "nerd": "Cisco HDLC frame"
+    "simple": "Leased-line envelope",
+    "technical": "Cisco HDLC frame"
   },
   "note": {
-    "kid": "On a rented line between two routers, the parcel rides in a simple envelope. Each router opens it and puts the parcel in a fresh one for the next line.",
-    "nerd": "Cisco HDLC on a leased line: a flag, address 0x0F, control 0x00, an EtherType and a 16-bit check. Each router ends the frame; keepalives every 10 seconds tell both ends the line is up."
+    "simple": "On a rented line between two routers, the parcel rides in a simple envelope. Each router opens it and puts the parcel in a fresh one for the next line.",
+    "technical": "Cisco HDLC on a leased line: a flag, address 0x0F, control 0x00, an EtherType and a 16-bit check. Each router ends the frame; keepalives every 10 seconds tell both ends the line is up."
   },
   "line": "Cisco HDLC, protocol {proto}",
   "value": {
     "ip": {
-      "kid": "An internet parcel",
-      "nerd": "IPv4 inside"
+      "simple": "An internet parcel",
+      "technical": "IPv4 inside"
     }
   },
   "field": {
@@ -29,8 +29,8 @@
     },
     "proto": {
       "name": {
-        "kid": "What’s inside",
-        "nerd": "Protocol"
+        "simple": "What’s inside",
+        "technical": "Protocol"
       },
       "about": "What the frame carries, with Ethernet’s numbers: 0x0800 is an IPv4 packet."
     },
@@ -40,7 +40,7 @@
     }
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/High-Level_Data_Link_Control#Cisco_HDLC", "title": "Cisco HDLC", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/High-Level_Data_Link_Control#Cisco_HDLC", "title": "Cisco HDLC", "level": "technical" },
     { "url": "https://en.wikipedia.org/wiki/Leased_line", "title": "Leased line", "level": "both" }
   ]
 }

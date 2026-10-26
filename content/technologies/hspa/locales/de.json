@@ -1,11 +1,11 @@
 {
   "name": "3G",
   "2010": {
-    "kid": "Dein Handy spricht per Funk mit dem Mast. Jedes Handy in der Nähe teilt sich dieselbe Funkwelle und kommt sehr schnell nacheinander dran – je mehr Handys zuschauen, desto langsamer wird jedes.",
-    "nerd": "UMTS auf einem 5-MHz-WCDMA-Träger um 2,1 GHz, mit HSDPA nach unten: bis zu 15 Spreading Codes, geteilt von allen Handys der Zelle, alle 2 ms geplant. 7,2–14 Mbit/s Spitze, in der Praxis ein paar.",
+    "simple": "Dein Handy spricht per Funk mit dem Mast. Jedes Handy in der Nähe teilt sich dieselbe Funkwelle und kommt sehr schnell nacheinander dran – je mehr Handys zuschauen, desto langsamer wird jedes.",
+    "technical": "UMTS auf einem 5-MHz-WCDMA-Träger um 2,1 GHz, mit HSDPA nach unten: bis zu 15 Spreading Codes, geteilt von allen Handys der Zelle, alle 2 ms geplant. 7,2–14 Mbit/s Spitze, in der Praxis ein paar.",
     "tag": "HSPA · 5 MHz · 16-QAM"
   },
   "learnMore": [
-    { "url": "https://de.wikipedia.org/wiki/High_Speed_Packet_Access", "title": "High Speed Packet Access", "level": "nerd" }
+    { "url": "https://de.wikipedia.org/wiki/High_Speed_Packet_Access", "title": "High Speed Packet Access", "level": "technical" }
   ]
 }

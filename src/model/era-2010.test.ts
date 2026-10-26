@@ -197,7 +197,7 @@ describe('the 2010 data centre', () => {
       const lists: string[][] = [];
       for (const ref of scenes(r).filter((s) => s.path[1] === 'datacentre')) {
         for (const keys of sceneKeys(r, ref)) for (const s of ['', '.describe', '.extra', '.title']) lists.push(keys.map((k) => k + s));
-        if (ref.kind === 'dive') lists.push(...['kid', 'nerd', 'title'].map((k) => [`scene.${ref.dive}.${diveSubject(ref)}.${k}`]));
+        if (ref.kind === 'dive') lists.push(...['simple', 'technical', 'title'].map((k) => [`scene.${ref.dive}.${diveSubject(ref)}.${k}`]));
       }
       // the server's rooms: today's say NIC 2×100G, k8s pods and NVMe
       for (const room of ['nic', 'compute', 'memory', 'ssd']) for (const part of ['title', 'line']) lists.push([`scene.server-inside.${room}.${part}`]);
@@ -211,7 +211,7 @@ describe('the 2010 data centre', () => {
       }
       const group = r.groups.find((g) => g.id === 'datacentre')!.node.id;
       lists.push([`node.${group}`], [`node.${group}.tag`], [`node.${group}.inside`], [`node.${group}.inside.describe`]);
-      for (const keys of lists) for (const lang of Object.keys(packs)) for (const level of ['kid', 'nerd'] as Level[]) {
+      for (const keys of lists) for (const lang of Object.keys(packs)) for (const level of ['simple', 'technical'] as Level[]) {
         const s = EXCHANGE.test(keys[0]) ? undefined : firstOf(lang, withEra(keys, r.era), level);
         if (s && (LATER.test(s) || CLOS.test(s)) && !SAYS_WHEN.test(s)) bad.add(`${lang} ${level} ${keys[0]}: ${s}`);
       }
@@ -260,12 +260,12 @@ describe('the 2010 trips', () => {
     const r = trips()[0], video = r.activity.flows[0].packets[1];
     for (const lang of Object.keys(packs)) {
       const size = (q: string) => {
-        const [, n, unit] = firstOf(lang, withEra([`scene.http-chunk.size.${q}`], r.era), 'nerd')!.match(/^([\d.,]+) (kB|MB)$/)!;
+        const [, n, unit] = firstOf(lang, withEra([`scene.http-chunk.size.${q}`], r.era), 'technical')!.match(/^([\d.,]+) (kB|MB)$/)!;
         return Number(n.replace(',', '.')) * (unit === 'MB' ? 1e6 : 1e3);
       };
       expect(size('med')).toBe(video.size);
       expect(size('low')).toBeLessThan(size('med'));
-      expect(firstOf(lang, withEra(['scene.http-chunk.status.guess'], r.era), 'nerd')).toMatch(/\b206\b/);
+      expect(firstOf(lang, withEra(['scene.http-chunk.status.guess'], r.era), 'technical')).toMatch(/\b206\b/);
     }
   });
 

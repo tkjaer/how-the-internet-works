@@ -1,14 +1,14 @@
 {
   "name": "Wi-Fi",
-  "kid": "The request flies through the air as radio waves – no wire needed!",
-  "nerd": "802.11ax on 5 GHz: OFDMA sub-carriers, 1024-QAM, WPA3 encryption between the device and the AP.",
+  "simple": "The request flies through the air as radio waves – no wire needed!",
+  "technical": "802.11ax on 5 GHz: OFDMA sub-carriers, 1024-QAM, WPA3 encryption between the device and the AP.",
   "tag": "5 GHz · OFDM · 1024-QAM",
   "2010": {
-    "nerd": "802.11n on 2.4 or 5 GHz: OFDM sub-carriers, 64-QAM, MIMO streams, WPA2 encryption between the device and the AP.",
+    "technical": "802.11n on 2.4 or 5 GHz: OFDM sub-carriers, 64-QAM, MIMO streams, WPA2 encryption between the device and the AP.",
     "tag": "2.4/5 GHz · OFDM · 64-QAM"
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Wi-Fi", "title": "Wi-Fi", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Orthogonal_frequency-division_multiplexing", "title": "OFDM", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Orthogonal_frequency-division_multiplexing", "title": "OFDM", "level": "technical" }
   ]
 }

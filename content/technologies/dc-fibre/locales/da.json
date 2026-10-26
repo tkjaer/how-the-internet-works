@@ -1,10 +1,10 @@
 {
   "name": "Datacenterfiber",
-  "kid": "Korte glaskabler mellem kasserne i én bygning, som alle hører til det samme firma.",
-  "nerd": "Inde i fabric’en: 100–400G Ethernet over kort single-mode-fiber (eller kobber de sidste meter ind til en server).",
+  "simple": "Korte glaskabler mellem kasserne i én bygning, som alle hører til det samme firma.",
+  "technical": "Inde i fabric’en: 100–400G Ethernet over kort single-mode-fiber (eller kobber de sidste meter ind til en server).",
   "tag": "400GBASE-FR4 · SMF",
   "2010": {
-    "nerd": "Inde i datacentret i 2010: 10 Gigabit Ethernet over kort multimode-fiber (10GBASE-SR, 850 nm) mellem switchene; serverne hænger på dem med kobber.",
+    "technical": "Inde i datacentret i 2010: 10 Gigabit Ethernet over kort multimode-fiber (10GBASE-SR, 850 nm) mellem switchene; serverne hænger på dem med kobber.",
     "tag": "10GBASE-SR · OM3"
   }
 }
