@@ -41,5 +41,10 @@
       "kid": "A long shared switch sits in the middle. Your internet company's router plugs in at one end, and a Danish web server's network at the other. Four more networks plug in too. A helper box has its own cable. Little notes ride the switch to the helper and back. Then a parcel crosses the switch straight to the Danish network.",
       "nerd": "Drawn as today: a peering LAN switch with six member ports, and a route server with a port of its own. BGP UPDATE notes cross the fabric to the route server and back to every member. Then a packet crosses the fabric in one hop, from the ISP's port to a Danish network's port. It never visits the route server."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Internet_exchange_point", "title": "Internet exchange point", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Peering", "title": "Peering", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Route_server", "title": "Route server", "level": "nerd" }
+  ]
 }

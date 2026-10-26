@@ -28,5 +28,10 @@
       "name": "RLC sequence number",
       "about": "Puts segments in order between phone and RNC and asks again for lost ones (ARQ)."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/3G", "title": "3G", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/High_Speed_Packet_Access", "title": "High Speed Packet Access", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Radio_Network_Controller", "title": "Radio Network Controller", "level": "nerd" }
+  ]
 }

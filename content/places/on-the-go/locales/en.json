@@ -29,5 +29,8 @@
         "nerd": "This internet view starts with the gNB and mobile core, then continues through ISP core, border router, IXP and the CDN's data centre. Shaded areas are the mobile or ISP network, the exchange and the video company. Packets move both ways over GTP, backbone fibre and cross-connects."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/5G", "title": "5G", "level": "both" }
+  ]
 }

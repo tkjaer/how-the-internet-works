@@ -32,5 +32,8 @@
       "name": "HEC",
       "about": "Eine Prüfung nur über den 5-Byte-Header, damit ein Switch nie einen kaputten Zettel liest."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Asynchronous_Transfer_Mode", "title": "Asynchronous Transfer Mode", "level": "nerd" }
+  ]
 }

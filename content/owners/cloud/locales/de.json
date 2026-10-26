@@ -2,5 +2,8 @@
   "name": {
     "kid": "Eine Cloud-Firma",
     "nerd": "Cloud-Region · AS64503"
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Cloud_Computing", "title": "Cloud Computing", "level": "both" }
+  ]
 }

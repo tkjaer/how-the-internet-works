@@ -71,5 +71,8 @@
         "nerd": "A response: the next piece of the video file."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/HTTP", "title": "HTTP", "level": "both" }
+  ]
 }

@@ -1,5 +1,9 @@
 {
   "name": "Heimrouter",
   "kid": "Die Haustür deines Heimnetzes.",
-  "nerd": "Routet zwischen dem Heim-LAN und dem ISP und macht NAT, damit das ganze Zuhause eine öffentliche Adresse teilt."
+  "nerd": "Routet zwischen dem Heim-LAN und dem ISP und macht NAT, damit das ganze Zuhause eine öffentliche Adresse teilt.",
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Residential_Gateway", "title": "Residential Gateway", "level": "both" },
+    { "url": "https://de.wikipedia.org/wiki/Netzwerkadress%C3%BCbersetzung", "title": "Netzwerkadressübersetzung", "level": "nerd" }
+  ]
 }

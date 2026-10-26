@@ -9,9 +9,4 @@ export default defineTechnology({
   dive: 'tdm-frames',
   // 31 of the 32 timeslots of 64 kbit/s
   rate: { down: 1.984e6, up: 1.984e6 },
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/E-carrier', title: 'E-carrier', level: 'nerd', lang: 'en' },
-    { url: 'https://en.wikipedia.org/wiki/Leased_line', title: 'Leased line', level: 'both', lang: 'en' },
-    { url: 'https://de.wikipedia.org/wiki/Standleitung', title: 'Standleitung', level: 'both', lang: 'de' },
-  ],
 });

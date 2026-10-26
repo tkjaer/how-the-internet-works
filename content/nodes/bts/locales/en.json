@@ -8,5 +8,9 @@
       "kid": "The mast doesn’t open your parcel. It catches your phone’s radio turn and passes what was in it on down the line.",
       "nerd": "The BTS ends the radio burst and the channel coding and passes the call’s RLP frames on in a 16 kbit/s sub-slot; nothing here reads PPP or IP."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Base_transceiver_station", "title": "Base transceiver station", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Cell_site", "title": "Cell site", "level": "both" }
+  ]
 }

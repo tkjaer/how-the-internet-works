@@ -15,5 +15,9 @@
         "nerd": "The server room starts at the backbone’s PoP and runs on the T1 to the site’s router, then over 10BASE-T through a repeater hub to the web server, a beige tower. Shelves of tower computers line the back wall. Request and page packets move in opposite directions."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Server_room", "title": "Server room", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Web_hosting_service", "title": "Web hosting service", "level": "nerd" }
+  ]
 }

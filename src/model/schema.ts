@@ -7,17 +7,17 @@ const id = z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, 'use a lower-case kebab-
 const colour = z.string().regex(/^#[0-9a-fA-F]{6}$/, 'use a #rrggbb colour');
 const level = z.enum(['kid', 'nerd', 'both']);
 
+/** A learn-more link (issue #4), in a content folder's `locales/<lang>.json` under `"learnMore"`: a page in that
+ *  language (English links are every language's fallback). */
 export const learnMore = z.strictObject({
   url: z.url({ protocol: /^https$/, error: 'use a full https:// URL' }),
-  /** Link text, in the link's language. */
+  /** Link text, in the page's language. */
   title: z.string().min(1),
   level,
-  /** The language of the page it points to. */
-  lang: z.string().min(2),
   /** The eras it is for (#180: RFC 793 in 1995 and 2010, RFC 9293 today). Default: every era. */
   eras: z.array(id).min(1).optional(),
 });
-const learnMoreList = z.array(learnMore).optional();
+export const learnMoreList = z.array(learnMore);
 
 /** passive: passes the signal on without reading any of it (a splitter): it opens no layer and ends no link frame. */
 export const role = z.enum(['endpoint', 'bridge', 'router', 'nat', 'passive']);
@@ -29,14 +29,11 @@ export const node = z.strictObject({
   role: role.optional(),
   /** The "look inside" scene for this device, at every hop on a route (a scene with `explains: 'node'`). */
   dive: id.optional(),
-  learnMore: learnMoreList,
 });
 
 /** Who runs a stretch of the route (your internet company, an exchange, a video company…): a network of its own. Path
  *  scenes draw the hops it runs as one region, so the reader sees where one network hands over to the next. */
-export const owner = z.strictObject({
-  learnMore: learnMoreList,
-});
+export const owner = z.strictObject({});
 
 /** How fast a link carries bits, each way, in bit/s (#59, how long it takes): for an access link what one home or
  *  phone gets (its line or plan), for a trunk the whole link. The slowest link on a route is its bottleneck. */
@@ -51,7 +48,6 @@ export const technology = z.strictObject({
   dive: id.optional(),
   /** How fast it carries bits, in its era (a link may say otherwise). */
   rate,
-  learnMore: learnMoreList,
 });
 
 /** A field value: a template with {facts} (see FACTS in packet.ts), the same both ways or one per direction. An empty
@@ -69,7 +65,6 @@ export const field = z.strictObject({
   use: z.union([z.literal(true), z.array(role)]).optional(),
   /** Shown to kids (when it matters at the hop): true, or a kid-friendly value. Addresses show as names for kids. */
   kid: z.union([z.literal(true), fieldValue]).optional(),
-  learnMore: learnMoreList,
 });
 
 export const layer = z.strictObject({
@@ -91,13 +86,11 @@ export const layer = z.strictObject({
   bytes: z.strictObject({ up: z.number().int().min(0), down: z.number().int().min(0) }).optional(),
   /** The "look inside" scene for this layer, at any hop that reads it (a scene with `explains: 'layer'`). */
   dive: id.optional(),
-  learnMore: learnMoreList,
 });
 
 export const scene = z.strictObject({
   /** What the scene is a dive into: a link (its technology), a device (a node) or a layer (at one hop). Default: link. */
   explains: z.enum(['link', 'node', 'layer']).optional(),
-  learnMore: learnMoreList,
 });
 
 const pt = z.tuple([z.number(), z.number()]);
@@ -173,7 +166,6 @@ export const segment = z.strictObject({
   /** When a group is expanded, the hop that stands for "where you came from" (e.g. { internet: "home" }). */
   entry: z.record(id, id).optional(),
   layout: layout.optional(),
-  learnMore: learnMoreList,
   ...eraVariant,
 });
 
@@ -240,7 +232,6 @@ export const activity = z.strictObject({
   flows: z.array(flow).min(1),
   layout: layout.optional(),
   order: z.number().optional(),
-  learnMore: learnMoreList,
   ...eraVariant,
 });
 

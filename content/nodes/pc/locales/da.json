@@ -2,5 +2,8 @@
   "name": "Computer",
   "yours": "din computer",
   "kid": "En stor beige kasse på skrivebordet med en tung skærm ovenpå og et tastatur i en ledning. Den kan ikke flytte sig nogen steder.",
-  "nerd": "En stationær pc: endepunktet, med et modem på en telefonlinje i stedet for et netværkskort."
+  "nerd": "En stationær pc: endepunktet, med et modem på en telefonlinje i stedet for et netværkskort.",
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Station%C3%A6r_computer", "title": "Stationær computer", "level": "both" }
+  ]
 }

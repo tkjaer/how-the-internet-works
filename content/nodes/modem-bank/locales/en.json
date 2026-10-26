@@ -4,5 +4,9 @@
     "kid": "The internet company’s modem bank: a rack with one little modem for every caller online right now. It answers your call, checks your password, gives your computer an address and sends your parcels on.",
     "nerd": "A remote access server: dozens of digital modems on ISDN PRI lines from the exchange (V.34, 28.8 kbit/s). It terminates the PPP session, authenticates you against RADIUS, assigns an address from its pool and routes your packets onto the ISP’s LAN.",
     "tag": "PRI · 30 modems"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Network_access_server", "title": "Network access server", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Modem", "title": "Modem", "level": "both" }
+  ]
 }

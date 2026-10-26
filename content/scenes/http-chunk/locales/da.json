@@ -264,5 +264,8 @@
         "nerd": "Ved {hop} er HTTP klartekst: video var ikke krypteret i 2010, så URL, Host og headere kunne læses på ledningen, og størrelserne med: ét 200 OK, hvis Content-Length er hele videoen på 17 MB, og så, efter et spring frem, en Range-forespørgsel, der får 206 Partial Content med resten. {hop} selv sender rammerne videre uden at læse så meget som IP-headeren."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/HTTP", "title": "HTTP", "level": "both" }
+  ]
 }

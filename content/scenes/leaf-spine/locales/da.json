@@ -27,5 +27,8 @@
     "kid": "Samme vej hver gang",
     "nerd": "hash(5-tuple)",
     "mod": "mod 4 = {n}"
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Datacenter", "title": "Datacenter", "level": "both" }
+  ]
 }

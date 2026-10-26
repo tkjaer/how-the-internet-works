@@ -7,5 +7,9 @@
     "kid": "DIX, where the Danish networks meet and swap parcels for free, so a Danish page never needs to cross the sea. A page from America doesn’t come this way.",
     "nerd": "DIX, the Danish Internet Exchange, started in 1994 by UNI•C at DTU in Lyngby: a shared Ethernet where Danish ISPs peer, reached here on its own E1. Only Danish routes are learned there.",
     "tag": "DIX · 1994"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Internet_exchange_point", "title": "Internet exchange points", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Peering", "title": "Peering", "level": "nerd" }
+  ]
 }

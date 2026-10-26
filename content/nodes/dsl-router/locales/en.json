@@ -1,5 +1,9 @@
 {
   "name": "Home router",
   "kid": "The front door of your home network. This one has a modem inside that talks over the phone line.",
-  "nerd": "A VDSL2 modem and a router in one box: NAT for the home, and DMT tones on the phone pair to the street cabinet."
+  "nerd": "A VDSL2 modem and a router in one box: NAT for the home, and DMT tones on the phone pair to the street cabinet.",
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/DSL_modem", "title": "DSL modem", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Network_address_translation", "title": "Network address translation", "level": "nerd" }
+  ]
 }

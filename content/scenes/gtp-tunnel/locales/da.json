@@ -65,5 +65,8 @@
         }
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Mobiltelefoni", "title": "Mobiltelefoni", "level": "kid" }
+  ]
 }

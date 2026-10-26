@@ -92,5 +92,8 @@
         "about": "Hvad der er indeni: 6 = TCP (17 er UDP, 1 er ICMP)."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/IP-adresse", "title": "IP-adresse", "level": "both" }
+  ]
 }

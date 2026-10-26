@@ -12,5 +12,9 @@
       "kid": "Der Mast packt den Tunnel-Umschlag aus und schickt dein Päckchen per Funk an dein Telefon.",
       "nerd": "Die gNB beendet den GTP-U-Tunnel (die TEID sagt welches Telefon) und plant das Paket auf dem Funk (NR)."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Mobilfunk-Basisstation", "title": "Mobilfunk-Basisstation", "level": "both" },
+    { "url": "https://de.wikipedia.org/wiki/5G_NR", "title": "5G NR", "level": "nerd" }
+  ]
 }

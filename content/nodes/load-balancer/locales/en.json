@@ -6,5 +6,9 @@
   "2010": {
     "nerd": "A hardware load balancer (an appliance such as F5’s BIG-IP, or a card in the aggregation switch) holds the service address (VIP). It keeps a table of connections and sends every packet of one TCP connection to the same healthy server; health checks take broken servers out.",
     "tag": "L4–7 appliance · VIP"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Load_balancing_(computing)", "title": "Load balancing", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Consistent_hashing", "title": "Consistent hashing", "level": "nerd" }
+  ]
 }

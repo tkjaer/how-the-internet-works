@@ -1,5 +1,6 @@
 // Content validation for authors: every definition against its schema, every cross-reference, required English
-// strings (a layer's header fields too) and the presence of each scene's component. Runs in dev (errors go to the Vite overlay and the console),
+// strings (a layer's header fields too), the learn-more links in the locale files and the presence of each scene's
+// component. Runs in dev (errors go to the Vite overlay and the console),
 // in `npm run check:content` and in the tests. Never in the production bundle.
 import type { z } from 'zod';
 import * as S from './schema';
@@ -29,7 +30,8 @@ export interface ValidateInput {
   packs: Record<string, Pack>;
   /** Paths of the component files that exist (e.g. "/content/scenes/ip-post/Scene.svelte"). */
   files: string[];
-  /** The locale files as written, by path ("/content/scenes/ip-post/locales/da.json"), to check their `describe`s. */
+  /** The locale files as written, by path ("/content/scenes/ip-post/locales/da.json"), to check their language, their
+   *  `describe`s and their learn-more links. */
   locales?: Record<string, Json>;
 }
 
@@ -53,11 +55,6 @@ export function validate({ content: c, packs, files, locales = {} }: ValidateInp
   const needLevelled = (file: string, key: string) => {
     if (!(key in en) && !(`${key}.kid` in en)) add(file, 'strings', `missing English string "${key}" or "${key}.kid" (in ${file.replace(/[^/]+$/, '')}locales/en.json)`);
   };
-  const learnMore = (file: string, list: { lang: string; eras?: string[] }[] | undefined) =>
-    list?.forEach((l, i) => {
-      if (!langs.includes(l.lang)) add(file, `learnMore[${i}].lang`, `"${l.lang}" is not a language.${suggest(l.lang, langs)}`);
-      l.eras?.forEach((e, j) => ref(file, `learnMore[${i}].eras[${j}]`, 'eras', e, 'an era'));
-    });
   const has = (path: string) => files.includes(path);
   /** A dive must point at a scene that explains that kind of thing. */
   const dive = (file: string, where: string, id: string | undefined, kind: 'link' | 'node' | 'layer') => {
@@ -74,19 +71,16 @@ export function validate({ content: c, packs, files, locales = {} }: ValidateInp
     need(n.file, `node.${n.id}.name`);
     dive(n.file, 'dive', n.dive, 'node');
     if (n.dive && n.kind !== 'device') add(n.file, 'dive', `only a device has a dive (a ${n.kind} is drawn as a group, which opens up instead).`);
-    learnMore(n.file, n.learnMore);
   }
   for (const o of Object.values(c.owners)) {
     schema(o.file, S.owner, strip(o));
     needLevelled(o.file, `owner.${o.id}.name`);
-    learnMore(o.file, o.learnMore);
   }
   for (const t of Object.values(c.technologies)) {
     schema(t.file, S.technology, strip(t));
     t.stack?.forEach((l, i) => ref(t.file, `stack[${i}]`, 'layers', l, 'a layer'));
     dive(t.file, 'dive', t.dive, 'link');
     need(t.file, `tech.${t.id}.name`);
-    learnMore(t.file, t.learnMore);
   }
   /** Codes layers give themselves for the layer outside them ({inner.ethertype}). */
   const codes = new Set(Object.values(c.layers).flatMap((l) => Object.keys(l.code ?? {})));
@@ -113,13 +107,11 @@ export function validate({ content: c, packs, files, locales = {} }: ValidateInp
       }
     });
     dive(l.file, 'dive', l.dive, 'layer');
-    learnMore(l.file, l.learnMore);
   }
   for (const s of Object.values(c.scenes)) {
     schema(s.file, S.scene, strip(s));
     if (!has(`/content/scenes/${s.id}/Scene.svelte`)) add(s.file, 'component', `add content/scenes/${s.id}/Scene.svelte`);
     need(s.file, `scene.${s.id}.title`);
-    learnMore(s.file, s.learnMore);
   }
 
   const segmentLike = (file: string, def: { hops: unknown[]; aside?: { from: string; link: string; at: string; node?: string; owner?: string }[]; entry?: Record<string, string> }, s: z.ZodType, whole: unknown) => {
@@ -171,7 +163,7 @@ export function validate({ content: c, packs, files, locales = {} }: ValidateInp
       // its words are its base's block for its era, which loads with the past's other words (vite.config.ts `eraBlocks`)
       const dir = v.file.replace(/[^/]+$/, '');
       const own = Object.keys(locales).find((p) => p.startsWith(`/${dir}locales/`));
-      if (own) add(own.slice(1), 'strings', `a variant has no strings of its own: write them in "${v.era ?? '<era>'}": { … } in ${all[v.variantOf]?.file.replace(/[^/]+$/, '') ?? 'its base\'s folder '}locales/`);
+      if (own) add(own.slice(1), 'strings', `a variant has no strings or links of its own: write its strings in "${v.era ?? '<era>'}": { … } and give its links "eras": ["${v.era ?? '<era>'}"], in ${all[v.variantOf]?.file.replace(/[^/]+$/, '') ?? 'its base\'s folder '}locales/`);
     }
   };
   variants(c.segments, 'segments', 'a segment');
@@ -179,12 +171,10 @@ export function validate({ content: c, packs, files, locales = {} }: ValidateInp
 
   for (const s of Object.values(c.segments)) {
     segmentLike(s.file, s, S.segment, strip(s));
-    learnMore(s.file, s.learnMore);
   }
   for (const p of Object.values(c.places)) {
     segmentLike(p.file, p, S.place, strip(p));
     need(p.file, `place.${p.id}.name`);
-    learnMore(p.file, p.learnMore);
     // a variant hangs off a place of its own; both name their way of getting online for the picker
     if (p.variantOf !== undefined) {
       ref(p.file, 'variantOf', 'places', p.variantOf, 'a place');
@@ -231,7 +221,6 @@ export function validate({ content: c, packs, files, locales = {} }: ValidateInp
       need(a.file, `activity.${a.id}.title`);
       needLevelled(a.file, `activity.${a.id}`);
     }
-    learnMore(a.file, a.learnMore);
     const steps = a.route ?? [];
     const slots = (x: typeof a) => JSON.stringify((x.route ?? []).flatMap((st) => ('place' in st ? [[st.place, st.only]] : [])));
     const base = a.variantOf === undefined ? undefined : c.activities[a.variantOf];
@@ -318,14 +307,29 @@ export function validate({ content: c, packs, files, locales = {} }: ValidateInp
     for (const opt of options) for (const d of opt) if (d) checkLayout(d.file, d.layout, c.places[d.id] === d);
   }
 
-  // every spoken description is { kid, nerd }, each short (a missing level or a typo shows here, with its file)
+  // every spoken description is { kid, nerd }, each short (a missing level or a typo shows here, with its file); a
+  // file's learn-more links are its own top-level list, not in an era's block or anyone's words
   const describes = (file: string, obj: Json, where: string[]) => {
     for (const [k, v] of Object.entries(obj)) {
-      if (k === 'describe') schema(file, S.describeText, v, () => false, [...where, k]);
+      if (k === 'learnMore') { if (where.length) add(file, [...where, k].join('.'), 'links go in the file\'s own "learnMore" list; a link for some eras only lists them in its "eras"'); }
+      else if (k === 'describe') schema(file, S.describeText, v, () => false, [...where, k]);
       else if (typeof v === 'object') describes(file, v, [...where, k]);
     }
   };
   for (const [path, json] of Object.entries(locales)) describes(path.slice(1), json, []);
+
+  // a locale file is for a language there is, and its learn-more links (#4) are for its language: each a https URL,
+  // a title, a level and maybe some eras
+  const SHOW_LINKS = ['nodes', 'owners', 'technologies', 'layers', 'scenes', 'places', 'activities'];
+  for (const [path, json] of Object.entries(locales)) {
+    const file = path.slice(1), [, , kind, , , name] = path.split('/'), lang = name.replace(/\.json$/, '');
+    if (!langs.includes(lang)) add(file, 'language', `"${lang}" is not a language.${suggest(lang, langs)}`);
+    if (!('learnMore' in json)) continue;
+    if (!SHOW_LINKS.includes(kind)) { add(file, 'learnMore', `nothing shows the links of ${kind}: only of ${SHOW_LINKS.join(', ')}`); continue; }
+    schema(file, S.learnMoreList, json.learnMore, () => false, ['learnMore']);
+    const links = Array.isArray(json.learnMore) ? (json.learnMore as { eras?: unknown }[]) : [];
+    links.forEach((l, i) => (Array.isArray(l?.eras) ? l.eras : []).forEach((e, j) => typeof e === 'string' && ref(file, `learnMore[${i}].eras[${j}]`, 'eras', e, 'an era')));
+  }
 
   // de-duplicate (a place shared by several activities is checked once per activity)
   const seen = new Set<string>();

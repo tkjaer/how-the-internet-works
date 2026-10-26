@@ -14,10 +14,4 @@ export default defineLayer({
     { id: 'cvid', bits: 12, value: '2042', use: ['router'], kid: true },
     { id: 'type', bits: 16, value: '{inner.ethertype}', use: ['router'] },
   ],
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/IEEE_802.1Q', title: 'IEEE 802.1Q', level: 'nerd', lang: 'en' },
-    { url: 'https://de.wikipedia.org/wiki/IEEE_802.1Q', title: 'IEEE 802.1Q', level: 'nerd', lang: 'de' },
-    { url: 'https://en.wikipedia.org/wiki/IEEE_802.1ad', title: 'IEEE 802.1ad (Q-in-Q)', level: 'nerd', lang: 'en' },
-    { url: 'https://de.wikipedia.org/wiki/IEEE_802.1ad', title: 'IEEE 802.1ad', level: 'nerd', lang: 'de' },
-  ],
 });

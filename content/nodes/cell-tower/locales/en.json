@@ -12,5 +12,9 @@
       "kid": "The tower unpacks the tunnel envelope and sends your parcel to your phone by radio.",
       "nerd": "The gNB ends the GTP-U tunnel (the TEID says which phone) and schedules the packet on the radio (NR)."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Cell_site", "title": "Cell site", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/5G_NR", "title": "5G NR", "level": "nerd" }
+  ]
 }

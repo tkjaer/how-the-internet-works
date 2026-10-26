@@ -11,11 +11,4 @@ export default defineTechnology({
   dive: 'copper-pulses',
   // the router's port speed: the laptop's gigabit port links at 100 Mbit/s to it
   rate: { down: 100e6, up: 100e6 },
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/Fast_Ethernet', title: 'Fast Ethernet', level: 'both', lang: 'en' },
-    { url: 'https://da.wikipedia.org/wiki/Ethernet', title: 'Ethernet', level: 'both', lang: 'da' },
-    { url: 'https://de.wikipedia.org/wiki/Fast_Ethernet', title: 'Fast Ethernet', level: 'both', lang: 'de' },
-    { url: 'https://en.wikipedia.org/wiki/MLT-3_encoding', title: 'MLT-3 encoding', level: 'nerd', lang: 'en' },
-    { url: 'https://de.wikipedia.org/wiki/MLT-3-Code', title: 'MLT-3-Code', level: 'nerd', lang: 'de' },
-  ],
 });

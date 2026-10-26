@@ -28,5 +28,9 @@
       "name": "RLC Sequence Number",
       "about": "Bringt Segmente zwischen Handy und RNC in Reihenfolge und fragt verlorene nochmal an (ARQ)."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/High_Speed_Packet_Access", "title": "High Speed Packet Access", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/Radio_Network_Controller", "title": "Radio Network Controller", "level": "nerd" }
+  ]
 }

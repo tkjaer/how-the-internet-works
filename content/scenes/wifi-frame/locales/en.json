@@ -81,5 +81,11 @@
     "tag": {
       "encrypt": "WPA2/CCMP hides the payload"
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/IEEE_802.11#Data_frame", "title": "IEEE 802.11 frame", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Wi-Fi", "title": "Wi-Fi", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Carrier-sense_multiple_access_with_collision_avoidance", "title": "CSMA/CA", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access", "title": "Wi-Fi Protected Access", "level": "nerd" }
+  ]
 }

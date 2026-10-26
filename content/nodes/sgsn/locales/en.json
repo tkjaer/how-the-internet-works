@@ -4,5 +4,8 @@
     "kid": "The mobile company’s sign-in desk. It checks your SIM card and sets up your phone’s tunnel, then lets the parcels go past it.",
     "nerd": "The SGSN: attach and authentication (with the HLR), mobility and the PDP context. With Direct Tunnel (3GPP Rel-7) it sets up the GTP-U tunnel between RNC and GGSN and stays out of the user plane.",
     "tag": "SGSN · Gn"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/GPRS_core_network", "title": "GPRS core network", "level": "nerd" }
+  ]
 }

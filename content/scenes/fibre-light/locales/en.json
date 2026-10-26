@@ -175,5 +175,9 @@
         "nerd": "The cross-connect view shows a short single-mode patch with one 1310 nm lane: a laser at one end, the light zig-zagging through the core, a detector at the other. The label says 10GBASE-LR at 1310 nm over single-mode fibre."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Optical_fiber", "title": "Optical fiber", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Wavelength-division_multiplexing", "title": "Wavelength-division multiplexing", "level": "nerd" }
+  ]
 }

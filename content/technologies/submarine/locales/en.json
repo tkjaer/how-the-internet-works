@@ -1,5 +1,9 @@
 {
   "name": "Undersea cable",
   "kid": "A cable lying on the sea floor, full of glass threads, joining two coasts.",
-  "nerd": "A submarine fibre cable between two landing stations, short ones without repeaters, long ones with optical repeaters powered through the cable. Here it carries the ISP's MPLS backbone across the sea."
+  "nerd": "A submarine fibre cable between two landing stations, short ones without repeaters, long ones with optical repeaters powered through the cable. Here it carries the ISP's MPLS backbone across the sea.",
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Submarine_communications_cable", "title": "Submarine communications cable", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Cable_landing_point", "title": "Cable landing point", "level": "nerd" }
+  ]
 }

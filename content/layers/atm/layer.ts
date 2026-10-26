@@ -12,9 +12,4 @@ export default defineLayer({
     { id: 'clp', bits: 1, value: '0' },
     { id: 'hec', bits: 8, value: '{sum}', use: true },
   ],
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode', title: 'Asynchronous Transfer Mode', level: 'nerd', lang: 'en' },
-    { url: 'https://de.wikipedia.org/wiki/Asynchronous_Transfer_Mode', title: 'Asynchronous Transfer Mode', level: 'nerd', lang: 'de' },
-    { url: 'https://en.wikipedia.org/wiki/ATM_Adaptation_Layer_5', title: 'AAL5', level: 'nerd', lang: 'en' },
-  ],
 });

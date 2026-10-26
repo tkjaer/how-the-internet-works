@@ -5,9 +5,4 @@ import { defineNode } from '$core/define';
 export default defineNode({
   kind: 'device',
   role: 'router',
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/Core_router', title: 'Core router', level: 'nerd', lang: 'en' },
-    { url: 'https://en.wikipedia.org/wiki/Router_(computing)', title: 'Router', level: 'both', lang: 'en' },
-    { url: 'https://de.wikipedia.org/wiki/Router', title: 'Router', level: 'both', lang: 'de' },
-  ],
 });

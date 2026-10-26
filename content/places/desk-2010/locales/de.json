@@ -27,5 +27,8 @@
         "nerd": "Zugangsnetz (VDSL2 von einer DSLAM im Straßenkasten; die meisten dänischen Haushalte hatten 2010 noch ADSL2+ von der Vermittlung), eine Aggregationsschicht (L2-Backhaul zur BNG), der MPLS-Kern des ISP, dann Peering am IXP oder bezahltes Transit, und am Ende ein CDN-Cache. Jede Fläche ist ein Betreibernetz."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Digital_Subscriber_Line", "title": "Digital Subscriber Line", "level": "both" }
+  ]
 }

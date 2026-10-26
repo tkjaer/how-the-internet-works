@@ -15,5 +15,8 @@
         "nerd": "Colocation-visningen starter ved IXP’et og går i zigzag gennem core-router, load balancer, aggregeringsswitch og access-switch over 10G-multimode-fiber og så over 1000BASE-T-kobber til cache-serveren. En indhegnet række racks med en CRAC-enhed i hver ende står bagerst. En stiplet gren fra cachen fører til origin. Forespørgsler og video bevæger sig i hver sin retning."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Datacenter", "title": "Datacenter", "level": "both" }
+  ]
 }

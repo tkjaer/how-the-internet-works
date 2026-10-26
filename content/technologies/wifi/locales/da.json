@@ -6,5 +6,8 @@
   "2010": {
     "nerd": "802.11n på 2,4 eller 5 GHz: OFDM-underbærere, 64-QAM, MIMO-strømme og WPA2-kryptering mellem enheden og AP.",
     "tag": "2,4/5 GHz · OFDM · 64-QAM"
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Wi-Fi", "title": "Wi-Fi", "level": "both" }
+  ]
 }

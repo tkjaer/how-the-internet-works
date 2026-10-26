@@ -70,5 +70,13 @@
       }
     },
     "extra": "Power over Ethernet: a cable like this can carry power too, so an access point or a camera on the ceiling needs no socket. Direct current rides on the pairs as a common-mode (phantom) voltage that the data, sent as differences, never notices: 15.4 W with 802.3af (2003), and 30 W with 802.3at, new in 2009. Faster copper: 10GBASE-T (2006) uses 16 levels instead of 5 (PAM-16, paired into DSQ128 symbols with LDPC error correction), runs 800 MBd per pair and needs Cat 6A for the full 100 m. In 2010 it was still mostly for servers."
-  }
+  },
+  "learnMore": [
+    { "url": "https://simple.wikipedia.org/wiki/Ethernet", "title": "Ethernet", "level": "kid" },
+    { "url": "https://en.wikipedia.org/wiki/Ethernet_physical_layer", "title": "Ethernet physical layer", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Twisted_pair", "title": "Twisted pair", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Gigabit_Ethernet", "title": "Gigabit Ethernet", "level": "nerd", "eras": ["2010", "today"] },
+    { "url": "https://en.wikipedia.org/wiki/Differential_signalling", "title": "Differential signalling", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Eye_pattern", "title": "Eye pattern", "level": "nerd" }
+  ]
 }

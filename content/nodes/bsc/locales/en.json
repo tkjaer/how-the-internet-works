@@ -8,5 +8,8 @@
       "kid": "The controller doesn’t open your parcel either. It just switches your call’s little slot on to the big switch.",
       "nerd": "The BSC switches the sub-slot from the BTS’s Abis line onto the Ater line to the TRAU and the MSC; the RLP frames ride through unread."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Base_station_subsystem", "title": "Base station subsystem", "level": "both" }
+  ]
 }

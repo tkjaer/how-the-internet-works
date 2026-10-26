@@ -134,5 +134,9 @@
         "about": "5G’s QoS flow label (5G came in 2019); 3G had none: the PDP context itself carried the QoS."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Cellular_network", "title": "Cellular network", "level": "kid" },
+    { "url": "https://en.wikipedia.org/wiki/GPRS_Tunnelling_Protocol", "title": "GPRS Tunnelling Protocol", "level": "nerd" }
+  ]
 }

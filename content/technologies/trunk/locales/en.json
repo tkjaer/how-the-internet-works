@@ -4,5 +4,9 @@
     "kid": "A thick phone line between the mobile company’s switch and the ordinary phone company’s. It carries 30 calls at once, each in its own slot, and yours is one of them, beeping like a modem.",
     "nerd": "An E1 trunk between the MSC and the PSTN exchange: 30 calls of 64 kbit/s, A-law PCM, and slot 16 for SS7 (ISUP sets each call up). Your slot carries the IWF’s V.32 modem tones at 9.6 kbit/s, to be answered by a modem at the ISP.",
     "tag": "E1 · SS7 · 64 kbit/s"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Trunking", "title": "Trunking", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/Signalling_System_No._7", "title": "Signalling System No. 7", "level": "nerd" }
+  ]
 }

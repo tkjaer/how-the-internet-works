@@ -29,5 +29,8 @@
         "nerd": "Internetvisningen starter med gNB og mobilkerne, derefter ISP-kerne, grænserouter, IXP og CDN’ets datacenter. De farvede felter viser mobil- eller ISP-nettet, internetknudepunktet og videofirmaet. Pakker går begge veje over GTP, backbone-fiber og krydsforbindelser."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/5G", "title": "5G", "level": "both" }
+  ]
 }

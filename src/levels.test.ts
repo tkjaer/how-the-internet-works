@@ -6,11 +6,15 @@ import { stubBrowser } from './test/stub-browser';
 
 const locales = import.meta.glob<unknown>(['/content/locales/*/*.json', '/content/**/locales/*.json'], { eager: true, import: 'default' });
 
-/** Every string a reader may see, with where it is; a scene's `mode` (`"kid": "kid"`, how it tells the level) isn't. */
+/** Every string a reader may see, with where it is; a scene's `mode` (`"kid": "kid"`, how it tells the level) isn't,
+ *  and of a learn-more link only its `title` is. */
 function* strings(o: unknown, at: string): Generator<[string, string]> {
   if (typeof o === 'string') yield [at, o];
   else if (o && typeof o === 'object')
-    for (const [k, v] of Object.entries(o)) if (!(k === 'mode' && at.endsWith('.json'))) yield* strings(v, `${at} › ${k}`);
+    for (const [k, v] of Object.entries(o)) {
+      if ((k === 'mode' && at.endsWith('.json')) || (/ › learnMore › \d+$/.test(at) && k !== 'title')) continue;
+      yield* strings(v, `${at} › ${k}`);
+    }
 }
 
 describe('the levels, as readers see them (#141)', () => {

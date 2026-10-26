@@ -19,5 +19,8 @@
   "1995": {
     "kid": "Internettet er en masse net, der holder hinanden i hånden, og i 1995 er der færre end to tusind af dem. Tryk for at se, hvad der er indeni!",
     "nerd": "Under 1 700 autonome systemer, der udveksler ruter med BGP-4 (den første optælling, i oktober 1996, fandt 1 644). Tryk for at folde vejen gennem udbyderen ud."
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Internet", "title": "Internet", "level": "both" }
+  ]
 }

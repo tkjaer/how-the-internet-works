@@ -47,5 +47,9 @@
       "name": "EtherType",
       "about": "What is inside the tags."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/IEEE_802.1Q", "title": "IEEE 802.1Q", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/IEEE_802.1ad", "title": "IEEE 802.1ad (Q-in-Q)", "level": "nerd" }
+  ]
 }

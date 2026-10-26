@@ -10,9 +10,4 @@ export default defineTechnology({
   dive: 'tdm-frames',
   // your call's quarter-slot
   rate: { down: 16e3, up: 16e3 },
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/Base_station_subsystem', title: 'Base station subsystem', level: 'both', lang: 'en' },
-    { url: 'https://de.wikipedia.org/wiki/Base_Station_Subsystem', title: 'Base Station Subsystem', level: 'both', lang: 'de' },
-    { url: 'https://en.wikipedia.org/wiki/E-carrier', title: 'E-carrier', level: 'nerd', lang: 'en' },
-  ],
 });

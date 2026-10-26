@@ -12,5 +12,8 @@
   "2010": {
     "name": "Core-Router",
     "nerd": "Der Core-Router im Käfig der Videofirma: er peert über BGP am Exchange, kündigt die Adressen der Firma an und routet über 10G hinunter zum Load-Balancer und den Aggregation-Switches."
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Router", "title": "Router", "level": "both" }
+  ]
 }

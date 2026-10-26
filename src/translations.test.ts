@@ -20,9 +20,11 @@ const entry = (id: string, s: string) => `${JSON.stringify(id)}: ${JSON.stringif
 /** Prose, not a code, an address or a run of acronyms: two words in lower case. */
 const prose = /[a-z]{3,}\s+[a-z]{2,}/;
 
+/** A file's strings by key; not its learn-more links (`learnMore`), which are each language's own pages, not
+ *  translations of the English ones. */
 function* strings(o: string | Json, at: string): Generator<[string, string]> {
   if (typeof o === 'string') yield [at, o];
-  else for (const [k, v] of Object.entries(o)) yield* strings(v, at ? `${at}.${k}` : k);
+  else for (const [k, v] of Object.entries(o)) if (!(at === '' && k === 'learnMore')) yield* strings(v, at ? `${at}.${k}` : k);
 }
 const flat = (o: Json) => new Map(strings(o, ''));
 

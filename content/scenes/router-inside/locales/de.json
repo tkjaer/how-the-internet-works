@@ -115,5 +115,10 @@
         "nerd": "802.11n radio"
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Residential_Gateway", "title": "Residential Gateway", "level": "both" },
+    { "url": "https://de.wikipedia.org/wiki/Switch_(Netzwerktechnik)", "title": "Switch (Netzwerktechnik)", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/Netzwerkadress%C3%BCbersetzung", "title": "Netzwerkadressübersetzung", "level": "nerd" }
+  ]
 }

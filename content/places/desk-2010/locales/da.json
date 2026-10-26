@@ -27,5 +27,8 @@
         "nerd": "Adgangsnet (VDSL2 fra en DSLAM i gadeskabet; de fleste danske hjem havde i 2010 stadig ADSL2+ fra centralen), et aggregeringslag (L2-backhaul til BNG’en), udbyderens MPLS-kerne og derefter enten peering i et IXP eller betalt transit – og til sidst en CDN-cache. Hvert farvet felt er én operatørs net."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/DSL", "title": "DSL", "level": "both" }
+  ]
 }

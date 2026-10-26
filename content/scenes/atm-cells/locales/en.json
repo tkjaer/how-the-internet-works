@@ -51,5 +51,10 @@
   "cellLine": {
     "kid": "About a tenth of every piece is label",
     "nerd": "5 of 53 bytes ≈ 9.4 % header, every cell"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode", "title": "Asynchronous Transfer Mode", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/ATM_Adaptation_Layer_5", "title": "ATM Adaptation Layer 5", "level": "nerd" },
+    { "url": "https://www.rfc-editor.org/rfc/rfc1483", "title": "RFC 1483: multiprotocol over ATM AAL5 (1993)", "level": "nerd" }
+  ]
 }

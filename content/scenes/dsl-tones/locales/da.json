@@ -62,5 +62,8 @@
     "nerd": "Denne linje: {m} m kobber"
   },
   "xtalkTitle": "Krydstale",
-  "xtalkLine": "Naboparrene lækker ind"
+  "xtalkLine": "Naboparrene lækker ind",
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Digital_Subscriber_Line", "title": "Digital Subscriber Line", "level": "both" }
+  ]
 }

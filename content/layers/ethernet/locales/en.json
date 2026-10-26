@@ -38,5 +38,10 @@
         "about": "What is inside: 0x0800 IPv4, 0x0806 ARP."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Network_switch", "title": "Network switch", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/MAC_address", "title": "MAC address", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Address_Resolution_Protocol", "title": "ARP", "level": "both" }
+  ]
 }

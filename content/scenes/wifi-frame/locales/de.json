@@ -81,5 +81,11 @@
     "tag": {
       "encrypt": "WPA2/CCMP verbirgt die Nutzlast"
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/IEEE_802.11", "title": "IEEE 802.11", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/Wi-Fi", "title": "Wi-Fi", "level": "both" },
+    { "url": "https://de.wikipedia.org/wiki/Carrier_Sense_Multiple_Access/Collision_Avoidance", "title": "Carrier Sense Multiple Access/Collision Avoidance", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/Wi-Fi_Protected_Access", "title": "Wi-Fi Protected Access", "level": "nerd" }
+  ]
 }

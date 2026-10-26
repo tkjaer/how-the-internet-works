@@ -2,5 +2,8 @@
   "name": "Street cabinet",
   "kid": "In a box on your street, one glass thread is split into lots of little ones, one for each house. It needs no power: it just shares the light.",
   "nerd": "A passive 1:32 splitter: no power, it just shares the light. The OLT it connects to sits in the exchange.",
-  "tag": "Splitter · 1:32"
+  "tag": "Splitter · 1:32",
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Passive_optical_network", "title": "Passive optical network", "level": "nerd" }
+  ]
 }

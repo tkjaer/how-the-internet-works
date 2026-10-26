@@ -32,5 +32,10 @@
     "kid": "Eine Straße offen, eine zu",
     "nerd": "Uplink 2: blocked",
     "rate": "48×1G ↓ 10G ↑"
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Hierarchisches_Internetworking-Modell", "title": "Hierarchisches Internetworking-Modell", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/Spanning_Tree_Protocol", "title": "Spanning Tree Protocol", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/Hot_Standby_Router_Protocol", "title": "Hot Standby Router Protocol", "level": "nerd" }
+  ]
 }

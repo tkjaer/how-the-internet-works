@@ -10,7 +10,7 @@ import { clearMeasureCache, textBox } from './engine/svg';
 import type { Loc } from './model/location';
 import { activityKey, resolveRoute, stringSources, type Hop, type Route } from './model/resolve';
 import { nowEra } from './model/registry';
-import { firstOf, languages, loadDiveStrings as loadDives, loadPastStrings as loadPast, lookup, packs, withEra } from './model/strings';
+import { firstOf, languages, linksOf, loadDiveStrings as loadDives, loadPastStrings as loadPast, lookup, packs, withEra } from './model/strings';
 import { defineTheme } from './render/art-base';
 import type { Theme } from './render/theme-types';
 
@@ -36,7 +36,7 @@ const q = new URLSearchParams(location.search);
 const asked = levelNamed(q.get('level'));
 if (asked) setLevel(asked);
 
-/** Bumped when more strings arrive (the English dive strings), so text that asked for them too early updates. */
+/** Bumped when more strings arrive (the English dive strings), so text (and links) that asked for them too early updates. */
 const more = $state({ n: 0 });
 let dives: Promise<void> | null = null, then: Promise<void> | null = null;
 export const loadDiveStrings = () => (dives ??= loadDives().then(() => { more.n++; }));
@@ -51,6 +51,9 @@ export const tr = (key: string) => (more.n, firstOf(loc.lang, withEra([key], pas
 export const trl = (key: string, level: Level = loc.level) => (more.n, firstOf(loc.lang, withEra([key], past()), level) ?? key);
 /** The first of several keys (most specific first) that has a string. */
 export const trFirst = (keys: string[], level?: Level) => (more.n, firstOf(loc.lang, withEra(keys, past()), level) ?? '');
+/** The learn-more links of some content items ("layer.tcp"), in the language and in English (`linksOf`); a layer's
+ *  and a dive scene's English ones arrive with the dive strings. */
+export const trLinks = (items: string[], lang = loc.lang) => (more.n, linksOf(lang, items));
 /** Fill {placeholders}. */
 export const fill = (s: string, vars: Record<string, string | number>) => s.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
 /** A count in words, by the language's plural form: `key.one`, `key.other`, … with {n} filled ("4 ways down"). */

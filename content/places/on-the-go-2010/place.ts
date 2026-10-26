@@ -35,9 +35,4 @@ export default definePlace({
       },
     },
   },
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/3G', title: '3G', level: 'both', lang: 'en' },
-    { url: 'https://da.wikipedia.org/wiki/3G', title: '3G', level: 'both', lang: 'da' },
-    { url: 'https://en.wikipedia.org/wiki/GPRS_core_network', title: 'GPRS core network', level: 'nerd', lang: 'en' },
-  ],
 });

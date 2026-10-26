@@ -8,5 +8,8 @@
       "kid": "Die Steuerbox öffnet dein Päckchen auch nicht. Sie schaltet nur den kleinen Platz deines Anrufs zur großen Vermittlung weiter.",
       "nerd": "Der BSC schaltet den Sub-Slot von der Abis-Leitung der BTS auf die Ater-Leitung zu TRAU und MSC; die RLP-Frames fahren ungelesen durch."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Base_Station_Subsystem", "title": "Base Station Subsystem", "level": "both" }
+  ]
 }

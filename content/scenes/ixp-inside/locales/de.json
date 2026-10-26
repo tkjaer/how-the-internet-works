@@ -41,5 +41,9 @@
       "kid": "Ein langer gemeinsamer Switch sitzt in der Mitte. Der Router deiner Internetfirma steckt an einem Ende, das Netz eines dänischen Webservers am anderen. Vier weitere Netze stecken auch. Eine Helfer-Box hat ihr eigenes Kabel. Kleine Zettel fahren über den Switch zum Helfer und zurück. Dann kreuzt ein Päckchen den Switch gerade zum dänischen Netz.",
       "nerd": "Gezeichnet wie heute: ein Peering-LAN-Switch mit sechs Member-Ports und einem Route Server mit eigenem Port. BGP-UPDATE-Zettel kreuzen das Fabric zum Route Server und zurück zu jedem Mitglied. Dann kreuzt ein Paket das Fabric in einem Hop, vom ISP-Port zum Port eines dänischen Netzes. Es besucht den Route Server nie."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Internetknoten", "title": "Internetknoten", "level": "both" },
+    { "url": "https://de.wikipedia.org/wiki/Peering", "title": "Peering", "level": "both" }
+  ]
 }

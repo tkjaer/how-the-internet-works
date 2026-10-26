@@ -148,5 +148,11 @@
         "nerd": "AMI; B8ZS replaces 8 zeros with violations"
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Time-division_multiplexing", "title": "Time-division multiplexing", "level": "both" },
+    { "url": "https://en.wikipedia.org/wiki/E-carrier", "title": "E-carrier", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/T-carrier", "title": "T-carrier", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Modified_AMI_code", "title": "HDB3 and B8ZS", "level": "nerd" }
+  ]
 }

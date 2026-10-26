@@ -264,5 +264,11 @@
         "nerd": "At {hop}, HTTP is plain text: video wasn't encrypted in 2010, so the URL, Host and headers could be read on the wire, and the sizes too: one 200 OK whose Content-Length is the whole 17 MB video, then, after a skip ahead, a Range request answered 206 Partial Content with the rest. {hop} itself passes the frames on without reading even the IP header."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://simple.wikipedia.org/wiki/Hypertext_Transfer_Protocol", "title": "HTTP (Simple English)", "level": "kid" },
+    { "url": "https://www.rfc-editor.org/rfc/rfc9110", "title": "RFC 9110: HTTP Semantics", "level": "nerd", "eras": ["today"] },
+    { "url": "https://www.rfc-editor.org/rfc/rfc2616", "title": "RFC 2616: HTTP/1.1", "level": "nerd", "eras": ["2010"] },
+    { "url": "https://www.rfc-editor.org/rfc/rfc1945", "title": "RFC 1945: HTTP/1.0 (1996)", "level": "nerd", "eras": ["1995"] }
+  ]
 }

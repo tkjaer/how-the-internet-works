@@ -20,5 +20,8 @@
       "kid": "Here your internet company’s modems answer the call. They check your password, give the computer an address and send the parcels on to the internet.",
       "nerd": "The ISP's access server: a bank of digital modems on ISDN PRI lines from the exchange, 30 calls to a line. It answers, checks your login (PAP or CHAP), assigns an address (IPCP) and routes the PPP session's packets onto the ISP's 10 Mbit/s Ethernet."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Modem", "title": "Modem", "level": "both" }
+  ]
 }

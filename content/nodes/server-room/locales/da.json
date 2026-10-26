@@ -15,5 +15,8 @@
         "nerd": "Serverrummet starter ved backbonens PoP og går ad T1’eren til stedets router og så over 10BASE-T gennem en repeater-hub til webserveren, et beige tårn. Hylder med tårn-computere står langs bagvæggen. Forespørgsler og sidepakker bevæger sig i hver sin retning."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Server", "title": "Server", "level": "both" }
+  ]
 }

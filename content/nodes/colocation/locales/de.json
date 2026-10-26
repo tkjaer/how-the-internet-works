@@ -15,5 +15,9 @@
         "nerd": "Die Colocation-Ansicht startet am IXP und zickzackt über 10G-Multimode-Glasfaser durch Core-Router, Load-Balancer, Aggregation-Switch und Access-Switch, dann über 1000BASE-T-Kupfer zum Cache-Server. Hinten eine Käfigreihe Racks mit CRAC an jedem Ende. Ein gestrichelter Ast führt vom Cache zum Origin. Request- und Videopakete laufen gegeneinander."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Colocation_(Serverhousing)", "title": "Colocation (Serverhousing)", "level": "both" },
+    { "url": "https://de.wikipedia.org/wiki/Content_Delivery_Network", "title": "Content Delivery Network", "level": "nerd" }
+  ]
 }

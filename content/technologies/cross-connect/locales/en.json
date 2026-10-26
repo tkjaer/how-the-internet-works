@@ -6,5 +6,8 @@
   "2010": {
     "nerd": "A cross-connect: a single-mode fibre pair patched through the data centre's meet-me room between two tenants' ports, usually 1–10G Ethernet; the first 100G ports came in 2010.",
     "tag": "10GBASE-LR · SMF"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Meet-me_room", "title": "Meet-me room", "level": "nerd" }
+  ]
 }

@@ -8,5 +8,8 @@
       "kid": "Der dänische Knoten",
       "nerd": "DIX · Lyngby"
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Internetknoten", "title": "Internetknoten", "level": "both" }
+  ]
 }

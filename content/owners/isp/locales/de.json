@@ -2,5 +2,8 @@
   "name": {
     "kid": "Dein Anbieter",
     "nerd": "Dein ISP · AS64500"
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Autonomes_System", "title": "Autonomes System", "level": "nerd" }
+  ]
 }

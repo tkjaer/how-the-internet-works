@@ -70,5 +70,11 @@
       }
     },
     "extra": "Power over Ethernet: so ein Kabel kann auch Strom führen, sodass ein Access Point oder eine Kamera an der Decke keine Steckdose braucht. Gleichstrom liegt auf den Paaren als Common-Mode-(Phantom-)Spannung, die die Daten, als Differenzen gesendet, nie merken: 15,4 W mit 802.3af (2003) und 30 W mit 802.3at, neu 2009. Schnelleres Kupfer: 10GBASE-T (2006) nutzt 16 Pegel statt 5 (PAM-16, gepaart zu DSQ128-Symbolen mit LDPC-Fehlerkorrektur), läuft 800 MBd pro Paar und braucht Cat 6A für die vollen 100 m. 2010 war das noch meist für Server."
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Twisted-Pair-Kabel", "title": "Twisted-Pair-Kabel", "level": "both" },
+    { "url": "https://de.wikipedia.org/wiki/Gigabit_Ethernet", "title": "Gigabit Ethernet", "level": "nerd", "eras": ["2010", "today"] },
+    { "url": "https://de.wikipedia.org/wiki/Symmetrische_Signal%C3%BCbertragung", "title": "Symmetrische Signalübertragung", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/Augendiagramm", "title": "Augendiagramm", "level": "nerd" }
+  ]
 }

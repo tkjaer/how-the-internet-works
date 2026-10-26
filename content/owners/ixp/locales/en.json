@@ -8,5 +8,8 @@
       "kid": "The Danish exchange",
       "nerd": "DIX · Lyngby"
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Internet_exchange_point", "title": "Internet exchange point", "level": "both" }
+  ]
 }

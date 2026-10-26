@@ -8,5 +8,8 @@
       "kid": "A bigger network",
       "nerd": "Upstream · AS64502"
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Peering", "title": "Peering and transit", "level": "nerd" }
+  ]
 }

@@ -12,8 +12,4 @@ export default defineLayer({
     { id: 'hec', bits: 13, value: '{sum}', use: true },
   ],
   dive: 'gpon-slots',
-  learnMore: [
-    { url: 'https://en.wikipedia.org/wiki/10G-PON', title: 'XGS-PON', level: 'nerd', lang: 'en' },
-    { url: 'https://www.itu.int/rec/T-REC-G.9807.1', title: 'ITU-T G.9807.1 (XGS-PON)', level: 'nerd', lang: 'en' },
-  ],
 });

@@ -16,5 +16,8 @@
       "kid": "A laptop and a Wi‑Fi access point face each other. A wiggly radio wave runs between them. Coloured 1 and 0 bits ride above it, and lines point each bit to a tall or small wiggle. Rings spread from the Wi‑Fi box as the signal moves through the air.",
       "nerd": "The scene shows the laptop and access point joined by an animated carrier wave. Bits scroll along the track. Stems connect each bit to the wave’s amplitude, as a simplified ASK modulation view. Expanding rings at the access point show the radio signal spreading."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Amplitude-shift_keying", "title": "Amplitude-shift keying", "level": "nerd" }
+  ]
 }

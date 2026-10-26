@@ -48,5 +48,11 @@
         "nerd": "Die App sendet ein HTTP GET für die ganze Videodatei, in schlichtem HTTP (kein TLS). Das OS legt die Anfrage in ein TCP-Segment in einem IP-Paket."
       }
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Streaming_Media", "title": "Streaming Media", "level": "both", "eras": ["today"] },
+    { "url": "https://de.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP", "title": "Dynamic Adaptive Streaming over HTTP", "level": "nerd", "eras": ["today"] },
+    { "url": "https://de.wikipedia.org/wiki/Webseite", "title": "Webseite", "level": "both", "eras": ["1995"] },
+    { "url": "https://de.wikipedia.org/wiki/Progressive_Download", "title": "Progressive Download", "level": "both", "eras": ["2010"] }
+  ]
 }

@@ -6,5 +6,8 @@
   "1995": {
     "nerd": "10 Mbit/s Ethernet over to snoede par (10BASE-T, Manchester-kode).",
     "tag": "10BASE-T · Cat 3"
-  }
+  },
+  "learnMore": [
+    { "url": "https://da.wikipedia.org/wiki/Ethernet", "title": "Ethernet", "level": "both" }
+  ]
 }

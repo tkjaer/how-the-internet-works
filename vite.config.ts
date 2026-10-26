@@ -32,8 +32,8 @@ function stringPacks(): Plugin {
   };
 }
 
-/** `?now` and `?eras` on a content folder's locale file (#59): its strings without its blocks for the eras of the past
- *  (`"1995": { … }`), or only those blocks. The main bundle's English takes the first and `virtual:past-strings` the
+/** `?now` and `?eras` on a content folder's locale file (#59): its strings (and its `learnMore` links, #201) without its
+ *  blocks for the eras of the past (`"1995": { … }`), or only those blocks. The main bundle's English takes the first and `virtual:past-strings` the
  *  second, so the words of the past cost nothing until a reader goes there. */
 function eraBlocks(): Plugin {
   return {

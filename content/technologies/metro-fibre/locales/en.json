@@ -6,5 +6,8 @@
   "2010": {
     "nerd": "Point-to-point fibre carrying Ethernet (1–10 Gbit/s).",
     "tag": "DWDM · C-band · 1–10G"
-  }
+  },
+  "learnMore": [
+    { "url": "https://en.wikipedia.org/wiki/Metro_Ethernet", "title": "Metro Ethernet", "level": "nerd" }
+  ]
 }

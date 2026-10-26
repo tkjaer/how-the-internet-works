@@ -25,5 +25,8 @@
       "name": "Length",
       "about": "Bytes Ciphertext, die folgen: die Payload, ihr echter Content Type (1 Byte) und das 16-Byte Authentication Tag."
     }
-  }
+  },
+  "learnMore": [
+    { "url": "https://de.wikipedia.org/wiki/Transport_Layer_Security", "title": "Transport Layer Security", "level": "both" }
+  ]
 }
