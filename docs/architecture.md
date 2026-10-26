@@ -40,7 +40,7 @@ graph LR
 | **Era** | `content/eras/<id>/` | A time the internet at home looked different (`1995`, `2010`, `today`; issue #59): a `year`, a `name`, the `kid`/`nerd` text the time machine shows, and a `describe` of its picture (the era's start device). Every place gets the time machine: an era switch is a place switch to the family member of that era, else to the era's own trip (`eraStops`). |
 | **Activity** | `content/activities/<id>/` | What happens: the **flows** (upper stack `ip › tcp › tls › http`, and packet kinds with direction, pace and colour) and the **route** (`[{ place: 'me' }, { segment: 'isp-to-cdn' }]`), plus which network nodes expand (a group may be drawn by another network node: `{ id, node }`). An activity with `variantOf` and an `era` stands in for its base in that era (#59: `watch-video-1995` opens a web page over plain HTTP); the URL names the base. |
 | **Owner** | `content/owners/<id>/` | Who runs a hop: your ISP, the exchange, the video company, a transit carrier (issue #20). Hops say `owner`; inside a group, each owner's hops become a tinted region with a sign, so the internet reads as a network of networks. |
-| **Locale** | `content/locales/<lang>/` | `meta.json` (`name`, `dir`) and `ui.json` (chrome strings). Every other folder carries its own `locales/<lang>.json`. |
+| **Locale** | `content/locales/<lang>/` | `meta.json` (`name`, `dir`) and `ui.json` (chrome strings), plus `keep-english.json` (the strings the language keeps English on purpose; tests only). Every other folder carries its own `locales/<lang>.json`. |
 | **Theme** | `content/themes/<id>/` | The visual style (`?style=<id>`): tokens, motion, sound, and the engine's art slots (below). A theme may have a night mode (`?mode=night`). |
 
 Designed in, but used by only one item so far:
@@ -91,7 +91,7 @@ src/                      the engine: no content ids anywhere
                           keyboard in the scene), TextMap (the list view), CoachMarks + coach, coach-marks (the
                           first-run coach marks), TimeMachine (the eras of where you are, #59)…
 content/
-  locales/{en,da}/        meta.json ui.json
+  locales/{en,da,de}/     meta.json ui.json (da, de: keep-english.json)
   themes/storybook/       theme.ts tokens.css meta.json art/*.svelte
   nodes/<id>/             node.ts  art/Device.svelte  locales/<lang>.json
   technologies/<id>/      technology.ts  locales/
@@ -638,9 +638,10 @@ engine:
   3. the item itself (`node.router`)
 - **English fallback.** Any missing string falls back to English. `npm run check:content` prints translation coverage.
 - **Nothing left in English by mistake.** `src/translations.test.ts` fails on a translated string that is still the
-  English text (two or more lower-case words, so codes and acronyms pass), unless it is in `KEEP_ENGLISH`: per language and
-  key, the few strings that language keeps English on purpose (one language's choice doesn't excuse another's missed
-  line). An entry that is no longer English fails too.
+  English text (two or more lower-case words, so codes and acronyms pass), unless that language lists it in its
+  `content/locales/<lang>/keep-english.json` (`"<folder> <key>": "<the text>"`): the few strings it keeps English on
+  purpose (one language's choice doesn't excuse another's missed line). An entry that is no longer the English text, or
+  no longer the text it lists, fails too. The app never loads that file.
 - **Bundling.** English ships in the main bundle, except the dive strings (the layers': header field names and meanings; the dive scenes': their captions and labels; the eras' texts, #59): they load as one chunk (`virtual:dive-strings`) on the first catch, on entering any dive, on opening the time machine, or at start for a link below the overview (`loadDiveStrings`; text asked for them earlier updates when they arrive). The words for the eras of the past (every node's, place's, activity's… `"1995": { … }` blocks, which the `eraBlocks` plugin keeps out of the eager English) are a small chunk of their own, about 8 kB gz with 1995's internet (`virtual:past-strings`, `loadPastStrings`): loaded with the time machine, when a route of the past is shown, and awaited at start for a link into the past. Other languages load on first use, one chunk each (about 6 kB gz for da), via the `virtual:string-packs` plugin in `vite.config.ts`. Adding a language therefore costs nothing for readers who don't pick it.
 - **Languages.** English, Danish and German, the languages we can review ourselves (issue #11).
 - **RTL.** A language's `meta.json` sets `dir`, which `setLang` puts on `<html>`: the chrome mirrors (logical CSS properties), the diagrams don't. No shipped language is right-to-left, so `src/rtl.test.ts` keeps the support working with a made-up test-only language. A reviewed RTL language comes back as content only: its locale folder, plus faces for its script in the theme's `tokens.css`.
@@ -718,7 +719,7 @@ Vitest (`npm test`) covers:
   scene draws
 - the URL round trip
 - string fallback and lazy language packs
-- no translated string left as the English text, except each language's listed `KEEP_ENGLISH` strings (`translations.test.ts`)
+- no translated string left as the English text, except the strings each language lists in its `keep-english.json` (`translations.test.ts`)
 - the import rules
 - colours in art (`model/art-colours.test.ts`):
   - no colour literals in `content/**` art unless marked `fixed-colour:`

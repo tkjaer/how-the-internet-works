@@ -568,7 +568,8 @@ extra effort:
 2. `content/locales/<lang>/ui.json`: the chrome strings (copy `en/ui.json`).
 3. Add `locales/<lang>.json` to any content folder you translate. Anything missing falls back to English. A string
    copied over still in English fails `src/translations.test.ts`: translate it, or, for a term your language keeps
-   English on purpose (a header field name, router output), add it under your language in `KEEP_ENGLISH` there.
+   English on purpose (a header field name, router output), add the line the test prints to
+   `content/locales/<lang>/keep-english.json`. Only the tests read that file.
 4. A new script (Arabic, Greek…) needs its font faces in the theme's `tokens.css`.
 
 We ship only languages someone has reviewed (English, Danish and German for now, issue #11).
