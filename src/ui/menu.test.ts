@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { menuMove } from './menu';
+import { languageNote, menuMove } from './menu';
 
 describe('the ⋯ menu keys (menuMove)', () => {
   it('moves down and up, wrapping at the ends', () => {
@@ -26,5 +26,19 @@ describe('the ⋯ menu keys (menuMove)', () => {
   it('leaves other keys (Enter, Space, Tab, Escape, letters) to the item and the menu', () => {
     for (const k of ['Enter', ' ', 'Tab', 'Escape', 'a']) expect(menuMove(k, 1, 4)).toBeNull();
     expect(menuMove('ArrowDown', 0, 0)).toBeNull();
+  });
+});
+
+describe('a language in the list, by its name in the reader\'s language (languageNote)', () => {
+  it('names it in the reader\'s language', () => {
+    expect(languageNote('nl', 'Nederlands', 'da')).toBe('nederlandsk');
+    expect(languageNote('de', 'Deutsch', 'en')).toBe('German');
+    expect(languageNote('da', 'Dansk', 'de')).toBe('Dänisch');
+  });
+  it('says nothing where that is its own name, or where the browser doesn\'t know it', () => {
+    expect(languageNote('da', 'Dansk', 'da')).toBeUndefined();
+    expect(languageNote('en', 'English', 'en')).toBeUndefined();
+    expect(languageNote('xq', 'Xq', 'en')).toBeUndefined();
+    expect(languageNote('da', 'Dansk', 'not a language!')).toBeUndefined();
   });
 });

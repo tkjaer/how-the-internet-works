@@ -10,6 +10,11 @@ export const ICON = {
   close: 'M6 6l12 12 M18 6L6 18',
   palette: 'M12 3a9 9 0 1 0 0 18c1.2 0 2-.8 2-1.8 0-1.3-1-1.7-1-2.9 0-1 .8-1.8 1.8-1.8H17a4 4 0 0 0 4-4C21 6.4 17 3 12 3z M7.5 11.5h.01 M10 7.5h.01 M15 7.5h.01',
   down: 'M6 9l6 6 6-6',
+  /** the languages in ⋯ (a globe: no flag, as a language is no country) */
+  globe: 'M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z M3.5 9h17 M3.5 15h17 M12 3c-2.4 2.5-3.6 5.5-3.6 9s1.2 6.5 3.6 9 M12 3c2.4 2.5 3.6 5.5 3.6 9s-1.2 6.5-3.6 9',
+  /** into a list in the ⋯ menu (the languages), and back out of it; mirrored right to left */
+  next: 'M9 6l6 6-6 6',
+  back: 'M15 6l-6 6 6 6',
   look: 'M10.5 4.5a6 6 0 1 0 0 12a6 6 0 1 0 0-12z M15 15l5 5',
   open: 'M5 21V3h14v18 M5 3l9 3v16l-9-1z',
   explore: 'M12 3v3 M12 18v3 M3 12h3 M18 12h3 M5.6 5.6l2.1 2.1 M16.3 16.3l2.1 2.1 M5.6 18.4l2.1-2.1 M16.3 7.7l2.1-2.1 M12 9.5l.8 1.7 1.7.8-1.7.8-.8 1.7-.8-1.7-1.7-.8 1.7-.8z',

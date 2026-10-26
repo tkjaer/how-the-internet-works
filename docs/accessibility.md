@@ -174,7 +174,7 @@ animation or transition is running (`document.getAnimations()`), so nothing is j
 machine (#70). It checks:
 - **axe-core** (WCAG 2.0, 2.1, 2.2 A and AA, plus best practice) on the overview, inside the internet, the Wi‑Fi,
   router and IP-layer dives, "What can I explore?" on (the overview and the Wi‑Fi dive), Danish nerd, a caught packet (and its details; on a phone, its sheet opened all the way, #139), the picker, the time machine (from the top bar; from the street on 1995, the era's own trip at home; from its chip in Danish), the open ladder, the ⋯
-  menu and About, read aloud on (the caption's "Read again", ⋯ with its toggle), the scene's keys on a stop, the list
+  menu, its list of languages (in Danish) and About, read aloud on (the caption's "Read again", ⋯ with its toggle), the scene's keys on a stop, the list
   view and the first-run coach marks (the first card, "What can I explore?" and the time machine's, and the one card a
   returning reader gets), a nerd's extra in a dive and the list view with it, on a desktop, a portrait phone and a short landscape screen, and most of them at 200 % zoom. **Zero
   violations** is the bar; there is no baseline of allowed ones.
@@ -191,7 +191,8 @@ machine (#70). It checks:
 - **Journeys:** "What can I explore?" (no list before it; pressed, focus in its list, the announcer says how many
   things; Esc brings the story back with focus on the button), a door from its list (focus stays somewhere visible,
   and it ends), catching a packet from it (focus on the peek), Tab in the peek, letting go (focus back on "What can I
-  explore?"), ⋯ (focus in the menu, Esc back to ⋯), the picker (Tab stays in it, Esc back to its button), the
+  explore?"), ⋯ (focus in the menu; Language opens its list on the language you read in, Esc back to Language; Esc
+  back to ⋯), the picker (Tab stays in it, Esc back to its button), the
   time machine (it opens on where you are, Tab stays in it, Esc back to the chip; ← ← and Enter go to 1995, focus on
   the caption's heading, the announcer says the arrival; and back to today; from the top bar inside the TCP dive, at
   home and on the street: Esc back to the button, ← ← and Enter go to the TCP in 1995 (the PC's at home, the GSM
@@ -240,7 +241,9 @@ ladder or the peek, walk this with a real screen reader. **Not yet done for slic
 - [ ] On a phone, the peek's grip says "Show the whole panel, collapsed" / "expanded"; swiping on through the sheet
       reaches every envelope, its magnifier and "How it travels".
 - [ ] Ladder: the current rung's list opens and closes ("expanded" / "collapsed"); Esc folds it.
-- [ ] ⋯: a menu with Language (radio items), Read aloud (a checkbox; Sound too on a phone) and About; Esc returns to ⋯.
+- [ ] ⋯: a menu with Language ("Language: English", with a submenu), Read aloud (a checkbox; Sound too on a phone)
+      and About; Esc returns to ⋯. Language opens the languages (radio items, "Dansk · Danish", each name read in its
+      own language where there is a voice for it) on the one you read in; Esc or Back returns to Language.
 - [ ] Mute sound (desktop): says "Mute sound, toggle button, not pressed"; pressed, the sound stops at once, the modem's
       handshake too, and it is still muted after a reload.
 - [ ] Read aloud (with VoiceOver off): turned on it says so; each door reads the title, the description and the
