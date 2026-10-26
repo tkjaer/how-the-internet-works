@@ -1,0 +1,17 @@
+{
+  "layers/ethernet field.fcs.name": "Frame check sequence",
+  "layers/wifi field.fcs.name": "Frame check sequence",
+  "layers/wifi field.fc.name": "Frame control",
+  "layers/gpon field.hec.name": "Header error control",
+  "layers/ip 1995.field.dscp.name": "Type of service",
+  "scenes/ppp-hello hdlc.online.nerd": "Line protocol is up",
+  "scenes/ixp-inside routeServer.nerd": "Route server",
+  "scenes/server-inside 2010.compute.title.nerd": "CPU · bare metal",
+  "nodes/transit tag": "Tier-1 · paid transit",
+  "scenes/gpon-slots label.equalDelay": "equalisation delay",
+  "scenes/border-inside pop.tag.nerd": "pop label",
+  "scenes/border-inside rib.transit.nerd": "via transit",
+  "scenes/nr-grant tag.harq": "16 HARQ · soft combining · ~1 ms",
+  "scenes/modem-call say.train": "Krrrshhh! Bong bong!",
+  "scenes/modem-call step.ring.kid": "Ring ring"
+}
