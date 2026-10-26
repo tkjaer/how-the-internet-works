@@ -1,25 +1,25 @@
 {
   "name": {
-    "kid": "Kabelumschlag",
-    "nerd": "Ethernet-Frame"
+    "simple": "Kabelumschlag",
+    "technical": "Ethernet-Frame"
   },
   "note": {
-    "kid": "Jede Box auf dem Weg nimmt diesen Umschlag ab und steckt einen neuen für das nächste Kabel drauf.",
-    "nerd": "Nur link-lokal: für jeden Hop wird ein neuer Frame mit neuen MAC-Adressen geschrieben."
+    "simple": "Jede Box auf dem Weg nimmt diesen Umschlag ab und steckt einen neuen für das nächste Kabel drauf.",
+    "technical": "Nur link-lokal: für jeden Hop wird ein neuer Frame mit neuen MAC-Adressen geschrieben."
   },
   "line": "Ethernet II, Abs.: {src}, Empf.: {dst}",
   "field": {
     "dst": {
       "name": {
-        "kid": "Für",
-        "nerd": "Destination MAC"
+        "simple": "Für",
+        "technical": "Destination MAC"
       },
       "about": "Die nächste Box auf diesem Kabel. Jeder Router schreibt einen neuen Frame für den nächsten Link."
     },
     "src": {
       "name": {
-        "kid": "Von",
-        "nerd": "Source MAC"
+        "simple": "Von",
+        "technical": "Source MAC"
       },
       "about": "Die Box, die diesen Frame aufs Kabel gelegt hat. Switches und Access Points geben ihn unverändert weiter."
     },
@@ -41,7 +41,7 @@
   },
   "learnMore": [
     { "url": "https://de.wikipedia.org/wiki/Switch_(Netzwerktechnik)", "title": "Switch (Netzwerktechnik)", "level": "both" },
-    { "url": "https://de.wikipedia.org/wiki/MAC-Adresse", "title": "MAC-Adresse", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/MAC-Adresse", "title": "MAC-Adresse", "level": "technical" },
     { "url": "https://de.wikipedia.org/wiki/Address_Resolution_Protocol", "title": "Address Resolution Protocol", "level": "both" }
   ]
 }

@@ -1,11 +1,11 @@
 {
   "name": "Spine switch",
-  "kid": "One of the big crossroads in the middle of the hall. Every cupboard has a road to every crossroad, so there are lots of equal roads and none of them gets jammed.",
-  "nerd": "A spine of a leaf–spine (Clos) fabric: every leaf connects to every spine, so any two racks are two hops apart over many equal-cost paths. ECMP hashes each flow onto one of them.",
+  "simple": "One of the big crossroads in the middle of the hall. Every cupboard has a road to every crossroad, so there are lots of equal roads and none of them gets jammed.",
+  "technical": "A spine of a leaf–spine (Clos) fabric: every leaf connects to every spine, so any two racks are two hops apart over many equal-cost paths. ECMP hashes each flow onto one of them.",
   "tag": "Clos · ECMP · 400G",
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Clos_network", "title": "Clos network", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Equal-cost_multi-path_routing", "title": "Equal-cost multi-path routing", "level": "nerd" },
-    { "url": "https://www.rfc-editor.org/rfc/rfc7938", "title": "RFC 7938: BGP in large data centres", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Clos_network", "title": "Clos network", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Equal-cost_multi-path_routing", "title": "Equal-cost multi-path routing", "level": "technical" },
+    { "url": "https://www.rfc-editor.org/rfc/rfc7938", "title": "RFC 7938: BGP in large data centres", "level": "technical" }
   ]
 }

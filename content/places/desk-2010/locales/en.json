@@ -2,11 +2,11 @@
   "name": "At home, at the desk",
   "access": "Laptop on a cable",
   "2010": {
-    "kid": "The laptop sends its parcels down a cable to the router. The router’s modem sings them along the old copper phone line as tiny tones, to a box on your street.",
-    "nerd": "Wired, around 2010: Ethernet from the laptop to a DSL modem-router, which NATs the packets and sends them as VDSL2 tones on the copper phone pair to a DSLAM in the street cabinet, then fibre to the ISP.",
+    "simple": "The laptop sends its parcels down a cable to the router. The router’s modem sings them along the old copper phone line as tiny tones, to a box on your street.",
+    "technical": "Wired, around 2010: Ethernet from the laptop to a DSL modem-router, which NATs the packets and sends them as VDSL2 tones on the copper phone pair to a DSLAM in the street cabinet, then fibre to the ISP.",
     "describe": {
-      "kid": "A cut-away house shows a desk with a laptop, an old telephone on a little table, and the router. A cable runs from the laptop to the router, and the phone line takes the parcels out to the internet cloud. Requests go out and video comes back.",
-      "nerd": "The overview follows a wired 2010 home: the laptop, with a star sticker, on Ethernet to a DSL router with two antennas, whose uplink is the copper phone line (VDSL2) it shares with the telephone. Request packets go upstream; video packets return downstream."
+      "simple": "A cut-away house shows a desk with a laptop, an old telephone on a little table, and the router. A cable runs from the laptop to the router, and the phone line takes the parcels out to the internet cloud. Requests go out and video comes back.",
+      "technical": "The overview follows a wired 2010 home: the laptop, with a star sticker, on Ethernet to a DSL router with two antennas, whose uplink is the copper phone line (VDSL2) it shares with the telephone. Request packets go upstream; video packets return downstream."
     },
     "tag": {
       "laptop": "Ethernet · 192.168.1.40",
@@ -14,17 +14,17 @@
     },
     "stop": {
       "laptop": {
-        "kid": "In 2010 the laptop on the desk went online through a cable too. Its request runs down the cable to the router.",
-        "nerd": "A 2010 laptop with a gigabit Ethernet port, plugged into one of the modem-router’s 100 Mbit/s LAN ports, so the cable runs at 100: still far faster than the DSL line behind it, often 8–20 Mbit/s down."
+        "simple": "In 2010 the laptop on the desk went online through a cable too. Its request runs down the cable to the router.",
+        "technical": "A 2010 laptop with a gigabit Ethernet port, plugged into one of the modem-router’s 100 Mbit/s LAN ports, so the cable runs at 100: still far faster than the DSL line behind it, often 8–20 Mbit/s down."
       },
       "router": {
-        "kid": "The router is the front door of your home. It writes your home’s address on the parcel, and its modem sings it down the phone line.",
-        "nerd": "NAT rewrites 192.168.1.40 to the public 203.0.113.7; the built-in VDSL2 modem then sends the frames as DMT tones on the phone pair."
+        "simple": "The router is the front door of your home. It writes your home’s address on the parcel, and its modem sings it down the phone line.",
+        "technical": "NAT rewrites 192.168.1.40 to the public 203.0.113.7; the built-in VDSL2 modem then sends the frames as DMT tones on the phone pair."
       }
     },
     "inside": {
       "internet": {
-        "nerd": "Access network (VDSL2 from a DSLAM in the street cabinet; most Danish homes in 2010 still had ADSL2+ from the exchange), an aggregation layer (L2 backhaul to the BNG), the ISP’s MPLS core, then either peering at an IXP or paid transit, ending at a CDN cache. Each shaded area is one operator’s network."
+        "technical": "Access network (VDSL2 from a DSLAM in the street cabinet; most Danish homes in 2010 still had ADSL2+ from the exchange), an aggregation layer (L2 backhaul to the BNG), the ISP’s MPLS core, then either peering at an IXP or paid transit, ending at a CDN cache. Each shaded area is one operator’s network."
       }
     }
   },

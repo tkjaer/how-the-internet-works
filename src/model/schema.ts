@@ -5,7 +5,7 @@ import { z } from 'zod';
 
 const id = z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, 'use a lower-case kebab-case id, e.g. "cell-tower"');
 const colour = z.string().regex(/^#[0-9a-fA-F]{6}$/, 'use a #rrggbb colour');
-const level = z.enum(['kid', 'nerd', 'both']);
+const level = z.enum(['simple', 'technical', 'both']);
 
 /** A learn-more link (issue #4), in a content folder's `locales/<lang>.json` under `"learnMore"`: a page in that
  *  language (English links are every language's fallback). */
@@ -63,8 +63,8 @@ export const field = z.strictObject({
   value: fieldValue,
   /** Roles that act on it when the packet reaches them (true: every hop that receives this layer). */
   use: z.union([z.literal(true), z.array(role)]).optional(),
-  /** Shown to kids (when it matters at the hop): true, or a kid-friendly value. Addresses show as names for kids. */
-  kid: z.union([z.literal(true), fieldValue]).optional(),
+  /** Shown at the Simple level (when it matters at the hop): true, or a simpler value. Addresses show as names there. */
+  simple: z.union([z.literal(true), fieldValue]).optional(),
 });
 
 export const layer = z.strictObject({
@@ -208,7 +208,7 @@ export const place = segment.extend({
    *  variants show it too. */
   picture: id.optional(),
 });
-/** An era (1995, 2010, today): a time the time machine can visit. Its strings are its name, kid and nerd (what
+/** An era (1995, 2010, today): a time the time machine can visit. Its strings are its name, simple and technical (what
  *  getting online was like then) and a describe (what the time machine's picture of it shows). */
 export const era = z.strictObject({
   /** For sorting, oldest first, and for the caption's chip ("🕰️ 1995"). */
@@ -239,4 +239,4 @@ export const localeMeta = z.strictObject({ name: z.string().min(1), dir: z.enum(
 
 /** A scene's spoken description (#53, a `describe` in any locale file): what the picture shows and what moves, for
  *  each level. Read on arrival by the announcer and by read aloud, so it is short. */
-export const describeText = z.strictObject({ kid: z.string().min(1).max(400), nerd: z.string().min(1).max(400) });
+export const describeText = z.strictObject({ simple: z.string().min(1).max(400), technical: z.string().min(1).max(400) });

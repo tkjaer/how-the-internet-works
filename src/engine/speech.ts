@@ -9,8 +9,8 @@ export interface Synth extends Pick<SpeechSynthesis, 'speak' | 'cancel' | 'speak
 }
 type Voice = ReturnType<Synth['getVoices']>[number];
 
-/** Kids hear it a little slower. */
-export const KID_RATE = 0.9;
+/** At Simple it is read a little slower. */
+export const SIMPLE_RATE = 0.9;
 
 /** The voice for language `lang` ("da"): one whose own language is it or starts with it ("da-DK", "da_DK"); the
  *  system's default and on-device voices first. Null where there is none. */
@@ -55,7 +55,7 @@ export class Speaker {
     const u = new this.Utterance!(text);
     u.voice = v as SpeechSynthesisVoice;
     u.lang = v.lang;
-    u.rate = level === 'kid' ? KID_RATE : 1;
+    u.rate = level === 'simple' ? SIMPLE_RATE : 1;
     this.synth!.speak(u);
     return true;
   }

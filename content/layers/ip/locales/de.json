@@ -3,12 +3,12 @@
   "to": "An",
   "server": "der Videoserver",
   "name": {
-    "kid": "Adresszettel",
-    "nerd": "IP-Paket (IPv4)"
+    "simple": "Adresszettel",
+    "technical": "IP-Paket (IPv4)"
   },
   "note": {
-    "kid": "Der Adresszettel: von wem es kommt und für wen es ist. Jede Box auf dem Weg liest ihn.",
-    "nerd": "Best-effort-Zustellung zwischen zwei beliebigen Adressen im Internet: Router leiten anhand der Destination Address weiter, Hop für Hop."
+    "simple": "Der Adresszettel: von wem es kommt und für wen es ist. Jede Box auf dem Weg liest ihn.",
+    "technical": "Best-effort-Zustellung zwischen zwei beliebigen Adressen im Internet: Router leiten anhand der Destination Address weiter, Hop für Hop."
   },
   "line": "Internet Protocol Version 4, Abs.: {src}, Empf.: {dst}",
   "field": {
@@ -46,8 +46,8 @@
     },
     "ttl": {
       "name": {
-        "kid": "Schritte übrig",
-        "nerd": "Time to Live (TTL)"
+        "simple": "Schritte übrig",
+        "technical": "Time to Live (TTL)"
       },
       "about": "Jeder Router zieht eins ab und verwirft das Paket bei 0, damit eine Routing-Schleife es nicht ewig behalten kann. Im MPLS-Kern wird stattdessen das TTL des Labels gezählt und am Rand hierher zurückkopiert."
     },
@@ -61,15 +61,15 @@
     },
     "src": {
       "name": {
-        "kid": "Von",
-        "nerd": "Source Address"
+        "simple": "Von",
+        "technical": "Source Address"
       },
       "about": "Wer es geschickt hat, von hier aus gesehen: ein NAT schreibt sie auf die eigene Außenadresse um."
     },
     "dst": {
       "name": {
-        "kid": "An",
-        "nerd": "Destination Address"
+        "simple": "An",
+        "technical": "Destination Address"
       },
       "about": "Wohin es soll: Router schlagen sie in ihrer Forwarding Table nach (Longest Prefix Match)."
     }
@@ -95,6 +95,6 @@
   },
   "learnMore": [
     { "url": "https://de.wikipedia.org/wiki/Internet_Protocol", "title": "Internet Protocol", "level": "both" },
-    { "url": "https://de.wikipedia.org/wiki/Time_to_Live", "title": "Time to Live", "level": "nerd" }
+    { "url": "https://de.wikipedia.org/wiki/Time_to_Live", "title": "Time to Live", "level": "technical" }
   ]
 }

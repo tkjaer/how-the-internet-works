@@ -1,71 +1,71 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Inside the border router",
   "heading": {
-    "kid": "Inside the border router",
-    "nerd": "Border router RIB"
+    "simple": "Inside the border router",
+    "technical": "Border router RIB"
   },
-  "kid": "This is the door out of your internet company. The border router takes the motorway sticker off, reads neighbour notes, and chooses the shortcut through the exchange, where nobody pays per parcel. The paid transit road is ready, but your parcel does not need it.",
-  "nerd": "At the PE/ASBR, the last MPLS label must be gone before the Ethernet-only peering LAN; by default (penultimate-hop popping) the core router before it removes it, and here the border pops it itself. eBGP updates from the IXP peer and the transit provider feed the RIB, and local preference picks peering over paid transit for 198.51.100.0/24.",
+  "simple": "This is the door out of your internet company. The border router takes the motorway sticker off, reads neighbour notes, and chooses the shortcut through the exchange, where nobody pays per parcel. The paid transit road is ready, but your parcel does not need it.",
+  "technical": "At the PE/ASBR, the last MPLS label must be gone before the Ethernet-only peering LAN; by default (penultimate-hop popping) the core router before it removes it, and here the border pops it itself. eBGP updates from the IXP peer and the transit provider feed the RIB, and local preference picks peering over paid transit for 198.51.100.0/24.",
   "describe": {
-    "kid": "Your internet company's core is on the left. Two exits are on the right: the exchange, and a dim carrier you pay. A parcel arrives with a motorway sticker. The sticker peels off. Notes from both neighbours fly into the route book. The exchange row lights up, and the parcel leaves for the exchange.",
-    "nerd": "Inside the border router, the core-facing line card pops the MPLS label. A BGP routing table lists the video prefix with IXP peer and transit paths. UPDATE notes arrive from both neighbours. The local-pref 200 row lights, and the packet exits to the IXP."
+    "simple": "Your internet company's core is on the left. Two exits are on the right: the exchange, and a dim carrier you pay. A parcel arrives with a motorway sticker. The sticker peels off. Notes from both neighbours fly into the route book. The exchange row lights up, and the parcel leaves for the exchange.",
+    "technical": "Inside the border router, the core-facing line card pops the MPLS label. A BGP routing table lists the video prefix with IXP peer and transit paths. UPDATE notes arrive from both neighbours. The local-pref 200 row lights, and the packet exits to the IXP."
   },
   "rib": {
     "title": {
-      "kid": "Route book",
-      "nerd": "BGP RIB"
+      "simple": "Route book",
+      "technical": "BGP RIB"
     },
     "dest": {
-      "kid": "Going to",
-      "nerd": "Prefix"
+      "simple": "Going to",
+      "technical": "Prefix"
     },
     "target": {
-      "kid": "the video company",
-      "nerd": "198.51.100.0/24"
+      "simple": "the video company",
+      "technical": "198.51.100.0/24"
     },
     "exchange": {
-      "kid": "via the exchange",
-      "nerd": "via IXP peer",
+      "simple": "via the exchange",
+      "technical": "via IXP peer",
       "detail": {
-        "kid": "short road · no fee per parcel",
-        "nerd": "AS path: 1 AS · local-pref 200"
+        "simple": "short road · no fee per parcel",
+        "technical": "AS path: 1 AS · local-pref 200"
       }
     },
     "transit": {
-      "kid": "via transit",
-      "nerd": "via transit",
+      "simple": "via transit",
+      "technical": "via transit",
       "detail": {
-        "kid": "long road · paid",
-        "nerd": "AS path: 3 ASes · local-pref 100"
+        "simple": "long road · paid",
+        "technical": "AS path: 3 ASes · local-pref 100"
       }
     }
   },
   "pop": {
     "tag": {
-      "kid": "Motorway sticker off",
-      "nerd": "pop label"
+      "simple": "Motorway sticker off",
+      "technical": "pop label"
     },
     "short": {
-      "kid": "off",
-      "nerd": "pop"
+      "simple": "off",
+      "technical": "pop"
     }
   },
   "note": {
     "short": {
-      "kid": "note",
-      "nerd": "UPDATE"
+      "simple": "note",
+      "technical": "UPDATE"
     }
   },
   "learnMore": [
-    { "url": "https://simple.wikipedia.org/wiki/Border_Gateway_Protocol", "title": "Border Gateway Protocol", "level": "kid" },
-    { "url": "https://en.wikipedia.org/wiki/Border_Gateway_Protocol", "title": "Border Gateway Protocol", "level": "nerd" },
+    { "url": "https://simple.wikipedia.org/wiki/Border_Gateway_Protocol", "title": "Border Gateway Protocol", "level": "simple" },
+    { "url": "https://en.wikipedia.org/wiki/Border_Gateway_Protocol", "title": "Border Gateway Protocol", "level": "technical" },
     { "url": "https://en.wikipedia.org/wiki/Multiprotocol_Label_Switching", "title": "Multiprotocol Label Switching", "level": "both" },
     { "url": "https://en.wikipedia.org/wiki/Routing_table", "title": "Routing table", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Peering", "title": "Peering", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Internet_transit", "title": "Internet transit", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Peering", "title": "Peering", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Internet_transit", "title": "Internet transit", "level": "technical" }
   ]
 }

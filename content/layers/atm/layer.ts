@@ -7,7 +7,7 @@ export default defineLayer({
   dive: 'atm-cells',
   fields: [
     { id: 'vpi', bits: 12, value: '1' },
-    { id: 'vci', bits: 16, value: '{label}', use: true, kid: true },
+    { id: 'vci', bits: 16, value: '{label}', use: true, simple: true },
     { id: 'pti', bits: 3, value: '000 (data)' },
     { id: 'clp', bits: 1, value: '0' },
     { id: 'hec', bits: 8, value: '{sum}', use: true },

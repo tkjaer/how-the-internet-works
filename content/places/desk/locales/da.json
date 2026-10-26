@@ -1,11 +1,11 @@
 {
   "name": "Hjemme, ved skrivebordet",
   "access": "Bærbar med kabel",
-  "kid": "Ingen radio denne gang: pakkerne løber gennem et kabel direkte ind i routeren og så ud langs en glastråd til internettet.",
-  "nerd": "Med kabel: Ethernet-rammer går direkte fra den bærbares port til hjemmerouteren, som NAT-oversætter pakkerne og sender dem videre over fiberforbindelsen (XGS-PON) til internetudbyderen.",
+  "simple": "Ingen radio denne gang: pakkerne løber gennem et kabel direkte ind i routeren og så ud langs en glastråd til internettet.",
+  "technical": "Med kabel: Ethernet-rammer går direkte fra den bærbares port til hjemmerouteren, som NAT-oversætter pakkerne og sender dem videre over fiberforbindelsen (XGS-PON) til internetudbyderen.",
   "describe": {
-    "kid": "Et gennemskåret hus viser et skrivebord, en bærbar og hjemmerouteren. Et kabel går fra den bærbare til routeren, og fiber fortsætter ud til internetskyen. Små pakker går ud som forespørgsler og tilbage som video.",
-    "nerd": "Oversigten følger en kablet rute i hjemmet. Den starter ved den bærbare, går over Ethernet til routeren og videre med XGS-PON-fiber til internetskyen. Forespørgsler går opstrøms, og videopakker kommer nedstrøms tilbage."
+    "simple": "Et gennemskåret hus viser et skrivebord, en bærbar og hjemmerouteren. Et kabel går fra den bærbare til routeren, og fiber fortsætter ud til internetskyen. Små pakker går ud som forespørgsler og tilbage som video.",
+    "technical": "Oversigten følger en kablet rute i hjemmet. Den starter ved den bærbare, går over Ethernet til routeren og videre med XGS-PON-fiber til internetskyen. Forespørgsler går opstrøms, og videopakker kommer nedstrøms tilbage."
   },
   "tag": {
     "laptop": "Ethernet · 192.168.1.40",
@@ -13,15 +13,15 @@
   },
   "stop": {
     "laptop": {
-      "kid": "Den bærbare vil også se en video. Den sender sin forespørgsel ned gennem kablet – uden bølger i luften.",
-      "nerd": "Den samme HTTPS-forespørgsel som på telefonen, men det nederste lag er en Ethernet-ramme i et parsnoet kabel i stedet for en Wi-Fi-radioramme."
+      "simple": "Den bærbare vil også se en video. Den sender sin forespørgsel ned gennem kablet – uden bølger i luften.",
+      "technical": "Den samme HTTPS-forespørgsel som på telefonen, men det nederste lag er en Ethernet-ramme i et parsnoet kabel i stedet for en Wi-Fi-radioramme."
     }
   },
   "inside": {
     "internet": {
       "describe": {
-        "kid": "Inde i skyen starter ruten ved dit hjem. Den går gennem gadeskab, fiberterminal, ISP-gateway og ISP-kerne. Så går den til grænserouter, internetknudepunkt og videofirmaets datacenter, som kan åbnes. Den stiplede sidevej viser transit.",
-        "nerd": "Den udfoldede internetrute går fra hjemmets adgangskant gennem splitter-gadeskabet, OLT’en, BNG og ISP-kerne. Så fortsætter den til grænserouter, IXP og CDN’ets datacenter, som kan foldes ud. Forespørgsler og video går hver sin vej over fiber, backbone og krydsforbindelser."
+        "simple": "Inde i skyen starter ruten ved dit hjem. Den går gennem gadeskab, fiberterminal, ISP-gateway og ISP-kerne. Så går den til grænserouter, internetknudepunkt og videofirmaets datacenter, som kan åbnes. Den stiplede sidevej viser transit.",
+        "technical": "Den udfoldede internetrute går fra hjemmets adgangskant gennem splitter-gadeskabet, OLT’en, BNG og ISP-kerne. Så fortsætter den til grænserouter, IXP og CDN’ets datacenter, som kan foldes ud. Forespørgsler og video går hver sin vej over fiber, backbone og krydsforbindelser."
       }
     }
   }

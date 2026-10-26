@@ -1,14 +1,14 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Das Internet anrufen",
-  "kid": "Vor dem Breitband rief der Computer das Internet an. Sein Modem wählte eine Nummer, und wenn das Modem der Internetfirma abhob, pfiffen und kreischten die beiden, bis sie sich einigten, wie sie reden. Dann fuhren deine Päckchen als Töne die Telefonleitung hinunter, sehr langsam, und niemand sonst konnte das Telefon nutzen.",
-  "nerd": "Ein V.34-Modem-Call: DTMF-Wahl, der Answer-Ton, V.8-Negotiation und Line Probing, dann bis zu 28,8 kbit/s je Richtung, weniger auf einer lauten Leitung. Die Vermittlung schaltet einen 64-kbit/s-Kreis, einen Timeslot auf ihrem Trunk, für den ganzen Call. PPP läuft darüber, um dich einzuloggen und eine Adresse zu vergeben.",
+  "simple": "Vor dem Breitband rief der Computer das Internet an. Sein Modem wählte eine Nummer, und wenn das Modem der Internetfirma abhob, pfiffen und kreischten die beiden, bis sie sich einigten, wie sie reden. Dann fuhren deine Päckchen als Töne die Telefonleitung hinunter, sehr langsam, und niemand sonst konnte das Telefon nutzen.",
+  "technical": "Ein V.34-Modem-Call: DTMF-Wahl, der Answer-Ton, V.8-Negotiation und Line Probing, dann bis zu 28,8 kbit/s je Richtung, weniger auf einer lauten Leitung. Die Vermittlung schaltet einen 64-kbit/s-Kreis, einen Timeslot auf ihrem Trunk, für den ganzen Call. PPP läuft darüber, um dich einzuloggen und eine Adresse zu vergeben.",
   "describe": {
-    "kid": "Eine Telefonleitung läuft vom Computer zur Vermittlung und weiter zu den Modems der Internetfirma. Eine Sprechblase sagt die Töne: Pieps, ein Klingeln, ein langer Pfiff und ein Kreischen, dann verbunden. Karten zeigen die Schritte, ein Foto, das Zeile für Zeile ankommt, und dass das Telefon besetzt ist.",
-    "nerd": "Der Call läuft als Kupfer zur Vermittlung, dann als 64-kbit/s-Kreis zur Modem-Bank des ISP. Wellen zeigen DTMF, den Answer-Ton, V.34-Training, dann langsame Daten. Karten zeigen die Handshake-Schritte, ein 30-kB-Foto in etwa 8 Sekunden, und der Call hält Timeslot 7 eines 32-Slot-Trunks."
+    "simple": "Eine Telefonleitung läuft vom Computer zur Vermittlung und weiter zu den Modems der Internetfirma. Eine Sprechblase sagt die Töne: Pieps, ein Klingeln, ein langer Pfiff und ein Kreischen, dann verbunden. Karten zeigen die Schritte, ein Foto, das Zeile für Zeile ankommt, und dass das Telefon besetzt ist.",
+    "technical": "Der Call läuft als Kupfer zur Vermittlung, dann als 64-kbit/s-Kreis zur Modem-Bank des ISP. Wellen zeigen DTMF, den Answer-Ton, V.34-Training, dann langsame Daten. Karten zeigen die Handshake-Schritte, ein 30-kB-Foto in etwa 8 Sekunden, und der Call hält Timeslot 7 eines 32-Slot-Trunks."
   },
   "say": {
     "dial": "Piep bup piep…",
@@ -16,68 +16,68 @@
     "answer": "Iiiiiiii!",
     "train": "Krrrshhh! Bong bong!",
     "online": {
-      "kid": "Verbunden!",
-      "nerd": "CONNECT 28800"
+      "simple": "Verbunden!",
+      "technical": "CONNECT 28800"
     }
   },
   "part": {
     "loop": {
-      "kid": "Telefonleitung",
-      "nerd": "Kupferpaar"
+      "simple": "Telefonleitung",
+      "technical": "Kupferpaar"
     },
     "trunk": {
-      "kid": "Telefonnetz",
-      "nerd": "64 kbit/s-Kreis"
+      "simple": "Telefonnetz",
+      "technical": "64 kbit/s-Kreis"
     }
   },
   "stepsTitle": {
-    "kid": "So ruft es an",
-    "nerd": "Der Handshake"
+    "simple": "So ruft es an",
+    "technical": "Der Handshake"
   },
   "step": {
     "dial": {
-      "kid": "Die Nummer wählen",
-      "nerd": "DTMF-Ziffern"
+      "simple": "Die Nummer wählen",
+      "technical": "DTMF-Ziffern"
     },
     "ring": {
-      "kid": "Ring ring",
-      "nerd": "Ringback"
+      "simple": "Ring ring",
+      "technical": "Ringback"
     },
     "answer": {
-      "kid": "Das Modem hebt ab",
-      "nerd": "Antwortton 2100 Hz"
+      "simple": "Das Modem hebt ab",
+      "technical": "Antwortton 2100 Hz"
     },
     "train": {
-      "kid": "Modems geben sich die Hand",
-      "nerd": "V.8, dann Training"
+      "simple": "Modems geben sich die Hand",
+      "technical": "V.8, dann Training"
     },
     "online": {
-      "kid": "Online!",
-      "nerd": "PPP up, online"
+      "simple": "Online!",
+      "technical": "PPP up, online"
     }
   },
   "slowTitle": {
-    "kid": "So langsam!",
-    "nerd": "28,8k, at best"
+    "simple": "So langsam!",
+    "technical": "28,8k, at best"
   },
   "slowLine": {
-    "kid": "Ein Foto: {s} Sekunden",
-    "nerd": "30 kB at 28,8 kbit/s: {s} s"
+    "simple": "Ein Foto: {s} Sekunden",
+    "technical": "30 kB at 28,8 kbit/s: {s} s"
   },
   "slowSub": {
-    "kid": "Heute ist es im Nu da.",
-    "nerd": "Auf 1 Gbit/s-Faser: unter 1 ms"
+    "simple": "Heute ist es im Nu da.",
+    "technical": "Auf 1 Gbit/s-Faser: unter 1 ms"
   },
   "busyTitle": "Besetzt!",
   "beep": "Piep",
   "busyLine": "Online, also kann niemand anrufen.",
   "circuitTitle": {
-    "kid": "Eine Leitung nur für dich",
-    "nerd": "Eigener Kreis"
+    "simple": "Eine Leitung nur für dich",
+    "technical": "Eigener Kreis"
   },
   "circuitLine": "Slot {n} von 32 ist deiner",
   "circuitSub": "Den ganzen Call gehalten, auch wenn es still ist",
   "learnMore": [
-    { "url": "https://de.wikipedia.org/wiki/Mehrfrequenzwahlverfahren", "title": "Mehrfrequenzwahlverfahren", "level": "nerd" }
+    { "url": "https://de.wikipedia.org/wiki/Mehrfrequenzwahlverfahren", "title": "Mehrfrequenzwahlverfahren", "level": "technical" }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "name": "Backbone-router",
   "1995": {
-    "kid": "Et stort nets router: et højt skab fuldt af kort, hver forbundet til en lang linje. Den læser adressen på hver pakke og vælger linjen, der bringer den nærmere.",
-    "nerd": "En backbone-router fra 1990’erne: et chassis med linjekort (T1/E1, T3, ATM OC-3) og en routeprocessor, der kører BGP. Den slår hver pakkes modtager op i sin tabel, uden MPLS-etiketter endnu (de kom omkring 2001).",
+    "simple": "Et stort nets router: et højt skab fuldt af kort, hver forbundet til en lang linje. Den læser adressen på hver pakke og vælger linjen, der bringer den nærmere.",
+    "technical": "En backbone-router fra 1990’erne: et chassis med linjekort (T1/E1, T3, ATM OC-3) og en routeprocessor, der kører BGP. Den slår hver pakkes modtager op i sin tabel, uden MPLS-etiketter endnu (de kom omkring 2001).",
     "tag": "BGP · ATM OC-3"
   }
 }

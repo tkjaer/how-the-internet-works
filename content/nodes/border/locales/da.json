@@ -1,6 +1,6 @@
 {
   "name": "Grænserouter",
-  "kid": "Døren ud af dit internetselskab. Den tager motorvejsmærkaten af og giver pakken videre til det næste net.",
-  "nerd": "En provider-edge-router og ASBR: den fjerner den sidste MPLS-label (eller kernen gør, med penultimate-hop popping), taler eBGP med naboerne og vælger udgangen: peering uden afregning på udvekslingen eller betalt transit.",
+  "simple": "Døren ud af dit internetselskab. Den tager motorvejsmærkaten af og giver pakken videre til det næste net.",
+  "technical": "En provider-edge-router og ASBR: den fjerner den sidste MPLS-label (eller kernen gør, med penultimate-hop popping), taler eBGP med naboerne og vælger udgangen: peering uden afregning på udvekslingen eller betalt transit.",
   "tag": "PE/ASBR · eBGP"
 }

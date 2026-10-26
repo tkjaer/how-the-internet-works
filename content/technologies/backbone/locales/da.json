@@ -1,8 +1,8 @@
 {
   "name": "Hovednet",
-  "kid": "Superhurtige forbindelser mellem store netværksbokse.",
-  "nerd": "100–400G-forbindelser mellem routere, ofte med MPLS.",
+  "simple": "Superhurtige forbindelser mellem store netværksbokse.",
+  "technical": "100–400G-forbindelser mellem routere, ofte med MPLS.",
   "2010": {
-    "nerd": "10–40G-forbindelser mellem routere, ofte med MPLS; de første 100G-forbindelser kom i 2010."
+    "technical": "10–40G-forbindelser mellem routere, ofte med MPLS; de første 100G-forbindelser kom i 2010."
   }
 }

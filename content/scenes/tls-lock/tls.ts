@@ -81,7 +81,7 @@ export const POT_HALF = 52;
 
 /** The paint card's two rows, "who: pot + pot = pot": where the words, pots and signs go so the three pots are one
  *  size and the signs sit in clear gaps between them (#90), for row words up to `chars` long. The paint goes in card
- *  `c`: the second for kids, the first for nerds, who see the keys mixed first (TLS 1.3). */
+ *  `c`: the second at Simple, the first at Technical, which shows the keys mixed first (TLS 1.3). */
 export function paintRows(L: Layout, c: Box, o: Orient, chars: number) {
   const portrait = o === 'portrait';
   const words = portrait ? L.size.text * 0.92 : L.compact ? L.size.text * 0.78 : L.size.text;
@@ -105,8 +105,8 @@ const ease = (n: number) => n * n * (3 - 2 * n);
 export const ramp = (t: number, a: number, b: number) => clamp01((t - a) / (b - a));
 export const lerp = (a: number, b: number, t: number) => a + (b - a) * ease(t);
 
-/** The loop's beats. Kids see the ID checked first; TLS 1.3 really mixes the keys first and only then sends the
- *  certificate, already encrypted (RFC 8446 §2), so `keysFirst` (nerds) plays the paint before the ID. Both lock at
+/** The loop's beats. Simple shows the ID checked first; TLS 1.3 really mixes the keys first and only then sends the
+ *  certificate, already encrypted (RFC 8446 §2), so `keysFirst` (Technical) plays the paint before the ID. Both lock at
  *  10.8 s. `idT` is the time into the ID beat (negative before it). */
 export function tlsMoment(t: number, keysFirst = false) {
   const u = ((t % LOOP) + LOOP) % LOOP;

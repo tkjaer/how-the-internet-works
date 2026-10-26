@@ -24,7 +24,7 @@ export function scenes(r: Route): SceneRef[] {
   return [...out.values()];
 }
 
-const LEVELS: Level[] = ['kid', 'nerd'];
+const LEVELS: Level[] = ['simple', 'technical'];
 const TEXTS = ['', '.describe', '.extra', '.title'];
 
 /** The captions' keys, each most specific first: every reachable scene's own words, the stops' and links' names,
@@ -89,7 +89,7 @@ function labelKeys(r: Route): string[][] {
 }
 
 /** The content items whose learn-more links a route's cards show, as the caption picks from them (caption.ts): each
- *  layer and dive scene's, each stop's and link's, the overview's; and each layer's in the peek's field tree (nerd, two). */
+ *  layer and dive scene's, each stop's and link's, the overview's; and each layer's in the peek's field tree (technical, two). */
 function cards(r: Route): { items: string[]; level?: Level; max?: number }[] {
   const out: { items: string[]; level?: Level; max?: number }[] = [];
   const links = [...r.links, ...r.asides.map((a) => a.link)];
@@ -101,7 +101,7 @@ function cards(r: Route): { items: string[]; level?: Level; max?: number }[] {
   for (const l of links) out.push({ items: [`tech.${l.tech.id}`] });
   out.push({ items: [activityKey(r.activity), ...r.slots.map((s) => `place.${s.place}`)] });
   const layers = new Set([...links.flatMap((l) => l.stack), ...r.activity.flows.flatMap((f) => f.stack)]);
-  for (const id of layers) out.push({ items: [`layer.${id}`], level: 'nerd', max: 2 });
+  for (const id of layers) out.push({ items: [`layer.${id}`], level: 'technical', max: 2 });
   return out;
 }
 

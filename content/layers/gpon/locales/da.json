@@ -1,11 +1,11 @@
 {
   "name": {
-    "kid": "Lys-kuvert",
-    "nerd": "XGS-PON-ramme (XGEM)"
+    "simple": "Lys-kuvert",
+    "technical": "XGS-PON-ramme (XGEM)"
   },
   "note": {
-    "kid": "Alle på din vej deler den samme fiber, så hvert hus åbner kun kuverter med sit eget nummer.",
-    "nerd": "Nedstrøms sendes til alle ONT’er på splitteren, AES-krypteret pr. XGEM-port; opstrøms bruger tidsluker."
+    "simple": "Alle på din vej deler den samme fiber, så hvert hus åbner kun kuverter med sit eget nummer.",
+    "technical": "Nedstrøms sendes til alle ONT’er på splitteren, AES-krypteret pr. XGEM-port; opstrøms bruger tidsluker."
   },
   "line": "XGEM (XG-PON Encapsulation Method), port-ID {port}, længde {pli}",
   "field": {
@@ -19,8 +19,8 @@
     },
     "port": {
       "name": {
-        "kid": "Hus nr.",
-        "nerd": "XGEM-port-ID"
+        "simple": "Hus nr.",
+        "technical": "XGEM-port-ID"
       },
       "about": "Alle på splitteren hører hver ramme på vej ned; hver ONT beholder kun sine egne port-ID’er."
     },

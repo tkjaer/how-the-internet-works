@@ -1,18 +1,18 @@
 {
   "name": {
-    "kid": "Expresszettel",
-    "nerd": "MPLS-Label"
+    "simple": "Expresszettel",
+    "technical": "MPLS-Label"
   },
   "note": {
-    "kid": "Im großen Netz sagt ein schneller Zettel, welche Autobahn zu nehmen ist, damit niemand die Adresse lesen muss.",
-    "nerd": "Label-switched durch den Kern: das Label wird an jedem LSR getauscht und am Rand gepoppt (am Border-Router oder am Hop davor mit Penultimate Hop Popping)."
+    "simple": "Im großen Netz sagt ein schneller Zettel, welche Autobahn zu nehmen ist, damit niemand die Adresse lesen muss.",
+    "technical": "Label-switched durch den Kern: das Label wird an jedem LSR getauscht und am Rand gepoppt (am Border-Router oder am Hop davor mit Penultimate Hop Popping)."
   },
   "line": "MultiProtocol Label Switching, Label: {label}, TTL: {ttl}",
   "field": {
     "label": {
       "name": {
-        "kid": "Autobahn-Nr.",
-        "nerd": "Label"
+        "simple": "Autobahn-Nr.",
+        "technical": "Label"
       },
       "about": "Vom nächsten Router für diesen Pfad gewählt: er switched anhand des Labels, ohne die IP-Adresse zu lesen."
     },
@@ -30,6 +30,6 @@
     }
   },
   "learnMore": [
-    { "url": "https://de.wikipedia.org/wiki/Multiprotocol_Label_Switching", "title": "Multiprotocol Label Switching", "level": "nerd" }
+    { "url": "https://de.wikipedia.org/wiki/Multiprotocol_Label_Switching", "title": "Multiprotocol Label Switching", "level": "technical" }
   ]
 }

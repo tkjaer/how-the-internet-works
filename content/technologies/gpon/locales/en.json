@@ -1,10 +1,10 @@
 {
   "name": "Fibre",
-  "kid": "From your home, the parcel races along a glass thread as flashes of light.",
-  "nerd": "FTTH: the ONT in your home talks XGS-PON to the OLT – 10 Gbit/s shared by the homes on one splitter.",
+  "simple": "From your home, the parcel races along a glass thread as flashes of light.",
+  "technical": "FTTH: the ONT in your home talks XGS-PON to the OLT – 10 Gbit/s shared by the homes on one splitter.",
   "tag": "XGS-PON · 10 Gbit/s",
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Fiber_to_the_x", "title": "Fibre to the home", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/10G-PON", "title": "XGS-PON", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/10G-PON", "title": "XGS-PON", "level": "technical" }
   ]
 }

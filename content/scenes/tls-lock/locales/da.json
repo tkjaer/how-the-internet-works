@@ -1,29 +1,29 @@
 {
   "title": "Det hemmelige håndtryk",
-  "kid": "Videoserveren og {yours} laver et hemmeligt håndtryk, før filmen starter. Serveren viser sit ID-kort med guldstempel, og begge ender blander farver, så de får den samme låsefarve. Derefter rejser hver pakke låst.",
-  "nerd": "TLS 1.3, én round trip: ClientHello har SNI og en X25519-værdi g^a, ServerHello svarer med g^b. Begge udregner g^ab og udleder nøgler med HKDF. Derefter, allerede krypteret, sender serveren sin certifikatkæde (leaf → intermediate, forankret i en root i trust store; navn og datoer tjekkes) og en CertificateVerify-signatur, der beviser, at den ejer certifikatets nøgle. Records beskyttes så med AEAD (AES-GCM eller ChaCha20-Poly1305), RFC 8446.",
+  "simple": "Videoserveren og {yours} laver et hemmeligt håndtryk, før filmen starter. Serveren viser sit ID-kort med guldstempel, og begge ender blander farver, så de får den samme låsefarve. Derefter rejser hver pakke låst.",
+  "technical": "TLS 1.3, én round trip: ClientHello har SNI og en X25519-værdi g^a, ServerHello svarer med g^b. Begge udregner g^ab og udleder nøgler med HKDF. Derefter, allerede krypteret, sender serveren sin certifikatkæde (leaf → intermediate, forankret i en root i trust store; navn og datoer tjekkes) og en CertificateVerify-signatur, der beviser, at den ejer certifikatets nøgle. Records beskyttes så med AEAD (AES-GCM eller ChaCha20-Poly1305), RFC 8446.",
   "describe": {
-    "kid": "En vej forbinder {yours} og videoserveren. Det første kort viser et ID-kort og en bog med godkendte stempler. Det andet kort viser malerbøtter, der blandes i begge ender. Kragen ser kun de offentlige blandinger, lys fersken og lime. Så klikker en lås på pakken, og den låste pakke rejser videre.",
-    "nerd": "Kortene viser TLS 1.3 fra klient-endepunktet. Malingsregnestykkerne viser nøgleaftalen først; ID-kortet viser derefter certifikatkontrollen, sendt allerede krypteret. Kragen ser de offentlige værdier på forbindelsen, aldrig hemmelighederne eller certifikatet. Så bliver pakken til en krypteret record og går mod serveren."
+    "simple": "En vej forbinder {yours} og videoserveren. Det første kort viser et ID-kort og en bog med godkendte stempler. Det andet kort viser malerbøtter, der blandes i begge ender. Kragen ser kun de offentlige blandinger, lys fersken og lime. Så klikker en lås på pakken, og den låste pakke rejser videre.",
+    "technical": "Kortene viser TLS 1.3 fra klient-endepunktet. Malingsregnestykkerne viser nøgleaftalen først; ID-kortet viser derefter certifikatkontrollen, sendt allerede krypteret. Kragen ser de offentlige værdier på forbindelsen, aldrig hemmelighederne eller certifikatet. Så bliver pakken til en krypteret record og går mod serveren."
   },
   "at": {
     "cdn": {
       "title": "Serveren viser hvem den er",
-      "kid": "Videoserveren viser sit ID-kort med et guldstempel. Den blander også sin hemmelige farve, så den får præcis den samme låsefarve som {yours}. Så sender den videopakker, som kun de to ender kan åbne.",
-      "nerd": "Ved serverens endepunkt afsluttes TLS: serverens X25519-hemmelighed kombineres med klientens offentlige værdi, så de samme trafiknøgler dannes. Derefter, allerede krypteret, sender den sit certifikat for video.example og en CertificateVerify-signatur, der beviser, at den har certifikatets nøgle. Records sendes som autentificeret krypteret tekst med den valgte TLS 1.3 cipher suite.",
+      "simple": "Videoserveren viser sit ID-kort med et guldstempel. Den blander også sin hemmelige farve, så den får præcis den samme låsefarve som {yours}. Så sender den videopakker, som kun de to ender kan åbne.",
+      "technical": "Ved serverens endepunkt afsluttes TLS: serverens X25519-hemmelighed kombineres med klientens offentlige værdi, så de samme trafiknøgler dannes. Derefter, allerede krypteret, sender den sit certifikat for video.example og en CertificateVerify-signatur, der beviser, at den har certifikatets nøgle. Records sendes som autentificeret krypteret tekst med den valgte TLS 1.3 cipher suite.",
       "describe": {
-        "kid": "Videoserveren er markeret for enden af vejen. Den viser sit stemplede ID-kort, blander sin maling med blandingen fra {yours} og ender med samme låsefarve. Kragen kan se de lyse blandinger. Når låsen kommer på, rejser pakken som en låst kasse, som kun de to ender kan åbne.",
-        "nerd": "Ved server-endepunktet viser kortene ECDHE som maling og derefter certifikatkæden. Serveren bidrager med sin offentlige værdi og udleder de samme trafiknøgler. Kragen på forbindelsen kan se servernavnet og de offentlige værdier, ikke certifikatet, der allerede er krypteret. Derefter bevæger kun autentificerede krypterede records sig som låste pakker."
+        "simple": "Videoserveren er markeret for enden af vejen. Den viser sit stemplede ID-kort, blander sin maling med blandingen fra {yours} og ender med samme låsefarve. Kragen kan se de lyse blandinger. Når låsen kommer på, rejser pakken som en låst kasse, som kun de to ender kan åbne.",
+        "technical": "Ved server-endepunktet viser kortene ECDHE som maling og derefter certifikatkæden. Serveren bidrager med sin offentlige værdi og udleder de samme trafiknøgler. Kragen på forbindelsen kan se servernavnet og de offentlige værdier, ikke certifikatet, der allerede er krypteret. Derefter bevæger kun autentificerede krypterede records sig som låste pakker."
       }
     }
   },
   "sealed": {
     "title": "Låst på vejen",
-    "kid": "Trin for trin: 1. Videoserveren viser sit ID til {yours}. 2. Hver side blander en hemmelig farve i og bytter kun blandingen. 3. Begge får samme farve, og den låser pakken. {hop} bærer bare pakken videre. Ligesom kragen ser stoppet kun blandingerne og en låst kasse.",
-    "nerd": "Ved {hop} er TLS forseglet ende til ende: 1. ECDHE aftaler en nøgle, 2. serveren beviser, hvem den er, med sit certifikat og en CertificateVerify-signatur, begge allerede krypteret, 3. AEAD forsegler hver record. Hoppet videresender lavere lags headers; det kan se servernavnet i ClientHello (SNI, medmindre Encrypted Client Hello bruges) og de to offentlige ECDHE-værdier, men ikke certifikatet (krypteret i TLS 1.3), HTTP-forespørgslen eller nøglerne.",
+    "simple": "Trin for trin: 1. Videoserveren viser sit ID til {yours}. 2. Hver side blander en hemmelig farve i og bytter kun blandingen. 3. Begge får samme farve, og den låser pakken. {hop} bærer bare pakken videre. Ligesom kragen ser stoppet kun blandingerne og en låst kasse.",
+    "technical": "Ved {hop} er TLS forseglet ende til ende: 1. ECDHE aftaler en nøgle, 2. serveren beviser, hvem den er, med sit certifikat og en CertificateVerify-signatur, begge allerede krypteret, 3. AEAD forsegler hver record. Hoppet videresender lavere lags headers; det kan se servernavnet i ClientHello (SNI, medmindre Encrypted Client Hello bruges) og de to offentlige ECDHE-værdier, men ikke certifikatet (krypteret i TLS 1.3), HTTP-forespørgslen eller nøglerne.",
     "describe": {
-      "kid": "Et mellemstop står på vejen, mens {yours} og serveren er i enderne. Kort 1 viser ID-tjekket og kort 2 maling, der blandes, og kragen kigger på de lyse offentlige blandinger. Når låsen kommer på, bliver pakkens ansigt til kruseduller. Stoppet bærer bare den låste pakke videre.",
-      "nerd": "Denne ikke-endepunkt-visning viser TLS forseglet over hoppet. ECDHE-værdierne og servernavnet kan ses på forbindelsen; certifikatet er allerede krypteret. Enheden du er ved, videresender kun pakker fra lavere lag. Når records er beskyttet, er pakken låst og krusedullet som krypteret tekst, ikke læsbar HTTP."
+      "simple": "Et mellemstop står på vejen, mens {yours} og serveren er i enderne. Kort 1 viser ID-tjekket og kort 2 maling, der blandes, og kragen kigger på de lyse offentlige blandinger. Når låsen kommer på, bliver pakkens ansigt til kruseduller. Stoppet bærer bare den låste pakke videre.",
+      "technical": "Denne ikke-endepunkt-visning viser TLS forseglet over hoppet. ECDHE-værdierne og servernavnet kan ses på forbindelsen; certifikatet er allerede krypteret. Enheden du er ved, videresender kun pakker fra lavere lag. Når records er beskyttet, er pakken låst og krusedullet som krypteret tekst, ikke læsbar HTTP."
     }
   },
   "label": {
@@ -33,20 +33,20 @@
     "crow": "Kragen ser kun blandinger",
     "crowShort": "Kun blandinger",
     "prove": {
-      "kid": "1 · Tjek ID'et",
-      "nerd": "2 · Certifikat"
+      "simple": "1 · Tjek ID'et",
+      "technical": "2 · Certifikat"
     },
     "proveShort": {
-      "kid": "1 · ID",
-      "nerd": "2 · Cert."
+      "simple": "1 · ID",
+      "technical": "2 · Cert."
     },
     "paint": {
-      "kid": "2 · Bland farver",
-      "nerd": "1 · Nøgleudveksling"
+      "simple": "2 · Bland farver",
+      "technical": "1 · Nøgleudveksling"
     },
     "paintShort": {
-      "kid": "2 · Maling",
-      "nerd": "1 · Nøgler"
+      "simple": "2 · Maling",
+      "technical": "1 · Nøgler"
     },
     "server": "Server",
     "tick": "Stempel OK",

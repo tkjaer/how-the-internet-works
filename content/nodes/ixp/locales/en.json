@@ -1,15 +1,15 @@
 {
   "name": "Internet exchange",
-  "kid": "A meeting place where lots of networks swap parcels for free.",
-  "nerd": "An internet exchange is a big shared Ethernet fabric; networks peer over BGP, often via route servers.",
+  "simple": "A meeting place where lots of networks swap parcels for free.",
+  "technical": "An internet exchange is a big shared Ethernet fabric; networks peer over BGP, often via route servers.",
   "tag": "Peering LAN · BGP",
   "1995": {
-    "kid": "DIX, where the Danish networks meet and swap parcels for free, so a Danish page never needs to cross the sea. A page from America doesn’t come this way.",
-    "nerd": "DIX, the Danish Internet Exchange, started in 1994 by UNI•C at DTU in Lyngby: a shared Ethernet where Danish ISPs peer, reached here on its own E1. Only Danish routes are learned there.",
+    "simple": "DIX, where the Danish networks meet and swap parcels for free, so a Danish page never needs to cross the sea. A page from America doesn’t come this way.",
+    "technical": "DIX, the Danish Internet Exchange, started in 1994 by UNI•C at DTU in Lyngby: a shared Ethernet where Danish ISPs peer, reached here on its own E1. Only Danish routes are learned there.",
     "tag": "DIX · 1994"
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Internet_exchange_point", "title": "Internet exchange points", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Peering", "title": "Peering", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Peering", "title": "Peering", "level": "technical" }
   ]
 }

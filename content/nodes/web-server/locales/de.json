@@ -1,8 +1,8 @@
 {
   "name": "Webserver",
   "1995": {
-    "kid": "Die Seite und ihr Bild wohnen hier, auf einem hohen beigen Computer weit weg. Jeder Besuchende holt sie von diesem einen Computer.",
-    "nerd": "Ein Tower-PC oder eine Unix-Workstation mit einem Webprogramm (NCSA HTTPd, auf den meisten Sites im August 1995, oder das neue Apache). Er liest jede Anfrage und sendet die Datei von der eigenen Disk: kein Cache davor, keine andere Kopie. CDNs begannen mit Akamai 1998–99."
+    "simple": "Die Seite und ihr Bild wohnen hier, auf einem hohen beigen Computer weit weg. Jeder Besuchende holt sie von diesem einen Computer.",
+    "technical": "Ein Tower-PC oder eine Unix-Workstation mit einem Webprogramm (NCSA HTTPd, auf den meisten Sites im August 1995, oder das neue Apache). Er liest jede Anfrage und sendet die Datei von der eigenen Disk: kein Cache davor, keine andere Kopie. CDNs begannen mit Akamai 1998–99."
   },
   "learnMore": [
     { "url": "https://de.wikipedia.org/wiki/Webserver", "title": "Webserver", "level": "both" }

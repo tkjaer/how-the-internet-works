@@ -38,7 +38,7 @@ graph LR
 | **Scene** | `content/scenes/<id>/` | A "look inside" dive: `Scene.svelte` plus its own art and maths. It `explains` a **link**: the physical signal (`wifi-radio`, `copper-pulses`, `fibre-light`, `nr-radio`), a **device** (`node`, issue #9): what's inside it and how it turns one medium into the next (`router-inside`, `tower-inside`, the border router's `border-inside` with its route book choosing the exchange over transit, the exchange's `ixp-inside` with its shared switch and route server, the data centre's `leaf-spine` (2010's `three-tier`: core, aggregation and access, spanning tree blocking the standby's uplinks) and `server-inside`, which opens 1995's tower web server and 2010's bare-metal cache too), a **circuit** (`tdm-frames`: the timeslots of 1995's E1s, T1s and the PRI, sharing its slot row with `modem-call`), or a **layer at one hop**: the envelope (`ip-post`, `tcp-pieces`, `tls-lock`, `http-chunk`, `gtp-tunnel`, and for the link layers `wifi-frame`, `sticker-doors`, `gpon-slots`, `nr-grant`, and 1995's `atm-cells`, with `ppp-hello`'s HDLC keepalives for a leased line). It gets a `subject` (below), so one scene serves several technologies (the fibre dive draws a street's shared PON thread with its splitter on the access fibre, DWDM colours on metro fibre, the exchange's short cross-connects and the data centre's CWDM links (2010's 10GBASE-SR in one colour), boosters every 80 km on the backbone and repeaters on the sea floor under the `submarine` cable, both spaced from the stretch's real `km`), several layers (`sticker-doors` is Ethernet's door book, VLAN's coloured lanes and MPLS's motorway numbers), or every hop (the IP dive is a signpost at a router, a swap notebook at a NAT, carrier-grade NAT at the mobile core). |
 | **Segment** | `content/segments/<id>/` | A reusable stretch of route (`isp-to-cdn`: ISP core → border router → IXP → CDN, with transit as a dashed side branch off the border router). Hops, links, side branches, per-hop overrides and layout. A segment with `variantOf` and an `era` stands in for its base in that era (#59). |
 | **Place** | `content/places/<id>/` | A segment that starts at the reader's device and joins the shared network, plus a backdrop (`art/Backdrop.svelte`: the house, the street), an `order` in the picker and, on a base place, a `picture` there (a node of kind `place`: the house, a phone on the move). A place with `variantOf` is another way online from the same place (`desk`, `home-fttb`, `home-dsl`, `home-dialup` from home): the picker shows the base once, with its picture, and a row of `access` chips, of the era you are in. A place may have an `era`. |
-| **Era** | `content/eras/<id>/` | A time the internet at home looked different (`1995`, `2010`, `today`; issue #59): a `year`, a `name`, the `kid`/`nerd` text the time machine shows, and a `describe` of its picture (the era's start device). Every place gets the time machine: an era switch is a place switch to the family member of that era, else to the era's own trip (`eraStops`). |
+| **Era** | `content/eras/<id>/` | A time the internet at home looked different (`1995`, `2010`, `today`; issue #59): a `year`, a `name`, the `simple`/`technical` text the time machine shows, and a `describe` of its picture (the era's start device). Every place gets the time machine: an era switch is a place switch to the family member of that era, else to the era's own trip (`eraStops`). |
 | **Activity** | `content/activities/<id>/` | What happens: the **flows** (upper stack `ip › tcp › tls › http`, and packet kinds with direction, pace and colour) and the **route** (`[{ place: 'me' }, { segment: 'isp-to-cdn' }]`), plus which network nodes expand (a group may be drawn by another network node: `{ id, node }`). An activity with `variantOf` and an `era` stands in for its base in that era (#59: `watch-video-1995` opens a web page over plain HTTP); the URL names the base. |
 | **Owner** | `content/owners/<id>/` | Who runs a hop: your ISP, the exchange, the video company, a transit carrier (issue #20). Hops say `owner`; inside a group, each owner's hops become a tinted region with a sign, so the internet reads as a network of networks. |
 | **Locale** | `content/locales/<lang>/` | `meta.json` (`name`, `dir`) and `ui.json` (chrome strings), plus `keep-english.json` (the strings the language keeps English on purpose; tests only). Every other folder carries its own `locales/<lang>.json`: its strings and its learn-more links in that language. |
@@ -169,7 +169,7 @@ Import rules keep this honest (checked by `src/model/content.test.ts`):
    - **A phone on its side (issue #33).** A dive's wide panel fits the height between the top bar and the caption pill, not the width, so it got about half the screen. There `camFor` uses `diveFit` (`engine/zoom.ts`): the panel's top and bottom rims (`DIVE_RIM`, shares of its height that hold only its border and flap) may run under the bars' edges, and it keeps 80 px clear each side for the ◀ ▶ buttons. That is about 1.2× bigger; path scenes and other screens are fitted as before.
    - **No faint previews on a phone (issue #90).** At a stop the camera zooms in so far that the groups and dives around it would show through, faint. On a phone (`isPhone`) `mixes` squeezes a child's progress (`squeezed` in `engine/zoom.ts`) so it fades in only once you zoom right into it; the doors already say what's inside. Desktop keeps the previews.
 6. **Packets** (`engine/packets.ts`). Each flow's packets run along every link of the scene at a per-link pace. Tapping one **catches** it (below). On a slow route of the past they go slower (#59): `specsFor(ps, flows, slow)` stretches every parcel's trip, spacing and offset by the route's `paceOf` (`model/speed.ts`: ×1 from 100 Mbit/s at the bottleneck down, ×1.6 from 1 Mbit/s, ×2.5 below, a gentle scale and not to scale), so as many are on screen at once and the frame cost is the same; they run on the scene clock, so pause and reduced motion are as before.
-7. **Text that stays inside, and apart (issues #90, #72).** Labels keep a minimum size on screen, so on a small screen they grow in world units and could run off the scene or onto each other. `placeTexts` (`model/labels.ts`, pure) places a path scene's signs, names and nerd tags, and the same call is what `overlap.test.ts` checks: each is pushed inside the world; a link's name goes with its door badge, at its authored offset from the badge moved out clear of it, or, if that covers something, at the nearest clear spot round the badge (eight ways, three distances); a tag takes the first of a few spots (stacked, over the art, beside the name) that fits and covers nothing (names, signs, art, badges, tags placed before it), else the nearest clear spot round its device or badge. Where the whole tag has no room it shows its first fact ("XGS-PON" of "XGS-PON · 10 Gbit/s"), and where that has none either it waits until zoomed in. On a big screen every tag shows whole (the test checks). A device's tag may hang its string over its own art, not its body. A single link's badge, like a stretch's, slides along its link off the middle when the middle isn't clear of the device names (`linkSpot` in `doors.ts`). `labels.test.ts` checks every place, language and orientation at small sizes; `npm run evaluate` checks that no scene text leaves its panel or the window. A dive's own labels have `fit` (`Text`, `TagAt`; #136): the same `keepIn`, with the text's measured reach, so a name at the panel's edge slides inside its frame at whatever size it grows to; it is for text in the scene's own coordinates (a label inside a transformed group would be clamped in the wrong frame). `npm run evaluate -- --only=fit` walks every dive (`__app.dives()`, each look once) on a phone upright and on its side, in both languages, by kids and nerds, and fails on text or a nerd tag past its panel's frame line, off the window or under the chrome, or a card across the frame.
+7. **Text that stays inside, and apart (issues #90, #72).** Labels keep a minimum size on screen, so on a small screen they grow in world units and could run off the scene or onto each other. `placeTexts` (`model/labels.ts`, pure) places a path scene's signs, names and technical tags, and the same call is what `overlap.test.ts` checks: each is pushed inside the world; a link's name goes with its door badge, at its authored offset from the badge moved out clear of it, or, if that covers something, at the nearest clear spot round the badge (eight ways, three distances); a tag takes the first of a few spots (stacked, over the art, beside the name) that fits and covers nothing (names, signs, art, badges, tags placed before it), else the nearest clear spot round its device or badge. Where the whole tag has no room it shows its first fact ("XGS-PON" of "XGS-PON · 10 Gbit/s"), and where that has none either it waits until zoomed in. On a big screen every tag shows whole (the test checks). A device's tag may hang its string over its own art, not its body. A single link's badge, like a stretch's, slides along its link off the middle when the middle isn't clear of the device names (`linkSpot` in `doors.ts`). `labels.test.ts` checks every place, language and orientation at small sizes; `npm run evaluate` checks that no scene text leaves its panel or the window. A dive's own labels have `fit` (`Text`, `TagAt`; #136): the same `keepIn`, with the text's measured reach, so a name at the panel's edge slides inside its frame at whatever size it grows to; it is for text in the scene's own coordinates (a label inside a transformed group would be clamped in the wrong frame). `npm run evaluate -- --only=fit` walks every dive (`__app.dives()`, each look once) on a phone upright and on its side, in both languages, at both levels, and fails on text or a technical tag past its panel's frame line, off the window or under the chrome, or a card across the frame.
 8. **Doors** (`model/doors.ts`, below). What a path scene lets you open, drawn by the theme's `Hint`, hit-tested in `App.svelte` and listed in the caption.
 
 ### Pause, catch and step (issue #17)
@@ -205,13 +205,13 @@ Navigating the scene shows a packet's physical life; catching one shows its laye
 
 **Caption notes** (`CaptionText.notes`, `{ kind, text }`) are short extras under the caption's text, each with its icon
 and name ("Extra:"); the list view shows them too, and read aloud reads them. The overview has **how long it takes**
-(`takes`, #59, kid and nerd): `howLong` (`model/speed.ts`) takes the route's slowest link on the way down (its
+(`takes`, #59, `simple` and `technical`): `howLong` (`model/speed.ts`) takes the route's slowest link on the way down (its
 technology's `rate`, or the link's own) and the activity's sized kind (`size`, and `plays` if it's watched as it
 comes), and `takesOf` (`ui/caption.ts`) fills the activity's `takes` words (its era's) with the time, size, rate, the
 link's name, how many times faster than it plays, and today's thing at this route's rate (`now`, like with like), in
-`Intl.NumberFormat` units. The other kind is the nerd's **extra**
+`Intl.NumberFormat` units. The other kind is the Technical **extra**
 (issue #31): a dive's `extra` string, looked up like its text (most specific first, so a technology or a layer's role
-may have its own) and shown at nerd level only. The physical dives use it for what's next (PoE and 2.5/5/10GBASE-T on
+may have its own) and shown at the Technical level only. The physical dives use it for what's next (PoE and 2.5/5/10GBASE-T on
 copper, Wi‑Fi 7's multi-link operation, XGS-PON and GPON sharing one splitter) without a new scene. On a phone's folded
 card a note is one line; in the short-landscape pill it shows once opened.
 
@@ -234,7 +234,7 @@ hop. A layer's `fields` hold value templates with facts from the route:
 | `{ack}` | The other direction's `seq` value in this layer plus the bytes it carried inside it: the next byte expected (TCP) |
 
 `packetOn(route, flow, link, dir)` resolves the stack on one link, inside-out (lengths and checksums cover inner
-layers). Values carry who they belong to (`who`: a hop), so kids see "your phone" where nerds see `192.168.1.23`.
+layers). Values carry who they belong to (`who`: a hop), so Simple shows "your phone" where Technical shows `192.168.1.23`.
 
 `hopView(route, flow, dir, hop)` compares the packet as received and as sent at a hop (the two stacks aligned, so
 layers are **kept**, **added** or **removed**, like a tunnel or a new link frame). For each layer:
@@ -253,8 +253,8 @@ port rewritten, checksums fixed; the cell tower: NR off, Ethernet and a GTP‑U 
 The hop's name and "3 of 9", what it does (`node.<id>.peek.<dir>`, else `peek.role.<role>`, with `switched` for a router that only swaps a label; in an era of the past the era's `era.<id>.peek.role.<role>` first: `peekKeys` in `model/packet.ts`), chips for what changed,
 the envelopes taken off here, then the packet as it leaves as nested envelopes (`ui/Envelope.svelte`), and below them
 **How it travels: Light in a glass thread**, down to the dive of the link it leaves on (at its last hop, the one it
-arrived on; the catch is let go and the camera flies there). Kids see only
-fields with a `kid` value that matter here (used, changed, or new); nerds see every field and who owns each address.
+arrived on; the catch is let go and the camera flies there). Simple shows only
+fields with a `simple` value that matter here (used, changed, or new); Technical shows every field and who owns each address.
 **Details** swaps in a protocol tree (`ui/FieldTree.svelte`): a Wireshark-style summary line per layer
 (`layer.<id>.line`), its note, an RFC-style header diagram (32 bits a row, when every field has `bits`), and every
 field with its value, size and what it's for. No bytes.
@@ -522,7 +522,7 @@ coordinates too; **era parcel marks** get `{ dir, size }` (see *Add an era* in [
 |---|---|---|
 | Content data | `model/registry.ts` | `content/<kind>/<id>/<kind>.ts` (node.ts, technology.ts, era.ts, …) |
 | Svelte content | `render/lazy.svelte.ts` | node art and place and group backdrops (with their route, #91), dive scenes and era flavour, all on demand |
-| Strings | `model/strings.ts` + the `string-packs` plugin in `vite.config.ts` | `content/**/locales/<lang>.json`, auto-namespaced by folder (`node.phone.name`, `place.home.stop.router.kid`) |
+| Strings | `model/strings.ts` + the `string-packs` plugin in `vite.config.ts` | `content/**/locales/<lang>.json`, auto-namespaced by folder (`node.phone.name`, `place.home.stop.router.simple`) |
 | Themes | `state.svelte.ts` (`loadTheme`) | `content/themes/<id>/`, with unset slots falling back to `render/art-base/` |
 | Validation | `model/validate.ts` | runs every schema and cross-reference; dev + tests only |
 
@@ -616,7 +616,7 @@ engine:
   for one without a description at both levels in every language. Dive descriptions ride the lazy dive strings.
 - **Read aloud** (`engine/speech.ts`). A `Speaker` over the browser's `speechSynthesis`: `available(lang)` (a voice
   whose language is the page's, `voiceFor`; the list may arrive late, `voiceschanged`), `say` (cuts off what it was
-  saying; kids hear it a little slower) and `cancel`. It is a toggle in ⋯ (after Sound, on a phone), offered only where there's a
+  saying; at Simple a little slower) and `cancel`. It is a toggle in ⋯ (after Sound, on a phone), offered only where there's a
   voice for the language, off by default and remembered (`settings.speech`). Turning it on says so inside the tap
   (that unlocks iOS). On arrival it reads the title, the description and the caption (`readAloud`, `spoken`); the
   peek reads each hop; the caption gets "Read again". A navigation cancels it, and the quiet packet ticks wait while
@@ -636,10 +636,12 @@ engine:
 ## Strings and languages
 
 - **Namespacing.** Each folder's `locales/<lang>.json` is namespaced by kind and id (`nodes/phone` → `node.phone.*`).
-- **Levels.** Any key may be a string or `{ "kid": …, "nerd": … }`. A level-aware lookup falls back from `key.<level>` to `key`.
-  Readers see the levels as "Simple" and "Technical" (`mode.kid`, `mode.nerd`; da "Enkel", "Teknisk"; #141), and the URL
-  and `localStorage` name them `simple` and `technical` (`LEVEL_NAME` in `state.svelte.ts`); `kid` and `nerd` are only
-  the keys in content and code. A test keeps "for kids" / "for nerds" out of every string (`src/levels.test.ts`).
+- **Levels.** Any key may be a string or `{ "simple": …, "technical": … }`. A level-aware lookup falls back from `key.<level>` to `key`.
+  Readers see the levels as "Simple" and "Technical" (`mode.simple`, `mode.technical`; da "Enkel", "Teknisk"; #141), and
+  the URL, `localStorage`, content and code all name them `simple` and `technical` (`Level` in `define.ts`, #196). The
+  validator names the old `kid` and `nerd` wherever they turn up (a key, a dotted key's part, a link's `level`, a
+  definition's property), as they would otherwise fall back to English without a word. A test keeps "for kids" / "for
+  nerds" out of every string (`src/levels.test.ts`).
 - **Lookup order.** Captions look up text from the most specific source to the least:
   1. the places and segments on the route (`place.home.stop.router`)
   2. the activity
@@ -656,14 +658,14 @@ engine:
 
 ## Learn more (issue #4)
 
-A content folder's locale file may list its links in that language: `"learnMore": [{ url, title, level: 'kid' | 'nerd'
-| 'both', eras? }]`, a top-level key the string reader (`buildPacks` in `model/strings.ts`) keeps apart from the
+A content folder's locale file may list its links in that language: `"learnMore": [{ url, title, level: 'simple' |
+'technical' | 'both', eras? }]`, a top-level key the string reader (`buildPacks` in `model/strings.ts`) keeps apart from the
 strings, by item (`packs[lang].links['node.core']`), each tagged with the file's language. So the links load with
 their language's strings: English's at once (a layer's and a dive scene's with the dive strings), another language's
 with its pack. A card asks for its items' links (`linksOf`: the reader's language, then English) and shows up to
 three of them (`model/links.ts`), of those for the route's era (`eras`, default every era):
 - links for the reader's level, in the reader's language first
-- English nerd links always stay, and are marked "(en)" for a non-English reader
+- English technical links always stay, and are marked "(en)" for a non-English reader
 - other English links appear only when there is nothing in the reader's language
 
 ## Validation and tests
@@ -681,7 +683,7 @@ zod never reaches the production bundle.
 - that every locale file is for a language there is, and its learn-more links are well formed, for known eras, in
   its own top-level list and in a folder whose links something shows
 - that each scene folder has its component
-- layer header fields: unique ids, a name string per field (kid and nerd), known facts in value templates (with "did
+- layer header fields: unique ids, a name string per field (`simple` and `technical`), known facts in value templates (with "did
   you mean"), `{inner.<code>}` codes that some layer declares, `@key` values that have a string
 - that technology and link dives point at link scenes, device dives at device scenes (and only devices have one),
   and layer dives at layer scenes
@@ -707,7 +709,7 @@ Vitest (`npm test`) covers:
   place switch, which are on screen, and the badge layout (labels; a lit label flips, nudges or waits rather than cover text, a mark or another label, #137)
 - crowding (#64, #72, `model/overlap.test.ts`): in every path scene of every place × activity, orientation, language
   and level, at the authored size and at the size a small screen draws them (doors' `GROW`: 1.7× portrait, 1.9×
-  landscape), door badges, device names, link names, owner signs and nerd tags, where `placeTexts` puts them, keep
+  landscape), door badges, device names, link names, owner signs and technical tags, where `placeTexts` puts them, keep
   apart from each other and from the devices, every link shows at least two packets' worth of itself, and at the
   authored size no tag is cut to its first fact. With "What can I explore?" on, no lit label covers text or another
   label (#137), and on a big screen each fits somewhere: the few that wait for a zoom are listed (`KNOWN_WAITING`).
@@ -796,7 +798,7 @@ pulses, the copper and 5G sparks) and the twinkling stars move every frame too. 
 to show that a change leaves the day untouched. For a diff, each side screenshots until two in a row match: under load
 the GPU now and then hands over a frame with some tiles (the dot grid, shadows, blurs) not final yet. Two runs of the
 same build then match in all shots but about one a run, where a pixel or a few on an edge differ, mostly by a level or
-two (GPU rasterisation; one pixel of the 5G NR frame dive in nerd mode on desktop, by 62/765, nearly every run, #40). Every catch (shots, accessibility states, vision sheets) checks where the packet waits
+two (GPU rasterisation; one pixel of the 5G NR frame dive at the Technical level on desktop, by 62/765, nearly every run, #40). Every catch (shots, accessibility states, vision sheets) checks where the packet waits
 (`__app.caught().hop`) after the catch and after each step, and fails the run if it isn't the expected hop.
 
 Runs take turns machine-wide: another worktree's headless Chrome running at the same time (an overnight lane taking

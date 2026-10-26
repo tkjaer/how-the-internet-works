@@ -1,12 +1,12 @@
 {
   "name": "Leased line",
   "1995": {
-    "kid": "Your internet company rents a line from the phone company that is always on, all the way to a bigger network. It carries the parcels of all its customers: 2 million bits a second.",
-    "nerd": "A leased E1 (G.703/G.704): 2.048 Mbit/s in 32 timeslots of 64 kbit/s. Slot 0 keeps the frames in step and the other 31 are one pipe for Cisco HDLC. A small ISP often bought less, 64 or 128 kbit/s (one or two slots), or a Frame Relay circuit.",
+    "simple": "Your internet company rents a line from the phone company that is always on, all the way to a bigger network. It carries the parcels of all its customers: 2 million bits a second.",
+    "technical": "A leased E1 (G.703/G.704): 2.048 Mbit/s in 32 timeslots of 64 kbit/s. Slot 0 keeps the frames in step and the other 31 are one pipe for Cisco HDLC. A small ISP often bought less, 64 or 128 kbit/s (one or two slots), or a Frame Relay circuit.",
     "tag": "E1 · 2 Mbit/s · HDLC"
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/E-carrier", "title": "E-carrier", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/E-carrier", "title": "E-carrier", "level": "technical" },
     { "url": "https://en.wikipedia.org/wiki/Leased_line", "title": "Leased line", "level": "both" }
   ]
 }

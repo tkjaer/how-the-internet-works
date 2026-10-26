@@ -1,18 +1,18 @@
 {
   "name": {
-    "kid": "3G radio envelope",
-    "nerd": "3G HSPA frame (RLC · MAC-hs)"
+    "simple": "3G radio envelope",
+    "technical": "3G HSPA frame (RLC · MAC-hs)"
   },
   "note": {
-    "kid": "Sent through the air in the slots the mast gives your phone. The controller behind the mast checks every piece arrived and asks again if one got lost.",
-    "nerd": "MAC-hs in the NodeB sends it in the 2 ms TTIs its scheduler grants and resends with HARQ; RLC in the RNC ciphers it and resends what HARQ missed."
+    "simple": "Sent through the air in the slots the mast gives your phone. The controller behind the mast checks every piece arrived and asks again if one got lost.",
+    "technical": "MAC-hs in the NodeB sends it in the 2 ms TTIs its scheduler grants and resends with HARQ; RLC in the RNC ciphers it and resends what HARQ missed."
   },
   "line": "3G HSPA user plane, H-RNTI {hrnti}, RLC SN {rlcsn}",
   "field": {
     "hrnti": {
       "name": {
-        "kid": "Phone no.",
-        "nerd": "H-RNTI"
+        "simple": "Phone no.",
+        "technical": "H-RNTI"
       },
       "about": "The NodeB’s short name for this phone on the shared HSDPA channel (it marks the phone’s slots on the control channel)."
     },
@@ -31,7 +31,7 @@
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/3G", "title": "3G", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/High_Speed_Packet_Access", "title": "High Speed Packet Access", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Radio_Network_Controller", "title": "Radio Network Controller", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/High_Speed_Packet_Access", "title": "High Speed Packet Access", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Radio_Network_Controller", "title": "Radio Network Controller", "level": "technical" }
   ]
 }

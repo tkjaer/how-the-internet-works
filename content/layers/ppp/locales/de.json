@@ -1,17 +1,17 @@
 {
   "name": {
-    "kid": "Anrufumschlag",
-    "nerd": "PPP-Frame"
+    "simple": "Anrufumschlag",
+    "technical": "PPP-Frame"
   },
   "note": {
-    "kid": "Der Rechner steckt das Päckchen in einen einfachen Umschlag für den Telefonanruf. Nur dein Rechner und die Internetfirma öffnen ihn.",
-    "nerd": "PPP in HDLC-ähnlichem Framing: keine Adressen, weil ein Anruf nur zwei Enden hat. LCP, ein Login (PAP oder CHAP) und IPCP setzen es auf, wenn der Anruf startet."
+    "simple": "Der Rechner steckt das Päckchen in einen einfachen Umschlag für den Telefonanruf. Nur dein Rechner und die Internetfirma öffnen ihn.",
+    "technical": "PPP in HDLC-ähnlichem Framing: keine Adressen, weil ein Anruf nur zwei Enden hat. LCP, ein Login (PAP oder CHAP) und IPCP setzen es auf, wenn der Anruf startet."
   },
   "line": "PPP, Protocol {proto}",
   "value": {
     "ip": {
-      "kid": "Ein Internet-Päckchen",
-      "nerd": "IPv4 innen"
+      "simple": "Ein Internet-Päckchen",
+      "technical": "IPv4 innen"
     }
   },
   "field": {
@@ -29,8 +29,8 @@
     },
     "proto": {
       "name": {
-        "kid": "Was drin ist",
-        "nerd": "Protocol"
+        "simple": "Was drin ist",
+        "technical": "Protocol"
       },
       "about": "Was der Frame trägt: 0x0021 ist ein IPv4-Paket; LCP, PAP, CHAP und IPCP haben eigene Nummern."
     },
@@ -40,6 +40,6 @@
     }
   },
   "learnMore": [
-    { "url": "https://de.wikipedia.org/wiki/Point-to-Point_Protocol", "title": "Point-to-Point Protocol", "level": "nerd" }
+    { "url": "https://de.wikipedia.org/wiki/Point-to-Point_Protocol", "title": "Point-to-Point Protocol", "level": "technical" }
   ]
 }

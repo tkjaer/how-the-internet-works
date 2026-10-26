@@ -1,151 +1,151 @@
 {
   "title": "En linje skåret i pladser",
-  "kid": "Denne linje bærer ikke ét opkald, men mange, der skiftes. Hvert lille øjeblik sender den en række kasser, én kasse til hver samtale, otte tusind rækker i sekundet. Hver samtale får altid den samme kasse.",
-  "nerd": "Tidsmultipleksing: en ramme af 8-bit tidsluker, 8.000 rammer i sekundet (én hver 125 µs), så hver luke er en fast kanal på 64 kbit/s. Begge ender tæller luker fra rammens synkroniseringsmønster.",
+  "simple": "Denne linje bærer ikke ét opkald, men mange, der skiftes. Hvert lille øjeblik sender den en række kasser, én kasse til hver samtale, otte tusind rækker i sekundet. Hver samtale får altid den samme kasse.",
+  "technical": "Tidsmultipleksing: en ramme af 8-bit tidsluker, 8.000 rammer i sekundet (én hver 125 µs), så hver luke er en fast kanal på 64 kbit/s. Begge ender tæller luker fra rammens synkroniseringsmønster.",
   "describe": {
-    "kid": "To maskiner for enderne af en linje sender rækker af små farvede kasser til hinanden. Det ene kort viser en række kasse for kasse; det andet viser linjens op og ned.",
-    "nerd": "To ender af en TDM-linje udveksler tog af rammer. Det ene kort viser en rammes tidsluker; det andet linjekoden på kobberet."
+    "simple": "To maskiner for enderne af en linje sender rækker af små farvede kasser til hinanden. Det ene kort viser en række kasse for kasse; det andet viser linjens op og ned.",
+    "technical": "To ender af en TDM-linje udveksler tog af rammer. Det ene kort viser en rammes tidsluker; det andet linjekoden på kobberet."
   },
   "pri": {
     "title": "Tredive opkald på én linje",
-    "kid": "Dit telefonopkald forlod telefoncentralen i en kasse på en stor linje sammen med 29 andre opkald: hvert opkald har sin egen kasse i hver række. Én kasse holder rækkerne i takt, og én bærer centralens beskeder: et nyt opkald, et læg-på. Internetfirmaets modemreol får alle tredive opkald på én gang.",
-    "nerd": "Et ISDN Primary Rate Interface (ITU-T I.431) på en E1: 32 tidsluker × 64 kbit/s = 2,048 Mbit/s. Luke 0 bærer rammesynkronisering, luke 16 D-kanalen (Q.931 opkaldsopsætning og -nedtagning), og luke 1–15 og 17–31 er 30 B-kanaler, hver ét digitaliseret modemopkald. Adgangsserverens digitale modemer tager opkaldene direkte fra lukerne.",
+    "simple": "Dit telefonopkald forlod telefoncentralen i en kasse på en stor linje sammen med 29 andre opkald: hvert opkald har sin egen kasse i hver række. Én kasse holder rækkerne i takt, og én bærer centralens beskeder: et nyt opkald, et læg-på. Internetfirmaets modemreol får alle tredive opkald på én gang.",
+    "technical": "Et ISDN Primary Rate Interface (ITU-T I.431) på en E1: 32 tidsluker × 64 kbit/s = 2,048 Mbit/s. Luke 0 bærer rammesynkronisering, luke 16 D-kanalen (Q.931 opkaldsopsætning og -nedtagning), og luke 1–15 og 17–31 er 30 B-kanaler, hver ét digitaliseret modemopkald. Adgangsserverens digitale modemer tager opkaldene direkte fra lukerne.",
     "describe": {
-      "kid": "Telefoncentralen og internetfirmaets modemreol, forbundet af en linje fuld af rækker af kasser. Det ene kort viser en række: en gul kasse til takten, en blågrøn til beskeder, dit opkalds kasse og de andres kasser. Det andet kort viser linjen gå op og ned.",
-      "nerd": "Centralen og adgangsserveren udveksler E1-rammer på et ISDN PRI. Det ene kort viser de 32 tidsluker: 0 til synkronisering, 16 til D-kanalen, luke 7 dit opkald og resten andre B-kanaler, nogle ledige. Det andet viser HDB3 på kobberet."
+      "simple": "Telefoncentralen og internetfirmaets modemreol, forbundet af en linje fuld af rækker af kasser. Det ene kort viser en række: en gul kasse til takten, en blågrøn til beskeder, dit opkalds kasse og de andres kasser. Det andet kort viser linjen gå op og ned.",
+      "technical": "Centralen og adgangsserveren udveksler E1-rammer på et ISDN PRI. Det ene kort viser de 32 tidsluker: 0 til synkronisering, 16 til D-kanalen, luke 7 dit opkald og resten andre B-kanaler, nogle ledige. Det andet viser HDB3 på kobberet."
     }
   },
   "e1": {
     "title": "En lejet linje til næste net",
-    "kid": "Internetfirmaet lejer en linje af telefonselskabet: 31 kasser i hver række, alle deres, limet sammen til ét rør til pakker. Den er altid tændt, dag og nat, og koster det samme, om den har travlt eller ej.",
-    "nerd": "En lejet E1 (G.703/G.704): 32 tidsluker med 8.000 rammer i sekundet. Luke 0 er rammesynkronisering; luke 1–31 er samlet til én kanal på 1,984 Mbit/s med Cisco HDLC-rammer og IP-pakkerne. En CSU/DSU i hver ende møder teleselskabets kredsløb.",
+    "simple": "Internetfirmaet lejer en linje af telefonselskabet: 31 kasser i hver række, alle deres, limet sammen til ét rør til pakker. Den er altid tændt, dag og nat, og koster det samme, om den har travlt eller ej.",
+    "technical": "En lejet E1 (G.703/G.704): 32 tidsluker med 8.000 rammer i sekundet. Luke 0 er rammesynkronisering; luke 1–31 er samlet til én kanal på 1,984 Mbit/s med Cisco HDLC-rammer og IP-pakkerne. En CSU/DSU i hver ende møder teleselskabets kredsløb.",
     "describe": {
-      "kid": "To routere for enderne af en lejet linje sender rækker af kasser til hinanden. Det ene kort viser en række: en gul kasse til takten og så 31 kasser limet sammen til ét rør. Det andet viser linjen gå op og ned.",
-      "nerd": "To routere på en lejet E1. Det ene kort viser rammen: luke 0 til synkronisering og luke 1–31 samlet til 1,984 Mbit/s. Det andet viser HDB3 på kobberet."
+      "simple": "To routere for enderne af en lejet linje sender rækker af kasser til hinanden. Det ene kort viser en række: en gul kasse til takten og så 31 kasser limet sammen til ét rør. Det andet viser linjen gå op og ned.",
+      "technical": "To routere på en lejet E1. Det ene kort viser rammen: luke 0 til synkronisering og luke 1–31 samlet til 1,984 Mbit/s. Det andet viser HDB3 på kobberet."
     }
   },
   "t1": {
     "title": "En amerikansk lejet linje",
-    "kid": "I Amerika har de lejede linjer 24 kasser i hver række, ikke 32, og ét ekstra blip til takten. Alle 24 er limet sammen til ét rør til pakker, hen til bygningen hvor hjemmesiden bor.",
-    "nerd": "En T1 (DS1): 24 tidsluker plus én rammebit, (24 × 8 + 1) × 8.000 = 1,544 Mbit/s; 1,536 Mbit/s til data. ESF-rammer, B8ZS-linjekode. Lejet til hostingstedet, med Cisco HDLC ovenpå.",
+    "simple": "I Amerika har de lejede linjer 24 kasser i hver række, ikke 32, og ét ekstra blip til takten. Alle 24 er limet sammen til ét rør til pakker, hen til bygningen hvor hjemmesiden bor.",
+    "technical": "En T1 (DS1): 24 tidsluker plus én rammebit, (24 × 8 + 1) × 8.000 = 1,544 Mbit/s; 1,536 Mbit/s til data. ESF-rammer, B8ZS-linjekode. Lejet til hostingstedet, med Cisco HDLC ovenpå.",
     "describe": {
-      "kid": "To routere for enderne af en amerikansk lejet linje sender rækker af kasser til hinanden. Det ene kort viser en række: ét lille blip til takten og 24 kasser limet sammen til ét rør. Det andet viser linjen gå op og ned.",
-      "nerd": "To routere på en lejet T1. Det ene kort viser rammen: rammebitten og 24 tidsluker samlet til 1,536 Mbit/s. Det andet viser AMI-pulser på kobberet."
+      "simple": "To routere for enderne af en amerikansk lejet linje sender rækker af kasser til hinanden. Det ene kort viser en række: ét lille blip til takten og 24 kasser limet sammen til ét rør. Det andet viser linjen gå op og ned.",
+      "technical": "To routere på en lejet T1. Det ene kort viser rammen: rammebitten og 24 tidsluker samlet til 1,536 Mbit/s. Det andet viser AMI-pulser på kobberet."
     }
   },
   "abis": {
     "title": "Fire opkald i hver kasse",
-    "kid": "Fra masten til mobilselskabets central er et GSM-opkald så lille, at fire af dem deler én kasse i hver række: hvert opkald har sin egen fjerdedel, række efter række, så længe det varer. En anden kasse bærer mastens beskeder.",
-    "nerd": "Abis og Ater på en E1: 32 tidsluker × 64 kbit/s. Luke 0 er rammesynkronisering, luke 1 BTS’ens signalering (LAPD); hver trafikluke bærer fire delluker à 16 kbit/s, én GSM-kanal hver. Dit dataopkald er en fjerdedel af luke 7: 12 kbit/s RLP-rammer plus rammer, tilpasset i TRAU’en til en hel luke på 64 kbit/s til MSC’en.",
+    "simple": "Fra masten til mobilselskabets central er et GSM-opkald så lille, at fire af dem deler én kasse i hver række: hvert opkald har sin egen fjerdedel, række efter række, så længe det varer. En anden kasse bærer mastens beskeder.",
+    "technical": "Abis og Ater på en E1: 32 tidsluker × 64 kbit/s. Luke 0 er rammesynkronisering, luke 1 BTS’ens signalering (LAPD); hver trafikluke bærer fire delluker à 16 kbit/s, én GSM-kanal hver. Dit dataopkald er en fjerdedel af luke 7: 12 kbit/s RLP-rammer plus rammer, tilpasset i TRAU’en til en hel luke på 64 kbit/s til MSC’en.",
     "describe": {
-      "kid": "Masten og styreboksen (eller styreboksen og mobilcentralen), forbundet af en linje fuld af rækker af kasser. Det ene kort viser en række: en gul kasse til takten, en blågrøn til beskeder og kasser delt i fire, hvor en fjerdedel af én kasse er din. Det andet kort viser linjen gå op og ned.",
-      "nerd": "To ender af en Abis- eller Ater-E1. Det ene kort viser de 32 tidsluker: 0 til synkronisering, 1 til LAPD og trafikluker delt i fire delluker à 16 kbit/s, dit opkald i en fjerdedel af luke 7, nogle ledige. Det andet viser HDB3 på kobberet."
+      "simple": "Masten og styreboksen (eller styreboksen og mobilcentralen), forbundet af en linje fuld af rækker af kasser. Det ene kort viser en række: en gul kasse til takten, en blågrøn til beskeder og kasser delt i fire, hvor en fjerdedel af én kasse er din. Det andet kort viser linjen gå op og ned.",
+      "technical": "To ender af en Abis- eller Ater-E1. Det ene kort viser de 32 tidsluker: 0 til synkronisering, 1 til LAPD og trafikluker delt i fire delluker à 16 kbit/s, dit opkald i en fjerdedel af luke 7, nogle ledige. Det andet viser HDB3 på kobberet."
     }
   },
   "trunk": {
     "title": "Tredive opkald mellem to centraler",
-    "kid": "Mobilselskabets central og telefonselskabets central deler en stor linje med 30 opkald: hvert opkald har sin egen kasse i hver række. Din bærbares opkald er et af dem og bipper som et modem. Én kasse bærer centralernes beskeder: et nyt opkald, et læg-på.",
-    "nerd": "En E1-trunk mellem MSC’en og telefonnettet: 32 tidsluker × 64 kbit/s. Luke 0 er rammesynkronisering, luke 16 bærer SS7 (ISUP sætter hvert kredsløb op og ned), og de andre 30 er opkald i A-law PCM. Dit kredsløb bærer IWF’ens V.32-modemtoner, 9,6 kbit/s i en luke på 64 kbit/s.",
+    "simple": "Mobilselskabets central og telefonselskabets central deler en stor linje med 30 opkald: hvert opkald har sin egen kasse i hver række. Din bærbares opkald er et af dem og bipper som et modem. Én kasse bærer centralernes beskeder: et nyt opkald, et læg-på.",
+    "technical": "En E1-trunk mellem MSC’en og telefonnettet: 32 tidsluker × 64 kbit/s. Luke 0 er rammesynkronisering, luke 16 bærer SS7 (ISUP sætter hvert kredsløb op og ned), og de andre 30 er opkald i A-law PCM. Dit kredsløb bærer IWF’ens V.32-modemtoner, 9,6 kbit/s i en luke på 64 kbit/s.",
     "describe": {
-      "kid": "Mobilcentralen og telefoncentralen, forbundet af en linje fuld af rækker af kasser. Det ene kort viser en række: en gul kasse til takten, en blågrøn til beskeder, dit opkalds kasse og de andres kasser. Det andet kort viser linjen gå op og ned.",
-      "nerd": "MSC’en og centralen udveksler E1-rammer på en trunk. Det ene kort viser de 32 tidsluker: 0 til synkronisering, 16 til SS7, luke 7 dit kredsløb og resten andre kredsløb, nogle ledige. Det andet viser HDB3 på kobberet."
+      "simple": "Mobilcentralen og telefoncentralen, forbundet af en linje fuld af rækker af kasser. Det ene kort viser en række: en gul kasse til takten, en blågrøn til beskeder, dit opkalds kasse og de andres kasser. Det andet kort viser linjen gå op og ned.",
+      "technical": "MSC’en og centralen udveksler E1-rammer på en trunk. Det ene kort viser de 32 tidsluker: 0 til synkronisering, 16 til SS7, luke 7 dit kredsløb og resten andre kredsløb, nogle ledige. Det andet viser HDB3 på kobberet."
     }
   },
   "wire": {
-    "kid": "En række kasser, 8.000 gange i sekundet",
-    "nerd": "Én ramme hver 125 µs, hver vej"
+    "simple": "En række kasser, 8.000 gange i sekundet",
+    "technical": "Én ramme hver 125 µs, hver vej"
   },
   "frameTitle": {
-    "kid": "Én række kasser",
-    "nerd": "Én ramme, luke for luke"
+    "simple": "Én række kasser",
+    "technical": "Én ramme, luke for luke"
   },
   "legend": {
     "sync": {
-      "kid": "Holder takten",
-      "nerd": "0: synk."
+      "simple": "Holder takten",
+      "technical": "0: synk."
     },
     "fbit": {
-      "kid": "Holder takten",
-      "nerd": "F: rammebit"
+      "simple": "Holder takten",
+      "technical": "F: rammebit"
     },
     "signal": {
-      "kid": "Beskeder",
-      "nerd": "16: D-kanal"
+      "simple": "Beskeder",
+      "technical": "16: D-kanal"
     },
     "yours": {
-      "kid": "Dit opkald",
-      "nerd": "Din B-kanal"
+      "simple": "Dit opkald",
+      "technical": "Din B-kanal"
     },
     "other": {
-      "kid": "Andre opkald",
-      "nerd": "Andre B-kanaler"
+      "simple": "Andre opkald",
+      "technical": "Andre B-kanaler"
     },
     "idle": {
-      "kid": "Ledig",
-      "nerd": "Ledig"
+      "simple": "Ledig",
+      "technical": "Ledig"
     },
     "pipe": {
-      "kid": "Ét rør",
-      "nerd": "1–31: én kanal"
+      "simple": "Ét rør",
+      "technical": "1–31: én kanal"
     },
     "pipeT1": {
-      "kid": "Ét rør",
-      "nerd": "1–24: én kanal"
+      "simple": "Ét rør",
+      "technical": "1–24: én kanal"
     },
     "ss7": {
-      "kid": "Beskeder",
-      "nerd": "16: SS7"
+      "simple": "Beskeder",
+      "technical": "16: SS7"
     },
     "circuit": {
-      "kid": "Dit opkald",
-      "nerd": "Dit kredsløb"
+      "simple": "Dit opkald",
+      "technical": "Dit kredsløb"
     },
     "circuits": {
-      "kid": "Andre opkald",
-      "nerd": "Andre kredsløb"
+      "simple": "Andre opkald",
+      "technical": "Andre kredsløb"
     },
     "lapd": {
-      "kid": "Mastens beskeder",
-      "nerd": "1: LAPD"
+      "simple": "Mastens beskeder",
+      "technical": "1: LAPD"
     },
     "quarter": {
-      "kid": "Dit opkald: en fjerdedel",
-      "nerd": "Din 16k-delluke"
+      "simple": "Dit opkald: en fjerdedel",
+      "technical": "Din 16k-delluke"
     },
     "quarters": {
-      "kid": "Opkald, fire pr. kasse",
-      "nerd": "16k-delluker"
+      "simple": "Opkald, fire pr. kasse",
+      "technical": "16k-delluker"
     }
   },
   "sum": {
     "e1": {
-      "kid": "32 kasser × 8.000 rækker i sekundet",
-      "nerd": "32 × 8 bit × 8.000/s = 2,048 Mbit/s"
+      "simple": "32 kasser × 8.000 rækker i sekundet",
+      "technical": "32 × 8 bit × 8.000/s = 2,048 Mbit/s"
     },
     "t1": {
-      "kid": "24 kasser × 8.000 rækker i sekundet",
-      "nerd": "(24 × 8 + 1) × 8.000/s = 1,544 Mbit/s"
+      "simple": "24 kasser × 8.000 rækker i sekundet",
+      "technical": "(24 × 8 + 1) × 8.000/s = 1,544 Mbit/s"
     }
   },
   "code": {
     "e1": {
       "title": {
-        "kid": "Op og ned på kobberet",
-        "nerd": "HDB3-linjekode"
+        "simple": "Op og ned på kobberet",
+        "technical": "HDB3-linjekode"
       },
       "line": {
-        "kid": "Hvert 1 vipper op eller ned; lange stille stræk får et falsk blip",
-        "nerd": "AMI, men 0000 sendes som 000V eller B00V"
+        "simple": "Hvert 1 vipper op eller ned; lange stille stræk får et falsk blip",
+        "technical": "AMI, men 0000 sendes som 000V eller B00V"
       }
     },
     "t1": {
       "title": {
-        "kid": "Op og ned på kobberet",
-        "nerd": "AMI-linjekode"
+        "simple": "Op og ned på kobberet",
+        "technical": "AMI-linjekode"
       },
       "line": {
-        "kid": "Hvert 1 vipper op eller ned, så linjen holder balancen",
-        "nerd": "AMI; B8ZS erstatter 8 nuller med brud"
+        "simple": "Hvert 1 vipper op eller ned, så linjen holder balancen",
+        "technical": "AMI; B8ZS erstatter 8 nuller med brud"
       }
     }
   },

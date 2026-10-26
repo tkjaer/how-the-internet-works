@@ -1,15 +1,15 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Electricity in copper",
-  "kid": "Ethernet sends tiny voltage pushes down twisted copper pairs. The twists help noise cancel out, and the cable can talk both ways at once. After about 100 m the pushes get too faint and smeared. This is how the cable envelope travels.",
-  "nerd": "1000BASE-T uses differential signalling on all four Cat 5e pairs. Each pair runs 125 MBd with PAM-5 levels near ±1 V, hybrids and echo cancellation make every pair full duplex, and the standard budgets about 100 m for loss and crosstalk.",
+  "simple": "Ethernet sends tiny voltage pushes down twisted copper pairs. The twists help noise cancel out, and the cable can talk both ways at once. After about 100 m the pushes get too faint and smeared. This is how the cable envelope travels.",
+  "technical": "1000BASE-T uses differential signalling on all four Cat 5e pairs. Each pair runs 125 MBd with PAM-5 levels near ±1 V, hybrids and echo cancellation make every pair full duplex, and the standard budgets about 100 m for loss and crosstalk.",
   "extra": "Power over Ethernet: a cable like this can carry power too, so an access point or a camera on the ceiling needs no socket. Direct current rides on the pairs as a common-mode (phantom) voltage that the data, sent as differences, never notices: 15.4 W with 802.3af, 30 W with 802.3at, up to 90 W on all four pairs with 802.3bt. Faster copper: 2.5G, 5G and 10GBASE-T use 16 levels instead of 5 (PAM-16, paired into DSQ128 symbols with LDPC error correction). 2.5G and 5G run on ordinary Cat 5e/6; 10G runs 800 MBd per pair and needs Cat 6A for the full 100 m.",
   "describe": {
-    "kid": "Two network boxes sit at the ends of a thick cable. Inside are four twisted pairs. Glowing electric pulses move both ways through the pairs. The cards zoom into the twists, the pulses and the fading after about 100 metres.",
-    "nerd": "The cable cutaway shows four differential pairs carrying full-duplex pulses between endpoints. Cards show opposite voltages on a twisted pair, PAM-5 levels and an eye diagram. A 100 metre marker shows the channel budget as pulses fade."
+    "simple": "Two network boxes sit at the ends of a thick cable. Inside are four twisted pairs. Glowing electric pulses move both ways through the pairs. The cards zoom into the twists, the pulses and the fading after about 100 metres.",
+    "technical": "The cable cutaway shows four differential pairs carrying full-duplex pulses between endpoints. Cards show opposite voltages on a twisted pair, PAM-5 levels and an eye diagram. A 100 metre marker shows the channel budget as pulses fade."
   },
   "pairs": "Four twisted pairs inside one cable",
   "pairsShort": "Four twisted pairs",
@@ -24,7 +24,7 @@
     "catShort": "100 m"
   },
   "twistLine": "Noise cancels.",
-  "twistLineNerd": "Differential pair: +V and −V.",
+  "twistLineTechnical": "Differential pair: +V and −V.",
   "pamLine": "5 levels per symbol.",
   "eyeLine": "Open eye = clean.",
   "hundredShort": "About 100 m, then too faint",
@@ -51,32 +51,32 @@
     "bothWays": "One pair each way, both at once"
   },
   "1995": {
-    "kid": "Ethernet sends tiny voltage pushes down twisted copper pairs. In 1995 it uses just two of them: one pair to send, one to listen, taking turns. The twists help noise cancel out, and after about 100 m the pushes get too faint.",
-    "nerd": "10BASE-T (1990) uses two pairs of a Cat 3 cable: one to send, one to receive, as differential signals at 10 Mbit/s in Manchester code, which flips the line in the middle of every bit so the receiver finds its clock in the data. On a hub only one end talks at a time (half duplex); the other two pairs stay unused.",
+    "simple": "Ethernet sends tiny voltage pushes down twisted copper pairs. In 1995 it uses just two of them: one pair to send, one to listen, taking turns. The twists help noise cancel out, and after about 100 m the pushes get too faint.",
+    "technical": "10BASE-T (1990) uses two pairs of a Cat 3 cable: one to send, one to receive, as differential signals at 10 Mbit/s in Manchester code, which flips the line in the middle of every bit so the receiver finds its clock in the data. On a hub only one end talks at a time (half duplex); the other two pairs stay unused.",
     "extra": "Before 10BASE-T, Ethernet ran on coaxial cable shared by every computer on it: thick “yellow cable” (10BASE5, 1983) and then thin coax (10BASE2). Twisted pair and a hub in a cupboard made it cheap and easy to wire. Fast Ethernet (100BASE-TX, 1995) was just arriving; gigabit over copper came in 1999.",
     "describe": {
-      "kid": "Two network boxes sit at the ends of a thick cable. Inside are four twisted pairs, but only two glow. A pulse runs along one pair, then another comes back along the other: they take turns. The cards zoom into the twists, the pulses and the fading after about 100 metres.",
-      "nerd": "The cable cutaway shows four pairs, two of them live: one carries pulses forward, the other back, in turns. Cards show opposite voltages on a twisted pair, a Manchester-coded bit pattern with a flip in every bit, and a two-level eye diagram."
+      "simple": "Two network boxes sit at the ends of a thick cable. Inside are four twisted pairs, but only two glow. A pulse runs along one pair, then another comes back along the other: they take turns. The cards zoom into the twists, the pulses and the fading after about 100 metres.",
+      "technical": "The cable cutaway shows four pairs, two of them live: one carries pulses forward, the other back, in turns. Cards show opposite voltages on a twisted pair, a Manchester-coded bit pattern with a flip in every bit, and a two-level eye diagram."
     }
   },
   "2010": {
     "fast-ethernet": {
-      "kid": "Ethernet sends tiny voltage pushes down twisted copper pairs. The cable to a 2010 home router uses two of them: one pair to send and one to listen, both at once. The twists help noise cancel out, and after about 100 m the pushes get too faint.",
-      "nerd": "100BASE-TX (Fast Ethernet, 1995) uses two pairs of a Cat 5 cable, one each way, full duplex. 4B5B turns every 4 bits into 5, so 100 Mbit/s runs at 125 MBd, and MLT-3 steps the line through +1, 0 and −1, one step for each 1, which keeps the signal’s frequencies low enough for the cable. The other two pairs are unused.",
+      "simple": "Ethernet sends tiny voltage pushes down twisted copper pairs. The cable to a 2010 home router uses two of them: one pair to send and one to listen, both at once. The twists help noise cancel out, and after about 100 m the pushes get too faint.",
+      "technical": "100BASE-TX (Fast Ethernet, 1995) uses two pairs of a Cat 5 cable, one each way, full duplex. 4B5B turns every 4 bits into 5, so 100 Mbit/s runs at 125 MBd, and MLT-3 steps the line through +1, 0 and −1, one step for each 1, which keeps the signal’s frequencies low enough for the cable. The other two pairs are unused.",
       "extra": "Power over Ethernet: a cable like this can carry power too, so an access point or a camera on the ceiling needs no socket: 15.4 W with 802.3af (2003), on the spare pairs or the data pairs, and 30 W with 802.3at, new in 2009. Faster copper: gigabit (1000BASE-T, 1999) uses all four pairs with five levels (PAM-5). Most 2010 laptops had it, but a home router’s 100 Mbit/s ports set the pace.",
       "describe": {
-        "kid": "Two network boxes sit at the ends of a thick cable. Inside are four twisted pairs, but only two glow. Pulses run one way along one pair and back along the other, both at once. The cards zoom into the twists, the pulses and the fading after about 100 metres.",
-        "nerd": "The cable cutaway shows four pairs, two of them live: one carries pulses forward, the other back, at the same time. Cards show opposite voltages on a twisted pair, an MLT-3 bit pattern stepping between three levels, and a three-level eye diagram."
+        "simple": "Two network boxes sit at the ends of a thick cable. Inside are four twisted pairs, but only two glow. Pulses run one way along one pair and back along the other, both at once. The cards zoom into the twists, the pulses and the fading after about 100 metres.",
+        "technical": "The cable cutaway shows four pairs, two of them live: one carries pulses forward, the other back, at the same time. Cards show opposite voltages on a twisted pair, an MLT-3 bit pattern stepping between three levels, and a three-level eye diagram."
       }
     },
     "extra": "Power over Ethernet: a cable like this can carry power too, so an access point or a camera on the ceiling needs no socket. Direct current rides on the pairs as a common-mode (phantom) voltage that the data, sent as differences, never notices: 15.4 W with 802.3af (2003), and 30 W with 802.3at, new in 2009. Faster copper: 10GBASE-T (2006) uses 16 levels instead of 5 (PAM-16, paired into DSQ128 symbols with LDPC error correction), runs 800 MBd per pair and needs Cat 6A for the full 100 m. In 2010 it was still mostly for servers."
   },
   "learnMore": [
-    { "url": "https://simple.wikipedia.org/wiki/Ethernet", "title": "Ethernet", "level": "kid" },
+    { "url": "https://simple.wikipedia.org/wiki/Ethernet", "title": "Ethernet", "level": "simple" },
     { "url": "https://en.wikipedia.org/wiki/Ethernet_physical_layer", "title": "Ethernet physical layer", "level": "both" },
     { "url": "https://en.wikipedia.org/wiki/Twisted_pair", "title": "Twisted pair", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Gigabit_Ethernet", "title": "Gigabit Ethernet", "level": "nerd", "eras": ["2010", "today"] },
-    { "url": "https://en.wikipedia.org/wiki/Differential_signalling", "title": "Differential signalling", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Eye_pattern", "title": "Eye pattern", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Gigabit_Ethernet", "title": "Gigabit Ethernet", "level": "technical", "eras": ["2010", "today"] },
+    { "url": "https://en.wikipedia.org/wiki/Differential_signalling", "title": "Differential signalling", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Eye_pattern", "title": "Eye pattern", "level": "technical" }
   ]
 }

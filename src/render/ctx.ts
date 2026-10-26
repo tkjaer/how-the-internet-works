@@ -73,7 +73,7 @@ export function legibleSize() {
   const world = getWorld(), scene = getScene();
   return (size: number) => Math.max(size, themeState.current.labelMinPx / (world.cam.k * scene.frame.s));
 }
-/** The same for nerd tags (TagAt): a little smaller than labels, `tagSize()(20)`. */
+/** The same for technical tags (TagAt): a little smaller than labels, `tagSize()(20)`. */
 export function tagSize() {
   const world = getWorld(), scene = getScene();
   return (size: number) => Math.max(size, (themeState.current.labelMinPx * 0.85) / (world.cam.k * scene.frame.s));

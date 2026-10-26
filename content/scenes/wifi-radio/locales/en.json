@@ -1,23 +1,23 @@
 {
   "title": "Radio waves",
-  "kid": "The access point turns each parcel into ones and zeros and sends them through the air on an invisible radio wave. Big wiggles mean 1, small wiggles mean 0!",
-  "nerd": "Bits modulate a 2.4/5/6 GHz carrier. Shown here as simple amplitude-shift keying; this link’s Wi‑Fi 6 (802.11ax) uses OFDMA with up to 1024-QAM: 10 bits on each of hundreds to thousands of sub-carriers per symbol (Wi‑Fi 7 goes to 4096-QAM, 12 bits).",
+  "simple": "The access point turns each parcel into ones and zeros and sends them through the air on an invisible radio wave. Big wiggles mean 1, small wiggles mean 0!",
+  "technical": "Bits modulate a 2.4/5/6 GHz carrier. Shown here as simple amplitude-shift keying; this link’s Wi‑Fi 6 (802.11ax) uses OFDMA with up to 1024-QAM: 10 bits on each of hundreds to thousands of sub-carriers per symbol (Wi‑Fi 7 goes to 4096-QAM, 12 bits).",
   "extra": "Wi-Fi 7 (802.11be): with multi-link operation (MLO) the phone and the access point use 2.4, 5 and 6 GHz at the same time, as one link. Channels in the 6 GHz band can be 320 MHz wide, twice Wi-Fi 6E's widest, and with 4096-QAM and eight streams that makes about 23 Gbit/s on one channel, in theory.",
   "describe": {
-    "kid": "A phone and a Wi‑Fi access point face each other. A wiggly radio wave runs between them. Coloured 1 and 0 bits ride above it, and lines point each bit to a tall or small wiggle. Rings spread from the Wi‑Fi box as the signal moves through the air.",
-    "nerd": "The scene shows the phone and access point joined by an animated carrier wave. Bits scroll along the track. Stems connect each bit to the wave’s amplitude, as a simplified ASK modulation view. Expanding rings at the access point show the radio signal spreading."
+    "simple": "A phone and a Wi‑Fi access point face each other. A wiggly radio wave runs between them. Coloured 1 and 0 bits ride above it, and lines point each bit to a tall or small wiggle. Rings spread from the Wi‑Fi box as the signal moves through the air.",
+    "technical": "The scene shows the phone and access point joined by an animated carrier wave. Bits scroll along the track. Stems connect each bit to the wave’s amplitude, as a simplified ASK modulation view. Expanding rings at the access point show the radio signal spreading."
   },
   "carrier": "Radio wave",
   "bits": "Bits",
   "2010": {
-    "nerd": "Bits modulate a 2.4 or 5 GHz carrier. Shown here as simple amplitude-shift keying; Wi‑Fi 4 (802.11n) uses OFDM with up to 64-QAM, 6 bits on each of 52 data sub-carriers per symbol (108 on a 40 MHz channel).",
+    "technical": "Bits modulate a 2.4 or 5 GHz carrier. Shown here as simple amplitude-shift keying; Wi‑Fi 4 (802.11n) uses OFDM with up to 64-QAM, 6 bits on each of 52 data sub-carriers per symbol (108 on a 40 MHz channel).",
     "extra": "Wi‑Fi 4 (802.11n, 2009): with two to four antennas each side, several streams travel side by side (MIMO), and a 40 MHz channel doubles the width: up to 150 Mbit/s per stream, 600 Mbit/s in theory. Wi‑Fi in the 6 GHz band came only in 2020.",
     "describe": {
-      "kid": "A laptop and a Wi‑Fi access point face each other. A wiggly radio wave runs between them. Coloured 1 and 0 bits ride above it, and lines point each bit to a tall or small wiggle. Rings spread from the Wi‑Fi box as the signal moves through the air.",
-      "nerd": "The scene shows the laptop and access point joined by an animated carrier wave. Bits scroll along the track. Stems connect each bit to the wave’s amplitude, as a simplified ASK modulation view. Expanding rings at the access point show the radio signal spreading."
+      "simple": "A laptop and a Wi‑Fi access point face each other. A wiggly radio wave runs between them. Coloured 1 and 0 bits ride above it, and lines point each bit to a tall or small wiggle. Rings spread from the Wi‑Fi box as the signal moves through the air.",
+      "technical": "The scene shows the laptop and access point joined by an animated carrier wave. Bits scroll along the track. Stems connect each bit to the wave’s amplitude, as a simplified ASK modulation view. Expanding rings at the access point show the radio signal spreading."
     }
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Amplitude-shift_keying", "title": "Amplitude-shift keying", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Amplitude-shift_keying", "title": "Amplitude-shift keying", "level": "technical" }
   ]
 }

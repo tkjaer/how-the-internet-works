@@ -1,8 +1,8 @@
 {
   "name": "Hub",
   "1995": {
-    "kid": "En kasse, der samler rummets kabler. Det, der kommer ind ad ét kabel, råber den ud i alle de andre på én gang, og kun den computer, det er til, beholder det.",
-    "nerd": "En 10BASE-T-repeater-hub: den gentager hver bit ud af alle de andre porte, mens den kommer ind, og læser intet, så hele rummet er ét delt halv-dupleks-kollisionsdomæne. Switche, som lærer porten for hver MAC-adresse, tog over i slutningen af 1990’erne.",
+    "simple": "En kasse, der samler rummets kabler. Det, der kommer ind ad ét kabel, råber den ud i alle de andre på én gang, og kun den computer, det er til, beholder det.",
+    "technical": "En 10BASE-T-repeater-hub: den gentager hver bit ud af alle de andre porte, mens den kommer ind, og læser intet, så hele rummet er ét delt halv-dupleks-kollisionsdomæne. Switche, som lærer porten for hver MAC-adresse, tog over i slutningen af 1990’erne.",
     "tag": "10BASE-T · 8 porte"
   }
 }

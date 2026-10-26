@@ -1,31 +1,31 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Datacentrets vejkryds",
   "heading": {
-    "kid": "Datacentrets vejkryds",
-    "nerd": "Leaf–spine-fabric"
+    "simple": "Datacentrets vejkryds",
+    "technical": "Leaf–spine-fabric"
   },
-  "kid": "Hvert skab har en vej til hvert vejkryds. Pakkerne fordeler sig over alle vejkrydsene, så ingen vej går i stå. Din pakke tager altid det samme vejkryds, så delene bliver i rækkefølge.",
-  "nerd": "ECMP giver hver leaf lige dyre stier over fire spines. Leafen hasher flowets 5-tuple — kilde- og destinations-IP, porte og protokol — og hash mod 4 vælger spine 2. Samme flow, samme spine, ingen ombytning; enhver leaf når enhver anden på to hop.",
+  "simple": "Hvert skab har en vej til hvert vejkryds. Pakkerne fordeler sig over alle vejkrydsene, så ingen vej går i stå. Din pakke tager altid det samme vejkryds, så delene bliver i rækkefølge.",
+  "technical": "ECMP giver hver leaf lige dyre stier over fire spines. Leafen hasher flowets 5-tuple — kilde- og destinations-IP, porte og protokol — og hash mod 4 vælger spine 2. Samme flow, samme spine, ingen ombytning; enhver leaf når enhver anden på to hop.",
   "describe": {
-    "kid": "Øverst er fire vejkryds; det tredje lyser og har navn. Nederst er load balanceren, to andre racks og rack-switchen. Tynde veje forbinder hver nederste boks med hvert vejkryds. Små pakker bruger alle veje. Din større pakke bliver ved med at tage den lyse vej.",
-    "nerd": "Fire spines ligger over fire leaves: load balancernes leaf, to andre racks ToR’er og denne racks ToR-switch. Hver leaf har et link til hver spine. Baggrundsflows går over alle fire spines. Det markerede flow hashes til spine 2 og går fra load balancer via spine til rack-switch."
+    "simple": "Øverst er fire vejkryds; det tredje lyser og har navn. Nederst er load balanceren, to andre racks og rack-switchen. Tynde veje forbinder hver nederste boks med hvert vejkryds. Små pakker bruger alle veje. Din større pakke bliver ved med at tage den lyse vej.",
+    "technical": "Fire spines ligger over fire leaves: load balancernes leaf, to andre racks ToR’er og denne racks ToR-switch. Hver leaf har et link til hver spine. Baggrundsflows går over alle fire spines. Det markerede flow hashes til spine 2 og går fra load balancer via spine til rack-switch."
   },
   "spine": {
     "label": {
-      "kid": "Vejkryds",
-      "nerd": "Spine {n}"
+      "simple": "Vejkryds",
+      "technical": "Spine {n}"
     }
   },
   "leaf": {
     "other": "Andre racks"
   },
   "sticker": {
-    "kid": "Samme vej hver gang",
-    "nerd": "hash(5-tuple)",
+    "simple": "Samme vej hver gang",
+    "technical": "hash(5-tuple)",
     "mod": "mod 4 = {n}"
   },
   "learnMore": [

@@ -1,20 +1,20 @@
 {
   "title": "Radiobølger",
-  "kid": "Adgangspunktet laver hver pakke om til ettaller og nuller og sender dem gennem luften på en usynlig radiobølge. Store bølger betyder 1, små bølger betyder 0!",
-  "nerd": "Bittene modulerer en bærebølge på 2,4/5/6 GHz. Her vist som simpel amplitudeskiftmodulation; dette links Wi‑Fi 6 (802.11ax) bruger OFDMA med op til 1024-QAM: 10 bit på hver af hundredvis til tusindvis af underbærebølger pr. symbol (Wi‑Fi 7 går til 4096-QAM, 12 bit).",
+  "simple": "Adgangspunktet laver hver pakke om til ettaller og nuller og sender dem gennem luften på en usynlig radiobølge. Store bølger betyder 1, små bølger betyder 0!",
+  "technical": "Bittene modulerer en bærebølge på 2,4/5/6 GHz. Her vist som simpel amplitudeskiftmodulation; dette links Wi‑Fi 6 (802.11ax) bruger OFDMA med op til 1024-QAM: 10 bit på hver af hundredvis til tusindvis af underbærebølger pr. symbol (Wi‑Fi 7 går til 4096-QAM, 12 bit).",
   "extra": "Wi-Fi 7 (802.11be): med multi-link operation (MLO) bruger telefonen og adgangspunktet 2,4, 5 og 6 GHz på samme tid, som én forbindelse. Kanalerne i 6 GHz-båndet kan være 320 MHz brede, dobbelt så brede som Wi-Fi 6E's bredeste, og med 4096-QAM og otte strømme giver det omkring 23 Gbit/s på én kanal i teorien.",
   "describe": {
-    "kid": "En telefon og et Wi‑Fi-adgangspunkt står over for hinanden. En bølget radiobølge går mellem dem. Farvede 1- og 0-bits rider ovenover, og streger peger fra hvert bit ned til en stor eller lille bølge. Ringe breder sig fra Wi‑Fi-boksen, mens signalet flytter sig gennem luften.",
-    "nerd": "Scenen viser telefonen og adgangspunktet forbundet af en animeret bærebølge. Bits glider langs sporet. Små streger forbinder hvert bit med bølgens amplitude, som en forenklet ASK-modulation. Ringe ved adgangspunktet viser radiosignalet, der breder sig."
+    "simple": "En telefon og et Wi‑Fi-adgangspunkt står over for hinanden. En bølget radiobølge går mellem dem. Farvede 1- og 0-bits rider ovenover, og streger peger fra hvert bit ned til en stor eller lille bølge. Ringe breder sig fra Wi‑Fi-boksen, mens signalet flytter sig gennem luften.",
+    "technical": "Scenen viser telefonen og adgangspunktet forbundet af en animeret bærebølge. Bits glider langs sporet. Små streger forbinder hvert bit med bølgens amplitude, som en forenklet ASK-modulation. Ringe ved adgangspunktet viser radiosignalet, der breder sig."
   },
   "carrier": "Radiobølge",
   "bits": "Bit",
   "2010": {
-    "nerd": "Bittene modulerer en bærebølge på 2,4 eller 5 GHz. Her vist som simpel amplitudeskiftmodulation; Wi‑Fi 4 (802.11n) bruger OFDM med op til 64-QAM, 6 bit på hver af 52 underbærebølger med data pr. symbol (108 på en 40 MHz-kanal).",
+    "technical": "Bittene modulerer en bærebølge på 2,4 eller 5 GHz. Her vist som simpel amplitudeskiftmodulation; Wi‑Fi 4 (802.11n) bruger OFDM med op til 64-QAM, 6 bit på hver af 52 underbærebølger med data pr. symbol (108 på en 40 MHz-kanal).",
     "extra": "Wi‑Fi 4 (802.11n, 2009): med to til fire antenner i hver ende rejser flere strømme side om side (MIMO), og en 40 MHz-kanal fordobler bredden: op til 150 Mbit/s pr. strøm, 600 Mbit/s i teorien. Wi‑Fi i 6 GHz-båndet kom først i 2020.",
     "describe": {
-      "kid": "En bærbar og et Wi‑Fi-adgangspunkt står over for hinanden. En bølget radiobølge går mellem dem. Farvede 1- og 0-bits rider ovenover, og streger peger fra hvert bit ned til en stor eller lille bølge. Ringe breder sig fra Wi‑Fi-boksen, mens signalet flytter sig gennem luften.",
-      "nerd": "Scenen viser den bærbare og adgangspunktet forbundet af en animeret bærebølge. Bits glider langs sporet. Små streger forbinder hvert bit med bølgens amplitude, som en forenklet ASK-modulation. Ringe ved adgangspunktet viser radiosignalet, der breder sig."
+      "simple": "En bærbar og et Wi‑Fi-adgangspunkt står over for hinanden. En bølget radiobølge går mellem dem. Farvede 1- og 0-bits rider ovenover, og streger peger fra hvert bit ned til en stor eller lille bølge. Ringe breder sig fra Wi‑Fi-boksen, mens signalet flytter sig gennem luften.",
+      "technical": "Scenen viser den bærbare og adgangspunktet forbundet af en animeret bærebølge. Bits glider langs sporet. Små streger forbinder hvert bit med bølgens amplitude, som en forenklet ASK-modulation. Ringe ved adgangspunktet viser radiosignalet, der breder sig."
     }
   }
 }

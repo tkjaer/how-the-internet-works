@@ -15,7 +15,7 @@
   const portrait = $derived(view.orient === 'portrait');
   const compact = $derived(!portrait && view.vp.h < 470);
   const night = $derived(view.mode === 'night');
-  const nerd = $derived(S('mode') === 'nerd');
+  const technical = $derived(S('mode') === 'technical');
   const L = $derived(serverLayout(view.orient, compact));
   const legible = legibleSize();
   const T = $derived(portrait ? { head: 34, body: 29, small: 24 } : compact ? { head: legible(43), body: 0, small: 0 } : { head: 27, body: 22, small: 18 });
@@ -110,7 +110,7 @@
 
   <g opacity={state.statusAlpha}>
     <rect x={L.statusTag.x - statusW / 2} y={L.statusTag.y - (compact ? 36 : 31)} width={statusW} height={compact ? 72 : 62} rx="18" fill={state.hit ? 'var(--leaf-pale)' : 'var(--flap)'} stroke="var(--line)" stroke-width="5" />
-    <text x={L.statusTag.x} y={L.statusTag.y + (compact ? 14 : 12)} text-anchor="middle" font-family={nerd ? 'var(--tag-font)' : 'var(--label-font)'} font-size={compact ? legible(30) : 25} font-weight="900" fill="var(--line)">{state.hit ? S('hit') : S('miss')}</text>
+    <text x={L.statusTag.x} y={L.statusTag.y + (compact ? 14 : 12)} text-anchor="middle" font-family={technical ? 'var(--tag-font)' : 'var(--label-font)'} font-size={compact ? legible(30) : 25} font-weight="900" fill="var(--line)">{state.hit ? S('hit') : S('miss')}</text>
   </g>
 
   <Carrier p={state.request.p} form={requestForm} colour={requestColour} alpha={state.request.alpha} {time} {night} />
@@ -123,7 +123,7 @@
   {#if originAside}
     <Node id={originAside.hop.node.id} x={L.originNode.x} y={L.originNode.y} size={L.originSize} />
     {#if !compact}<Text x={L.originLabel.x} y={L.originLabel.y} text={nameOf(originAside.hop)} size={portrait ? 29 : 24} kind="node" anchor={L.originLabel.anchor} fit />{/if}
-    <Text x={L.originNote.x} y={L.originNote.y} text={nerd ? S('origin.nerd') : S('origin.kid')} size={portrait ? 25 : compact ? 24 : 21} kind="link" colour={originAside.link.tech.colour} anchor={L.originNote.anchor} />
+    <Text x={L.originNote.x} y={L.originNote.y} text={technical ? S('origin.technical') : S('origin.simple')} size={portrait ? 25 : compact ? 24 : 21} kind="link" colour={originAside.link.tech.colour} anchor={L.originNote.anchor} />
   {/if}
   {#if !compact && inLink}
     <Text x={L.inTag.x} y={L.inTag.y} text={linkName(inLink.tech.id)} size={portrait ? 30 : 24} kind="link" colour={inLink.tech.colour} anchor={L.inTag.anchor} />

@@ -61,7 +61,7 @@ describe('walkStep (#169)', () => {
           else if (deeper) expect(to.cross, where).toEqual({ kind: 'in', node: expect.objectContaining({ id: to.path[at.path.length], kind: 'group' }) });
           else expect(to.cross, where).toEqual({ kind: 'out', node: expect.objectContaining({ kind: d < 0 ? 'entry' : 'exit' }) });
           // it says so in every language and level
-          if (to.cross) for (const lang of Object.keys(packs)) for (const level of ['kid', 'nerd'] as const)
+          if (to.cross) for (const lang of Object.keys(packs)) for (const level of ['simple', 'technical'] as const)
             expect(withEra([`node.${to.cross.node.node.id}.name`], r.era).map((k) => lookupLevel(lang, k, level)).find(Boolean), `${where} ${lang} ${level}`).toBeTruthy();
           at = to;
         }

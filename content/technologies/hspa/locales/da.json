@@ -1,8 +1,8 @@
 {
   "name": "3G",
   "2010": {
-    "kid": "Din telefon taler med masten via radio. Alle telefoner nær masten deler den samme radiobølge og skiftes meget hurtigt, så jo flere der ser video, jo langsommere går det for hver.",
-    "nerd": "UMTS på en 5 MHz WCDMA-bærebølge omkring 2,1 GHz med HSDPA nedstrøms: op til 15 spredekoder delt af cellens telefoner, planlagt hvert 2. ms. 7,2–14 Mbit/s i top, nogle få i praksis.",
+    "simple": "Din telefon taler med masten via radio. Alle telefoner nær masten deler den samme radiobølge og skiftes meget hurtigt, så jo flere der ser video, jo langsommere går det for hver.",
+    "technical": "UMTS på en 5 MHz WCDMA-bærebølge omkring 2,1 GHz med HSDPA nedstrøms: op til 15 spredekoder delt af cellens telefoner, planlagt hvert 2. ms. 7,2–14 Mbit/s i top, nogle få i praksis.",
     "tag": "HSPA · 5 MHz · 16-QAM"
   },
   "learnMore": [

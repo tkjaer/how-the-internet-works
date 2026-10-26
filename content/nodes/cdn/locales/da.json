@@ -1,9 +1,9 @@
 {
   "name": "Video-server",
-  "kid": "Videoen bor her, på en computer i et af skabene. Videofirmaet gemmer kopier af populære videoer mange steder, så ingen af dem er langt væk.",
-  "nerd": "En CDN-cache-server: video-appen kører i en container og leverer segmentet fra hukommelse eller SSD; kun cache-miss går videre, tilbage til origin.",
+  "simple": "Videoen bor her, på en computer i et af skabene. Videofirmaet gemmer kopier af populære videoer mange steder, så ingen af dem er langt væk.",
+  "technical": "En CDN-cache-server: video-appen kører i en container og leverer segmentet fra hukommelse eller SSD; kun cache-miss går videre, tilbage til origin.",
   "2010": {
-    "kid": "Videoen bor her, på en computer i et af skabene. Videofirmaet gemmer kopier af populære videoer i nogle få store byer, så den nærmeste ligger længere væk end i dag.",
-    "nerd": "En CDN-cache-server i 2010: Linux og et cacheprogram direkte på hardwaren, med populær video i RAM og resten på roterende diske; kun cache-miss går videre, tilbage til origin."
+    "simple": "Videoen bor her, på en computer i et af skabene. Videofirmaet gemmer kopier af populære videoer i nogle få store byer, så den nærmeste ligger længere væk end i dag.",
+    "technical": "En CDN-cache-server i 2010: Linux og et cacheprogram direkte på hardwaren, med populær video i RAM og resten på roterende diske; kun cache-miss går videre, tilbage til origin."
   }
 }

@@ -14,7 +14,7 @@
   const portrait = $derived(view.orient === 'portrait');
   const compact = $derived(!portrait && view.vp.h < 470);
   const night = $derived(view.mode === 'night');
-  const nerd = $derived(S('mode') === 'nerd');
+  const technical = $derived(S('mode') === 'technical');
   const L = $derived(towerLayout(view.orient, compact));
   // a phone on its side: no text under the theme's minimum on screen (about 42 world units there)
   const legible = legibleSize();
@@ -27,7 +27,7 @@
   const parcel = $derived(parcelAt(time, view.still, path));
   const onLink = $derived(parcel.stage === 'in' ? subject.in : parcel.stage === 'out' ? subject.out : null);
   // the tunnel runs from this tower's address to the next device's, read off the route
-  const sticker = $derived(nerd
+  const sticker = $derived(technical
     ? [fill(S('tunnel.from'), { addr: subject.hop.addr ?? '' }), fill(S('tunnel.to'), { addr: after?.addr ?? '' })]
     : [S('tunnel.title'), fill(S('tunnel.for'), { who: after ? nameOf(after) : '' })]);
   const line = (r: RoomId) => (compact || r === 'baseband' ? '' : S(`${r}.line`));

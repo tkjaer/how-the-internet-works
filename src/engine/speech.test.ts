@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { KID_RATE, Speaker, spoken, voiceFor, type Synth } from './speech';
+import { SIMPLE_RATE, Speaker, spoken, voiceFor, type Synth } from './speech';
 
 const voice = (lang: string, more: { default?: boolean; localService?: boolean; name?: string } = {}) =>
   ({ lang, default: false, localService: true, name: lang, ...more });
@@ -39,10 +39,10 @@ describe('voiceFor', () => {
 describe('Speaker', () => {
   it('is unavailable without speechSynthesis or a voice, and says nothing then', () => {
     expect(new Speaker(undefined, undefined).available('en')).toBe(false);
-    expect(new Speaker(undefined, undefined).say('Hi', 'en', 'kid')).toBe(false);
+    expect(new Speaker(undefined, undefined).say('Hi', 'en', 'simple')).toBe(false);
     const { synth, speaker } = fakeSynth([voice('en-US')]);
     expect(speaker.available('da')).toBe(false);
-    expect(speaker.say('Hej', 'da', 'kid')).toBe(false);
+    expect(speaker.say('Hej', 'da', 'simple')).toBe(false);
     expect(synth.said).toEqual([]);
   });
 
@@ -57,13 +57,13 @@ describe('Speaker', () => {
     expect(speaker.available('da')).toBe(true);
   });
 
-  it('cancels what it was saying before each new text, in the voice of the language, slower for kids', () => {
+  it('cancels what it was saying before each new text, in the voice of the language, slower at Simple', () => {
     const { synth, speaker } = fakeSynth([voice('en-US'), voice('da-DK')]);
-    expect(speaker.say('Radio waves.', 'en', 'kid')).toBe(true);
+    expect(speaker.say('Radio waves.', 'en', 'simple')).toBe(true);
     expect(speaker.speaking).toBe(true);
-    speaker.say('Radiobølger.', 'da', 'nerd');
+    speaker.say('Radiobølger.', 'da', 'technical');
     expect(synth.cancels).toBe(2);
-    expect(synth.said.map((u) => [u.text, u.lang, u.rate])).toEqual([['Radio waves.', 'en-US', KID_RATE], ['Radiobølger.', 'da-DK', 1]]);
+    expect(synth.said.map((u) => [u.text, u.lang, u.rate])).toEqual([['Radio waves.', 'en-US', SIMPLE_RATE], ['Radiobølger.', 'da-DK', 1]]);
     expect(synth.said[1].voice).toBe(synth.voices[1]);
     speaker.cancel();
     expect(speaker.speaking).toBe(false);

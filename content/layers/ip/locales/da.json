@@ -3,12 +3,12 @@
   "to": "Til",
   "server": "video-serveren",
   "name": {
-    "kid": "Adresselabel",
-    "nerd": "IP-pakke (IPv4)"
+    "simple": "Adresselabel",
+    "technical": "IP-pakke (IPv4)"
   },
   "note": {
-    "kid": "Adresselabelen: hvem den er fra, og hvem den er til. Hver router på vejen læser den.",
-    "nerd": "Best-effort-levering mellem to vilkårlige adresser på internettet: routere sender den videre ud fra modtageradressen, hop for hop."
+    "simple": "Adresselabelen: hvem den er fra, og hvem den er til. Hver router på vejen læser den.",
+    "technical": "Best-effort-levering mellem to vilkårlige adresser på internettet: routere sender den videre ud fra modtageradressen, hop for hop."
   },
   "line": "Internet Protocol version 4, afs.: {src}, modt.: {dst}",
   "field": {
@@ -46,8 +46,8 @@
     },
     "ttl": {
       "name": {
-        "kid": "Skridt tilbage",
-        "nerd": "Time to live (TTL)"
+        "simple": "Skridt tilbage",
+        "technical": "Time to live (TTL)"
       },
       "about": "Hver router trækker én fra og smider pakken væk ved 0, så en routing-løkke ikke kan beholde den for evigt. Inde i en MPLS-kerne tælles labelens TTL i stedet og kopieres tilbage hertil ved kanten."
     },
@@ -61,15 +61,15 @@
     },
     "src": {
       "name": {
-        "kid": "Fra",
-        "nerd": "Afsenderadresse"
+        "simple": "Fra",
+        "technical": "Afsenderadresse"
       },
       "about": "Hvem der sendte den, set herfra: en NAT skriver den om til sin egen udadvendte adresse."
     },
     "dst": {
       "name": {
-        "kid": "Til",
-        "nerd": "Modtageradresse"
+        "simple": "Til",
+        "technical": "Modtageradresse"
       },
       "about": "Hvor den skal hen: routere slår den op i deres forwarding-tabel (longest prefix match)."
     }

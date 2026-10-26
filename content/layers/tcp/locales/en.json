@@ -1,15 +1,15 @@
 {
   "name": {
-    "kid": "Numbered piece",
-    "nerd": "TCP segment"
+    "simple": "Numbered piece",
+    "technical": "TCP segment"
   },
   "note": {
-    "kid": "The video is cut into numbered pieces, so nothing gets lost or mixed up.",
-    "nerd": "A reliable, ordered byte stream between two ports: sequence numbers, acknowledgements, retransmits, flow and congestion control."
+    "simple": "The video is cut into numbered pieces, so nothing gets lost or mixed up.",
+    "technical": "A reliable, ordered byte stream between two ports: sequence numbers, acknowledgements, retransmits, flow and congestion control."
   },
   "sealed": {
-    "kid": "Sealed. Only {yours} and the server open this: they check that no pieces are missing.",
-    "nerd": "Not inspected on the way: end-to-end between the two ends (ordering, retransmits, congestion control)."
+    "simple": "Sealed. Only {yours} and the server open this: they check that no pieces are missing.",
+    "technical": "Not inspected on the way: end-to-end between the two ends (ordering, retransmits, congestion control)."
   },
   "line": "Transmission Control Protocol, Src Port: {sport}, Dst Port: {dport}, Seq: {seq}, Ack: {ack}",
   "field": {
@@ -23,8 +23,8 @@
     },
     "seq": {
       "name": {
-        "kid": "Piece no.",
-        "nerd": "Sequence number"
+        "simple": "Piece no.",
+        "technical": "Sequence number"
       },
       "about": "Where this data sits in the byte stream, so the receiver can put pieces in order."
     },
@@ -73,7 +73,7 @@
       }
     },
     "note": {
-      "kid": "The page is cut into numbered pieces, so nothing gets lost or mixed up."
+      "simple": "The page is cut into numbered pieces, so nothing gets lost or mixed up."
     }
   },
   "2010": {
@@ -84,7 +84,7 @@
     }
   },
   "learnMore": [
-    { "url": "https://simple.wikipedia.org/wiki/Transmission_Control_Protocol", "title": "TCP (Simple English)", "level": "kid" },
-    { "url": "https://en.wikipedia.org/wiki/Transmission_Control_Protocol", "title": "TCP", "level": "nerd" }
+    { "url": "https://simple.wikipedia.org/wiki/Transmission_Control_Protocol", "title": "TCP (Simple English)", "level": "simple" },
+    { "url": "https://en.wikipedia.org/wiki/Transmission_Control_Protocol", "title": "TCP", "level": "technical" }
   ]
 }

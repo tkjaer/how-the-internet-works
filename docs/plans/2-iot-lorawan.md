@@ -13,10 +13,10 @@ A soil-moisture sensor in a field sends one tiny reading every so often, by radi
 roof, and from there over the internet to the company that collects it. It's the opposite of the video: tiny, rare,
 slow and far, on batteries that last for years.
 
-- **Kids**: a little stick in the ground that sleeps nearly all the time, wakes up, sings one slow sliding note
+- **Simple**: a little stick in the ground that sleeps nearly all the time, wakes up, sings one slow sliding note
   ("wheeee-up!") that a box on a roof three fields away can hear, and goes back to sleep. The box doesn't know what
   the note says; it passes it on. Only the farmer's app has the key to read "the soil is dry".
-- **Nerds**: chirp spread spectrum, spreading factors SF7 to SF12 (each step about twice the time on air and a few dB
+- **Technical**: chirp spread spectrum, spreading factors SF7 to SF12 (each step about twice the time on air and a few dB
   more range), 125 kHz channels in EU868 and the 1 % duty cycle; the LoRaWAN MAC frame (DevAddr, FCnt, FPort, MIC);
   two session keys (NwkSKey for the MIC, AppSKey for the payload), so the gateway and the network server carry what
   they can't read; the gateway's packet forwarder (UDP to the network server); deduplication when several gateways
@@ -62,12 +62,12 @@ groups (#35) and layer dives (#13). Mapped onto today's model:
 | Node | `sensor` | `device`, role `endpoint`, no IP address. Art: a stake in the soil with a little antenna. Later `dive: 'sensor-inside'`. |
 | Node | `lora-gateway` | `device`, role `bridge` (it passes on what it hears without reading it), with an address: it is where the forwarding tunnel starts. Art: a white box with a tall antenna on a roof. Later `dive: 'gateway-inside'`. |
 | Node | `network-server`, `app-server` | `device`s in a data centre; roles `router` (it reads the LoRaWAN envelope to find whose sensor it is) and `endpoint`. Art: reuse the CDN server's art through a relative import (allowed for content Svelte), so no new eager art. |
-| Owner | `sensor-net` | "The sensor network company" (kid) / "LoRaWAN network operator · AS64510" (nerd; a documentation AS number not used yet). |
+| Owner | `sensor-net` | "The sensor network company" (simple) / "LoRaWAN network operator · AS64510" (technical; a documentation AS number not used yet). |
 | Technology | `lorawan` | `look: 'radio'`, `stack: ['lorawan']`, `dive: 'lora-chirps'`, a colour. |
-| Layer | `lorawan` | The LoRaWAN MAC frame: `mhdr`, `devaddr` (kid: "Sensor's number"), `fctrl`, `fcnt` (kid: "Message number"), `fport`, `mic` (kid: "Seal"). `openAt: ['endpoint', 'router']`. `dive: 'lora-frame'`. |
-| Layer | `lora-fwd` | The gateway's forwarding envelope: `tunnel: true` like GTP‑U, with the outer IPv4 and UDP (port 1700) and the metadata the gateway adds (`freq`, `sf`, `rssi`, `snr`; kid: "How loudly I heard it"). `dive: 'lora-frame'`. |
+| Layer | `lorawan` | The LoRaWAN MAC frame: `mhdr`, `devaddr` (simple: "Sensor's number"), `fctrl`, `fcnt` (simple: "Message number"), `fport`, `mic` (simple: "Seal"). `openAt: ['endpoint', 'router']`. `dive: 'lora-frame'`. |
+| Layer | `lora-fwd` | The gateway's forwarding envelope: `tunnel: true` like GTP‑U, with the outer IPv4 and UDP (port 1700) and the metadata the gateway adds (`freq`, `sf`, `rssi`, `snr`; simple: "How loudly I heard it"). `dive: 'lora-frame'`. |
 | Layer | `lora-app` | FPort's payload, encrypted with the AppSKey: `seals: true`, `openAt: ['endpoint']`. `dive: 'lora-frame'`. |
-| Layer | `reading` | The measurement itself (CayenneLPP for nerds: `moisture`, `battery`), `openAt: ['endpoint']`; sealed wherever `lora-app` isn't opened. |
+| Layer | `reading` | The measurement itself (CayenneLPP at Technical: `moisture`, `battery`), `openAt: ['endpoint']`; sealed wherever `lora-app` isn't opened. |
 | Scene | `lora-chirps` | Link scene: the radio signal. |
 | Scene | `lora-frame` | Layer scene for `lorawan`, `lora-fwd` and `lora-app`, switching on `subject.layer` (as `sticker-doors` serves Ethernet, VLAN and MPLS). |
 | Segment | `lora-cloud` | Inside the `datacentre` group: `dc-router` → `network-server` → `app-server`, owner `sensor-net`, its links `dc-fibre` with `stack: ['ethernet', 'lora-fwd', 'lorawan']` up to the network server and plain `['ethernet']` after it. |
@@ -112,7 +112,7 @@ No engine change names a LoRa id. `src/` stays free of content ids (the import-b
 
 ## New scenes and their descriptions
 
-Every scene a reader can reach gets a `describe`, kid and nerd, in English and Danish (`content.test.ts` fails without
+Every scene a reader can reach gets a `describe`, `simple` and `technical`, in English and Danish (`content.test.ts` fails without
 one). Drafts below (the Danish is a first draft for review); the variants not drafted here are drafted in their PR.
 
 ### `lora-chirps` (link scene, the signal world)
@@ -121,14 +121,14 @@ A wide field: the sensor on the left, the barn with the gateway far on the right
 each chirp is a line sliding up across the 125 kHz channel and wrapping around, its start position carrying the bits.
 A ladder of spreading factors (SF7 to SF12): the higher, the slower the slide, the longer the message is on the air
 (about 60 ms at SF7, about 1.5 s at SF12 for a 12-byte reading) and the further it reaches; rings on the field show
-the reach. A clock face shows the duty cycle: on air at most 36 s an hour. Nerd tags: SF, BW, time on air, the EU868
+the reach. A clock face shows the duty cycle: on air at most 36 s an hour. Technical tags: SF, BW, time on air, the EU868
 channel. Maths in `chirp.ts` (the time-on-air formula, the loop on `view.time`), tested. Layouts for landscape,
 portrait and short landscape; raw `<text>` sized with `legibleSize()`.
 
 | | en | da |
 |---|---|---|
-| kid | A field with a little sensor on the left and a barn with a box on its roof far to the right. The sensor sings one slow sliding note, again and again, and rings spread over the field. A ladder shows slower notes reaching further rings. A clock shows the sensor may only sing a tiny bit of every hour. | En mark med en lille sensor til venstre og en lade med en boks på taget langt til højre. Sensoren synger én langsom glidetone igen og igen, og ringe breder sig over marken. En stige viser, at langsommere toner når længere ud. Et ur viser, at sensoren kun må synge en lille smule hver time. |
-| nerd | A sensor and a gateway kilometres apart under a frequency-time plot: LoRa chirps sweep across a 125 kHz channel, a data symbol's start offset carrying its bits. A ladder runs SF7 to SF12, each step doubling time on air, from about 60 ms to 1.5 s for this frame, and widening the reach rings. A dial shows the 1 % duty cycle. | En sensor og en gateway kilometer fra hinanden under et frekvens-tid-plot: LoRa-chirps fejer hen over en 125 kHz-kanal, og hvert symbols startpunkt bærer dets bit. En stige går fra SF7 til SF12; hvert trin fordobler sendetiden, fra omkring 60 ms til 1,5 s for denne ramme, og gør rækkeviddens ringe større. En skive viser 1 %-reglen for sendetid. |
+| simple | A field with a little sensor on the left and a barn with a box on its roof far to the right. The sensor sings one slow sliding note, again and again, and rings spread over the field. A ladder shows slower notes reaching further rings. A clock shows the sensor may only sing a tiny bit of every hour. | En mark med en lille sensor til venstre og en lade med en boks på taget langt til højre. Sensoren synger én langsom glidetone igen og igen, og ringe breder sig over marken. En stige viser, at langsommere toner når længere ud. Et ur viser, at sensoren kun må synge en lille smule hver time. |
+| technical | A sensor and a gateway kilometres apart under a frequency-time plot: LoRa chirps sweep across a 125 kHz channel, a data symbol's start offset carrying its bits. A ladder runs SF7 to SF12, each step doubling time on air, from about 60 ms to 1.5 s for this frame, and widening the reach rings. A dial shows the 1 % duty cycle. | En sensor og en gateway kilometer fra hinanden under et frekvens-tid-plot: LoRa-chirps fejer hen over en 125 kHz-kanal, og hvert symbols startpunkt bærer dets bit. En stige går fra SF7 til SF12; hvert trin fordobler sendetiden, fra omkring 60 ms til 1,5 s for denne ramme, og gør rækkeviddens ringe større. En skive viser 1 %-reglen for sendetid. |
 
 ### `lora-frame` (layer scene, the paper world)
 
@@ -145,12 +145,12 @@ paper cards above; big walking parcels), and varying by layer and hop, most gene
 - **`lora-app`** (the application server; sealed everywhere else): the box only the app key opens; inside, "Soil
   moisture 23 %".
 
-| Key | en kid | en nerd |
+| Key | en simple | en technical |
 |---|---|---|
 | `describe` | A road runs from the sensor in the field to the app's computer. Above it, a card shows an envelope with the sensor's number, a message number and a wax seal, and a locked box inside. Here the seal is checked, a second copy of the same letter goes in the bin, and the locked box walks on. | The LoRaWAN MAC frame at the network server: MHDR, DevAddr, FCtrl, FCnt, FPort and the MIC over it all. The server verifies the MIC with the NwkSKey, checks the frame counter, drops the duplicate from a second gateway, and forwards the FRMPayload, still AES-encrypted with the AppSKey, to the application server. |
 | `sealed.describe` | The gateway on the barn holds a letter it can't open. It doesn't even look: it puts every letter it hears straight into a bigger envelope for the internet. | At the gateway the frame is opaque: the packet forwarder doesn't verify the MIC or know the device, and forwards every frame it demodulates, from any network, with its radio metadata. |
 
-| Key | da kid | da nerd |
+| Key | da simple | da technical |
 |---|---|---|
 | `describe` | En vej går fra sensoren på marken til appens computer. Over den viser et kort en kuvert med sensorens nummer, et beskednummer og et laksegl og en låst kasse indeni. Her bliver seglet tjekket, en kopi af det samme brev ryger i skraldespanden, og den låste kasse går videre. | LoRaWAN-rammen på netværksserveren: MHDR, DevAddr, FCtrl, FCnt, FPort og MIC over det hele. Serveren tjekker MIC med NwkSKey og rammetælleren, smider kopien fra en anden gateway væk og sender FRMPayload videre til applikationsserveren, stadig AES-krypteret med AppSKey. |
 | `sealed.describe` | Gatewayen på laden holder et brev, den ikke kan åbne. Den kigger slet ikke: Den putter hvert brev, den hører, direkte i en større kuvert til internettet. | På gatewayen er rammen lukket: Packet forwarderen tjekker ikke MIC og kender ikke enheden; den sender hver ramme, den kan demodulere, fra alle net, videre med sine radiodata. |
@@ -159,12 +159,12 @@ paper cards above; big walking parcels), and varying by layer and hop, most gene
 
 ### The field's overview and the cloud
 
-| Key | en kid | en nerd |
+| Key | en simple | en technical |
 |---|---|---|
 | `place.field.describe` | A big field with a little sensor stuck in the soil. Far across it, a barn has a box on its roof, and a cable runs from the farm to the internet cloud. Every now and then the sensor sends one tiny reading up to the barn, then goes back to sleep. | The overview of a field: a battery LoRaWAN soil sensor, a gateway on a barn kilometres away, and the farm's fibre to the ISP. One small uplink leaves the sensor every few minutes; nothing comes back. |
 | `place.field.inside.datacentre.describe` | Inside the sensor company's building, a router passes the letter to a computer that checks it, and on to the app's computer, which finally opens it. | The network operator's data centre: its router, the network server that terminates the gateway's tunnel and the LoRaWAN MAC, and the application server that decrypts the payload. |
 
-| Key | da kid | da nerd |
+| Key | da simple | da technical |
 |---|---|---|
 | `place.field.describe` | En stor mark med en lille sensor stukket i jorden. Langt ovre på den anden side har en lade en boks på taget, og et kabel går fra gården til internetskyen. En gang imellem sender sensoren en lille måling op til laden og falder så i søvn igen. | Oversigten over en mark: en batteridrevet LoRaWAN-jordsensor, en gateway på en lade flere kilometer væk og gårdens fiber til udbyderen. En lille besked går op fra sensoren med nogle minutters mellemrum; intet kommer tilbage. |
 | `place.field.inside.datacentre.describe` | Inde i sensorfirmaets bygning sender en router brevet videre til en computer, der tjekker det, og videre til appens computer, som endelig åbner det. | Netværksoperatørens datacenter: dens router, netværksserveren, der afslutter gatewayens tunnel og LoRaWAN-laget, og applikationsserveren, der dekrypterer indholdet. |
@@ -284,7 +284,7 @@ Nice dives would be `thread-mesh` (hops between mains-powered devices, sleepy en
   alternative (per-link replacement of the upper stack, with IP addresses taken from the ends of a partial run) is
   more general but touches the IP dive and the packet model's client/server addressing. Recorded as an open question.
 - **Between the network server and the application server** the real interface is HTTP/JSON or gRPC over TLS; the
-  plan shows a plain link inside one company's data centre. The nerd caption says so.
+  plan shows a plain link inside one company's data centre. The technical caption says so.
 - **No NAT at the farm** in v1: the gateway's tunnel source is its own address (`tunnel` takes it from the hop), and
   a NAT rewrite of a tunnel's outer address isn't modelled. Real gateways often sit behind NAT (they only talk
   outwards, so it works). The caption mentions it; modelling it is a later engine change.
@@ -302,7 +302,7 @@ Decided for now (the user may overrule any of them):
   around the LoRa tunnel).
 - **Three general engine changes** (place `activities`, route-step `carry`, tunnel interior), rather than a per-link
   upper stack; see *Risks*.
-- **The sensor has no IP address**, and IP appears only inside the gateway's tunnel; kids see "the box on the barn puts
+- **The sensor has no IP address**, and IP appears only inside the gateway's tunnel; Simple shows "the box on the barn puts
   the letter in an internet envelope".
 - **One layer scene (`lora-frame`) for the three LoRa envelopes**, as `sticker-doors` serves three layers; the
   `gtp-tunnel` scene is GTP-specific (it names the cell tower and mobile core), so it isn't reused.

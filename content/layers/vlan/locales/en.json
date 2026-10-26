@@ -1,11 +1,11 @@
 {
   "name": {
-    "kid": "Street sticker",
-    "nerd": "VLAN tags (802.1ad Q-in-Q)"
+    "simple": "Street sticker",
+    "technical": "VLAN tags (802.1ad Q-in-Q)"
   },
   "note": {
-    "kid": "It gets a coloured tag so the operator knows which street and which house it came from.",
-    "nerd": "Double-tagged (Q-in-Q): an S-VLAN per cabinet, a C-VLAN per customer, towards the BNG."
+    "simple": "It gets a coloured tag so the operator knows which street and which house it came from.",
+    "technical": "Double-tagged (Q-in-Q): an S-VLAN per cabinet, a C-VLAN per customer, towards the BNG."
   },
   "line": "802.1ad Q-in-Q, S-VLAN {svid}, C-VLAN {cvid}",
   "field": {
@@ -19,8 +19,8 @@
     },
     "svid": {
       "name": {
-        "kid": "Street no.",
-        "nerd": "S-VLAN ID"
+        "simple": "Street no.",
+        "technical": "S-VLAN ID"
       },
       "about": "The outer tag: which street cabinet it came through."
     },
@@ -38,8 +38,8 @@
     },
     "cvid": {
       "name": {
-        "kid": "House no.",
-        "nerd": "C-VLAN ID"
+        "simple": "House no.",
+        "technical": "C-VLAN ID"
       },
       "about": "The inner tag: which customer line. The BNG knows your subscription by it."
     },
@@ -49,7 +49,7 @@
     }
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/IEEE_802.1Q", "title": "IEEE 802.1Q", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/IEEE_802.1ad", "title": "IEEE 802.1ad (Q-in-Q)", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/IEEE_802.1Q", "title": "IEEE 802.1Q", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/IEEE_802.1ad", "title": "IEEE 802.1ad (Q-in-Q)", "level": "technical" }
   ]
 }

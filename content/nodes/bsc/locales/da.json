@@ -1,12 +1,12 @@
 {
   "name": "Mast-styreboks",
   "1995": {
-    "kid": "Chefen for snesevis af master. Den giver hvert opkald sin plads i radiobølgerne, flytter dit opkald til en anden mast, hvis du går videre, og sender det videre til mobilselskabets store central.",
-    "nerd": "Basestationscontrolleren (BSC): den tildeler hvert opkald bærebølge og tidsslot, styrer overdragelser mellem sine BTS’er og kobler opkaldenes delluker på 16 kbit/s videre mod transcoderen og MSC’en. Den åbner ikke opkaldet.",
+    "simple": "Chefen for snesevis af master. Den giver hvert opkald sin plads i radiobølgerne, flytter dit opkald til en anden mast, hvis du går videre, og sender det videre til mobilselskabets store central.",
+    "technical": "Basestationscontrolleren (BSC): den tildeler hvert opkald bærebølge og tidsslot, styrer overdragelser mellem sine BTS’er og kobler opkaldenes delluker på 16 kbit/s videre mod transcoderen og MSC’en. Den åbner ikke opkaldet.",
     "tag": "BSC · Abis · Ater",
     "peek": {
-      "kid": "Styreboksen åbner heller ikke din pakke. Den kobler bare opkaldets lille plads videre til den store central.",
-      "nerd": "BSC’en kobler dellukken fra BTS’ens Abis-linje over på Ater-linjen til TRAU’en og MSC’en; RLP-rammerne kører igennem ulæst."
+      "simple": "Styreboksen åbner heller ikke din pakke. Den kobler bare opkaldets lille plads videre til den store central.",
+      "technical": "BSC’en kobler dellukken fra BTS’ens Abis-linje over på Ater-linjen til TRAU’en og MSC’en; RLP-rammerne kører igennem ulæst."
     }
   }
 }

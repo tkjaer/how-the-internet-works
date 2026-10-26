@@ -1,10 +1,10 @@
 {
   "title": "Radio beams",
-  "kid": "The tower has lots of tiny antennas. Together they aim a beam right at each phone. And every phone gets its own seats in time and in radio colours, like seats on a bus, so they never talk over each other.",
-  "nerd": "A massive-MIMO panel beamforms a separate beam per user. Each 0.5 ms slot (30 kHz sub-carrier spacing) the scheduler hands out resource blocks: OFDMA shares time and frequency between users, so dozens of phones use the same 100 MHz at once, and MU-MIMO lets several beams reuse the same resource blocks at the same time.",
+  "simple": "The tower has lots of tiny antennas. Together they aim a beam right at each phone. And every phone gets its own seats in time and in radio colours, like seats on a bus, so they never talk over each other.",
+  "technical": "A massive-MIMO panel beamforms a separate beam per user. Each 0.5 ms slot (30 kHz sub-carrier spacing) the scheduler hands out resource blocks: OFDMA shares time and frequency between users, so dozens of phones use the same 100 MHz at once, and MU-MIMO lets several beams reuse the same resource blocks at the same time.",
   "describe": {
-    "kid": "A cell tower points glowing beams at three phones, and your phone has a label. Beside them, a grid of tiny seats slides by for time and radio colours. Coloured seats light up for each phone. The matching beam glows when that phone gets a turn.",
-    "nerd": "The gNB panel beamforms three users while a time-frequency grid scrolls beside it. Coloured resource blocks mark OFDMA allocations. The current slot makes the matching beam brighten. Labels call out 64T64R beamforming, 30 kHz spacing and 0.5 ms slots."
+    "simple": "A cell tower points glowing beams at three phones, and your phone has a label. Beside them, a grid of tiny seats slides by for time and radio colours. Coloured seats light up for each phone. The matching beam glows when that phone gets a turn.",
+    "technical": "The gNB panel beamforms three users while a time-frequency grid scrolls beside it. Coloured resource blocks mark OFDMA allocations. The current slot makes the matching beam brighten. Labels call out 64T64R beamforming, 30 kHz spacing and 0.5 ms slots."
   },
   "beams": "A beam for each phone",
   "grid": "Everyone gets their own seats",
@@ -17,11 +17,11 @@
   },
   "2010": {
     "title": "One wave, shared codes",
-    "kid": "The tower sends one wide wave over every phone on its side. The phones take turns, 2 ms at a time, and each turn is split into codes, like voices singing different tunes at once. The more phones watch, the smaller each one’s share.",
-    "nerd": "WCDMA on one 5 MHz carrier: a sector antenna covers about 120°, with no beamforming. HSDPA shares up to 15 SF16 codes; every 2 ms TTI the NodeB gives them to one or a few UEs, by their CQI. 7.2–14 Mbit/s peak per cell with 16-QAM; a phone got 1–3 Mbit/s in practice.",
+    "simple": "The tower sends one wide wave over every phone on its side. The phones take turns, 2 ms at a time, and each turn is split into codes, like voices singing different tunes at once. The more phones watch, the smaller each one’s share.",
+    "technical": "WCDMA on one 5 MHz carrier: a sector antenna covers about 120°, with no beamforming. HSDPA shares up to 15 SF16 codes; every 2 ms TTI the NodeB gives them to one or a few UEs, by their CQI. 7.2–14 Mbit/s peak per cell with 16-QAM; a phone got 1–3 Mbit/s in practice.",
     "describe": {
-      "kid": "A cell tower sends one wide wave over three phones, and your phone has a label. Beside them, a grid of tiny seats slides by: rows of codes, columns of 2 ms turns. Each turn’s seats mostly light up for one phone.",
-      "nerd": "The NodeB’s sector covers three UEs with one wave. A code × time grid scrolls beside it: each 2 ms TTI’s HS-PDSCH codes go to one UE, sometimes split with a second. Labels give the 5 MHz carrier, 15 codes and the 2 ms TTI."
+      "simple": "A cell tower sends one wide wave over three phones, and your phone has a label. Beside them, a grid of tiny seats slides by: rows of codes, columns of 2 ms turns. Each turn’s seats mostly light up for one phone.",
+      "technical": "The NodeB’s sector covers three UEs with one wave. A code × time grid scrolls beside it: each 2 ms TTI’s HS-PDSCH codes go to one UE, sometimes split with a second. Labels give the 5 MHz carrier, 15 codes and the 2 ms TTI."
     },
     "beams": "One wave for every phone",
     "grid": "Phones take turns",
@@ -33,11 +33,11 @@
   },
   "1995": {
     "title": "Your own seat, every time",
-    "kid": "The mast sends one wide wave over everyone nearby. Its time is cut into eight turns, over and over, and your call owns one of them, the same one every time, until you hang up. Even when the laptop has nothing to send, nobody else may use your seat.",
-    "nerd": "GSM TDMA: each 200 kHz carrier is cut into frames of 8 time slots (577 µs each, 4.615 ms a frame). A data call (TCH/F9.6) holds one slot of every frame for the whole call, used or not: a circuit, like the phone line at home. That is why it was billed per minute. GPRS (from 2000) let phones share slots by the packet.",
+    "simple": "The mast sends one wide wave over everyone nearby. Its time is cut into eight turns, over and over, and your call owns one of them, the same one every time, until you hang up. Even when the laptop has nothing to send, nobody else may use your seat.",
+    "technical": "GSM TDMA: each 200 kHz carrier is cut into frames of 8 time slots (577 µs each, 4.615 ms a frame). A data call (TCH/F9.6) holds one slot of every frame for the whole call, used or not: a circuit, like the phone line at home. That is why it was billed per minute. GPRS (from 2000) let phones share slots by the packet.",
     "describe": {
-      "kid": "A tall metal mast sends one wide wave over your laptop and two other callers, and your laptop has a label. Beside them, a grid of tiny seats slides by: rows of radio carriers, columns of turns. Every eighth turn, the same seat lights up for each call.",
-      "nerd": "The BTS covers three calls with one sector. A carrier × time-slot grid scrolls beside it: each call keeps one slot of every 8-slot TDMA frame, on the same carrier, used or not. Labels give GSM 900, 200 kHz carriers and the 4.615 ms frame."
+      "simple": "A tall metal mast sends one wide wave over your laptop and two other callers, and your laptop has a label. Beside them, a grid of tiny seats slides by: rows of radio carriers, columns of turns. Every eighth turn, the same seat lights up for each call.",
+      "technical": "The BTS covers three calls with one sector. A carrier × time-slot grid scrolls beside it: each call keeps one slot of every 8-slot TDMA frame, on the same carrier, used or not. Labels give GSM 900, 200 kHz carriers and the 4.615 ms frame."
     },
     "beams": "One wave for every caller",
     "grid": "Each call keeps its seat",

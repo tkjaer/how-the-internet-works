@@ -1,12 +1,12 @@
 {
   "name": {
-    "kid": "Et stort teleselskab",
-    "nerd": "Transit · AS64502"
+    "simple": "Et stort teleselskab",
+    "technical": "Transit · AS64502"
   },
   "1995": {
     "name": {
-      "kid": "Et større net",
-      "nerd": "Leverandør · AS64502"
+      "simple": "Et større net",
+      "technical": "Leverandør · AS64502"
     }
   }
 }

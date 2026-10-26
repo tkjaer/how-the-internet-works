@@ -2,12 +2,12 @@
   "1995": {
     "stop": {
       "backbone": {
-        "kid": "Here the line from across the sea meets a big American network, in New York. Its routers pass your parcel on across the country.",
-        "nerd": "The US backbone’s router at its New York PoP: the transatlantic circuit lands on a serial card, and the packet leaves on an ATM OC-3 card as cells. BGP has told it the server’s network is across the country."
+        "simple": "Here the line from across the sea meets a big American network, in New York. Its routers pass your parcel on across the country.",
+        "technical": "The US backbone’s router at its New York PoP: the transatlantic circuit lands on a serial card, and the packet leaves on an ATM OC-3 card as cells. BGP has told it the server’s network is across the country."
       },
       "pop": {
-        "kid": "The big network’s router near the web site. From here a rented line runs into the building where the page lives.",
-        "nerd": "The backbone’s PoP near the server: the ATM circuit ends here, the cells become a packet again, and it leaves on the hosting site’s T1 (Cisco HDLC)."
+        "simple": "The big network’s router near the web site. From here a rented line runs into the building where the page lives.",
+        "technical": "The backbone’s PoP near the server: the ATM circuit ends here, the cells become a packet again, and it leaves on the hosting site’s T1 (Cisco HDLC)."
       }
     },
     "tag": {
@@ -16,11 +16,11 @@
     },
     "inside": {
       "internet": {
-        "kid": "In 1995 the internet is much smaller: fewer than two thousand networks. Your call goes through the telephone exchange to your internet company’s modems. From there a rented line runs to a bigger network in Copenhagen, under the Atlantic in one glass cable, across America, and into the room where the web site lives.",
-        "nerd": "The telephone network (a circuit through the exchange, then a PRI) to the ISP’s modem bank and its one router. A leased E1 to the upstream in Copenhagen, CANTAT-3 to North America, an ATM backbone across the US and a T1 into the hosting site. Each shaded area is one operator’s network; Danish traffic goes to DIX instead.",
+        "simple": "In 1995 the internet is much smaller: fewer than two thousand networks. Your call goes through the telephone exchange to your internet company’s modems. From there a rented line runs to a bigger network in Copenhagen, under the Atlantic in one glass cable, across America, and into the room where the web site lives.",
+        "technical": "The telephone network (a circuit through the exchange, then a PRI) to the ISP’s modem bank and its one router. A leased E1 to the upstream in Copenhagen, CANTAT-3 to North America, an ATM backbone across the US and a T1 into the hosting site. Each shaded area is one operator’s network; Danish traffic goes to DIX instead.",
         "describe": {
-          "kid": "Inside the cloud, the path starts at your home. It runs through the telephone exchange and the modem bank to the internet company’s router, with a dashed side road to the Danish exchange. Then it goes to a bigger network, under the sea to two American routers, and into the server room, a box you can open.",
-          "nerd": "The expanded 1995 route: home, telephone exchange, modem bank and the ISP’s router, with DIX as a dashed aside. Then the upstream on an E1, CANTAT-3 to the US backbone’s New York router, ATM across the country to its PoP, and a T1 into the server room, which unfolds. Request and page packets move in opposite directions."
+          "simple": "Inside the cloud, the path starts at your home. It runs through the telephone exchange and the modem bank to the internet company’s router, with a dashed side road to the Danish exchange. Then it goes to a bigger network, under the sea to two American routers, and into the server room, a box you can open.",
+          "technical": "The expanded 1995 route: home, telephone exchange, modem bank and the ISP’s router, with DIX as a dashed aside. Then the upstream on an E1, CANTAT-3 to the US backbone’s New York router, ATM across the country to its PoP, and a T1 into the server room, which unfolds. Request and page packets move in opposite directions."
         }
       }
     }

@@ -1,11 +1,11 @@
 {
   "name": {
-    "kid": "Tunnel envelope",
-    "nerd": "GTP-U tunnel (outer IP/UDP)"
+    "simple": "Tunnel envelope",
+    "technical": "GTP-U tunnel (outer IP/UDP)"
   },
   "note": {
-    "kid": "The tower puts your parcel inside a bigger one addressed to the mobile core, so the network can find your phone wherever you walk.",
-    "nerd": "The gNB wraps the phone’s own IP packet in IP/UDP/GTP-U (port 2152) to the UPF; the TEID identifies this phone’s session."
+    "simple": "The tower puts your parcel inside a bigger one addressed to the mobile core, so the network can find your phone wherever you walk.",
+    "technical": "The gNB wraps the phone’s own IP packet in IP/UDP/GTP-U (port 2152) to the UPF; the TEID identifies this phone’s session."
   },
   "line": "GTP-U, {osrc} → {odst}, TEID {teid}",
   "value": {
@@ -51,15 +51,15 @@
     },
     "osrc": {
       "name": {
-        "kid": "From",
-        "nerd": "Outer source"
+        "simple": "From",
+        "technical": "Outer source"
       },
       "about": "One end of the tunnel."
     },
     "odst": {
       "name": {
-        "kid": "To",
-        "nerd": "Outer destination"
+        "simple": "To",
+        "technical": "Outer destination"
       },
       "about": "The other end: the tower on the way down, the core (UPF) on the way up."
     },
@@ -93,8 +93,8 @@
     },
     "teid": {
       "name": {
-        "kid": "Ticket no.",
-        "nerd": "TEID"
+        "simple": "Ticket no.",
+        "technical": "TEID"
       },
       "about": "Tunnel endpoint ID: which phone’s session this is. Each end picks the TEID it wants to receive."
     },
@@ -109,8 +109,8 @@
   },
   "2010": {
     "note": {
-      "kid": "The radio controller puts your parcel inside a bigger one addressed to the mobile company’s gate, so the network can find your phone wherever you walk.",
-      "nerd": "With Direct Tunnel the RNC wraps the phone’s own IP packet in IP/UDP/GTP-U (port 2152) to the GGSN; the TEID names this phone’s PDP context."
+      "simple": "The radio controller puts your parcel inside a bigger one addressed to the mobile company’s gate, so the network can find your phone wherever you walk.",
+      "technical": "With Direct Tunnel the RNC wraps the phone’s own IP packet in IP/UDP/GTP-U (port 2152) to the GGSN; the TEID names this phone’s PDP context."
     },
     "value": {
       "flags": "0x30 (v1, GTP)",
@@ -136,7 +136,7 @@
     }
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Cellular_network", "title": "Cellular network", "level": "kid" },
-    { "url": "https://en.wikipedia.org/wiki/GPRS_Tunnelling_Protocol", "title": "GPRS Tunnelling Protocol", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Cellular_network", "title": "Cellular network", "level": "simple" },
+    { "url": "https://en.wikipedia.org/wiki/GPRS_Tunnelling_Protocol", "title": "GPRS Tunnelling Protocol", "level": "technical" }
   ]
 }

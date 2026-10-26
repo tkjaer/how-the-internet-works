@@ -1,12 +1,12 @@
 {
   "name": "Mast",
   "1995": {
-    "kid": "En høj metalmast med tynde antenner i toppen. Dens radioer deler hver bølge mellem otte telefoner, der skiftes, og sender hvert opkald ned ad en linje til styreboksen.",
-    "nerd": "En GSM-basestation (BTS) på 900 MHz: en gittermast med sektorantenner og nogle få sender-modtagere i skabet, én 200 kHz-bærebølge hver, otte tidsslots pr. bærebølge. Den sender hvert opkald videre over Abis, uåbnet.",
+    "simple": "En høj metalmast med tynde antenner i toppen. Dens radioer deler hver bølge mellem otte telefoner, der skiftes, og sender hvert opkald ned ad en linje til styreboksen.",
+    "technical": "En GSM-basestation (BTS) på 900 MHz: en gittermast med sektorantenner og nogle få sender-modtagere i skabet, én 200 kHz-bærebølge hver, otte tidsslots pr. bærebølge. Den sender hvert opkald videre over Abis, uåbnet.",
     "tag": "BTS · GSM 900",
     "peek": {
-      "kid": "Masten åbner ikke din pakke. Den fanger telefonens radiotur og sender indholdet videre ned ad linjen.",
-      "nerd": "BTS’en afslutter radiopulsen og kanalkodningen og sender opkaldets RLP-rammer videre i en delluke på 16 kbit/s; intet her læser PPP eller IP."
+      "simple": "Masten åbner ikke din pakke. Den fanger telefonens radiotur og sender indholdet videre ned ad linjen.",
+      "technical": "BTS’en afslutter radiopulsen og kanalkodningen og sender opkaldets RLP-rammer videre i en delluke på 16 kbit/s; intet her læser PPP eller IP."
     }
   }
 }

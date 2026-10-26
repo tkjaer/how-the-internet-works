@@ -1,19 +1,19 @@
 {
   "name": "ISP core",
-  "kid": "The motorway of your internet company: super-fast connections between big cities.",
-  "nerd": "An MPLS core with 100–400G links; packets are label-switched rather than looked up at every hop.",
+  "simple": "The motorway of your internet company: super-fast connections between big cities.",
+  "technical": "An MPLS core with 100–400G links; packets are label-switched rather than looked up at every hop.",
   "tag": "MPLS · 400G",
   "1995": {
     "name": "ISP router",
-    "kid": "The internet company’s one big router, in a back room. Every parcel from its callers passes through it.",
-    "nerd": "The small ISP’s one router: Ethernet to the modem bank, a leased E1 to its upstream and another to DIX. It looks up every packet’s address in its table; there were no MPLS labels yet (RFC 3031, 2001).",
+    "simple": "The internet company’s one big router, in a back room. Every parcel from its callers passes through it.",
+    "technical": "The small ISP’s one router: Ethernet to the modem bank, a leased E1 to its upstream and another to DIX. It looks up every packet’s address in its table; there were no MPLS labels yet (RFC 3031, 2001).",
     "tag": "Router · 2 × E1"
   },
   "2010": {
-    "nerd": "An MPLS core with 10–40G links, the first 100G arriving in 2010; packets are label-switched rather than looked up at every hop.",
+    "technical": "An MPLS core with 10–40G links, the first 100G arriving in 2010; packets are label-switched rather than looked up at every hop.",
     "tag": "MPLS · 10G"
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Multiprotocol_Label_Switching", "title": "MPLS", "level": "nerd", "eras": ["2010", "today"] }
+    { "url": "https://en.wikipedia.org/wiki/Multiprotocol_Label_Switching", "title": "MPLS", "level": "technical", "eras": ["2010", "today"] }
   ]
 }

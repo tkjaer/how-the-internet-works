@@ -1,12 +1,12 @@
 {
   "name": "Mobilcentral",
   "1995": {
-    "kid": "Mobilselskabets telefoncentral. Til en computers opkald har den et rack af modemmer: et af dem tager din bærbares data og bipper dem videre ud i det almindelige telefonnet, ligesom modemmet ved en computer derhjemme.",
-    "nerd": "Mobilcentralen (MSC) med sin interworking-funktion (IWF, GSM 09.07): IWF’en afslutter RLP og spiller byte’ne som et V.32-modem på 9,6 kbit/s ind i en PCM-luke på 64 kbit/s mod telefonnettet (eller, til et ISDN-nummer, sender dem digitalt, tilpasset med V.110). Stadig ingen IP: PPP kører inde i modemtonerne.",
+    "simple": "Mobilselskabets telefoncentral. Til en computers opkald har den et rack af modemmer: et af dem tager din bærbares data og bipper dem videre ud i det almindelige telefonnet, ligesom modemmet ved en computer derhjemme.",
+    "technical": "Mobilcentralen (MSC) med sin interworking-funktion (IWF, GSM 09.07): IWF’en afslutter RLP og spiller byte’ne som et V.32-modem på 9,6 kbit/s ind i en PCM-luke på 64 kbit/s mod telefonnettet (eller, til et ISDN-nummer, sender dem digitalt, tilpasset med V.110). Stadig ingen IP: PPP kører inde i modemtonerne.",
     "tag": "MSC · IWF · V.32",
     "peek": {
-      "kid": "Centralen åbner ikke din pakke. Dens modem laver den bærbares data om til bip og sender dem videre ned ad telefonlinjen.",
-      "nerd": "IWF’en fjerner RLP og modulerer bytestrømmen igen som V.32; PPP-rammerne indeni bliver båret, ikke læst."
+      "simple": "Centralen åbner ikke din pakke. Dens modem laver den bærbares data om til bip og sender dem videre ned ad telefonlinjen.",
+      "technical": "IWF’en fjerner RLP og modulerer bytestrømmen igen som V.32; PPP-rammerne indeni bliver båret, ikke læst."
     }
   }
 }

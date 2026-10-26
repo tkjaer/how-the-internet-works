@@ -1,7 +1,7 @@
 {
   "title": "Tunnel-kuverten",
-  "kid": "Mobilnettet laver en privat tunnel mellem masten og mobilkernen. Din pakke beholder den samme telefonadresse, mens den store tunnel-kuvert skifter omkring den.",
-  "nerd": "GTP-U bærer UE'ens IP-pakke gennem operatørens net. gNB og UPF/PGW bruger ydre IP plus UDP/2152 med en TEID, én pr. retning, hver valgt af den ende, der modtager på den, og en PDU Session Container-udvidelsesheader med QFI 9 (3GPP TS 29.281, 38.415).",
+  "simple": "Mobilnettet laver en privat tunnel mellem masten og mobilkernen. Din pakke beholder den samme telefonadresse, mens den store tunnel-kuvert skifter omkring den.",
+  "technical": "GTP-U bærer UE'ens IP-pakke gennem operatørens net. gNB og UPF/PGW bruger ydre IP plus UDP/2152 med en TEID, én pr. retning, hver valgt af den ende, der modtager på den, og en PDU Session Container-udvidelsesheader med QFI 9 (3GPP TS 29.281, 38.415).",
   "label": {
     "sameAddress": "Samme adresse!",
     "walk": "du kan gå",
@@ -18,26 +18,26 @@
   "at": {
     "cell-tower": {
       "title": "Masten åbner tunnelen",
-      "kid": "Ved masten kommer den store tunnel-kuvert af. Din pakke siger stadig 100.64.12.7, så masten kan sende den videre over radioen til din telefon.",
-      "nerd": "På downlink afslutter gNB'en GTP-U-strækningen fra UPF'en: ydre IP 10.20.0.1 → 10.20.0.5, UDP/2152, TEID 0x0000a17e (valgt af gNB'en). Den pakker UE-pakken til 100.64.12.7 ud og planlægger den på NR-radio. Ved handover giver SMF'en UPF'en den nye gNB's adresse og downlink-TEID; uplink-TEID'en kan blive, og UE-IP'en bliver ankret.",
+      "simple": "Ved masten kommer den store tunnel-kuvert af. Din pakke siger stadig 100.64.12.7, så masten kan sende den videre over radioen til din telefon.",
+      "technical": "På downlink afslutter gNB'en GTP-U-strækningen fra UPF'en: ydre IP 10.20.0.1 → 10.20.0.5, UDP/2152, TEID 0x0000a17e (valgt af gNB'en). Den pakker UE-pakken til 100.64.12.7 ud og planlægger den på NR-radio. Ved handover giver SMF'en UPF'en den nye gNB's adresse og downlink-TEID; uplink-TEID'en kan blive, og UE-IP'en bliver ankret.",
       "describe": {
-        "kid": "På vejen står telefonen, to master og mobilkernen ved en tyk tunnel. Tunnelmundingen ved masten er markeret. En stor tunnelkuvert bevæger sig mellem mast og kerne. Ved masten åbner den og viser pakken med adressen 100.64.12.7. Handover-kortet bøjer tunnelen til næste mast.",
-        "nerd": "gNB-enden af GTP-U-tunnelen er markeret på vejen med downlink-TEID 0x0000a17e. Kuverten bevæger sig mellem gNB og UPF. Ved masten åbner den og viser UE-pakken til 100.64.12.7. Handover-kortet flytter tunnelendepunktet, mens UE-IP’en bliver ankret."
+        "simple": "På vejen står telefonen, to master og mobilkernen ved en tyk tunnel. Tunnelmundingen ved masten er markeret. En stor tunnelkuvert bevæger sig mellem mast og kerne. Ved masten åbner den og viser pakken med adressen 100.64.12.7. Handover-kortet bøjer tunnelen til næste mast.",
+        "technical": "gNB-enden af GTP-U-tunnelen er markeret på vejen med downlink-TEID 0x0000a17e. Kuverten bevæger sig mellem gNB og UPF. Ved masten åbner den og viser UE-pakken til 100.64.12.7. Handover-kortet flytter tunnelendepunktet, mens UE-IP’en bliver ankret."
       }
     },
     "mobile-core": {
       "title": "Kernen åbner tunnelen",
-      "kid": "I mobilkernen åbnes tunnel-kuverten, og din pakke kan fortsætte ud på internettet. Selv når du går til næste mast, beholder telefonen den samme adresse.",
-      "nerd": "På uplink modtager UPF/PGW GTP-U fra gNB'en: ydre IP 10.20.0.5 → 10.20.0.1, UDP/2152, TEID 0x1f3a92c4 (valgt af UPF'en). Den pakker UE-pakken (100.64.12.7) ud, anvender politik/NAT og videresender den. Ved handover opdaterer UPF'en N3/S1-U-tunnelens endepunkt; UE-IP'en forbliver ankret.",
+      "simple": "I mobilkernen åbnes tunnel-kuverten, og din pakke kan fortsætte ud på internettet. Selv når du går til næste mast, beholder telefonen den samme adresse.",
+      "technical": "På uplink modtager UPF/PGW GTP-U fra gNB'en: ydre IP 10.20.0.5 → 10.20.0.1, UDP/2152, TEID 0x1f3a92c4 (valgt af UPF'en). Den pakker UE-pakken (100.64.12.7) ud, anvender politik/NAT og videresender den. Ved handover opdaterer UPF'en N3/S1-U-tunnelens endepunkt; UE-IP'en forbliver ankret.",
       "describe": {
-        "kid": "På vejen står telefonen, masterne og mobilkernen ved en tyk tunnel. Tunnelmundingen ved kernen er markeret. En tunnelkuvert går til kernen, åbner og viser adressen 100.64.12.7, og rejser tilbage. Handover-kortet beholder adressen, mens tunnelen bøjer mod næste mast.",
-        "nerd": "UPF- og mobilkerneenden er den markerede tunnelmunding med uplink-TEID 0x1f3a92c4 og UE-IP som anker. GTP-U-kuverten åbner i kernen og viser pakken 100.64.12.7. Handover-kortet viser N3- eller S1-U-endepunktet flytte sig uden at ændre UE-adressen."
+        "simple": "På vejen står telefonen, masterne og mobilkernen ved en tyk tunnel. Tunnelmundingen ved kernen er markeret. En tunnelkuvert går til kernen, åbner og viser adressen 100.64.12.7, og rejser tilbage. Handover-kortet beholder adressen, mens tunnelen bøjer mod næste mast.",
+        "technical": "UPF- og mobilkerneenden er den markerede tunnelmunding med uplink-TEID 0x1f3a92c4 og UE-IP som anker. GTP-U-kuverten åbner i kernen og viser pakken 100.64.12.7. Handover-kortet viser N3- eller S1-U-endepunktet flytte sig uden at ændre UE-adressen."
       }
     }
   },
   "2010": {
-    "kid": "Mobilnettet laver en privat tunnel mellem radiostyringen og mobilselskabets port (GGSN’en). Din pakke beholder den samme telefonadresse, mens den store tunnel-kuvert skifter omkring den.",
-    "nerd": "Med Direct Tunnel (3GPP Rel-7) bærer GTP-U telefonens IP-pakke fra RNC’en direkte til GGSN’en: ydre IP plus UDP/2152 med en TEID pr. retning, valgt af den modtagende ende (3GPP TS 29.060). Uden den sad SGSN’en i midten, og der var to tunneler.",
+    "simple": "Mobilnettet laver en privat tunnel mellem radiostyringen og mobilselskabets port (GGSN’en). Din pakke beholder den samme telefonadresse, mens den store tunnel-kuvert skifter omkring den.",
+    "technical": "Med Direct Tunnel (3GPP Rel-7) bærer GTP-U telefonens IP-pakke fra RNC’en direkte til GGSN’en: ydre IP plus UDP/2152 med en TEID pr. retning, valgt af den modtagende ende (3GPP TS 29.060). Uden den sad SGSN’en i midten, og der var to tunneler.",
     "label": {
       "toCore": "Til GGSN’en",
       "fromCore": "Tilbage til RNC’en"
@@ -48,25 +48,25 @@
     "at": {
       "rnc": {
         "title": "Radiostyringen åbner tunnelen",
-        "kid": "Ved radiostyringen kommer den store tunnel-kuvert af. Din pakke siger stadig 10.152.33.7, så styringen kan skære den i radiostykker og sende den gennem masten til din telefon.",
-        "nerd": "På downlink afslutter RNC’en GTP-U-tunnelen fra GGSN’en: ydre IP 10.30.0.1 → 10.30.4.9, UDP/2152, TEID 0x0000a17e (valgt af RNC’en). Den krypterer og segmenterer pakken til 10.152.33.7 i RLC og sender den over Iub til NodeB’en. At gå mellem master under samme RNC flytter ikke tunnelen; til en anden RNC flytter en SRNS-relocation dens ende, mens telefonens adresse bliver.",
+        "simple": "Ved radiostyringen kommer den store tunnel-kuvert af. Din pakke siger stadig 10.152.33.7, så styringen kan skære den i radiostykker og sende den gennem masten til din telefon.",
+        "technical": "På downlink afslutter RNC’en GTP-U-tunnelen fra GGSN’en: ydre IP 10.30.0.1 → 10.30.4.9, UDP/2152, TEID 0x0000a17e (valgt af RNC’en). Den krypterer og segmenterer pakken til 10.152.33.7 i RLC og sender den over Iub til NodeB’en. At gå mellem master under samme RNC flytter ikke tunnelen; til en anden RNC flytter en SRNS-relocation dens ende, mens telefonens adresse bliver.",
         "describe": {
-          "kid": "På vejen står telefonen, to radiostyringer og mobilselskabets port ved en tyk tunnel. Tunnelmundingen ved styringen er markeret. En stor tunnelkuvert bevæger sig mellem styring og port. Ved styringen åbner den og viser pakken med adressen 10.152.33.7. Handover-kortet bøjer tunnelen til næste styring.",
-          "nerd": "RNC-enden af GTP-U-tunnelen er markeret på vejen med downlink-TEID 0x0000a17e. Kuverten bevæger sig mellem RNC og GGSN. Ved RNC’en åbner den og viser telefonens pakke til 10.152.33.7. Handover-kortet viser en SRNS-relocation, der flytter tunnelendepunktet, mens telefonens IP bliver ankret."
+          "simple": "På vejen står telefonen, to radiostyringer og mobilselskabets port ved en tyk tunnel. Tunnelmundingen ved styringen er markeret. En stor tunnelkuvert bevæger sig mellem styring og port. Ved styringen åbner den og viser pakken med adressen 10.152.33.7. Handover-kortet bøjer tunnelen til næste styring.",
+          "technical": "RNC-enden af GTP-U-tunnelen er markeret på vejen med downlink-TEID 0x0000a17e. Kuverten bevæger sig mellem RNC og GGSN. Ved RNC’en åbner den og viser telefonens pakke til 10.152.33.7. Handover-kortet viser en SRNS-relocation, der flytter tunnelendepunktet, mens telefonens IP bliver ankret."
         }
       },
       "mobile-core": {
         "title": "Porten åbner tunnelen",
-        "kid": "Ved mobilselskabets port åbnes tunnel-kuverten, og din pakke kan fortsætte ud på internettet. Selv hvis du går langt, beholder telefonen den samme adresse.",
-        "nerd": "På uplink modtager GGSN’en GTP-U fra RNC’en: ydre IP 10.30.4.9 → 10.30.0.1, UDP/2152, TEID 0x1f3a92c4 (valgt af GGSN’en). Den pakker telefonens pakke (10.152.33.7) ud, anvender politik og NAT og sender den videre. Telefonens adresse er ankret her, så længe PDP-konteksten varer.",
+        "simple": "Ved mobilselskabets port åbnes tunnel-kuverten, og din pakke kan fortsætte ud på internettet. Selv hvis du går langt, beholder telefonen den samme adresse.",
+        "technical": "På uplink modtager GGSN’en GTP-U fra RNC’en: ydre IP 10.30.4.9 → 10.30.0.1, UDP/2152, TEID 0x1f3a92c4 (valgt af GGSN’en). Den pakker telefonens pakke (10.152.33.7) ud, anvender politik og NAT og sender den videre. Telefonens adresse er ankret her, så længe PDP-konteksten varer.",
         "describe": {
-          "kid": "På vejen står telefonen, radiostyringerne og mobilselskabets port ved en tyk tunnel. Portens tunnelmunding er markeret. En tunnelkuvert bevæger sig til porten, åbner og viser adressen 10.152.33.7 og rejser så tilbage. Handover-kortet beholder adressen, mens tunnelen bøjer til næste styring.",
-          "nerd": "GGSN-enden er den markerede tunnelmunding med uplink-TEID 0x1f3a92c4 og telefonens IP-anker. GTP-U-kuverten åbner ved GGSN’en og viser pakken 10.152.33.7. Handover-kortet viser Gn/Iu-PS-endepunktet, der flytter sig uden at ændre telefonens adresse."
+          "simple": "På vejen står telefonen, radiostyringerne og mobilselskabets port ved en tyk tunnel. Portens tunnelmunding er markeret. En tunnelkuvert bevæger sig til porten, åbner og viser adressen 10.152.33.7 og rejser så tilbage. Handover-kortet beholder adressen, mens tunnelen bøjer til næste styring.",
+          "technical": "GGSN-enden er den markerede tunnelmunding med uplink-TEID 0x1f3a92c4 og telefonens IP-anker. GTP-U-kuverten åbner ved GGSN’en og viser pakken 10.152.33.7. Handover-kortet viser Gn/Iu-PS-endepunktet, der flytter sig uden at ændre telefonens adresse."
         }
       }
     }
   },
   "learnMore": [
-    { "url": "https://da.wikipedia.org/wiki/Mobiltelefoni", "title": "Mobiltelefoni", "level": "kid" }
+    { "url": "https://da.wikipedia.org/wiki/Mobiltelefoni", "title": "Mobiltelefoni", "level": "simple" }
   ]
 }

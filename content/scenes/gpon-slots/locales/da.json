@@ -1,25 +1,25 @@
 {
   "title": "XGS-PON: kuverter på delt fiber",
-  "kid": "En fiber kan deles af mange hjem. Hjemad hører alle huse kuverterne, men din router beholder kun den med dit husnummer. Udad skiftes husene.",
-  "nerd": "Dette er en XGS-PON XGEM-ramme på et PON: omkring 10 Gbit/s hver vej (9,953), delt mellem hjemmene på splitteren. Nedstrøms sendes den ud til alle med AES pr. XGEM-port; opstrøms sender hver ONT et kort burst i sit eget slot inde i hver 125 µs-ramme, som OLT'ens BWmap tildeler efter ranging.",
+  "simple": "En fiber kan deles af mange hjem. Hjemad hører alle huse kuverterne, men din router beholder kun den med dit husnummer. Udad skiftes husene.",
+  "technical": "Dette er en XGS-PON XGEM-ramme på et PON: omkring 10 Gbit/s hver vej (9,953), delt mellem hjemmene på splitteren. Nedstrøms sendes den ud til alle med AES pr. XGEM-port; opstrøms sender hver ONT et kort burst i sit eget slot inde i hver 125 µs-ramme, som OLT'ens BWmap tildeler efter ranging.",
   "extra": "Den ældre GPON kan dele denne fiber og splitter: den bruger andre farver (1490 nm ned, 1310 nm op, ved siden af XGS-PON's 1577 og 1270 nm), så hver ONT filtrerer det lys fra, den ikke taler. Den kører 2,5 Gbit/s ned og 1,25 op efter samme idé, men dens GEM-header er 5 bytes med et 12-bit port-ID, hvor XGEM's er 8 bytes med 16.",
   "role": {
     "nat": {
       "title": "Din router beholder sit husnummer",
-      "kid": "Din router hører den delte fiber, men den beholder kun lys-kuverten med Hus nr. 1127. De andre er stadig låst. Nedenunder rejser kuverten som lysglimt i en glastråd.",
-      "nerd": "Ved ONT'en/routeren kommer nedstrøms XGEM-rammer til alle ONT'er fra splitteren. Denne ONT accepterer XGEM-port-ID 1127, kasserer andre port-ID'er og bruger AES pr. port til privatliv.",
+      "simple": "Din router hører den delte fiber, men den beholder kun lys-kuverten med Hus nr. 1127. De andre er stadig låst. Nedenunder rejser kuverten som lysglimt i en glastråd.",
+      "technical": "Ved ONT'en/routeren kommer nedstrøms XGEM-rammer til alle ONT'er fra splitteren. Denne ONT accepterer XGEM-port-ID 1127, kasserer andre port-ID'er og bruger AES pr. port til privatliv.",
       "describe": {
-        "kid": "Vejen peger på din router. Ét kort viser fiberterminalen, en splitter og fire huse. Lyskuverter går til alle huse, men kun den med 1127 åbner ved din router. Naboernes kuverter forbliver låst. Et andet kort viser tur-striben med slot 3 tændt.",
-        "nerd": "ONT- og routervisningen fremhæver nedstrøms XGEM-port-ID 1127 i headeren. Broadcast-kuverter spredes gennem splitteren. Andre XGEM-rammer forbliver låst, og den accepterede får flueben. Upstream-kortet viser slots i én ramme på 125 mikrosekunder med tur 0x467 markeret."
+        "simple": "Vejen peger på din router. Ét kort viser fiberterminalen, en splitter og fire huse. Lyskuverter går til alle huse, men kun den med 1127 åbner ved din router. Naboernes kuverter forbliver låst. Et andet kort viser tur-striben med slot 3 tændt.",
+        "technical": "ONT- og routervisningen fremhæver nedstrøms XGEM-port-ID 1127 i headeren. Broadcast-kuverter spredes gennem splitteren. Andre XGEM-rammer forbliver låst, og den accepterede får flueben. Upstream-kortet viser slots i én ramme på 125 mikrosekunder med tur 0x467 markeret."
       }
     },
     "bridge": {
       "title": "Fiberterminalen deler ture ud",
-      "kid": "Fiberterminalen bestemmer over den delte fiber. Den sender en lille køreplan, så hvert hus ved, hvornår det må tale, uden at nogen taler oven i hinanden.",
-      "nerd": "Ved OLT'en bærer downstream-rammen en BWmap. Upstream-bursts bruger Alloc-ID'er/T-CONTs, DBA-tildelinger og ranging med equalisation delay, så nære og fjerne ONT'er lander i deres slots i hver 125 µs-ramme.",
+      "simple": "Fiberterminalen bestemmer over den delte fiber. Den sender en lille køreplan, så hvert hus ved, hvornår det må tale, uden at nogen taler oven i hinanden.",
+      "technical": "Ved OLT'en bærer downstream-rammen en BWmap. Upstream-bursts bruger Alloc-ID'er/T-CONTs, DBA-tildelinger og ranging med equalisation delay, så nære og fjerne ONT'er lander i deres slots i hver 125 µs-ramme.",
       "describe": {
-        "kid": "Scenen er ved fiberterminalen, med kort for den delte fiber. Ét kort sender kuverter gennem splitteren i gadeskabet til fire huse. Tur-kortet er aktivt. Køreplanen er delt i fire slots, slot 3 lyser, og små bursts falder ned i deres ture én efter én.",
-        "nerd": "OLT-visningen gør upstream-planlæggerkortet aktivt. Fire slots deler en ramme på 125 mikrosekunder, og Alloc-ID 0x467 er markeret. Prikker og bursts går gennem tildelingerne. Downstream-kortet viser stadig splitter-broadcast og XGEM-port-ID 1127."
+        "simple": "Scenen er ved fiberterminalen, med kort for den delte fiber. Ét kort sender kuverter gennem splitteren i gadeskabet til fire huse. Tur-kortet er aktivt. Køreplanen er delt i fire slots, slot 3 lyser, og små bursts falder ned i deres ture én efter én.",
+        "technical": "OLT-visningen gør upstream-planlæggerkortet aktivt. Fire slots deler en ramme på 125 mikrosekunder, og Alloc-ID 0x467 er markeret. Prikker og bursts går gennem tildelingerne. Downstream-kortet viser stadig splitter-broadcast og XGEM-port-ID 1127."
       }
     }
   },
@@ -43,13 +43,13 @@
     "header": "XGEM-header",
     "payload": "videobytes",
     "equalDelay": "equalisation delay",
-    "nerdGrant": "BWmap · 0x467 · ranging"
+    "technicalGrant": "BWmap · 0x467 · ranging"
   },
   "field": {
     "pli": "PLI {value}",
     "keyidx": "Nøgleindeks 01",
-    "portKid": "Hus nr. 1127",
-    "portNerd": "Port-ID 1127",
+    "portSimple": "Hus nr. 1127",
+    "portTechnical": "Port-ID 1127",
     "optlf": "Valgfrit 0 · LF 1",
     "hec": "HEC {value}"
   },

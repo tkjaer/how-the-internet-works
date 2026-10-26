@@ -1,11 +1,11 @@
 {
   "name": "Hjemme, via telefonlinjen",
   "access": "Bærbar på Wi‑Fi",
-  "kid": "Pakkerne suser gennem luften, ned ad et kabel til routeren og så langs den gamle kobbertelefonlinje som små toner ud til et skab på din gade – og videoen kommer tilbage samme vej!",
-  "nerd": "Det samme hjemmenetværk, men routerens uplink er VDSL2: DMT-toner på kobbertelefonparret til en DSLAM i gadeskabet et par hundrede meter væk og derefter fiber til udbyderen.",
+  "simple": "Pakkerne suser gennem luften, ned ad et kabel til routeren og så langs den gamle kobbertelefonlinje som små toner ud til et skab på din gade – og videoen kommer tilbage samme vej!",
+  "technical": "Det samme hjemmenetværk, men routerens uplink er VDSL2: DMT-toner på kobbertelefonparret til en DSLAM i gadeskabet et par hundrede meter væk og derefter fiber til udbyderen.",
   "describe": {
-    "kid": "Et gennemskåret hus ligger mellem grønne bakker med en gammel telefon på et lille bord og en skydetelefon glemt i sofaen. Din bærbare med et stjerneklistermærke sender pakker med Wi‑Fi til adgangspunktet, med kabel til routeren og så ad telefonlinjen til internetskyen. Forespørgsler går ud, og video kommer tilbage.",
-    "nerd": "Hjemmevisningen viser LAN-ruten fra bærbar til adgangspunkt og router, hvis uplink er kobbertelefonlinjen (VDSL2). Fastnettelefonen deler det samme par. Et strejf af 2010: en skydetelefon i sofaen og en ekstra antenne på routeren. Pakker går op over Wi‑Fi, Ethernet og VDSL; video kommer samme vej tilbage."
+    "simple": "Et gennemskåret hus ligger mellem grønne bakker med en gammel telefon på et lille bord og en skydetelefon glemt i sofaen. Din bærbare med et stjerneklistermærke sender pakker med Wi‑Fi til adgangspunktet, med kabel til routeren og så ad telefonlinjen til internetskyen. Forespørgsler går ud, og video kommer tilbage.",
+    "technical": "Hjemmevisningen viser LAN-ruten fra bærbar til adgangspunkt og router, hvis uplink er kobbertelefonlinjen (VDSL2). Fastnettelefonen deler det samme par. Et strejf af 2010: en skydetelefon i sofaen og en ekstra antenne på routeren. Pakker går op over Wi‑Fi, Ethernet og VDSL; video kommer samme vej tilbage."
   },
   "tag": {
     "laptop": "Wi-Fi 4 · 192.168.1.23",
@@ -14,17 +14,17 @@
   },
   "stop": {
     "laptop": {
-      "kid": "Omkring 2010 gik man på nettet med en bærbar, uden kabel: dens Wi‑Fi sender dine pakker gennem luften til boksen på væggen.",
-      "nerd": "En bærbar med et 802.11n-kort (Wi‑Fi 4), nogle titals Mbit/s i luften: mere end DSL-linjen bagved kunne bære. Den fik 192.168.1.23 af routeren via DHCP."
+      "simple": "Omkring 2010 gik man på nettet med en bærbar, uden kabel: dens Wi‑Fi sender dine pakker gennem luften til boksen på væggen.",
+      "technical": "En bærbar med et 802.11n-kort (Wi‑Fi 4), nogle titals Mbit/s i luften: mere end DSL-linjen bagved kunne bære. Den fik 192.168.1.23 af routeren via DHCP."
     },
     "router": {
-      "kid": "Routeren er hjemmets hoveddør. Den skriver dit hjems adresse på pakken, og dens modem synger den ud ad telefonlinjen.",
-      "nerd": "NAT omskriver 192.168.1.23 til den offentlige 203.0.113.7; det indbyggede VDSL2-modem sender så rammerne som DMT-toner på telefonparret."
+      "simple": "Routeren er hjemmets hoveddør. Den skriver dit hjems adresse på pakken, og dens modem synger den ud ad telefonlinjen.",
+      "technical": "NAT omskriver 192.168.1.23 til den offentlige 203.0.113.7; det indbyggede VDSL2-modem sender så rammerne som DMT-toner på telefonparret."
     }
   },
   "inside": {
     "internet": {
-      "nerd": "Adgangsnet (VDSL2 fra en DSLAM i gadeskabet), et aggregeringslag (L2-backhaul til BNG’en), udbyderens MPLS-kerne og derefter enten peering uden afregning i et IXP eller betalt transit – og til sidst en CDN-cache tæt på dig. Hvert farvet felt er én operatørs net."
+      "technical": "Adgangsnet (VDSL2 fra en DSLAM i gadeskabet), et aggregeringslag (L2-backhaul til BNG’en), udbyderens MPLS-kerne og derefter enten peering uden afregning i et IXP eller betalt transit – og til sidst en CDN-cache tæt på dig. Hvert farvet felt er én operatørs net."
     }
   },
   "learnMore": [

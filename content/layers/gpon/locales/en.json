@@ -1,11 +1,11 @@
 {
   "name": {
-    "kid": "Light envelope",
-    "nerd": "XGS-PON frame (XGEM)"
+    "simple": "Light envelope",
+    "technical": "XGS-PON frame (XGEM)"
   },
   "note": {
-    "kid": "Everyone on your street shares the same fibre, so each house only opens envelopes with its own number.",
-    "nerd": "Downstream is broadcast to every ONT on the splitter and AES-encrypted per XGEM port; upstream uses time slots."
+    "simple": "Everyone on your street shares the same fibre, so each house only opens envelopes with its own number.",
+    "technical": "Downstream is broadcast to every ONT on the splitter and AES-encrypted per XGEM port; upstream uses time slots."
   },
   "line": "XGEM (XG-PON Encapsulation Method), Port-ID {port}, length {pli}",
   "field": {
@@ -19,8 +19,8 @@
     },
     "port": {
       "name": {
-        "kid": "House no.",
-        "nerd": "XGEM Port-ID"
+        "simple": "House no.",
+        "technical": "XGEM Port-ID"
       },
       "about": "Everyone on the splitter hears every frame going down; each ONT only keeps its own Port-IDs."
     },
@@ -38,7 +38,7 @@
     }
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/10G-PON", "title": "XGS-PON", "level": "nerd" },
-    { "url": "https://www.itu.int/rec/T-REC-G.9807.1", "title": "ITU-T G.9807.1 (XGS-PON)", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/10G-PON", "title": "XGS-PON", "level": "technical" },
+    { "url": "https://www.itu.int/rec/T-REC-G.9807.1", "title": "ITU-T G.9807.1 (XGS-PON)", "level": "technical" }
   ]
 }

@@ -6,7 +6,7 @@ export default defineLayer({
     // a NAT rewrites the source port (or the destination port on the way back); routers hash both (ECMP)
     { id: 'sport', bits: 16, value: '{sport}', use: ['router', 'nat', 'endpoint'] },
     { id: 'dport', bits: 16, value: '{dport}', use: ['router', 'nat', 'endpoint'] },
-    { id: 'seq', bits: 32, value: { up: '3920417111', down: '1120598433' }, use: ['endpoint'], kid: { up: '1', down: '42' } },
+    { id: 'seq', bits: 32, value: { up: '3920417111', down: '1120598433' }, use: ['endpoint'], simple: { up: '1', down: '42' } },
     // the server acknowledges the whole request: its seq plus the bytes it carried
     { id: 'ack', bits: 32, value: { up: '1120598433', down: '{ack}' }, use: ['endpoint'] },
     { id: 'offset', bits: 4, value: '5 (20 bytes)' },

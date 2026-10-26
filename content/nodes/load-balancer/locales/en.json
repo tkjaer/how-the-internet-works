@@ -1,14 +1,14 @@
 {
   "name": "Load balancer",
-  "kid": "A traffic warden. Lots of computers could answer, so it picks one that isn’t busy, and sends every parcel of your video to that same one.",
-  "nerd": "An L4 load balancer holds the service address (VIP). It hashes each connection’s 5-tuple onto a healthy backend (consistent hashing), so every packet of one TCP connection reaches the same server; health checks take broken servers out.",
+  "simple": "A traffic warden. Lots of computers could answer, so it picks one that isn’t busy, and sends every parcel of your video to that same one.",
+  "technical": "An L4 load balancer holds the service address (VIP). It hashes each connection’s 5-tuple onto a healthy backend (consistent hashing), so every packet of one TCP connection reaches the same server; health checks take broken servers out.",
   "tag": "L4 · VIP · consistent hash",
   "2010": {
-    "nerd": "A hardware load balancer (an appliance such as F5’s BIG-IP, or a card in the aggregation switch) holds the service address (VIP). It keeps a table of connections and sends every packet of one TCP connection to the same healthy server; health checks take broken servers out.",
+    "technical": "A hardware load balancer (an appliance such as F5’s BIG-IP, or a card in the aggregation switch) holds the service address (VIP). It keeps a table of connections and sends every packet of one TCP connection to the same healthy server; health checks take broken servers out.",
     "tag": "L4–7 appliance · VIP"
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Load_balancing_(computing)", "title": "Load balancing", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/Consistent_hashing", "title": "Consistent hashing", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Consistent_hashing", "title": "Consistent hashing", "level": "technical" }
   ]
 }

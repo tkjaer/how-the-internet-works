@@ -1,155 +1,155 @@
 {
   "title": "The phone-call envelope",
-  "kid": "On a dial-up call your parcels travel in a phone-call envelope. Only your computer and the internet company’s modem open it; the telephone exchange in between just passes the sound along. Before any parcel goes, the two ends say hello: they agree how to talk, check who you are, and give your computer its address.",
-  "nerd": "PPP (RFC 1661) in HDLC-like framing (RFC 1662): 0x7E flags, address 0xFF and control 0x03 (often compressed away by LCP), a protocol number (0x0021 for IPv4) and a frame check. LCP opens the link and agrees MRU and options, CHAP authenticates with a challenge and a hash (PAP, also common in 1995, just sent the password), and IPCP assigns the address. Then IPv4 packets ride in the frames until someone hangs up.",
+  "simple": "On a dial-up call your parcels travel in a phone-call envelope. Only your computer and the internet company’s modem open it; the telephone exchange in between just passes the sound along. Before any parcel goes, the two ends say hello: they agree how to talk, check who you are, and give your computer its address.",
+  "technical": "PPP (RFC 1661) in HDLC-like framing (RFC 1662): 0x7E flags, address 0xFF and control 0x03 (often compressed away by LCP), a protocol number (0x0021 for IPv4) and a frame check. LCP opens the link and agrees MRU and options, CHAP authenticates with a challenge and a hash (PAP, also common in 1995, just sent the password), and IPCP assigns the address. Then IPv4 packets ride in the frames until someone hangs up.",
   "describe": {
-    "kid": "Your computer and the internet company’s modem sit at the two ends of a phone line, with an envelope going back and forth. One card takes the envelope apart: start, address, what’s inside, your parcel, a check and end. The other card shows the hello: how to talk, who are you, and which address you get.",
-    "nerd": "The two PPP endpoints sit at the ends of the call while a frame shuttles between them. One card lists the frame: flag 7E, address FF and control 03, protocol 0021, the IP packet, FCS and flag. The other plays LCP configure, CHAP challenge and response, and IPCP handing out 203.0.113.7."
+    "simple": "Your computer and the internet company’s modem sit at the two ends of a phone line, with an envelope going back and forth. One card takes the envelope apart: start, address, what’s inside, your parcel, a check and end. The other card shows the hello: how to talk, who are you, and which address you get.",
+    "technical": "The two PPP endpoints sit at the ends of the call while a frame shuttles between them. One card lists the frame: flag 7E, address FF and control 03, protocol 0021, the IP packet, FCS and flag. The other plays LCP configure, CHAP challenge and response, and IPCP handing out 203.0.113.7."
   },
   "online": {
-    "kid": "Online!",
-    "nerd": "IPCP up: IP flows"
+    "simple": "Online!",
+    "technical": "IPCP up: IP flows"
   },
   "frameTitle": {
-    "kid": "Inside the envelope",
-    "nerd": "PPP frame (RFC 1662)"
+    "simple": "Inside the envelope",
+    "technical": "PPP frame (RFC 1662)"
   },
   "part": {
     "flag": {
-      "kid": "Start or end here",
-      "nerd": "Flag"
+      "simple": "Start or end here",
+      "technical": "Flag"
     },
     "address": {
-      "kid": "To the other end",
-      "nerd": "Address, control"
+      "simple": "To the other end",
+      "technical": "Address, control"
     },
     "proto": {
-      "kid": "Says: an IP parcel",
-      "nerd": "Protocol: IPv4"
+      "simple": "Says: an IP parcel",
+      "technical": "Protocol: IPv4"
     },
     "packet": {
-      "kid": "Your parcel",
-      "nerd": "The IP packet"
+      "simple": "Your parcel",
+      "technical": "The IP packet"
     },
     "fcs": {
-      "kid": "A check, for crackles",
-      "nerd": "Frame check (CRC)"
+      "simple": "A check, for crackles",
+      "technical": "Frame check (CRC)"
     }
   },
   "helloTitle": {
-    "kid": "Saying hello",
-    "nerd": "LCP, CHAP, IPCP"
+    "simple": "Saying hello",
+    "technical": "LCP, CHAP, IPCP"
   },
   "talk": {
     "lcp": {
       "ask": {
-        "kid": "Shall we talk like this?",
-        "nerd": "LCP Configure-Request"
+        "simple": "Shall we talk like this?",
+        "technical": "LCP Configure-Request"
       },
       "answer": {
-        "kid": "Yes, let’s!",
-        "nerd": "Configure-Ack"
+        "simple": "Yes, let’s!",
+        "technical": "Configure-Ack"
       }
     },
     "chap": {
       "ask": {
-        "kid": "Who are you? Prove it!",
-        "nerd": "CHAP Challenge"
+        "simple": "Who are you? Prove it!",
+        "technical": "CHAP Challenge"
       },
       "answer": {
-        "kid": "It’s me, here’s my secret sum",
-        "nerd": "Response: MD5 hash"
+        "simple": "It’s me, here’s my secret sum",
+        "technical": "Response: MD5 hash"
       }
     },
     "ipcp": {
       "ask": {
-        "kid": "Which address can I have?",
-        "nerd": "IPCP Request: 0.0.0.0"
+        "simple": "Which address can I have?",
+        "technical": "IPCP Request: 0.0.0.0"
       },
       "answer": {
-        "kid": "You’re 203.0.113.7",
-        "nerd": "Nak: use 203.0.113.7"
+        "simple": "You’re 203.0.113.7",
+        "technical": "Nak: use 203.0.113.7"
       }
     }
   },
   "hdlc": {
     "title": "The rented line’s envelope",
-    "kid": "On a rented line between two internet companies, your parcel travels in a plain envelope: where it starts, what’s inside, a check, where it ends. There’s no logging in: the line is theirs all the time. Every ten seconds each router calls “still there?” so they notice at once if the line breaks.",
-    "nerd": "Cisco HDLC, the default on Cisco serial ports: 0x7E flags, address 0x0F (unicast), control 0x00, a two-byte EtherType (0x0800 for IPv4), the packet and a 16-bit FCS. No authentication or negotiation: SLARP keepalives every 10 s carry sequence numbers both ways, and three missed ones take the line protocol down.",
+    "simple": "On a rented line between two internet companies, your parcel travels in a plain envelope: where it starts, what’s inside, a check, where it ends. There’s no logging in: the line is theirs all the time. Every ten seconds each router calls “still there?” so they notice at once if the line breaks.",
+    "technical": "Cisco HDLC, the default on Cisco serial ports: 0x7E flags, address 0x0F (unicast), control 0x00, a two-byte EtherType (0x0800 for IPv4), the packet and a 16-bit FCS. No authentication or negotiation: SLARP keepalives every 10 s carry sequence numbers both ways, and three missed ones take the line protocol down.",
     "describe": {
-      "kid": "Two routers sit at the ends of a rented line, with an envelope going back and forth. One card takes the envelope apart: start, address, what’s inside, your parcel, a check and end. The other card shows the routers checking on each other, and a parcel going across.",
-      "nerd": "Two routers at the ends of a leased line exchange Cisco HDLC frames. One card lists the frame: flag 7E, address 0F and control 00, type 0800, the IP packet, FCS and flag. The other plays SLARP keepalives each way with their sequence numbers, then an IP packet."
+      "simple": "Two routers sit at the ends of a rented line, with an envelope going back and forth. One card takes the envelope apart: start, address, what’s inside, your parcel, a check and end. The other card shows the routers checking on each other, and a parcel going across.",
+      "technical": "Two routers at the ends of a leased line exchange Cisco HDLC frames. One card lists the frame: flag 7E, address 0F and control 00, type 0800, the IP packet, FCS and flag. The other plays SLARP keepalives each way with their sequence numbers, then an IP packet."
     },
     "online": {
-      "kid": "Line up!",
-      "nerd": "Line protocol is up"
+      "simple": "Line up!",
+      "technical": "Line protocol is up"
     },
     "frameTitle": {
-      "kid": "Inside the envelope",
-      "nerd": "Cisco HDLC frame"
+      "simple": "Inside the envelope",
+      "technical": "Cisco HDLC frame"
     },
     "part": {
       "flag": {
-        "kid": "Start or end here",
-        "nerd": "Flag"
+        "simple": "Start or end here",
+        "technical": "Flag"
       },
       "address": {
-        "kid": "To the other end",
-        "nerd": "Address, control"
+        "simple": "To the other end",
+        "technical": "Address, control"
       },
       "proto": {
-        "kid": "Says: an IP parcel",
-        "nerd": "Type: IPv4"
+        "simple": "Says: an IP parcel",
+        "technical": "Type: IPv4"
       },
       "packet": {
-        "kid": "Your parcel",
-        "nerd": "The IP packet"
+        "simple": "Your parcel",
+        "technical": "The IP packet"
       },
       "fcs": {
-        "kid": "A check, for crackles",
-        "nerd": "Frame check (CRC-16)"
+        "simple": "A check, for crackles",
+        "technical": "Frame check (CRC-16)"
       }
     },
     "helloTitle": {
-      "kid": "Still there?",
-      "nerd": "Keepalives, then data"
+      "simple": "Still there?",
+      "technical": "Keepalives, then data"
     },
     "talk": {
       "keep": {
         "ask": {
-          "kid": "Still there?",
-          "nerd": "SLARP keepalive: mine 41, seen 17"
+          "simple": "Still there?",
+          "technical": "SLARP keepalive: mine 41, seen 17"
         },
         "answer": {
-          "kid": "Yes, still here!",
-          "nerd": "Keepalive: mine 18, seen 41"
+          "simple": "Yes, still here!",
+          "technical": "Keepalive: mine 18, seen 41"
         }
       },
       "again": {
         "ask": {
-          "kid": "And you, still there?",
-          "nerd": "Keepalive: mine 19, seen 41"
+          "simple": "And you, still there?",
+          "technical": "Keepalive: mine 19, seen 41"
         },
         "answer": {
-          "kid": "Still here!",
-          "nerd": "Keepalive: mine 42, seen 19"
+          "simple": "Still here!",
+          "technical": "Keepalive: mine 42, seen 19"
         }
       },
       "data": {
         "ask": {
-          "kid": "Here’s a parcel",
-          "nerd": "IP packet, type 0800"
+          "simple": "Here’s a parcel",
+          "technical": "IP packet, type 0800"
         },
         "answer": {
-          "kid": "Got it, here’s one back",
-          "nerd": "IP packet back"
+          "simple": "Got it, here’s one back",
+          "technical": "IP packet back"
         }
       }
     }
   },
   "learnMore": [
-    { "url": "https://simple.wikipedia.org/wiki/Point-to-Point_Protocol", "title": "Point-to-Point Protocol", "level": "kid" },
-    { "url": "https://www.rfc-editor.org/rfc/rfc1661", "title": "RFC 1661: PPP", "level": "nerd" },
-    { "url": "https://www.rfc-editor.org/rfc/rfc1662", "title": "RFC 1662: PPP in HDLC-like framing", "level": "nerd" }
+    { "url": "https://simple.wikipedia.org/wiki/Point-to-Point_Protocol", "title": "Point-to-Point Protocol", "level": "simple" },
+    { "url": "https://www.rfc-editor.org/rfc/rfc1661", "title": "RFC 1661: PPP", "level": "technical" },
+    { "url": "https://www.rfc-editor.org/rfc/rfc1662", "title": "RFC 1662: PPP in HDLC-like framing", "level": "technical" }
   ]
 }

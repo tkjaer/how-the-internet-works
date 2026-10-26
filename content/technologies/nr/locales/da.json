@@ -1,7 +1,7 @@
 {
   "name": "5G",
-  "kid": "Din telefon taler med masten via radio. Masten sigter en stråle direkte mod din telefon, så mange telefoner kan tale samtidig.",
-  "nerd": "5G NR i 3,5 GHz-båndet: OFDMA med 30 kHz-underbærebølger, stråleformet af et massive MIMO-panel og planlagt i hver 0,5 ms-slot.",
+  "simple": "Din telefon taler med masten via radio. Masten sigter en stråle direkte mod din telefon, så mange telefoner kan tale samtidig.",
+  "technical": "5G NR i 3,5 GHz-båndet: OFDMA med 30 kHz-underbærebølger, stråleformet af et massive MIMO-panel og planlagt i hver 0,5 ms-slot.",
   "tag": "NR · 100 MHz · 256-QAM",
   "learnMore": [
     { "url": "https://da.wikipedia.org/wiki/5G", "title": "5G", "level": "both" }

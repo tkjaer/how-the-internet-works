@@ -1,10 +1,10 @@
 {
   "name": "Load balancer",
-  "kid": "En trafikbetjent. Mange computere kunne svare, så den vælger én, der ikke har travlt, og sender alle pakkerne til din video til den samme.",
-  "nerd": "En L4-load balancer ejer serviceadressen (VIP). Den hasher hver forbindelses 5-tupel til en rask backend (konsistent hashing), så alle pakker i én TCP-forbindelse når samme server; sundhedstjek tager defekte servere ud.",
+  "simple": "En trafikbetjent. Mange computere kunne svare, så den vælger én, der ikke har travlt, og sender alle pakkerne til din video til den samme.",
+  "technical": "En L4-load balancer ejer serviceadressen (VIP). Den hasher hver forbindelses 5-tupel til en rask backend (konsistent hashing), så alle pakker i én TCP-forbindelse når samme server; sundhedstjek tager defekte servere ud.",
   "tag": "L4 · VIP · konsistent hash",
   "2010": {
-    "nerd": "En hardware-load balancer (en boks som F5’s BIG-IP eller et kort i aggregeringsswitchen) ejer serviceadressen (VIP). Den fører en tabel over forbindelser og sender alle pakker i én TCP-forbindelse til den samme raske server; sundhedstjek tager defekte servere ud.",
+    "technical": "En hardware-load balancer (en boks som F5’s BIG-IP eller et kort i aggregeringsswitchen) ejer serviceadressen (VIP). Den fører en tabel over forbindelser og sender alle pakker i én TCP-forbindelse til den samme raske server; sundhedstjek tager defekte servere ud.",
     "tag": "L4–7-boks · VIP"
   }
 }

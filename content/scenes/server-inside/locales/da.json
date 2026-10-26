@@ -1,150 +1,150 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Inde i videoserveren",
-  "kid": "Videoserveren er en computer, der gemmer populære videoer tæt på dig. Lyset fra datacenterets forbindelse bliver til bits på netkortet. Video-appen kigger på hylderne; hvis stykket er der, sender den det straks tilbage. Hvis ikke, spørger den hovedkopien langt væk, gemmer en kopi og sender så din.",
-  "nerd": "En CDN-cache-server tager fiberen ind på et NIC, og cachesoftwaren kører som regel direkte på hardwaren (fx FreeBSD + NGINX) og sender varme objekter fra RAM og NVMe direkte til NIC’et. Appen slår først op i RAM-cachen, så på NVMe-SSD’erne. HIT serveres lokalt; MISS henter fra origin, gemmer en kopi efter cache-control og TTL og svarer derefter.",
+  "simple": "Videoserveren er en computer, der gemmer populære videoer tæt på dig. Lyset fra datacenterets forbindelse bliver til bits på netkortet. Video-appen kigger på hylderne; hvis stykket er der, sender den det straks tilbage. Hvis ikke, spørger den hovedkopien langt væk, gemmer en kopi og sender så din.",
+  "technical": "En CDN-cache-server tager fiberen ind på et NIC, og cachesoftwaren kører som regel direkte på hardwaren (fx FreeBSD + NGINX) og sender varme objekter fra RAM og NVMe direkte til NIC’et. Appen slår først op i RAM-cachen, så på NVMe-SSD’erne. HIT serveres lokalt; MISS henter fra origin, gemmer en kopi efter cache-control og TTL og svarer derefter.",
   "describe": {
-    "kid": "Et åbent serverkabinet viser netkort, computeren, hukommelse og videohylder. En forespørgsel kommer ind som lys og når video-appen. Så sender hylden enten et filmstykke tilbage, eller også spørger den først hovedkopien langt væk.",
-    "nerd": "Den åbne cache-server viser NIC, host-CPU med cache-appen på bart metal, RAM og NVMe-SSD-cache. Forespørgslen kommer ind på fiber og når den markerede app. Ved hit sendes et videosegment fra cache; ved miss går turen til origin, en kopi gemmes, og svaret sendes tilbage."
+    "simple": "Et åbent serverkabinet viser netkort, computeren, hukommelse og videohylder. En forespørgsel kommer ind som lys og når video-appen. Så sender hylden enten et filmstykke tilbage, eller også spørger den først hovedkopien langt væk.",
+    "technical": "Den åbne cache-server viser NIC, host-CPU med cache-appen på bart metal, RAM og NVMe-SSD-cache. Forespørgslen kommer ind på fiber og når den markerede app. Ved hit sendes et videosegment fra cache; ved miss går turen til origin, en kopi gemmes, og svaret sendes tilbage."
   },
   "app": "Video-app",
   "hit": {
-    "kid": "Den var der!",
-    "nerd": "HIT · serveret fra cache"
+    "simple": "Den var der!",
+    "technical": "HIT · serveret fra cache"
   },
   "miss": {
-    "kid": "Ikke her: spørg hovedkopien",
-    "nerd": "MISS · hent fra origin, gem kopi"
+    "simple": "Ikke her: spørg hovedkopien",
+    "technical": "MISS · hent fra origin, gem kopi"
   },
   "origin": {
-    "kid": "Hovedkopi langt væk",
-    "nerd": "Origin har 3 kopier"
+    "simple": "Hovedkopi langt væk",
+    "technical": "Origin har 3 kopier"
   },
   "nic": {
     "title": {
-      "kid": "Netkort",
-      "nerd": "NIC 2×100G"
+      "simple": "Netkort",
+      "technical": "NIC 2×100G"
     },
     "line": {
-      "kid": "Lys → bits",
-      "nerd": "Fiberframes → DMA"
+      "simple": "Lys → bits",
+      "technical": "Fiberframes → DMA"
     }
   },
   "compute": {
     "title": {
-      "kid": "Computeren",
-      "nerd": "Host-CPU"
+      "simple": "Computeren",
+      "technical": "Host-CPU"
     },
     "line": {
-      "kid": "Kører video-appen",
-      "nerd": "Cache-app på bart metal"
+      "simple": "Kører video-appen",
+      "technical": "Cache-app på bart metal"
     }
   },
   "memory": {
     "title": {
-      "kid": "Hukommelse",
-      "nerd": "RAM-cache"
+      "simple": "Hukommelse",
+      "technical": "RAM-cache"
     },
     "line": {
-      "kid": "Hurtig hylde",
-      "nerd": "Varme objekter i RAM"
+      "simple": "Hurtig hylde",
+      "technical": "Varme objekter i RAM"
     }
   },
   "ssd": {
     "title": {
-      "kid": "SSD-hylder",
-      "nerd": "NVMe-SSD-cache"
+      "simple": "SSD-hylder",
+      "technical": "NVMe-SSD-cache"
     },
     "line": {
-      "kid": "Hylder med videoer",
-      "nerd": "Cache-objekter på disk"
+      "simple": "Hylder med videoer",
+      "technical": "Cache-objekter på disk"
     }
   },
   "1995": {
     "title": "Inde i webserveren",
-    "kid": "Hjemmesiden er denne ene computer, en høj beige kasse på en hylde. Din forespørgsel kommer ind fra hubbens kabel til netkortet, og webprogrammet beder harddisken om siden. Disken snurrer, armen læser siden, og den går samme vej ud igen. Bagefter det samme for billedet.",
-    "nerd": "En webserver i 1995: én tårn-pc eller arbejdsstation med et 10BASE-T-netkort, én CPU og én disk, der kører ét program (NCSA HTTPd eller det nye Apache). HTTP/1.0 åbner en ny TCP-forbindelse for hver fil: GET /index.html, så GET /picture.gif, hver læst fra disken og sendt med 200 OK. Ingen cache, intet CDN (Akamai begyndte i 1998–99), ingen virtuelle maskiner.",
+    "simple": "Hjemmesiden er denne ene computer, en høj beige kasse på en hylde. Din forespørgsel kommer ind fra hubbens kabel til netkortet, og webprogrammet beder harddisken om siden. Disken snurrer, armen læser siden, og den går samme vej ud igen. Bagefter det samme for billedet.",
+    "technical": "En webserver i 1995: én tårn-pc eller arbejdsstation med et 10BASE-T-netkort, én CPU og én disk, der kører ét program (NCSA HTTPd eller det nye Apache). HTTP/1.0 åbner en ny TCP-forbindelse for hver fil: GET /index.html, så GET /picture.gif, hver læst fra disken og sendt med 200 OK. Ingen cache, intet CDN (Akamai begyndte i 1998–99), ingen virtuelle maskiner.",
     "describe": {
-      "kid": "En beige computer uden sideplade viser et netkort, computeren med ét program i og en disk, der snurrer. En pakke kommer ind fra hubben, går til programmet og videre til disken, og en side, så et billede, kommer ud til hubben igen.",
-      "nerd": "Det gennemskårne tårn viser 10BASE-T-netkortet, CPU’en, der kører httpd, og harddisken. Forespørgslen kommer ind fra hubben ad ethernetkablet til httpd, som læser filen fra disken; svaret, siden i én runde og billedet i den næste, går ud igen med 200 OK."
+      "simple": "En beige computer uden sideplade viser et netkort, computeren med ét program i og en disk, der snurrer. En pakke kommer ind fra hubben, går til programmet og videre til disken, og en side, så et billede, kommer ud til hubben igen.",
+      "technical": "Det gennemskårne tårn viser 10BASE-T-netkortet, CPU’en, der kører httpd, og harddisken. Forespørgslen kommer ind fra hubben ad ethernetkablet til httpd, som læser filen fra disken; svaret, siden i én runde og billedet i den næste, går ud igen med 200 OK."
     },
     "app": "Webprogram",
     "nic": {
       "title": {
-        "nerd": "NIC 10BASE-T"
+        "technical": "NIC 10BASE-T"
       },
       "line": {
-        "kid": "Pulser → bits",
-        "nerd": "Manchester → rammer"
+        "simple": "Pulser → bits",
+        "technical": "Manchester → rammer"
       }
     },
     "compute": {
       "title": {
-        "nerd": "CPU · ét OS"
+        "technical": "CPU · ét OS"
       },
       "line": {
-        "kid": "Ét program",
-        "nerd": "Én httpd, ingen VM’er"
+        "simple": "Ét program",
+        "technical": "Én httpd, ingen VM’er"
       }
     },
     "disk": {
       "title": {
-        "kid": "Disk",
-        "nerd": "Harddisk"
+        "simple": "Disk",
+        "technical": "Harddisk"
       },
       "line": {
-        "kid": "Sider og billeder",
-        "nerd": "Filer på disk"
+        "simple": "Sider og billeder",
+        "technical": "Filer på disk"
       }
     },
     "ok": {
       "page": {
-        "kid": "Her er siden!",
-        "nerd": "GET /index.html → 200 OK"
+        "simple": "Her er siden!",
+        "technical": "GET /index.html → 200 OK"
       },
       "picture": {
-        "kid": "Og her er billedet!",
-        "nerd": "GET /picture.gif → 200 OK"
+        "simple": "Og her er billedet!",
+        "technical": "GET /picture.gif → 200 OK"
       }
     }
   },
   "2010": {
-    "nerd": "En CDN-cache-server i 2010: en 1U- eller 2U-kasse, hvis 1G-kobber-NIC (1000BASE-T) går til rackets access-switch, med Linux og et cacheprogram (Squid, Varnish eller CDN’ets eget) direkte på hardwaren, uden VM’er. Varme objekter ligger i RAM, resten på roterende diske; SSD’er var kun lige begyndt at dukke op. HIT serveres lokalt; MISS henter fra origin, gemmer en kopi efter cache-control og TTL og svarer derefter.",
+    "technical": "En CDN-cache-server i 2010: en 1U- eller 2U-kasse, hvis 1G-kobber-NIC (1000BASE-T) går til rackets access-switch, med Linux og et cacheprogram (Squid, Varnish eller CDN’ets eget) direkte på hardwaren, uden VM’er. Varme objekter ligger i RAM, resten på roterende diske; SSD’er var kun lige begyndt at dukke op. HIT serveres lokalt; MISS henter fra origin, gemmer en kopi efter cache-control og TTL og svarer derefter.",
     "describe": {
-      "kid": "Et åbent serverkabinet viser netkort, computeren med sine hjælpere, hukommelse og hylder med diske. En forespørgsel kommer ind ad et kobberkabel og når videoprogrammet. Så sender hylden enten et filmstykke tilbage, eller også spørger den først hovedkopien langt væk.",
-      "nerd": "Den åbne cache-server viser 1000BASE-T-NIC’et, CPU’en med cacheprocesser direkte på Linux, RAM og harddisk-cachen. Forespørgslen kommer ind over kobber fra access-switchen og når den markerede proces. Ved hit sendes et videosegment fra cache; ved miss går turen til origin, en kopi gemmes, og svaret sendes tilbage."
+      "simple": "Et åbent serverkabinet viser netkort, computeren med sine hjælpere, hukommelse og hylder med diske. En forespørgsel kommer ind ad et kobberkabel og når videoprogrammet. Så sender hylden enten et filmstykke tilbage, eller også spørger den først hovedkopien langt væk.",
+      "technical": "Den åbne cache-server viser 1000BASE-T-NIC’et, CPU’en med cacheprocesser direkte på Linux, RAM og harddisk-cachen. Forespørgslen kommer ind over kobber fra access-switchen og når den markerede proces. Ved hit sendes et videosegment fra cache; ved miss går turen til origin, en kopi gemmes, og svaret sendes tilbage."
     },
     "nic": {
       "title": {
-        "nerd": "NIC 2×1G"
+        "technical": "NIC 2×1G"
       },
       "line": {
-        "kid": "Pulser → bits",
-        "nerd": "1000BASE-T → frames"
+        "simple": "Pulser → bits",
+        "technical": "1000BASE-T → frames"
       }
     },
     "ssd": {
       "title": {
-        "nerd": "Harddisk-cache",
-        "kid": "Diskhylder"
+        "technical": "Harddisk-cache",
+        "simple": "Diskhylder"
       },
       "line": {
-        "nerd": "Objekter på harddiske",
-        "kid": "Hylder med videoer"
+        "technical": "Objekter på harddiske",
+        "simple": "Hylder med videoer"
       }
     },
-    "kid": "Videoserveren er en computer, der gemmer populære videoer i et datacenter i en stor by. Din forespørgsel kommer ind ad et kobberkabel fra rackets switch og bliver til bits på netkortet. Videoprogrammet kigger i hukommelsen og på diskene; hvis stykket er der, sender det det straks tilbage. Hvis ikke, spørger det hovedkopien langt væk, gemmer en kopi og sender så din.",
+    "simple": "Videoserveren er en computer, der gemmer populære videoer i et datacenter i en stor by. Din forespørgsel kommer ind ad et kobberkabel fra rackets switch og bliver til bits på netkortet. Videoprogrammet kigger i hukommelsen og på diskene; hvis stykket er der, sender det det straks tilbage. Hvis ikke, spørger det hovedkopien langt væk, gemmer en kopi og sender så din.",
     "app": "Videoprogram",
     "compute": {
       "title": {
-        "nerd": "CPU · bare metal"
+        "technical": "CPU · bare metal"
       },
       "line": {
-        "kid": "Hjælpere i arbejde",
-        "nerd": "Linux · cacheprocesser"
+        "simple": "Hjælpere i arbejde",
+        "technical": "Linux · cacheprocesser"
       }
     }
   },

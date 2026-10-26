@@ -2,11 +2,11 @@
   "name": "På farten, på 3G",
   "access": "3G",
   "2010": {
-    "kid": "Ude på gaden er der ingen Wi-Fi, så pakkerne flyver via radio til en mast. Derfra går de til en styringsboks og videre til mobilselskabets port til internettet.",
-    "nerd": "Omkring 2010: telefonen taler HSPA (3G) med en NodeB, der sender radiostykkerne over Iub til RNC’en. RNC’en tunnelerer pakkerne (GTP-U) til GGSN’en, der laver NAT mod internettet.",
+    "simple": "Ude på gaden er der ingen Wi-Fi, så pakkerne flyver via radio til en mast. Derfra går de til en styringsboks og videre til mobilselskabets port til internettet.",
+    "technical": "Omkring 2010: telefonen taler HSPA (3G) med en NodeB, der sender radiostykkerne over Iub til RNC’en. RNC’en tunnelerer pakkerne (GTP-U) til GGSN’en, der laver NAT mod internettet.",
     "describe": {
-      "kid": "En gade med butikker, lygtepæl, vej og bil ligger foran grønne bakker. En telefon med en lille skærm og en rund knap sender pakker med 3G-radio til en mast med tre flade antenner. En linje fører dem videre til internetskyen. Forespørgsler og video bevæger sig begge veje.",
-      "nerd": "Gadevisningen viser en smartphone fra 2010, et HSPA-radiolink til en NodeB med tre sektorantenner, Iub-linjen til RNC’en og internetskyen. Forespørgsler går op gennem NodeB’en og RNC’en. Videopakker kommer samme vej tilbage."
+      "simple": "En gade med butikker, lygtepæl, vej og bil ligger foran grønne bakker. En telefon med en lille skærm og en rund knap sender pakker med 3G-radio til en mast med tre flade antenner. En linje fører dem videre til internetskyen. Forespørgsler og video bevæger sig begge veje.",
+      "technical": "Gadevisningen viser en smartphone fra 2010, et HSPA-radiolink til en NodeB med tre sektorantenner, Iub-linjen til RNC’en og internetskyen. Forespørgsler går op gennem NodeB’en og RNC’en. Videopakker kommer samme vej tilbage."
     },
     "tag": {
       "phone": "3G · 10.152.33.7",
@@ -14,19 +14,19 @@
     },
     "stop": {
       "phone": {
-        "kid": "Din telefon vil se en kattevideo, også herude. Den sender en lille forespørgsel via radio. På 3G er det en lille video, der kan være der."
+        "simple": "Din telefon vil se en kattevideo, også herude. Den sender en lille forespørgsel via radio. På 3G er det en lille video, der kan være der."
       },
       "cell-tower-internet": {
-        "kid": "Fra masten rejser dine pakker ad en linje til styringsboksen, stadig i deres radiokuverter.",
-        "nerd": "Iub: NodeB’en sender RLC-stykkerne uåbnede videre til RNC’en. I 2010 var det ofte et par E1-linjer med ATM (2 Mbit/s hver) eller et mikrobølgelink; nyere master havde IP over fiber."
+        "simple": "Fra masten rejser dine pakker ad en linje til styringsboksen, stadig i deres radiokuverter.",
+        "technical": "Iub: NodeB’en sender RLC-stykkerne uåbnede videre til RNC’en. I 2010 var det ofte et par E1-linjer med ATM (2 Mbit/s hver) eller et mikrobølgelink; nyere master havde IP over fiber."
       }
     },
     "inside": {
       "internet": {
-        "nerd": "RNC’en afslutter radiolagene og tunnelerer med Direct Tunnel pakkerne direkte til GGSN’en, der laver NAT; SGSN’en (stiplet) tjekker kun telefonen ind og sætter tunnelen op. Derfra er det det samme internet: udbyderens kerne, peering i et IXP (eller betalt transit) og en CDN-cache. Hvert farvet felt er én operatørs net.",
+        "technical": "RNC’en afslutter radiolagene og tunnelerer med Direct Tunnel pakkerne direkte til GGSN’en, der laver NAT; SGSN’en (stiplet) tjekker kun telefonen ind og sætter tunnelen op. Derfra er det det samme internet: udbyderens kerne, peering i et IXP (eller betalt transit) og en CDN-cache. Hvert farvet felt er én operatørs net.",
         "describe": {
-          "kid": "Inde i skyen starter ruten ved masten, går til radiostyringen og så til mobilselskabets port. En stiplet sidevej fører til indtjekningen. Fra porten går den gennem ISP-kernen, grænserouteren og internetknudepunktet til videofirmaets datacenter. Pakker bevæger sig begge veje.",
-          "nerd": "Internetvisningen starter med NodeB, RNC og GGSN, med SGSN’en stiplet ved siden af RNC’en, derefter ISP-kerne, grænserouter, IXP og CDN’ets datacenter. De farvede felter viser mobil- eller ISP-nettet, internetknudepunktet og videofirmaet. Pakker går begge veje over Iub, GTP, backbone-fiber og krydsforbindelser."
+          "simple": "Inde i skyen starter ruten ved masten, går til radiostyringen og så til mobilselskabets port. En stiplet sidevej fører til indtjekningen. Fra porten går den gennem ISP-kernen, grænserouteren og internetknudepunktet til videofirmaets datacenter. Pakker bevæger sig begge veje.",
+          "technical": "Internetvisningen starter med NodeB, RNC og GGSN, med SGSN’en stiplet ved siden af RNC’en, derefter ISP-kerne, grænserouter, IXP og CDN’ets datacenter. De farvede felter viser mobil- eller ISP-nettet, internetknudepunktet og videofirmaet. Pakker går begge veje over Iub, GTP, backbone-fiber og krydsforbindelser."
         }
       }
     }

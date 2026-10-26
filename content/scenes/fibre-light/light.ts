@@ -18,7 +18,7 @@ const ONE_COLOUR = new Set(['atm', 'submarine-sdh']);
 const ONE_COLOUR_IN: Record<string, string[]> = { '2010': ['dc-fibre', 'cross-connect'] };
 export const oneColour = (tech: string, era?: string) => ONE_COLOUR.has(tech) || !!(era && ONE_COLOUR_IN[era]?.includes(tech));
 export const wordsOf = (tech: string, today: string) => (ONE_COLOUR.has(tech) ? tech : today);
-/** The nerd tag of a metro-told thread: a cross-connect's optic puts its few colours close together (LAN-WDM), a
+/** The technical tag of a metro-told thread: a cross-connect's optic puts its few colours close together (LAN-WDM), a
  *  data centre's spreads them a little wider (CWDM, 400GBASE-FR4); a thread with one colour has its own, under its
  *  technology's id. */
 const METRO_TAGS: Record<string, string> = { 'cross-connect': 'tag.lan-wdm', 'dc-fibre': 'tag.cwdm4' };

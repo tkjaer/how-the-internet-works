@@ -1,10 +1,10 @@
 {
   "title": "Watching a video",
-  "kid": "You ask for a video.",
-  "nerd": "The app fetches the video in small segments over HTTPS (HTTP inside TLS inside TCP), and the server streams them back.",
+  "simple": "You ask for a video.",
+  "technical": "The app fetches the video in small segments over HTTPS (HTTP inside TLS inside TCP), and the server streams them back.",
   "takes": {
-    "kid": "The whole video gets here in about {time}: {faster} times faster than you can watch it.",
-    "nerd": "{size} of HD video at {rate}, the slowest link’s speed ({link}): all {plays} in about {time}, {faster}× faster than it plays. The player fetches only a little ahead, so the line mostly rests."
+    "simple": "The whole video gets here in about {time}: {faster} times faster than you can watch it.",
+    "technical": "{size} of HD video at {rate}, the slowest link’s speed ({link}): all {plays} in about {time}, {faster}× faster than it plays. The player fetches only a little ahead, so the line mostly rests."
   },
   "packet": {
     "request": "Request",
@@ -16,14 +16,14 @@
   },
   "stop": {
     "phone": {
-      "kid": "Your phone wants a cat video, so it writes a little request and sends it off.",
-      "nerd": "The app opens a TLS connection and sends an HTTP GET for the next video segment. The OS splits the data into TCP segments inside IP packets."
+      "simple": "Your phone wants a cat video, so it writes a little request and sends it off.",
+      "technical": "The app opens a TLS connection and sends an HTTP GET for the next video segment. The OS splits the data into TCP segments inside IP packets."
     }
   },
   "1995": {
     "title": "Opening a web page with a picture",
-    "kid": "You open a web page with a picture on it.",
-    "nerd": "The browser fetches the page, then its picture, each with an HTTP/1.0 GET on a TCP connection of its own: plain HTTP, no TLS. SSL had just come out in Netscape, for shops. Video was stamp-sized clips (160 × 120, a few frames a second) that you downloaded before watching.",
+    "simple": "You open a web page with a picture on it.",
+    "technical": "The browser fetches the page, then its picture, each with an HTTP/1.0 GET on a TCP connection of its own: plain HTTP, no TLS. SSL had just come out in Netscape, for shops. Video was stamp-sized clips (160 × 120, a few frames a second) that you downloaded before watching.",
     "packet": {
       "page": "Page"
     },
@@ -31,29 +31,29 @@
       "page": "Caught: a piece of the page"
     },
     "takes": {
-      "kid": "The page and its picture take about {time} to get here. Today’s video would take {now}!",
-      "nerd": "{size} at {rate}, the modem’s top speed: about {time} for the bits alone, more with the handshakes, headers and resends. Today’s {nowSize} of HD video would take {now}."
+      "simple": "The page and its picture take about {time} to get here. Today’s video would take {now}!",
+      "technical": "{size} at {rate}, the modem’s top speed: about {time} for the bits alone, more with the handshakes, headers and resends. Today’s {nowSize} of HD video would take {now}."
     }
   },
   "2010": {
     "title": "Watching a small video",
-    "kid": "You ask for a small video.",
-    "nerd": "The player fetches the video as one file over plain HTTP (no TLS): a small 360p MP4 that starts playing while the rest is still on its way (progressive download). Video sites moved to HTTPS a few years later. The cache it came from was usually in a bigger city further away than today’s.",
+    "simple": "You ask for a small video.",
+    "technical": "The player fetches the video as one file over plain HTTP (no TLS): a small 360p MP4 that starts playing while the rest is still on its way (progressive download). Video sites moved to HTTPS a few years later. The cache it came from was usually in a bigger city further away than today’s.",
     "takes": {
-      "kid": "The whole small video gets here in about {time}: {faster} times faster than you can watch it. Today’s sharper video would take {now}.",
-      "nerd": "{size} of 360p video at {rate}, the slowest link’s speed ({link}): all {plays} in about {time}, {faster}× faster than it plays. Today’s {nowSize} of HD video would take {now}."
+      "simple": "The whole small video gets here in about {time}: {faster} times faster than you can watch it. Today’s sharper video would take {now}.",
+      "technical": "{size} of 360p video at {rate}, the slowest link’s speed ({link}): all {plays} in about {time}, {faster}× faster than it plays. Today’s {nowSize} of HD video would take {now}."
     },
     "stop": {
       "phone": {
-        "nerd": "The app sends one HTTP GET for the whole video file, in plain HTTP (no TLS). The OS puts the request in a TCP segment inside an IP packet."
+        "technical": "The app sends one HTTP GET for the whole video file, in plain HTTP (no TLS). The OS puts the request in a TCP segment inside an IP packet."
       }
     }
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Streaming_media", "title": "Streaming media", "level": "both", "eras": ["today"] },
-    { "url": "https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP", "title": "MPEG-DASH", "level": "nerd", "eras": ["today"] },
+    { "url": "https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP", "title": "MPEG-DASH", "level": "technical", "eras": ["today"] },
     { "url": "https://en.wikipedia.org/wiki/Web_page", "title": "Web page", "level": "both", "eras": ["1995"] },
-    { "url": "https://www.rfc-editor.org/rfc/rfc1945", "title": "RFC 1945: HTTP/1.0 (1996)", "level": "nerd", "eras": ["1995"] },
+    { "url": "https://www.rfc-editor.org/rfc/rfc1945", "title": "RFC 1945: HTTP/1.0 (1996)", "level": "technical", "eras": ["1995"] },
     { "url": "https://en.wikipedia.org/wiki/Progressive_download", "title": "Progressive download", "level": "both", "eras": ["2010"] }
   ]
 }

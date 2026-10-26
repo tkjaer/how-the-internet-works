@@ -1,6 +1,6 @@
 {
   "name": "Spine-switch",
-  "kid": "Et af de store vejkryds midt i hallen. Hvert skab har en vej til hvert vejkryds, så der er masser af lige gode veje, og ingen af dem går i stå.",
-  "nerd": "En spine i en leaf–spine-fabric (Clos): hver leaf er forbundet til hver spine, så to racks altid er to hop fra hinanden over mange lige dyre veje. ECMP hasher hvert flow ind på én af dem.",
+  "simple": "Et af de store vejkryds midt i hallen. Hvert skab har en vej til hvert vejkryds, så der er masser af lige gode veje, og ingen af dem går i stå.",
+  "technical": "En spine i en leaf–spine-fabric (Clos): hver leaf er forbundet til hver spine, så to racks altid er to hop fra hinanden over mange lige dyre veje. ECMP hasher hvert flow ind på én af dem.",
   "tag": "Clos · ECMP · 400G"
 }

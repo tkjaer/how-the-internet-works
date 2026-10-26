@@ -1,15 +1,15 @@
 {
   "name": {
-    "kid": "Nummeriertes Stück",
-    "nerd": "TCP-Segment"
+    "simple": "Nummeriertes Stück",
+    "technical": "TCP-Segment"
   },
   "note": {
-    "kid": "Das Video wird in nummerierte Stücke geschnitten, damit nichts verloren geht oder durcheinandergerät.",
-    "nerd": "Ein zuverlässiger, geordneter Bytestrom zwischen zwei Ports: Sequence Numbers, Acknowledgements, Retransmits, Flow- und Congestion Control."
+    "simple": "Das Video wird in nummerierte Stücke geschnitten, damit nichts verloren geht oder durcheinandergerät.",
+    "technical": "Ein zuverlässiger, geordneter Bytestrom zwischen zwei Ports: Sequence Numbers, Acknowledgements, Retransmits, Flow- und Congestion Control."
   },
   "sealed": {
-    "kid": "Versiegelt. Nur {yours} und der Server öffnen das: sie prüfen, dass keine Stücke fehlen.",
-    "nerd": "Unterwegs nicht inspiziert: Ende-zu-Ende zwischen den beiden Enden (Ordnung, Retransmits, Congestion Control)."
+    "simple": "Versiegelt. Nur {yours} und der Server öffnen das: sie prüfen, dass keine Stücke fehlen.",
+    "technical": "Unterwegs nicht inspiziert: Ende-zu-Ende zwischen den beiden Enden (Ordnung, Retransmits, Congestion Control)."
   },
   "line": "Transmission Control Protocol, Abs.-Port: {sport}, Empf.-Port: {dport}, Seq: {seq}, Ack: {ack}",
   "field": {
@@ -23,8 +23,8 @@
     },
     "seq": {
       "name": {
-        "kid": "Stücknr.",
-        "nerd": "Sequence Number"
+        "simple": "Stücknr.",
+        "technical": "Sequence Number"
       },
       "about": "Wo diese Daten im Bytestrom sitzen, damit der Empfänger die Stücke sortieren kann."
     },
@@ -73,7 +73,7 @@
       }
     },
     "note": {
-      "kid": "Die Seite wird in nummerierte Stücke geschnitten, damit nichts verloren geht oder durcheinandergerät."
+      "simple": "Die Seite wird in nummerierte Stücke geschnitten, damit nichts verloren geht oder durcheinandergerät."
     }
   },
   "2010": {
@@ -84,6 +84,6 @@
     }
   },
   "learnMore": [
-    { "url": "https://de.wikipedia.org/wiki/Transmission_Control_Protocol", "title": "Transmission Control Protocol", "level": "nerd" }
+    { "url": "https://de.wikipedia.org/wiki/Transmission_Control_Protocol", "title": "Transmission Control Protocol", "level": "technical" }
   ]
 }

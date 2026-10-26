@@ -1,8 +1,8 @@
 {
   "name": "Laptop",
   "yours": "your laptop",
-  "kid": "A computer you can fold shut and carry. This one has a socket for a network cable.",
-  "nerd": "An endpoint like the phone, but wired: its Ethernet port sends frames straight to the router, with no radio in between.",
+  "simple": "A computer you can fold shut and carry. This one has a socket for a network cable.",
+  "technical": "An endpoint like the phone, but wired: its Ethernet port sends frames straight to the router, with no radio in between.",
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Laptop", "title": "Laptop", "level": "both" }
   ]

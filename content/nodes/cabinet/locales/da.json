@@ -1,6 +1,6 @@
 {
   "name": "Gadeskab",
-  "kid": "I et skab på din gade deles én glastråd op i en masse små, én til hvert hus. Det skal ikke have strøm: det deler bare lyset.",
-  "nerd": "En passiv 1:32-splitter: uden strøm, den deler bare lyset. OLT’en, den forbinder til, står i centralen.",
+  "simple": "I et skab på din gade deles én glastråd op i en masse små, én til hvert hus. Det skal ikke have strøm: det deler bare lyset.",
+  "technical": "En passiv 1:32-splitter: uden strøm, den deler bare lyset. OLT’en, den forbinder til, står i centralen.",
   "tag": "Splitter · 1:32"
 }

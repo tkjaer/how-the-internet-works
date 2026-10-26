@@ -1,15 +1,15 @@
 {
   "name": {
-    "kid": "Locked box",
-    "nerd": "TLS record"
+    "simple": "Locked box",
+    "technical": "TLS record"
   },
   "note": {
-    "kid": "Only {yours} and the server have the key.",
-    "nerd": "Encrypted and authenticated end to end."
+    "simple": "Only {yours} and the server have the key.",
+    "technical": "Encrypted and authenticated end to end."
   },
   "sealed": {
-    "kid": "Locked. Nobody on the way can read what’s inside.",
-    "nerd": "Ciphertext: intermediate hops can’t read it, or change it without being caught."
+    "simple": "Locked. Nobody on the way can read what’s inside.",
+    "technical": "Ciphertext: intermediate hops can’t read it, or change it without being caught."
   },
   "line": "Transport Layer Security: Application Data, length {length}",
   "field": {
@@ -27,8 +27,8 @@
     }
   },
   "learnMore": [
-    { "url": "https://simple.wikipedia.org/wiki/Transport_Layer_Security", "title": "TLS (Simple English)", "level": "kid" },
+    { "url": "https://simple.wikipedia.org/wiki/Transport_Layer_Security", "title": "TLS (Simple English)", "level": "simple" },
     { "url": "https://en.wikipedia.org/wiki/Transport_Layer_Security", "title": "Transport Layer Security", "level": "both" },
-    { "url": "https://datatracker.ietf.org/doc/html/rfc8446", "title": "RFC 8446: TLS 1.3", "level": "nerd" }
+    { "url": "https://datatracker.ietf.org/doc/html/rfc8446", "title": "RFC 8446: TLS 1.3", "level": "technical" }
   ]
 }

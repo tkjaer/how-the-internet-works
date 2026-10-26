@@ -4,8 +4,8 @@ import { LINE, MAX_KM, PLAN_998, bandSpans, bitsAt, lineTones, pitchX, speedAt, 
 
 describe('the phone line (dsl-tones)', () => {
   it('lays the bands out low to high without overlap, the voice band first', () => {
-    for (const nerd of [false, true]) {
-      const spans = bandSpans(nerd);
+    for (const technical of [false, true]) {
+      const spans = bandSpans(technical);
       expect(spans[0]).toMatchObject({ band: 'voice', x0: 0 });
       expect(spans.at(-1)!.x1).toBeCloseTo(1);
       for (let i = 1; i < spans.length; i++) expect(spans[i].x0).toBeGreaterThanOrEqual(spans[i - 1].x1);

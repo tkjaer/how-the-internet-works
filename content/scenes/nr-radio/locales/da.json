@@ -1,10 +1,10 @@
 {
   "title": "Radiostråler",
-  "kid": "Masten har masser af små antenner. Sammen sigter de en stråle direkte mod hver telefon. Og hver telefon får sine egne pladser i tid og i radiofarver, ligesom sæder i en bus, så de aldrig taler i munden på hinanden.",
-  "nerd": "Et massive-MIMO-panel former en separat stråle til hver bruger. I hver 0,5 ms slot (30 kHz underbærebølgeafstand) uddeler scheduleren resource blocks: OFDMA deler tid og frekvens mellem brugerne, så snesevis af telefoner bruger de samme 100 MHz på én gang, og MU-MIMO lader flere stråler genbruge de samme resource blocks på samme tid.",
+  "simple": "Masten har masser af små antenner. Sammen sigter de en stråle direkte mod hver telefon. Og hver telefon får sine egne pladser i tid og i radiofarver, ligesom sæder i en bus, så de aldrig taler i munden på hinanden.",
+  "technical": "Et massive-MIMO-panel former en separat stråle til hver bruger. I hver 0,5 ms slot (30 kHz underbærebølgeafstand) uddeler scheduleren resource blocks: OFDMA deler tid og frekvens mellem brugerne, så snesevis af telefoner bruger de samme 100 MHz på én gang, og MU-MIMO lader flere stråler genbruge de samme resource blocks på samme tid.",
   "describe": {
-    "kid": "En mobilmast retter lysende stråler mod tre telefoner, og din telefon har et mærke. Ved siden af glider et gitter af små sæder for tid og radiofarver. Farvede sæder lyser for hver telefon. Den matchende stråle lyser op, når telefonen får tur.",
-    "nerd": "gNB-panelet beamformer tre brugere, mens et tids- og frekvensgitter ruller ved siden af. Farvede resource blocks viser OFDMA-tildelinger. Den aktuelle slot får den matchende stråle til at lyse op. Mærker viser 64T64R beamforming, 30 kHz afstand og 0,5 ms slots."
+    "simple": "En mobilmast retter lysende stråler mod tre telefoner, og din telefon har et mærke. Ved siden af glider et gitter af små sæder for tid og radiofarver. Farvede sæder lyser for hver telefon. Den matchende stråle lyser op, når telefonen får tur.",
+    "technical": "gNB-panelet beamformer tre brugere, mens et tids- og frekvensgitter ruller ved siden af. Farvede resource blocks viser OFDMA-tildelinger. Den aktuelle slot får den matchende stråle til at lyse op. Mærker viser 64T64R beamforming, 30 kHz afstand og 0,5 ms slots."
   },
   "beams": "En stråle til hver telefon",
   "grid": "Alle får deres egne pladser",
@@ -17,11 +17,11 @@
   },
   "2010": {
     "title": "Én bølge, delte koder",
-    "kid": "Masten sender én bred bølge ud over alle telefoner på sin side. Telefonerne skiftes, 2 ms ad gangen, og hver tur er delt i koder, som stemmer, der synger forskellige melodier på én gang. Jo flere telefoner der ser video, jo mindre bliver hver enkelts del.",
-    "nerd": "WCDMA på én 5 MHz-bærebølge: en sektorantenne dækker omkring 120°, uden beamforming. HSDPA deler op til 15 SF16-koder; hver 2 ms TTI giver NodeB’en dem til én eller nogle få UE’er efter deres CQI. 7,2–14 Mbit/s i top pr. celle med 16-QAM; en telefon fik 1–3 Mbit/s i praksis.",
+    "simple": "Masten sender én bred bølge ud over alle telefoner på sin side. Telefonerne skiftes, 2 ms ad gangen, og hver tur er delt i koder, som stemmer, der synger forskellige melodier på én gang. Jo flere telefoner der ser video, jo mindre bliver hver enkelts del.",
+    "technical": "WCDMA på én 5 MHz-bærebølge: en sektorantenne dækker omkring 120°, uden beamforming. HSDPA deler op til 15 SF16-koder; hver 2 ms TTI giver NodeB’en dem til én eller nogle få UE’er efter deres CQI. 7,2–14 Mbit/s i top pr. celle med 16-QAM; en telefon fik 1–3 Mbit/s i praksis.",
     "describe": {
-      "kid": "En mobilmast sender én bred bølge ud over tre telefoner, og din telefon har et mærke. Ved siden af glider et gitter af små sæder forbi: rækker af koder, kolonner af ture på 2 ms. Hver turs sæder lyser mest for én telefon.",
-      "nerd": "NodeB’ens sektor dækker tre UE’er med én bølge. Et gitter af koder × tid ruller ved siden af: hver 2 ms TTI’s HS-PDSCH-koder går til én UE, nogle gange delt med en anden. Mærker viser 5 MHz-bærebølgen, 15 koder og 2 ms TTI."
+      "simple": "En mobilmast sender én bred bølge ud over tre telefoner, og din telefon har et mærke. Ved siden af glider et gitter af små sæder forbi: rækker af koder, kolonner af ture på 2 ms. Hver turs sæder lyser mest for én telefon.",
+      "technical": "NodeB’ens sektor dækker tre UE’er med én bølge. Et gitter af koder × tid ruller ved siden af: hver 2 ms TTI’s HS-PDSCH-koder går til én UE, nogle gange delt med en anden. Mærker viser 5 MHz-bærebølgen, 15 koder og 2 ms TTI."
     },
     "beams": "Én bølge til alle telefoner",
     "grid": "Telefonerne skiftes",
@@ -33,11 +33,11 @@
   },
   "1995": {
     "title": "Din egen plads, hver gang",
-    "kid": "Masten sender én bred bølge ud over alle i nærheden. Dens tid er delt i otte ture, igen og igen, og dit opkald ejer én af dem, den samme hver gang, til du lægger på. Selv når den bærbare ikke har noget at sende, må ingen andre bruge din plads.",
-    "nerd": "GSM-TDMA: hver 200 kHz-bærebølge er delt i rammer af 8 tidsslots (577 µs hver, 4,615 ms pr. ramme). Et dataopkald (TCH/F9.6) holder én slot i hver ramme, så længe opkaldet varer, brugt eller ej: et kredsløb, som telefonlinjen derhjemme. Derfor betalte man pr. minut. GPRS (fra 2000) lod telefoner dele slots pakke for pakke.",
+    "simple": "Masten sender én bred bølge ud over alle i nærheden. Dens tid er delt i otte ture, igen og igen, og dit opkald ejer én af dem, den samme hver gang, til du lægger på. Selv når den bærbare ikke har noget at sende, må ingen andre bruge din plads.",
+    "technical": "GSM-TDMA: hver 200 kHz-bærebølge er delt i rammer af 8 tidsslots (577 µs hver, 4,615 ms pr. ramme). Et dataopkald (TCH/F9.6) holder én slot i hver ramme, så længe opkaldet varer, brugt eller ej: et kredsløb, som telefonlinjen derhjemme. Derfor betalte man pr. minut. GPRS (fra 2000) lod telefoner dele slots pakke for pakke.",
     "describe": {
-      "kid": "En høj metalmast sender én bred bølge ud over din bærbare og to andre, der ringer, og din bærbare har et mærke. Ved siden af glider et gitter af små sæder forbi: rækker af radiobærebølger, kolonner af ture. Hver ottende tur lyser det samme sæde for hvert opkald.",
-      "nerd": "BTS’en dækker tre opkald med én sektor. Et gitter af bærebølger × tidsslots ruller ved siden af: hvert opkald beholder én slot i hver TDMA-ramme på 8 slots, på samme bærebølge, brugt eller ej. Mærker viser GSM 900, 200 kHz-bærebølger og rammen på 4,615 ms."
+      "simple": "En høj metalmast sender én bred bølge ud over din bærbare og to andre, der ringer, og din bærbare har et mærke. Ved siden af glider et gitter af små sæder forbi: rækker af radiobærebølger, kolonner af ture. Hver ottende tur lyser det samme sæde for hvert opkald.",
+      "technical": "BTS’en dækker tre opkald med én sektor. Et gitter af bærebølger × tidsslots ruller ved siden af: hvert opkald beholder én slot i hver TDMA-ramme på 8 slots, på samme bærebølge, brugt eller ej. Mærker viser GSM 900, 200 kHz-bærebølger og rammen på 4,615 ms."
     },
     "beams": "Én bølge til alle, der ringer",
     "grid": "Hvert opkald beholder sin plads",

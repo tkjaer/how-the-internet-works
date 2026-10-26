@@ -1,12 +1,12 @@
 {
   "name": "3G",
   "2010": {
-    "kid": "Your phone talks to the mast by radio. Every phone near the mast shares the same radio wave, taking turns very fast, so the more phones watch, the slower each one gets.",
-    "nerd": "UMTS on a 5 MHz WCDMA carrier around 2.1 GHz, with HSDPA down: up to 15 spreading codes shared by all the cell’s phones, scheduled every 2 ms. 7.2–14 Mbit/s peak, a few in practice.",
+    "simple": "Your phone talks to the mast by radio. Every phone near the mast shares the same radio wave, taking turns very fast, so the more phones watch, the slower each one gets.",
+    "technical": "UMTS on a 5 MHz WCDMA carrier around 2.1 GHz, with HSDPA down: up to 15 spreading codes shared by all the cell’s phones, scheduled every 2 ms. 7.2–14 Mbit/s peak, a few in practice.",
     "tag": "HSPA · 5 MHz · 16-QAM"
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/3G", "title": "3G", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/High_Speed_Packet_Access", "title": "High Speed Packet Access", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/High_Speed_Packet_Access", "title": "High Speed Packet Access", "level": "technical" }
   ]
 }

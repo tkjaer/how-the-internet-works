@@ -1,47 +1,47 @@
 {
   "title": "Bed om et stykke video",
-  "kid": "En video kommer i små stykker på et par sekunder hver. Først skriver {yours} en seddel: stykke 42, mellem, tak. Videoserveren finder det på sin hylde, stempler 200 OK og sender det tilbage. Når forbindelsen bliver langsommere, beder den næste seddel om lav kvalitet, så filmen bliver ved med at spille i stedet for at stoppe og vente.",
-  "nerd": "HTTP kører inde i TLS, så kun de to ender kan læse det. Det er tegnet i HTTP/1.1’s tekstform; det meste video i dag sendes som HTTP/2 over TLS og TCP eller HTTP/3 over QUIC (UDP), med de samme felter i binære rammer. Afspilleren sender GET /video/720p/42.m4s med Host: video.example, og CDN-cachen svarer 200 OK (et HIT; 404 ville betyde, at stykket ikke findes, 304 svarer på en betinget forespørgsel: den kopi, du har, er stadig god, og 206 Partial Content svarer på en Range: bytes=…-forespørgsel). Adaptiv bitrate (DASH): afspilleren måler gennemløbet og sin buffer og vælger næste segments kvalitet fra manifestet, her 360p.",
+  "simple": "En video kommer i små stykker på et par sekunder hver. Først skriver {yours} en seddel: stykke 42, mellem, tak. Videoserveren finder det på sin hylde, stempler 200 OK og sender det tilbage. Når forbindelsen bliver langsommere, beder den næste seddel om lav kvalitet, så filmen bliver ved med at spille i stedet for at stoppe og vente.",
+  "technical": "HTTP kører inde i TLS, så kun de to ender kan læse det. Det er tegnet i HTTP/1.1’s tekstform; det meste video i dag sendes som HTTP/2 over TLS og TCP eller HTTP/3 over QUIC (UDP), med de samme felter i binære rammer. Afspilleren sender GET /video/720p/42.m4s med Host: video.example, og CDN-cachen svarer 200 OK (et HIT; 404 ville betyde, at stykket ikke findes, 304 svarer på en betinget forespørgsel: den kopi, du har, er stadig god, og 206 Partial Content svarer på en Range: bytes=…-forespørgsel). Adaptiv bitrate (DASH): afspilleren måler gennemløbet og sin buffer og vælger næste segments kvalitet fra manifestet, her 360p.",
   "describe": {
-    "kid": "En vej forbinder {yours} og videoserveren. På det venstre kort beder en seddel om stykke 42 i mellem, og den går hen til serveren. Serveren finder 42 på sin hylde, stempler 200 OK og sender en stor filmkasse tilbage. Så falder signalstregerne, næste seddel beder om 43 i lav, og en mindre filmkasse kommer tilbage.",
-    "nerd": "Det venstre kort viser forespørgslen: GET /video/720p/42.m4s og Host ved siden af signalstreger. Det højre kort er CDN'ens cachehylde: 42 er et hit, stemplet 200 OK, og et stort segment går tilbage. Stregerne falder, næste forespørgsel er på 360p, segment 43 er et miss, hentes fra origin-skyen og gemmes, og et mindre segment kommer tilbage."
+    "simple": "En vej forbinder {yours} og videoserveren. På det venstre kort beder en seddel om stykke 42 i mellem, og den går hen til serveren. Serveren finder 42 på sin hylde, stempler 200 OK og sender en stor filmkasse tilbage. Så falder signalstregerne, næste seddel beder om 43 i lav, og en mindre filmkasse kommer tilbage.",
+    "technical": "Det venstre kort viser forespørgslen: GET /video/720p/42.m4s og Host ved siden af signalstreger. Det højre kort er CDN'ens cachehylde: 42 er et hit, stemplet 200 OK, og et stort segment går tilbage. Stregerne falder, næste forespørgsel er på 360p, segment 43 er et miss, hentes fra origin-skyen og gemmes, og et mindre segment kommer tilbage."
   },
   "at": {
     "cdn": {
       "title": "Videoserveren svarer",
-      "kid": "Videoserveren læser hver seddel. Hvis stykket ligger på hylden, sender den det med det samme; ellers henter den det fra hovedkopien langt væk og gemmer en kopi til den næste, der ser med. Hvert svar starter med et stempel: 200 OK betyder værsgo.",
-      "nerd": "Ved CDN-kanten er HTTP åben: den læser forespørgselslinjen og headerne, slår URL'en op i sin cache og svarer med en statuslinje, headere (Content-Type: video/mp4, Content-Length, Cache-Control, Age) og indholdet. Et miss hentes fra origin og gemmes, så længe dens max-age tillader, så næste forespørgsel på det er et hit.",
+      "simple": "Videoserveren læser hver seddel. Hvis stykket ligger på hylden, sender den det med det samme; ellers henter den det fra hovedkopien langt væk og gemmer en kopi til den næste, der ser med. Hvert svar starter med et stempel: 200 OK betyder værsgo.",
+      "technical": "Ved CDN-kanten er HTTP åben: den læser forespørgselslinjen og headerne, slår URL'en op i sin cache og svarer med en statuslinje, headere (Content-Type: video/mp4, Content-Length, Cache-Control, Age) og indholdet. Et miss hentes fra origin og gemmes, så længe dens max-age tillader, så næste forespørgsel på det er et hit.",
       "describe": {
-        "kid": "Videoserveren er markeret for enden af vejen. Sedler kommer fra {yours}. På serverens kort ligger stykke 42 allerede på hylden, så et 200 OK-stempel kommer ned, og en stor filmkasse går tilbage. Stykke 43 i lav er der ikke: en kasse kommer fra hovedkopien i en sky op på hylden, og så går en mindre filmkasse tilbage.",
-        "nerd": "CDN-cacheserveren er det markerede endepunkt. Forespørgsler kommer ind, og på cachekortet er segment 42 et hit: 200 OK, og et stort svar går tilbage. Efter at klientens streger falder, beder den om 360p-segment 43, et miss: origin-skyen sender en kopi til hylden, den gemmes, og et mindre 200 OK-svar kommer tilbage."
+        "simple": "Videoserveren er markeret for enden af vejen. Sedler kommer fra {yours}. På serverens kort ligger stykke 42 allerede på hylden, så et 200 OK-stempel kommer ned, og en stor filmkasse går tilbage. Stykke 43 i lav er der ikke: en kasse kommer fra hovedkopien i en sky op på hylden, og så går en mindre filmkasse tilbage.",
+        "technical": "CDN-cacheserveren er det markerede endepunkt. Forespørgsler kommer ind, og på cachekortet er segment 42 et hit: 200 OK, og et stort svar går tilbage. Efter at klientens streger falder, beder den om 360p-segment 43, et miss: origin-skyen sender en kopi til hylden, den gemmes, og et mindre 200 OK-svar kommer tilbage."
       }
     }
   },
   "sealed": {
     "title": "{hop} ser kun ydersiden",
-    "kid": "{hop} bærer sedlerne og filmkasserne, men de er låst inde i det hemmelige håndtryks kasse. Den kan ikke læse, hvilket stykke der bedes om, eller hvad svaret siger. Den kan kun se, hvilken vej hver kasse går, og hvor stor den er.",
-    "nerd": "Ved {hop} er HTTP forseglet inde i TLS: stien, Host, status og indhold er krypteret. Det, der slipper ud, er servernavnet (SNI i ClientHello, medmindre ECH bruges), adresserne, retning, timing og hvor mange bytes der går forbi: en forespørgsel på ~400 B, et svar på ~750 kB (mange TLS-records på højst 16 kB hver) og så et på ~200 kB, hvilket antyder, at afspilleren er gået ned i bitrate.",
+    "simple": "{hop} bærer sedlerne og filmkasserne, men de er låst inde i det hemmelige håndtryks kasse. Den kan ikke læse, hvilket stykke der bedes om, eller hvad svaret siger. Den kan kun se, hvilken vej hver kasse går, og hvor stor den er.",
+    "technical": "Ved {hop} er HTTP forseglet inde i TLS: stien, Host, status og indhold er krypteret. Det, der slipper ud, er servernavnet (SNI i ClientHello, medmindre ECH bruges), adresserne, retning, timing og hvor mange bytes der går forbi: en forespørgsel på ~400 B, et svar på ~750 kB (mange TLS-records på højst 16 kB hver) og så et på ~200 kB, hvilket antyder, at afspilleren er gået ned i bitrate.",
     "describe": {
-      "kid": "{hop} står midt på vejen. Låste kasser går forbi: en lille hen mod videoserveren, en stor tilbage, endnu en lille og så en mindre tilbage. Det venstre kort samler dem efter størrelse. Det højre kort viser brevet indeni, kruset og med hængelås.",
-      "nerd": "Et mellemled står på vejen, mens krypterede records passerer begge veje. Det venstre kort stiller det op, den kan se: en lille forespørgsel, et stort svar, en lille forespørgsel og et mindre svar, med deres størrelser. Det højre kort viser HTTP-beskeden som ulæselig krypteret tekst under en hængelås."
+      "simple": "{hop} står midt på vejen. Låste kasser går forbi: en lille hen mod videoserveren, en stor tilbage, endnu en lille og så en mindre tilbage. Det venstre kort samler dem efter størrelse. Det højre kort viser brevet indeni, kruset og med hængelås.",
+      "technical": "Et mellemled står på vejen, mens krypterede records passerer begge veje. Det venstre kort stiller det op, den kan se: en lille forespørgsel, et stort svar, en lille forespørgsel og et mindre svar, med deres størrelser. Det højre kort viser HTTP-beskeden som ulæselig krypteret tekst under en hængelås."
     }
   },
   "card": {
     "ask": {
-      "kid": "Bestillingssedlen",
-      "nerd": "Forespørgslen"
+      "simple": "Bestillingssedlen",
+      "technical": "Forespørgslen"
     },
     "answer": {
-      "kid": "Hos videoserveren",
-      "nerd": "Cache og status"
+      "simple": "Hos videoserveren",
+      "technical": "Cache og status"
     },
     "seen": {
-      "kid": "Alt den kan se",
-      "nerd": "Kun ydersiden"
+      "simple": "Alt den kan se",
+      "technical": "Kun ydersiden"
     },
     "locked": {
-      "kid": "Brevet indeni",
-      "nerd": "HTTP inde i TLS"
+      "simple": "Brevet indeni",
+      "technical": "HTTP inde i TLS"
     }
   },
   "slip": {
@@ -51,66 +51,66 @@
   },
   "meter": {
     "fast": {
-      "kid": "Hurtig",
-      "nerd": "3 Mbit/s"
+      "simple": "Hurtig",
+      "technical": "3 Mbit/s"
     },
     "slow": {
-      "kid": "Langsom",
-      "nerd": "0,8 Mbit/s"
+      "simple": "Langsom",
+      "technical": "0,8 Mbit/s"
     }
   },
   "status": {
     "slower": {
-      "kid": "Langsommere! Bed om lav",
-      "nerd": "Gennemløbet faldt: 360p"
+      "simple": "Langsommere! Bed om lav",
+      "technical": "Gennemløbet faldt: 360p"
     },
     "play": {
-      "kid": "Den spiller stadig!",
-      "nerd": "Ingen pause: bufferen holdt"
+      "simple": "Den spiller stadig!",
+      "technical": "Ingen pause: bufferen holdt"
     },
     "guess": {
-      "kid": "Mindre kasser: lavere kvalitet?",
-      "nerd": "Størrelser røber bitraten"
+      "simple": "Mindre kasser: lavere kvalitet?",
+      "technical": "Størrelser røber bitraten"
     },
     "locked": {
-      "kid": "Kun de to ender kan læse det",
-      "nerd": "Sti, Host, status: krypteret"
+      "simple": "Kun de to ender kan læse det",
+      "technical": "Sti, Host, status: krypteret"
     }
   },
   "shelf": {
     "hit": {
-      "kid": "På hylden!",
-      "nerd": "HIT · Age: 31"
+      "simple": "På hylden!",
+      "technical": "HIT · Age: 31"
     },
     "miss": {
-      "kid": "Ikke på hylden…",
-      "nerd": "MISS"
+      "simple": "Ikke på hylden…",
+      "technical": "MISS"
     },
     "fetch": {
-      "kid": "Fra hovedkopien",
-      "nerd": "GET fra origin"
+      "simple": "Fra hovedkopien",
+      "technical": "GET fra origin"
     },
     "kept": {
-      "kid": "Gemte en kopi!",
-      "nerd": "Gemt · max-age"
+      "simple": "Gemte en kopi!",
+      "technical": "Gemt · max-age"
     }
   },
   "origin": {
-    "kid": "Hovedkopi",
-    "nerd": "Origin"
+    "simple": "Hovedkopi",
+    "technical": "Origin"
   },
   "size": {
     "ask": {
-      "kid": "lille",
-      "nerd": "400 B"
+      "simple": "lille",
+      "technical": "400 B"
     },
     "med": {
-      "kid": "stor",
-      "nerd": "750 kB"
+      "simple": "stor",
+      "technical": "750 kB"
     },
     "low": {
-      "kid": "mindre",
-      "nerd": "200 kB"
+      "simple": "mindre",
+      "technical": "200 kB"
     }
   },
   "tag": {
@@ -124,50 +124,50 @@
   },
   "1995": {
     "title": "Bed om en side",
-    "kid": "I 1995 skriver {yours} en seddel: siden, tak. Webserveren finder den på sin disk, stempler 200 OK og sender den tilbage. Så beder en seddel mere om billedet på siden, og billedet kommer tilbage samme vej.",
-    "nerd": "Almindelig HTTP/1.0 uden TLS (SSL 2.0 kom i Netscape i 1995, til butikker): GET /index.html får 200 OK med Content-Type: text/html, og så henter en ny TCP-forbindelse GET /picture.gif (image/gif). Alle led på vejen kunne læse det hele. Der skulle ikke bruges en Host-header endnu, og der stod ikke fælles cacher i midten som standard; nogle universiteter og udbydere kørte cachende proxyer (CERN httpd, Harvest), som browsere blev sat op til at bruge.",
+    "simple": "I 1995 skriver {yours} en seddel: siden, tak. Webserveren finder den på sin disk, stempler 200 OK og sender den tilbage. Så beder en seddel mere om billedet på siden, og billedet kommer tilbage samme vej.",
+    "technical": "Almindelig HTTP/1.0 uden TLS (SSL 2.0 kom i Netscape i 1995, til butikker): GET /index.html får 200 OK med Content-Type: text/html, og så henter en ny TCP-forbindelse GET /picture.gif (image/gif). Alle led på vejen kunne læse det hele. Der skulle ikke bruges en Host-header endnu, og der stod ikke fælles cacher i midten som standard; nogle universiteter og udbydere kørte cachende proxyer (CERN httpd, Harvest), som browsere blev sat op til at bruge.",
     "at": {
       "web-server": {
         "title": "Webserveren svarer",
-        "kid": "Webserveren læser hver seddel og finder det, den beder om, på sin egen disk: først siden og så dens billede. Hvert svar starter med et stempel: 200 OK betyder værsgo.",
-        "nerd": "Serveren (for eksempel NCSA HTTPd) læser forespørgselslinjen, finder /index.html under sin dokumentrod og svarer HTTP/1.0 200 OK med Content-Type: text/html og Content-Length og så filen; det samme for /picture.gif (image/gif). Den lukker forbindelsen efter hvert svar. Ingen cache, intet CDN (Akamai begyndte i 1998–99).",
+        "simple": "Webserveren læser hver seddel og finder det, den beder om, på sin egen disk: først siden og så dens billede. Hvert svar starter med et stempel: 200 OK betyder værsgo.",
+        "technical": "Serveren (for eksempel NCSA HTTPd) læser forespørgselslinjen, finder /index.html under sin dokumentrod og svarer HTTP/1.0 200 OK med Content-Type: text/html og Content-Length og så filen; det samme for /picture.gif (image/gif). Den lukker forbindelsen efter hvert svar. Ingen cache, intet CDN (Akamai begyndte i 1998–99).",
         "describe": {
-          "kid": "Webserveren er fremhævet for enden af vejen. Sedler kommer fra {yours}. På serverens kort ligger siden og billedet på dens disk: siden lyser op, et 200 OK-stempel kommer ned, og siden går tilbage. Så lyser billedet op og går tilbage samme vej.",
-          "nerd": "Webserveren er det fremhævede endepunkt. Forespørgsler kommer ind: på diskkortet finder GET /index.html siden, 200 OK, og siden går tilbage; så finder GET /picture.gif billedet, 200 OK, og det kommer tilbage. Hver fil kommer fra serverens egen disk."
+          "simple": "Webserveren er fremhævet for enden af vejen. Sedler kommer fra {yours}. På serverens kort ligger siden og billedet på dens disk: siden lyser op, et 200 OK-stempel kommer ned, og siden går tilbage. Så lyser billedet op og går tilbage samme vej.",
+          "technical": "Webserveren er det fremhævede endepunkt. Forespørgsler kommer ind: på diskkortet finder GET /index.html siden, 200 OK, og siden går tilbage; så finder GET /picture.gif billedet, 200 OK, og det kommer tilbage. Hver fil kommer fra serverens egen disk."
         }
       }
     },
     "card": {
       "answer": {
-        "kid": "Hos serveren",
-        "nerd": "Disk og status"
+        "simple": "Hos serveren",
+        "technical": "Disk og status"
       },
       "seen": {
-        "kid": "Det, der går forbi",
-        "nerd": "Læsbart, ulæst"
+        "simple": "Det, der går forbi",
+        "technical": "Læsbart, ulæst"
       },
       "locked": {
-        "kid": "Brevet indeni",
-        "nerd": "Almindelig HTTP"
+        "simple": "Brevet indeni",
+        "technical": "Almindelig HTTP"
       }
     },
     "sealed": {
       "title": "{hop} kunne læse det hele",
-      "kid": "{hop} bærer sedlerne og svarene. I 1995 var almindelige sider ikke låst, så den kunne læse hvilken side der bedes om, og hvad der kommer tilbage. Men en router læser kun adressen på pakken og sender resten videre.",
+      "simple": "{hop} bærer sedlerne og svarene. I 1995 var almindelige sider ikke låst, så den kunne læse hvilken side der bedes om, og hvad der kommer tilbage. Men en router læser kun adressen på pakken og sender resten videre.",
       "describe": {
-        "kid": "{hop} står midt på vejen. Lukkede kasser med linjer af skrift går forbi: en lille hen mod serveren, en mellemstor tilbage, endnu en lille og så en større tilbage. Det venstre kort samler dem efter størrelse. Det højre kort viser brevet indeni, i almindelig skrift og uden hængelås.",
-        "nerd": "Et mellemled står på vejen, mens almindelig HTTP passerer begge veje. Det venstre kort stiller det op, der går forbi: en lille forespørgsel, siden, endnu en lille forespørgsel og det større billede, med deres størrelser. Det højre kort viser HTTP-beskeden som læselige linjer uden hængelås."
+        "simple": "{hop} står midt på vejen. Lukkede kasser med linjer af skrift går forbi: en lille hen mod serveren, en mellemstor tilbage, endnu en lille og så en større tilbage. Det venstre kort samler dem efter størrelse. Det højre kort viser brevet indeni, i almindelig skrift og uden hængelås.",
+        "technical": "Et mellemled står på vejen, mens almindelig HTTP passerer begge veje. Det venstre kort stiller det op, der går forbi: en lille forespørgsel, siden, endnu en lille forespørgsel og det større billede, med deres størrelser. Det højre kort viser HTTP-beskeden som læselige linjer uden hængelås."
       },
-      "nerd": "Ved {hop} er HTTP klartekst inde i TCP: forespørgselslinjen, headerne og indholdet kan alle læses på ledningen, og alle med adgang til forbindelsen kunne gemme eller ændre dem. Selv størrelserne står der (Content-Length): en forespørgsel på ~300 B, siden på 8 kB og så dens billede på 30 kB. En router sender videre efter IP-headeren og kigger ikke længere."
+      "technical": "Ved {hop} er HTTP klartekst inde i TCP: forespørgselslinjen, headerne og indholdet kan alle læses på ledningen, og alle med adgang til forbindelsen kunne gemme eller ændre dem. Selv størrelserne står der (Content-Length): en forespørgsel på ~300 B, siden på 8 kB og så dens billede på 30 kB. En router sender videre efter IP-headeren og kigger ikke længere."
     },
     "status": {
       "locked": {
-        "kid": "Alle på vejen kunne læse det",
-        "nerd": "Sti, headere, status: klartekst"
+        "simple": "Alle på vejen kunne læse det",
+        "technical": "Sti, headere, status: klartekst"
       },
       "guess": {
-        "kid": "Den kunne læse dem, men gør det ikke",
-        "nerd": "Intet at gætte: det kan læses"
+        "simple": "Den kunne læse dem, men gør det ikke",
+        "technical": "Intet at gætte: det kan læses"
       }
     },
     "tag": {
@@ -178,8 +178,8 @@
       "guess": "Content-Length i klartekst"
     },
     "describe": {
-      "kid": "En vej forbinder {yours} og webserveren. På det venstre kort beder en seddel om siden, og den går til serveren. Serveren finder siden på sin disk, stempler 200 OK og sender den tilbage. Så beder den næste seddel om billedet, og billedet kommer tilbage.",
-      "nerd": "Det venstre kort viser forespørgslen: GET /index.html HTTP/1.0 og en Accept-linje. Det højre kort er serverens disk: siden findes, stemples 200 OK og går tilbage; så GET /picture.gif, og billedet kommer tilbage samme vej. Ingen cache, ingen origin."
+      "simple": "En vej forbinder {yours} og webserveren. På det venstre kort beder en seddel om siden, og den går til serveren. Serveren finder siden på sin disk, stempler 200 OK og sender den tilbage. Så beder den næste seddel om billedet, og billedet kommer tilbage.",
+      "technical": "Det venstre kort viser forespørgslen: GET /index.html HTTP/1.0 og en Accept-linje. Det højre kort er serverens disk: siden findes, stemples 200 OK og går tilbage; så GET /picture.gif, og billedet kommer tilbage samme vej. Ingen cache, ingen origin."
     },
     "slip": {
       "page": "Siden, tak!",
@@ -187,61 +187,61 @@
     },
     "shelf": {
       "disk": {
-        "kid": "På disken!",
-        "nerd": "Læst fra disk"
+        "simple": "På disken!",
+        "technical": "Læst fra disk"
       }
     },
     "size": {
       "ask": {
-        "nerd": "300 B"
+        "technical": "300 B"
       },
       "med": {
-        "kid": "mellem",
-        "nerd": "8 kB"
+        "simple": "mellem",
+        "technical": "8 kB"
       },
       "low": {
-        "kid": "stor",
-        "nerd": "30 kB"
+        "simple": "stor",
+        "technical": "30 kB"
       }
     },
     "role": {
       "bridge": {
         "title": "{hop} bærer det ulæst",
-        "kid": "{hop} bærer sedlerne og svarene inde i dit telefonopkald. I 1995 var almindelige sider ikke låst, men {hop} åbner slet ikke pakken: den sender bare opkaldet videre.",
-        "nerd": "Ved {hop} rejser PPP-rammerne inde i opkaldet, så den ser aldrig IP-pakken, endsige HTTP indeni. Den HTTP er klartekst: enhver, der aflyttede linjen og afkodede opkaldet, kunne læse forespørgselslinjen, headerne og indholdet, og størrelserne med: en forespørgsel på ~300 B, siden på 8 kB og så dens billede på 30 kB."
+        "simple": "{hop} bærer sedlerne og svarene inde i dit telefonopkald. I 1995 var almindelige sider ikke låst, men {hop} åbner slet ikke pakken: den sender bare opkaldet videre.",
+        "technical": "Ved {hop} rejser PPP-rammerne inde i opkaldet, så den ser aldrig IP-pakken, endsige HTTP indeni. Den HTTP er klartekst: enhver, der aflyttede linjen og afkodede opkaldet, kunne læse forespørgselslinjen, headerne og indholdet, og størrelserne med: en forespørgsel på ~300 B, siden på 8 kB og så dens billede på 30 kB."
       }
     }
   },
   "2010": {
-    "kid": "{yours} skriver en seddel: videoen, tak. Videoserveren finder den på sin hylde, stempler 200 OK og sender den tilbage. I 2010 hentede de fleste afspillere hele videoen som én fil; tricket på tegningen var nyt: når forbindelsen bliver langsommere, beder den næste seddel om lavere kvalitet, så filmen bliver ved med at spille.",
-    "nerd": "I 2010 er det almindelig HTTP uden TLS (YouTube skiftede til HTTPS som standard midt i 2010'erne): GET med Host og et 200 OK fra en CDN-cache, som regel i en større by længere væk. Det meste video på nettet var én fil, der blev hentet helt (progressiv download med Range: bytes=… → 206 for at springe frem); adaptiv bitrate som på tegningen, hvor hvert stykkes kvalitet vælges, var lige på vej (Apples HLS i 2009; DASH blev standard i 2012).",
+    "simple": "{yours} skriver en seddel: videoen, tak. Videoserveren finder den på sin hylde, stempler 200 OK og sender den tilbage. I 2010 hentede de fleste afspillere hele videoen som én fil; tricket på tegningen var nyt: når forbindelsen bliver langsommere, beder den næste seddel om lavere kvalitet, så filmen bliver ved med at spille.",
+    "technical": "I 2010 er det almindelig HTTP uden TLS (YouTube skiftede til HTTPS som standard midt i 2010'erne): GET med Host og et 200 OK fra en CDN-cache, som regel i en større by længere væk. Det meste video på nettet var én fil, der blev hentet helt (progressiv download med Range: bytes=… → 206 for at springe frem); adaptiv bitrate som på tegningen, hvor hvert stykkes kvalitet vælges, var lige på vej (Apples HLS i 2009; DASH blev standard i 2012).",
     "card": {
       "seen": {
-        "kid": "Det, der går forbi",
-        "nerd": "Læsbart, ulæst"
+        "simple": "Det, der går forbi",
+        "technical": "Læsbart, ulæst"
       },
       "locked": {
-        "kid": "Brevet indeni",
-        "nerd": "Almindelig HTTP"
+        "simple": "Brevet indeni",
+        "technical": "Almindelig HTTP"
       }
     },
     "sealed": {
       "title": "{hop} kunne læse det hele",
-      "kid": "{hop} bærer sedlerne og svarene. I 2010 var videoer ikke låst, så den kunne læse, hvilken video der bedes om. Men en router læser kun adressen på pakken og sender resten videre.",
+      "simple": "{hop} bærer sedlerne og svarene. I 2010 var videoer ikke låst, så den kunne læse, hvilken video der bedes om. Men en router læser kun adressen på pakken og sender resten videre.",
       "describe": {
-        "kid": "{hop} står midt på vejen. Lukkede kasser med linjer af skrift går forbi: en lille hen mod serveren, en stor tilbage, endnu en lille og så en mindre tilbage. Det venstre kort samler dem efter størrelse. Det højre kort viser brevet indeni, i almindelig skrift og uden hængelås.",
-        "nerd": "Et mellemled står på vejen, mens almindelig HTTP passerer begge veje. Det venstre kort stiller det op, der går forbi: en lille forespørgsel, hele videoen i et stort svar, en lille Range-forespørgsel og et mindre 206-svar med resten, med deres størrelser. Det højre kort viser HTTP-beskeden som læselige linjer uden hængelås."
+        "simple": "{hop} står midt på vejen. Lukkede kasser med linjer af skrift går forbi: en lille hen mod serveren, en stor tilbage, endnu en lille og så en mindre tilbage. Det venstre kort samler dem efter størrelse. Det højre kort viser brevet indeni, i almindelig skrift og uden hængelås.",
+        "technical": "Et mellemled står på vejen, mens almindelig HTTP passerer begge veje. Det venstre kort stiller det op, der går forbi: en lille forespørgsel, hele videoen i et stort svar, en lille Range-forespørgsel og et mindre 206-svar med resten, med deres størrelser. Det højre kort viser HTTP-beskeden som læselige linjer uden hængelås."
       },
-      "nerd": "Ved {hop} er HTTP klartekst: video var ikke krypteret i 2010, så URL, Host og headere kunne læses på ledningen (nogle internetudbyderes cacher og filtre gjorde det). Det kunne størrelserne også: ét 200 OK, hvis Content-Length er hele videoen på 17 MB, og så, efter et spring frem, en Range-forespørgsel, der får 206 Partial Content med resten. En router sender videre efter IP-headeren og kigger ikke længere."
+      "technical": "Ved {hop} er HTTP klartekst: video var ikke krypteret i 2010, så URL, Host og headere kunne læses på ledningen (nogle internetudbyderes cacher og filtre gjorde det). Det kunne størrelserne også: ét 200 OK, hvis Content-Length er hele videoen på 17 MB, og så, efter et spring frem, en Range-forespørgsel, der får 206 Partial Content med resten. En router sender videre efter IP-headeren og kigger ikke længere."
     },
     "status": {
       "locked": {
-        "kid": "Alle på vejen kunne læse det",
-        "nerd": "Sti, Host, status: klartekst"
+        "simple": "Alle på vejen kunne læse det",
+        "technical": "Sti, Host, status: klartekst"
       },
       "guess": {
-        "kid": "Den kunne læse dem, men gør det ikke",
-        "nerd": "Sprang frem: Range → 206"
+        "simple": "Den kunne læse dem, men gør det ikke",
+        "technical": "Sprang frem: Range → 206"
       }
     },
     "tag": {
@@ -251,17 +251,17 @@
     },
     "size": {
       "med": {
-        "nerd": "17 MB"
+        "technical": "17 MB"
       },
       "low": {
-        "nerd": "8,5 MB"
+        "technical": "8,5 MB"
       }
     },
     "role": {
       "bridge": {
         "title": "{hop} bærer det ulæst",
-        "kid": "{hop} bærer sedlerne og svarene. I 2010 var videoer ikke låst, men {hop} læser ikke engang adressen på pakken: den sender den bare videre.",
-        "nerd": "Ved {hop} er HTTP klartekst: video var ikke krypteret i 2010, så URL, Host og headere kunne læses på ledningen, og størrelserne med: ét 200 OK, hvis Content-Length er hele videoen på 17 MB, og så, efter et spring frem, en Range-forespørgsel, der får 206 Partial Content med resten. {hop} selv sender rammerne videre uden at læse så meget som IP-headeren."
+        "simple": "{hop} bærer sedlerne og svarene. I 2010 var videoer ikke låst, men {hop} læser ikke engang adressen på pakken: den sender den bare videre.",
+        "technical": "Ved {hop} er HTTP klartekst: video var ikke krypteret i 2010, så URL, Host og headere kunne læses på ledningen, og størrelserne med: ét 200 OK, hvis Content-Length er hele videoen på 17 MB, og så, efter et spring frem, en Range-forespørgsel, der får 206 Partial Content med resten. {hop} selv sender rammerne videre uden at læse så meget som IP-headeren."
       }
     }
   },

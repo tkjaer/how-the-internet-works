@@ -1,11 +1,11 @@
 {
   "name": "Internetknudepunkt",
-  "kid": "Et mødested, hvor en masse net bytter pakker gratis.",
-  "nerd": "Et internetknudepunkt er et stort fælles Ethernet-net; netværk peerer over BGP, ofte via route servere.",
+  "simple": "Et mødested, hvor en masse net bytter pakker gratis.",
+  "technical": "Et internetknudepunkt er et stort fælles Ethernet-net; netværk peerer over BGP, ofte via route servere.",
   "tag": "Peering LAN · BGP",
   "1995": {
-    "kid": "DIX, hvor de danske net mødes og bytter pakker gratis, så en dansk side aldrig behøver at krydse havet. En side fra Amerika kommer ikke denne vej.",
-    "nerd": "DIX, Danish Internet Exchange, startet i 1994 af UNI•C på DTU i Lyngby: et delt Ethernet, hvor danske udbydere peerer, her nået på sin egen E1. Kun danske ruter læres der.",
+    "simple": "DIX, hvor de danske net mødes og bytter pakker gratis, så en dansk side aldrig behøver at krydse havet. En side fra Amerika kommer ikke denne vej.",
+    "technical": "DIX, Danish Internet Exchange, startet i 1994 af UNI•C på DTU i Lyngby: et delt Ethernet, hvor danske udbydere peerer, her nået på sin egen E1. Kun danske ruter læres der.",
     "tag": "DIX · 1994"
   }
 }

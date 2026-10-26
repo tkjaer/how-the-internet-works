@@ -54,14 +54,14 @@ function wirePoint(pair: number, x: number, wire: 0 | 1): Pt {
 export type Code = 'pam5' | 'mlt3' | 'manchester';
 export const codeOf = (bps: number): Code => (bps <= 10e6 ? 'manchester' : bps <= 100e6 ? 'mlt3' : 'pam5');
 
-/** The pairs drawn bright: a kid sees one of gigabit's four (the others alike); 10BASE-T and 100BASE-TX use only two. */
-export const litPairs = (code: Code, nerd: boolean): number[] => (code !== 'pam5' ? [0, 1] : nerd ? [0, 1, 2, 3] : [0]);
+/** The pairs drawn bright: at Simple one of gigabit's four (the others alike); 10BASE-T and 100BASE-TX use only two. */
+export const litPairs = (code: Code, technical: boolean): number[] => (code !== 'pam5' ? [0, 1] : technical ? [0, 1, 2, 3] : [0]);
 
-export function copperSparks(t: number, still: boolean, nerd: boolean, code: Code = 'pam5') {
+export function copperSparks(t: number, still: boolean, technical: boolean, code: Code = 'pam5') {
   const tt = still ? 3.2 : t;
   const span = COPPER.cableX1 - COPPER.cableX0;
   const turns = code === 'manchester', twoPairs = code !== 'pam5';
-  const lit = litPairs(code, nerd);
+  const lit = litPairs(code, technical);
   const out = [] as { key: string; pair: number; dir: 1 | -1; head: Pt; trail: Pt[]; colour: string; alpha: number }[];
   for (let pair = 0; pair < PAIRS.length; pair++) {
     for (const dir of [1, -1] as const) {

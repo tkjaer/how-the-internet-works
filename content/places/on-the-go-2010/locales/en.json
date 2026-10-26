@@ -2,11 +2,11 @@
   "name": "On the go, on 3G",
   "access": "3G",
   "2010": {
-    "kid": "Out on the street there’s no Wi-Fi, so the parcels fly by radio to a mast. From there they go to a controller box and on to the mobile company’s gate to the internet.",
-    "nerd": "Around 2010: the phone talks HSPA (3G) to a NodeB, which passes the radio pieces over Iub to the RNC. The RNC tunnels the packets (GTP-U) to the GGSN, which does NAT towards the internet.",
+    "simple": "Out on the street there’s no Wi-Fi, so the parcels fly by radio to a mast. From there they go to a controller box and on to the mobile company’s gate to the internet.",
+    "technical": "Around 2010: the phone talks HSPA (3G) to a NodeB, which passes the radio pieces over Iub to the RNC. The RNC tunnels the packets (GTP-U) to the GGSN, which does NAT towards the internet.",
     "describe": {
-      "kid": "A street with shops, a lamp, a road and a car sits before green hills. A phone with a small screen and a round button sends parcels by 3G radio to a mast with three flat antennas. A line carries them onward to the internet cloud. Requests and video move both ways.",
-      "nerd": "The street view shows a 2010 smartphone, an HSPA radio link to a NodeB with three sector antennas, the Iub line to the RNC and the internet cloud. Request packets move up through the NodeB and RNC. Video packets return the same way."
+      "simple": "A street with shops, a lamp, a road and a car sits before green hills. A phone with a small screen and a round button sends parcels by 3G radio to a mast with three flat antennas. A line carries them onward to the internet cloud. Requests and video move both ways.",
+      "technical": "The street view shows a 2010 smartphone, an HSPA radio link to a NodeB with three sector antennas, the Iub line to the RNC and the internet cloud. Request packets move up through the NodeB and RNC. Video packets return the same way."
     },
     "tag": {
       "phone": "3G · 10.152.33.7",
@@ -14,25 +14,25 @@
     },
     "stop": {
       "phone": {
-        "kid": "Your phone wants a cat video, even out here. It sends a little request by radio. On 3G a small video is what fits."
+        "simple": "Your phone wants a cat video, even out here. It sends a little request by radio. On 3G a small video is what fits."
       },
       "cell-tower-internet": {
-        "kid": "From the mast, your parcels travel along a line to the controller box, still in their radio envelopes.",
-        "nerd": "Iub: the NodeB passes the RLC pieces unopened to the RNC. In 2010 this was often a few E1 lines carrying ATM (2 Mbit/s each) or a microwave hop; newer sites had IP over fibre."
+        "simple": "From the mast, your parcels travel along a line to the controller box, still in their radio envelopes.",
+        "technical": "Iub: the NodeB passes the RLC pieces unopened to the RNC. In 2010 this was often a few E1 lines carrying ATM (2 Mbit/s each) or a microwave hop; newer sites had IP over fibre."
       }
     },
     "inside": {
       "internet": {
-        "nerd": "The RNC ends the radio layers and, with Direct Tunnel, tunnels the packets straight to the GGSN, which does NAT; the SGSN (dashed) only signs the phone in and sets the tunnel up. From there it’s the same internet: the ISP core, peering at an IXP (or paid transit), and a CDN cache. Each shaded area is one operator’s network.",
+        "technical": "The RNC ends the radio layers and, with Direct Tunnel, tunnels the packets straight to the GGSN, which does NAT; the SGSN (dashed) only signs the phone in and sets the tunnel up. From there it’s the same internet: the ISP core, peering at an IXP (or paid transit), and a CDN cache. Each shaded area is one operator’s network.",
         "describe": {
-          "kid": "Inside the cloud, the route starts at the mast, goes to the radio controller and then to the mobile company’s gate. A dashed side road leads to the sign-in desk. From the gate it joins the ISP core, reaches the border router, crosses the internet exchange, and ends at the video company’s data centre. Parcels move both ways.",
-          "nerd": "This internet view starts with the NodeB, the RNC and the GGSN, with the SGSN dashed beside the RNC, then continues through ISP core, border router, IXP and the CDN’s data centre. Shaded areas are the mobile or ISP network, the exchange and the video company. Packets move both ways over Iub, GTP, backbone fibre and cross-connects."
+          "simple": "Inside the cloud, the route starts at the mast, goes to the radio controller and then to the mobile company’s gate. A dashed side road leads to the sign-in desk. From the gate it joins the ISP core, reaches the border router, crosses the internet exchange, and ends at the video company’s data centre. Parcels move both ways.",
+          "technical": "This internet view starts with the NodeB, the RNC and the GGSN, with the SGSN dashed beside the RNC, then continues through ISP core, border router, IXP and the CDN’s data centre. Shaded areas are the mobile or ISP network, the exchange and the video company. Packets move both ways over Iub, GTP, backbone fibre and cross-connects."
         }
       }
     }
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/3G", "title": "3G", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/GPRS_core_network", "title": "GPRS core network", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/GPRS_core_network", "title": "GPRS core network", "level": "technical" }
   ]
 }

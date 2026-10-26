@@ -1,11 +1,11 @@
 {
   "name": {
-    "kid": "Straßenzettel",
-    "nerd": "VLAN-Tags (802.1ad Q-in-Q)"
+    "simple": "Straßenzettel",
+    "technical": "VLAN-Tags (802.1ad Q-in-Q)"
   },
   "note": {
-    "kid": "Es bekommt einen farbigen Zettel, damit der Betreiber weiß, von welcher Straße und welchem Haus es kam.",
-    "nerd": "Doppelt getaggt (Q-in-Q): ein S-VLAN pro Schrank, ein C-VLAN pro Kunde, Richtung BNG."
+    "simple": "Es bekommt einen farbigen Zettel, damit der Betreiber weiß, von welcher Straße und welchem Haus es kam.",
+    "technical": "Doppelt getaggt (Q-in-Q): ein S-VLAN pro Schrank, ein C-VLAN pro Kunde, Richtung BNG."
   },
   "line": "802.1ad Q-in-Q, S-VLAN {svid}, C-VLAN {cvid}",
   "field": {
@@ -19,8 +19,8 @@
     },
     "svid": {
       "name": {
-        "kid": "Straßennr.",
-        "nerd": "S-VLAN ID"
+        "simple": "Straßennr.",
+        "technical": "S-VLAN ID"
       },
       "about": "Der äußere Tag: durch welchen Straßenschrank es kam."
     },
@@ -38,8 +38,8 @@
     },
     "cvid": {
       "name": {
-        "kid": "Hausnr.",
-        "nerd": "C-VLAN ID"
+        "simple": "Hausnr.",
+        "technical": "C-VLAN ID"
       },
       "about": "Der innere Tag: welche Kundenleitung. Der BNG kennt dein Abo daran."
     },
@@ -49,7 +49,7 @@
     }
   },
   "learnMore": [
-    { "url": "https://de.wikipedia.org/wiki/IEEE_802.1Q", "title": "IEEE 802.1Q", "level": "nerd" },
-    { "url": "https://de.wikipedia.org/wiki/IEEE_802.1ad", "title": "IEEE 802.1ad", "level": "nerd" }
+    { "url": "https://de.wikipedia.org/wiki/IEEE_802.1Q", "title": "IEEE 802.1Q", "level": "technical" },
+    { "url": "https://de.wikipedia.org/wiki/IEEE_802.1ad", "title": "IEEE 802.1ad", "level": "technical" }
   ]
 }

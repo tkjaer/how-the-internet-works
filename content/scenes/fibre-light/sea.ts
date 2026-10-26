@@ -63,7 +63,7 @@ export function sparks(t: number, route: Pt[], n = 7, speed = 70): Pt[] {
   return Array.from({ length: n }, (_, i) => pointAt(route, wrap(t * speed + (i * L) / n, L)));
 }
 
-/** A shark (kids only) cruising to and fro above the cable: where it is and which way it faces. */
+/** A shark (Simple only) cruising to and fro above the cable: where it is and which way it faces. */
 export function shark(t: number, x0: number, x1: number, y: number): Pt & { left: boolean } {
   const span = x1 - x0, u = wrap(t * 55, 2 * span);
   return { x: u < span ? x0 + u : x1 - (u - span), y: y + 10 * Math.sin(t * 1.3), left: u >= span };

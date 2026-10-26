@@ -1,6 +1,6 @@
 {
   "name": "Fiberforbindelse",
-  "kid": "Fra dit hjem suser pakken af sted i en glastråd som lysglimt.",
-  "nerd": "FTTH: ONT’en i dit hjem taler XGS-PON med OLT’en – 10 Gbit/s delt mellem husene på én splitter.",
+  "simple": "Fra dit hjem suser pakken af sted i en glastråd som lysglimt.",
+  "technical": "FTTH: ONT’en i dit hjem taler XGS-PON med OLT’en – 10 Gbit/s delt mellem husene på én splitter.",
   "tag": "XGS-PON · 10 Gbit/s"
 }

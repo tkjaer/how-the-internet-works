@@ -2,11 +2,11 @@
   "name": "On the go, on GSM",
   "access": "GSM data",
   "1995": {
-    "kid": "Out on the street in 1995, hardly anyone went online, but you could! A laptop’s mobile phone rang the internet company, by radio to a mast and through the mobile company’s switches. Very slow, and every minute cost money.",
-    "nerd": "Around 1995: the laptop dials out through a GSM phone, circuit-switched data at 9.6 kbit/s. The call goes by radio to the BTS, as a 16 kbit/s quarter-slot through the BSC to the MSC, whose modems (the IWF) call on through the phone network to the ISP’s modem bank. PPP rides untouched all the way; no IP before the modem bank.",
+    "simple": "Out on the street in 1995, hardly anyone went online, but you could! A laptop’s mobile phone rang the internet company, by radio to a mast and through the mobile company’s switches. Very slow, and every minute cost money.",
+    "technical": "Around 1995: the laptop dials out through a GSM phone, circuit-switched data at 9.6 kbit/s. The call goes by radio to the BTS, as a 16 kbit/s quarter-slot through the BSC to the MSC, whose modems (the IWF) call on through the phone network to the ISP’s modem bank. PPP rides untouched all the way; no IP before the modem bank.",
     "describe": {
-      "kid": "A street with shops, a lamp, a road and a car sits before green hills. A thick laptop with a curly cable to a brick-sized mobile phone sends parcels by radio to a tall metal mast with thin aerials. A line carries them onward to the internet cloud. Requests and the page move both ways, slowly.",
-      "nerd": "The street view shows a 1995 laptop with a GSM phone on a cable, a GSM radio link to a BTS on a lattice mast, the Abis line and the internet cloud. Request packets go up inside the data call; the page comes back the same way at 9.6 kbit/s."
+      "simple": "A street with shops, a lamp, a road and a car sits before green hills. A thick laptop with a curly cable to a brick-sized mobile phone sends parcels by radio to a tall metal mast with thin aerials. A line carries them onward to the internet cloud. Requests and the page move both ways, slowly.",
+      "technical": "The street view shows a 1995 laptop with a GSM phone on a cable, a GSM radio link to a BTS on a lattice mast, the Abis line and the internet cloud. Request packets go up inside the data call; the page comes back the same way at 9.6 kbit/s."
     },
     "tag": {
       "phone": "GSM · 203.0.113.52",
@@ -15,23 +15,23 @@
     },
     "stop": {
       "phone": {
-        "kid": "Your laptop wants a web page, even out here. Its phone dials the internet company, and the laptop sends a little request down the call.",
-        "nerd": "The laptop is the endpoint: PPP gave it the public address 203.0.113.52 for this call. The phone only carries the call; the data card speaks RLP to the network’s modems."
+        "simple": "Your laptop wants a web page, even out here. Its phone dials the internet company, and the laptop sends a little request down the call.",
+        "technical": "The laptop is the endpoint: PPP gave it the public address 203.0.113.52 for this call. The phone only carries the call; the data card speaks RLP to the network’s modems."
       },
       "cell-tower-internet": {
-        "kid": "From the mast, your call travels along a line to the controller box and on to the mobile company’s switch, in a tiny slot shared with three other calls.",
-        "nerd": "Abis and Ater: E1 lines, and your call is a 16 kbit/s quarter of one 64 kbit/s timeslot, still RLP frames, all the way to the transcoder at the MSC."
+        "simple": "From the mast, your call travels along a line to the controller box and on to the mobile company’s switch, in a tiny slot shared with three other calls.",
+        "technical": "Abis and Ater: E1 lines, and your call is a 16 kbit/s quarter of one 64 kbit/s timeslot, still RLP frames, all the way to the transcoder at the MSC."
       },
       "exchange": {
-        "nerd": "The call arrives from the MSC on an E1 trunk and is switched on as a 64 kbit/s timeslot through the phone network to the ISP’s modems."
+        "technical": "The call arrives from the MSC on an E1 trunk and is switched on as a 64 kbit/s timeslot through the phone network to the ISP’s modems."
       }
     },
     "inside": {
       "internet": {
-        "nerd": "The phone networks come first: the BSC, the MSC, whose IWF modem calls on, and the phone company’s exchange, which hands the call to the ISP’s modem bank on a PRI. None of them reads IP; the internet starts at the modem bank. From there it’s 1995’s internet: the ISP’s router, a leased line to its upstream, the sea cable and an American backbone. Each shaded area is one network.",
+        "technical": "The phone networks come first: the BSC, the MSC, whose IWF modem calls on, and the phone company’s exchange, which hands the call to the ISP’s modem bank on a PRI. None of them reads IP; the internet starts at the modem bank. From there it’s 1995’s internet: the ISP’s router, a leased line to its upstream, the sea cable and an American backbone. Each shaded area is one network.",
         "describe": {
-          "kid": "Inside the cloud, the route starts at the mast, goes to the mast controller and the mobile switch, then through the phone exchange to the internet company’s modems. From there it goes to the internet company’s router, under the sea and across America to the web server. Parcels move both ways.",
-          "nerd": "This internet view starts with the BTS, the BSC and the MSC with its modems, then the PSTN exchange and the ISP’s modem bank, then continues through 1995’s internet to the server room. Shaded areas are the networks. Packets move both ways over Abis, an E1 trunk, a PRI, leased lines, CANTAT-3 and ATM."
+          "simple": "Inside the cloud, the route starts at the mast, goes to the mast controller and the mobile switch, then through the phone exchange to the internet company’s modems. From there it goes to the internet company’s router, under the sea and across America to the web server. Parcels move both ways.",
+          "technical": "This internet view starts with the BTS, the BSC and the MSC with its modems, then the PSTN exchange and the ISP’s modem bank, then continues through 1995’s internet to the server room. Shaded areas are the networks. Packets move both ways over Abis, an E1 trunk, a PRI, leased lines, CANTAT-3 and ATM."
         }
       }
     }

@@ -1,86 +1,86 @@
 {
   "title": "Hvilken dør er mærkaten til?",
-  "kid": "En boks læser den lille mærkat udenpå og kigger i sin opslagsbog. Den samme boks kan lære MAC-døre, holde farvede gader adskilt eller følge et motorvejsnummer. Nedenunder rejser det som et signal i kabel eller fiber.",
-  "nerd": "Et samlet lag-2/label-switching-billede: Ethernet lærer afsender-MAC'er og flooder ukendte unicasts, VLAN-tags afgrænser forwarding-domæner, og MPLS-labels styrer LFIB push/swap/pop.",
+  "simple": "En boks læser den lille mærkat udenpå og kigger i sin opslagsbog. Den samme boks kan lære MAC-døre, holde farvede gader adskilt eller følge et motorvejsnummer. Nedenunder rejser det som et signal i kabel eller fiber.",
+  "technical": "Et samlet lag-2/label-switching-billede: Ethernet lærer afsender-MAC'er og flooder ukendte unicasts, VLAN-tags afgrænser forwarding-domæner, og MPLS-labels styrer LFIB push/swap/pop.",
   "ethernet": {
     "title": "Hvilken kabeldør?",
-    "kid": "Kabel-kuverten siger, hvilken dør den er til. En switch lærer fra Fra-mærkaten; en router eller computer tager kuverten af, når Til-mærkaten er dens eget navn. Nedenunder rejser den som elektriske skub eller lysglimt.",
-    "nerd": "Ethernet-forwarding bruger opslag på modtager-MAC, læring af afsender-MAC, flooding af ukendt unicast og FCS/CRC-32-tjek før decapsulation.",
+    "simple": "Kabel-kuverten siger, hvilken dør den er til. En switch lærer fra Fra-mærkaten; en router eller computer tager kuverten af, når Til-mærkaten er dens eget navn. Nedenunder rejser den som elektriske skub eller lysglimt.",
+    "technical": "Ethernet-forwarding bruger opslag på modtager-MAC, læring af afsender-MAC, flooding af ukendt unicast og FCS/CRC-32-tjek før decapsulation.",
     "role": {
       "bridge": {
         "title": "Boksen lærer dørene",
-        "kid": "Rammen kommer ind ad dør 1 fra {sender}. Boksen skriver “{sender} → dør 1”. Den kender ikke Til-mærkaten endnu, så den kopierer rammen ud ad de andre døre. Svaret lærer den dør 2. Nedenunder rejser den som et signal i kabel eller fiber.",
-        "nerd": "En bridge lærer source-MAC'er i en MAC-tabel, lader poster ældes efter cirka 300 s, flooder ukendte unicast-rammer undtagen på indgangsporten og sender kendte destinationer til én port. Den skriver aldrig rammen om: source- og destinations-MAC forbliver enhedernes i hver ende af lag 2-strækningen (her {sender} og {next}). Store-and-forward-switche verificerer FCS/CRC-32 først.",
+        "simple": "Rammen kommer ind ad dør 1 fra {sender}. Boksen skriver “{sender} → dør 1”. Den kender ikke Til-mærkaten endnu, så den kopierer rammen ud ad de andre døre. Svaret lærer den dør 2. Nedenunder rejser den som et signal i kabel eller fiber.",
+        "technical": "En bridge lærer source-MAC'er i en MAC-tabel, lader poster ældes efter cirka 300 s, flooder ukendte unicast-rammer undtagen på indgangsporten og sender kendte destinationer til én port. Den skriver aldrig rammen om: source- og destinations-MAC forbliver enhedernes i hver ende af lag 2-strækningen (her {sender} og {next}). Store-and-forward-switche verificerer FCS/CRC-32 først.",
         "describe": {
-          "kid": "En vej forbinder to små enheder og en boks med fire nummererede døre. En gående kuvert kommer til dør 1. To kort viser små kopier og en opslagsbog med døre. Prikkede spor lyser mod de andre døre. Senere går kuverten direkte til dør 2.",
-          "nerd": "Ethernet-rammen er tegnet som en kuvert ved en fireports bridge og en MAC-opslagsbog. Afsender-rækken udfyldes med den sendende routers MAC på port 1, og destinationen står med spørgsmålstegn. Flood-stier animeres til de andre porte. Når svaret kommer, lærer tabellen port 2, og rammen går direkte videre med uændrede MAC'er."
+          "simple": "En vej forbinder to små enheder og en boks med fire nummererede døre. En gående kuvert kommer til dør 1. To kort viser små kopier og en opslagsbog med døre. Prikkede spor lyser mod de andre døre. Senere går kuverten direkte til dør 2.",
+          "technical": "Ethernet-rammen er tegnet som en kuvert ved en fireports bridge og en MAC-opslagsbog. Afsender-rækken udfyldes med den sendende routers MAC på port 1, og destinationen står med spørgsmålstegn. Flood-stier animeres til de andre porte. Når svaret kommer, lærer tabellen port 2, og rammen går direkte videre med uændrede MAC'er."
         }
       },
       "nat": {
         "title": "Mærkaten er til mig",
-        "kid": "Til-mærkaten er routerens eget navn, så den tjekker rammen, tager kabel-kuverten af og råber til alle på vejen ud: “Hvem har adressen til {next}?” En boks svarer “Mig!”, og en frisk mærkat kommer på. Nedenunder rejser den som elektriske skub eller lysglimt.",
-        "nerd": "Modtager-MAC'en matcher routerens interface. Efter FCS/CRC-32-validering fjernes Ethernet-headeren; ARP finder MAC-adressen på næste hop på det udgående link ({next}) (IPv6 bruger NDP), og en ny Ethernet-ramme sendes ud.",
+        "simple": "Til-mærkaten er routerens eget navn, så den tjekker rammen, tager kabel-kuverten af og råber til alle på vejen ud: “Hvem har adressen til {next}?” En boks svarer “Mig!”, og en frisk mærkat kommer på. Nedenunder rejser den som elektriske skub eller lysglimt.",
+        "technical": "Modtager-MAC'en matcher routerens interface. Efter FCS/CRC-32-validering fjernes Ethernet-headeren; ARP finder MAC-adressen på næste hop på det udgående link ({next}) (IPv6 bruger NDP), og en ny Ethernet-ramme sendes ud.",
         "describe": {
-          "kid": "Vejen går forbi en boks med fire døre, og routeren du er ved, er markeret med en cirkel. En gående kuvert med MIG stopper ved boksen. Til-mærkaten løsner sig, mens “Hvem har?” dukker op. Bølgede spørgsmål når dørene, ét svar får flueben, og kuverten går videre.",
-          "nerd": "Ethernet-rammen står ved routerens portboks med Til- og FCS-flueben, en ARP-forespørgsel og en ARP-bog. Under opslaget holder rammen stille. Under fanout bliver MIG-mærkaten smudset, og ARP-bølger går ud til portene. En lært MAC erstatter broadcast, før en ny ramme går videre."
+          "simple": "Vejen går forbi en boks med fire døre, og routeren du er ved, er markeret med en cirkel. En gående kuvert med MIG stopper ved boksen. Til-mærkaten løsner sig, mens “Hvem har?” dukker op. Bølgede spørgsmål når dørene, ét svar får flueben, og kuverten går videre.",
+          "technical": "Ethernet-rammen står ved routerens portboks med Til- og FCS-flueben, en ARP-forespørgsel og en ARP-bog. Under opslaget holder rammen stille. Under fanout bliver MIG-mærkaten smudset, og ARP-bølger går ud til portene. En lært MAC erstatter broadcast, før en ny ramme går videre."
         }
       },
       "router": {
         "title": "Mærkaten er til mig",
-        "kid": "Til-mærkaten er routerens eget navn. Den tjekker rammen, tager kabel-kuverten af, spørger ARP om næste boks' MAC og sætter en ny kabelmærkat på. Nedenunder rejser den som elektriske skub eller lysglimt.",
-        "nerd": "Routeren bruger rammen, fordi den er adresseret til dens lokale MAC, validerer FCS/CRC-32, pakker payloaden ud, finder næste hop via ARP og skriver et nyt source/destination-MAC-par til det udgående link.",
+        "simple": "Til-mærkaten er routerens eget navn. Den tjekker rammen, tager kabel-kuverten af, spørger ARP om næste boks' MAC og sætter en ny kabelmærkat på. Nedenunder rejser den som elektriske skub eller lysglimt.",
+        "technical": "Routeren bruger rammen, fordi den er adresseret til dens lokale MAC, validerer FCS/CRC-32, pakker payloaden ud, finder næste hop via ARP og skriver et nyt source/destination-MAC-par til det udgående link.",
         "describe": {
-          "kid": "Routeren i midten er tegnet som en boks med fire døre på vejen, med en gående kuvert mærket MIG ved siden af. Mærkat-kortet viser Til og FCS med flueben, så kommer spørgsmålet “Hvem har?”. Bølgede linjer breder sig til dørene, ét svar får flueben, og kuverten går igen.",
-          "nerd": "En ramme adresseret til routeren står ved fireports-boksen. Handlingskortet tjekker Til-mærkat og FCS. Så markerer ARP-bogen en next-hop-række. ARP-bølger går ud fra indgangsdøren. Efter et svar ændres modtager-MAC’en, og rammen går videre."
+          "simple": "Routeren i midten er tegnet som en boks med fire døre på vejen, med en gående kuvert mærket MIG ved siden af. Mærkat-kortet viser Til og FCS med flueben, så kommer spørgsmålet “Hvem har?”. Bølgede linjer breder sig til dørene, ét svar får flueben, og kuverten går igen.",
+          "technical": "En ramme adresseret til routeren står ved fireports-boksen. Handlingskortet tjekker Til-mærkat og FCS. Så markerer ARP-bogen en next-hop-række. ARP-bølger går ud fra indgangsdøren. Efter et svar ændres modtager-MAC’en, og rammen går videre."
         }
       },
       "endpoint": {
         "title": "Mærkaten er til mig",
-        "kid": "Til-mærkaten passer på computeren. Den tjekker, at rammen ikke er smudset, tager kabel-kuverten af og sender pakken indeni opad. Når den svarer, bruger den ARP og skriver en ny mærkat. Nedenunder rejser den som elektriske skub eller lysglimt.",
-        "nerd": "En vært accepterer rammer, hvor destinationen er dens NIC-MAC (eller broadcast/multicast), verificerer FCS/CRC-32 og sender EtherType-payloaden opad. Udgående rammer bruger ARP-cachen til peerens MAC.",
+        "simple": "Til-mærkaten passer på computeren. Den tjekker, at rammen ikke er smudset, tager kabel-kuverten af og sender pakken indeni opad. Når den svarer, bruger den ARP og skriver en ny mærkat. Nedenunder rejser den som elektriske skub eller lysglimt.",
+        "technical": "En vært accepterer rammer, hvor destinationen er dens NIC-MAC (eller broadcast/multicast), verificerer FCS/CRC-32 og sender EtherType-payloaden opad. Udgående rammer bruger ARP-cachen til peerens MAC.",
         "describe": {
-          "kid": "En endeenhed er markeret med en cirkel, mens en boks med fire døre og en vej forbinder til den anden ende. En gående kuvert mærket MIG stopper. Den lille Til-mærkat tages af, og tjekkortet siger OK. Spørgsmålet “Hvem har?” og bølgede linjer vises, før kuverten går ud igen.",
-          "nerd": "Værten du er ved, er tegnet på Ethernet-hoppet med en MIG-mærket ramme. Handlingskortet viser destinationstræf og FCS-tjek. ARP-bogens række venter på peerens MAC. Rammen holder pause til opslag, ARP-bølger bevæger sig på linket, og en frisk Ethernet-mærkat bærer nyttelasten videre."
+          "simple": "En endeenhed er markeret med en cirkel, mens en boks med fire døre og en vej forbinder til den anden ende. En gående kuvert mærket MIG stopper. Den lille Til-mærkat tages af, og tjekkortet siger OK. Spørgsmålet “Hvem har?” og bølgede linjer vises, før kuverten går ud igen.",
+          "technical": "Værten du er ved, er tegnet på Ethernet-hoppet med en MIG-mærket ramme. Handlingskortet viser destinationstræf og FCS-tjek. ARP-bogens række venter på peerens MAC. Rammen holder pause til opslag, ARP-bølger bevæger sig på linket, og en frisk Ethernet-mærkat bærer nyttelasten videre."
         }
       }
     }
   },
   "vlan": {
     "title": "Farvede gadedøre",
-    "kid": "Gade-mærkaten maler rammen for gade 101. Den går kun ud ad døre med den farve. Ved BNG'en fortæller hus 2042, hvilket abonnement det er, og mærkaterne tages af. Nedenunder rejser den som lysglimt i fiber.",
-    "nerd": "802.1Q bærer et 12-bit VID (1-4094 brugbare). I 802.1ad Q-in-Q peger S-VLAN 101 på skabets domæne, og C-VLAN 2042 peger på abonnentlinjen ved BNG'en.",
+    "simple": "Gade-mærkaten maler rammen for gade 101. Den går kun ud ad døre med den farve. Ved BNG'en fortæller hus 2042, hvilket abonnement det er, og mærkaterne tages af. Nedenunder rejser den som lysglimt i fiber.",
+    "technical": "802.1Q bærer et 12-bit VID (1-4094 brugbare). I 802.1ad Q-in-Q peger S-VLAN 101 på skabets domæne, og C-VLAN 2042 peger på abonnentlinjen ved BNG'en.",
     "describe": {
-      "kid": "En vej løber gennem en boks med fire døre, hvor de matchende baner er 1 og 3. Den gående kuvert bærer mærkaten 101. Handlingskortet bøjer dens vej kun gennem døre med samme bane. Banebogen viser Gade 101, Hus 2042 og en anden gade for sig selv.",
-      "nerd": "Rammen bærer VLAN 101 ved siden af en switch med fire nummererede porte. På handlingskortet følger tagget trafik kun de aktive medlemsporte, mens en stiplet separat bane er dæmpet. Banebogen viser Gade 101, Hus 2042 og et andet VID. Linjen med 802.1Q-felter vises nedenunder."
+      "simple": "En vej løber gennem en boks med fire døre, hvor de matchende baner er 1 og 3. Den gående kuvert bærer mærkaten 101. Handlingskortet bøjer dens vej kun gennem døre med samme bane. Banebogen viser Gade 101, Hus 2042 og en anden gade for sig selv.",
+      "technical": "Rammen bærer VLAN 101 ved siden af en switch med fire nummererede porte. På handlingskortet følger tagget trafik kun de aktive medlemsporte, mens en stiplet separat bane er dæmpet. Banebogen viser Gade 101, Hus 2042 og et andet VID. Linjen med 802.1Q-felter vises nedenunder."
     },
     "at": {
       "bng": {
         "title": "Abonnementsdøren",
-        "kid": "Ved BNG'en har gade- og husmærkaten gjort deres arbejde. Hus 2042 betyder din linje, så BNG'en tager mærkaterne af og sender pakken videre. Nedenunder rejser den som lysglimt i fiber.",
-        "nerd": "BNG'en terminerer access-VLAN'erne: S-VID 101 afgrænser aggregeringssiden, C-VID 2042 vælger subscribersessionen, og Ethernet-indholdet routes eller label-switches videre.",
+        "simple": "Ved BNG'en har gade- og husmærkaten gjort deres arbejde. Hus 2042 betyder din linje, så BNG'en tager mærkaterne af og sender pakken videre. Nedenunder rejser den som lysglimt i fiber.",
+        "technical": "BNG'en terminerer access-VLAN'erne: S-VID 101 afgrænser aggregeringssiden, C-VID 2042 vælger subscribersessionen, og Ethernet-indholdet routes eller label-switches videre.",
         "describe": {
-          "kid": "Vejen når en boks med fire døre, og denne BNG er markeret med en cirkel. Kuverten har stadig sin 101-mærkat på. Handlingskortet viser den rigtige bane, og en lille TAGS-seddel flyver væk. Banebogen peger fra gade og hus til én ejer, mens mærkerne tages af.",
-          "nerd": "Ved BNG’en viser handlingskortet stadig VLAN-medlemsportene, men et TAGS-mærke pilles af på en buet pil. Banebogen skifter til S-VID 101 og C-VID 2042 med abonnentrækken. Rammen holder ved portboksen, mens mærkerne tages af."
+          "simple": "Vejen når en boks med fire døre, og denne BNG er markeret med en cirkel. Kuverten har stadig sin 101-mærkat på. Handlingskortet viser den rigtige bane, og en lille TAGS-seddel flyver væk. Banebogen peger fra gade og hus til én ejer, mens mærkerne tages af.",
+          "technical": "Ved BNG’en viser handlingskortet stadig VLAN-medlemsportene, men et TAGS-mærke pilles af på en buet pil. Banebogen skifter til S-VID 101 og C-VID 2042 med abonnentrækken. Rammen holder ved portboksen, mens mærkerne tages af."
         }
       }
     }
   },
   "mpls": {
     "title": "Motorvejsnumre",
-    "kid": "Inde i udbyderens net er mærkaten et motorvejsnummer. Et kryds bytter det til det nummer, det næste kryds bad om, og sender pakken ud ad dør 3 uden at læse den lange adresse. Nedenunder rejser den som lysglimt i fiber.",
-    "nerd": "MPLS-routere bruger en LFIB: en indgående label peger på et udgående interface og den label, den næste router annoncerede. Indgangskanten pusher en label, LSR'er i midten swapper den, udgangskanten popper den (eller, som standard, hoppet før: penultimate-hop popping).",
+    "simple": "Inde i udbyderens net er mærkaten et motorvejsnummer. Et kryds bytter det til det nummer, det næste kryds bad om, og sender pakken ud ad dør 3 uden at læse den lange adresse. Nedenunder rejser den som lysglimt i fiber.",
+    "technical": "MPLS-routere bruger en LFIB: en indgående label peger på et udgående interface og den label, den næste router annoncerede. Indgangskanten pusher en label, LSR'er i midten swapper den, udgangskanten popper den (eller, som standard, hoppet før: penultimate-hop popping).",
     "describe": {
-      "kid": "En bred vej går gennem et kryds med fire døre, og den gående pakke bærer et stort motorvejsnummer. Label-kortet viser IP, der får et nyt nummer, eller ét nummer der bliver til et andet. Labelbogen viser, hvilken dør der skal bruges, dør 3 lyser, og pakken går videre.",
-      "nerd": "MPLS-pakken står ved en fireports LSR, hvor dør 3 er markeret. Handlingskortet viser enten IP, der får en udgående label, eller en indgående label, der skiftes til næste label. LFIB-kortet viser samme mapping. Pakken med label bevæger sig videre mellem noderne."
+      "simple": "En bred vej går gennem et kryds med fire døre, og den gående pakke bærer et stort motorvejsnummer. Label-kortet viser IP, der får et nyt nummer, eller ét nummer der bliver til et andet. Labelbogen viser, hvilken dør der skal bruges, dør 3 lyser, og pakken går videre.",
+      "technical": "MPLS-pakken står ved en fireports LSR, hvor dør 3 er markeret. Handlingskortet viser enten IP, der får en udgående label, eller en indgående label, der skiftes til næste label. LFIB-kortet viser samme mapping. Pakken med label bevæger sig videre mellem noderne."
     },
     "at": {
       "border": {
         "title": "Af motorvejen",
-        "kid": "Grænserouteren er det sidste kryds i dit internetfirmas net. Den tager motorvejsmærkaten af, så knudepunktet og det næste net kan læse den normale adresse igen. Nedenunder rejser den som lysglimt i fiber.",
-        "nerd": "Egress-PE’en popper labelen før det Ethernet-only peering-LAN på IXP’et og sender videre på IP-headeren mod eBGP-næste hop. Som regel har kernerouteren før den allerede poppet den (penultimate-hop popping, standarden); her popper grænserouteren den selv. TC-bits bærer klasse; ved pop kopieres den nedtalte MPLS-TTL tilbage til IP-headeren (den uniforme model; pipe-modellen lader IP-TTL’en være).",
+        "simple": "Grænserouteren er det sidste kryds i dit internetfirmas net. Den tager motorvejsmærkaten af, så knudepunktet og det næste net kan læse den normale adresse igen. Nedenunder rejser den som lysglimt i fiber.",
+        "technical": "Egress-PE’en popper labelen før det Ethernet-only peering-LAN på IXP’et og sender videre på IP-headeren mod eBGP-næste hop. Som regel har kernerouteren før den allerede poppet den (penultimate-hop popping, standarden); her popper grænserouteren den selv. TC-bits bærer klasse; ved pop kopieres den nedtalte MPLS-TTL tilbage til IP-headeren (den uniforme model; pipe-modellen lader IP-TTL’en være).",
         "describe": {
-          "kid": "Ved det sidste kryds med fire døre kommer pakken med en motorvejsmærkat på. Label-kortet viser, at nummeret bliver til IP igen, med et lille pop-skilt imellem. Labelbogen siger, at mærkaten skal af, dør 3 lyser, og pakken går videre som en pakke med almindelig adresse.",
-          "nerd": "Egress-routeren er markeret på vejen med den MPLS-mærkede pakke ved dørene. Handlingskortet viser den indgående label ændret tilbage til IP og markeret pop. LFIB-kortet viser labelen med pop og siger, at IP skal læses bagefter. Den aktive udgangsdør lyser, mens pakken fortsætter uden MPLS-label."
+          "simple": "Ved det sidste kryds med fire døre kommer pakken med en motorvejsmærkat på. Label-kortet viser, at nummeret bliver til IP igen, med et lille pop-skilt imellem. Labelbogen siger, at mærkaten skal af, dør 3 lyser, og pakken går videre som en pakke med almindelig adresse.",
+          "technical": "Egress-routeren er markeret på vejen med den MPLS-mærkede pakke ved dørene. Handlingskortet viser den indgående label ændret tilbage til IP og markeret pop. LFIB-kortet viser labelen med pop og siger, at IP skal læses bagefter. Den aktive udgangsdør lyser, mens pakken fortsætter uden MPLS-label."
         }
       }
     }

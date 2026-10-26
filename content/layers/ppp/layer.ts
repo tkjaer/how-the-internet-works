@@ -7,7 +7,7 @@ export default defineLayer({
     { id: 'flag', bits: 8, value: '0x7E' },
     { id: 'address', bits: 8, value: '0xFF' },
     { id: 'control', bits: 8, value: '0x03' },
-    { id: 'proto', bits: 16, value: '{inner.ppp}', use: ['router', 'endpoint'], kid: '@ip' },
+    { id: 'proto', bits: 16, value: '{inner.ppp}', use: ['router', 'endpoint'], simple: '@ip' },
     // the default 16-bit frame check (RFC 1662); 32 bits only if LCP negotiates it (RFC 1570)
     { id: 'fcs', bits: 16, value: '{crc}', use: ['router', 'endpoint'] },
   ],

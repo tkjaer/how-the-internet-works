@@ -17,7 +17,7 @@ export interface Layout {
   names: number;
   walk: number;
   parcel: number;
-  /** where the nerd tags hang, clear of the focused node */
+  /** where the technical tags hang, clear of the focused node */
   tags: Record<Where, Pt[]>;
   endNames: boolean;
   compact: boolean;

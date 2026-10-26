@@ -42,7 +42,7 @@
     const c = clientAt(subject.route, i, subject.route.activity.flows[0]);
     return { full: c.port ? `${c.addr.text}:${c.port}` : c.addr.text, short: c.addr.text };
   };
-  const stickers = $derived(S('mode') === 'nerd'
+  const stickers = $derived(S('mode') === 'technical'
     ? subject.hop.natTo ? [sender(subject.hop.index - 1), sender(subject.hop.index)] : [client.addr ?? '', subject.hop.addr ?? ''].map((a) => ({ full: a, short: a }))
     : [nameOf(client), S('outside')].map((who) => fill(S('from'), { who })).map((s) => ({ full: s, short: s })));
   /** The stickers' words in a room `w` wide: address:port where it fits (shrunk to no less than 80 %, and not at all
@@ -103,7 +103,7 @@
           {@const sy = mid + (k ? 1 : -1) * T.sticker * 1.25}
           {@const on = k === 1 ? parcel.swapped : !parcel.swapped}
           <rect x={b.x + 18} y={sy - T.sticker * 0.85} width={b.w - 36} height={T.sticker * 1.7} rx="8" fill={on ? 'var(--kraft)' : 'var(--paper-2)'} stroke="var(--line)" stroke-width="4" />
-          <text x={c.x} y={sy + T.sticker * 0.36} text-anchor="middle" font-family={S('mode') === 'nerd' ? 'var(--tag-font)' : 'var(--label-font)'} font-size={fit.size} font-weight="800" fill="var(--line)" text-decoration={k === 0 && parcel.swapped ? 'line-through' : undefined}>{s}</text>
+          <text x={c.x} y={sy + T.sticker * 0.36} text-anchor="middle" font-family={S('mode') === 'technical' ? 'var(--tag-font)' : 'var(--label-font)'} font-size={fit.size} font-weight="800" fill="var(--line)" text-decoration={k === 0 && parcel.swapped ? 'line-through' : undefined}>{s}</text>
         {/each}
       {:else if uplink === 'wan'}
         <!-- one cable socket of its own, for the cable out of the home; lit, as it's the way out -->

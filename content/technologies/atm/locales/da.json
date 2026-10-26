@@ -1,8 +1,8 @@
 {
   "name": "ATM-hovednet",
   "1995": {
-    "kid": "Et stort amerikansk net bærer din pakke tværs over landet. Undervejs bliver den skåret i en masse bittesmå stykker med hver sin mærkat og sat sammen igen i den anden ende.",
-    "nerd": "IP over ATM på SONET: routere i kanterne, ATM-switche imellem, OC-3c med 155 Mbit/s (DS3 med 45 Mbit/s på mindre ruter). Pakken skæres i celler på 53 byte (AAL5). Packet over SONET tog over fra omkring 1997, og MPLS kom omkring 2001.",
+    "simple": "Et stort amerikansk net bærer din pakke tværs over landet. Undervejs bliver den skåret i en masse bittesmå stykker med hver sin mærkat og sat sammen igen i den anden ende.",
+    "technical": "IP over ATM på SONET: routere i kanterne, ATM-switche imellem, OC-3c med 155 Mbit/s (DS3 med 45 Mbit/s på mindre ruter). Pakken skæres i celler på 53 byte (AAL5). Packet over SONET tog over fra omkring 1997, og MPLS kom omkring 2001.",
     "tag": "ATM · OC-3c · 155 Mbit/s"
   }
 }

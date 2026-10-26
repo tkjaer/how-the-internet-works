@@ -13,8 +13,8 @@
   const S = strings('scene.tls-lock');
   const L = $derived(layoutFor(view.orient, view.vp));
   const T = $derived(L.size);
-  // nerds see TLS 1.3's order: the keys first, then the (encrypted) certificate, so the paint card comes first
-  const keysFirst = $derived(subject.ctx.level === 'nerd');
+  // Technical shows TLS 1.3's order: the keys first, then the (encrypted) certificate, so the paint card comes first
+  const keysFirst = $derived(subject.ctx.level === 'technical');
   const m = $derived(tlsMoment(time, keysFirst));
   const isServer = $derived(subject.open && subject.ctx.to.node.id === subject.ctx.server.node.id);
   const endpoint = $derived(subject.open ? (isServer ? 'server' : 'client') : 'middle');
@@ -56,7 +56,7 @@
   }
 </script>
 
-<!-- THESIS: TLS is a three-beat secret handshake: prove the server and mix a shared colour (nerds see the TLS 1.3 order: keys first, then the encrypted certificate), then lock the parcel. OWN-WORLD: the IP dive family staging, pinned paper cards over a straight road, storybook ink and big props. STORY: endpoints open TLS; middle hops and the crow see only public mixes (pale blends, never a secret colour) and locked parcels. FIRST VIEWPORT: client/server/hop on the bottom road; ID card and paint-mixing cards above. FORM: issue-brief layer-dive staging with a deterministic 16s loop. -->
+<!-- THESIS: TLS is a three-beat secret handshake: prove the server and mix a shared colour (Technical shows the TLS 1.3 order: keys first, then the encrypted certificate), then lock the parcel. OWN-WORLD: the IP dive family staging, pinned paper cards over a straight road, storybook ink and big props. STORY: endpoints open TLS; middle hops and the crow see only public mixes (pale blends, never a secret colour) and locked parcels. FIRST VIEWPORT: client/server/hop on the bottom road; ID card and paint-mixing cards above. FORM: issue-brief layer-dive staging with a deterministic 16s loop. -->
 <rect x={L.road.x0} y={L.road.y - 36} width={L.road.x1 - L.road.x0} height="72" rx="36" fill="var(--kraft)" stroke="var(--line)" stroke-width="6" />
 <path d={`M${L.road.x0 + 50} ${L.road.y} H${L.road.x1 - 50}`} stroke="var(--paper)" stroke-width="7" stroke-dasharray="34 30" stroke-linecap="round" />
 

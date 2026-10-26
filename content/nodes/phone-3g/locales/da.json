@@ -2,8 +2,8 @@
   "name": "Telefon",
   "yours": "din telefon",
   "2010": {
-    "kid": "En lille computer i lommen med radioer til Wi-Fi og 3G. Skærmen er lille, så små videoer ser fine ud på den.",
-    "nerd": "En smartphone fra 2010 (en iPhone 4 eller tidens Android): HSDPA kategori 8–10 og HSUPA. Et endepunkt: den åbner (og tjekker) hvert lag, fra 3G-rammen op til HTTP.",
+    "simple": "En lille computer i lommen med radioer til Wi-Fi og 3G. Skærmen er lille, så små videoer ser fine ud på den.",
+    "technical": "En smartphone fra 2010 (en iPhone 4 eller tidens Android): HSDPA kategori 8–10 og HSUPA. Et endepunkt: den åbner (og tjekker) hvert lag, fra 3G-rammen op til HTTP.",
     "tag": "HSDPA 7,2 · 3,5″"
   },
   "learnMore": [

@@ -1,45 +1,45 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Inde i internetknudepunktet",
   "heading": {
-    "kid": "Inde i internetknudepunktet",
-    "nerd": "IXP peering-LAN"
+    "simple": "Inde i internetknudepunktet",
+    "technical": "IXP peering-LAN"
   },
-  "kid": "Et internetknudepunkt er et mødested for netværk. Hjælperen deler sedler om, hvem der kan nå hvad. Så bytter din pakke lige over den fælles switch, uden at betale pr. pakke eller besøge hjælperen.",
-  "nerd": "IXP'en er et fælles Ethernet-net. Medlemmer peerer med BGP, ofte gennem en route server, der videregiver ruter, men ikke sender trafik videre. Din pakke tager ét data-plane-hop over peering-LAN'et fra udbyderens port til CDN-porten.",
+  "simple": "Et internetknudepunkt er et mødested for netværk. Hjælperen deler sedler om, hvem der kan nå hvad. Så bytter din pakke lige over den fælles switch, uden at betale pr. pakke eller besøge hjælperen.",
+  "technical": "IXP'en er et fælles Ethernet-net. Medlemmer peerer med BGP, ofte gennem en route server, der videregiver ruter, men ikke sender trafik videre. Din pakke tager ét data-plane-hop over peering-LAN'et fra udbyderens port til CDN-porten.",
   "describe": {
-    "kid": "En lang fælles switch står i midten. Dit internetfirmas router sidder i den ene ende og videofirmaets i den anden. Fire andre net er også sat til. En hjælperkasse har sit eget kabel. Små sedler kører over switchen til hjælperen og tilbage. Så kører din pakke lige over switchen til videofirmaet.",
-    "nerd": "Et peering-LAN med seks medlemsporte. Route serveren har sin egen port. BGP UPDATE-sedler krydser switchen til route serveren og tilbage til alle medlemmer. Så krydser pakken switchen i ét hop, fra ISP'ens grænseport til CDN'ens port. Den kommer aldrig forbi route serveren."
+    "simple": "En lang fælles switch står i midten. Dit internetfirmas router sidder i den ene ende og videofirmaets i den anden. Fire andre net er også sat til. En hjælperkasse har sit eget kabel. Små sedler kører over switchen til hjælperen og tilbage. Så kører din pakke lige over switchen til videofirmaet.",
+    "technical": "Et peering-LAN med seks medlemsporte. Route serveren har sin egen port. BGP UPDATE-sedler krydser switchen til route serveren og tilbage til alle medlemmer. Så krydser pakken switchen i ét hop, fra ISP'ens grænseport til CDN'ens port. Den kommer aldrig forbi route serveren."
   },
   "fabric": {
-    "kid": "Fælles switch",
-    "nerd": "Peering-LAN"
+    "simple": "Fælles switch",
+    "technical": "Peering-LAN"
   },
   "routeServer": {
-    "kid": "Rutehjælper",
-    "nerd": "Route server"
+    "simple": "Rutehjælper",
+    "technical": "Route server"
   },
   "routeServerLine": {
-    "kid": "deler sedler",
-    "nerd": "BGP · ingen trafik"
+    "simple": "deler sedler",
+    "technical": "BGP · ingen trafik"
   },
   "member": {
     "other": "Andre net",
     "as": "AS{n}"
   },
   "straight": {
-    "kid": "Pakker kører lige over",
-    "nerd": "Data: ét hop, port til port"
+    "simple": "Pakker kører lige over",
+    "technical": "Data: ét hop, port til port"
   },
   "1995": {
-    "kid": "Tegnet som nutidens knudepunkt. DIX var et rum på et universitet nær København, hvor de danske net satte stik i ét fælles kabel og byttede danske pakker gratis. En side fra Amerika kommer aldrig denne vej.",
-    "nerd": "Tegnet som i dag. DIX (1994, drevet af UNI•C på DTU i Lyngby) var et delt Ethernet, hvor danske udbydere peerede med BGP-4, så dansk trafik blev i Danmark. Kun danske ruter læres her: en side fra Amerika kommer via leverandøren i stedet.",
+    "simple": "Tegnet som nutidens knudepunkt. DIX var et rum på et universitet nær København, hvor de danske net satte stik i ét fælles kabel og byttede danske pakker gratis. En side fra Amerika kommer aldrig denne vej.",
+    "technical": "Tegnet som i dag. DIX (1994, drevet af UNI•C på DTU i Lyngby) var et delt Ethernet, hvor danske udbydere peerede med BGP-4, så dansk trafik blev i Danmark. Kun danske ruter læres her: en side fra Amerika kommer via leverandøren i stedet.",
     "describe": {
-      "kid": "En lang fælles switch står i midten. Dit internetfirmas router sidder i den ene ende og en dansk webservers net i den anden. Fire andre net sidder der også. En hjælperkasse har sit eget kabel. Små sedler kører over switchen til hjælperen og tilbage. Så krydser en pakke switchen direkte til det danske net.",
-      "nerd": "Tegnet som i dag: en peering-LAN-switch med seks medlemsporte og en route server med sin egen port. BGP UPDATE-sedler krydser fabric’en til route serveren og tilbage til hvert medlem. Så krydser en pakke fabric’en i ét hop fra udbyderens port til et dansk nets port. Den besøger aldrig route serveren."
+      "simple": "En lang fælles switch står i midten. Dit internetfirmas router sidder i den ene ende og en dansk webservers net i den anden. Fire andre net sidder der også. En hjælperkasse har sit eget kabel. Små sedler kører over switchen til hjælperen og tilbage. Så krydser en pakke switchen direkte til det danske net.",
+      "technical": "Tegnet som i dag: en peering-LAN-switch med seks medlemsporte og en route server med sin egen port. BGP UPDATE-sedler krydser fabric’en til route serveren og tilbage til hvert medlem. Så krydser en pakke fabric’en i ét hop fra udbyderens port til et dansk nets port. Den besøger aldrig route serveren."
     }
   }
 }

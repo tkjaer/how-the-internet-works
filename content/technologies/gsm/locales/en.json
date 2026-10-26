@@ -1,12 +1,12 @@
 {
   "name": "GSM data",
   "1995": {
-    "kid": "The laptop’s phone calls the internet company, by radio to the mast. The call gets its own seat in the radio waves, a tiny moment that comes round again and again, and keeps it until you hang up. It’s slow, and every minute costs money.",
-    "nerd": "GSM circuit-switched data (CSD): a full-rate traffic channel, TCH/F9.6, one time slot of eight on a 200 kHz carrier around 900 MHz, yours for the whole call. 12 kbit/s of RLP frames (resent when garbled) coded to 22.8 kbit/s on air; 9.6 kbit/s left for PPP. Billed per minute, like a call.",
+    "simple": "The laptop’s phone calls the internet company, by radio to the mast. The call gets its own seat in the radio waves, a tiny moment that comes round again and again, and keeps it until you hang up. It’s slow, and every minute costs money.",
+    "technical": "GSM circuit-switched data (CSD): a full-rate traffic channel, TCH/F9.6, one time slot of eight on a 200 kHz carrier around 900 MHz, yours for the whole call. 12 kbit/s of RLP frames (resent when garbled) coded to 22.8 kbit/s on air; 9.6 kbit/s left for PPP. Billed per minute, like a call.",
     "tag": "CSD · 9.6 kbit/s · 1 slot"
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Circuit_Switched_Data", "title": "Circuit Switched Data", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/GSM", "title": "GSM", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/GSM", "title": "GSM", "level": "technical" }
   ]
 }

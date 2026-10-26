@@ -1,60 +1,60 @@
 {
   "title": "Little cells with labels",
-  "kid": "On this big American backbone your parcel is chopped into tiny pieces, all the same size, each with a little label in front. Machines in the middle read only the label, swap it for a new one and send the piece on. At the far end the pieces are glued back into your parcel.",
-  "nerd": "ATM: fixed 53-byte cells, a 5-byte header and 48 bytes of payload. The router segments each IP packet with AAL5 (RFC 1483 LLC/SNAP, then an 8-byte trailer with length and CRC-32, padded to 48). Switches forward on the VPI/VCI of a permanent virtual circuit and rewrite it hop by hop, much as MPLS would swap labels from 2001. The far router reassembles at the cell marked last (PTI).",
+  "simple": "On this big American backbone your parcel is chopped into tiny pieces, all the same size, each with a little label in front. Machines in the middle read only the label, swap it for a new one and send the piece on. At the far end the pieces are glued back into your parcel.",
+  "technical": "ATM: fixed 53-byte cells, a 5-byte header and 48 bytes of payload. The router segments each IP packet with AAL5 (RFC 1483 LLC/SNAP, then an 8-byte trailer with length and CRC-32, padded to 48). Switches forward on the VPI/VCI of a permanent virtual circuit and rewrite it hop by hop, much as MPLS would swap labels from 2001. The far router reassembles at the cell marked last (PTI).",
   "describe": {
-    "kid": "Two backbone routers with a line between them, and a switch in the middle. Small square pieces stream along the line, each with an orange label that turns teal as the switch swaps it. One card shows your parcel cut into 32 pieces; the other shows one piece: a small label and a big part of your parcel.",
-    "nerd": "Two routers joined by an ATM circuit through a switch that rewrites VPI/VCI 1/112 to 1/87. One card shows a 1500-byte packet cut by AAL5 into 32 cells, 1696 bytes on the line; the other a 53-byte cell: VPI/VCI, PTI and CLP, HEC, and 48 bytes of payload."
+    "simple": "Two backbone routers with a line between them, and a switch in the middle. Small square pieces stream along the line, each with an orange label that turns teal as the switch swaps it. One card shows your parcel cut into 32 pieces; the other shows one piece: a small label and a big part of your parcel.",
+    "technical": "Two routers joined by an ATM circuit through a switch that rewrites VPI/VCI 1/112 to 1/87. One card shows a 1500-byte packet cut by AAL5 into 32 cells, 1696 bytes on the line; the other a 53-byte cell: VPI/VCI, PTI and CLP, HEC, and 48 bytes of payload."
   },
   "switch": {
-    "kid": "Label swapper",
-    "nerd": "ATM switch"
+    "simple": "Label swapper",
+    "technical": "ATM switch"
   },
   "cutTitle": {
-    "kid": "Your parcel, chopped up",
-    "nerd": "AAL5: packet into cells"
+    "simple": "Your parcel, chopped up",
+    "technical": "AAL5: packet into cells"
   },
   "packet": {
-    "kid": "Your parcel",
-    "nerd": "IP packet, {bytes} bytes"
+    "simple": "Your parcel",
+    "technical": "IP packet, {bytes} bytes"
   },
   "cutLine": {
-    "kid": "{n} pieces, each with its own label",
-    "nerd": "{n} cells = {bytes} bytes on the line ({pct} % overhead)"
+    "simple": "{n} pieces, each with its own label",
+    "technical": "{n} cells = {bytes} bytes on the line ({pct} % overhead)"
   },
   "cellTitle": {
-    "kid": "One piece",
-    "nerd": "One cell, 53 bytes"
+    "simple": "One piece",
+    "technical": "One cell, 53 bytes"
   },
   "cellBytes": {
-    "kid": "Small label, big piece",
-    "nerd": "{head} B header + {body} B payload"
+    "simple": "Small label, big piece",
+    "technical": "{head} B header + {body} B payload"
   },
   "field": {
     "label": {
-      "kid": "Which road to take",
-      "nerd": "VPI/VCI: the circuit"
+      "simple": "Which road to take",
+      "technical": "VPI/VCI: the circuit"
     },
     "type": {
-      "kid": "Is this the last piece?",
-      "nerd": "PTI (last cell), CLP"
+      "simple": "Is this the last piece?",
+      "technical": "PTI (last cell), CLP"
     },
     "check": {
-      "kid": "A check of the label",
-      "nerd": "HEC: header check"
+      "simple": "A check of the label",
+      "technical": "HEC: header check"
     },
     "payload": {
-      "kid": "A piece of your parcel",
-      "nerd": "48 B of the AAL5 frame"
+      "simple": "A piece of your parcel",
+      "technical": "48 B of the AAL5 frame"
     }
   },
   "cellLine": {
-    "kid": "About a tenth of every piece is label",
-    "nerd": "5 of 53 bytes ≈ 9.4 % header, every cell"
+    "simple": "About a tenth of every piece is label",
+    "technical": "5 of 53 bytes ≈ 9.4 % header, every cell"
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode", "title": "Asynchronous Transfer Mode", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/ATM_Adaptation_Layer_5", "title": "ATM Adaptation Layer 5", "level": "nerd" },
-    { "url": "https://www.rfc-editor.org/rfc/rfc1483", "title": "RFC 1483: multiprotocol over ATM AAL5 (1993)", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/ATM_Adaptation_Layer_5", "title": "ATM Adaptation Layer 5", "level": "technical" },
+    { "url": "https://www.rfc-editor.org/rfc/rfc1483", "title": "RFC 1483: multiprotocol over ATM AAL5 (1993)", "level": "technical" }
   ]
 }

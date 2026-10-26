@@ -35,8 +35,8 @@ describe('the TLS dive (tls-lock)', () => {
     expect(Object.keys(nodes)).toEqual(expect.arrayContaining(clients.flatMap((c) => langs.map((l) => `../../content/nodes/${c}/locales/${l}.json`))));
   });
 
-  it('plays the ID first for kids, and the TLS 1.3 order for nerds: keys, then the encrypted certificate (#132)', () => {
-    const beats = (nerd: boolean) => [0.5, 4, 7.2, 8, 10.2, 12].map((t) => tlsMoment(t, nerd).beat);
+  it('plays the ID first at Simple, and the TLS 1.3 order at Technical: keys, then the encrypted certificate (#132)', () => {
+    const beats = (technical: boolean) => [0.5, 4, 7.2, 8, 10.2, 12].map((t) => tlsMoment(t, technical).beat);
     expect(beats(false)).toEqual(['id', 'mix', 'swap', 'swap', 'brown', 'locked']);
     expect(beats(true)).toEqual(['mix', 'swap', 'brown', 'id', 'id', 'locked']);
     expect(tlsMoment(3, true).idT).toBeLessThan(0);

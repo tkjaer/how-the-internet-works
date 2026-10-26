@@ -1,4 +1,4 @@
-// Where a path scene's text goes (#90, #72): device names, link names, owner signs and nerd tags stay inside their
+// Where a path scene's text goes (#90, #72): device names, link names, owner signs and technical tags stay inside their
 // world, a rim in from its edge (a nested scene's panel draws its frame over the outer 24 or so; the root's is the
 // screen), and off each other. Labels grow as the camera zooms out (they never render under the theme's labelMinPx), so
 // a spot that fits at the authored size can run off the panel, or onto a badge, on a small screen:

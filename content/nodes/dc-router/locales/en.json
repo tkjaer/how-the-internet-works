@@ -1,20 +1,20 @@
 {
   "name": "Edge router",
-  "kid": "The front door of the data centre. It lets parcels in from the exchange and sends the video back out.",
-  "nerd": "The PoP’s edge router: it peers over BGP at the exchange, announcing the video company’s addresses, and routes into the fabric, spreading traffic over the load balancers.",
+  "simple": "The front door of the data centre. It lets parcels in from the exchange and sends the video back out.",
+  "technical": "The PoP’s edge router: it peers over BGP at the exchange, announcing the video company’s addresses, and routes into the fabric, spreading traffic over the load balancers.",
   "tag": "eBGP · AS64501",
   "1995": {
     "name": "Router",
-    "kid": "The server room’s front door. The rented line from the big network ends here, and the page goes back out the same way.",
-    "nerd": "The hosting site’s router: the T1 from the backbone’s PoP ends on a serial port (Cisco HDLC), with a static default route back up it. A site this small has no BGP of its own.",
+    "simple": "The server room’s front door. The rented line from the big network ends here, and the page goes back out the same way.",
+    "technical": "The hosting site’s router: the T1 from the backbone’s PoP ends on a serial port (Cisco HDLC), with a static default route back up it. A site this small has no BGP of its own.",
     "tag": "T1 · static route"
   },
   "2010": {
     "name": "Core router",
-    "nerd": "The core router of the video company’s cage: it peers over BGP at the exchange, announcing the company’s addresses, and routes down over 10G to the load balancer and the aggregation switches."
+    "technical": "The core router of the video company’s cage: it peers over BGP at the exchange, announcing the company’s addresses, and routes down over 10G to the load balancer and the aggregation switches."
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Edge_device", "title": "Edge device", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Edge_device", "title": "Edge device", "level": "technical" },
     { "url": "https://en.wikipedia.org/wiki/Router_(computing)", "title": "Router", "level": "both" }
   ]
 }

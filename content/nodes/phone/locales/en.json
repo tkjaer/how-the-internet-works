@@ -1,8 +1,8 @@
 {
   "name": "Phone",
   "yours": "your phone",
-  "kid": "A small computer in your pocket, with radios for Wi-Fi and mobile data.",
-  "nerd": "An endpoint: it opens (and checks) every layer, from the radio frame up to the app’s HTTP messages.",
+  "simple": "A small computer in your pocket, with radios for Wi-Fi and mobile data.",
+  "technical": "An endpoint: it opens (and checks) every layer, from the radio frame up to the app’s HTTP messages.",
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Smartphone", "title": "Smartphone", "level": "both" }
   ]

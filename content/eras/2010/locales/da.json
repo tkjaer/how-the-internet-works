@@ -1,26 +1,26 @@
 {
   "name": "2010",
-  "kid": "Telefonlinjen bar internet og telefonsamtaler på samme tid, som toner for høje til at høre. En kasse med et modem indeni sendte Wi‑Fi ud i alle rum.",
-  "nerd": "DSL: ADSL2+ og siden VDSL2 fra gadeskabe, fra nogle få til flere titals Mbit/s på kobberparret. En modemrouter derhjemme laver NAT, med et 802.11n-adgangspunkt.",
+  "simple": "Telefonlinjen bar internet og telefonsamtaler på samme tid, som toner for høje til at høre. En kasse med et modem indeni sendte Wi‑Fi ud i alle rum.",
+  "technical": "DSL: ADSL2+ og siden VDSL2 fra gadeskabe, fra nogle få til flere titals Mbit/s på kobberparret. En modemrouter derhjemme laver NAT, med et 802.11n-adgangspunkt.",
   "describe": {
-    "kid": "En bærbar, slået op på bordet. Den er på Wi‑Fi, uden kabel: kassen med modemmet indeni synger ned ad telefonlinjen.",
-    "nerd": "En bærbar på 802.11n-Wi‑Fi til en DSL-modemrouter, der laver NAT og sender DMT-toner ned ad telefonparret."
+    "simple": "En bærbar, slået op på bordet. Den er på Wi‑Fi, uden kabel: kassen med modemmet indeni synger ned ad telefonlinjen.",
+    "technical": "En bærbar på 802.11n-Wi‑Fi til en DSL-modemrouter, der laver NAT og sender DMT-toner ned ad telefonparret."
   },
   "at": {
     "on-the-go": {
-      "kid": "Nu kunne telefoner se video, over 3G. Alle nær masten delte dens radiobølger, så videoen kom i lille størrelse, og nogle gange stoppede den for at hente mere.",
-      "nerd": "3G med HSPA: HSDPA toppede ved 7,2–14 Mbit/s, delt af hele cellen, og en telefon fik 1–3 Mbit/s i praksis. NodeB → RNC → GGSN, med pakkerne i GTP-U-tunneler; 360p var det typiske.",
+      "simple": "Nu kunne telefoner se video, over 3G. Alle nær masten delte dens radiobølger, så videoen kom i lille størrelse, og nogle gange stoppede den for at hente mere.",
+      "technical": "3G med HSPA: HSDPA toppede ved 7,2–14 Mbit/s, delt af hele cellen, og en telefon fik 1–3 Mbit/s i praksis. NodeB → RNC → GGSN, med pakkerne i GTP-U-tunneler; 360p var det typiske.",
       "describe": {
-        "kid": "En telefon med én rund knap under skærmen, på 3G til en mast henne ad gaden.",
-        "nerd": "En smartphone fra 2010 på HSPA (3G) til en NodeB, med RNC’en og GGSN’en bagved."
+        "simple": "En telefon med én rund knap under skærmen, på 3G til en mast henne ad gaden.",
+        "technical": "En smartphone fra 2010 på HSPA (3G) til en NodeB, med RNC’en og GGSN’en bagved."
       }
     },
     "desk-2010": {
-      "kid": "Telefonlinjen bar internet og telefonsamtaler på samme tid, som toner for høje til at høre. Ved skrivebordet gik et kabel fra den bærbare til kassen med modemmet indeni.",
-      "nerd": "DSL: ADSL2+ og siden VDSL2 fra gadeskabe, fra nogle få til flere titals Mbit/s på kobberparret. Den bærbare har et 100 Mbit/s Ethernet-kabel til modemrouteren, der laver NAT.",
+      "simple": "Telefonlinjen bar internet og telefonsamtaler på samme tid, som toner for høje til at høre. Ved skrivebordet gik et kabel fra den bærbare til kassen med modemmet indeni.",
+      "technical": "DSL: ADSL2+ og siden VDSL2 fra gadeskabe, fra nogle få til flere titals Mbit/s på kobberparret. Den bærbare har et 100 Mbit/s Ethernet-kabel til modemrouteren, der laver NAT.",
       "describe": {
-        "kid": "En bærbar på skrivebordet, med et kabel til kassen med modemmet indeni, der synger ned ad telefonlinjen.",
-        "nerd": "En bærbar på Ethernet til en DSL-modemrouter, der laver NAT og sender DMT-toner ned ad telefonparret."
+        "simple": "En bærbar på skrivebordet, med et kabel til kassen med modemmet indeni, der synger ned ad telefonlinjen.",
+        "technical": "En bærbar på Ethernet til en DSL-modemrouter, der laver NAT og sender DMT-toner ned ad telefonparret."
       }
     }
   }

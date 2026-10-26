@@ -1,11 +1,11 @@
 {
   "name": "Hjemme, i en lejlighed",
   "access": "I en lejlighed",
-  "kid": "Pakkerne suser gennem luften til wi-fi-boksen, ad et kabel til routeren og så ned ad trappen til kælderen. Derfra tager en glastråd dem til internettet – og videoen kommer tilbage samme vej!",
-  "nerd": "En boligblok med fiber til bygningen: Wi‑Fi brokoblet til Ethernet i adgangspunktet, NAT i lejlighedens router, Ethernet ned gennem stigrøret til udbyderens switch i kælderen og derefter en punkt-til-punkt-fiber til udbyderens aggregering.",
+  "simple": "Pakkerne suser gennem luften til wi-fi-boksen, ad et kabel til routeren og så ned ad trappen til kælderen. Derfra tager en glastråd dem til internettet – og videoen kommer tilbage samme vej!",
+  "technical": "En boligblok med fiber til bygningen: Wi‑Fi brokoblet til Ethernet i adgangspunktet, NAT i lejlighedens router, Ethernet ned gennem stigrøret til udbyderens switch i kælderen og derefter en punkt-til-punkt-fiber til udbyderens aggregering.",
   "describe": {
-    "kid": "En boligblok er skåret op. I din lejlighed sender telefonen pakker med Wi‑Fi til adgangspunktet og videre med kabel til routeren. Et andet kabel forlader lejligheden mod internetskyen: det går ned i kælderen, hvor en glastråd begynder. Forespørgsler går ud, og video kommer tilbage.",
-    "nerd": "Lejlighedsvisningen viser telefonen på Wi‑Fi til adgangspunktet, Ethernet til routeren og routerens Ethernet-uplink til internettet. Inde i internettet når uplinket kælderswitchen og derefter fiber til bygningen. Video kommer samme vej tilbage."
+    "simple": "En boligblok er skåret op. I din lejlighed sender telefonen pakker med Wi‑Fi til adgangspunktet og videre med kabel til routeren. Et andet kabel forlader lejligheden mod internetskyen: det går ned i kælderen, hvor en glastråd begynder. Forespørgsler går ud, og video kommer tilbage.",
+    "technical": "Lejlighedsvisningen viser telefonen på Wi‑Fi til adgangspunktet, Ethernet til routeren og routerens Ethernet-uplink til internettet. Inde i internettet når uplinket kælderswitchen og derefter fiber til bygningen. Video kommer samme vej tilbage."
   },
   "tag": {
     "phone": "Wi-Fi 6 · 192.168.1.23",
@@ -13,16 +13,16 @@
   },
   "stop": {
     "router": {
-      "kid": "Routeren er lejlighedens hoveddør. Den skriver dit hjems adresse på pakken og sender den ned ad trappen.",
-      "nerd": "NAT omskriver 192.168.1.23 til den offentlige 203.0.113.7; WAN-porten er almindeligt Ethernet til switchen i kælderen."
+      "simple": "Routeren er lejlighedens hoveddør. Den skriver dit hjems adresse på pakken og sender den ned ad trappen.",
+      "technical": "NAT omskriver 192.168.1.23 til den offentlige 203.0.113.7; WAN-porten er almindeligt Ethernet til switchen i kælderen."
     }
   },
   "inside": {
     "internet": {
-      "nerd": "Adgangsnet (en punkt-til-punkt-fiber fra bygningens kælderswitch), et aggregeringslag (L2-backhaul til BNG’en), udbyderens MPLS-kerne og derefter enten peering uden afregning i et IXP eller betalt transit – og til sidst en CDN-cache tæt på dig. Hvert farvet felt er én operatørs net.",
+      "technical": "Adgangsnet (en punkt-til-punkt-fiber fra bygningens kælderswitch), et aggregeringslag (L2-backhaul til BNG’en), udbyderens MPLS-kerne og derefter enten peering uden afregning i et IXP eller betalt transit – og til sidst en CDN-cache tæt på dig. Hvert farvet felt er én operatørs net.",
       "describe": {
-        "kid": "Inde i skyen starter ruten ved din bygning. Et kabel går ned til kælderswitchen, og en glastråd fortsætter til backhaul-switchen, ISP-gatewayen og ISP-kernen. Så kommer grænserouteren, internetknudepunktet og videofirmaets datacenter, som kan åbnes. Den stiplede sidevej viser transit.",
-        "nerd": "Den udfoldede internetrute starter ved bygningen: Ethernet-stigkablet til kælderswitchen, dens fiber til backhaul-switchen og så BNG og ISP-kerne. Den fortsætter til grænserouter, IXP og CDN’ets datacenter, som kan foldes ud. Forespørgsler og video går hver sin vej."
+        "simple": "Inde i skyen starter ruten ved din bygning. Et kabel går ned til kælderswitchen, og en glastråd fortsætter til backhaul-switchen, ISP-gatewayen og ISP-kernen. Så kommer grænserouteren, internetknudepunktet og videofirmaets datacenter, som kan åbnes. Den stiplede sidevej viser transit.",
+        "technical": "Den udfoldede internetrute starter ved bygningen: Ethernet-stigkablet til kælderswitchen, dens fiber til backhaul-switchen og så BNG og ISP-kerne. Den fortsætter til grænserouter, IXP og CDN’ets datacenter, som kan foldes ud. Forespørgsler og video går hver sin vej."
       }
     }
   },

@@ -1,47 +1,47 @@
 {
   "title": "Asking for a chunk of video",
-  "kid": "A video comes in small chunks, a few seconds each. First, {yours} writes a slip: chunk 42, medium please. The video server finds it on its shelf, stamps it 200 OK and sends it back. When the connection gets slower, the next slip asks for low quality, so the film keeps playing instead of stopping to wait.",
-  "nerd": "HTTP rides inside TLS, so only the two ends read it. It is drawn in HTTP/1.1’s text form; most video today goes as HTTP/2 over TLS and TCP, or HTTP/3 over QUIC (UDP), with the same fields in binary frames. The player sends GET /video/720p/42.m4s with Host: video.example, and the CDN cache answers 200 OK (a HIT; 404 would mean no such chunk, 304 answers a conditional request: the copy you already have is still good, 206 Partial Content answers a Range: bytes=… request). Adaptive bitrate (DASH): the player measures throughput and its buffer, and picks the next segment's representation from the manifest, here 360p.",
+  "simple": "A video comes in small chunks, a few seconds each. First, {yours} writes a slip: chunk 42, medium please. The video server finds it on its shelf, stamps it 200 OK and sends it back. When the connection gets slower, the next slip asks for low quality, so the film keeps playing instead of stopping to wait.",
+  "technical": "HTTP rides inside TLS, so only the two ends read it. It is drawn in HTTP/1.1’s text form; most video today goes as HTTP/2 over TLS and TCP, or HTTP/3 over QUIC (UDP), with the same fields in binary frames. The player sends GET /video/720p/42.m4s with Host: video.example, and the CDN cache answers 200 OK (a HIT; 404 would mean no such chunk, 304 answers a conditional request: the copy you already have is still good, 206 Partial Content answers a Range: bytes=… request). Adaptive bitrate (DASH): the player measures throughput and its buffer, and picks the next segment's representation from the manifest, here 360p.",
   "describe": {
-    "kid": "A road links {yours} and the video server. On the left card a slip asks for chunk 42 in medium, and it walks to the server. The server finds 42 on its shelf, stamps 200 OK and sends a big film box back. Then the signal bars drop, the next slip asks for 43 in low, and a smaller film box comes back.",
-    "nerd": "The left card shows the request: GET /video/720p/42.m4s and Host, beside signal bars. The right card is the CDN's cache shelf: 42 is a hit, stamped 200 OK, and a large segment walks back. The bars fall, the next request is for 360p, segment 43 misses, is fetched from the origin cloud and stored, and a smaller segment returns."
+    "simple": "A road links {yours} and the video server. On the left card a slip asks for chunk 42 in medium, and it walks to the server. The server finds 42 on its shelf, stamps 200 OK and sends a big film box back. Then the signal bars drop, the next slip asks for 43 in low, and a smaller film box comes back.",
+    "technical": "The left card shows the request: GET /video/720p/42.m4s and Host, beside signal bars. The right card is the CDN's cache shelf: 42 is a hit, stamped 200 OK, and a large segment walks back. The bars fall, the next request is for 360p, segment 43 misses, is fetched from the origin cloud and stored, and a smaller segment returns."
   },
   "at": {
     "cdn": {
       "title": "The video server answers",
-      "kid": "The video server reads each slip. If the chunk is on its shelf it sends it at once; if not, it fetches it from the main copy far away and keeps a copy for the next viewer. Every answer starts with a stamp: 200 OK means here it is.",
-      "nerd": "At the CDN edge HTTP is open: it reads the request line and headers, looks the URL up in its cache, and answers with a status line, headers (Content-Type: video/mp4, Content-Length, Cache-Control, Age) and the body. A miss is fetched from the origin and stored for its max-age, so the next request for it is a hit.",
+      "simple": "The video server reads each slip. If the chunk is on its shelf it sends it at once; if not, it fetches it from the main copy far away and keeps a copy for the next viewer. Every answer starts with a stamp: 200 OK means here it is.",
+      "technical": "At the CDN edge HTTP is open: it reads the request line and headers, looks the URL up in its cache, and answers with a status line, headers (Content-Type: video/mp4, Content-Length, Cache-Control, Age) and the body. A miss is fetched from the origin and stored for its max-age, so the next request for it is a hit.",
       "describe": {
-        "kid": "The video server is highlighted at the end of the road. Slips arrive from {yours}. On the server's card, chunk 42 is already on the shelf, so a 200 OK stamp comes down and a big film box walks back. Chunk 43 in low isn't there: a box comes from the main copy in a cloud onto the shelf, then a smaller film box walks back.",
-        "nerd": "The CDN cache server is the focused endpoint. Requests arrive, and on the cache card segment 42 is a hit: 200 OK, and a large response walks back. After the client's bars drop it asks for 360p segment 43, a miss: the origin cloud sends a copy to the shelf, it is stored, and a smaller 200 OK response returns."
+        "simple": "The video server is highlighted at the end of the road. Slips arrive from {yours}. On the server's card, chunk 42 is already on the shelf, so a 200 OK stamp comes down and a big film box walks back. Chunk 43 in low isn't there: a box comes from the main copy in a cloud onto the shelf, then a smaller film box walks back.",
+        "technical": "The CDN cache server is the focused endpoint. Requests arrive, and on the cache card segment 42 is a hit: 200 OK, and a large response walks back. After the client's bars drop it asks for 360p segment 43, a miss: the origin cloud sends a copy to the shelf, it is stored, and a smaller 200 OK response returns."
       }
     }
   },
   "sealed": {
     "title": "{hop} sees only the outside",
-    "kid": "{hop} carries the slips and the film boxes, but they are locked inside the secret handshake's box. It can't read which chunk is asked for or what the answer says. All it can tell is which way each box goes and how big it is.",
-    "nerd": "At {hop}, HTTP is sealed inside TLS: the path, Host, status and body are ciphertext. What leaks is the server name (SNI in the ClientHello, unless ECH is used), the addresses, direction, timing and how many bytes go by: a ~400 B request, a ~750 kB response (many TLS records of up to 16 kB each), then a ~200 kB one, which hints that the player dropped to a lower bitrate.",
+    "simple": "{hop} carries the slips and the film boxes, but they are locked inside the secret handshake's box. It can't read which chunk is asked for or what the answer says. All it can tell is which way each box goes and how big it is.",
+    "technical": "At {hop}, HTTP is sealed inside TLS: the path, Host, status and body are ciphertext. What leaks is the server name (SNI in the ClientHello, unless ECH is used), the addresses, direction, timing and how many bytes go by: a ~400 B request, a ~750 kB response (many TLS records of up to 16 kB each), then a ~200 kB one, which hints that the player dropped to a lower bitrate.",
     "describe": {
-      "kid": "{hop} stands in the middle of the road. Locked boxes walk past it: a tiny one towards the video server, a big one back, another tiny one, then a smaller one back. The left card collects them by size. The right card shows the letter inside, scribbled and padlocked.",
-      "nerd": "A middle hop sits on the road while encrypted records pass in both directions. The left card lines up what it can observe: a small request, a large response, a small request and a smaller response, with their sizes. The right card shows the HTTP message as unreadable ciphertext under a padlock."
+      "simple": "{hop} stands in the middle of the road. Locked boxes walk past it: a tiny one towards the video server, a big one back, another tiny one, then a smaller one back. The left card collects them by size. The right card shows the letter inside, scribbled and padlocked.",
+      "technical": "A middle hop sits on the road while encrypted records pass in both directions. The left card lines up what it can observe: a small request, a large response, a small request and a smaller response, with their sizes. The right card shows the HTTP message as unreadable ciphertext under a padlock."
     }
   },
   "card": {
     "ask": {
-      "kid": "The request slip",
-      "nerd": "The request"
+      "simple": "The request slip",
+      "technical": "The request"
     },
     "answer": {
-      "kid": "At the video server",
-      "nerd": "Cache and status"
+      "simple": "At the video server",
+      "technical": "Cache and status"
     },
     "seen": {
-      "kid": "All it can see",
-      "nerd": "Only the outside"
+      "simple": "All it can see",
+      "technical": "Only the outside"
     },
     "locked": {
-      "kid": "The letter inside",
-      "nerd": "HTTP inside TLS"
+      "simple": "The letter inside",
+      "technical": "HTTP inside TLS"
     }
   },
   "slip": {
@@ -51,66 +51,66 @@
   },
   "meter": {
     "fast": {
-      "kid": "Fast",
-      "nerd": "3 Mbit/s"
+      "simple": "Fast",
+      "technical": "3 Mbit/s"
     },
     "slow": {
-      "kid": "Slow",
-      "nerd": "0.8 Mbit/s"
+      "simple": "Slow",
+      "technical": "0.8 Mbit/s"
     }
   },
   "status": {
     "slower": {
-      "kid": "Slower! Ask for low",
-      "nerd": "Throughput fell: 360p"
+      "simple": "Slower! Ask for low",
+      "technical": "Throughput fell: 360p"
     },
     "play": {
-      "kid": "Still playing!",
-      "nerd": "No stall: buffer kept"
+      "simple": "Still playing!",
+      "technical": "No stall: buffer kept"
     },
     "guess": {
-      "kid": "Smaller boxes: lower quality?",
-      "nerd": "Sizes hint at the bitrate"
+      "simple": "Smaller boxes: lower quality?",
+      "technical": "Sizes hint at the bitrate"
     },
     "locked": {
-      "kid": "Only the two ends can read it",
-      "nerd": "Path, Host, status: ciphertext"
+      "simple": "Only the two ends can read it",
+      "technical": "Path, Host, status: ciphertext"
     }
   },
   "shelf": {
     "hit": {
-      "kid": "On the shelf!",
-      "nerd": "HIT · Age: 31"
+      "simple": "On the shelf!",
+      "technical": "HIT · Age: 31"
     },
     "miss": {
-      "kid": "Not on the shelf…",
-      "nerd": "MISS"
+      "simple": "Not on the shelf…",
+      "technical": "MISS"
     },
     "fetch": {
-      "kid": "From the main copy",
-      "nerd": "GET from origin"
+      "simple": "From the main copy",
+      "technical": "GET from origin"
     },
     "kept": {
-      "kid": "Kept a copy!",
-      "nerd": "Stored · max-age"
+      "simple": "Kept a copy!",
+      "technical": "Stored · max-age"
     }
   },
   "origin": {
-    "kid": "Main copy",
-    "nerd": "Origin"
+    "simple": "Main copy",
+    "technical": "Origin"
   },
   "size": {
     "ask": {
-      "kid": "tiny",
-      "nerd": "400 B"
+      "simple": "tiny",
+      "technical": "400 B"
     },
     "med": {
-      "kid": "big",
-      "nerd": "750 kB"
+      "simple": "big",
+      "technical": "750 kB"
     },
     "low": {
-      "kid": "small",
-      "nerd": "200 kB"
+      "simple": "small",
+      "technical": "200 kB"
     }
   },
   "tag": {
@@ -124,50 +124,50 @@
   },
   "1995": {
     "title": "Asking for a page",
-    "kid": "In 1995 {yours} writes a slip: the page, please. The web server finds it on its disk, stamps it 200 OK and sends it back. Then a second slip asks for the picture on the page, and the picture comes back the same way.",
-    "nerd": "Plain HTTP/1.0, no TLS (SSL 2.0 shipped in Netscape in 1995, for shops): GET /index.html gets 200 OK with Content-Type: text/html, then a new TCP connection fetches GET /picture.gif (image/gif). Every hop on the way could read it all. No Host header was needed yet, and no shared caches stood in the middle by default; some universities and ISPs ran caching proxies (CERN httpd, Harvest) that browsers were set up to use.",
+    "simple": "In 1995 {yours} writes a slip: the page, please. The web server finds it on its disk, stamps it 200 OK and sends it back. Then a second slip asks for the picture on the page, and the picture comes back the same way.",
+    "technical": "Plain HTTP/1.0, no TLS (SSL 2.0 shipped in Netscape in 1995, for shops): GET /index.html gets 200 OK with Content-Type: text/html, then a new TCP connection fetches GET /picture.gif (image/gif). Every hop on the way could read it all. No Host header was needed yet, and no shared caches stood in the middle by default; some universities and ISPs ran caching proxies (CERN httpd, Harvest) that browsers were set up to use.",
     "at": {
       "web-server": {
         "title": "The web server answers",
-        "kid": "The web server reads each slip and finds what it asks for on its own disk: first the page, then its picture. Every answer starts with a stamp: 200 OK means here it is.",
-        "nerd": "The server (NCSA HTTPd, say) reads the request line, finds /index.html under its document root and answers HTTP/1.0 200 OK with Content-Type: text/html and Content-Length, then the file; the same for /picture.gif (image/gif). It closes the connection after each answer. No cache, no CDN (Akamai began in 1998–99).",
+        "simple": "The web server reads each slip and finds what it asks for on its own disk: first the page, then its picture. Every answer starts with a stamp: 200 OK means here it is.",
+        "technical": "The server (NCSA HTTPd, say) reads the request line, finds /index.html under its document root and answers HTTP/1.0 200 OK with Content-Type: text/html and Content-Length, then the file; the same for /picture.gif (image/gif). It closes the connection after each answer. No cache, no CDN (Akamai began in 1998–99).",
         "describe": {
-          "kid": "The web server is highlighted at the end of the road. Slips arrive from {yours}. On the server's card the page and the picture sit on its disk: the page lights up, a 200 OK stamp comes down and the page walks back. Then the picture lights up and walks back the same way.",
-          "nerd": "The web server is the focused endpoint. Requests arrive: on its disk card GET /index.html finds the page, 200 OK, and the page walks back; then GET /picture.gif finds the picture, 200 OK, and it returns. Every file comes from the server's own disk."
+          "simple": "The web server is highlighted at the end of the road. Slips arrive from {yours}. On the server's card the page and the picture sit on its disk: the page lights up, a 200 OK stamp comes down and the page walks back. Then the picture lights up and walks back the same way.",
+          "technical": "The web server is the focused endpoint. Requests arrive: on its disk card GET /index.html finds the page, 200 OK, and the page walks back; then GET /picture.gif finds the picture, 200 OK, and it returns. Every file comes from the server's own disk."
         }
       }
     },
     "card": {
       "answer": {
-        "kid": "At the server",
-        "nerd": "Disk and status"
+        "simple": "At the server",
+        "technical": "Disk and status"
       },
       "seen": {
-        "kid": "What goes by",
-        "nerd": "Readable, unread"
+        "simple": "What goes by",
+        "technical": "Readable, unread"
       },
       "locked": {
-        "kid": "The letter inside",
-        "nerd": "Plain HTTP"
+        "simple": "The letter inside",
+        "technical": "Plain HTTP"
       }
     },
     "sealed": {
       "title": "{hop} could read it all",
-      "kid": "{hop} carries the slips and the answers. In 1995 ordinary pages weren’t locked, so it could read which page is asked for and what comes back. But a router only reads the address on the parcel and passes the rest on.",
+      "simple": "{hop} carries the slips and the answers. In 1995 ordinary pages weren’t locked, so it could read which page is asked for and what comes back. But a router only reads the address on the parcel and passes the rest on.",
       "describe": {
-        "kid": "{hop} stands in the middle of the road. Closed boxes with lines of writing walk past it: a tiny one towards the server, a small one back, another tiny one, then a bigger one back. The left card collects them by size. The right card shows the letter inside, in plain writing with no padlock.",
-        "nerd": "A middle hop sits on the road while plain HTTP passes in both directions. The left card lines up what goes by: a small request, the page, another small request and the larger picture, with their sizes. The right card shows the HTTP message as readable lines, with no padlock."
+        "simple": "{hop} stands in the middle of the road. Closed boxes with lines of writing walk past it: a tiny one towards the server, a small one back, another tiny one, then a bigger one back. The left card collects them by size. The right card shows the letter inside, in plain writing with no padlock.",
+        "technical": "A middle hop sits on the road while plain HTTP passes in both directions. The left card lines up what goes by: a small request, the page, another small request and the larger picture, with their sizes. The right card shows the HTTP message as readable lines, with no padlock."
       },
-      "nerd": "At {hop}, HTTP is plain text inside TCP: the request line, headers and body can all be read on the wire, and anyone with access to the link could log or change them. Even the sizes are written out (Content-Length): a ~300 B request, the 8 kB page, then its 30 kB picture. A router forwards on the IP header and doesn't look further."
+      "technical": "At {hop}, HTTP is plain text inside TCP: the request line, headers and body can all be read on the wire, and anyone with access to the link could log or change them. Even the sizes are written out (Content-Length): a ~300 B request, the 8 kB page, then its 30 kB picture. A router forwards on the IP header and doesn't look further."
     },
     "status": {
       "locked": {
-        "kid": "Anyone on the way could read it",
-        "nerd": "Path, headers, status: plain text"
+        "simple": "Anyone on the way could read it",
+        "technical": "Path, headers, status: plain text"
       },
       "guess": {
-        "kid": "It could read them, but doesn't",
-        "nerd": "No need to guess: it's readable"
+        "simple": "It could read them, but doesn't",
+        "technical": "No need to guess: it's readable"
       }
     },
     "tag": {
@@ -178,8 +178,8 @@
       "guess": "Content-Length in the clear"
     },
     "describe": {
-      "kid": "A road links {yours} and the web server. On the left card a slip asks for the page, and it walks to the server. The server finds the page on its disk, stamps it 200 OK and sends it back. Then the next slip asks for the picture, and the picture comes back.",
-      "nerd": "The left card shows the request: GET /index.html HTTP/1.0 and an Accept line. The right card is the server's disk: the page is found, stamped 200 OK, and walks back; then GET /picture.gif, and the picture returns the same way. No cache, no origin."
+      "simple": "A road links {yours} and the web server. On the left card a slip asks for the page, and it walks to the server. The server finds the page on its disk, stamps it 200 OK and sends it back. Then the next slip asks for the picture, and the picture comes back.",
+      "technical": "The left card shows the request: GET /index.html HTTP/1.0 and an Accept line. The right card is the server's disk: the page is found, stamped 200 OK, and walks back; then GET /picture.gif, and the picture returns the same way. No cache, no origin."
     },
     "slip": {
       "page": "The page, please!",
@@ -187,61 +187,61 @@
     },
     "shelf": {
       "disk": {
-        "kid": "On the disk!",
-        "nerd": "Read from disk"
+        "simple": "On the disk!",
+        "technical": "Read from disk"
       }
     },
     "size": {
       "ask": {
-        "nerd": "300 B"
+        "technical": "300 B"
       },
       "med": {
-        "kid": "small",
-        "nerd": "8 kB"
+        "simple": "small",
+        "technical": "8 kB"
       },
       "low": {
-        "kid": "big",
-        "nerd": "30 kB"
+        "simple": "big",
+        "technical": "30 kB"
       }
     },
     "role": {
       "bridge": {
         "title": "{hop} carries it unread",
-        "kid": "{hop} carries the slips and the answers inside your phone call. In 1995 ordinary pages weren’t locked, but {hop} doesn’t even open the parcel: it just passes the call on.",
-        "nerd": "At {hop}, the PPP frames ride inside the call, so it never sees the IP packet, let alone the HTTP inside. That HTTP is plain text: anyone who tapped the line and decoded the call could read the request line, the headers and the body, and the sizes too: a ~300 B request, the 8 kB page, then its 30 kB picture."
+        "simple": "{hop} carries the slips and the answers inside your phone call. In 1995 ordinary pages weren’t locked, but {hop} doesn’t even open the parcel: it just passes the call on.",
+        "technical": "At {hop}, the PPP frames ride inside the call, so it never sees the IP packet, let alone the HTTP inside. That HTTP is plain text: anyone who tapped the line and decoded the call could read the request line, the headers and the body, and the sizes too: a ~300 B request, the 8 kB page, then its 30 kB picture."
       }
     }
   },
   "2010": {
-    "kid": "{yours} writes a slip: the video, please. The video server finds it on its shelf, stamps it 200 OK and sends it back. In 2010 most players fetched the whole video as one file; the trick in the drawing was new: when the connection gets slower, the next slip asks for lower quality, so the film keeps playing.",
-    "nerd": "In 2010 this is plain HTTP, no TLS (YouTube moved to HTTPS by default in the mid-2010s): GET with Host, and a 200 OK from a CDN cache, usually in a bigger city further away. Most web video was one file fetched whole (progressive download, with Range: bytes=… → 206 to skip ahead); adaptive bitrate as drawn, picking each chunk's quality, was just arriving (Apple's HLS in 2009; DASH became a standard in 2012).",
+    "simple": "{yours} writes a slip: the video, please. The video server finds it on its shelf, stamps it 200 OK and sends it back. In 2010 most players fetched the whole video as one file; the trick in the drawing was new: when the connection gets slower, the next slip asks for lower quality, so the film keeps playing.",
+    "technical": "In 2010 this is plain HTTP, no TLS (YouTube moved to HTTPS by default in the mid-2010s): GET with Host, and a 200 OK from a CDN cache, usually in a bigger city further away. Most web video was one file fetched whole (progressive download, with Range: bytes=… → 206 to skip ahead); adaptive bitrate as drawn, picking each chunk's quality, was just arriving (Apple's HLS in 2009; DASH became a standard in 2012).",
     "card": {
       "seen": {
-        "kid": "What goes by",
-        "nerd": "Readable, unread"
+        "simple": "What goes by",
+        "technical": "Readable, unread"
       },
       "locked": {
-        "kid": "The letter inside",
-        "nerd": "Plain HTTP"
+        "simple": "The letter inside",
+        "technical": "Plain HTTP"
       }
     },
     "sealed": {
       "title": "{hop} could read it all",
-      "kid": "{hop} carries the slips and the answers. In 2010 videos weren’t locked, so it could read which video is asked for. But a router only reads the address on the parcel and passes the rest on.",
+      "simple": "{hop} carries the slips and the answers. In 2010 videos weren’t locked, so it could read which video is asked for. But a router only reads the address on the parcel and passes the rest on.",
       "describe": {
-        "kid": "{hop} stands in the middle of the road. Closed boxes with lines of writing walk past it: a tiny one towards the server, a big one back, another tiny one, then a smaller one back. The left card collects them by size. The right card shows the letter inside, in plain writing with no padlock.",
-        "nerd": "A middle hop sits on the road while plain HTTP passes in both directions. The left card lines up what goes by: a small request, the whole video in a large response, a small Range request and a smaller 206 response with the rest, with their sizes. The right card shows the HTTP message as readable lines, with no padlock."
+        "simple": "{hop} stands in the middle of the road. Closed boxes with lines of writing walk past it: a tiny one towards the server, a big one back, another tiny one, then a smaller one back. The left card collects them by size. The right card shows the letter inside, in plain writing with no padlock.",
+        "technical": "A middle hop sits on the road while plain HTTP passes in both directions. The left card lines up what goes by: a small request, the whole video in a large response, a small Range request and a smaller 206 response with the rest, with their sizes. The right card shows the HTTP message as readable lines, with no padlock."
       },
-      "nerd": "At {hop}, HTTP is plain text: video wasn't encrypted in 2010, so the URL, Host and headers could be read on the wire (some ISPs' caches and filters did). So could the sizes: one 200 OK whose Content-Length is the whole 17 MB video, then, after a skip ahead, a Range request answered 206 Partial Content with the rest. A router forwards on the IP header and doesn't look further."
+      "technical": "At {hop}, HTTP is plain text: video wasn't encrypted in 2010, so the URL, Host and headers could be read on the wire (some ISPs' caches and filters did). So could the sizes: one 200 OK whose Content-Length is the whole 17 MB video, then, after a skip ahead, a Range request answered 206 Partial Content with the rest. A router forwards on the IP header and doesn't look further."
     },
     "status": {
       "locked": {
-        "kid": "Anyone on the way could read it",
-        "nerd": "Path, Host, status: plain text"
+        "simple": "Anyone on the way could read it",
+        "technical": "Path, Host, status: plain text"
       },
       "guess": {
-        "kid": "It could read them, but doesn't",
-        "nerd": "Skipped ahead: Range → 206"
+        "simple": "It could read them, but doesn't",
+        "technical": "Skipped ahead: Range → 206"
       }
     },
     "tag": {
@@ -251,24 +251,24 @@
     },
     "size": {
       "med": {
-        "nerd": "17 MB"
+        "technical": "17 MB"
       },
       "low": {
-        "nerd": "8.5 MB"
+        "technical": "8.5 MB"
       }
     },
     "role": {
       "bridge": {
         "title": "{hop} carries it unread",
-        "kid": "{hop} carries the slips and the answers. In 2010 videos weren’t locked, but {hop} doesn’t even read the address on the parcel: it just passes it on.",
-        "nerd": "At {hop}, HTTP is plain text: video wasn't encrypted in 2010, so the URL, Host and headers could be read on the wire, and the sizes too: one 200 OK whose Content-Length is the whole 17 MB video, then, after a skip ahead, a Range request answered 206 Partial Content with the rest. {hop} itself passes the frames on without reading even the IP header."
+        "simple": "{hop} carries the slips and the answers. In 2010 videos weren’t locked, but {hop} doesn’t even read the address on the parcel: it just passes it on.",
+        "technical": "At {hop}, HTTP is plain text: video wasn't encrypted in 2010, so the URL, Host and headers could be read on the wire, and the sizes too: one 200 OK whose Content-Length is the whole 17 MB video, then, after a skip ahead, a Range request answered 206 Partial Content with the rest. {hop} itself passes the frames on without reading even the IP header."
       }
     }
   },
   "learnMore": [
-    { "url": "https://simple.wikipedia.org/wiki/Hypertext_Transfer_Protocol", "title": "HTTP (Simple English)", "level": "kid" },
-    { "url": "https://www.rfc-editor.org/rfc/rfc9110", "title": "RFC 9110: HTTP Semantics", "level": "nerd", "eras": ["today"] },
-    { "url": "https://www.rfc-editor.org/rfc/rfc2616", "title": "RFC 2616: HTTP/1.1", "level": "nerd", "eras": ["2010"] },
-    { "url": "https://www.rfc-editor.org/rfc/rfc1945", "title": "RFC 1945: HTTP/1.0 (1996)", "level": "nerd", "eras": ["1995"] }
+    { "url": "https://simple.wikipedia.org/wiki/Hypertext_Transfer_Protocol", "title": "HTTP (Simple English)", "level": "simple" },
+    { "url": "https://www.rfc-editor.org/rfc/rfc9110", "title": "RFC 9110: HTTP Semantics", "level": "technical", "eras": ["today"] },
+    { "url": "https://www.rfc-editor.org/rfc/rfc2616", "title": "RFC 2616: HTTP/1.1", "level": "technical", "eras": ["2010"] },
+    { "url": "https://www.rfc-editor.org/rfc/rfc1945", "title": "RFC 1945: HTTP/1.0 (1996)", "level": "technical", "eras": ["1995"] }
   ]
 }

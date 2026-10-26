@@ -170,7 +170,7 @@ export interface Road {
   /** Where the sign points: back towards the client, on towards the server, or off the side. */
   to: 'back' | 'on' | 'side';
   prefix: string;
-  /** A kid name for what's down that road (the next NAT/server, or "everywhere else"). */
+  /** A Simple-level name for what's down that road (the next NAT/server, or "everywhere else"). */
   name: string | null;
 }
 

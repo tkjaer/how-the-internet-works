@@ -9,7 +9,7 @@
   const S = strings('scene.sticker-doors');
   const legible = legibleSize();
   const ctx = $derived(subject.ctx);
-  const nerd = $derived(ctx.level === 'nerd');
+  const technical = $derived(ctx.level === 'technical');
   const layer = $derived<LayerKind>(subject.layer === 'vlan' || subject.layer === 'mpls' ? subject.layer : 'ethernet');
   const role = $derived<RoleKind>(ctx.role);
   const L = $derived(layoutFor(view.orient, view.vp));
@@ -37,10 +37,10 @@
   const who = (h: LayerSubject['ctx']['to']) => (h.id === ctx.client.id ? yours(h) : nameOf(h));
   // ARP asks for the next hop on the outgoing link; an endpoint answers through its gateway, the frame's sender
   const arpHop = $derived(ctx.next ?? ctx.frame.src);
-  const arpTarget = $derived(nerd ? arpHop.addr ?? S(ctx.next ? 'book.nextHop' : 'book.gateway') : who(arpHop));
+  const arpTarget = $derived(technical ? arpHop.addr ?? S(ctx.next ? 'book.nextHop' : 'book.gateway') : who(arpHop));
   const arpMac = $derived(fakeMac(arpHop.id));
   const laneRows = $derived(ctx.to.id === 'bng'
-    ? [['S-VID', '101'], ['C-VID', '2042'], [S('book.owner'), nerd ? S('book.subscriber') : S('book.you')]]
+    ? [['S-VID', '101'], ['C-VID', '2042'], [S('book.owner'), technical ? S('book.subscriber') : S('book.you')]]
     : [[S('book.street'), '101'], [S('book.house'), '2042'], [S('book.otherStreet'), '102']]);
   const mplsRows = $derived(action === 'mpls.push'
     ? [['IP', `${S('book.push')} ${outLabel}`], [outLabel, `${S('book.door')} 3`]]
@@ -51,14 +51,14 @@
     if (layer === 'vlan') return laneRows;
     if (layer === 'mpls') return mplsRows;
     if (role === 'bridge') return [
-      [nerd ? srcMac : who(ctx.frame.src), '1'],
-      [m.learned ? (nerd ? dstMac : S('label.reply')) : S('label.unknown'), m.learned ? '2' : '?'],
-      ...(nerd ? [[S('book.age'), '~300 s']] : []),
+      [technical ? srcMac : who(ctx.frame.src), '1'],
+      [m.learned ? (technical ? dstMac : S('label.reply')) : S('label.unknown'), m.learned ? '2' : '?'],
+      ...(technical ? [[S('book.age'), '~300 s']] : []),
     ];
     return [
       [arpTarget, short(m.learned ? arpMac : 'ff:ff:ff:ff:ff:ff')],
-      [nerd ? S('book.fcs') : S('book.check'), m.phase === 'fanout' ? S('book.drop') : 'OK'],
-      ...(nerd ? [['IPv6', 'NDP']] : []),
+      [technical ? S('book.fcs') : S('book.check'), m.phase === 'fanout' ? S('book.drop') : 'OK'],
+      ...(technical ? [['IPv6', 'NDP']] : []),
     ];
   });
   const packetSticker = $derived(layer === 'vlan' ? '101' : layer === 'mpls' ? (m.learned ? mplsRight : mplsLeft) : role === 'bridge' ? (m.learned ? '2' : '') : S('sticker.meShort'));
@@ -197,7 +197,7 @@
   {/each}
 {/if}
 
-{#if nerd && !L.compact}
+{#if technical && !L.compact}
   {@const c = L.cards[1]}
   {@const fs = isPortrait ? 32 : 20}
   <rect x={c.x + 28} y={c.y + c.h - fs * 2.9} width={c.w - 56} height={fs * 2} rx="14" fill="var(--paper-2)" stroke="var(--line)" stroke-width="4" />

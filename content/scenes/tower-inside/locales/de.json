@@ -1,49 +1,49 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Im Mobilfunkmast",
-  "kid": "Der Mast ist vier kleine Räume: zwei oben am Mast, zwei im Schrank an seinem Fuß. Antennen fangen deine Funkwelle, die Funkeinheit macht sie zu Bits, der Sortierer legt dein Päckchen in einen Tunnel-Umschlag, und der Glasfaden schickt es als Licht weiter.",
-  "nerd": "Ein 5G gNB ist zweigeteilt: eine Active Antenna Unit am Mast (die Massive-MIMO Antennen und die RU in einer Box, hier als zwei Räume gezeichnet), DU/CU Baseband im Schrank. Das Paket wird in GTP-U zum Mobile Core gewickelt und geht dann auf Metro Fibre raus.",
+  "simple": "Der Mast ist vier kleine Räume: zwei oben am Mast, zwei im Schrank an seinem Fuß. Antennen fangen deine Funkwelle, die Funkeinheit macht sie zu Bits, der Sortierer legt dein Päckchen in einen Tunnel-Umschlag, und der Glasfaden schickt es als Licht weiter.",
+  "technical": "Ein 5G gNB ist zweigeteilt: eine Active Antenna Unit am Mast (die Massive-MIMO Antennen und die RU in einer Box, hier als zwei Räume gezeichnet), DU/CU Baseband im Schrank. Das Paket wird in GTP-U zum Mobile Core gewickelt und geht dann auf Metro Fibre raus.",
   "describe": {
-    "kid": "Der Mobilfunkmast ist wie eine hohe Box geöffnet, mit Räumen am Mast und im Schrank. Eine wellige Funkwelle erreicht die Antennen und wird im Funkraum zu Bits. Der Sortierer legt einen Tunnel-Umschlag dazu. Dann geht das Päckchen durch den Glasfaden als wanderndes Licht raus.",
-    "nerd": "Der gNB-Cutaway zeigt Antenna Panels und RU am Mast, Baseband DU, CU und Fibre im Schrank. Das animierte Paket wechselt von einer NR Radio Wave zu Bits, bekommt ein GTP-U Tunnel Label im Baseband und geht als Metro-Fibre Licht raus."
+    "simple": "Der Mobilfunkmast ist wie eine hohe Box geöffnet, mit Räumen am Mast und im Schrank. Eine wellige Funkwelle erreicht die Antennen und wird im Funkraum zu Bits. Der Sortierer legt einen Tunnel-Umschlag dazu. Dann geht das Päckchen durch den Glasfaden als wanderndes Licht raus.",
+    "technical": "Der gNB-Cutaway zeigt Antenna Panels und RU am Mast, Baseband DU, CU und Fibre im Schrank. Das animierte Paket wechselt von einer NR Radio Wave zu Bits, bekommt ein GTP-U Tunnel Label im Baseband und geht als Metro-Fibre Licht raus."
   },
   "antenna": {
     "title": {
-      "kid": "Antennen",
-      "nerd": "Massive MIMO"
+      "simple": "Antennen",
+      "technical": "Massive MIMO"
     },
     "line": {
-      "kid": "Fängt Funkwellen",
-      "nerd": "Beamformed NR panel"
+      "simple": "Fängt Funkwellen",
+      "technical": "Beamformed NR panel"
     }
   },
   "radio": {
     "title": {
-      "kid": "Funkeinheit",
-      "nerd": "Funkeinheit (RU)"
+      "simple": "Funkeinheit",
+      "technical": "Funkeinheit (RU)"
     },
     "line": {
-      "kid": "Funk ↔ Bits",
-      "nerd": "RF ↔ digital · eCPRI"
+      "simple": "Funk ↔ Bits",
+      "technical": "RF ↔ digital · eCPRI"
     }
   },
   "baseband": {
     "title": {
-      "kid": "Der Sortierer",
-      "nerd": "Baseband DU/CU"
+      "simple": "Der Sortierer",
+      "technical": "Baseband DU/CU"
     }
   },
   "fibre": {
     "title": {
-      "kid": "Glasfaden raus",
-      "nerd": "Metro-Glasfaser"
+      "simple": "Glasfaden raus",
+      "technical": "Metro-Glasfaser"
     },
     "line": {
-      "kid": "Bits → Licht",
-      "nerd": "GTP-U on light"
+      "simple": "Bits → Licht",
+      "technical": "GTP-U on light"
     }
   },
   "tunnel": {
@@ -53,9 +53,9 @@
     "to": "→ {addr}"
   },
   "learnMore": [
-    { "url": "https://de.wikipedia.org/wiki/Remote_Radio_Head", "title": "Remote Radio Head", "level": "nerd" },
-    { "url": "https://de.wikipedia.org/wiki/Base_Transceiver_Station", "title": "Base Transceiver Station", "level": "nerd" },
-    { "url": "https://de.wikipedia.org/wiki/GPRS_Tunneling_Protocol", "title": "GPRS Tunneling Protocol", "level": "nerd" },
-    { "url": "https://de.wikipedia.org/wiki/MIMO_(Nachrichtentechnik)", "title": "MIMO (Nachrichtentechnik)", "level": "nerd" }
+    { "url": "https://de.wikipedia.org/wiki/Remote_Radio_Head", "title": "Remote Radio Head", "level": "technical" },
+    { "url": "https://de.wikipedia.org/wiki/Base_Transceiver_Station", "title": "Base Transceiver Station", "level": "technical" },
+    { "url": "https://de.wikipedia.org/wiki/GPRS_Tunneling_Protocol", "title": "GPRS Tunneling Protocol", "level": "technical" },
+    { "url": "https://de.wikipedia.org/wiki/MIMO_(Nachrichtentechnik)", "title": "MIMO (Nachrichtentechnik)", "level": "technical" }
   ]
 }

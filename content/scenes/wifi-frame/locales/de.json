@@ -1,25 +1,25 @@
 {
   "title": "Der Funkumschlag",
-  "kid": "Alle im Raum können einen Wi-Fi-Umschlag hören, deshalb sagt er genau, für wen er ist. Der Empfänger antwortet „Habe es!“, und erst dann ist der nächste Umschlag dran. Darunter reist der Umschlag als Funkwellen.",
-  "nerd": "Ein 802.11 Data Frame nennt Receiver, Transmitter und die ferne Wired-Side Address, schützt die Payload mit WPA3/CCMP und setzt auf CSMA/CA plus ACKs, Sequence Numbers und Retries auf geteilter Airtime.",
+  "simple": "Alle im Raum können einen Wi-Fi-Umschlag hören, deshalb sagt er genau, für wen er ist. Der Empfänger antwortet „Habe es!“, und erst dann ist der nächste Umschlag dran. Darunter reist der Umschlag als Funkwellen.",
+  "technical": "Ein 802.11 Data Frame nennt Receiver, Transmitter und die ferne Wired-Side Address, schützt die Payload mit WPA3/CCMP und setzt auf CSMA/CA plus ACKs, Sequence Numbers und Retries auf geteilter Airtime.",
   "extra": "Wi-Fi 7 Multi-Link Operation: Gerät und Access Point sind je ein Multi-Link Device (MLD) mit mehreren Radios. In der Luft behält jedes Radio seine eigene Link Address; darüber lassen eine MLD Address, ein Sequence Counter und eine Block-Ack Agreement einen Frame auf dem Link gehen, der frei ist (2.4, 5 oder 6 GHz), und trotzdem in Reihenfolge ankommen.",
   "role": {
     "bridge": {
       "title": "Funkrahmen, Kabelrahmen",
-      "kid": "Am Zugangspunkt kommt der Wi-Fi-Umschlag ab. Der „dann zu“-Aufkleber wird der „für“-Aufkleber des Kabelumschlags, aber das Päckchen sagt weiter, es kam von {yours}. Darunter reist der Umschlag als Funkwellen.",
-      "nerd": "An der Bridge hat der Uplink 802.11 QoS Data Frame RA=AP, TA=STA und addr3=die Distribution-System Destination. Der AP decapsuliert ihn, prüft CCMP/FCS und sendet einen Ethernet Frame zum Router; das IP-Paket bleibt unberührt.",
+      "simple": "Am Zugangspunkt kommt der Wi-Fi-Umschlag ab. Der „dann zu“-Aufkleber wird der „für“-Aufkleber des Kabelumschlags, aber das Päckchen sagt weiter, es kam von {yours}. Darunter reist der Umschlag als Funkwellen.",
+      "technical": "An der Bridge hat der Uplink 802.11 QoS Data Frame RA=AP, TA=STA und addr3=die Distribution-System Destination. Der AP decapsuliert ihn, prüft CCMP/FCS und sendet einen Ethernet Frame zum Router; das IP-Paket bleibt unberührt.",
       "describe": {
-        "kid": "Auf der Straße stehen {yours}, der Zugangspunkt und der Router. Papierkarten zeigen Adressen und Abwechseln. Ein Funkumschlag geht von {yours} zum Zugangspunkt. Dort öffnet er sich und wird ein Kabelumschlag für den Router. Die Abwechsel-Karte zeigt hören, warten, stoßen, nochmal und „Habe es!“.",
-        "nerd": "Die Address-Karte zeigt den Uplink 802.11 Frame neben dem Ethernet Frame. Sie listet To DS, addr1 AP, addr2 STA und addr3 router, dann DA und SA auf dem Kabel. Der Airtime-Streifen animiert AIFS, Backoff, Daten, kein ACK, Neuversuch, SIFS plus ACK sowie Sequenz, Neuversuch und CCMP."
+        "simple": "Auf der Straße stehen {yours}, der Zugangspunkt und der Router. Papierkarten zeigen Adressen und Abwechseln. Ein Funkumschlag geht von {yours} zum Zugangspunkt. Dort öffnet er sich und wird ein Kabelumschlag für den Router. Die Abwechsel-Karte zeigt hören, warten, stoßen, nochmal und „Habe es!“.",
+        "technical": "Die Address-Karte zeigt den Uplink 802.11 Frame neben dem Ethernet Frame. Sie listet To DS, addr1 AP, addr2 STA und addr3 router, dann DA und SA auf dem Kabel. Der Airtime-Streifen animiert AIFS, Backoff, Daten, kein ACK, Neuversuch, SIFS plus ACK sowie Sequenz, Neuversuch und CCMP."
       }
     },
     "endpoint": {
       "title": "Ein Funkumschlag für dich",
-      "kid": "Auf dem Rückweg macht der Zugangspunkt aus dem Kabelumschlag einen Funkumschlag: für {yours}, vom Zugangspunkt, kam vom Router. Dann öffnet {yours} ihn, nachdem er „Habe es!“ gesagt hat. Darunter reist der Umschlag als Funkwellen.",
-      "nerd": "Im Downlink sendet der AP einen 802.11 QoS Data Frame mit RA=STA, TA=AP und addr3=die Distribution-System Source. Die Station prüft CCMP/FCS, ACKt nach SIFS, wirft Duplikate per Sequence Number weg und reicht die Payload nach oben.",
+      "simple": "Auf dem Rückweg macht der Zugangspunkt aus dem Kabelumschlag einen Funkumschlag: für {yours}, vom Zugangspunkt, kam vom Router. Dann öffnet {yours} ihn, nachdem er „Habe es!“ gesagt hat. Darunter reist der Umschlag als Funkwellen.",
+      "technical": "Im Downlink sendet der AP einen 802.11 QoS Data Frame mit RA=STA, TA=AP und addr3=die Distribution-System Source. Die Station prüft CCMP/FCS, ACKt nach SIFS, wirft Duplikate per Sequence Number weg und reicht die Payload nach oben.",
       "describe": {
-        "kid": "Die Straße zeigt den Zugangspunkt, der zu {yours} sendet. Papierkarten zeigen, wie der äußere Umschlag wechselt. Ein Kabelumschlag erreicht den Zugangspunkt, öffnet sich und wird ein Funkumschlag für {yours}. Die Zeitlinie wartet, sendet, versucht nach einem Stoß nochmal und endet mit „Habe es!“.",
-        "nerd": "Die Address-Karte zeigt einen Downlink Ethernet Frame, der ein 802.11 Frame wird. Sie listet From DS, addr1 STA, addr2 AP und addr3 router. Der wandernde Funkrahmen geht zum Gerät, bei dem du bist. Der Airtime-Streifen geht durch Backoff, Retry, ACK, Sequence, FCS und CCMP Marker."
+        "simple": "Die Straße zeigt den Zugangspunkt, der zu {yours} sendet. Papierkarten zeigen, wie der äußere Umschlag wechselt. Ein Kabelumschlag erreicht den Zugangspunkt, öffnet sich und wird ein Funkumschlag für {yours}. Die Zeitlinie wartet, sendet, versucht nach einem Stoß nochmal und endet mit „Habe es!“.",
+        "technical": "Die Address-Karte zeigt einen Downlink Ethernet Frame, der ein 802.11 Frame wird. Sie listet From DS, addr1 STA, addr2 AP und addr3 router. Der wandernde Funkrahmen geht zum Gerät, bei dem du bist. Der Airtime-Streifen geht durch Backoff, Retry, ACK, Sequence, FCS und CCMP Marker."
       }
     }
   },
@@ -44,18 +44,18 @@
     "aifs": "AIFS",
     "data": "data",
     "sifsAck": "SIFS+ACK",
-    "listenKid": "hören",
-    "waitKid": "warten",
-    "sendKid": "senden",
+    "listenSimple": "hören",
+    "waitSimple": "warten",
+    "sendSimple": "senden",
     "gotIt": "Habe es!",
     "gotItStep": "Habe es!",
-    "ackNerd": "ACK",
+    "ackTechnical": "ACK",
     "bump": "stoß!",
     "noAck": "kein ACK",
     "retryFlag": "retry",
     "neighbour": "Nachbar",
-    "kidStrip": "Erst hören. Zusammenstoß? Warten und nochmal.",
-    "nerdStrip": "seq {seq} · retry · CCMP PN",
+    "simpleStrip": "Erst hören. Zusammenstoß? Warten und nochmal.",
+    "technicalStrip": "seq {seq} · retry · CCMP PN",
     "radioToYou": "für {yours}"
   },
   "field": {
@@ -77,15 +77,15 @@
   },
   "2010": {
     "extra": "Wi‑Fi 4 (802.11n, 2009): Frame Aggregation (A-MPDU) packt mehrere Frames in eine Übertragung mit einem Block Ack, und mit zwei oder mehr Antennen je Seite (MIMO) teilen sich mehrere Streams den Kanal, bis zu 150 Mbit/s je auf einem 40 MHz Kanal in 2.4 oder 5 GHz. Multi-Link Operation kam erst mit Wi‑Fi 7 2024.",
-    "nerd": "Ein 802.11 Data Frame nennt Receiver, Transmitter und die ferne Wired-Side Address, schützt die Payload mit WPA2/CCMP und setzt auf CSMA/CA plus ACKs, Sequence Numbers und Retries auf geteilter Airtime.",
+    "technical": "Ein 802.11 Data Frame nennt Receiver, Transmitter und die ferne Wired-Side Address, schützt die Payload mit WPA2/CCMP und setzt auf CSMA/CA plus ACKs, Sequence Numbers und Retries auf geteilter Airtime.",
     "tag": {
       "encrypt": "WPA2/CCMP verbirgt die Nutzlast"
     }
   },
   "learnMore": [
-    { "url": "https://de.wikipedia.org/wiki/IEEE_802.11", "title": "IEEE 802.11", "level": "nerd" },
+    { "url": "https://de.wikipedia.org/wiki/IEEE_802.11", "title": "IEEE 802.11", "level": "technical" },
     { "url": "https://de.wikipedia.org/wiki/Wi-Fi", "title": "Wi-Fi", "level": "both" },
-    { "url": "https://de.wikipedia.org/wiki/Carrier_Sense_Multiple_Access/Collision_Avoidance", "title": "Carrier Sense Multiple Access/Collision Avoidance", "level": "nerd" },
-    { "url": "https://de.wikipedia.org/wiki/Wi-Fi_Protected_Access", "title": "Wi-Fi Protected Access", "level": "nerd" }
+    { "url": "https://de.wikipedia.org/wiki/Carrier_Sense_Multiple_Access/Collision_Avoidance", "title": "Carrier Sense Multiple Access/Collision Avoidance", "level": "technical" },
+    { "url": "https://de.wikipedia.org/wiki/Wi-Fi_Protected_Access", "title": "Wi-Fi Protected Access", "level": "technical" }
   ]
 }

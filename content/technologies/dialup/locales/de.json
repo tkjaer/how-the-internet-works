@@ -1,7 +1,7 @@
 {
   "name": "Telefonanruf",
-  "kid": "Das Modem macht aus dem Päckchen Pfiffe und Rauschen und schickt sie die Telefonleitung hinunter, wie ein sehr schneller, sehr lauter Anruf.",
-  "nerd": "Ein V.34-Modemanruf: bis 28,8 kbit/s je Richtung, in der Praxis weniger (33,6k kam 1996, 56k 1997; als V.90 1998 standardisiert). Der Anruf hält eine Leitung durch die Vermittlungsstelle, solange du online bist.",
+  "simple": "Das Modem macht aus dem Päckchen Pfiffe und Rauschen und schickt sie die Telefonleitung hinunter, wie ein sehr schneller, sehr lauter Anruf.",
+  "technical": "Ein V.34-Modemanruf: bis 28,8 kbit/s je Richtung, in der Praxis weniger (33,6k kam 1996, 56k 1997; als V.90 1998 standardisiert). Der Anruf hält eine Leitung durch die Vermittlungsstelle, solange du online bist.",
   "tag": "V.34 · 28,8k",
   "learnMore": [
     { "url": "https://de.wikipedia.org/wiki/W%C3%A4hlleitung", "title": "Wählleitung", "level": "both" }

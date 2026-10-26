@@ -1,42 +1,42 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "The data centre's tree",
   "heading": {
-    "kid": "Three floors of switches",
-    "nerd": "Three-tier: core, aggregation, access"
+    "simple": "Three floors of switches",
+    "technical": "Three-tier: core, aggregation, access"
   },
-  "kid": "In 2010 the switches stood like a tree: big main roads at the top, a big switch in the middle, and a switch in every cupboard of computers. Every cupboard has two roads up to the middle, but one is kept closed, so parcels can’t go round in circles. All the parcels squeeze through the open roads.",
-  "nerd": "Three-tier, the usual design of the 2000s: access switches in the racks (48 × 1G down, 2 × 10G up), an aggregation pair where layer 2 ends and HSRP gives the servers one gateway, and a core pair above. Spanning tree blocks each rack's uplink to the standby switch to break the loop, so half the uplinks sit idle and 48 servers share one 10G uplink (4.8 : 1 oversubscribed).",
+  "simple": "In 2010 the switches stood like a tree: big main roads at the top, a big switch in the middle, and a switch in every cupboard of computers. Every cupboard has two roads up to the middle, but one is kept closed, so parcels can’t go round in circles. All the parcels squeeze through the open roads.",
+  "technical": "Three-tier, the usual design of the 2000s: access switches in the racks (48 × 1G down, 2 × 10G up), an aggregation pair where layer 2 ends and HSRP gives the servers one gateway, and a core pair above. Spanning tree blocks each rack's uplink to the standby switch to break the loop, so half the uplinks sit idle and 48 servers share one 10G uplink (4.8 : 1 oversubscribed).",
   "extra": "Leaf–spine fabrics (Clos, with ECMP over every uplink and no spanning tree) spread with the big cloud companies in the early 2010s and were the usual design by the mid-2010s.",
   "describe": {
-    "kid": "Three rows of switches. Two main roads at the top; in the middle the bright, named aggregation switch and a pale spare. Below, three cupboard switches; the last is yours. Each cupboard has a road up to both middle switches, but the roads to the spare are dashed and closed with a red sign. Your parcel comes from the load balancer, through the bright switch, down to your cupboard.",
-    "nerd": "Core pair on top, the aggregation pair in the middle (this one active, its twin standby), three access switches below. Each access switch has uplinks to both, but spanning tree blocks those to the standby, marked by no-entry signs. Your flow goes load balancer → active switch → rack; other racks' flows go up to the core or across, all via the active switch."
+    "simple": "Three rows of switches. Two main roads at the top; in the middle the bright, named aggregation switch and a pale spare. Below, three cupboard switches; the last is yours. Each cupboard has a road up to both middle switches, but the roads to the spare are dashed and closed with a red sign. Your parcel comes from the load balancer, through the bright switch, down to your cupboard.",
+    "technical": "Core pair on top, the aggregation pair in the middle (this one active, its twin standby), three access switches below. Each access switch has uplinks to both, but spanning tree blocks those to the standby, marked by no-entry signs. Your flow goes load balancer → active switch → rack; other racks' flows go up to the core or across, all via the active switch."
   },
   "core": {
     "label": {
-      "kid": "Main road",
-      "nerd": "Core {n}"
+      "simple": "Main road",
+      "technical": "Core {n}"
     }
   },
   "standby": {
-    "kid": "Spare",
-    "nerd": "Standby (HSRP)"
+    "simple": "Spare",
+    "technical": "Standby (HSRP)"
   },
   "rack": {
     "other": "Other racks"
   },
   "sticker": {
-    "kid": "One road open, one closed",
-    "nerd": "Uplink 2: blocked",
+    "simple": "One road open, one closed",
+    "technical": "Uplink 2: blocked",
     "rate": "48×1G ↓ 10G ↑"
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Hierarchical_internetworking_model", "title": "Hierarchical internetworking model", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Spanning_Tree_Protocol", "title": "Spanning Tree Protocol", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Hot_Standby_Router_Protocol", "title": "Hot Standby Router Protocol", "level": "nerd" },
-    { "url": "https://simple.wikipedia.org/wiki/Data_center", "title": "Data center", "level": "kid" }
+    { "url": "https://en.wikipedia.org/wiki/Hierarchical_internetworking_model", "title": "Hierarchical internetworking model", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Spanning_Tree_Protocol", "title": "Spanning Tree Protocol", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Hot_Standby_Router_Protocol", "title": "Hot Standby Router Protocol", "level": "technical" },
+    { "url": "https://simple.wikipedia.org/wiki/Data_center", "title": "Data center", "level": "simple" }
   ]
 }

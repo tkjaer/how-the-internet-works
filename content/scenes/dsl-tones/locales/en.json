@@ -1,36 +1,36 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Tones on the phone line",
-  "kid": "DSL turns bits into lots of tiny musical tones and sends them down the old copper phone line. Talking on the phone uses the low notes and the internet uses the high ones, so both fit on one wire. The closer you live to the street cabinet, the more tones get through, and the faster it goes.",
-  "nerd": "VDSL2 uses DMT: up to 4096 subcarriers 4.3125 kHz apart, each carrying 0–15 bits by QAM. The 998 band plan splits them into up and down bands above the telephone’s voice band. Rates fall fast with loop length, and crosstalk from the other pairs in the same cable takes more (vectoring, which cancels it, came a few years later). PTM carries the Ethernet frames, where ADSL used 53-byte ATM cells.",
+  "simple": "DSL turns bits into lots of tiny musical tones and sends them down the old copper phone line. Talking on the phone uses the low notes and the internet uses the high ones, so both fit on one wire. The closer you live to the street cabinet, the more tones get through, and the faster it goes.",
+  "technical": "VDSL2 uses DMT: up to 4096 subcarriers 4.3125 kHz apart, each carrying 0–15 bits by QAM. The 998 band plan splits them into up and down bands above the telephone’s voice band. Rates fall fast with loop length, and crosstalk from the other pairs in the same cable takes more (vectoring, which cancels it, came a few years later). PTM carries the Ethernet frames, where ADSL used 53-byte ATM cells.",
   "describe": {
-    "kid": "A thin twisted phone wire runs from the home router to the street cabinet. A slow, long wave is a phone call. Short tones hop up to the cabinet, and quicker tones rush down to the home. The cards show the low, middle and high lanes, and how the speed drops the farther away you live.",
-    "nerd": "A twisted copper pair links the DSL modem to the DSLAM in the street cabinet. The voice band rides along under data bursts going both ways. Cards show the 998 band plan with bits per tone, download speed against loop length with this line marked, and crosstalk leaking in from neighbouring pairs."
+    "simple": "A thin twisted phone wire runs from the home router to the street cabinet. A slow, long wave is a phone call. Short tones hop up to the cabinet, and quicker tones rush down to the home. The cards show the low, middle and high lanes, and how the speed drops the farther away you live.",
+    "technical": "A twisted copper pair links the DSL modem to the DSLAM in the street cabinet. The voice band rides along under data bursts going both ways. Cards show the 998 band plan with bits per tone, download speed against loop length with this line marked, and crosstalk leaking in from neighbouring pairs."
   },
   "lineLabel": {
-    "kid": "Talk, up and down share one phone line",
-    "nerd": "VDSL2 17a · DMT: 4096 tones, 4.3125 kHz apart"
+    "simple": "Talk, up and down share one phone line",
+    "technical": "VDSL2 17a · DMT: 4096 tones, 4.3125 kHz apart"
   },
   "lineSub": {
-    "kid": "Low hum = talking · high tones = internet",
-    "nerd": "PTM carries Ethernet frames (ADSL used ATM cells)"
+    "simple": "Low hum = talking · high tones = internet",
+    "technical": "PTM carries Ethernet frames (ADSL used ATM cells)"
   },
   "bandsTitle": {
-    "kid": "Lanes by pitch",
-    "nerd": "998 band plan"
+    "simple": "Lanes by pitch",
+    "technical": "998 band plan"
   },
   "band": {
     "voice": "Talk",
     "up": {
-      "kid": "Up",
-      "nerd": "↑"
+      "simple": "Up",
+      "technical": "↑"
     },
     "down": {
-      "kid": "Down",
-      "nerd": "↓"
+      "simple": "Down",
+      "technical": "↓"
     }
   },
   "lowNotes": "Low notes",
@@ -41,33 +41,33 @@
     "top": "17.7 MHz"
   },
   "bandsLine": {
-    "kid": "Low for talking, high for internet.",
-    "nerd": "Each bar is a tone with 0–15 bits."
+    "simple": "Low for talking, high for internet.",
+    "technical": "Each bar is a tone with 0–15 bits."
   },
   "distTitle": {
-    "kid": "Closer is faster",
-    "nerd": "Speed vs loop length"
+    "simple": "Closer is faster",
+    "technical": "Speed vs loop length"
   },
   "fast": {
-    "kid": "Fast",
-    "nerd": "Mbit/s"
+    "simple": "Fast",
+    "technical": "Mbit/s"
   },
   "twoKm": "2 km",
   "you": {
-    "kid": "You",
-    "nerd": "≈ {n} Mbit/s"
+    "simple": "You",
+    "technical": "≈ {n} Mbit/s"
   },
   "distLine": {
-    "kid": "Far away, the high tones fade.",
-    "nerd": "This line: {m} m of copper"
+    "simple": "Far away, the high tones fade.",
+    "technical": "This line: {m} m of copper"
   },
   "xtalkTitle": "Crosstalk",
   "xtalkLine": "Neighbours’ pairs leak in",
   "learnMore": [
-    { "url": "https://simple.wikipedia.org/wiki/Digital_subscriber_line", "title": "Digital subscriber line", "level": "kid" },
-    { "url": "https://en.wikipedia.org/wiki/Digital_subscriber_line", "title": "Digital subscriber line", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/VDSL", "title": "VDSL", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Discrete_multitone_modulation", "title": "Discrete multitone modulation", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Crosstalk", "title": "Crosstalk", "level": "nerd" }
+    { "url": "https://simple.wikipedia.org/wiki/Digital_subscriber_line", "title": "Digital subscriber line", "level": "simple" },
+    { "url": "https://en.wikipedia.org/wiki/Digital_subscriber_line", "title": "Digital subscriber line", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/VDSL", "title": "VDSL", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Discrete_multitone_modulation", "title": "Discrete multitone modulation", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Crosstalk", "title": "Crosstalk", "level": "technical" }
   ]
 }

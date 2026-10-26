@@ -1,12 +1,12 @@
 {
   "name": "Mast line",
   "1995": {
-    "kid": "From the mast, a line runs to the controller box and on to the mobile company’s big switch. A GSM call is so small that four of them share one little slot on the line.",
-    "nerd": "Abis (mast → BSC) and Ater (BSC → transcoder): E1 lines, 32 timeslots of 64 kbit/s. A call takes a 16 kbit/s quarter of one; slot 1 carries the mast’s signalling (LAPD). Many networks (Nokia, Siemens) put the transcoder (TRAU) at the MSC, so the quarters went all the way there; at the TRAU the data is rate-adapted into a whole 64 kbit/s slot, as V.110 does.",
+    "simple": "From the mast, a line runs to the controller box and on to the mobile company’s big switch. A GSM call is so small that four of them share one little slot on the line.",
+    "technical": "Abis (mast → BSC) and Ater (BSC → transcoder): E1 lines, 32 timeslots of 64 kbit/s. A call takes a 16 kbit/s quarter of one; slot 1 carries the mast’s signalling (LAPD). Many networks (Nokia, Siemens) put the transcoder (TRAU) at the MSC, so the quarters went all the way there; at the TRAU the data is rate-adapted into a whole 64 kbit/s slot, as V.110 does.",
     "tag": "E1 · 16 kbit/s sub-slot"
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Base_station_subsystem", "title": "Base station subsystem", "level": "both" },
-    { "url": "https://en.wikipedia.org/wiki/E-carrier", "title": "E-carrier", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/E-carrier", "title": "E-carrier", "level": "technical" }
   ]
 }

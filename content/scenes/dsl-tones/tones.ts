@@ -70,9 +70,9 @@ export const PLAN_998: { band: Band; from: number; to: number }[] = [
 ];
 
 export interface Span { band: Band; x0: number; x1: number }
-/** The lanes on the chart: a kid gets three (talk, up, down), a nerd the real 998 plan. */
-export function bandSpans(nerd: boolean): Span[] {
-  if (!nerd) return [{ band: 'voice', x0: 0, x1: 0.12 }, { band: 'up', x0: 0.16, x1: 0.36 }, { band: 'down', x0: 0.4, x1: 1 }];
+/** The lanes on the chart: Simple gets three (talk, up, down), Technical the real 998 plan. */
+export function bandSpans(technical: boolean): Span[] {
+  if (!technical) return [{ band: 'voice', x0: 0, x1: 0.12 }, { band: 'up', x0: 0.16, x1: 0.36 }, { band: 'down', x0: 0.4, x1: 1 }];
   return PLAN_998.map((b) => ({ band: b.band, x0: pitchX(b.from), x1: pitchX(b.to) }));
 }
 

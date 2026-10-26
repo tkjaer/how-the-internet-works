@@ -1,12 +1,12 @@
 {
   "name": "Undersea cable",
   "1995": {
-    "kid": "A cable on the sea floor joins Denmark to Canada, by way of the Faroe Islands and Iceland. It carries every phone call and every parcel between them, and yours rides in a small corner of it.",
-    "nerd": "CANTAT-3 (1994): about 7,100 km of cable from Blåbjerg in Denmark to Nova Scotia, via the Faroes and Iceland; with the land legs from Copenhagen and on to New York, the circuit runs about 8,400 km. Each fibre pair carries one colour of 2.5 Gbit/s SDH (STM-16), cut into circuits; the upstream rents a couple of 2 Mbit/s ones. Today’s cables carry hundreds of Tbit/s.",
+    "simple": "A cable on the sea floor joins Denmark to Canada, by way of the Faroe Islands and Iceland. It carries every phone call and every parcel between them, and yours rides in a small corner of it.",
+    "technical": "CANTAT-3 (1994): about 7,100 km of cable from Blåbjerg in Denmark to Nova Scotia, via the Faroes and Iceland; with the land legs from Copenhagen and on to New York, the circuit runs about 8,400 km. Each fibre pair carries one colour of 2.5 Gbit/s SDH (STM-16), cut into circuits; the upstream rents a couple of 2 Mbit/s ones. Today’s cables carry hundreds of Tbit/s.",
     "tag": "CANTAT-3 · STM-16 · 2.5 Gbit/s"
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/CANTAT-3", "title": "CANTAT-3", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Synchronous_optical_networking", "title": "SONET/SDH", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/CANTAT-3", "title": "CANTAT-3", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Synchronous_optical_networking", "title": "SONET/SDH", "level": "technical" }
   ]
 }

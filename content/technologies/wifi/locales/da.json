@@ -1,10 +1,10 @@
 {
   "name": "Wi-Fi",
-  "kid": "Forespørgslen flyver gennem luften som radiobølger – helt uden ledning!",
-  "nerd": "802.11ax på 5 GHz: OFDMA-underbærere, 1024-QAM og WPA3-kryptering mellem enheden og AP.",
+  "simple": "Forespørgslen flyver gennem luften som radiobølger – helt uden ledning!",
+  "technical": "802.11ax på 5 GHz: OFDMA-underbærere, 1024-QAM og WPA3-kryptering mellem enheden og AP.",
   "tag": "5 GHz · OFDM · 1024-QAM",
   "2010": {
-    "nerd": "802.11n på 2,4 eller 5 GHz: OFDM-underbærere, 64-QAM, MIMO-strømme og WPA2-kryptering mellem enheden og AP.",
+    "technical": "802.11n på 2,4 eller 5 GHz: OFDM-underbærere, 64-QAM, MIMO-strømme og WPA2-kryptering mellem enheden og AP.",
     "tag": "2,4/5 GHz · OFDM · 64-QAM"
   },
   "learnMore": [

@@ -1,11 +1,11 @@
 {
   "name": "At home, in a flat",
   "access": "In a flat",
-  "kid": "Parcels zoom through the air to the Wi‑Fi box, along a cable to the router, then down the stairs to the basement. From there a glass thread takes them to the internet – and the video comes back the same way!",
-  "nerd": "A block of flats with fibre to the building: Wi‑Fi bridged to Ethernet at the access point, NAT in the flat’s router, Ethernet down the riser to the ISP’s switch in the basement, then a point-to-point fibre to the ISP’s aggregation.",
+  "simple": "Parcels zoom through the air to the Wi‑Fi box, along a cable to the router, then down the stairs to the basement. From there a glass thread takes them to the internet – and the video comes back the same way!",
+  "technical": "A block of flats with fibre to the building: Wi‑Fi bridged to Ethernet at the access point, NAT in the flat’s router, Ethernet down the riser to the ISP’s switch in the basement, then a point-to-point fibre to the ISP’s aggregation.",
   "describe": {
-    "kid": "A block of flats is cut open. In your flat, the phone sends parcels by Wi‑Fi to the access point, then by cable to the router. Another cable leaves the flat for the internet cloud: it runs down to the basement, where a glass thread starts. Requests go out and video comes back.",
-    "nerd": "The flat view shows the phone on Wi‑Fi to the access point, Ethernet to the router, and the router’s Ethernet uplink to the internet. Inside the internet that uplink reaches the basement switch, then fibre to the building. Video returns the same way."
+    "simple": "A block of flats is cut open. In your flat, the phone sends parcels by Wi‑Fi to the access point, then by cable to the router. Another cable leaves the flat for the internet cloud: it runs down to the basement, where a glass thread starts. Requests go out and video comes back.",
+    "technical": "The flat view shows the phone on Wi‑Fi to the access point, Ethernet to the router, and the router’s Ethernet uplink to the internet. Inside the internet that uplink reaches the basement switch, then fibre to the building. Video returns the same way."
   },
   "tag": {
     "phone": "Wi-Fi 6 · 192.168.1.23",
@@ -13,16 +13,16 @@
   },
   "stop": {
     "router": {
-      "kid": "The router is the front door of your flat. It writes your home’s address on the parcel and sends it down the stairs.",
-      "nerd": "NAT rewrites 192.168.1.23 to the public 203.0.113.7; the WAN port is plain Ethernet to the switch in the basement."
+      "simple": "The router is the front door of your flat. It writes your home’s address on the parcel and sends it down the stairs.",
+      "technical": "NAT rewrites 192.168.1.23 to the public 203.0.113.7; the WAN port is plain Ethernet to the switch in the basement."
     }
   },
   "inside": {
     "internet": {
-      "nerd": "Access network (a point-to-point fibre from your building’s basement switch), an aggregation layer (L2 backhaul to the BNG), the ISP’s MPLS core, then either settlement-free peering at an IXP or paid transit, ending at a CDN cache close to you. Each shaded area is one operator’s network.",
+      "technical": "Access network (a point-to-point fibre from your building’s basement switch), an aggregation layer (L2 backhaul to the BNG), the ISP’s MPLS core, then either settlement-free peering at an IXP or paid transit, ending at a CDN cache close to you. Each shaded area is one operator’s network.",
       "describe": {
-        "kid": "Inside the cloud, the path starts at your building. A cable goes down to the basement switch, and a glass thread runs on to the backhaul switch, the ISP gateway and the ISP core. Then come the border router, internet exchange and the video company's data centre, which opens. A dashed side road shows transit.",
-        "nerd": "The expanded internet route starts at the building: the Ethernet riser to the basement switch, its fibre to the backhaul switch, then BNG and ISP core. It continues to the border router, IXP and the CDN's data centre, which unfolds. Requests and video move opposite ways."
+        "simple": "Inside the cloud, the path starts at your building. A cable goes down to the basement switch, and a glass thread runs on to the backhaul switch, the ISP gateway and the ISP core. Then come the border router, internet exchange and the video company's data centre, which opens. A dashed side road shows transit.",
+        "technical": "The expanded internet route starts at the building: the Ethernet riser to the basement switch, its fibre to the backhaul switch, then BNG and ISP core. It continues to the border router, IXP and the CDN's data centre, which unfolds. Requests and video move opposite ways."
       }
     }
   },

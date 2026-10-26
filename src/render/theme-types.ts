@@ -121,7 +121,7 @@ export interface RegionProps {
    *  screen size). */
   x: number; y: number; label: string; size: number;
 }
-/** Nerd-mode callout. `size` is the font size in scene units (already clamped to a readable screen size). */
+/** Technical-level callout. `size` is the font size in scene units (already clamped to a readable screen size). */
 export interface TagProps { x: number; y: number; text: string; size: number; anchor: 'start' | 'middle' | 'end'; time: number }
 /** Scene labels. The engine computes `size` (clamped to a minimum screen size); themes style via CSS or override.
  *  `on` is the body a label is printed on (a lit row, a sign), if not the scene: its halo takes that colour, so ink

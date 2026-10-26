@@ -27,7 +27,7 @@ export type EraDef = z.infer<typeof S.era>;
 type PlaceSlotDef = z.infer<typeof S.placeSlot>;
 export type ActivityDef = z.infer<typeof S.activity>;
 export type LocaleMeta = z.infer<typeof S.localeMeta>;
-export type Level = 'kid' | 'nerd';
+export type Level = 'simple' | 'technical';
 export type Orient = 'landscape' | 'portrait';
 /** Day or night: the page's `data-mode`, and `view.mode` for art. */
 export type Mode = 'day' | 'night';

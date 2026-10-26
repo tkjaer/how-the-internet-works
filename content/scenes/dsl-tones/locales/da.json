@@ -1,36 +1,36 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Toner på telefonlinjen",
-  "kid": "DSL laver bits om til en masse små musiktoner og sender dem ned ad den gamle kobber-telefonlinje. Når man taler i telefon, bruger man de dybe toner, og internettet bruger de lyse, så begge kan være på én ledning. Jo tættere du bor på gadeskabet, jo flere toner kommer igennem, og jo hurtigere går det.",
-  "nerd": "VDSL2 bruger DMT: op til 4096 underbærebølger med 4,3125 kHz imellem, der hver bærer 0–15 bits med QAM. Båndplan 998 deler dem i op- og nedbånd over telefonens stemmebånd. Hastigheden falder hurtigt med linjens længde, og krydstale fra de andre par i samme kabel tager endnu mere (vectoring, der udligner den, kom nogle år senere). PTM bærer Ethernet-rammerne, hvor ADSL brugte ATM-celler på 53 byte.",
+  "simple": "DSL laver bits om til en masse små musiktoner og sender dem ned ad den gamle kobber-telefonlinje. Når man taler i telefon, bruger man de dybe toner, og internettet bruger de lyse, så begge kan være på én ledning. Jo tættere du bor på gadeskabet, jo flere toner kommer igennem, og jo hurtigere går det.",
+  "technical": "VDSL2 bruger DMT: op til 4096 underbærebølger med 4,3125 kHz imellem, der hver bærer 0–15 bits med QAM. Båndplan 998 deler dem i op- og nedbånd over telefonens stemmebånd. Hastigheden falder hurtigt med linjens længde, og krydstale fra de andre par i samme kabel tager endnu mere (vectoring, der udligner den, kom nogle år senere). PTM bærer Ethernet-rammerne, hvor ADSL brugte ATM-celler på 53 byte.",
   "describe": {
-    "kid": "En tynd, snoet telefonledning går fra hjemmerouteren til gadeskabet. En langsom, lang bølge er en telefonsamtale. Korte toner hopper op til skabet, og hurtigere toner suser ned til hjemmet. Kortene viser de dybe, mellemste og lyse baner, og hvordan farten falder, jo længere væk du bor.",
-    "nerd": "Et snoet kobberpar forbinder DSL-modemmet med DSLAM’en i gadeskabet. Stemmebåndet kører med under databølger begge veje. Kortene viser båndplan 998 med bits pr. tone, downloadhastighed mod linjelængde med denne linje markeret, og krydstale, der lækker ind fra nabopar."
+    "simple": "En tynd, snoet telefonledning går fra hjemmerouteren til gadeskabet. En langsom, lang bølge er en telefonsamtale. Korte toner hopper op til skabet, og hurtigere toner suser ned til hjemmet. Kortene viser de dybe, mellemste og lyse baner, og hvordan farten falder, jo længere væk du bor.",
+    "technical": "Et snoet kobberpar forbinder DSL-modemmet med DSLAM’en i gadeskabet. Stemmebåndet kører med under databølger begge veje. Kortene viser båndplan 998 med bits pr. tone, downloadhastighed mod linjelængde med denne linje markeret, og krydstale, der lækker ind fra nabopar."
   },
   "lineLabel": {
-    "kid": "Tale, op og ned deler én telefonlinje",
-    "nerd": "VDSL2 17a · DMT: 4096 toner, 4,3125 kHz imellem"
+    "simple": "Tale, op og ned deler én telefonlinje",
+    "technical": "VDSL2 17a · DMT: 4096 toner, 4,3125 kHz imellem"
   },
   "lineSub": {
-    "kid": "Dyb brummen = tale · lyse toner = internet",
-    "nerd": "PTM bærer Ethernet-rammer (ADSL brugte ATM-celler)"
+    "simple": "Dyb brummen = tale · lyse toner = internet",
+    "technical": "PTM bærer Ethernet-rammer (ADSL brugte ATM-celler)"
   },
   "bandsTitle": {
-    "kid": "Baner efter tonehøjde",
-    "nerd": "Båndplan 998"
+    "simple": "Baner efter tonehøjde",
+    "technical": "Båndplan 998"
   },
   "band": {
     "voice": "Tale",
     "up": {
-      "kid": "Op",
-      "nerd": "↑"
+      "simple": "Op",
+      "technical": "↑"
     },
     "down": {
-      "kid": "Ned",
-      "nerd": "↓"
+      "simple": "Ned",
+      "technical": "↓"
     }
   },
   "lowNotes": "Dybe toner",
@@ -41,25 +41,25 @@
     "top": "17,7 MHz"
   },
   "bandsLine": {
-    "kid": "Dybt til tale, lyst til internet.",
-    "nerd": "Hver søjle er en tone med 0–15 bits."
+    "simple": "Dybt til tale, lyst til internet.",
+    "technical": "Hver søjle er en tone med 0–15 bits."
   },
   "distTitle": {
-    "kid": "Tættere er hurtigere",
-    "nerd": "Hastighed og afstand"
+    "simple": "Tættere er hurtigere",
+    "technical": "Hastighed og afstand"
   },
   "fast": {
-    "kid": "Hurtigt",
-    "nerd": "Mbit/s"
+    "simple": "Hurtigt",
+    "technical": "Mbit/s"
   },
   "twoKm": "2 km",
   "you": {
-    "kid": "Dig",
-    "nerd": "≈ {n} Mbit/s"
+    "simple": "Dig",
+    "technical": "≈ {n} Mbit/s"
   },
   "distLine": {
-    "kid": "Langt væk falmer de lyse toner.",
-    "nerd": "Denne linje: {m} m kobber"
+    "simple": "Langt væk falmer de lyse toner.",
+    "technical": "Denne linje: {m} m kobber"
   },
   "xtalkTitle": "Krydstale",
   "xtalkLine": "Naboparrene lækker ind",

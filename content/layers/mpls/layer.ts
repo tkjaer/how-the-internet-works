@@ -6,7 +6,7 @@ export default defineLayer({
   // a core router swaps the label and counts down its TTL; the IP packet inside isn't read until the label comes off
   switched: true,
   fields: [
-    { id: 'label', bits: 20, value: '{label}', use: true, kid: true },
+    { id: 'label', bits: 20, value: '{label}', use: true, simple: true },
     { id: 'tc', bits: 3, value: '0' },
     { id: 's', bits: 1, value: '1 (bottom of stack)' },
     { id: 'ttl', bits: 8, value: '{ttl}', use: true },

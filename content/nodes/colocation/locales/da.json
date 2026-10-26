@@ -4,15 +4,15 @@
     "title": "Inde i datacentret"
   },
   "2010": {
-    "kid": "En stor bygning uden vinduer, fuld af computere i høje skabe, i en større by længere væk end i dag. Mange firmaer lejer rum i den. Tryk på den for at kigge ind!",
-    "nerd": "Et colocation-center i en større by: videofirmaet lejer en indhegnet række racks i en delt hal, og en krydsforbindelse forbinder den med knudepunktet. Indenfor: en core-router, en load balancer og et træ af switches i tre lag. Tryk for at folde det ud.",
+    "simple": "En stor bygning uden vinduer, fuld af computere i høje skabe, i en større by længere væk end i dag. Mange firmaer lejer rum i den. Tryk på den for at kigge ind!",
+    "technical": "Et colocation-center i en større by: videofirmaet lejer en indhegnet række racks i en delt hal, og en krydsforbindelse forbinder den med knudepunktet. Indenfor: en core-router, en load balancer og et træ af switches i tre lag. Tryk for at folde det ud.",
     "tag": "Colocation · tre lag",
     "inside": {
-      "kid": "Din pakke kommer ind ad bygningens hoveddør, core-routeren. En trafikbetjent vælger en computer, der ikke har travlt, en stor switch i midten sender pakken ned til det rigtige skab, og skabets switch giver den til videoserveren ad et kobberkabel. Hvis serveren ikke har videoen endnu, henter den den fra hovedkopien langt væk.",
-      "nerd": "Et lejet bur i et colocation-center: core-routeren tager krydsforbindelsen fra knudepunktet, en hardware-load balancer holder serviceadressen (VIP), og et træ i tre lag (core, aggregering, access) når ud til racks, med 10G-fiber mellem switchene og 1G-kobber til serverne. Spanning tree holder hvert racks anden uplink blokeret. Et cache-miss går tilbage til origin.",
+      "simple": "Din pakke kommer ind ad bygningens hoveddør, core-routeren. En trafikbetjent vælger en computer, der ikke har travlt, en stor switch i midten sender pakken ned til det rigtige skab, og skabets switch giver den til videoserveren ad et kobberkabel. Hvis serveren ikke har videoen endnu, henter den den fra hovedkopien langt væk.",
+      "technical": "Et lejet bur i et colocation-center: core-routeren tager krydsforbindelsen fra knudepunktet, en hardware-load balancer holder serviceadressen (VIP), og et træ i tre lag (core, aggregering, access) når ud til racks, med 10G-fiber mellem switchene og 1G-kobber til serverne. Spanning tree holder hvert racks anden uplink blokeret. Et cache-miss går tilbage til origin.",
       "describe": {
-        "kid": "I en stor hal med flisegulv står en række grå skabe bag et trådhegn, med en kølemaskine i hver ende. Vejen kommer fra knudepunktet til core-routeren, load balanceren, en aggregeringsswitch, en rack-switch og videoserveren. En stiplet vej fører langt væk til hovedkopien. Pakker går ind, og video kommer ud igen.",
-        "nerd": "Colocation-visningen starter ved IXP’et og går i zigzag gennem core-router, load balancer, aggregeringsswitch og access-switch over 10G-multimode-fiber og så over 1000BASE-T-kobber til cache-serveren. En indhegnet række racks med en CRAC-enhed i hver ende står bagerst. En stiplet gren fra cachen fører til origin. Forespørgsler og video bevæger sig i hver sin retning."
+        "simple": "I en stor hal med flisegulv står en række grå skabe bag et trådhegn, med en kølemaskine i hver ende. Vejen kommer fra knudepunktet til core-routeren, load balanceren, en aggregeringsswitch, en rack-switch og videoserveren. En stiplet vej fører langt væk til hovedkopien. Pakker går ind, og video kommer ud igen.",
+        "technical": "Colocation-visningen starter ved IXP’et og går i zigzag gennem core-router, load balancer, aggregeringsswitch og access-switch over 10G-multimode-fiber og så over 1000BASE-T-kobber til cache-serveren. En indhegnet række racks med en CRAC-enhed i hver ende står bagerst. En stiplet gren fra cachen fører til origin. Forespørgsler og video bevæger sig i hver sin retning."
       }
     }
   },

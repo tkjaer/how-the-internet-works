@@ -2,11 +2,11 @@
   "name": "Hjemme",
   "where": "derhjemme",
   "access": "Wi‑Fi · fiber",
-  "kid": "Små pakker med data suser gennem luften, ned ad et kabel og langs en glastråd ud til internettet – og videoen kommer tilbage samme vej!",
-  "nerd": "Hjemme forlader pakkerne telefonen via 802.11-Wi-Fi, bliver brokoblet over på Ethernet i adgangspunktet, NAT-oversat af hjemmerouteren og sendt videre over en fiberforbindelse til internetudbyderen.",
+  "simple": "Små pakker med data suser gennem luften, ned ad et kabel og langs en glastråd ud til internettet – og videoen kommer tilbage samme vej!",
+  "technical": "Hjemme forlader pakkerne telefonen via 802.11-Wi-Fi, bliver brokoblet over på Ethernet i adgangspunktet, NAT-oversat af hjemmerouteren og sendt videre over en fiberforbindelse til internetudbyderen.",
   "describe": {
-    "kid": "Et gennemskåret hus ligger mellem grønne bakker med en smart højttaler på en hylde. Ruten starter ved din telefon, hopper med Wi‑Fi til adgangspunktet, går gennem kabel til routeren og videre på fiber til internetskyen. Pakker går ud som forespørgsler og tilbage som video.",
-    "nerd": "Hjemmevisningen viser LAN-ruten fra telefon til adgangspunkt, router og fiber-uplink med en smart højttaler på væghylden. Pakker går opstrøms over Wi‑Fi, Ethernet og XGS-PON. Videopakker kommer nedstrøms tilbage ad samme rute."
+    "simple": "Et gennemskåret hus ligger mellem grønne bakker med en smart højttaler på en hylde. Ruten starter ved din telefon, hopper med Wi‑Fi til adgangspunktet, går gennem kabel til routeren og videre på fiber til internetskyen. Pakker går ud som forespørgsler og tilbage som video.",
+    "technical": "Hjemmevisningen viser LAN-ruten fra telefon til adgangspunkt, router og fiber-uplink med en smart højttaler på væghylden. Pakker går opstrøms over Wi‑Fi, Ethernet og XGS-PON. Videopakker kommer nedstrøms tilbage ad samme rute."
   },
   "tag": {
     "phone": "Wi-Fi 6 · 192.168.1.23",
@@ -14,16 +14,16 @@
   },
   "stop": {
     "router": {
-      "kid": "Routeren er hjemmets hoveddør. Den skriver dit hjems adresse på pakken og husker, hvem der spurgte.",
-      "nerd": "NAT omskriver den private afsenderadresse 192.168.1.23 til den offentlige 203.0.113.7 og holder styr på forbindelsen, så svarene finder hjem."
+      "simple": "Routeren er hjemmets hoveddør. Den skriver dit hjems adresse på pakken og husker, hvem der spurgte.",
+      "technical": "NAT omskriver den private afsenderadresse 192.168.1.23 til den offentlige 203.0.113.7 og holder styr på forbindelsen, så svarene finder hjem."
     }
   },
   "inside": {
     "internet": {
-      "nerd": "Adgangsnet (XGS-PON: en passiv splitter på gaden, OLT’en i centralen), Q-in-Q-VLAN’er videre til BNG’en, udbyderens MPLS-kerne og derefter enten peering uden afregning i et IXP eller betalt transit – og til sidst en CDN-cache tæt på dig. Hvert farvet felt er én operatørs net.",
+      "technical": "Adgangsnet (XGS-PON: en passiv splitter på gaden, OLT’en i centralen), Q-in-Q-VLAN’er videre til BNG’en, udbyderens MPLS-kerne og derefter enten peering uden afregning i et IXP eller betalt transit – og til sidst en CDN-cache tæt på dig. Hvert farvet felt er én operatørs net.",
       "describe": {
-        "kid": "Inde i skyen starter ruten ved dit hjem. Den går gennem gadeskab, fiberterminal, ISP-gateway og ISP-kerne. Så går den til grænserouter, internetknudepunkt og videofirmaets datacenter, som kan åbnes. Den stiplede sidevej viser transit.",
-        "nerd": "Den udfoldede internetrute går fra hjemmets adgangskant gennem splitter-gadeskabet, OLT’en, BNG og ISP-kerne. Så fortsætter den til grænserouter, IXP og CDN’ets datacenter, som kan foldes ud. Forespørgsler og video går hver sin vej over fiber, backbone og krydsforbindelser."
+        "simple": "Inde i skyen starter ruten ved dit hjem. Den går gennem gadeskab, fiberterminal, ISP-gateway og ISP-kerne. Så går den til grænserouter, internetknudepunkt og videofirmaets datacenter, som kan åbnes. Den stiplede sidevej viser transit.",
+        "technical": "Den udfoldede internetrute går fra hjemmets adgangskant gennem splitter-gadeskabet, OLT’en, BNG og ISP-kerne. Så fortsætter den til grænserouter, IXP og CDN’ets datacenter, som kan foldes ud. Forespørgsler og video går hver sin vej over fiber, backbone og krydsforbindelser."
       }
     }
   }

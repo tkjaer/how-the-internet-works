@@ -1,11 +1,11 @@
 {
   "name": {
-    "kid": "Radio-kuvert",
-    "nerd": "Wi-Fi-ramme (802.11)"
+    "simple": "Radio-kuvert",
+    "technical": "Wi-Fi-ramme (802.11)"
   },
   "note": {
-    "kid": "Sendes gennem luften. Kun adgangspunktet og {yours} lytter efter den.",
-    "nerd": "Hver ramme kvitteres af modtageren (ofte samlet), og tabte sendes igen. Indholdet er krypteret (WPA3)."
+    "simple": "Sendes gennem luften. Kun adgangspunktet og {yours} lytter efter den.",
+    "technical": "Hver ramme kvitteres af modtageren (ofte samlet), og tabte sendes igen. Indholdet er krypteret (WPA3)."
   },
   "line": "IEEE 802.11 QoS-data, RA: {addr1}, TA: {addr2}",
   "field": {
@@ -19,15 +19,15 @@
     },
     "addr1": {
       "name": {
-        "kid": "Til",
-        "nerd": "Modtager (adr. 1)"
+        "simple": "Til",
+        "technical": "Modtager (adr. 1)"
       },
       "about": "Hvem i luften der skal tage imod rammen."
     },
     "addr2": {
       "name": {
-        "kid": "Fra",
-        "nerd": "Sender (adr. 2)"
+        "simple": "Fra",
+        "technical": "Sender (adr. 2)"
       },
       "about": "Hvem der sendte den gennem luften."
     },
@@ -58,7 +58,7 @@
   },
   "2010": {
     "note": {
-      "nerd": "Hver ramme kvitteres af modtageren (ofte samlet), og tabte sendes igen. Indholdet er krypteret (WPA2)."
+      "technical": "Hver ramme kvitteres af modtageren (ofte samlet), og tabte sendes igen. Indholdet er krypteret (WPA2)."
     },
     "field": {
       "ccmp": {

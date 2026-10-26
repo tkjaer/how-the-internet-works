@@ -1,16 +1,16 @@
 {
   "name": "Mobile switch",
   "1995": {
-    "kid": "The mobile company’s telephone exchange. For a computer’s call it has a rack of modems: one of them takes your laptop’s data and beeps it on into the ordinary phone network, like the modem on a computer at home.",
-    "nerd": "The mobile switching centre (MSC) with its interworking function (IWF, GSM 09.07): the IWF ends RLP and plays the bytes as a V.32 modem at 9.6 kbit/s into a 64 kbit/s PCM slot towards the PSTN (or, to an ISDN number, sends them digital, rate-adapted by V.110). Still no IP: PPP rides inside the modem tones.",
+    "simple": "The mobile company’s telephone exchange. For a computer’s call it has a rack of modems: one of them takes your laptop’s data and beeps it on into the ordinary phone network, like the modem on a computer at home.",
+    "technical": "The mobile switching centre (MSC) with its interworking function (IWF, GSM 09.07): the IWF ends RLP and plays the bytes as a V.32 modem at 9.6 kbit/s into a 64 kbit/s PCM slot towards the PSTN (or, to an ISDN number, sends them digital, rate-adapted by V.110). Still no IP: PPP rides inside the modem tones.",
     "tag": "MSC · IWF · V.32",
     "peek": {
-      "kid": "The switch doesn’t open your parcel. Its modem turns the laptop’s data into beeps and sends them on down the phone line.",
-      "nerd": "The IWF strips RLP and remodulates the byte stream as V.32; the PPP frames inside are carried, not read."
+      "simple": "The switch doesn’t open your parcel. Its modem turns the laptop’s data into beeps and sends them on down the phone line.",
+      "technical": "The IWF strips RLP and remodulates the byte stream as V.32; the PPP frames inside are carried, not read."
     }
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/Mobile_switching_centre_server", "title": "Mobile switching centre", "level": "both" },
-    { "url": "https://www.3gpp.org/DynaReport/29007.htm", "title": "3GPP TS 29.007 (the IWF)", "level": "nerd" }
+    { "url": "https://www.3gpp.org/DynaReport/29007.htm", "title": "3GPP TS 29.007 (the IWF)", "level": "technical" }
   ]
 }

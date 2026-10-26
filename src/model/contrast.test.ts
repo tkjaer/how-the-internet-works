@@ -80,7 +80,7 @@ const PAIRS: [string, string[], number][] = [
   // a card's edge on the page, and a button's or chip's edge (the theme's line, else the card's edge) inside a card
   ['card-edge', [], ICON],
   ['line|card-edge', ['card'], ICON],
-  // what is on (kid/nerd, a pressed toggle, the ladder's rung): filled with btn-on in the card
+  // what is on (simple/technical, a pressed toggle, the ladder's rung): filled with btn-on in the card
   ['btn-on', ['card'], ICON],
   // the caption's door chips are outlined in their verb's colour; the peek's chips and envelopes in env-edge
   ['door-dive|accent', ['btn', 'card'], ICON],

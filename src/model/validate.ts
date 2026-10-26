@@ -11,6 +11,10 @@ import { FALLBACK, type Json, type Pack } from './strings';
 
 export interface Problem { file: string; where: string; message: string }
 
+/** The levels' old names (#196), and their names now. */
+const OLD_LEVEL = new Map([['kid', 'simple'], ['nerd', 'technical']]);
+const oldLevel = (name: string) => `"${name}" is the old name of a level: write "${OLD_LEVEL.get(name)}" (#196)`;
+
 function distance(a: string, b: string) {
   const d = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
   for (let j = 1; j <= b.length; j++) d[0][j] = j;
@@ -31,11 +35,13 @@ export interface ValidateInput {
   /** Paths of the component files that exist (e.g. "/content/scenes/ip-post/Scene.svelte"). */
   files: string[];
   /** The locale files as written, by path ("/content/scenes/ip-post/locales/da.json"), to check their language, their
-   *  `describe`s and their learn-more links. */
+   *  keys, their `describe`s and their learn-more links. */
   locales?: Record<string, Json>;
+  /** The chrome's strings as written, by path ("/content/locales/da/ui.json"), to check their keys. */
+  ui?: Record<string, Json>;
 }
 
-export function validate({ content: c, packs, files, locales = {} }: ValidateInput): Problem[] {
+export function validate({ content: c, packs, files, locales = {}, ui = {} }: ValidateInput): Problem[] {
   const out: Problem[] = [];
   const add = (file: string, where: string, message: string) => out.push({ file, where, message });
   const langs = Object.keys(packs);
@@ -43,7 +49,11 @@ export function validate({ content: c, packs, files, locales = {} }: ValidateInp
 
   const schema = <T>(file: string, s: z.ZodType<T>, v: unknown, skip: (path: PropertyKey[]) => boolean = () => false, at: PropertyKey[] = []) => {
     const r = s.safeParse(v);
-    if (!r.success) for (const i of r.error.issues) if (!skip(i.path)) add(file, [...at, ...i.path].map(String).join('.').replace(/\.(\d+)/g, '[$1]'), i.message);
+    if (!r.success) for (const i of r.error.issues) {
+      if (skip(i.path)) continue;
+      const old = i.code === 'unrecognized_keys' ? i.keys.filter((k) => OLD_LEVEL.has(k)) : [];
+      add(file, [...at, ...i.path].map(String).join('.').replace(/\.(\d+)/g, '[$1]'), old.length ? `${i.message}. ${old.map(oldLevel).join('; ')}` : i.message);
+    }
   };
   const strip = <T extends { id: string; file: string }>(d: T) => { const { id: _i, file: _f, ...rest } = d; return rest; };
   const ref = (file: string, where: string, kind: keyof Content, id: string | undefined, label: string) => {
@@ -53,7 +63,7 @@ export function validate({ content: c, packs, files, locales = {} }: ValidateInp
     if (!(key in en)) add(file, 'strings', `missing English string "${key}" (in ${file.replace(/[^/]+$/, '')}locales/en.json)`);
   };
   const needLevelled = (file: string, key: string) => {
-    if (!(key in en) && !(`${key}.kid` in en)) add(file, 'strings', `missing English string "${key}" or "${key}.kid" (in ${file.replace(/[^/]+$/, '')}locales/en.json)`);
+    if (!(key in en) && !(`${key}.simple` in en)) add(file, 'strings', `missing English string "${key}" or "${key}.simple" (in ${file.replace(/[^/]+$/, '')}locales/en.json)`);
   };
   const has = (path: string) => files.includes(path);
   /** A dive must point at a scene that explains that kind of thing. */
@@ -96,7 +106,7 @@ export function validate({ content: c, packs, files, locales = {} }: ValidateInp
       seen.add(f.id);
       needLevelled(l.file, `layer.${l.id}.field.${f.id}.name`);
       for (const e of Object.keys(f.bitsIn ?? {})) ref(l.file, `${where}.bitsIn.${e}`, 'eras', e, 'an era');
-      const tpls = [f.value, typeof f.kid === 'object' || typeof f.kid === 'string' ? f.kid : ''].flatMap((v) => (typeof v === 'string' ? [v] : [v.up, v.down]));
+      const tpls = [f.value, typeof f.simple === 'object' || typeof f.simple === 'string' ? f.simple : ''].flatMap((v) => (typeof v === 'string' ? [v] : [v.up, v.down]));
       for (const t of tpls) {
         if (t.startsWith('@')) { needLevelled(l.file, `layer.${l.id}.value.${t.slice(1)}`); continue; }
         for (const [, name] of t.matchAll(new RegExp(FACT, 'g'))) {
@@ -202,7 +212,7 @@ export function validate({ content: c, packs, files, locales = {} }: ValidateInp
     if (!Object.values(c.places).some((p) => (p.era ?? now) === e.id)) add(e.file, 'era', `no place is in the era "${e.id}", so the time machine can't go there`);
     need(e.file, `era.${e.id}.name`);
     needLevelled(e.file, `era.${e.id}`);
-    need(e.file, `era.${e.id}.describe.kid`);
+    need(e.file, `era.${e.id}.describe.simple`);
   }
   // the time machine (#59) moves within a family by era: all of it has eras or none, and at least two of them
   for (const base of Object.values(c.places).filter((p) => p.variantOf === undefined)) {
@@ -264,7 +274,7 @@ export function validate({ content: c, packs, files, locales = {} }: ValidateInp
     if (sized.length > 1) add(a.file, `${sized[1].at}.size`, `one kind at most has a size (the thing the reader waits for); ${sized[0].at} has one`);
     if (sized.length) {
       const key = `activity.${a.variantOf ?? a.id}`, keys = a.era !== undefined && a.variantOf !== undefined ? [`${key}.${a.era}.takes`, `${key}.takes`] : [`${key}.takes`];
-      if (!keys.some((k) => k in en || `${k}.kid` in en)) add(a.file, 'strings', `it has a size, so it needs words for how long it takes: "${keys[0]}" or "${keys[0]}.kid" (in content/activities/${a.variantOf ?? a.id}/locales/en.json)`);
+      if (!keys.some((k) => k in en || `${k}.simple` in en)) add(a.file, 'strings', `it has a size, so it needs words for how long it takes: "${keys[0]}" or "${keys[0]}.simple" (in content/activities/${a.variantOf ?? a.id}/locales/en.json)`);
     }
 
     // every combination of places must make a well-formed chain: each part starts with a hop, and every part but the
@@ -307,12 +317,23 @@ export function validate({ content: c, packs, files, locales = {} }: ValidateInp
     for (const opt of options) for (const d of opt) if (d) checkLayout(d.file, d.layout, c.places[d.id] === d);
   }
 
-  // every spoken description is { kid, nerd }, each short (a missing level or a typo shows here, with its file); a
-  // file's learn-more links are its own top-level list, not in an era's block or anyone's words
+  // a level's old name (#196) as a key, or as a part of a dotted one ("mode.kid"), would quietly fall back to English
+  const oldKeys = (file: string, obj: Json, where: string[]) => {
+    for (const [k, v] of Object.entries(obj)) {
+      const old = k.split('.').find((p) => OLD_LEVEL.has(p));
+      if (old) add(file, [...where, k].join('.'), oldLevel(old));
+      if (v && typeof v === 'object' && !Array.isArray(v)) oldKeys(file, v, [...where, k]);
+    }
+  };
+  for (const [path, json] of Object.entries({ ...locales, ...ui })) oldKeys(path.slice(1), json, []);
+
+  // every spoken description is { simple, technical }, each short (a missing level or a typo shows here, with its file;
+  // one with a level's old name is named above); a file's learn-more links are its own top-level list, not in an
+  // era's block or anyone's words
   const describes = (file: string, obj: Json, where: string[]) => {
     for (const [k, v] of Object.entries(obj)) {
       if (k === 'learnMore') { if (where.length) add(file, [...where, k].join('.'), 'links go in the file\'s own "learnMore" list; a link for some eras only lists them in its "eras"'); }
-      else if (k === 'describe') schema(file, S.describeText, v, () => false, [...where, k]);
+      else if (k === 'describe') { if (!(v && typeof v === 'object' && Object.keys(v).some((x) => OLD_LEVEL.has(x)))) schema(file, S.describeText, v, () => false, [...where, k]); }
       else if (typeof v === 'object') describes(file, v, [...where, k]);
     }
   };
@@ -326,9 +347,13 @@ export function validate({ content: c, packs, files, locales = {} }: ValidateInp
     if (!langs.includes(lang)) add(file, 'language', `"${lang}" is not a language.${suggest(lang, langs)}`);
     if (!('learnMore' in json)) continue;
     if (!SHOW_LINKS.includes(kind)) { add(file, 'learnMore', `nothing shows the links of ${kind}: only of ${SHOW_LINKS.join(', ')}`); continue; }
-    schema(file, S.learnMoreList, json.learnMore, () => false, ['learnMore']);
-    const links = Array.isArray(json.learnMore) ? (json.learnMore as { eras?: unknown }[]) : [];
-    links.forEach((l, i) => (Array.isArray(l?.eras) ? l.eras : []).forEach((e, j) => typeof e === 'string' && ref(file, `learnMore[${i}].eras[${j}]`, 'eras', e, 'an era')));
+    const links = Array.isArray(json.learnMore) ? (json.learnMore as { level?: unknown; eras?: unknown }[]) : [];
+    const old = (i: PropertyKey) => OLD_LEVEL.has(String(links[Number(i)]?.level));
+    schema(file, S.learnMoreList, json.learnMore, (p) => p[1] === 'level' && old(p[0]), ['learnMore']);
+    links.forEach((l, i) => {
+      if (old(i)) add(file, `learnMore[${i}].level`, oldLevel(String(l.level)));
+      (Array.isArray(l?.eras) ? l.eras : []).forEach((e, j) => typeof e === 'string' && ref(file, `learnMore[${i}].eras[${j}]`, 'eras', e, 'an era'));
+    });
   }
 
   // de-duplicate (a place shared by several activities is checked once per activity)

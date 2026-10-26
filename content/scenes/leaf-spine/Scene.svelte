@@ -13,7 +13,7 @@
   const portrait = $derived(view.orient === 'portrait');
   const compact = $derived(!portrait && view.vp.h < 470);
   const night = $derived(view.mode === 'night');
-  const nerd = $derived(S('mode') === 'nerd');
+  const technical = $derived(S('mode') === 'technical');
   const L = $derived(fabricLayout(view.orient, compact));
   const legible = legibleSize();
   const T = $derived(portrait
@@ -33,7 +33,7 @@
     subject.in && { link: subject.in, d: wire(L.inPort, L.leaves.before) },
     subject.out && { link: subject.out, d: wire(L.leaves.after, L.outPort) },
   ].filter((e) => !!e));
-  const stickerLines = $derived(nerd ? [S('sticker'), fill(S('sticker.mod'), { n: HIGHLIGHT_SPINE })] : [S('sticker')]);
+  const stickerLines = $derived(technical ? [S('sticker'), fill(S('sticker.mod'), { n: HIGHLIGHT_SPINE })] : [S('sticker')]);
 </script>
 
 <g text-rendering="geometricPrecision">
@@ -63,7 +63,7 @@
   <rect x={L.sticker.x + 6} y={L.sticker.y + 8} width={L.sticker.w} height={L.sticker.h} rx="14" fill="var(--shade)" opacity="0.12" />
   <rect x={L.sticker.x} y={L.sticker.y} width={L.sticker.w} height={L.sticker.h} rx="14" fill="var(--kraft)" stroke="var(--line)" stroke-width="5" />
   {#each stickerLines as line, i (line)}
-    <text x={L.sticker.x + L.sticker.w / 2} y={L.sticker.y + L.sticker.h / 2 + T.sticker * (i - (stickerLines.length - 1) / 2) * 1.08 + T.sticker * 0.34} text-anchor="middle" font-family={nerd ? 'var(--tag-font)' : 'var(--label-font)'} font-size={T.sticker} font-weight="900" fill="var(--line)">{line}</text>
+    <text x={L.sticker.x + L.sticker.w / 2} y={L.sticker.y + L.sticker.h / 2 + T.sticker * (i - (stickerLines.length - 1) / 2) * 1.08 + T.sticker * 0.34} text-anchor="middle" font-family={technical ? 'var(--tag-font)' : 'var(--label-font)'} font-size={T.sticker} font-weight="900" fill="var(--line)">{line}</text>
   {/each}
 
   {#each LEAVES as leaf (leaf)}

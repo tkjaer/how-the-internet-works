@@ -49,4 +49,4 @@
   <Text x={L.demux.x} y={L.demux.y} text={S('demux')} size={28} kind="big" />
 {/if}
 <TagAt x={L.tag.x} y={L.tag.y} text={S(metroTag(tech, one))} size={24} fit />
-{#each one ? [] : laneNumbers(lanes, o) as l}<Text x={l.x} y={l.y + 10} text={(view.level === 'nerd' ? 'λ' : '') + l.n} size={28} kind="small" />{/each}
+{#each one ? [] : laneNumbers(lanes, o) as l}<Text x={l.x} y={l.y + 10} text={(view.level === 'technical' ? 'λ' : '') + l.n} size={28} kind="small" />{/each}

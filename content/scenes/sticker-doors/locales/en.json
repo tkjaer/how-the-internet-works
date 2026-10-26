@@ -1,86 +1,86 @@
 {
   "title": "Which door is this sticker for?",
-  "kid": "A box reads the little sticker on the outside and checks its lookup book. The same box can learn MAC doors, keep coloured street lanes apart, or follow a motorway number. Underneath, it travels as a signal down the cable or fibre.",
-  "nerd": "A unified layer-2/label-switching view: Ethernet learns source MACs and floods unknown unicasts, VLAN tags constrain forwarding domains, and MPLS labels drive LFIB push/swap/pop decisions.",
+  "simple": "A box reads the little sticker on the outside and checks its lookup book. The same box can learn MAC doors, keep coloured street lanes apart, or follow a motorway number. Underneath, it travels as a signal down the cable or fibre.",
+  "technical": "A unified layer-2/label-switching view: Ethernet learns source MACs and floods unknown unicasts, VLAN tags constrain forwarding domains, and MPLS labels drive LFIB push/swap/pop decisions.",
   "ethernet": {
     "title": "Which cable door?",
-    "kid": "The cable envelope says which door it is for. A switch learns from the From sticker; a router or computer peels the envelope off when the For sticker is its own name. Underneath, it travels as pushes of electricity or flashes of light.",
-    "nerd": "Ethernet forwarding uses destination MAC lookup, source MAC learning, unknown-unicast flooding, and an FCS/CRC-32 check before decapsulation.",
+    "simple": "The cable envelope says which door it is for. A switch learns from the From sticker; a router or computer peels the envelope off when the For sticker is its own name. Underneath, it travels as pushes of electricity or flashes of light.",
+    "technical": "Ethernet forwarding uses destination MAC lookup, source MAC learning, unknown-unicast flooding, and an FCS/CRC-32 check before decapsulation.",
     "role": {
       "bridge": {
         "title": "Learning the doors",
-        "kid": "The frame comes in door 1 from {sender}. The box writes “{sender} → door 1”. It does not know the For sticker yet, so it copies the frame out of the other doors. The reply teaches door 2. Underneath, it travels as a signal down the cable or fibre.",
-        "nerd": "A bridge learns source MACs into a MAC table, ages entries after about 300 s, floods unknown unicast frames except the ingress port, then forwards known destinations to one port. It never rewrites the frame: source and destination MAC stay those of the devices at either end of the layer-2 stretch (here {sender} and {next}). Store-and-forward switches verify FCS/CRC-32 first.",
+        "simple": "The frame comes in door 1 from {sender}. The box writes “{sender} → door 1”. It does not know the For sticker yet, so it copies the frame out of the other doors. The reply teaches door 2. Underneath, it travels as a signal down the cable or fibre.",
+        "technical": "A bridge learns source MACs into a MAC table, ages entries after about 300 s, floods unknown unicast frames except the ingress port, then forwards known destinations to one port. It never rewrites the frame: source and destination MAC stay those of the devices at either end of the layer-2 stretch (here {sender} and {next}). Store-and-forward switches verify FCS/CRC-32 first.",
         "describe": {
-          "kid": "A road connects two friendly devices and a box with four numbered doors. A walking envelope arrives at door 1. Two cards show tiny copies and a door book. Dotted paths light up toward the other doors. Later, the envelope walks straight to door 2.",
-          "nerd": "The Ethernet frame character carries a sticker beside a four-port bridge and MAC lookup book. The source row fills with the sending router’s MAC on port 1, and the destination row shows a question mark. Flood paths animate to the other ports. On the reply, the table learns port 2, and the frame moves directly with its MACs unchanged."
+          "simple": "A road connects two friendly devices and a box with four numbered doors. A walking envelope arrives at door 1. Two cards show tiny copies and a door book. Dotted paths light up toward the other doors. Later, the envelope walks straight to door 2.",
+          "technical": "The Ethernet frame character carries a sticker beside a four-port bridge and MAC lookup book. The source row fills with the sending router’s MAC on port 1, and the destination row shows a question mark. Flood paths animate to the other ports. On the reply, the table learns port 2, and the frame moves directly with its MACs unchanged."
         }
       },
       "nat": {
         "title": "This sticker is for me",
-        "kid": "The For sticker is the router’s own name, so it checks the frame, peels the cable envelope off, and asks everyone on the way out “Who has {next}’s address?” One box answers “Me!”, and a fresh sticker goes on. Underneath, it travels as pushes of electricity or flashes of light.",
-        "nerd": "The destination MAC matches the router interface. After FCS/CRC-32 validation the Ethernet header is stripped; ARP resolves the next hop on the outgoing link ({next}) to a MAC address (IPv6 uses NDP), then a new Ethernet frame is emitted.",
+        "simple": "The For sticker is the router’s own name, so it checks the frame, peels the cable envelope off, and asks everyone on the way out “Who has {next}’s address?” One box answers “Me!”, and a fresh sticker goes on. Underneath, it travels as pushes of electricity or flashes of light.",
+        "technical": "The destination MAC matches the router interface. After FCS/CRC-32 validation the Ethernet header is stripped; ARP resolves the next hop on the outgoing link ({next}) to a MAC address (IPv6 uses NDP), then a new Ethernet frame is emitted.",
         "describe": {
-          "kid": "The road passes a four-door box, and the router you are at is circled. A walking envelope marked ME stops beside it. The For label peels away while “Who has?” appears. Wavy questions reach the doors, one answer gets a tick, and the envelope walks on.",
-          "nerd": "The Ethernet frame sits beside the router’s port box with For and FCS check marks, an ARP prompt and an ARP book. During lookup, the frame pauses. During fanout, the ME label is smudged and ARP waves fan across the ports. A learned MAC replaces broadcast before a new frame leaves."
+          "simple": "The road passes a four-door box, and the router you are at is circled. A walking envelope marked ME stops beside it. The For label peels away while “Who has?” appears. Wavy questions reach the doors, one answer gets a tick, and the envelope walks on.",
+          "technical": "The Ethernet frame sits beside the router’s port box with For and FCS check marks, an ARP prompt and an ARP book. During lookup, the frame pauses. During fanout, the ME label is smudged and ARP waves fan across the ports. A learned MAC replaces broadcast before a new frame leaves."
         }
       },
       "router": {
         "title": "This sticker is for me",
-        "kid": "The For sticker is this router’s own name. It checks the frame, peels the cable envelope off, asks ARP for the next box’s MAC, and puts on a new cable sticker. Underneath, it travels as pushes of electricity or flashes of light.",
-        "nerd": "The router consumes the frame addressed to its local MAC, validates FCS/CRC-32, decapsulates the payload, resolves the next hop through ARP, and writes a new source/destination MAC pair for the outgoing link.",
+        "simple": "The For sticker is this router’s own name. It checks the frame, peels the cable envelope off, asks ARP for the next box’s MAC, and puts on a new cable sticker. Underneath, it travels as pushes of electricity or flashes of light.",
+        "technical": "The router consumes the frame addressed to its local MAC, validates FCS/CRC-32, decapsulates the payload, resolves the next hop through ARP, and writes a new source/destination MAC pair for the outgoing link.",
         "describe": {
-          "kid": "The middle router is drawn as a four-door box on the road, with a walking envelope marked ME beside it. The sticker card shows For and FCS check marks, then a “Who has?” question. Wavy lines spread to the doors, one answer gets a tick, and the envelope starts walking again.",
-          "nerd": "A frame addressed to this router is shown next to the four-port box. The action card checks the For label and FCS. Then the ARP book highlights a next-hop row. ARP waves fan out from the incoming door. After a reply, the destination MAC changes and the frame moves on."
+          "simple": "The middle router is drawn as a four-door box on the road, with a walking envelope marked ME beside it. The sticker card shows For and FCS check marks, then a “Who has?” question. Wavy lines spread to the doors, one answer gets a tick, and the envelope starts walking again.",
+          "technical": "A frame addressed to this router is shown next to the four-port box. The action card checks the For label and FCS. Then the ARP book highlights a next-hop row. ARP waves fan out from the incoming door. After a reply, the destination MAC changes and the frame moves on."
         }
       },
       "endpoint": {
         "title": "This sticker is for me",
-        "kid": "The For sticker matches this computer. It checks that the frame is not smudged, peels the cable envelope off, and hands the packet inside upward. When it sends back, it uses ARP and writes a new sticker. Underneath, it travels as pushes of electricity or flashes of light.",
-        "nerd": "A host accepts frames whose destination is its NIC MAC (or broadcast/multicast), verifies FCS/CRC-32, and passes the EtherType payload upward. Outgoing frames use the ARP cache for the peer MAC.",
+        "simple": "The For sticker matches this computer. It checks that the frame is not smudged, peels the cable envelope off, and hands the packet inside upward. When it sends back, it uses ARP and writes a new sticker. Underneath, it travels as pushes of electricity or flashes of light.",
+        "technical": "A host accepts frames whose destination is its NIC MAC (or broadcast/multicast), verifies FCS/CRC-32, and passes the EtherType payload upward. Outgoing frames use the ARP cache for the peer MAC.",
         "describe": {
-          "kid": "An end device is circled while a four-door box and road connect to the other end. A walking envelope marked ME stops. The small For label peels off, and the check card says OK. A “Who has?” question and wavy lines appear before the envelope walks back out.",
-          "nerd": "The host you are at is drawn on the Ethernet hop with a ME-labelled frame. The action card shows a destination match and FCS check. The ARP book row waits for a peer MAC. The frame pauses for lookup, ARP waves move on the link, and a fresh Ethernet sticker carries the payload onward."
+          "simple": "An end device is circled while a four-door box and road connect to the other end. A walking envelope marked ME stops. The small For label peels off, and the check card says OK. A “Who has?” question and wavy lines appear before the envelope walks back out.",
+          "technical": "The host you are at is drawn on the Ethernet hop with a ME-labelled frame. The action card shows a destination match and FCS check. The ARP book row waits for a peer MAC. The frame pauses for lookup, ARP waves move on the link, and a fresh Ethernet sticker carries the payload onward."
         }
       }
     }
   },
   "vlan": {
     "title": "Coloured street doors",
-    "kid": "The street sticker paints the frame for street 101. It only leaves by doors with that colour. At the BNG, house 2042 says which subscription this is, and the stickers come off. Underneath, it travels as flashes of light in fibre.",
-    "nerd": "802.1Q carries a 12-bit VID (1–4094 usable). In 802.1ad Q-in-Q, S-VLAN 101 identifies the cabinet domain and C-VLAN 2042 identifies the subscriber line at the BNG.",
+    "simple": "The street sticker paints the frame for street 101. It only leaves by doors with that colour. At the BNG, house 2042 says which subscription this is, and the stickers come off. Underneath, it travels as flashes of light in fibre.",
+    "technical": "802.1Q carries a 12-bit VID (1–4094 usable). In 802.1ad Q-in-Q, S-VLAN 101 identifies the cabinet domain and C-VLAN 2042 identifies the subscriber line at the BNG.",
     "describe": {
-      "kid": "A road runs through a four-door box whose matching lanes are marked 1 and 3. The walking envelope carries a 101 sticker. The action card bends its path only through doors with the same lane. The lane book lists Street 101, House 2042 and a separate street.",
-      "nerd": "The frame carries VLAN 101 beside a switch with four numbered ports. In the action card, tagged traffic follows only active member ports, while a dashed separate lane stays dim. The lane book shows Street 101, House 2042 and another VID. The 802.1Q fields line appears below."
+      "simple": "A road runs through a four-door box whose matching lanes are marked 1 and 3. The walking envelope carries a 101 sticker. The action card bends its path only through doors with the same lane. The lane book lists Street 101, House 2042 and a separate street.",
+      "technical": "The frame carries VLAN 101 beside a switch with four numbered ports. In the action card, tagged traffic follows only active member ports, while a dashed separate lane stays dim. The lane book shows Street 101, House 2042 and another VID. The 802.1Q fields line appears below."
     },
     "at": {
       "bng": {
         "title": "The subscription door",
-        "kid": "At the BNG the street tag and house tag have done their job. House 2042 means your line, so the BNG takes the stickers off and sends the packet onward. Underneath, it travels as flashes of light in fibre.",
-        "nerd": "The BNG terminates the access VLANs: S-VID 101 scopes the aggregation side, C-VID 2042 selects the subscriber session, then the Ethernet payload is routed or label-switched onward.",
+        "simple": "At the BNG the street tag and house tag have done their job. House 2042 means your line, so the BNG takes the stickers off and sends the packet onward. Underneath, it travels as flashes of light in fibre.",
+        "technical": "The BNG terminates the access VLANs: S-VID 101 scopes the aggregation side, C-VID 2042 selects the subscriber session, then the Ethernet payload is routed or label-switched onward.",
         "describe": {
-          "kid": "The road reaches a four-door box, and this BNG is circled. The envelope still wears its 101 sticker. The action card shows the matching lane, and a small TAGS slip flies away. The lane book points from street and house numbers to one owner as the tags come off.",
-          "nerd": "At the BNG, the action card still shows VLAN member ports, but a TAGS label peels off on a curved arrow. The lane book switches to S-VID 101 and C-VID 2042 with the subscriber row. The frame pauses by the port box while the tags are removed."
+          "simple": "The road reaches a four-door box, and this BNG is circled. The envelope still wears its 101 sticker. The action card shows the matching lane, and a small TAGS slip flies away. The lane book points from street and house numbers to one owner as the tags come off.",
+          "technical": "At the BNG, the action card still shows VLAN member ports, but a TAGS label peels off on a curved arrow. The lane book switches to S-VID 101 and C-VID 2042 with the subscriber row. The frame pauses by the port box while the tags are removed."
         }
       }
     }
   },
   "mpls": {
     "title": "Motorway numbers",
-    "kid": "Inside the provider network the sticker is a motorway number. A junction swaps it for the number the next junction asked for and sends the parcel out door 3 without reading the long address. Underneath, it travels as flashes of light in fibre.",
-    "nerd": "MPLS routers use an LFIB: an incoming label maps to an outgoing interface and the label the next router advertised. The ingress edge pushes a label, LSRs in the middle swap it, the egress edge pops it (or, by default, the hop before it: penultimate-hop popping).",
+    "simple": "Inside the provider network the sticker is a motorway number. A junction swaps it for the number the next junction asked for and sends the parcel out door 3 without reading the long address. Underneath, it travels as flashes of light in fibre.",
+    "technical": "MPLS routers use an LFIB: an incoming label maps to an outgoing interface and the label the next router advertised. The ingress edge pushes a label, LSRs in the middle swap it, the egress edge pops it (or, by default, the hop before it: penultimate-hop popping).",
     "describe": {
-      "kid": "A wide road runs through a four-door junction, and the walking parcel carries a big motorway number. The label card shows IP getting a new number, or one number changing into another. The label book lists which door to use, door 3 glows, and the parcel walks on.",
-      "nerd": "The MPLS packet sits beside a four-port LSR, with door 3 highlighted. The action card shows IP getting an outgoing label, or an incoming label being swapped for the next label. The LFIB card mirrors the mapping. The labelled parcel moves along the road between nodes."
+      "simple": "A wide road runs through a four-door junction, and the walking parcel carries a big motorway number. The label card shows IP getting a new number, or one number changing into another. The label book lists which door to use, door 3 glows, and the parcel walks on.",
+      "technical": "The MPLS packet sits beside a four-port LSR, with door 3 highlighted. The action card shows IP getting an outgoing label, or an incoming label being swapped for the next label. The LFIB card mirrors the mapping. The labelled parcel moves along the road between nodes."
     },
     "at": {
       "border": {
         "title": "Leaving the motorway",
-        "kid": "The border router is the last junction in your internet company’s network. It takes the motorway sticker off, so the exchange and the next network can read the normal address again. Underneath, it travels as flashes of light in fibre.",
-        "nerd": "The egress PE pops the label before the Ethernet-only peering LAN at the IXP and forwards on the IP header towards the eBGP next hop. Usually the core router before it has already popped it (penultimate-hop popping, the default); here the border pops it itself. TC bits carry class; at the pop the decremented MPLS TTL is copied back into the IP header (the uniform model; the pipe model leaves the IP TTL alone).",
+        "simple": "The border router is the last junction in your internet company’s network. It takes the motorway sticker off, so the exchange and the next network can read the normal address again. Underneath, it travels as flashes of light in fibre.",
+        "technical": "The egress PE pops the label before the Ethernet-only peering LAN at the IXP and forwards on the IP header towards the eBGP next hop. Usually the core router before it has already popped it (penultimate-hop popping, the default); here the border pops it itself. TC bits carry class; at the pop the decremented MPLS TTL is copied back into the IP header (the uniform model; the pipe model leaves the IP TTL alone).",
         "describe": {
-          "kid": "At the last four-door junction, the parcel arrives with a motorway number sticker. The label card shows that number turning back into IP, with a small pop sign between them. The label book says to remove the sticker, door 3 glows, and the parcel leaves as a normal address parcel.",
-          "nerd": "The egress router is highlighted on the road with the MPLS-labelled packet at its doors. The action card shows the incoming label changed back to IP and marked pop. The LFIB card lists that label with a pop action and says to read IP next. The active egress door glows as the parcel continues without an MPLS label."
+          "simple": "At the last four-door junction, the parcel arrives with a motorway number sticker. The label card shows that number turning back into IP, with a small pop sign between them. The label book says to remove the sticker, door 3 glows, and the parcel leaves as a normal address parcel.",
+          "technical": "The egress router is highlighted on the road with the MPLS-labelled packet at its doors. The action card shows the incoming label changed back to IP and marked pop. The LFIB card lists that label with a pop action and says to read IP next. The active egress door glows as the parcel continues without an MPLS label."
         }
       }
     }
@@ -159,9 +159,9 @@
     "meShort": "ME"
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Network_switch", "title": "Network switch", "level": "nerd" },
-    { "url": "https://www.rfc-editor.org/rfc/rfc826", "title": "RFC 826: ARP", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/IEEE_802.1Q", "title": "IEEE 802.1Q (VLANs)", "level": "nerd", "eras": ["2010", "today"] },
-    { "url": "https://www.rfc-editor.org/rfc/rfc3031", "title": "RFC 3031: MPLS architecture", "level": "nerd", "eras": ["2010", "today"] }
+    { "url": "https://en.wikipedia.org/wiki/Network_switch", "title": "Network switch", "level": "technical" },
+    { "url": "https://www.rfc-editor.org/rfc/rfc826", "title": "RFC 826: ARP", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/IEEE_802.1Q", "title": "IEEE 802.1Q (VLANs)", "level": "technical", "eras": ["2010", "today"] },
+    { "url": "https://www.rfc-editor.org/rfc/rfc3031", "title": "RFC 3031: MPLS architecture", "level": "technical", "eras": ["2010", "today"] }
   ]
 }

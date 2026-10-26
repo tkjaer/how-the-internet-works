@@ -15,11 +15,11 @@ import { defineTheme } from './render/art-base';
 import type { Theme } from './render/theme-types';
 
 // ------------------------------------------------------------------ language + level
-/** A level's name in the URL (`?level=technical`) and in storage. The readers' words are "Simple" and "Technical"
- *  (#141); `kid` and `nerd` stay the content's keys (`"kid": …, "nerd": …`). */
-const LEVEL_NAME: Record<Level, string> = { kid: 'simple', nerd: 'technical' };
-const levelNamed = (name: string | null) => (Object.keys(LEVEL_NAME) as Level[]).find((l) => LEVEL_NAME[l] === name);
-export const loc = $state<{ lang: string; level: Level }>({ lang: 'en', level: levelNamed(localStorage.getItem('level')) ?? 'kid' });
+/** The levels, as the URL (`?level=technical`), storage, content (`"simple": …, "technical": …`) and code name them
+ *  (#196); readers see "Simple" and "Technical" (#141). The old `kid` and `nerd` are no level any more. */
+const LEVELS: readonly Level[] = ['simple', 'technical'];
+const levelNamed = (name: string | null) => LEVELS.find((l) => l === name);
+export const loc = $state<{ lang: string; level: Level }>({ lang: 'en', level: levelNamed(localStorage.getItem('level')) ?? 'simple' });
 
 export function setLang(lang: string) {
   if (lang === loc.lang && document.documentElement.lang === lang) return;
@@ -30,7 +30,7 @@ export function setLang(lang: string) {
 }
 export function setLevel(l: Level) {
   loc.level = l;
-  localStorage.setItem('level', LEVEL_NAME[l]);
+  localStorage.setItem('level', l);
 }
 const q = new URLSearchParams(location.search);
 const asked = levelNamed(q.get('level'));
@@ -47,7 +47,7 @@ const NOW = nowEra();
 const past = () => (nav.route.era === NOW ? undefined : nav.route.era);
 /** A UI or content string in the current language (English fallback; the key itself if missing everywhere). */
 export const tr = (key: string) => (more.n, firstOf(loc.lang, withEra([key], past())) ?? key);
-/** Level-aware: `key.kid` / `key.nerd`, falling back to `key`. */
+/** Level-aware: `key.simple` / `key.technical`, falling back to `key`. */
 export const trl = (key: string, level: Level = loc.level) => (more.n, firstOf(loc.lang, withEra([key], past()), level) ?? key);
 /** The first of several keys (most specific first) that has a string. */
 export const trFirst = (keys: string[], level?: Level) => (more.n, firstOf(loc.lang, withEra(keys, past()), level) ?? '');

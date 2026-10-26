@@ -1,11 +1,11 @@
 {
   "name": {
-    "kid": "Tunnelumschlag",
-    "nerd": "GTP-U-Tunnel (äußeres IP/UDP)"
+    "simple": "Tunnelumschlag",
+    "technical": "GTP-U-Tunnel (äußeres IP/UDP)"
   },
   "note": {
-    "kid": "Der Mast steckt dein Päckchen in ein größeres, das an den Mobilfunkkern adressiert ist, damit das Netz dein Handy findet, wohin du auch gehst.",
-    "nerd": "Die gNB packt das eigene IP-Paket des Handys in IP/UDP/GTP-U (Port 2152) zur UPF; die TEID kennzeichnet die Session dieses Handys."
+    "simple": "Der Mast steckt dein Päckchen in ein größeres, das an den Mobilfunkkern adressiert ist, damit das Netz dein Handy findet, wohin du auch gehst.",
+    "technical": "Die gNB packt das eigene IP-Paket des Handys in IP/UDP/GTP-U (Port 2152) zur UPF; die TEID kennzeichnet die Session dieses Handys."
   },
   "line": "GTP-U, {osrc} → {odst}, TEID {teid}",
   "value": {
@@ -51,15 +51,15 @@
     },
     "osrc": {
       "name": {
-        "kid": "Von",
-        "nerd": "Äußere Source"
+        "simple": "Von",
+        "technical": "Äußere Source"
       },
       "about": "Ein Ende des Tunnels."
     },
     "odst": {
       "name": {
-        "kid": "An",
-        "nerd": "Äußere Destination"
+        "simple": "An",
+        "technical": "Äußere Destination"
       },
       "about": "Das andere Ende: der Mast auf dem Weg nach unten, der Kern (UPF) auf dem Weg nach oben."
     },
@@ -93,8 +93,8 @@
     },
     "teid": {
       "name": {
-        "kid": "Ticketnr.",
-        "nerd": "TEID"
+        "simple": "Ticketnr.",
+        "technical": "TEID"
       },
       "about": "Tunnel Endpoint ID: welche Session welches Handys das ist. Jedes Ende wählt die TEID, die es empfangen will."
     },
@@ -109,8 +109,8 @@
   },
   "2010": {
     "note": {
-      "kid": "Die Funksteuerung steckt dein Päckchen in ein größeres, das an das Tor der Mobilfunkfirma adressiert ist, damit das Netz dein Handy findet, wohin du auch gehst.",
-      "nerd": "Mit Direct Tunnel packt das RNC das eigene IP-Paket des Handys in IP/UDP/GTP-U (Port 2152) zum GGSN; die TEID benennt den PDP Context dieses Handys."
+      "simple": "Die Funksteuerung steckt dein Päckchen in ein größeres, das an das Tor der Mobilfunkfirma adressiert ist, damit das Netz dein Handy findet, wohin du auch gehst.",
+      "technical": "Mit Direct Tunnel packt das RNC das eigene IP-Paket des Handys in IP/UDP/GTP-U (Port 2152) zum GGSN; die TEID benennt den PDP Context dieses Handys."
     },
     "value": {
       "flags": "0x30 (v1, GTP)",
@@ -136,7 +136,7 @@
     }
   },
   "learnMore": [
-    { "url": "https://de.wikipedia.org/wiki/Mobilfunknetz", "title": "Mobilfunknetz", "level": "kid" },
-    { "url": "https://de.wikipedia.org/wiki/GPRS_Tunneling_Protocol", "title": "GPRS Tunneling Protocol", "level": "nerd" }
+    { "url": "https://de.wikipedia.org/wiki/Mobilfunknetz", "title": "Mobilfunknetz", "level": "simple" },
+    { "url": "https://de.wikipedia.org/wiki/GPRS_Tunneling_Protocol", "title": "GPRS Tunneling Protocol", "level": "technical" }
   ]
 }

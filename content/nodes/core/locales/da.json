@@ -1,16 +1,16 @@
 {
   "name": "Udbyderkerne",
-  "kid": "Internetfirmaets motorvej: lynhurtige forbindelser mellem store byer.",
-  "nerd": "En MPLS-kerne med 100–400G-forbindelser; pakker label-switches i stedet for at blive slået op i hvert hop.",
+  "simple": "Internetfirmaets motorvej: lynhurtige forbindelser mellem store byer.",
+  "technical": "En MPLS-kerne med 100–400G-forbindelser; pakker label-switches i stedet for at blive slået op i hvert hop.",
   "tag": "MPLS · 400G",
   "1995": {
     "name": "Udbyderens router",
-    "kid": "Internetfirmaets ene store router i et baglokale. Hver pakke fra dem, der ringer ind, kommer igennem den.",
-    "nerd": "Den lille udbyders ene router: Ethernet til modembanken, en lejet E1 til leverandøren og en til DIX. Den slår hver pakkes adresse op i sin tabel; der fandtes ingen MPLS-etiketter endnu (RFC 3031, 2001).",
+    "simple": "Internetfirmaets ene store router i et baglokale. Hver pakke fra dem, der ringer ind, kommer igennem den.",
+    "technical": "Den lille udbyders ene router: Ethernet til modembanken, en lejet E1 til leverandøren og en til DIX. Den slår hver pakkes adresse op i sin tabel; der fandtes ingen MPLS-etiketter endnu (RFC 3031, 2001).",
     "tag": "Router · 2 × E1"
   },
   "2010": {
-    "nerd": "En MPLS-kerne med 10–40G-forbindelser, de første 100G kom i 2010; pakker label-switches i stedet for at blive slået op ved hvert hop.",
+    "technical": "En MPLS-kerne med 10–40G-forbindelser, de første 100G kom i 2010; pakker label-switches i stedet for at blive slået op ved hvert hop.",
     "tag": "MPLS · 10G"
   }
 }

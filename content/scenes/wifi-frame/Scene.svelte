@@ -11,7 +11,7 @@
   const legible = legibleSize();
   const ctx = $derived(subject.ctx);
   const route = $derived(subject.route);
-  const nerd = $derived(ctx.level === 'nerd');
+  const technical = $derived(ctx.level === 'technical');
   const down = $derived(ctx.dir === 'down' || ctx.role === 'endpoint');
   const L = $derived(layoutFor(view.orient, view.vp));
   const T = $derived(L.size);
@@ -26,13 +26,13 @@
   const shortMac = (id: string) => `…${fakeMac(id).slice(-5)}`;
   /** The neighbour waiting its turn on the air: the other kind of device than yours. */
   const neighbour = $derived(phoneHop.node.id === 'laptop' ? 'phone' : 'laptop');
-  const phoneName = $derived(nerd ? shortMac(phoneHop.id) : yours(phoneHop));
-  const apName = $derived(nerd ? shortMac(apHop.id) : S('label.ap'));
-  const routerName = $derived(nerd ? shortMac(routerHop.id) : S('label.router'));
+  const phoneName = $derived(technical ? shortMac(phoneHop.id) : yours(phoneHop));
+  const apName = $derived(technical ? shortMac(apHop.id) : S('label.ap'));
+  const routerName = $derived(technical ? shortMac(routerHop.id) : S('label.router'));
   const c0 = $derived(L.cards[0]);
   const c1 = $derived(L.cards[1]);
   const rowShort = (key: string, value: string, hot = false) => ({ label: S(key), value, hot });
-  const rowNerd = (label: string, value: string, hot = false) => ({ label, value, hot });
+  const rowTechnical = (label: string, value: string, hot = false) => ({ label, value, hot });
   const radioRows = $derived.by(() => down
     ? [rowShort('label.for', phoneName, true), rowShort('label.from', apName), rowShort('label.cameFrom', routerName)]
     : [rowShort('label.for', apName, true), rowShort('label.from', phoneName), rowShort('label.thenTo', routerName)]);
@@ -40,17 +40,17 @@
     ? [rowShort('label.for', phoneName, true), rowShort('label.from', routerName)]
     : [rowShort('label.for', routerName, true), rowShort('label.from', phoneName)]);
   const radioFields = $derived.by(() => [
-    rowNerd(S('field.fc'), down ? S('field.fromDs') : S('field.toDs'), true),
-    rowNerd(S('field.duration'), '44 µs'),
-    rowNerd('addr1', down ? phoneName : apName, true),
-    rowNerd('addr2', down ? apName : phoneName),
-    rowNerd('addr3', routerName),
-    rowNerd(S('field.seq'), down ? '0x7c10' : '0x0a30'),
-    rowNerd('FCS', down ? '0x51b7e20c' : '0x8d42c3a1'),
+    rowTechnical(S('field.fc'), down ? S('field.fromDs') : S('field.toDs'), true),
+    rowTechnical(S('field.duration'), '44 µs'),
+    rowTechnical('addr1', down ? phoneName : apName, true),
+    rowTechnical('addr2', down ? apName : phoneName),
+    rowTechnical('addr3', routerName),
+    rowTechnical(S('field.seq'), down ? '0x7c10' : '0x0a30'),
+    rowTechnical('FCS', down ? '0x51b7e20c' : '0x8d42c3a1'),
   ]);
   const cableFields = $derived.by(() => down
-    ? [rowNerd('Eth DA', phoneName, true), rowNerd('Eth SA', routerName)]
-    : [rowNerd('Eth DA', routerName, true), rowNerd('Eth SA', phoneName)]);
+    ? [rowTechnical('Eth DA', phoneName, true), rowTechnical('Eth SA', routerName)]
+    : [rowTechnical('Eth DA', routerName, true), rowTechnical('Eth SA', phoneName)]);
   const radioStrip = $derived.by(() => [
     `FC ${down ? 'FromDS' : 'ToDS'} · Dur44 · Seq${down ? '7c10' : '0a30'}`,
     `A1 ${down ? phoneName : apName} · A2 ${down ? apName : phoneName} · A3 ${routerName}`,
@@ -60,12 +60,12 @@
     `DA ${down ? phoneName : routerName}`,
     `SA ${down ? routerName : phoneName}`,
   ]);
-  const dsText = $derived(nerd ? S(down ? 'tag.fromDs' : 'tag.toDs') : down ? fill(S('label.radioToYou'), { yours: yours(phoneHop) }) : S('label.radioToAp'));
+  const dsText = $derived(technical ? S(down ? 'tag.fromDs' : 'tag.toDs') : down ? fill(S('label.radioToYou'), { yours: yours(phoneHop) }) : S('label.radioToAp'));
   const swapText = $derived(down ? S('label.cableBecomesRadio') : S('label.radioBecomesCable'));
-  const ackText = $derived(nerd ? S('label.ackNerd') : S('label.gotIt'));
+  const ackText = $derived(technical ? S('label.ackTechnical') : S('label.gotIt'));
   const titleY = $derived(c0.y + (portrait || compact ? 82 : 74));
   const title2Y = $derived(c1.y + (portrait || compact ? 82 : 74));
-  const kidEnvScale = $derived(portrait ? 0.84 : compact ? 1.1 : 1.02);
+  const simpleEnvScale = $derived(portrait ? 0.84 : compact ? 1.1 : 1.02);
   const envLeftX = $derived(c0.x + c0.w * (portrait ? 0.24 : 0.25));
   const envRightX = $derived(c0.x + c0.w * (portrait ? 0.24 : 0.75));
   const envY = $derived(c0.y + (portrait ? 165 : c0.h * 0.66));
@@ -74,9 +74,9 @@
     const half = text.length * size * 0.25;
     return Math.max(L.road.x0 + half, Math.min(L.road.x1 - half, x));
   };
-  const timeline = $derived(nerd
-    ? [S('label.aifs'), S('label.backoff'), S('label.data'), portrait || compact ? S('label.ackNerd') : S('label.sifsAck')]
-    : [S('label.listenKid'), S('label.waitKid'), S('label.sendKid'), S('label.gotItStep')]);
+  const timeline = $derived(technical
+    ? [S('label.aifs'), S('label.backoff'), S('label.data'), portrait || compact ? S('label.ackTechnical') : S('label.sifsAck')]
+    : [S('label.listenSimple'), S('label.waitSimple'), S('label.sendSimple'), S('label.gotItStep')]);
   const lineY = $derived(c1.y + c1.h * (compact ? 0.56 : 0.50));
   // a phone on its side: no laptop on the card (it waits on the road anyway), so the timeline spans the card and its
   // words and pop-ups keep to the theme's label minimum (issue #33)
@@ -88,7 +88,7 @@
   const clashX = $derived(tlX0 + tlStep * 2);
   const ackW = $derived(compact ? measure(ackText, popPx) + 56 : portrait ? 350 : 260);
   const ackX = $derived(compact ? Math.min(tlX1 - 30, c1.x + c1.w - 24 - ackW / 2) : tlX1 - (portrait ? 100 : 30));
-  const tagTexts = $derived(nerd
+  const tagTexts = $derived(technical
     ? [S('tag.csma'), S('tag.encrypt'), S('tag.sequence')]
     : [S('tag.everyone'), S('tag.gotIt')]);
 </script>
@@ -110,7 +110,7 @@
 <text x={c0.x + c0.w - (portrait ? 175 : 128)} y={c0.y + (portrait ? 54 : 53)} text-anchor="middle" font-family="var(--label-font)" font-size={portrait ? 31 : 19} font-weight="900" fill="var(--brick)">{dsText}</text>
 {/if}
 
-{#if nerd && !compact}
+{#if technical && !compact}
   {#if portrait}
     <rect x={c0.x + 34} y={c0.y + 124} width={c0.w - 68} height="212" rx="20" fill="var(--paper-2)" stroke="var(--line)" stroke-width="5" />
     <Text x={c0.x + 58} y={c0.y + 166} text={S('label.radioEnvelope')} size="30" kind="big" anchor="start" />
@@ -135,8 +135,8 @@
     {/each}
   {/if}
 {:else if portrait}
-  <Envelope x={envLeftX} y={envY} scale={kidEnvScale} kind={down ? 'cable' : 'radio'} rows={[]} />
-  <Envelope x={envRightX} y={env2Y} scale={kidEnvScale} kind={down ? 'radio' : 'cable'} rows={[]} />
+  <Envelope x={envLeftX} y={envY} scale={simpleEnvScale} kind={down ? 'cable' : 'radio'} rows={[]} />
+  <Envelope x={envRightX} y={env2Y} scale={simpleEnvScale} kind={down ? 'radio' : 'cable'} rows={[]} />
   {#each (down ? cableRows : radioRows) as r, i}
     <text x={c0.x + 330} y={c0.y + (down ? 200 : 196) + i * 55} font-family="var(--label-font)" font-size="34" font-weight={r.hot ? 900 : 800} fill="var(--line)">{r.label}: {r.value}</text>
   {/each}
@@ -144,10 +144,10 @@
     <text x={c0.x + 330} y={c0.y + (down ? 354 : 388) + i * 55} font-family="var(--label-font)" font-size="34" font-weight={r.hot ? 900 : 800} fill="var(--line)">{r.label}: {r.value}</text>
   {/each}
 {:else}
-  <Envelope x={envLeftX} y={envY} scale={kidEnvScale} kind={down ? 'cable' : 'radio'} rows={down ? cableRows : radioRows} blank={compact} title={compact ? '' : S(down ? 'label.cableEnvelope' : 'label.radioEnvelope')} />
+  <Envelope x={envLeftX} y={envY} scale={simpleEnvScale} kind={down ? 'cable' : 'radio'} rows={down ? cableRows : radioRows} blank={compact} title={compact ? '' : S(down ? 'label.cableEnvelope' : 'label.radioEnvelope')} />
   <path d={`M${envLeftX + 152} ${envY} H${envRightX - 152}`} stroke="var(--line)" stroke-width="6" stroke-linecap="round" opacity="0.72" />
   <path d={`M${envRightX - 157} ${envY - 13} L${envRightX - 138} ${envY} L${envRightX - 157} ${envY + 13}`} fill="none" stroke="var(--line)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.72" />
-  <Envelope x={envRightX} y={envY} scale={kidEnvScale} kind={down ? 'radio' : 'cable'} rows={down ? radioRows : cableRows} blank={compact} title={compact ? '' : S(down ? 'label.radioEnvelope' : 'label.cableEnvelope')} />
+  <Envelope x={envRightX} y={envY} scale={simpleEnvScale} kind={down ? 'radio' : 'cable'} rows={down ? radioRows : cableRows} blank={compact} title={compact ? '' : S(down ? 'label.radioEnvelope' : 'label.cableEnvelope')} />
 {/if}
 
 <!-- card 2: taking turns -->
@@ -191,7 +191,7 @@
   <rect x={-ackW / 2} y={compact ? -popPx * 0.8 : -34} width={ackW} height={compact ? popPx * 1.6 : 68} rx="20" fill="var(--leaf)" stroke="var(--line)" stroke-width="4" />
   <text x="0" y={compact ? popPx * 0.36 : 9} text-anchor="middle" font-family="var(--label-font)" font-size={compact ? popPx : portrait ? 28 : 24} font-weight="900" fill="var(--leaf-ink)">{ackText}</text>
 </g>
-{#if !portrait && !compact}<Text x={c1.x + c1.w / 2} y={c1.y + c1.h - 27} text={nerd ? fill(S('label.nerdStrip'), { seq: down ? '0x7c10' : '0x0a30' }) : S('label.kidStrip')} size={20} kind={nerd ? 'small' : 'big'} colour="var(--brick)" />{/if}
+{#if !portrait && !compact}<Text x={c1.x + c1.w / 2} y={c1.y + c1.h - 27} text={technical ? fill(S('label.technicalStrip'), { seq: down ? '0x7c10' : '0x0a30' }) : S('label.simpleStrip')} size={20} kind={technical ? 'small' : 'big'} colour="var(--brick)" />{/if}
 
 <!-- nodes on the road -->
 <Node id={phoneHop.node.id} x={L.phone.x} y={L.phone.y} size={L.phone.size} focused={focusId === phoneHop.id} />

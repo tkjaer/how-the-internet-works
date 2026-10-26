@@ -1,8 +1,8 @@
 {
   "name": "Modembank",
   "1995": {
-    "kid": "Internetfirmaets modembank: en reol med ét lille modem til hver, der ringer ind lige nu. Den tager dit opkald, tjekker din adgangskode, giver din computer en adresse og sender dine pakker videre.",
-    "nerd": "En remote access server: snesevis af digitale modemer på ISDN PRI-linjer fra centralen (V.34, 28,8 kbit/s). Den afslutter PPP-sessionen, godkender dig mod RADIUS, tildeler en adresse fra sin pulje og router dine pakker ud på internetfirmaets LAN.",
+    "simple": "Internetfirmaets modembank: en reol med ét lille modem til hver, der ringer ind lige nu. Den tager dit opkald, tjekker din adgangskode, giver din computer en adresse og sender dine pakker videre.",
+    "technical": "En remote access server: snesevis af digitale modemer på ISDN PRI-linjer fra centralen (V.34, 28,8 kbit/s). Den afslutter PPP-sessionen, godkender dig mod RADIUS, tildeler en adresse fra sin pulje og router dine pakker ud på internetfirmaets LAN.",
     "tag": "PRI · 30 modemer"
   }
 }

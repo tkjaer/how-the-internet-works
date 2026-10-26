@@ -15,7 +15,7 @@
 //   --only=vision        colour-vision sheets (#53): a few scenes and the chrome as seen with protanopia, deuteranopia,
 //                        tritanopia and achromatopsia, and with forced colours. Writes .tmp/vision/*.png to look at.
 //   --only=fit           every dive fits its panel (#136): each dive on every route, on a phone upright and on its
-//                        side, in both languages, by kids and nerds: no text or nerd tag past the frame drawn round its
+//                        side, in both languages, at both levels: no text or technical tag past the frame drawn round its
 //                        panel, off the window or under the chrome, no card across the frame, and nothing on the
 //                        console. Prints what's cut, exits 1 if anything is; writes nothing.
 //   --only=subpath       the build under a sub-path (#185): serves dist/ itself at /how-the-internet-works/ (as GitHub
@@ -199,7 +199,7 @@ const A11Y_STATES = [
   { name: 'ip', where: 'home/watch-video/router~ip', views: ['desktop', 'phone', 'zoom'] },
   // the caption folded away by its chevron (#168): the pill, its title alone
   { name: 'folded', where: 'home/watch-video/phone-ap', fold: true, views: ['desktop', 'phone'] },
-  { name: 'nerd-da', where: 'home/watch-video', lang: 'da', q: '&level=technical', views: ['desktop', 'zoom'] },
+  { name: 'technical-da', where: 'home/watch-video', lang: 'da', q: '&level=technical', views: ['desktop', 'zoom'] },
   { name: 'caught', where: 'home/watch-video', catch: 'video', at: ['router'], views: ['desktop', 'phone', 'short', 'zoom'] },
   { name: 'caught-detail', where: 'home/watch-video', q: '&level=technical', catch: 'video', at: ['router'], detail: true, views: ['desktop'] },
   // a phone's peek is a third of the screen (#139); its grip opens it all the way: the detail tree, Danish
@@ -227,7 +227,7 @@ const A11Y_STATES = [
   // read aloud on: the caption's "Read again", and the ⋯ menu with its toggle (#53)
   { name: 'speech', where: 'home/watch-video/phone-ap', speech: true, views: ['desktop', 'phone', 'short'] },
   { name: 'speech-menu', where: 'home/watch-video', speech: true, menu: true, views: ['desktop', 'phone'] },
-  // a nerd's extra in a dive (#31), and in the list view
+  // a Technical extra in a dive (#31), and in the list view
   { name: 'extra', where: 'home/watch-video/router-internet', lang: 'da', q: '&level=technical', views: ['desktop', 'phone', 'short'] },
   { name: 'extra-map', where: 'home/watch-video', q: '&level=technical', map: true, views: ['desktop', 'phone'] },
   // a first visit's coach marks (#21): the first, on "Open up", "What can I explore?" and the last, on the time machine
@@ -296,7 +296,7 @@ function controlProblems() {
   }
   return out;
 }
-// every scene's labels against what they're drawn on (#45): the path scenes, and every dive, by kids and nerds
+// every scene's labels against what they're drawn on (#45): the path scenes, and every dive, at both levels
 const LABEL_SCENES = ['home/watch-video', 'on-the-go/watch-video', 'home/watch-video/internet', 'on-the-go/watch-video/internet',
   'home/watch-video/phone-ap', 'on-the-go/watch-video/phone-cell-tower', 'home/watch-video/router', 'on-the-go/watch-video/cell-tower',
   'home/watch-video/ap-router', 'home/watch-video/internet/home-cabinet', 'home/watch-video/internet/olt-bng',
@@ -375,7 +375,7 @@ async function textContrast([texts, png, dpr]) {
     return halo > picture ? { ...t, ratio: halo, on: 'its halo', smear } : { ...t, ratio: picture, on: 'the picture', smear };
   });
 }
-/** In the page: the scene's text (and nerd tags) that runs out of what it is drawn on (#90): a nested scene's panel,
+/** In the page: the scene's text (and technical tags) that runs out of what it is drawn on (#90): a nested scene's panel,
  *  inside its frame, or the window at the root. */
 function textEscapes() {
   const out = [];
@@ -399,7 +399,7 @@ function textEscapes() {
   }
   return out;
 }
-// the path scenes, where labels grow the most on small screens and the nerd tags are long, in both languages (#90)
+// the path scenes, where labels grow the most on small screens and the technical tags are long, in both languages (#90)
 const PATH_SCENES = ['home/watch-video', 'on-the-go/watch-video', 'home/watch-video/internet', 'on-the-go/watch-video/internet',
   'home/watch-video/internet/datacentre', 'home-dsl/watch-video', 'home-dsl/watch-video/internet/datacentre', 'home-fttb/watch-video', 'home-fttb/watch-video/internet',
   'home-dialup/watch-video', 'home-dialup/watch-video/internet', 'on-the-go-1995/watch-video', 'on-the-go-1995/watch-video/internet'];
@@ -411,20 +411,20 @@ async function labelContrast(style, fail) {
       await still(p);
       await p.evaluate(() => window.__app.setClock(5.2, true));
       await p.waitForTimeout(100);
-      for (const bad of await p.evaluate(textEscapes)) fail(`labels ${where}${q && ' nerd'} ${view}`, bad);
+      for (const bad of await p.evaluate(textEscapes)) fail(`labels ${where}${q && ' technical'} ${view}`, bad);
       const texts = await p.evaluate(sceneTexts);
       await p.addStyleTag({ content: '#stage svg text { visibility: hidden !important; }' });
       const png = (await p.screenshot()).toString('base64');
       for (const t of await p.evaluate(textContrast, [texts, png, VIEWS[view].dpr]))
-        if (t.ratio < t.min) fail(`labels ${where}${q && ' nerd'} ${view}`, `"${t.text}" ${t.ratio.toFixed(2)} < ${t.min} on ${t.on}`);
-        else if (t.smear) fail(`labels ${where}${q && ' nerd'} ${view}`, `"${t.text}" haloed in its own tone`);
+        if (t.ratio < t.min) fail(`labels ${where}${q && ' technical'} ${view}`, `"${t.text}" ${t.ratio.toFixed(2)} < ${t.min} on ${t.on}`);
+        else if (t.smear) fail(`labels ${where}${q && ' technical'} ${view}`, `"${t.text}" haloed in its own tone`);
       await ctx.close();
     }
   for (const where of PATH_SCENES)
     for (const [view, lang, q] of PATH_VIEWS) {
       const { ctx, p } = await open(view, url(style, lang, where, q));
       await still(p);
-      for (const bad of await p.evaluate(textEscapes)) fail(`labels ${where} ${lang}${q && ' nerd'} ${view}`, bad);
+      for (const bad of await p.evaluate(textEscapes)) fail(`labels ${where} ${lang}${q && ' technical'} ${view}`, bad);
       await ctx.close();
     }
 }
@@ -472,10 +472,10 @@ async function a11y(style) {
       await ctx.close();
     }
   // 2. Tab once round each state: focus is always somewhere you can see, with a ring. Tab past the last stop goes to
-  //    the browser's own controls, which the page sees as focus on <body>: that ends the round. (Danish nerd, the later
+  //    the browser's own controls, which the page sees as focus on <body>: that ends the round. (Danish Technical, the later
   //    coach marks and the panel from its chip Tab like the overview, the first mark and the panel from the top bar; a
   //    phone's peek opened all the way has no desktop.)
-  for (const s of A11Y_STATES.filter((x) => !['nerd-da', 'coach-explore', 'coach-time', 'time-chip', 'caught-full'].includes(x.name))) {
+  for (const s of A11Y_STATES.filter((x) => !['technical-da', 'coach-explore', 'coach-time', 'time-chip', 'caught-full'].includes(x.name))) {
     const { ctx, p } = await prep(s, 'desktop');
     // a long route has many stops (the list view has a button for each), so the round may take as many Tabs as the
     // page has things to focus, and a few more
@@ -767,7 +767,7 @@ async function coachJourney(style, fail) {
 }
 
 // ------------------------------------------------------------------ every dive fits its panel (--only=fit)
-/** In the page: what a dive cuts at its panel's edge (#136): text and nerd tags past the frame line drawn round it, off
+/** In the page: what a dive cuts at its panel's edge (#136): text and technical tags past the frame line drawn round it, off
  *  the window or under the chrome, and cards (filled shapes) that cross the frame. A text's box runs a little above
  *  and below its letters, so a pixel of slack. Shapes clipped by something of their own (a grid's seats) and the
  *  focus ring don't count. */
@@ -811,7 +811,7 @@ function fitEscapes() {
   return [...new Set(out)];
 }
 /** Every dive (each look once: the same dive of the same thing on another route looks the same) on a phone upright
- *  and on its side, in both languages, for kids and for nerds, checked with `fitEscapes`, and for errors on the page's
+ *  and on its side, in both languages, at both levels, checked with `fitEscapes`, and for errors on the page's
  *  console on the way there (#182). Prints what's cut, exits 1 if anything is; writes nothing. */
 async function fitCheck(style) {
   let fails = 0, walked = 0;
@@ -832,7 +832,7 @@ async function fitCheck(style) {
             await p.waitForTimeout(50);
             const bads = await p.evaluate(fitEscapes), said = errors.splice(0);
             if (said.length) bads.unshift(`${said.length} errors on the console, the first: ${said[0]}`);
-            for (const bad of bads) { fails++; console.log(`  ✗ ${place}/${path.join('/')} ${view} ${lang}${q && ' nerd'}: ${bad}`); }
+            for (const bad of bads) { fails++; console.log(`  ✗ ${place}/${path.join('/')} ${view} ${lang}${q && ' technical'}: ${bad}`); }
           }
         }
         await ctx.close();
@@ -853,7 +853,7 @@ const VISION_SHOTS = [
   { view: 'desktop', where: 'home/watch-video', catch: 'request', at: ['phone'], name: 'peek' },
   { view: 'desktop', where: 'home/watch-video/internet/home-cabinet', name: 'gpon' },
   { view: 'desktop', where: 'home/watch-video/internet/olt-bng', name: 'metro' },
-  { view: 'phone', where: 'home/watch-video/internet/bng-core', q: '&level=technical', name: 'backbone-nerd-phone' },
+  { view: 'phone', where: 'home/watch-video/internet/bng-core', q: '&level=technical', name: 'backbone-technical-phone' },
   { view: 'desktop', where: 'home/watch-video/phone~tcp', name: 'tcp' },
 ];
 async function vision(style) {
@@ -1127,30 +1127,30 @@ for (const style of STYLES) {
       ['home/watch-video/internet/core-border', 'submarine'],
       ['home/watch-video/router', 'router'], ['on-the-go/watch-video/cell-tower', 'tower']])
       shots.push({ view: 'short', where, name: `${name}-short` });
-    // nerd extras (#31) in the physical dives
-    shots.push({ view: 'desktop', where: 'home/watch-video/phone-ap', q: '&level=technical', name: 'wifi-nerd-desktop' });
-    shots.push({ view: 'phone', where: 'home/watch-video/ap~wifi', q: '&level=technical', name: 'wifi-frame-nerd-phone' });
-    shots.push({ view: 'phone', where: 'home/watch-video/router-internet', lang: 'da', q: '&level=technical', name: 'fibre-nerd-da-phone' });
-    shots.push({ view: 'desktop', where: 'home/watch-video/internet/bng-core', lang: 'da', q: '&level=technical', name: 'backbone-nerd-da-desktop' });
-    shots.push({ view: 'phone', where: 'home/watch-video/internet/core-border', lang: 'da', q: '&level=technical', name: 'submarine-nerd-da-phone' });
-    shots.push({ view: 'phone', where: 'home/watch-video/internet/home-cabinet', q: '&level=technical', name: 'gpon-nerd-phone' });
+    // technical extras (#31) in the physical dives
+    shots.push({ view: 'desktop', where: 'home/watch-video/phone-ap', q: '&level=technical', name: 'wifi-technical-desktop' });
+    shots.push({ view: 'phone', where: 'home/watch-video/ap~wifi', q: '&level=technical', name: 'wifi-frame-technical-phone' });
+    shots.push({ view: 'phone', where: 'home/watch-video/router-internet', lang: 'da', q: '&level=technical', name: 'fibre-technical-da-phone' });
+    shots.push({ view: 'desktop', where: 'home/watch-video/internet/bng-core', lang: 'da', q: '&level=technical', name: 'backbone-technical-da-desktop' });
+    shots.push({ view: 'phone', where: 'home/watch-video/internet/core-border', lang: 'da', q: '&level=technical', name: 'submarine-technical-da-phone' });
+    shots.push({ view: 'phone', where: 'home/watch-video/internet/home-cabinet', q: '&level=technical', name: 'gpon-technical-phone' });
     shots.push({ view: 'desktop', where: 'desk/watch-video', name: 'desk-desktop' });
     shots.push({ view: 'desktop', where: 'home/watch-video/router-internet', name: 'fibre-desktop' });
-    shots.push({ view: 'desktop', where: 'home/watch-video', q: '&level=technical', name: 'home-nerd-desktop' });
-    shots.push({ view: 'phone', where: 'on-the-go/watch-video/internet', lang: 'da', q: '&level=technical', name: 'internet-on-the-go-nerd-da-phone' });
-    shots.push({ view: 'phone', where: 'home/watch-video/phone~tcp', lang: 'da', q: '&level=technical', name: 'tcp-nerd-da-phone' });
-    shots.push({ view: 'phone', where: 'home/watch-video/internet/datacentre/cdn~http', lang: 'da', q: '&level=technical', name: 'http-cdn-nerd-da-phone' });
-    shots.push({ view: 'desktop', where: 'home/watch-video/ap-router', lang: 'da', q: '&level=technical', name: 'copper-nerd-da-desktop' });
-    shots.push({ view: 'phone', where: 'home/watch-video/internet/olt~gpon', lang: 'da', q: '&level=technical', name: 'gpon-frame-nerd-da-phone' });
-    shots.push({ view: 'desktop', where: 'on-the-go/watch-video/cell-tower~nr', q: '&level=technical', name: 'nr-frame-nerd-desktop' });
-    shots.push({ view: 'desktop', where: 'home/watch-video/router', lang: 'da', q: '&level=technical', name: 'router-nerd-da-desktop' });
-    shots.push({ view: 'phone', where: 'on-the-go/watch-video/cell-tower', lang: 'da', q: '&level=technical', name: 'tower-nerd-da-phone' });
+    shots.push({ view: 'desktop', where: 'home/watch-video', q: '&level=technical', name: 'home-technical-desktop' });
+    shots.push({ view: 'phone', where: 'on-the-go/watch-video/internet', lang: 'da', q: '&level=technical', name: 'internet-on-the-go-technical-da-phone' });
+    shots.push({ view: 'phone', where: 'home/watch-video/phone~tcp', lang: 'da', q: '&level=technical', name: 'tcp-technical-da-phone' });
+    shots.push({ view: 'phone', where: 'home/watch-video/internet/datacentre/cdn~http', lang: 'da', q: '&level=technical', name: 'http-cdn-technical-da-phone' });
+    shots.push({ view: 'desktop', where: 'home/watch-video/ap-router', lang: 'da', q: '&level=technical', name: 'copper-technical-da-desktop' });
+    shots.push({ view: 'phone', where: 'home/watch-video/internet/olt~gpon', lang: 'da', q: '&level=technical', name: 'gpon-frame-technical-da-phone' });
+    shots.push({ view: 'desktop', where: 'on-the-go/watch-video/cell-tower~nr', q: '&level=technical', name: 'nr-frame-technical-desktop' });
+    shots.push({ view: 'desktop', where: 'home/watch-video/router', lang: 'da', q: '&level=technical', name: 'router-technical-da-desktop' });
+    shots.push({ view: 'phone', where: 'on-the-go/watch-video/cell-tower', lang: 'da', q: '&level=technical', name: 'tower-technical-da-phone' });
     // `at`: the hop the packet is caught at, then one per step on
     shots.push({ view: 'desktop', where: 'home/watch-video', catch: 'video', at: ['router'], grow: 'ip', name: 'grow-desktop' });
     shots.push({ view: 'desktop', where: 'home/watch-video', catch: 'video', at: ['router'], name: 'peek-desktop' });
     shots.push({ view: 'phone', where: 'on-the-go/watch-video', catch: 'video', at: ['cell-tower'], name: 'peek-on-the-go-phone' });
-    // the caught request one hop on from the phone, in nerd mode, and its detail tree
-    shots.push({ view: 'desktop', where: 'home/watch-video', q: '&level=technical', catch: 'request', at: ['phone', 'ap'], name: 'peek-nerd-desktop' });
+    // the caught request one hop on from the phone, in technical mode, and its detail tree
+    shots.push({ view: 'desktop', where: 'home/watch-video', q: '&level=technical', catch: 'request', at: ['phone', 'ap'], name: 'peek-technical-desktop' });
     shots.push({ view: 'phone', where: 'home/watch-video', q: '&level=technical', lang: 'da', catch: 'request', at: ['phone'], detail: true, name: 'peek-tree-da-phone' });
     shots.push({ view: 'desktop', where: 'home/watch-video', picker: true, name: 'picker-desktop' });
     shots.push({ view: 'phone', where: 'home/watch-video', picker: true, name: 'picker-phone' });

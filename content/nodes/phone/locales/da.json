@@ -1,8 +1,8 @@
 {
   "name": "Telefon",
   "yours": "din telefon",
-  "kid": "En lille computer i lommen med radioer til Wi-Fi og mobildata.",
-  "nerd": "Et endepunkt: den åbner (og tjekker) alle lag, fra radiorammen og helt op til appens HTTP-beskeder.",
+  "simple": "En lille computer i lommen med radioer til Wi-Fi og mobildata.",
+  "technical": "Et endepunkt: den åbner (og tjekker) alle lag, fra radiorammen og helt op til appens HTTP-beskeder.",
   "learnMore": [
     { "url": "https://da.wikipedia.org/wiki/Smartphone", "title": "Smartphone", "level": "both" }
   ]

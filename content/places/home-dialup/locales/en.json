@@ -1,11 +1,11 @@
 {
   "name": "At home, in the old days",
   "access": "Dial-up (the old days)",
-  "kid": "Long ago, the computer phoned the internet! Its modem beeped, whistled and screeched down the phone line, and while you were online, nobody could use the phone. The page and its picture trickled back very, very slowly.",
-  "nerd": "1990s dial-up: the PC's V.34 modem calls the ISP. The exchange switches the call through the phone network and hands it, as one timeslot of an ISDN PRI, to the ISP's modem bank; PPP gives the PC its own public address. No Wi‑Fi, no router, no NAT, and 28.8 kbit/s on a good line.",
+  "simple": "Long ago, the computer phoned the internet! Its modem beeped, whistled and screeched down the phone line, and while you were online, nobody could use the phone. The page and its picture trickled back very, very slowly.",
+  "technical": "1990s dial-up: the PC's V.34 modem calls the ISP. The exchange switches the call through the phone network and hands it, as one timeslot of an ISDN PRI, to the ISP's modem bank; PPP gives the PC its own public address. No Wi‑Fi, no router, no NAT, and 28.8 kbit/s on a good line.",
   "describe": {
-    "kid": "The cut-away house has a desk with a computer and a mouse on its mat, and an old telephone on a little table. A calendar on the wall says 1995. The modem on its shelf blinks its lights as it phones the internet company down the phone line to the internet cloud. Requests go out and the page creeps back, very slowly.",
-    "nerd": "The overview of a 1995 home (a calendar on the wall says so): one computer whose external modem, on a shelf, dials the ISP over the phone line, which the telephone shares; its send and receive lights blink with the data. No LAN, no NAT: PPP runs from the computer to the ISP's gateway. Requests go up, and the page comes back at modem speed."
+    "simple": "The cut-away house has a desk with a computer and a mouse on its mat, and an old telephone on a little table. A calendar on the wall says 1995. The modem on its shelf blinks its lights as it phones the internet company down the phone line to the internet cloud. Requests go out and the page creeps back, very slowly.",
+    "technical": "The overview of a 1995 home (a calendar on the wall says so): one computer whose external modem, on a shelf, dials the ISP over the phone line, which the telephone shares; its send and receive lights blink with the data. No LAN, no NAT: PPP runs from the computer to the ISP's gateway. Requests go up, and the page comes back at modem speed."
   },
   "tag": {
     "pc": "28.8k modem · 203.0.113.7",
@@ -13,12 +13,12 @@
   },
   "stop": {
     "pc": {
-      "kid": "The computer’s modem sits on a shelf by the desk. It dials the internet company’s phone number, then sings your parcel down the phone line as whistles and hisses.",
-      "nerd": "No router: the modem's PPP link makes the computer itself a host on the internet, with the public address 203.0.113.7 it got from IPCP for this call."
+      "simple": "The computer’s modem sits on a shelf by the desk. It dials the internet company’s phone number, then sings your parcel down the phone line as whistles and hisses.",
+      "technical": "No router: the modem's PPP link makes the computer itself a host on the internet, with the public address 203.0.113.7 it got from IPCP for this call."
     },
     "bng": {
-      "kid": "Here your internet company’s modems answer the call. They check your password, give the computer an address and send the parcels on to the internet.",
-      "nerd": "The ISP's access server: a bank of digital modems on ISDN PRI lines from the exchange, 30 calls to a line. It answers, checks your login (PAP or CHAP), assigns an address (IPCP) and routes the PPP session's packets onto the ISP's 10 Mbit/s Ethernet."
+      "simple": "Here your internet company’s modems answer the call. They check your password, give the computer an address and send the parcels on to the internet.",
+      "technical": "The ISP's access server: a bank of digital modems on ISDN PRI lines from the exchange, 30 calls to a line. It answers, checks your login (PAP or CHAP), assigns an address (IPCP) and routes the PPP session's packets onto the ISP's 10 Mbit/s Ethernet."
     }
   },
   "learnMore": [

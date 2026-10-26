@@ -1,12 +1,12 @@
 {
   "name": "Mast controller",
   "1995": {
-    "kid": "The boss of dozens of masts. It gives each call its seat in the radio waves, moves your call to another mast if you walk off, and sends it on to the mobile company’s big switch.",
-    "nerd": "The base station controller (BSC): it assigns each call its carrier and time slot, runs handovers between its BTSs and switches the calls’ 16 kbit/s sub-slots on towards the transcoder and the MSC. It doesn’t open the call.",
+    "simple": "The boss of dozens of masts. It gives each call its seat in the radio waves, moves your call to another mast if you walk off, and sends it on to the mobile company’s big switch.",
+    "technical": "The base station controller (BSC): it assigns each call its carrier and time slot, runs handovers between its BTSs and switches the calls’ 16 kbit/s sub-slots on towards the transcoder and the MSC. It doesn’t open the call.",
     "tag": "BSC · Abis · Ater",
     "peek": {
-      "kid": "The controller doesn’t open your parcel either. It just switches your call’s little slot on to the big switch.",
-      "nerd": "The BSC switches the sub-slot from the BTS’s Abis line onto the Ater line to the TRAU and the MSC; the RLP frames ride through unread."
+      "simple": "The controller doesn’t open your parcel either. It just switches your call’s little slot on to the big switch.",
+      "technical": "The BSC switches the sub-slot from the BTS’s Abis line onto the Ater line to the TRAU and the MSC; the RLP frames ride through unread."
     }
   },
   "learnMore": [

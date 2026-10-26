@@ -1,8 +1,8 @@
 {
   "name": "ISDN-linje",
   "1995": {
-    "kid": "Telefonselskabet samler 30 telefonopkald på én linje til dit internetselskab. Dit opkald får sin egen lille plads på den og beholder den, så længe du er online.",
-    "nerd": "En ISDN-primærlinje: en E1 med 30 B-kanaler à 64 kbit/s og en D-kanal (slot 16) til opkaldsopsætning (Q.931). Dit opkald er slot 7. Udbyderens digitale modemrack (f.eks. en Ascend MAX) afkoder tonerne direkte fra slottet.",
+    "simple": "Telefonselskabet samler 30 telefonopkald på én linje til dit internetselskab. Dit opkald får sin egen lille plads på den og beholder den, så længe du er online.",
+    "technical": "En ISDN-primærlinje: en E1 med 30 B-kanaler à 64 kbit/s og en D-kanal (slot 16) til opkaldsopsætning (Q.931). Dit opkald er slot 7. Udbyderens digitale modemrack (f.eks. en Ascend MAX) afkoder tonerne direkte fra slottet.",
     "tag": "E1 PRI · 30B+D"
   }
 }

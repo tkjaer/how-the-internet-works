@@ -1,12 +1,12 @@
 {
   "name": {
-    "kid": "The exchange",
-    "nerd": "IXP · peering LAN"
+    "simple": "The exchange",
+    "technical": "IXP · peering LAN"
   },
   "1995": {
     "name": {
-      "kid": "The Danish exchange",
-      "nerd": "DIX · Lyngby"
+      "simple": "The Danish exchange",
+      "technical": "DIX · Lyngby"
     }
   },
   "learnMore": [

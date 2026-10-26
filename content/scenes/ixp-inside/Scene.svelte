@@ -16,7 +16,7 @@
   const portrait = $derived(view.orient === 'portrait');
   const compact = $derived(!portrait && view.vp.h < 470);
   const night = $derived(view.mode === 'night');
-  const nerd = $derived(S('mode') === 'nerd');
+  const technical = $derived(S('mode') === 'technical');
   const L = $derived(exchangeLayout(view.orient));
   const legible = legibleSize();
   const T = $derived(portrait
@@ -74,9 +74,9 @@
 
   {#each others as m (m)}
     <Member box={L.memberBoxes[m]} colour={colour(m)} {night} />
-    {#if T.label && nerd}<Text x={L.members[m].x} y={L.memberBoxes[m].y + L.memberBoxes[m].h + (portrait ? 30 : 32)} text={fill(S('member.as'), { n: 64506 + others.indexOf(m) })} size={T.small} kind="node" />{/if}
+    {#if T.label && technical}<Text x={L.members[m].x} y={L.memberBoxes[m].y + L.memberBoxes[m].h + (portrait ? 30 : 32)} text={fill(S('member.as'), { n: 64506 + others.indexOf(m) })} size={T.small} kind="node" />{/if}
   {/each}
-  {#if T.label && !nerd}<Text x={L.othersLabel.x} y={L.othersLabel.y} text={S('member.other')} size={T.label} kind="node" anchor={L.othersLabel.anchor} />{/if}
+  {#if T.label && !technical}<Text x={L.othersLabel.x} y={L.othersLabel.y} text={S('member.other')} size={T.label} kind="node" anchor={L.othersLabel.anchor} />{/if}
   {#if before}
     <Node id={before.node.id} x={L.members.before.x} y={L.members.before.y} size={L.nodeSize} />
     {#if T.label}<Text x={L.inLabel.x} y={L.inLabel.y} text={nameOf(before)} size={T.label} kind="node" anchor={L.inLabel.anchor} fit />{/if}

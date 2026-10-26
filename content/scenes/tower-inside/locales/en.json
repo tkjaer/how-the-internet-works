@@ -1,49 +1,49 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Inside the cell tower",
-  "kid": "The tower is four little rooms: two up the mast, two in the cabinet at its foot. Antennas catch your radio wave, the radio unit turns it into bits, the sorter puts your parcel in a tunnel envelope, and fibre sends it on as light.",
-  "nerd": "A 5G gNB is split in two: an active antenna unit on the mast (the massive-MIMO antennas and the RU in one box, drawn here as two rooms), DU/CU baseband in the cabinet. The packet is wrapped in GTP-U to the mobile core, then leaves on metro fibre.",
+  "simple": "The tower is four little rooms: two up the mast, two in the cabinet at its foot. Antennas catch your radio wave, the radio unit turns it into bits, the sorter puts your parcel in a tunnel envelope, and fibre sends it on as light.",
+  "technical": "A 5G gNB is split in two: an active antenna unit on the mast (the massive-MIMO antennas and the RU in one box, drawn here as two rooms), DU/CU baseband in the cabinet. The packet is wrapped in GTP-U to the mobile core, then leaves on metro fibre.",
   "describe": {
-    "kid": "The cell tower is opened like a tall box, with rooms on the mast and in the cabinet. A wiggly radio wave reaches the antennas and turns into bits in the radio room. The sorter adds a tunnel envelope. Then the packet leaves through fibre as moving light.",
-    "nerd": "The gNB cutaway shows antenna panels and RU on the mast, with baseband DU, CU and fibre in the cabinet. The animated packet changes from an NR radio wave to bits, gets a GTP-U tunnel label in baseband, then exits as metro-fibre light."
+    "simple": "The cell tower is opened like a tall box, with rooms on the mast and in the cabinet. A wiggly radio wave reaches the antennas and turns into bits in the radio room. The sorter adds a tunnel envelope. Then the packet leaves through fibre as moving light.",
+    "technical": "The gNB cutaway shows antenna panels and RU on the mast, with baseband DU, CU and fibre in the cabinet. The animated packet changes from an NR radio wave to bits, gets a GTP-U tunnel label in baseband, then exits as metro-fibre light."
   },
   "antenna": {
     "title": {
-      "kid": "Antennas",
-      "nerd": "Massive MIMO"
+      "simple": "Antennas",
+      "technical": "Massive MIMO"
     },
     "line": {
-      "kid": "Catches radio waves",
-      "nerd": "Beamformed NR panel"
+      "simple": "Catches radio waves",
+      "technical": "Beamformed NR panel"
     }
   },
   "radio": {
     "title": {
-      "kid": "Radio unit",
-      "nerd": "Radio unit (RU)"
+      "simple": "Radio unit",
+      "technical": "Radio unit (RU)"
     },
     "line": {
-      "kid": "Radio ↔ bits",
-      "nerd": "RF ↔ digital · eCPRI"
+      "simple": "Radio ↔ bits",
+      "technical": "RF ↔ digital · eCPRI"
     }
   },
   "baseband": {
     "title": {
-      "kid": "The sorter",
-      "nerd": "Baseband DU/CU"
+      "simple": "The sorter",
+      "technical": "Baseband DU/CU"
     }
   },
   "fibre": {
     "title": {
-      "kid": "Fibre out",
-      "nerd": "Metro fibre"
+      "simple": "Fibre out",
+      "technical": "Metro fibre"
     },
     "line": {
-      "kid": "Bits → light",
-      "nerd": "GTP-U on light"
+      "simple": "Bits → light",
+      "technical": "GTP-U on light"
     }
   },
   "tunnel": {
@@ -53,9 +53,9 @@
     "to": "→ {addr}"
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Remote_radio_head", "title": "Remote radio head", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/Baseband_unit", "title": "Baseband unit", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/GPRS_Tunnelling_Protocol", "title": "GPRS Tunnelling Protocol", "level": "nerd" },
-    { "url": "https://en.wikipedia.org/wiki/MIMO", "title": "MIMO", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Remote_radio_head", "title": "Remote radio head", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/Baseband_unit", "title": "Baseband unit", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/GPRS_Tunnelling_Protocol", "title": "GPRS Tunnelling Protocol", "level": "technical" },
+    { "url": "https://en.wikipedia.org/wiki/MIMO", "title": "MIMO", "level": "technical" }
   ]
 }

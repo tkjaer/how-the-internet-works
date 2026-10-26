@@ -1,6 +1,6 @@
 {
-  "name": { "kid": "Your internet company", "nerd": "Your ISP · AS64500" },
+  "name": { "simple": "Your internet company", "technical": "Your ISP · AS64500" },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Autonomous_system_(Internet)", "title": "Autonomous system", "level": "nerd" }
+    { "url": "https://en.wikipedia.org/wiki/Autonomous_system_(Internet)", "title": "Autonomous system", "level": "technical" }
   ]
 }

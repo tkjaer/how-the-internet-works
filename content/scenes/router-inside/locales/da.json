@@ -1,118 +1,118 @@
 {
   "mode": {
-    "kid": "kid",
-    "nerd": "nerd"
+    "simple": "simple",
+    "technical": "technical"
   },
   "title": "Inde i hjemmerouteren",
-  "kid": "Hjemmerouteren er fire små rum i én kasse. Din pakke kommer ind gennem et stik, og hjernen bytter din enheds navn på den ud med dit hjems, så svaret kan finde tilbage. Så gør lysboksen bittene til lysglimt i glastråden op ad gaden.",
-  "nerd": "En hjemme-gateway er flere kasser i én: en Ethernet-switch, en Wi‑Fi-radio, en router der laver NAT (den bytter den private afsenderadresse og port ud med sin offentlige adresse og en port, den selv vælger, og husker parret, så svarene kommer ind igen) og en ONT, der sender rammerne op som XGS-PON-lysglimt i sine tidsluker.",
+  "simple": "Hjemmerouteren er fire små rum i én kasse. Din pakke kommer ind gennem et stik, og hjernen bytter din enheds navn på den ud med dit hjems, så svaret kan finde tilbage. Så gør lysboksen bittene til lysglimt i glastråden op ad gaden.",
+  "technical": "En hjemme-gateway er flere kasser i én: en Ethernet-switch, en Wi‑Fi-radio, en router der laver NAT (den bytter den private afsenderadresse og port ud med sin offentlige adresse og en port, den selv vælger, og husker parret, så svarene kommer ind igen) og en ONT, der sender rammerne op som XGS-PON-lysglimt i sine tidsluker.",
   "describe": {
-    "kid": "En åben routerkasse er delt i fire små rum: kabelstik, Wi‑Fi-radio, hjerne og lysboks. Ét kabelstik lyser, hvor pakken kommer ind. Pakken går gennem hjernen, afsender-mærket skifter, og den går ud som blinkende lys.",
-    "nerd": "Den åbne gateway viser switch, Wi‑Fi-radio, router med NAT og ONT-rum. Kun rummene på denne tur er tændt. Pakken kommer ind på det aktive kobberlink, passerer NAT-omskrivningen som bits og forlader ONT’en som XGS-PON-lysglimt."
+    "simple": "En åben routerkasse er delt i fire små rum: kabelstik, Wi‑Fi-radio, hjerne og lysboks. Ét kabelstik lyser, hvor pakken kommer ind. Pakken går gennem hjernen, afsender-mærket skifter, og den går ud som blinkende lys.",
+    "technical": "Den åbne gateway viser switch, Wi‑Fi-radio, router med NAT og ONT-rum. Kun rummene på denne tur er tændt. Pakken kommer ind på det aktive kobberlink, passerer NAT-omskrivningen som bits og forlader ONT’en som XGS-PON-lysglimt."
   },
   "from": "Fra: {who}",
   "outside": "Hjem",
   "switch": {
     "title": {
-      "kid": "Kabelstik",
-      "nerd": "Switch"
+      "simple": "Kabelstik",
+      "technical": "Switch"
     },
     "line": {
-      "kid": "Strøm → bits",
-      "nerd": "4 × 1 Gbit/s porte"
+      "simple": "Strøm → bits",
+      "technical": "4 × 1 Gbit/s porte"
     },
     "idle": {
-      "kid": "Hviler",
-      "nerd": "Ikke brugt her"
+      "simple": "Hviler",
+      "technical": "Ikke brugt her"
     }
   },
   "wifi": {
     "title": {
-      "kid": "Wi‑Fi-radio",
-      "nerd": "Wi‑Fi-radio"
+      "simple": "Wi‑Fi-radio",
+      "technical": "Wi‑Fi-radio"
     },
     "line": {
-      "kid": "Radio ↔ bits",
-      "nerd": "802.11ax-radio"
+      "simple": "Radio ↔ bits",
+      "technical": "802.11ax-radio"
     },
     "idle": {
-      "kid": "Hviler",
-      "nerd": "Ikke brugt her"
+      "simple": "Hviler",
+      "technical": "Ikke brugt her"
     }
   },
   "brain": {
     "title": {
-      "kid": "Hjernen",
-      "nerd": "Router + NAT"
+      "simple": "Hjernen",
+      "technical": "Router + NAT"
     },
     "line": {
-      "kid": "Bytter afsender",
-      "nerd": "Skriver afsender om"
+      "simple": "Bytter afsender",
+      "technical": "Skriver afsender om"
     }
   },
   "ont": {
     "title": {
-      "kid": "Lysboksen",
-      "nerd": "ONT"
+      "simple": "Lysboksen",
+      "technical": "ONT"
     },
     "line": {
-      "kid": "Bits → lys",
-      "nerd": "XGS-PON · 1270/1577 nm"
+      "simple": "Bits → lys",
+      "technical": "XGS-PON · 1270/1577 nm"
     },
     "idle": {
-      "kid": "Hviler",
-      "nerd": "Ikke brugt her"
+      "simple": "Hviler",
+      "technical": "Ikke brugt her"
     }
   },
   "modem": {
     "title": {
-      "kid": "Tonekassen",
-      "nerd": "DSL-modem"
+      "simple": "Tonekassen",
+      "technical": "DSL-modem"
     },
     "line": {
-      "kid": "Bits → toner",
-      "nerd": "VDSL2 · DMT-toner"
+      "simple": "Bits → toner",
+      "technical": "VDSL2 · DMT-toner"
     },
     "idle": {
-      "kid": "Hviler",
-      "nerd": "Ikke brugt her"
+      "simple": "Hviler",
+      "technical": "Ikke brugt her"
     }
   },
   "dsl-router": {
-    "kid": "Den her hjemmerouter er fire små rum i én kasse. Din pakke kommer ind gennem et stik, og hjernen bytter din enheds navn på den ud med dit hjems. Så gør tonekassen bittene til toner på den gamle telefonlinje.",
-    "nerd": "En DSL-gateway: en Ethernet-switch, en Wi‑Fi-radio, en router der laver NAT, og et VDSL2-modem der sender rammerne som DMT-toner på telefonparret, over det lave bånd som telefonen bruger.",
+    "simple": "Den her hjemmerouter er fire små rum i én kasse. Din pakke kommer ind gennem et stik, og hjernen bytter din enheds navn på den ud med dit hjems. Så gør tonekassen bittene til toner på den gamle telefonlinje.",
+    "technical": "En DSL-gateway: en Ethernet-switch, en Wi‑Fi-radio, en router der laver NAT, og et VDSL2-modem der sender rammerne som DMT-toner på telefonparret, over det lave bånd som telefonen bruger.",
     "describe": {
-      "kid": "En åben routerkasse er delt i fire små rum: kabelstik, Wi‑Fi-radio, hjerne og tonekasse. Ét kabelstik lyser, hvor pakken kommer ind. Pakken går gennem hjernen, afsender-mærket skifter, og den går ud som snoede toner på telefonlinjen.",
-      "nerd": "Den åbne gateway viser switch, Wi‑Fi-radio, router med NAT og modemrum. Kun rummene på denne tur er tændt. Pakken kommer ind på den aktive kobberport, passerer NAT-omskrivningen som bits og forlader modemmet som VDSL2-toner på telefonparret."
+      "simple": "En åben routerkasse er delt i fire små rum: kabelstik, Wi‑Fi-radio, hjerne og tonekasse. Ét kabelstik lyser, hvor pakken kommer ind. Pakken går gennem hjernen, afsender-mærket skifter, og den går ud som snoede toner på telefonlinjen.",
+      "technical": "Den åbne gateway viser switch, Wi‑Fi-radio, router med NAT og modemrum. Kun rummene på denne tur er tændt. Pakken kommer ind på den aktive kobberport, passerer NAT-omskrivningen som bits og forlader modemmet som VDSL2-toner på telefonparret."
     }
   },
   "flat-router": {
-    "kid": "Den her router er fire små rum i én kasse. Din pakke kommer ind gennem et stik, og hjernen skifter din enheds navn på den ud med dit hjems. Så går den ud gennem sit eget ud-stik, ned ad et kabel til kælderen.",
-    "nerd": "Med fiber til bygningen er routerens uplink en almindelig Ethernet-WAN-port: ind på en LAN-port, NAT i routeren, ud på WAN-porten til bygningens switch i kælderen. Ingen ONT eller modem: fiberen ender nedenunder.",
+    "simple": "Den her router er fire små rum i én kasse. Din pakke kommer ind gennem et stik, og hjernen skifter din enheds navn på den ud med dit hjems. Så går den ud gennem sit eget ud-stik, ned ad et kabel til kælderen.",
+    "technical": "Med fiber til bygningen er routerens uplink en almindelig Ethernet-WAN-port: ind på en LAN-port, NAT i routeren, ud på WAN-porten til bygningens switch i kælderen. Ingen ONT eller modem: fiberen ender nedenunder.",
     "describe": {
-      "kid": "En åbnet routerkasse er delt i fire små rum: kabelstik, wi-fi-radio, hjerne og ud-stik. Ét kabelstik lyser, hvor pakken kommer ind. Pakken går gennem hjernen, afsendermærket skifter, og den går ud gennem det lysende ud-stik.",
-      "nerd": "Den åbne router viser rum for switch, wi-fi-radio, router med NAT og WAN-port. Pakken kommer ind på en LAN-port, får NAT-omskrivningen som bits og forlader WAN-porten som Ethernet mod switchen i kælderen. Radiorummet er i ro."
+      "simple": "En åbnet routerkasse er delt i fire små rum: kabelstik, wi-fi-radio, hjerne og ud-stik. Ét kabelstik lyser, hvor pakken kommer ind. Pakken går gennem hjernen, afsendermærket skifter, og den går ud gennem det lysende ud-stik.",
+      "technical": "Den åbne router viser rum for switch, wi-fi-radio, router med NAT og WAN-port. Pakken kommer ind på en LAN-port, får NAT-omskrivningen som bits og forlader WAN-porten som Ethernet mod switchen i kælderen. Radiorummet er i ro."
     }
   },
   "wan": {
     "title": {
-      "kid": "Ud-stik",
-      "nerd": "WAN-port"
+      "simple": "Ud-stik",
+      "technical": "WAN-port"
     },
     "line": {
-      "kid": "Kabel ud",
-      "nerd": "1000BASE-T · ydersiden"
+      "simple": "Kabel ud",
+      "technical": "1000BASE-T · ydersiden"
     }
   },
   "2010": {
     "switch": {
       "line": {
-        "nerd": "4 × 100 Mbit/s porte"
+        "technical": "4 × 100 Mbit/s porte"
       }
     },
     "wifi": {
       "line": {
-        "nerd": "802.11n-radio"
+        "technical": "802.11n-radio"
       }
     }
   },

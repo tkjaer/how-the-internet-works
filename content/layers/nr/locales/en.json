@@ -1,18 +1,18 @@
 {
   "name": {
-    "kid": "5G radio envelope",
-    "nerd": "5G NR frame (SDAP · PDCP · RLC · MAC)"
+    "simple": "5G radio envelope",
+    "technical": "5G NR frame (SDAP · PDCP · RLC · MAC)"
   },
   "note": {
-    "kid": "Sent through the air in your phone’s own seats. The tower checks every piece arrived and asks again if one got lost.",
-    "nerd": "Sent on the resource blocks the gNB granted this phone; HARQ resends lost blocks and PDCP encrypts the payload."
+    "simple": "Sent through the air in your phone’s own seats. The tower checks every piece arrived and asks again if one got lost.",
+    "technical": "Sent on the resource blocks the gNB granted this phone; HARQ resends lost blocks and PDCP encrypts the payload."
   },
   "line": "5G NR user plane, C-RNTI {rnti}, QFI {qfi}",
   "field": {
     "rnti": {
       "name": {
-        "kid": "Phone no.",
-        "nerd": "C-RNTI"
+        "simple": "Phone no.",
+        "technical": "C-RNTI"
       },
       "about": "The tower’s short name for this phone in this cell (it scrambles the scheduling, not a header byte)."
     },
@@ -35,6 +35,6 @@
   },
   "learnMore": [
     { "url": "https://en.wikipedia.org/wiki/5G_NR", "title": "5G NR", "level": "both" },
-    { "url": "https://www.sharetechnote.com/html/5G/5G_RNTI.html", "title": "Radio Network Temporary Identifier", "level": "nerd" }
+    { "url": "https://www.sharetechnote.com/html/5G/5G_RNTI.html", "title": "Radio Network Temporary Identifier", "level": "technical" }
   ]
 }

@@ -2,11 +2,11 @@
   "name": "På farten, på GSM",
   "access": "GSM-data",
   "1995": {
-    "kid": "Ude på gaden i 1995 var næsten ingen på nettet, men man kunne godt! En bærbars mobiltelefon ringede til internetfirmaet, via radio til en mast og gennem mobilselskabets centraler. Meget langsomt, og hvert minut kostede penge.",
-    "nerd": "Omkring 1995: den bærbare ringer ud gennem en GSM-telefon, kredsløbskoblede data på 9,6 kbit/s. Opkaldet går via radio til BTS’en, som en kvart luke på 16 kbit/s gennem BSC’en til MSC’en, hvis modemmer (IWF’en) ringer videre gennem telefonnettet til udbyderens modembank. PPP kører urørt hele vejen; ingen IP før modembanken.",
+    "simple": "Ude på gaden i 1995 var næsten ingen på nettet, men man kunne godt! En bærbars mobiltelefon ringede til internetfirmaet, via radio til en mast og gennem mobilselskabets centraler. Meget langsomt, og hvert minut kostede penge.",
+    "technical": "Omkring 1995: den bærbare ringer ud gennem en GSM-telefon, kredsløbskoblede data på 9,6 kbit/s. Opkaldet går via radio til BTS’en, som en kvart luke på 16 kbit/s gennem BSC’en til MSC’en, hvis modemmer (IWF’en) ringer videre gennem telefonnettet til udbyderens modembank. PPP kører urørt hele vejen; ingen IP før modembanken.",
     "describe": {
-      "kid": "En gade med butikker, lygtepæl, vej og bil ligger foran grønne bakker. En tyk bærbar med en krøllet ledning til en mobiltelefon på størrelse med en mursten sender pakker via radio til en høj metalmast med tynde antenner. En linje fører dem videre til internetskyen. Forespørgsler og siden bevæger sig begge veje, langsomt.",
-      "nerd": "Gadevisningen viser en bærbar fra 1995 med en GSM-telefon i en ledning, et GSM-radiolink til en BTS på en gittermast, Abis-linjen og internetskyen. Forespørgsler går op inde i dataopkaldet; siden kommer samme vej tilbage med 9,6 kbit/s."
+      "simple": "En gade med butikker, lygtepæl, vej og bil ligger foran grønne bakker. En tyk bærbar med en krøllet ledning til en mobiltelefon på størrelse med en mursten sender pakker via radio til en høj metalmast med tynde antenner. En linje fører dem videre til internetskyen. Forespørgsler og siden bevæger sig begge veje, langsomt.",
+      "technical": "Gadevisningen viser en bærbar fra 1995 med en GSM-telefon i en ledning, et GSM-radiolink til en BTS på en gittermast, Abis-linjen og internetskyen. Forespørgsler går op inde i dataopkaldet; siden kommer samme vej tilbage med 9,6 kbit/s."
     },
     "tag": {
       "phone": "GSM · 203.0.113.52",
@@ -15,23 +15,23 @@
     },
     "stop": {
       "phone": {
-        "kid": "Din bærbare vil se en hjemmeside, også herude. Dens telefon ringer til internetfirmaet, og den bærbare sender en lille forespørgsel ned gennem opkaldet.",
-        "nerd": "Den bærbare er endepunktet: PPP gav den den offentlige adresse 203.0.113.52 for dette opkald. Telefonen bærer bare opkaldet; datakortet taler RLP med nettets modemmer."
+        "simple": "Din bærbare vil se en hjemmeside, også herude. Dens telefon ringer til internetfirmaet, og den bærbare sender en lille forespørgsel ned gennem opkaldet.",
+        "technical": "Den bærbare er endepunktet: PPP gav den den offentlige adresse 203.0.113.52 for dette opkald. Telefonen bærer bare opkaldet; datakortet taler RLP med nettets modemmer."
       },
       "cell-tower-internet": {
-        "kid": "Fra masten rejser dit opkald ad en linje til styreboksen og videre til mobilselskabets central, på en bitte plads, det deler med tre andre opkald.",
-        "nerd": "Abis og Ater: E1-linjer, og dit opkald er en kvart tidsluke på 16 kbit/s af én på 64 kbit/s, stadig RLP-rammer, hele vejen til transcoderen ved MSC’en."
+        "simple": "Fra masten rejser dit opkald ad en linje til styreboksen og videre til mobilselskabets central, på en bitte plads, det deler med tre andre opkald.",
+        "technical": "Abis og Ater: E1-linjer, og dit opkald er en kvart tidsluke på 16 kbit/s af én på 64 kbit/s, stadig RLP-rammer, hele vejen til transcoderen ved MSC’en."
       },
       "exchange": {
-        "nerd": "Opkaldet kommer fra MSC’en ad en E1-trunk og kobles videre som en 64 kbit/s-tidsluke gennem telefonnettet til udbyderens modemer."
+        "technical": "Opkaldet kommer fra MSC’en ad en E1-trunk og kobles videre som en 64 kbit/s-tidsluke gennem telefonnettet til udbyderens modemer."
       }
     },
     "inside": {
       "internet": {
-        "nerd": "Telefonnettene kommer først: BSC’en, MSC’en, hvis IWF-modem ringer videre, og telefonselskabets central, der giver opkaldet til udbyderens modembank på en PRI. Ingen af dem læser IP; internettet begynder ved modembanken. Derfra er det 1995’s internet: udbyderens router, en lejet linje til dens leverandør, søkablet og en amerikansk backbone. Hvert farvet felt er ét net.",
+        "technical": "Telefonnettene kommer først: BSC’en, MSC’en, hvis IWF-modem ringer videre, og telefonselskabets central, der giver opkaldet til udbyderens modembank på en PRI. Ingen af dem læser IP; internettet begynder ved modembanken. Derfra er det 1995’s internet: udbyderens router, en lejet linje til dens leverandør, søkablet og en amerikansk backbone. Hvert farvet felt er ét net.",
         "describe": {
-          "kid": "Inde i skyen starter ruten ved masten, går til mast-styreboksen og mobilcentralen og så gennem telefoncentralen til internetfirmaets modemmer. Derfra går den til internetfirmaets router, under havet og over Amerika til webserveren. Pakker bevæger sig begge veje.",
-          "nerd": "Internetvisningen starter med BTS’en, BSC’en og MSC’en med sine modemmer, så telefonnettets central og udbyderens modembank, og fortsætter gennem 1995’s internet til serverrummet. De farvede felter er nettene. Pakker går begge veje over Abis, en E1-trunk, en PRI, lejede linjer, CANTAT-3 og ATM."
+          "simple": "Inde i skyen starter ruten ved masten, går til mast-styreboksen og mobilcentralen og så gennem telefoncentralen til internetfirmaets modemmer. Derfra går den til internetfirmaets router, under havet og over Amerika til webserveren. Pakker bevæger sig begge veje.",
+          "technical": "Internetvisningen starter med BTS’en, BSC’en og MSC’en med sine modemmer, så telefonnettets central og udbyderens modembank, og fortsætter gennem 1995’s internet til serverrummet. De farvede felter er nettene. Pakker går begge veje over Abis, en E1-trunk, en PRI, lejede linjer, CANTAT-3 og ATM."
         }
       }
     }

@@ -1,5 +1,5 @@
 {
   "name": "Hjemmerouter",
-  "kid": "Hoveddøren til dit hjemmenetværk.",
-  "nerd": "Router mellem hjemmenetværket og udbyderen og laver NAT, så hele hjemmet deler én offentlig adresse."
+  "simple": "Hoveddøren til dit hjemmenetværk.",
+  "technical": "Router mellem hjemmenetværket og udbyderen og laver NAT, så hele hjemmet deler én offentlig adresse."
 }

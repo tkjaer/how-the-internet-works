@@ -1,12 +1,12 @@
 {
   "name": {
-    "kid": "Videofirmaet",
-    "nerd": "Video-CDN · AS64501"
+    "simple": "Videofirmaet",
+    "technical": "Video-CDN · AS64501"
   },
   "1995": {
     "name": {
-      "kid": "Hjemmesiden",
-      "nerd": "Webhost"
+      "simple": "Hjemmesiden",
+      "technical": "Webhost"
     }
   }
 }

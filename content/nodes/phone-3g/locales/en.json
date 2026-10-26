@@ -2,8 +2,8 @@
   "name": "Phone",
   "yours": "your phone",
   "2010": {
-    "kid": "A small computer in your pocket, with radios for Wi-Fi and 3G. Its screen is small, so small videos look fine on it.",
-    "nerd": "A 2010 smartphone (an iPhone 4 or an Android of the day): HSDPA category 8–10 and HSUPA. An endpoint: it opens (and checks) every layer, from the 3G frame up to HTTP.",
+    "simple": "A small computer in your pocket, with radios for Wi-Fi and 3G. Its screen is small, so small videos look fine on it.",
+    "technical": "A 2010 smartphone (an iPhone 4 or an Android of the day): HSDPA category 8–10 and HSUPA. An endpoint: it opens (and checks) every layer, from the 3G frame up to HTTP.",
     "tag": "HSDPA 7.2 · 3.5″"
   },
   "learnMore": [

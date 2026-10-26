@@ -1,10 +1,10 @@
 {
   "title": "Vi ser en video",
-  "kid": "Du beder om en video.",
-  "nerd": "Appen henter videoen i små segmenter over HTTPS (HTTP inde i TLS inde i TCP), og serveren streamer dem tilbage.",
+  "simple": "Du beder om en video.",
+  "technical": "Appen henter videoen i små segmenter over HTTPS (HTTP inde i TLS inde i TCP), og serveren streamer dem tilbage.",
   "takes": {
-    "kid": "Hele videoen er her på omkring {time}: {faster} gange hurtigere, end du kan se den.",
-    "nerd": "{size} HD-video ved {rate}, den langsomste forbindelses hastighed ({link}): alle {plays} på omkring {time}, {faster}× hurtigere, end den spiller. Afspilleren henter kun lidt forud, så linjen hviler det meste af tiden."
+    "simple": "Hele videoen er her på omkring {time}: {faster} gange hurtigere, end du kan se den.",
+    "technical": "{size} HD-video ved {rate}, den langsomste forbindelses hastighed ({link}): alle {plays} på omkring {time}, {faster}× hurtigere, end den spiller. Afspilleren henter kun lidt forud, så linjen hviler det meste af tiden."
   },
   "packet": {
     "request": "Forespørgsel",
@@ -16,14 +16,14 @@
   },
   "stop": {
     "phone": {
-      "kid": "Din telefon vil se en kattevideo, så den skriver en lille forespørgsel og sender den af sted.",
-      "nerd": "Appen åbner en TLS-forbindelse og sender en HTTP GET efter næste videosegment. Styresystemet deler data op i TCP-segmenter inde i IP-pakker."
+      "simple": "Din telefon vil se en kattevideo, så den skriver en lille forespørgsel og sender den af sted.",
+      "technical": "Appen åbner en TLS-forbindelse og sender en HTTP GET efter næste videosegment. Styresystemet deler data op i TCP-segmenter inde i IP-pakker."
     }
   },
   "1995": {
     "title": "Vi åbner en hjemmeside med et billede",
-    "kid": "Du åbner en hjemmeside med et billede på.",
-    "nerd": "Browseren henter siden og så billedet, hver med en HTTP/1.0 GET over sin egen TCP-forbindelse: almindelig HTTP, ingen TLS. SSL var lige kommet i Netscape, til webbutikker. Video var frimærkestore klip (160 × 120, få billeder i sekundet), som man hentede ned, før man så dem.",
+    "simple": "Du åbner en hjemmeside med et billede på.",
+    "technical": "Browseren henter siden og så billedet, hver med en HTTP/1.0 GET over sin egen TCP-forbindelse: almindelig HTTP, ingen TLS. SSL var lige kommet i Netscape, til webbutikker. Video var frimærkestore klip (160 × 120, få billeder i sekundet), som man hentede ned, før man så dem.",
     "packet": {
       "page": "Side"
     },
@@ -31,21 +31,21 @@
       "page": "Fanget: et stykke af siden"
     },
     "takes": {
-      "kid": "Siden og dens billede tager omkring {time} om at komme frem. Dagens video ville tage {now}!",
-      "nerd": "{size} ved {rate}, modemets topfart: omkring {time} for selve bittene, mere med håndtryk, headere og gensendelser. Dagens {nowSize} HD-video ville tage {now}."
+      "simple": "Siden og dens billede tager omkring {time} om at komme frem. Dagens video ville tage {now}!",
+      "technical": "{size} ved {rate}, modemets topfart: omkring {time} for selve bittene, mere med håndtryk, headere og gensendelser. Dagens {nowSize} HD-video ville tage {now}."
     }
   },
   "2010": {
     "title": "Vi ser en lille video",
-    "kid": "Du beder om en lille video.",
-    "nerd": "Afspilleren henter videoen som én fil over almindelig HTTP (ingen TLS): en lille 360p-MP4, der begynder at spille, mens resten stadig er på vej (progressive download). Videosider gik over til HTTPS nogle år senere. Cachen, den kom fra, lå som regel i en større by længere væk end i dag.",
+    "simple": "Du beder om en lille video.",
+    "technical": "Afspilleren henter videoen som én fil over almindelig HTTP (ingen TLS): en lille 360p-MP4, der begynder at spille, mens resten stadig er på vej (progressive download). Videosider gik over til HTTPS nogle år senere. Cachen, den kom fra, lå som regel i en større by længere væk end i dag.",
     "takes": {
-      "kid": "Hele den lille video er her på omkring {time}: {faster} gange hurtigere, end du kan se den. Dagens skarpere video ville tage {now}.",
-      "nerd": "{size} 360p-video ved {rate}, den langsomste forbindelses hastighed ({link}): alle {plays} på omkring {time}, {faster}× hurtigere, end den spiller. Dagens {nowSize} HD-video ville tage {now}."
+      "simple": "Hele den lille video er her på omkring {time}: {faster} gange hurtigere, end du kan se den. Dagens skarpere video ville tage {now}.",
+      "technical": "{size} 360p-video ved {rate}, den langsomste forbindelses hastighed ({link}): alle {plays} på omkring {time}, {faster}× hurtigere, end den spiller. Dagens {nowSize} HD-video ville tage {now}."
     },
     "stop": {
       "phone": {
-        "nerd": "Appen sender én HTTP GET efter hele videofilen, i almindelig HTTP (ingen TLS). Styresystemet lægger forespørgslen i et TCP-segment inde i en IP-pakke."
+        "technical": "Appen sender én HTTP GET efter hele videofilen, i almindelig HTTP (ingen TLS). Styresystemet lægger forespørgslen i et TCP-segment inde i en IP-pakke."
       }
     }
   }

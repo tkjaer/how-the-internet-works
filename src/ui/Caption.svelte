@@ -1,5 +1,5 @@
 <script lang="ts">
-  // Bottom caption: it tells the story. Title + kid/nerd text, its notes (a nerd's extra, #31), "Read again" while read
+  // Bottom caption: it tells the story. Title + simple/technical text, its notes (a Technical extra, #31), "Read again" while read
   // aloud is on (#53), the keys' hint after a key, where you are (tap to change), the time machine (#59: on every
   // overview; the year when it isn't today's) and "Want to know more?" (#4).
   // "What can I explore?" (`explore`, #122) swaps all of that for the doors you can open from here, in the same space

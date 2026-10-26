@@ -2,8 +2,8 @@
   "name": "Bærbar med GSM-telefon",
   "yours": "din bærbare",
   "1995": {
-    "kid": "En tyk grå bærbar med et kort i siden og en krøllet ledning fra kortet til en mobiltelefon på størrelse med en mursten. Telefonen ringer op; den bærbare klarer resten.",
-    "nerd": "En bærbar fra 1995 med et GSM-datakort (et pc-kort, som Nokias Cellular Data Card) i en ledning til en GSM-telefon. Endepunktet: den kører selv PPP, IP, TCP og browseren; telefonen bærer bare opkaldet.",
+    "simple": "En tyk grå bærbar med et kort i siden og en krøllet ledning fra kortet til en mobiltelefon på størrelse med en mursten. Telefonen ringer op; den bærbare klarer resten.",
+    "technical": "En bærbar fra 1995 med et GSM-datakort (et pc-kort, som Nokias Cellular Data Card) i en ledning til en GSM-telefon. Endepunktet: den kører selv PPP, IP, TCP og browseren; telefonen bærer bare opkaldet.",
     "tag": "GSM · 9,6 kbit/s"
   }
 }

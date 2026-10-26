@@ -1,12 +1,12 @@
 {
   "name": "Backbone router",
   "1995": {
-    "kid": "A big network’s router: a tall cupboard full of cards, each joined to a long line. It reads the address on every parcel and picks the line that brings it closer.",
-    "nerd": "A 1990s backbone router: a chassis of line cards (T1/E1, T3, ATM OC-3) with a route processor running BGP. It looks up every packet’s destination in its table, with no MPLS labels yet (they came around 2001).",
+    "simple": "A big network’s router: a tall cupboard full of cards, each joined to a long line. It reads the address on every parcel and picks the line that brings it closer.",
+    "technical": "A 1990s backbone router: a chassis of line cards (T1/E1, T3, ATM OC-3) with a route processor running BGP. It looks up every packet’s destination in its table, with no MPLS labels yet (they came around 2001).",
     "tag": "BGP · ATM OC-3"
   },
   "learnMore": [
-    { "url": "https://en.wikipedia.org/wiki/Core_router", "title": "Core router", "level": "nerd" },
+    { "url": "https://en.wikipedia.org/wiki/Core_router", "title": "Core router", "level": "technical" },
     { "url": "https://en.wikipedia.org/wiki/Router_(computing)", "title": "Router", "level": "both" }
   ]
 }
