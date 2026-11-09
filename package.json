@@ -21,7 +21,7 @@
   "dependencies": {
     "@fontsource-variable/baloo-2": "^5.3.0",
     "@fontsource-variable/jetbrains-mono": "^5.3.0",
-    "d3-interpolate": "^3.0.1"
+    "d3-interpolate": "^3.0.2"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
