@@ -1,15 +1,15 @@
 {
-  "name": "Mobilkern",
+  "name": "Mobilfunkkern",
   "simple": "Der Kontrollraum der Mobilfunkfirma. Er prüft deine SIM-Karte, packt deine Päckchen aus dem Tunnel des Masts aus und gibt ihnen eine Internetadresse.",
   "technical": "Der 5G-Kern (5GC): AMF/SMF übernehmen Anmeldung und Sessions; der UPF beendet den GTP-U-Tunnel, wendet Policy an und macht Carrier-Grade-NAT Richtung Internet.",
   "tag": "5GC · UPF · CGNAT",
   "peek": {
     "up": {
-      "simple": "Der Mobilkern öffnet den Tunnel-Umschlag und tauscht dann Adresse und Türnummer deines Telefons gegen die eigenen, die sich viele Telefone teilen.",
+      "simple": "Der Mobilfunkkern öffnet den Tunnel-Umschlag und tauscht dann Adresse und Türnummer deines Telefons gegen die eigenen, die sich viele Telefone teilen.",
       "technical": "Der UPF beendet den GTP-U-Tunnel (über TEID), dann schreibt Carrier-Grade-NAT Absenderadresse und Port um, korrigiert die Prüfsummen und routet weiter (TTL − 1)."
     },
     "down": {
-      "simple": "Der Mobilkern schaut nach, welches Telefon gefragt hat, ändert die Adresse zurück und legt das Päckchen in den Tunnel zum richtigen Mast.",
+      "simple": "Der Mobilfunkkern schaut nach, welches Telefon gefragt hat, ändert die Adresse zurück und legt das Päckchen in den Tunnel zum richtigen Mast.",
       "technical": "CGNAT zurück (Adresse und Port aus der Mapping-Tabelle), dann tunnelt der UPF es in GTP-U zur gNB des Telefons (TEID)."
     }
   },

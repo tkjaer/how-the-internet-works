@@ -26,10 +26,10 @@
   },
   "t1": {
     "title": "Eine amerikanische Mietleitung",
-    "simple": "In Amerika haben die Mietleitungen 24 Boxen in jeder Reihe, nicht 32, und einen Extra-Blip für den Takt. Alle 24 sind zu einem Rohr für Päckchen geklebt, zum Gebäude, in dem die Website wohnt.",
+    "simple": "In Amerika haben die Mietleitungen 24 Boxen in jeder Reihe, nicht 32, und einen zusätzlichen Impuls für den Takt. Alle 24 sind zu einem Rohr für Päckchen geklebt, zum Gebäude, in dem die Website wohnt.",
     "technical": "Ein T1 (DS1): 24 Timeslots plus ein Framing Bit, (24 × 8 + 1) × 8,000 = 1.544 Mbit/s; 1.536 Mbit/s für Daten. ESF Framing, B8ZS Line Code. Gemietet zum Hosting Site, mit Cisco HDLC oben drauf.",
     "describe": {
-      "simple": "Zwei Router an den Enden einer amerikanischen Mietleitung schicken einander Reihen von Boxen. Eine Karte zeigt eine Reihe: einen kleinen Blip für den Takt und 24 Boxen zu einem Rohr geklebt. Die andere zeigt die Leitung auf und ab.",
+      "simple": "Zwei Router an den Enden einer amerikanischen Mietleitung schicken einander Reihen von Boxen. Eine Karte zeigt eine Reihe: einen kleinen Impuls für den Takt und 24 Boxen zu einem Rohr geklebt. Die andere zeigt die Leitung auf und ab.",
       "technical": "Zwei Router auf einem Leased T1. Eine Karte zeigt den Frame: das Framing Bit und 24 Timeslots gebündelt bei 1.536 Mbit/s. Die andere zeigt AMI Pulses auf dem Kupfer."
     }
   },
@@ -134,7 +134,7 @@
         "technical": "HDB3-Leitungscode"
       },
       "line": {
-        "simple": "Jede 1 kippt hoch oder runter; lange stille Strecken bekommen einen Fake-Blip",
+        "simple": "Jede 1 kippt hoch oder runter; lange stille Strecken bekommen einen zusätzlichen Impuls",
         "technical": "AMI, aber 0000 geht als 000V oder B00V"
       }
     },

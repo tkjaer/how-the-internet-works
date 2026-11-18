@@ -2,10 +2,10 @@
   "name": "Unterwegs, GSM",
   "access": "GSM-Daten",
   "1995": {
-    "simple": "Draußen auf der Straße 1995 war kaum jemand online, aber du konntest! Das Mobiltelefon eines Laptops rief die Internetfirma an, per Funk zu einem Mast und durch die Schalter der Mobilfunkfirma. Sehr langsam, und jede Minute kostete Geld.",
+    "simple": "Draußen auf der Straße 1995 war kaum jemand online, aber du konntest! Das Mobiltelefon eines Laptops rief die Internetfirma an, per Funk zu einem Mast und durch die Vermittlungsstellen der Mobilfunkfirma. Sehr langsam, und jede Minute kostete Geld.",
     "technical": "Um 1995: der Laptop wählt über ein GSM-Telefon, leitungsvermittelte Daten mit 9,6 kbit/s. Der Ruf geht per Funk zur BTS, als 16-kbit/s-Viertel-Slot durch die BSC zur MSC, deren Modems (die IWF) durchs Telefonnetz zur Modem-Bank des ISP weiterwählen. PPP fährt unberührt die ganze Strecke; kein IP vor der Modem-Bank.",
     "describe": {
-      "simple": "Eine Straße mit Läden, Laterne, Fahrbahn und Auto liegt vor grünen Hügeln. Ein dicker Laptop mit Krauselkabel zu einem ziegelgroßen Mobiltelefon schickt Päckchen per Funk zu einem hohen Metallmast mit dünnen Antennen. Eine Leitung trägt sie weiter zur Internetwolke. Anfragen und die Seite laufen langsam in beide Richtungen.",
+      "simple": "Eine Straße mit Läden, Laterne, Fahrbahn und Auto liegt vor grünen Hügeln. Ein dicker Laptop mit Spiralkabel zu einem ziegelgroßen Mobiltelefon schickt Päckchen per Funk zu einem hohen Metallmast mit dünnen Antennen. Eine Leitung trägt sie weiter zur Internetwolke. Anfragen und die Seite laufen langsam in beide Richtungen.",
       "technical": "Die Straßenansicht zeigt einen Laptop von 1995 mit GSM-Telefon am Kabel, einen GSM-Funklink zu einer BTS auf einem Gittermast, die Abis-Leitung und die Internetwolke. Anfrage-Pakete gehen im Datenruf hoch; die Seite kommt denselben Weg mit 9,6 kbit/s zurück."
     },
     "tag": {

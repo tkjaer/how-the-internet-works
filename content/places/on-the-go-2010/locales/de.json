@@ -23,7 +23,7 @@
     },
     "inside": {
       "internet": {
-        "technical": "Die RNC beendet die Funkschichten und tunnelt mit Direct Tunnel die Pakete direkt zur GGSN, die NAT macht; die SGSN (gestrichelt) meldet das Handy nur an und setzt den Tunnel auf. Ab da dasselbe Internet: ISP-Kern, Peering am IXP (oder bezahltes Transit) und ein CDN-Cache. Jede Fläche ist ein Betreibernetz.",
+        "technical": "Die RNC beendet die Funkschichten und tunnelt mit Direct Tunnel die Pakete direkt zur GGSN, die NAT macht; die SGSN (gestrichelt) meldet das Handy nur an und setzt den Tunnel auf. Ab da dasselbe Internet: ISP-Kern, Peering am IXP (oder bezahlter Transit) und ein CDN-Cache. Jede Fläche ist ein Betreibernetz.",
         "describe": {
           "simple": "In der Wolke startet die Route am Mast, zur Funksteuerung und zum Tor der Mobilfunkfirma. Ein gestrichelter Abzweig führt zum Anmeldeschalter. Vom Tor durch ISP-Kern, Border-Router und Internetknoten zum Rechenzentrum der Videofirma. Päckchen laufen in beide Richtungen.",
           "technical": "Dieser Internetblick startet mit NodeB, RNC und GGSN, SGSN gestrichelt neben der RNC, dann ISP-Kern, Border-Router, IXP und CDN-Rechenzentrum. Die Flächen sind Mobil- oder ISP-Netz, Austausch und Videofirma. Pakete laufen über Iub, GTP, Backbone-Glasfaser und Cross-Connects."

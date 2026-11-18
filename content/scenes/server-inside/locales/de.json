@@ -39,7 +39,7 @@
       "technical": "CPU"
     },
     "line": {
-      "simple": "Läuft die Video-App",
+      "simple": "Führt die Video-App aus",
       "technical": "Cache-App auf Bare Metal"
     }
   },
