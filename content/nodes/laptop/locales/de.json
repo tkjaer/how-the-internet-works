@@ -2,7 +2,7 @@
   "name": "Laptop",
   "yours": "dein Laptop",
   "simple": "Ein Computer, den du zuklappen und mitnehmen kannst. Dieser hier hat eine Buchse für ein Netzwerkkabel.",
-  "technical": "Ein Endpunkt wie das Telefon, aber verkabelt: sein Ethernet-Port sendet Frames direkt an den Router, ohne Radio dazwischen.",
+  "technical": "Ein Endpunkt wie das Telefon, aber verkabelt: sein Ethernet-Port sendet Frames direkt an den Router, ohne Funkverbindung dazwischen.",
   "learnMore": [
     { "url": "https://de.wikipedia.org/wiki/Notebook", "title": "Notebook", "level": "both" }
   ]

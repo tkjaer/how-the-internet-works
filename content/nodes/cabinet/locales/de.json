@@ -1,7 +1,7 @@
 {
   "name": "Schrank",
-  "simple": "In einer Box an deiner Straße wird ein Glasfaden in viele kleine geteilt, einen für jedes Haus. Sie braucht keinen Strom: sie teilt nur das Licht.",
-  "technical": "Ein passiver 1:32-Splitter: kein Strom, er teilt nur das Licht. Das OLT, an das er hängt, steht in der Zentrale.",
+  "simple": "In einem Kasten an deiner Straße verteilt ein Splitter das Licht einer Glasfaser auf mehrere Fasern, eine für jedes Haus. Er braucht keinen Strom: Er teilt nur das Licht.",
+  "technical": "Ein passiver 1:32-Splitter: Er braucht keinen Strom und teilt nur das Licht. Das OLT, an dem er angeschlossen ist, steht in der Zentrale.",
   "tag": "Splitter · 1:32",
   "learnMore": [
     { "url": "https://de.wikipedia.org/wiki/Passive_Optical_Network", "title": "Passive Optical Network", "level": "technical" }

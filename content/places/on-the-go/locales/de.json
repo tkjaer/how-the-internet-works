@@ -2,7 +2,7 @@
   "name": "Unterwegs",
   "where": "unterwegs",
   "access": "5G",
-  "simple": "Draußen auf der Straße gibt es kein Wi-Fi, also fliegen die Päckchen per Funk zum Mobilfunkmast und von dort den Glasfaden entlang ins Internet.",
+  "simple": "Draußen auf der Straße gibt es kein Wi-Fi, also fliegen die Päckchen per Funk zum Mobilfunkmast und von dort die Glasfaser entlang ins Internet.",
   "technical": "Auf 5G spricht das Handy NR mit einem gNB, der die Pakete (GTP-U) über Glasfaser zum Mobilfunkkern tunnelt; dessen UPF macht Carrier-grade NAT Richtung Internet.",
   "describe": {
     "simple": "Eine Straße mit Läden, Laterne, Fahrbahn und Auto liegt vor grünen Hügeln. Dein Handy schickt Päckchen per 5G-Funk zu einem Mobilfunkmast. Glasfaser trägt sie weiter zur Internetwolke. Anfragen und Video laufen in beide Richtungen.",
@@ -17,13 +17,13 @@
       "simple": "Dein Handy will ein Katzenvideo, auch hier draußen. Es schickt eine kleine Anfrage per Funk."
     },
     "cell-tower-internet": {
-      "simple": "Vom Mast reisen deine Päckchen in einem Tunnel den Glasfaden entlang zur Mobilfunkfirma.",
+      "simple": "Vom Mast reisen deine Päckchen in einem Tunnel die Glasfaser entlang zur Mobilfunkfirma.",
       "technical": "Glasfaser-Backhaul vom gNB zum Kern; Nutzerpakete fahren in GTP-U-Tunneln (UDP 2152), einer pro Session."
     }
   },
   "inside": {
     "internet": {
-      "technical": "Der Mobilfunkkern (5GC) beendet den Funktunnel und macht Carrier-grade NAT; ab da ist es dasselbe Internet: ISP-Kern, Peering am IXP (oder bezahltes Transit) und ein CDN-Cache in deiner Nähe. Jede Fläche ist ein Betreibernetz.",
+      "technical": "Der Mobilfunkkern (5GC) beendet den Funktunnel und macht Carrier-grade NAT; ab da ist es dasselbe Internet: ISP-Kern, Peering am IXP (oder bezahlter Transit) und ein CDN-Cache in deiner Nähe. Jede Fläche ist ein Betreibernetz.",
       "describe": {
         "simple": "In der Wolke startet die Route am Mobilfunkmast und Mobilfunkkern. Sie trifft den ISP-Kern, den Border-Router, den Internetknoten und endet im Rechenzentrum der Videofirma. Der gestrichelte Abzweig zeigt Transit. Päckchen laufen in beide Richtungen.",
         "technical": "Dieser Internetblick startet mit gNB und Mobilfunkkern, dann ISP-Kern, Border-Router, IXP und CDN-Rechenzentrum. Die Flächen sind Mobil- oder ISP-Netz, Austausch und Videofirma. Pakete laufen über GTP, Backbone-Glasfaser und Cross-Connects."

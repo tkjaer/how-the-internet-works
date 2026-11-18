@@ -16,7 +16,7 @@
     },
     "inside": {
       "internet": {
-        "simple": "1995 ist das Internet viel kleiner: weniger als zweitausend Netze. Dein Anruf geht durch die Telefonvermittlung zu den Modems deiner Internetfirma. Von dort läuft eine Mietleitung zu einem größeren Netz in Kopenhagen, unter dem Atlantik in einem Glaskabel, quer durch Amerika und in den Raum, in dem die Website wohnt.",
+        "simple": "1995 ist das Internet viel kleiner: weniger als zweitausend Netze. Dein Anruf geht durch die Telefonvermittlung zu den Modems deiner Internetfirma. Von dort läuft eine Mietleitung zu einem größeren Netz in Kopenhagen, unter dem Atlantik in einem Glasfaserkabel, quer durch Amerika und in den Raum, in dem die Website wohnt.",
         "technical": "Das Telefonnetz (ein Circuit durch die Vermittlung, dann ein PRI) zur Modem-Bank des ISP und ihrem einen Router. Eine gemietete E1 zum Upstream in Kopenhagen, CANTAT-3 nach Nordamerika, ein ATM-Backbone quer durch die USA und ein T1 in den Hosting-Standort. Jede Fläche ist ein Betreibernetz; dänischer Verkehr geht stattdessen zum DIX.",
         "describe": {
           "simple": "In der Wolke startet der Weg bei dir zu Hause. Er läuft durch die Telefonvermittlung und die Modem-Bank zum Router der Internetfirma, mit gestricheltem Abzweig zum dänischen Knoten. Dann zu einem größeren Netz, unter dem Meer zu zwei US-Routern und in den Serverraum, eine Box zum Öffnen.",

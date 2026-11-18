@@ -1,6 +1,6 @@
 {
   "title": "Für welche Tür ist dieser Aufkleber?",
-  "simple": "Eine Box liest den kleinen Aufkleber außen und prüft ihr Nachschlagebuch. Dieselbe Box kann MAC-Türen lernen, bunte Straßenstreifen auseinanderhalten oder einer Autobahnnummer folgen. Darunter reist es als Signal im Kabel oder Glasfaden.",
+  "simple": "Eine Box liest den kleinen Aufkleber außen und prüft ihr Nachschlagebuch. Dieselbe Box kann MAC-Türen lernen, bunte Straßenstreifen auseinanderhalten oder einer Autobahnnummer folgen. Darunter reist es als Signal im Kabel oder in der Glasfaser.",
   "technical": "Eine vereinigte Layer-2/Label-Switching-Ansicht: Ethernet lernt Source MACs und floodet Unknown Unicasts, VLAN Tags begrenzen Forwarding Domains, und MPLS Labels steuern LFIB Push/Swap/Pop.",
   "ethernet": {
     "title": "Welche Kabeltür?",
@@ -9,7 +9,7 @@
     "role": {
       "bridge": {
         "title": "Die Türen lernen",
-        "simple": "Der Umschlag kommt durch Tür 1 von {sender}. Die Box schreibt „{sender} → Tür 1“. Den Für-Aufkleber kennt sie noch nicht, also kopiert sie den Umschlag aus den anderen Türen. Die Antwort lehrt Tür 2. Darunter reist er als Signal im Kabel oder Glasfaden.",
+        "simple": "Der Umschlag kommt durch Tür 1 von {sender}. Die Box schreibt „{sender} → Tür 1“. Den Für-Aufkleber kennt sie noch nicht, also kopiert sie den Umschlag aus den anderen Türen. Die Antwort lehrt Tür 2. Darunter reist er als Signal im Kabel oder in der Glasfaser.",
         "technical": "Eine Bridge lernt Source MACs in eine MAC Table, lässt Einträge nach etwa 300 s altern, floodet Unknown Unicast Frames außer dem Ingress Port und forwardet bekannte Destinations an einen Port. Sie schreibt den Frame nie um: Source und Destination MAC bleiben die der Geräte an beiden Enden der Layer-2 Stretch (hier {sender} und {next}). Store-and-Forward Switches prüfen zuerst FCS/CRC-32.",
         "describe": {
           "simple": "Eine Straße verbindet zwei freundliche Geräte und eine Box mit vier nummerierten Türen. Ein wandernder Umschlag kommt an Tür 1. Zwei Karten zeigen winzige Kopien und ein Türbuch. Gepunktete Wege leuchten zu den anderen Türen. Später geht der Umschlag geradewegs zu Tür 2.",
@@ -36,7 +36,7 @@
       },
       "endpoint": {
         "title": "Dieser Aufkleber gilt dem Computer",
-        "simple": "Der Für-Aufkleber passt zu diesem Computer. Er prüft, dass der Umschlag nicht verschmiert ist, zieht den Kabelumschlag ab und reicht das Päckchen innen nach oben. Wenn er zurückschickt, nutzt er ARP und schreibt einen neuen Aufkleber. Darunter reist er als Stromstöße oder Lichtblitze.",
+        "simple": "Der Für-Aufkleber passt zu diesem Computer. Er prüft, dass der Umschlag nicht beschädigt ist, zieht den Kabelumschlag ab und reicht das Päckchen innen nach oben. Wenn er zurückschickt, nutzt er ARP und schreibt einen neuen Aufkleber. Darunter reist er als Stromstöße oder Lichtblitze.",
         "technical": "Ein Endgerät nimmt Frames an, deren Destination seine NIC MAC ist (oder Broadcast/Multicast), prüft FCS/CRC-32 und reicht die EtherType Payload nach oben. Ausgehende Frames nutzen den ARP Cache für die Peer MAC.",
         "describe": {
           "simple": "Ein Endgerät ist eingekreist, während eine Vier-Tür-Box und eine Straße zum anderen Ende führen. Ein wandernder Umschlag mit ICH bleibt stehen. Das kleine Für-Schild löst sich, die Prüfkarte sagt OK. „Wer hat?“ und Wellenlinien erscheinen, bevor der Umschlag wieder rausgeht.",
@@ -47,7 +47,7 @@
   },
   "vlan": {
     "title": "Bunte Straßentüren",
-    "simple": "Der Straßen-Aufkleber malt den Umschlag für Straße 101. Er geht nur durch Türen mit dieser Farbe. Am BNG sagt Haus 2042, welches Abo das ist, und die Aufkleber kommen ab. Darunter reist er als Lichtblitze im Glasfaden.",
+    "simple": "Der Straßen-Aufkleber malt den Umschlag für Straße 101. Er geht nur durch Türen mit dieser Farbe. Am BNG sagt Haus 2042, welches Abo das ist, und die Aufkleber kommen ab. Darunter reist er als Lichtblitze in der Glasfaser.",
     "technical": "802.1Q trägt eine 12-bit VID (1–4094 nutzbar). In 802.1ad Q-in-Q kennzeichnet S-VLAN 101 die Cabinet Domain und C-VLAN 2042 die Subscriber Line am BNG.",
     "describe": {
       "simple": "Eine Straße läuft durch eine Vier-Tür-Box, deren passende Spuren 1 und 3 markiert sind. Der wandernde Umschlag trägt einen 101-Aufkleber. Die Aktionskarte biegt seinen Weg nur durch Türen derselben Spur. Das Spurbuch listet Straße 101, Haus 2042 und eine getrennte Straße.",
@@ -56,7 +56,7 @@
     "at": {
       "bng": {
         "title": "Die Abo-Tür",
-        "simple": "Am BNG haben Straßen-Tag und Haus-Tag ihre Arbeit getan. Haus 2042 bedeutet deine Leitung, also nimmt der BNG die Aufkleber ab und schickt das Päckchen weiter. Darunter reist es als Lichtblitze im Glasfaden.",
+        "simple": "Am BNG haben Straßen-Tag und Haus-Tag ihre Arbeit getan. Haus 2042 bedeutet deine Leitung, also nimmt der BNG die Aufkleber ab und schickt das Päckchen weiter. Darunter reist es als Lichtblitze in der Glasfaser.",
         "technical": "Der BNG terminiert die Access VLANs: S-VID 101 scoped die Aggregation-Seite, C-VID 2042 wählt die Subscriber Session, dann wird die Ethernet Payload geroutet oder Label-switched weiter.",
         "describe": {
           "simple": "Die Straße erreicht eine Vier-Tür-Box, und dieser BNG ist eingekreist. Der Umschlag trägt noch seinen 101-Aufkleber. Die Aktionskarte zeigt die passende Spur, und ein kleiner TAGS-Zettel fliegt weg. Das Spurbuch zeigt von Straßen- und Hausnummern auf einen Besitzer, während die Tags abkommen.",
@@ -67,7 +67,7 @@
   },
   "mpls": {
     "title": "Autobahn-Nummern",
-    "simple": "Im Netz des Anbieters ist der Aufkleber eine Autobahnnummer. Eine Kreuzung tauscht sie gegen die Nummer, die die nächste Kreuzung verlangt, und schickt das Päckchen aus Tür 3, ohne die lange Adresse zu lesen. Darunter reist es als Lichtblitze im Glasfaden.",
+    "simple": "Im Netz des Anbieters ist der Aufkleber eine Autobahnnummer. Eine Kreuzung tauscht sie gegen die Nummer, die die nächste Kreuzung verlangt, und schickt das Päckchen aus Tür 3, ohne die lange Adresse zu lesen. Darunter reist es als Lichtblitze in der Glasfaser.",
     "technical": "MPLS Router nutzen eine LFIB: ein Incoming Label mappt auf ein Outgoing Interface und das Label, das der nächste Router advertised hat. Die Ingress Edge pusht ein Label, LSRs in der Mitte swappen es, die Egress Edge poppt es (oder, default, der Hop davor: Penultimate-Hop Popping).",
     "describe": {
       "simple": "Eine breite Straße läuft durch eine Vier-Tür-Kreuzung, und das wandernde Päckchen trägt eine große Autobahnnummer. Die Label-Karte zeigt, wie IP eine neue Nummer bekommt oder eine Nummer zu einer anderen wird. Das Labelbuch sagt, welche Tür, Tür 3 leuchtet, und das Päckchen geht weiter.",
@@ -76,7 +76,7 @@
     "at": {
       "border": {
         "title": "Die Autobahn verlassen",
-        "simple": "Der Grenzrouter ist die letzte Kreuzung im Netz deiner Internetfirma. Er nimmt den Autobahn-Aufkleber ab, damit die Börse und das nächste Netz die normale Adresse wieder lesen können. Darunter reist es als Lichtblitze im Glasfaden.",
+        "simple": "Der Grenzrouter ist die letzte Kreuzung im Netz deiner Internetfirma. Er nimmt den Autobahn-Aufkleber ab, damit der Internetknoten und das nächste Netz die normale Adresse wieder lesen können. Darunter reist es als Lichtblitze in der Glasfaser.",
         "technical": "Die Egress PE poppt das Label vor dem Ethernet-only Peering LAN am IXP und forwardet auf dem IP Header zum eBGP Next Hop. Meist hat der Core Router davor schon gepoppt (Penultimate-Hop Popping, der Default); hier poppt die Border selbst. TC Bits tragen Class; beim Pop wird die heruntergezählte MPLS TTL zurück in den IP Header kopiert (Uniform Model; das Pipe Model lässt die IP TTL).",
         "describe": {
           "simple": "An der letzten Vier-Tür-Kreuzung kommt das Päckchen mit Autobahnnummer-Aufkleber an. Die Label-Karte zeigt, wie die Nummer wieder zu IP wird, mit einem kleinen Pop-Schild dazwischen. Das Labelbuch sagt, den Aufkleber abzunehmen, Tür 3 leuchtet, und das Päckchen geht als normales Adress-Päckchen weiter.",
@@ -139,7 +139,7 @@
     "age": "Alterung",
     "fcs": "FCS/CRC-32",
     "check": "prüfen",
-    "drop": "Schmieren droppen",
+    "drop": "Beschädigte Frames verwerfen",
     "owner": "Besitzer",
     "subscriber": "Subscriber Session",
     "you": "dein Abo",

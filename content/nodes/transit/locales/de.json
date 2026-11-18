@@ -1,7 +1,7 @@
 {
   "name": "Transit-Anbieter",
   "simple": "Wenn es keine Abkürzung gibt, bezahlt deine Internetfirma ein größeres Netz dafür, das Päckchen zu tragen.",
-  "technical": "Bezahltes IP-Transit von einem Tier-1- oder Tier-2-Anbieter: eine volle Routing-Tabelle und Erreichbarkeit zu allem.",
+  "technical": "Bezahlter IP-Transit von einem Tier-1- oder Tier-2-Anbieter: eine volle Routing-Tabelle und Erreichbarkeit zu allem.",
   "tag": "Tier-1 · paid transit",
   "1995": {
     "simple": "Deine Internetfirma ist klein, darum mietet sie eine Leitung zu einem größeren Netz in Kopenhagen, das ihre Päckchen in den Rest der Welt trägt.",

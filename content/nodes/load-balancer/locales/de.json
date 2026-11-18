@@ -1,10 +1,10 @@
 {
   "name": "Load-Balancer",
   "simple": "Ein Verkehrslotse. Viele Computer könnten antworten, also wählt er einen, der nicht beschäftigt ist, und schickt jedes Päckchen deines Videos an denselben.",
-  "technical": "Ein L4-Load-Balancer hält die Service-Adresse (VIP). Er hasht das 5-Tupel jeder Verbindung auf ein gesundes Backend (consistent hashing), sodass jedes Paket einer TCP-Verbindung denselben Server erreicht; Health-Checks nehmen kaputte Server raus.",
+  "technical": "Ein L4-Load-Balancer hält die Service-Adresse (VIP). Er hasht das 5-Tupel jeder Verbindung auf ein funktionsfähiges Backend (consistent hashing), sodass jedes Paket einer TCP-Verbindung denselben Server erreicht; Health-Checks nehmen kaputte Server raus.",
   "tag": "L4 · VIP · konsistenter Hash",
   "2010": {
-    "technical": "Ein Hardware-Load-Balancer (eine Appliance wie F5s BIG-IP oder eine Karte im Aggregation-Switch) hält die Service-Adresse (VIP). Er führt eine Tabelle der Verbindungen und sendet jedes Paket einer TCP-Verbindung an denselben gesunden Server; Health-Checks nehmen kaputte Server raus.",
+    "technical": "Ein Hardware-Load-Balancer (eine Appliance wie F5s BIG-IP oder eine Karte im Aggregation-Switch) hält die Service-Adresse (VIP). Er führt eine Tabelle der Verbindungen und sendet jedes Paket einer TCP-Verbindung an denselben funktionsfähigen Server; Health-Checks nehmen kaputte Server raus.",
     "tag": "L4–7 appliance · VIP"
   },
   "learnMore": [

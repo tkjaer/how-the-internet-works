@@ -1,7 +1,7 @@
 {
   "name": "Funkmast",
-  "simple": "Ein Mast mit klugen Antennen. Er spricht per Funk mit allen Telefonen in der Nähe und schickt ihre Päckchen durch einen Glasfaden weiter.",
-  "technical": "Eine 5G-Basisstation (gNB): Massive-MIMO-Antennenpaneele, der Radio-Scheduler und ein Glasfaser-Backhaul, der Nutzerverkehr (GTP-U) zum Mobile Core tunnelt.",
+  "simple": "Ein Mast mit klugen Antennen. Er spricht per Funk mit allen Telefonen in der Nähe und schickt ihre Päckchen durch eine Glasfaser weiter.",
+  "technical": "Eine 5G-Basisstation (gNB): Massive-MIMO-Antennenpaneele, der Funk-Scheduler und ein Glasfaser-Backhaul, der Nutzerverkehr (GTP-U) zum Mobile Core tunnelt.",
   "tag": "gNB · n78 · 3,5 GHz",
   "peek": {
     "up": {
