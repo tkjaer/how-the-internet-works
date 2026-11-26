@@ -62,7 +62,7 @@
     "technical": "Diese Leitung: {m} m Kupfer"
   },
   "xtalkTitle": "Crosstalk",
-  "xtalkLine": "Nachbarpaare sickern herein",
+  "xtalkLine": "Signale benachbarter Aderpaare stören sich",
   "learnMore": [
     { "url": "https://de.wikipedia.org/wiki/Digital_Subscriber_Line", "title": "Digital Subscriber Line", "level": "technical" },
     { "url": "https://de.wikipedia.org/wiki/Very_High_Speed_Digital_Subscriber_Line", "title": "Very High Speed Digital Subscriber Line", "level": "technical" },

@@ -47,10 +47,10 @@
   "at": {
     "mobile-core": {
       "title": "Eine ganze Straße teilt eine Adresse",
-      "simple": "Handys im Mobilnetz bekommen keine eigene Internetadresse. Der Mobilkern tauscht den Absender-Aufkleber vieler Handys gegen dieselbe eine Adresse und gibt jedem eine eigene Ticketnummer in seinem Notizbuch.",
+      "simple": "Handys im Mobilnetz bekommen keine eigene Internetadresse. Der Mobilfunkkern tauscht den Absender-Aufkleber vieler Handys gegen dieselbe eine Adresse und gibt jedem eine eigene Ticketnummer in seinem Notizbuch.",
       "technical": "Carrier-grade NAT: Teilnehmer bekommen Adressen aus dem Shared Space 100.64.0.0/10 (RFC 6598), und Dutzende bis Hunderte teilen eine öffentliche IPv4-Adresse, jedes mit eigenem Portblock. Das ist ein großer Grund für IPv6.",
       "describe": {
-        "simple": "Die Straße zeigt mehrere Handys, die sich einen Mobilkern auf dem Weg zum Videoserver teilen. Die Adresskarte ändert From zu Mobilkern. Das Tausch-Notizbuch ist voller Nachbarn mit Ticketnummern. Ein Päckchen hält am Kern, bekommt den Aufkleber getauscht, dann läuft es weiter. Antworten nutzen das Notizbuch, um das richtige Handy zu finden.",
+        "simple": "Die Straße zeigt mehrere Handys, die sich einen Mobilfunkkern auf dem Weg zum Videoserver teilen. Die Adresskarte ändert From zu Mobilfunkkern. Das Tausch-Notizbuch ist voller Nachbarn mit Ticketnummern. Ein Päckchen hält am Kern, bekommt den Aufkleber getauscht, dann läuft es weiter. Antworten nutzen das Notizbuch, um das richtige Handy zu finden.",
         "technical": "Das ist die NAT-Variante für Carrier-grade NAT. Die Karte schreibt eine Quelle von 100.64.0.0/10 auf die öffentliche Adresse des Carriers um. Die Tabelle mappt mehrere innere Adress- und Portpaare auf äußere Ports. Das Paket pausiert für den Rewrite, TTL fällt, und das Forwarding geht weiter."
       }
     },
@@ -62,21 +62,21 @@
       }
     },
     "cell-tower": {
-      "technical": "Ein Tunnel-Ende, keine schlichte Bridge: die Basisstation (gNB) bewegt das Paket zwischen dem 5G-Radio-Link und einem GTP-U-Tunnel (in UDP/IP) zum Mobilkern, ohne seinen IP-Header zu lesen. Zum Kern reist das Tunnel-Paket in einem Ethernet-Frame, der hier startet oder endet, mit der eigenen MAC der gNB. Der innere IP-Header, TTL inklusive, wird nie angefasst.",
+      "technical": "Ein Tunnel-Ende, keine schlichte Bridge: die Basisstation (gNB) bewegt das Paket zwischen der 5G-Funkverbindung und einem GTP-U-Tunnel (in UDP/IP) zum Mobilfunkkern, ohne seinen IP-Header zu lesen. Zum Kern reist das Tunnel-Paket in einem Ethernet-Frame, der hier startet oder endet, mit der eigenen MAC der gNB. Der innere IP-Header, TTL inklusive, wird nie angefasst.",
       "describe": {
         "simple": "Eine Straße verbindet dein Gerät, diese Durchreise-Box und den Videoserver. Die Adresskarte hat schläfrige Augen, die andere Karte zeigt den alten und den neuen Umschlag. Das Päckchen behält sein Adressetikett geschlossen, während ein Umschlag abhebt und ein frischer für die nächste Strecke draufkommt.",
         "technical": "Die IP-Header-Karte wird gezeigt, aber nicht gelesen. Die Link-Karte zeigt einen Umschlag, der abhebt, und einen Tunnel-Umschlag, der seinen Platz einnimmt. Technische Labels zeigen die eigene MAC des Tunnel-Endes und sagen, der IP-Header bleibt unberührt. Das Paket läuft im Tunnel mit demselben IP-Etikett und TTL weiter."
       }
     },
     "rnc": {
-      "technical": "Ein Tunnel-Ende, keine schlichte Bridge: der RNC beendet den 3G-Radio-Link und bewegt das Paket in einen GTP-U-Tunnel (in UDP/IP) zum Packet Core, ohne seinen IP-Header zu lesen. Zum Kern reist das Tunnel-Paket in einem Ethernet-Frame, der hier startet oder endet, mit der eigenen MAC des RNC. Der innere IP-Header, TTL inklusive, wird nie angefasst.",
+      "technical": "Ein Tunnel-Ende, keine schlichte Bridge: der RNC beendet die 3G-Funkverbindung und bewegt das Paket in einen GTP-U-Tunnel (in UDP/IP) zum Packet Core, ohne seinen IP-Header zu lesen. Zum Kern reist das Tunnel-Paket in einem Ethernet-Frame, der hier startet oder endet, mit der eigenen MAC des RNC. Der innere IP-Header, TTL inklusive, wird nie angefasst.",
       "describe": {
         "simple": "Eine Straße verbindet dein Gerät, diese Durchreise-Box und den Videoserver. Die Adresskarte hat schläfrige Augen, die andere Karte zeigt den alten und den neuen Umschlag. Das Päckchen behält sein Adressetikett geschlossen, während ein Umschlag abhebt und ein frischer für die nächste Strecke draufkommt.",
         "technical": "Die IP-Header-Karte wird gezeigt, aber nicht gelesen. Die Link-Karte zeigt einen Umschlag, der abhebt, und einen Tunnel-Umschlag, der seinen Platz einnimmt. Technische Labels zeigen die eigene MAC des Tunnel-Endes und sagen, der IP-Header bleibt unberührt. Das Paket läuft im Tunnel mit demselben IP-Etikett und TTL weiter."
       }
     },
     "nodeb": {
-      "technical": "Der NodeB relaised das Paket zwischen dem 3G-Radio und seiner Leitung zum RNC, der den Radio-Link und den Tunnel beendet. Kein Ethernet-Frame und keine MAC-Adressen auf dieser Strecke; der IP-Header, TTL inklusive, wird nie gelesen oder angefasst.",
+      "technical": "Der NodeB leitet das Paket zwischen der 3G-Funkverbindung und seiner Leitung zum RNC weiter, der die Funkverbindung und den Tunnel beendet. Kein Ethernet-Frame und keine MAC-Adressen auf dieser Strecke; der IP-Header, TTL inklusive, wird nie gelesen oder angefasst.",
       "describe": {
         "simple": "Eine Straße verbindet dein Gerät, diese Durchreise-Box und den Videoserver. Die Adresskarte hat schläfrige Augen, die andere Karte zeigt den alten und den neuen Umschlag. Das Päckchen behält sein Adressetikett geschlossen, während ein Umschlag abhebt und ein frischer für die nächste Strecke draufkommt.",
         "technical": "Die IP-Header-Karte wird gezeigt, aber nicht gelesen. Die Link-Karte zeigt ankommende und gehende Umschläge. Technische Labels sagen, hier gibt es keine MAC-Adressen und der IP-Header bleibt unberührt. In der Pause hebt ein Umschlag ab, der nächste landet, und das Paket läuft mit demselben IP-Etikett und TTL weiter."

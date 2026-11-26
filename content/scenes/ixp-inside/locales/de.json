@@ -8,7 +8,7 @@
     "simple": "Im Internetknoten",
     "technical": "IXP Peering-LAN"
   },
-  "simple": "Ein Internetknoten ist ein Tisch, an dem Netze sich treffen. Der Helfer teilt Zettel, wer was erreichen kann. Dann tauscht dein Päckchen direkt über den gemeinsamen Switch, ohne pro Päckchen zu zahlen und ohne den Helfer zu besuchen.",
+  "simple": "Ein Internetknoten ist ein Treffpunkt für Netze. Ein Helfer verteilt Zettel, auf denen steht, wer welches Ziel erreichen kann. Dein Päckchen reist dann direkt über den gemeinsamen Switch ins andere Netz, ohne Gebühr pro Päckchen und ohne Umweg über den Helfer.",
   "technical": "Der IXP ist ein gemeinsames Ethernet-Fabric. Mitglieder peeren mit BGP, oft über einen Route Server, der Routen verteilt, aber keinen Traffic weiterleitet. Dein Paket nimmt einen Data-Plane-Hop über das Peering-LAN vom ISP-Port zum CDN-Port.",
   "describe": {
     "simple": "Ein langer gemeinsamer Switch sitzt in der Mitte. Der Router deiner Internetfirma steckt an einem Ende, der der Videofirma am anderen. Vier weitere Netze stecken auch. Eine Helfer-Box hat ihr eigenes Kabel. Kleine Zettel fahren über den Switch zum Helfer und zurück. Dann kreuzt dein Päckchen den Switch gerade zur Videofirma.",

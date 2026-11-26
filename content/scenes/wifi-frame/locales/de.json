@@ -2,7 +2,7 @@
   "title": "Der Funkumschlag",
   "simple": "Alle im Raum können einen Wi-Fi-Umschlag hören, deshalb sagt er genau, für wen er ist. Der Empfänger antwortet „Habe es!“, und erst dann ist der nächste Umschlag dran. Darunter reist der Umschlag als Funkwellen.",
   "technical": "Ein 802.11 Data Frame nennt Receiver, Transmitter und die ferne Wired-Side Address, schützt die Payload mit WPA3/CCMP und setzt auf CSMA/CA plus ACKs, Sequence Numbers und Retries auf geteilter Airtime.",
-  "extra": "Wi-Fi 7 Multi-Link Operation: Gerät und Access Point sind je ein Multi-Link Device (MLD) mit mehreren Radios. In der Luft behält jedes Radio seine eigene Link Address; darüber lassen eine MLD Address, ein Sequence Counter und eine Block-Ack Agreement einen Frame auf dem Link gehen, der frei ist (2.4, 5 oder 6 GHz), und trotzdem in Reihenfolge ankommen.",
+  "extra": "Wi-Fi 7 Multi-Link Operation: Gerät und Access Point sind je ein Multi-Link Device (MLD) mit mehreren Funkeinheiten. In der Luft behält jede Funkeinheit ihre eigene Link-Adresse; darüber lassen eine MLD-Adresse, ein Sequenzzähler und eine Block-Ack-Vereinbarung einen Frame auf dem Link gehen, der frei ist (2,4, 5 oder 6 GHz), und trotzdem in der richtigen Reihenfolge ankommen.",
   "role": {
     "bridge": {
       "title": "Funkrahmen, Kabelrahmen",
@@ -50,7 +50,7 @@
     "gotIt": "Habe es!",
     "gotItStep": "Habe es!",
     "ackTechnical": "ACK",
-    "bump": "stoß!",
+    "bump": "Kollision!",
     "noAck": "kein ACK",
     "retryFlag": "retry",
     "neighbour": "Nachbar",
@@ -76,7 +76,7 @@
     "noAck": "kein ACK"
   },
   "2010": {
-    "extra": "Wi‑Fi 4 (802.11n, 2009): Frame Aggregation (A-MPDU) packt mehrere Frames in eine Übertragung mit einem Block Ack, und mit zwei oder mehr Antennen je Seite (MIMO) teilen sich mehrere Streams den Kanal, bis zu 150 Mbit/s je auf einem 40 MHz Kanal in 2.4 oder 5 GHz. Multi-Link Operation kam erst mit Wi‑Fi 7 2024.",
+    "extra": "Wi‑Fi 4 (802.11n, 2009): Frame Aggregation (A-MPDU) packt mehrere Frames in eine Übertragung mit einem Block Ack, und mit zwei oder mehr Antennen je Seite (MIMO) teilen sich mehrere Streams den Kanal, bis zu 150 Mbit/s je auf einem 40 MHz Kanal in 2,4 oder 5 GHz. Multi-Link Operation kam erst mit Wi‑Fi 7 2024.",
     "technical": "Ein 802.11 Data Frame nennt Receiver, Transmitter und die ferne Wired-Side Address, schützt die Payload mit WPA2/CCMP und setzt auf CSMA/CA plus ACKs, Sequence Numbers und Retries auf geteilter Airtime.",
     "tag": {
       "encrypt": "WPA2/CCMP verbirgt die Nutzlast"

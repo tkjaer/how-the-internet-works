@@ -1,5 +1,5 @@
 {
-  "title": "TCP hält die Stücke in der Reihe",
+  "title": "TCP hält die Stücke in der richtigen Reihenfolge",
   "simple": "Der Videoserver und {yours} nummerieren jedes kleine Stück. Fällt eines in ein Loch, zeigt {yours} weiter auf die Lücke, bis der Server dieses Stück nochmal schickt.",
   "technical": "TCP ist end-to-end (RFC 9293): ein 3-way Handshake (SYN, SYN-ACK, ACK) einigt sich auf die Start-Sequence Numbers in beide Richtungen. Der Sender hält ein Window von vier Segmenten (vereinfacht: echte Windows sind in Bytes und starten bei etwa 10 Segmenten). ACK=5 nennt das nächste erwartete Byte und schiebt das Window auf 5–8; 6, 7 und 8 ziehen je ein Duplicate ACK=5, und das dritte löst Fast Retransmit aus; die App bekommt Bytes erst in Reihenfolge.",
   "describe": {
@@ -9,7 +9,7 @@
   "at": {
     "cdn": {
       "title": "Der Server sendet nummerierte TCP-Stücke",
-      "simple": "Der Videoserver stellt Stücke auf und lässt vier gleichzeitig reisen. Wenn {yours} sagt, Stück 5 fehlt, schickt der Server 5 nochmal, bevor die App die Reihe bekommt.",
+      "simple": "Der Videoserver reiht die Stücke auf und lässt vier gleichzeitig reisen. Wenn {yours} meldet, dass Stück 5 fehlt, schickt der Server es nochmal. Erst wenn alles in der richtigen Reihenfolge vorliegt, bekommt die App die Daten.",
       "technical": "Vom Server-Endpoint sendet TCP Segmente mit Sequence Numbers, beobachtet Cumulative ACKs, schiebt das Send Window und Fast-Retransmit von Segment 5 nach drei Duplicate ACKs, ohne auf das RTO zu warten.",
       "describe": {
         "simple": "Der Videoserver ist das fleißige Ende der Straße. Seine Server-Karte stellt nummerierte Boxen auf, und der Rahmen um vier Boxen zeigt, wie viele gleichzeitig reisen dürfen. Boxen gehen zum Regal. Wenn der Zettel von {yours} sagt, 5 fehlt, leuchtet Box 5 und geht nochmal, bevor das Regal voll ist.",
@@ -58,7 +58,7 @@
     "hello": "Hallo",
     "lost": "5 fehlt",
     "resend": "5 nochmal senden",
-    "done": "alles in der Reihe",
+    "done": "alles in der richtigen Reihenfolge",
     "ready": "alles in Ordnung — bereit für die App!",
     "port": "nur Port"
   },
@@ -79,7 +79,7 @@
     },
     "at": {
       "web-server": {
-        "simple": "Der Server stellt Stücke auf und lässt vier gleichzeitig reisen. Wenn {yours} sagt, Stück 5 fehlt, schickt der Server 5 nochmal, bevor der Browser die Reihe bekommt.",
+        "simple": "Der Server reiht die Stücke auf und lässt vier gleichzeitig reisen. Wenn {yours} meldet, dass Stück 5 fehlt, schickt der Server es nochmal. Erst wenn alles in der richtigen Reihenfolge vorliegt, bekommt der Browser die Daten.",
         "describe": {
           "simple": "Der Server ist das fleißige Ende der Straße. Seine Server-Karte stellt nummerierte Boxen auf, und der Rahmen um vier Boxen zeigt, wie viele gleichzeitig reisen dürfen. Boxen gehen zum Regal. Wenn der Zettel von {yours} sagt, 5 fehlt, leuchtet Box 5 und geht nochmal, bevor das Regal voll ist.",
           "technical": "Vom Server-Endpoint liegt der Blick auf Send Queue und Sliding Window. Segmente gehen mit Sequence Numbers raus. Cumulative ACK-Zettel kommen zurück, wiederholtes ACK 5 hält das Empfangsregal mit Lücke. Das markierte Segment 5 wird per Fast Retransmit erneut gesendet, dann kann der Empfänger einen In-Order Byte Stream liefern."

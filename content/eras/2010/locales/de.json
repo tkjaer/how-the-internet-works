@@ -3,8 +3,8 @@
   "simple": "Die Telefonleitung trug Internet und Telefongespräche zugleich, als Töne zu hoch zum Hören. Eine Box mit Modem drin schickte Wi‑Fi in jedes Zimmer.",
   "technical": "DSL: ADSL2+ und später VDSL2 aus Straßenkästen, von wenigen bis zu einigen Dutzend Mbit/s auf dem Kupferpaar. Ein Modem-Router zu Hause macht NAT, mit einem 802.11n-Access-Point.",
   "describe": {
-    "simple": "Ein Laptop, offen auf dem Tisch. Er ist per Wi‑Fi online, ohne Kabel: die Box mit dem Modem drin singt die Telefonleitung runter.",
-    "technical": "Ein Laptop per 802.11n-Wi‑Fi zu einem DSL-Modem-Router, der NAT macht und DMT-Töne das Telefonpaar runter schickt."
+    "simple": "Ein Laptop, offen auf dem Tisch. Er ist per Wi‑Fi online, ohne Kabel: die Box mit dem eingebauten Modem schickt Daten als Töne über die Telefonleitung.",
+    "technical": "Ein Laptop per 802.11n-Wi‑Fi zu einem DSL-Modem-Router, der NAT macht und DMT-Signale über das Kupferaderpaar der Telefonleitung sendet."
   },
   "at": {
     "on-the-go": {
@@ -19,8 +19,8 @@
       "simple": "Die Telefonleitung trug Internet und Telefongespräche zugleich, als Töne zu hoch zum Hören. Am Schreibtisch lief ein Kabel vom Laptop zur Box mit dem Modem drin.",
       "technical": "DSL: ADSL2+ und später VDSL2 aus Straßenkästen, von wenigen bis zu einigen Dutzend Mbit/s auf dem Kupferpaar. Der Laptop hat ein 100-Mbit/s-Ethernet-Kabel zum Modem-Router, der NAT macht.",
       "describe": {
-        "simple": "Ein Laptop auf dem Schreibtisch, mit Kabel zur Box mit dem Modem drin, die die Telefonleitung runter singt.",
-        "technical": "Ein Laptop per Ethernet zu einem DSL-Modem-Router, der NAT macht und DMT-Töne das Telefonpaar runter schickt."
+        "simple": "Ein Laptop auf dem Schreibtisch, mit Kabel zur Box mit dem Modem drin, die Daten als Töne über die Telefonleitung schickt.",
+        "technical": "Ein Laptop per Ethernet zu einem DSL-Modem-Router, der NAT macht und DMT-Signale über das Kupferaderpaar der Telefonleitung sendet."
       }
     }
   }

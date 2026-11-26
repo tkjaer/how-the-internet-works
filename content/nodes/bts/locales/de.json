@@ -6,7 +6,7 @@
     "tag": "BTS · GSM 900",
     "peek": {
       "simple": "Der Mast öffnet dein Päckchen nicht. Er fängt auf, was dein Telefon funkt, wenn es an der Reihe ist, und gibt es die Leitung hinunter weiter.",
-      "technical": "Die BTS beendet den Radio-Burst und die Kanalkodierung und gibt die RLP-Frames des Anrufs in einem 16 kbit/s-Sub-Slot weiter; hier liest nichts PPP oder IP."
+      "technical": "Die BTS beendet den Funkburst und die Kanalkodierung und gibt die RLP-Frames des Anrufs in einem 16 kbit/s-Sub-Slot weiter; hier liest nichts PPP oder IP."
     }
   },
   "learnMore": [

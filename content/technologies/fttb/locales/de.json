@@ -1,6 +1,6 @@
 {
   "name": "Glasfaser zum Gebäude",
-  "simple": "Vom Keller rast das Päckchen auf einem eigenen Glasfaden als Lichtblitze: eine Farbe nach oben, eine andere nach unten.",
+  "simple": "Vom Keller rast das Päckchen auf einer eigenen Glasfaser als Lichtblitze: eine Farbe zum Anbieter, eine andere zurück.",
   "technical": "FTTB: eine Punkt-zu-Punkt-Faser vom Kellerswitch zum ISP, eine Ader mit BiDi-Optik an jedem Ende (1310 nm hoch, 1490 nm runter).",
   "tag": "1 Gbit/s · BiDi",
   "learnMore": [

@@ -96,7 +96,7 @@
         "simple": "Ticketnr.",
         "technical": "TEID"
       },
-      "about": "Tunnel Endpoint ID: welche Session welches Handys das ist. Jedes Ende wählt die TEID, die es empfangen will."
+      "about": "Tunnel Endpoint ID: Zu welchem Handy und welcher Sitzung das Paket gehört. Jedes Ende wählt die TEID, unter der es Pakete empfangen möchte."
     },
     "seqext": {
       "name": "Sequence, N-PDU, nächste Ext.",
@@ -125,7 +125,7 @@
         "about": "Das andere Ende: das RNC auf dem Weg nach unten, der GGSN auf dem Weg nach oben."
       },
       "teid": {
-        "about": "Tunnel Endpoint ID: welcher PDP Context welches Handys das ist. Jedes Ende wählt die TEID, die es empfangen will."
+        "about": "Tunnel Endpoint ID: Zu welchem Handy und welchem PDP-Kontext das Paket gehört. Jedes Ende wählt die TEID, unter der es Pakete empfangen möchte."
       },
       "seqext": {
         "about": "Optionale Felder; ein 3G-Benutzerpaket hat meist keine, der Header ist also nur 8 Bytes (hier in heutiger Größe gezeichnet)."
