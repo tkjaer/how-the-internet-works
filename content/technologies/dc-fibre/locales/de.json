@@ -1,6 +1,6 @@
 {
   "name": "RZ-Glasfaser",
-  "simple": "Kurze Glasfäden zwischen den Boxen in einem Gebäude, alle von derselben Firma.",
+  "simple": "Kurze Glasfasern zwischen den Boxen in einem Gebäude, alle von derselben Firma.",
   "technical": "Im Fabric: 100–400G Ethernet über kurze Single-Mode-Faser (oder Kupfer die letzten Meter zum Server).",
   "tag": "400GBASE-FR4 · SMF",
   "2010": {

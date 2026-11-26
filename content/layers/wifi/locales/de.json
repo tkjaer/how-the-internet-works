@@ -4,7 +4,7 @@
     "technical": "Wi-Fi-Frame (802.11)"
   },
   "note": {
-    "simple": "Durch die Luft geschickt. Nur die WLAN-Box und {yours} hören danach.",
+    "simple": "Durch die Luft geschickt. Nur die WLAN-Box und {yours} können den Inhalt lesen.",
     "technical": "Jeder Frame wird vom Empfänger bestätigt (oft in Blöcken), verlorene werden nachgesendet. Die Payload ist verschlüsselt (WPA3)."
   },
   "line": "IEEE 802.11 QoS Data, RA: {addr1}, TA: {addr2}",

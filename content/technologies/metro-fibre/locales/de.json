@@ -1,6 +1,6 @@
 {
-  "name": "Glasfaden",
-  "simple": "Ein Glasfaden trägt die Päckchen als Lichtblitze.",
+  "name": "Glasfaser",
+  "simple": "Eine Glasfaser trägt die Päckchen als Lichtblitze.",
   "technical": "Punkt-zu-Punkt-Faser mit Ethernet (10–100 Gbit/s).",
   "tag": "DWDM · C-Band · 10–100G",
   "2010": {

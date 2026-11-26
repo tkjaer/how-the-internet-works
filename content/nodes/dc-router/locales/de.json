@@ -1,6 +1,6 @@
 {
-  "name": "Kantenrouter",
-  "simple": "Die Haustür des Rechenzentrums. Sie lässt Päckchen vom Tauschplatz herein und schickt das Video wieder hinaus.",
+  "name": "Edge-Router",
+  "simple": "Die Haustür des Rechenzentrums. Sie lässt Päckchen vom Internetknoten herein und schickt das Video wieder hinaus.",
   "technical": "Der Edge-Router des PoP: er peert über BGP am Exchange, kündigt die Adressen der Videofirma an und routet in die Fabric, verteilt den Verkehr über die Load-Balancer.",
   "tag": "eBGP · AS64501",
   "1995": {
