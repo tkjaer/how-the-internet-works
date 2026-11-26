@@ -12,7 +12,7 @@
       "technical": "Ein gemieteter Käfig in einem Colocation-Center: der Core-Router nimmt den Cross-Connect vom Exchange, ein Hardware-Load-Balancer hält die Service-Adresse (VIP), und ein Three-Tier-Baum (Core, Aggregation, Access) erreicht die Racks, mit 10G-Glasfaser zwischen den Switches und 1G-Kupfer zu den Servern. Spanning Tree hält den zweiten Uplink jedes Racks gesperrt. Ein Cache-Miss geht zurück zum Origin.",
       "describe": {
         "simple": "In einer großen Halle mit Fliesenboden steht hinter einem Drahtzaun eine Reihe grauer Schränke, an jedem Ende eine Kühlmaschine. Der Weg kommt von der Zentrale zum Core-Router, Load-Balancer, Aggregation-Switch, Rack-Switch und Video-Server. Eine gestrichelte Straße führt weit zur Hauptkopie. Päckchen rein, Video wieder raus.",
-        "technical": "Die Colocation-Ansicht startet am IXP und zickzackt über 10G-Multimode-Glasfaser durch Core-Router, Load-Balancer, Aggregation-Switch und Access-Switch, dann über 1000BASE-T-Kupfer zum Cache-Server. Hinten eine Käfigreihe Racks mit CRAC an jedem Ende. Ein gestrichelter Ast führt vom Cache zum Origin. Request- und Videopakete laufen gegeneinander."
+        "technical": "Die Colocation-Ansicht startet am IXP und zickzackt über 10G-Multimode-Glasfaser durch Core-Router, Load-Balancer, Aggregation-Switch und Access-Switch, dann über 1000BASE-T-Kupfer zum Cache-Server. Hinten eine Käfigreihe Racks mit CRAC an jedem Ende. Ein gestrichelter Ast führt vom Cache zum Origin. Anfrage- und Videopakete laufen in entgegengesetzte Richtungen."
       }
     }
   },

@@ -4,7 +4,7 @@
     "technical": "XGS-PON-Frame (XGEM)"
   },
   "note": {
-    "simple": "Alle in deiner Straße teilen sich denselben Glasfaden, darum öffnet jedes Haus nur Umschläge mit seiner eigenen Nummer.",
+    "simple": "Alle in deiner Straße teilen sich dieselbe Glasfaser, darum öffnet jedes Haus nur Umschläge mit seiner eigenen Nummer.",
     "technical": "Downstream wird an jedes ONT am Splitter gesendet und per XGEM-Port mit AES verschlüsselt; Upstream nutzt Zeitslots."
   },
   "line": "XGEM (XG-PON Encapsulation Method), Port-ID {port}, Länge {pli}",

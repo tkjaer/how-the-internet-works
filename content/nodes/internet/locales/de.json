@@ -9,8 +9,8 @@
     "simple": "Das Internet ist keine große Wolke. Es sind ganz viele Netze, jedes von einer anderen Firma, die sich an der Hand halten. Die bunten Felder zeigen, wessen Boxen dein Päckchen passiert – und die blassen Kreise weit weg sind ein paar der vielen anderen Netze.",
     "technical": "Ein Netz aus Netzen: Zugangsnetz und MPLS-Kern deines ISP, dann Settlement-free Peering an einem Internet Exchange (oder bezahlter Transit), am Ende ein CDN-Cache nah bei dir. Jede schattierte Fläche ist ein Betreiber; draußen gibt es noch Zehntausende andere autonome Systeme.",
     "describe": {
-      "simple": "In der Wolke startet der Weg bei deinem Zuhause. Er geht durch Straßenschrank, Backhaul-Switch, Anbieter-Gateway und Anbieter-Kern. Dann zum Grenzrouter, Internettauschplatz und Rechenzentrum der Videofirma – eine Box, die du öffnen kannst. Die gestrichelte Nebenstraße zeigt Transit.",
-      "technical": "Die ausgeklappte Internetroute startet am Zugangsrand zu Hause, dann über Schrank, Backhaul-Switch, BNG und ISP-Kern. Weiter zum Grenzrouter, IXP und Datacenter des CDN, das sich öffnet. Request- und Videopakete laufen gegeneinander über Glasfaser, Backbone und Cross-Connects."
+      "simple": "In der Wolke startet der Weg bei deinem Zuhause. Er geht durch Straßenschrank, Backhaul-Switch, Anbieter-Gateway und Anbieter-Kern. Dann zum Grenzrouter, Internetknoten und Rechenzentrum der Videofirma – eine Box, die du öffnen kannst. Die gestrichelte Nebenstraße zeigt Transit.",
+      "technical": "Die ausgeklappte Internetroute startet am Zugangsrand zu Hause, dann über Schrank, Backhaul-Switch, BNG und ISP-Kern. Weiter zum Grenzrouter, IXP und Datacenter des CDN, das sich öffnet. Anfrage- und Videopakete laufen in entgegengesetzte Richtungen über Glasfaser, Backbone und Cross-Connects."
     }
   },
   "2010": {

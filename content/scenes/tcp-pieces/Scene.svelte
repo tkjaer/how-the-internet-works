@@ -86,7 +86,7 @@
   {#each handshakeTicket(time) as h}
     {#if h.on}
       {@const text = S(`handshake.${h.key}`)}
-      <Ticket x={ticketX(h.back ? ackX(L, h.x) : roadX(L, 1 - h.x), text)} y={ticketY} {text} size={L.text.label} />
+      <Ticket x={ticketX(h.back ? roadX(L, h.x) : ackX(L, h.x), text)} y={ticketY} {text} size={L.text.label} />
     {/if}
   {/each}
 {:else}
