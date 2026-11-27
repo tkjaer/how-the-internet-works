@@ -1,4 +1,4 @@
-// The few browser globals the app's state and router touch at import time, for tests running in Node.
+// Controlled stand-ins for the browser globals the app's state and router touch at import time, so tests start clean.
 import { vi } from 'vitest';
 
 export function stubBrowser() {

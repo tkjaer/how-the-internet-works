@@ -64,6 +64,7 @@ export default defineConfig({
     alias: { $core: `${root}src` },
   },
   build: { target: 'es2022' },
-  // Tests run in Node but modules are transformed for the browser, so Svelte runes behave as in the app.
-  test: { include: ['src/**/*.test.ts'], environment: './src/test/svelte-client-env.ts' },
+  // Tests run in a DOM (happy-dom), with modules transformed for the browser, so Svelte runes behave as in the app.
+  // Svelte (5.59+) sets up its DOM operations as soon as a component is imported, so a DOM is needed to load one.
+  test: { include: ['src/**/*.test.ts'], environment: 'happy-dom' },
 });
